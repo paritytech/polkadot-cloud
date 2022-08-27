@@ -13,7 +13,7 @@ const packageJson = require("./package.json");
  * @type {import('rollup').RollupOptions}
  */
  export default {
-  input: "src/index.tsx",
+  input: "components/index.tsx",
   output: [
     {
       file: packageJson.main,
