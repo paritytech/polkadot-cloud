@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Button } from '../components/Button';
+import { Button } from "../components/Button";
 
 const Home: NextPage = () => {
   return (
