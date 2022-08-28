@@ -13,18 +13,20 @@ const packageJson = require("./package.json");
  * @type {import('rollup').RollupOptions}
  */
  export default {
-  input: "components/index.tsx",
+  input: "components/lib.tsx",
   output: [
     {
       file: packageJson.main,
       format: "es",
       sourcemap: false
-    }
+    },
   ],
   plugins: [
     peerDepsExternal(),
     resolve(),
-    typescript({ useTsconfigDeclarationDir: true }),
+    typescript({
+      useTsconfigDeclarationDir: true
+    }),
     postcss({
       config: {
         path: './postcss.config.js',

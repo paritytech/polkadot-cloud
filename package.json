@@ -33,6 +33,11 @@
     "react-dom": "^18.2.0"
   },
   "scripts": {
+    "dev": "next dev",
+    "start": "next start",
     "build": "rollup -c"
+  },
+  "dependencies": {
+    "next": "^12.2.5"
   }
 }
