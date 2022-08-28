@@ -11,12 +11,26 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@types/react": "^18.0.17",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
     "autoprefixer": "^10.4.8",
     "cssnano": "^5.1.13",
+    "eslint": "^8.23.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-prefer-arrow-functions": "^3.1.4",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.4.16",
     "postcss-cssnext": "^3.1.1",
     "postcss-nested": "^5.0.6",
     "postcss-simple-vars": "^6.0.3",
+    "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^2.78.1",
@@ -33,6 +47,12 @@
     "react-dom": "^18.2.0"
   },
   "scripts": {
-    "build": "rollup -c"
+    "dev": "next dev",
+    "start": "next start",
+    "build": "rollup -c",
+    "lint": "eslint './**' --fix"
+  },
+  "dependencies": {
+    "next": "^12.2.5"
   }
 }

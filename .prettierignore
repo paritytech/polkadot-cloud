@@ -1,0 +1,14 @@
+**/build
+**/styles
+**/node_modules
+
+**/next-env.d.ts
+**/next.tsconfig.json
+
+**/package.json
+**/yarn.lock
+**/package-lock.json
+
+**/.eslintrc.js
+**/next.config.js
+**/tsconfig.json
