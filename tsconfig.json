@@ -17,11 +17,11 @@
     "esModuleInterop": true
   },
   "include": [
-    "components/**/*"
+    "lib/**/*"
   ],
   "exclude": [
     "node_modules",
     "build",
-    "components/**/*.test.tsx"
+    "lib/**/*.test.tsx"
   ],
 }

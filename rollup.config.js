@@ -11,7 +11,7 @@ import cssnano from "cssnano";
  * @type {import('rollup').RollupOptions}
  */
 export default {
-  input: "components/lib.tsx",
+  input: "lib/index.tsx",
   output: [
     {
       file: "build/index.ts",
