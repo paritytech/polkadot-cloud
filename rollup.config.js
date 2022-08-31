@@ -6,7 +6,6 @@ import simplevars from "postcss-simple-vars";
 import nested from "postcss-nested";
 import cssnext from "postcss-cssnext";
 import cssnano from "cssnano";
-import packageJson from "./package.json";
 
 /**
  * @type {import('rollup').RollupOptions}
@@ -15,7 +14,7 @@ export default {
   input: "components/lib.tsx",
   output: [
     {
-      file: packageJson.main,
+      file: "build/index.ts",
       format: "es",
       sourcemap: false,
     },

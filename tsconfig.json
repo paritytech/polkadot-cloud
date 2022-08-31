@@ -23,5 +23,5 @@
     "node_modules",
     "build",
     "components/**/*.test.tsx"
-  ]
+  ],
 }

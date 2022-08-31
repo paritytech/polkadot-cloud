@@ -4,7 +4,6 @@
 import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Button } from "../components/Button";
 
 const Home: NextPage = () => {
   return (
@@ -18,9 +17,7 @@ const Home: NextPage = () => {
         {/* <h1 className="text-2xl font-bold">
           <Link href="/page">Link</Link>
         </h1> */}
-        <div>
-          <Button />
-        </div>
+        <div></div>
       </main>
     </>
   );
