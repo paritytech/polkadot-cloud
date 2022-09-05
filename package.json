@@ -1,11 +1,11 @@
 {
   "name": "polkadot-dashboard-ui",
   "version": "0.1.0",
-  "license": "apache-2.0",
+  "license": "Apache-2.0",
   "private": true,
-  "types": "build/index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
-    "build"
+    "dist"
   ],
   "devDependencies": {
     "@rollup/plugin-json": "^4.1.0",
@@ -14,6 +14,7 @@
     "@typescript-eslint/eslint-plugin": "^5.35.1",
     "@typescript-eslint/parser": "^5.35.1",
     "autoprefixer": "^10.4.8",
+    "cirque": "0.3.0-alpha.0",
     "cssnano": "^5.1.13",
     "eslint": "^8.23.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -26,6 +27,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "next": "^12.2.5",
     "postcss": "^8.4.16",
     "postcss-cssnext": "^3.1.1",
     "postcss-nested": "^5.0.6",
@@ -49,10 +51,26 @@
   "scripts": {
     "dev": "next dev",
     "start": "next start",
-    "build": "rollup -c",
+    "build": "rollup -c && cp dist.package.json dist/package.json",
     "lint": "eslint './**' --fix"
   },
-  "dependencies": {
-    "next": "^12.2.5"
-  }
+  "description": "UI components for Polkadot Dashboards.",
+  "main": "dist/index.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rossbulat/polkadot-dashboard-ui.git"
+  },
+  "keywords": [
+    "Polkadot",
+    "UI",
+    "Substrate"
+  ],
+  "author": "Ross Bulat",
+  "bugs": {
+    "url": "https://github.com/rossbulat/polkadot-dashboard-ui/issues"
+  },
+  "homepage": "https://github.com/rossbulat/polkadot-dashboard-ui#readme"
 }

@@ -12,7 +12,7 @@
 *.html
 *.webmanifest
 LICENSE
-build
+dist
 tailwind.config.js
 next.config.js
 postcss.config.js

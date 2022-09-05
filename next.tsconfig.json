@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "build",
+    "declarationDir": "dist",
     "module": "esnext",
     "target": "es5",
     "lib": [
@@ -29,7 +29,7 @@
   ],
   "exclude": [
     "node_modules",
-    "build",
+    "dist",
     "lib/**/*.test.tsx"
   ]
 }

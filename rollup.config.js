@@ -14,7 +14,7 @@ export default {
   input: "lib/index.tsx",
   output: [
     {
-      file: "build/index.ts",
+      file: "dist/index.ts",
       format: "es",
       sourcemap: false,
     },
