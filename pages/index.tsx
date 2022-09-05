@@ -1,6 +1,7 @@
 import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -11,9 +12,9 @@ const Home: NextPage = () => {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <main className="p-4 flex flex-col gap-8">
-        {/* <h1 className="text-2xl font-bold">
+        <h1 className="text-2xl font-bold">
           <Link href="/page">Link</Link>
-        </h1> */}
+        </h1>
         <div></div>
       </main>
     </>
