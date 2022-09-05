@@ -9,7 +9,7 @@ export interface BodyInterfaceProps {
  */
 export const BodyInterface = (props: BodyInterfaceProps) => {
   return (
-    <div className="box-border flex-auto flex-row relative ">
+    <div className="box-border flex flex-auto flex-row relative ">
       {props.children}
     </div>
   );
