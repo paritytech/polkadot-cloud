@@ -10,5 +10,8 @@ module.exports = {
   presets: [
     require('cirque/themes/polkadot/tw-preset')
   ],
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms")
+  ],
 };
