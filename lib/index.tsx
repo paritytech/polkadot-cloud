@@ -1,5 +1,4 @@
 import "../styles/index.css";
-// import "cirque/themes/polkadot/tokens/style-dictionary/global.css";
 
 export { BodyInterface } from "./BodyInterface";
 export { SideInterface } from "./SideInterface";
