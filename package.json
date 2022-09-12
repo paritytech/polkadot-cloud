@@ -53,7 +53,7 @@
   "scripts": {
     "dev": "next dev",
     "start": "next start",
-    "build": "rollup -c && cp dist.package.json dist/package.json",
+    "build": "rollup -c && cp dist.package.json dist/package.json && sed '1d' ./dist/index.d.ts > ./tmp.d.ts; mv ./tmp.d.ts ./dist/index.d.ts",
     "lint": "eslint './**' --fix"
   },
   "description": "UI components for Polkadot Dashboards.",
