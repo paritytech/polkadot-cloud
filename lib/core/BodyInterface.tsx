@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledComponentInterface } from "./types";
+import { StyledComponentInterface } from "../types";
 
 export type BodyInterfaceProps = StyledComponentInterface;
 

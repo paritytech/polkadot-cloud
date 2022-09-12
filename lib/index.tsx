@@ -1,12 +1,12 @@
 import "../styles/index.css";
 
-export { BodyInterface } from "./BodyInterface";
-export { SideInterface } from "./SideInterface";
+export { BodyInterface } from "./core/BodyInterface";
+export { SideInterface } from "./core/SideInterface";
 
-export { Page } from "./Page";
-export { PageTitle } from "./PageTitle";
+export { Page } from "./core/Page";
+export { PageTitle } from "./core/PageTitle";
 
-export { RowPrimary } from "./RowPrimary";
-export { RowSecondary } from "./RowSecondary";
+export { RowPrimary } from "./core/RowPrimary";
+export { RowSecondary } from "./core/RowSecondary";
 
-export { TopBar } from "./TopBar";
+export { TopBar } from "./core/TopBar";
