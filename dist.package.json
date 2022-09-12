@@ -18,6 +18,9 @@
     "UI",
     "Substrate"
   ],
+  "typescript": {
+    "definition": "index.d.ts"
+  },
   "author": "Ross Bulat",
   "bugs": {
     "url": "https://github.com/rossbulat/polkadot-dashboard-ui/issues"
