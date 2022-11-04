@@ -4,7 +4,7 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { motion } from 'framer-motion'; TODO: enable
 
-export type Props = StyledComponentInterface & {
+export type ButtonPrimaryProps = StyledComponentInterface & {
   disabled?: boolean;
   icon?: IconProp;
   iconTransform?: string;
@@ -24,7 +24,7 @@ export const ButtonPrimary = ({
   size,
   style,
   title,
-}: Props) => {
+}: ButtonPrimaryProps) => {
   // If icon transform is not provided, default to shink-1
   iconTransform = iconTransform ?? "shrink-1";
 
