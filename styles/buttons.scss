@@ -1,6 +1,6 @@
 @layer components {
   .btn-primary {
-    @apply flex-1 flex-row flex-nowrap items-center bg-color-network-primary rounded-3xl text-white transition-opacity font-normal;
+    @apply flex-1 flex-row flex-nowrap items-center bg-color-network-primary rounded-3xl text-white transition-opacity font-medium;
     &.sm {
       @apply text-base px-button-x py-button-y;
     }
