@@ -33,6 +33,7 @@ bower_components
 
 # node-waf configuration
 .lock-wscript
+.vscode
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 dist/
