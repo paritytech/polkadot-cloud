@@ -1,5 +1,3 @@
-/* Utilities */
-
 /* Returns ` t` if truthy, or an empty string otherwise. */
 export const valEmpty = (t: boolean | string | undefined, v: string) =>
   t ? ` ${v}` : "";
