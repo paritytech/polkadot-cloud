@@ -21,10 +21,8 @@ module.exports = {
         plus: '1.15rem',
       },
       spacing: {
-        'button-small-x': "0.9rem",
-        'button-small-y': "0.42rem",
-        'button-large-x': "1.2rem",
-        'button-large-y': "0.52rem",
+        'button-x': "1rem",
+        'button-y': "0.42rem",
       }
     },
   },

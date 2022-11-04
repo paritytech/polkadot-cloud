@@ -8,6 +8,8 @@
     "dist"
   ],
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@tailwindcss/forms": "^0.5.3",
@@ -17,7 +19,6 @@
     "@typescript-eslint/parser": "^5.35.1",
     "autoprefixer": "^10.4.13",
     "cirque": "0.3.0-alpha.0",
-    "cssnano": "^5.1.13",
     "eslint": "^8.23.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
@@ -29,8 +30,6 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "@fortawesome/fontawesome-svg-core": "^6.2.0",
-    "@fortawesome/react-fontawesome": "^0.2.0",
     "framer-motion": "^7.6.2",
     "next": "^12.2.5",
     "postcss": "^8.4.18",

@@ -3,12 +3,12 @@
     --my-var: 1; // Not in use
   }
   .theme-polkadot {
-  --color-primary-light: theme('colors.pink.500');
-  --color-primary-dark: theme('colors.pink.500');
-  --color-secondary-light: theme('colors.pink.400');
-  --color-secondary-dark: theme('colors.pink.400');
-  --color-transparent-light: theme('colors.networks.polkadot-transparent');
-  --color-transparent-dark: theme('colors.networks.polkadot-transparent');
+    --color-primary-light: theme('colors.pink.500');
+    --color-primary-dark: theme('colors.pink.500');
+    --color-secondary-light: theme('colors.pink.400');
+    --color-secondary-dark: theme('colors.pink.400');
+    --color-transparent-light: theme('colors.networks.polkadot-transparent');
+    --color-transparent-dark: theme('colors.networks.polkadot-transparent');
   }
   .theme-kusama {
     --color-primary-light: theme('colors.zinc.800');

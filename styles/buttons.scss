@@ -1,11 +1,11 @@
 @layer components {
   .btn-primary {
-    @apply flex-1 flex-row flex-nowrap items-center bg-color-network-primary rounded-3xl text-white transition-opacity;
+    @apply flex-1 flex-row flex-nowrap items-center bg-color-network-primary rounded-3xl text-white transition-opacity font-normal;
     &.sm {
-      @apply font-bold text-base px-button-small-x py-button-small-y;
+      @apply text-base px-button-x py-button-y;
     }
     &.lg {
-      @apply font-bold text-plus px-button-large-x py-button-large-y;
+      @apply text-plus px-button-x py-button-y;
     }
     &.inline {
       @apply mx-2;
