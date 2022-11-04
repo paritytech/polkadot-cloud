@@ -24,7 +24,7 @@ export type ButtonPrimaryProps = StyledComponentInterface & {
   space?: boolean;
 };
 
-/**
+/*
  * Primary button style used within the main interface of dashboards.
  */
 export const ButtonPrimary = ({
