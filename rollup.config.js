@@ -3,11 +3,6 @@ import resolve from "@rollup/plugin-node-resolve";
 import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
 import del from "rollup-plugin-delete";
-import simplevars from "postcss-simple-vars";
-import nested from "postcss-nested";
-import cssnext from "postcss-cssnext";
-import cssnano from "cssnano";
-import postcssCustomProperties from "postcss-custom-properties";
 
 /**
  * @type {import('rollup').RollupOptions}
@@ -28,21 +23,7 @@ export default {
       config: {
         path: "./postcss.config.js",
       },
-      plugins: [
-        simplevars(),
-        nested(),
-        cssnext({
-          warnForDuplicates: false,
-          features: {
-            customProperties: {
-              warnings: false,
-            },
-          },
-        }),
-        cssnano(),
-        postcssCustomProperties(),
-      ],
-      extensions: [".css"],
+      extensions: [".css", ".scss"],
       minimize: true,
       modules: false,
       extract: "index.css",
@@ -51,5 +32,12 @@ export default {
     typescript({
       useTsconfigDeclarationDir: true,
     }),
+  ],
+  external: [
+    "prop-types",
+    "react",
+    "react-dom",
+    "@fortawesome/react-fontawesome",
+    "framer-motion",
   ],
 };
