@@ -1,0 +1,39 @@
+@layer base {
+  :root {
+    --my-var: 1; // Not in use
+  }
+  .theme-polkadot {
+  --color-primary-light: theme('colors.pink.500');
+  --color-primary-dark: theme('colors.pink.500');
+  --color-secondary-light: theme('colors.pink.400');
+  --color-secondary-dark: theme('colors.pink.400');
+  --color-transparent-light: theme('colors.networks.polkadot-transparent');
+  --color-transparent-dark: theme('colors.networks.polkadot-transparent');
+  }
+  .theme-kusama {
+    --color-primary-light: theme('colors.zinc.800');
+    --color-primary-dark: theme('colors.zinc.500');
+    --color-secondary-light: theme('colors.zinc.800');
+    --color-secondary-dark: theme('colors.zinc.400');
+    --color-transparent-light: theme('colors.networks.kusama-transparent-light');
+    --color-transparent-dark: theme('colors.networks.kusama-transparent-dark');
+  }
+  .theme-westend {
+    --color-primary-light: theme('colors.rose.500');
+    --color-primary-dark: theme('colors.rose.500');
+    --color-secondary-light: theme('colors.orange.500');
+    --color-secondary-dark: theme('colors.orange.500');
+    --color-transparent-light: theme('colors.networks.westend-transparent');
+    --color-transparent-dark: theme('colors.networks.westend-transparent');
+  }
+  .theme-light {
+    --color-network-primary: var(--color-primary-light);
+    --color-network-secondary: var(--color-secondary-light);
+    --color-network-transparent: var(--color-transparent-light);
+  }
+  .theme-dark {
+    --color-network-primary: var(--color-primary-dark);
+    --color-network-secondary: var(--color-secondary-dark);
+    --color-network-transparent: var(--color-transparent-dark);
+  }
+}

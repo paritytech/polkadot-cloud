@@ -2,10 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --my-var: 100;
-  }
-}
-
+@import 'globals';
 @import 'buttons';

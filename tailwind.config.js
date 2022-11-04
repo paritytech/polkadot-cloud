@@ -7,24 +7,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'polkadot-primary-light': 'rgb(211, 48, 121)',
-        'polkadot-primary-dark': 'rgb(211, 48, 121)',
-        'polkadot-secondary-light': '#e474bc',
-        'polkadot-secondary-dark': '#e474bc',
-        'polkadot-transparent-light': 'rgb(211, 48, 121, 0.05)',
-        'polkadot-transparent-dark': 'rgb(211, 48, 121, 0.05)',
-        'kusama-primary-light': '#333',
-        'kusama-primary-dark': '#666',
-        'kusama-secondary-light': '#999',
-        'kusama-secondary-dark': '#aaa',
-        'kusama-transparent-light': 'rgb(51,51,51,0.05)',
-        'kusama-transparent-dark': 'rgb(102,102,102, 0.05)',
-        'westend-primary-light': '#da4e71',
-        'westend-primary-dark': '#da4e71',
-        'westend-secondary-light': '#e37c44',
-        'westend-secondary-dark': '#e37c44',
-        'westend-transparent-light': 'rgb(218, 78, 113, 0.05)',
-        'westend-transparent-dark': 'rgb(218, 78, 113, 0.05)',
+        networks: {
+          'polkadot-transparent': 'rgb(211, 48, 121, 0.05)',
+          'kusama-transparent-light': 'rgb(51,51,51,0.05)',
+          'kusama-transparent-dark': 'rgb(102,102,102, 0.05)',
+          'westend-transparent': 'rgb(218, 78, 113, 0.05)',
+        },
+        'color-network-primary': 'var(--color-network-primary)',
+        'color-network-secondary': 'var(--color-network-secondary)',
+        'color-network-transparent': 'var(--color-network-transparent)',
       },
       fontSize: {
         plus: '1.15rem',
