@@ -1,0 +1,21 @@
+@layer components {
+  .btn-primary {
+    @apply flex-1 flex-row flex-nowrap items-center bg-pink-500 rounded-3xl text-white transition-opacity;
+
+    &.sm {
+      @apply font-bold text-base px-button-small-x py-button-small-y;
+    }
+    &.lg {
+      @apply font-bold text-plus px-button-large-x py-button-large-y;
+    }
+    &.inline {
+      @apply mx-2;
+    }
+    &.space {
+      @apply m-2.5;
+    }
+    &:disabled {
+      @apply cursor-default opacity-25;
+    }
+  }
+}
