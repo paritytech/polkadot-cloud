@@ -7,6 +7,7 @@ import simplevars from "postcss-simple-vars";
 import nested from "postcss-nested";
 import cssnext from "postcss-cssnext";
 import cssnano from "cssnano";
+import postcssCustomProperties from "postcss-custom-properties";
 
 /**
  * @type {import('rollup').RollupOptions}
@@ -30,8 +31,16 @@ export default {
       plugins: [
         simplevars(),
         nested(),
-        cssnext({ warnForDuplicates: false }),
+        cssnext({
+          warnForDuplicates: false,
+          features: {
+            customProperties: {
+              warnings: false,
+            },
+          },
+        }),
         cssnano(),
+        postcssCustomProperties(),
       ],
       extensions: [".css"],
       minimize: true,

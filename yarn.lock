@@ -2847,6 +2847,13 @@ postcss-custom-media@^6.0.0:
   dependencies:
     postcss "^6.0.1"
 
+postcss-custom-properties@^12.1.10:
+  version "12.1.10"
+  resolved "https://registry.npmjs.org/postcss-custom-properties/-/postcss-custom-properties-12.1.10.tgz#624517179fd4cf50078a7a60f628d5782e7d4903"
+  integrity sha512-U3BHdgrYhCrwTVcByFHs9EOBoqcKq4Lf3kXwbTi4hhq0qWhl/pDWq2THbv/ICX/Fl9KqeHBb8OVrTf2OaYF07A==
+  dependencies:
+    postcss-value-parser "^4.2.0"
+
 postcss-custom-properties@^6.1.0:
   version "6.3.1"
   resolved "https://registry.npmjs.org/postcss-custom-properties/-/postcss-custom-properties-6.3.1.tgz"

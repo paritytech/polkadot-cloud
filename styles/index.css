@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Currently not in use */
+@layer base {
+  :root {
+    --maximised-side-interface-width: 175;
+    --minimised-side-interface-width: 75;
+    --closed-side-interface-left: -200;
+  }
+}

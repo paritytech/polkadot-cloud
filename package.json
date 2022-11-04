@@ -32,6 +32,7 @@
     "next": "^12.2.5",
     "postcss": "^8.4.16",
     "postcss-cssnext": "^3.1.1",
+    "postcss-custom-properties": "^12.1.10",
     "postcss-nested": "^5.0.6",
     "postcss-simple-vars": "^6.0.3",
     "prettier": "^2.7.1",
