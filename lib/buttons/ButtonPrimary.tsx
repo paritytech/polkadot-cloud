@@ -2,15 +2,26 @@ import React from "react";
 import { StyledComponentInterface } from "../types";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { valOr, valEmpty } from "../utils";
 // import { motion } from 'framer-motion'; TODO: enable
 
 export type ButtonPrimaryProps = StyledComponentInterface & {
+  // whether the button is disabled
   disabled?: boolean;
+  // include an icon with the button
   icon?: IconProp;
+  // transform icon size
   iconTransform?: string;
+  // include x spacing around button
+  inline?: boolean;
+  // onClick handler of button
   onClick?: () => void;
-  size: "sm" | "lg";
+  // small button, large otherwise
+  sm?: boolean;
+  // button text
   title: string;
+  // include a right margin
+  space?: boolean;
 };
 
 /**
@@ -20,34 +31,36 @@ export const ButtonPrimary = ({
   disabled,
   icon,
   iconTransform,
+  inline,
   onClick,
-  size,
+  sm,
+  space,
   style,
   title,
-}: ButtonPrimaryProps) => {
-  // If icon transform is not provided, default to shink-1
-  iconTransform = iconTransform ?? "shrink-1";
-
-  return (
-    <button
-      className={`btn-primary ${size}`}
-      style={style}
-      type="button"
-      disabled={disabled}
-      onClick={() => {
-        if (typeof onClick == "function") {
-          onClick();
-        }
-      }}
-    >
-      {icon && (
-        <FontAwesomeIcon
-          icon={icon}
-          className={title ? "space" : undefined}
-          transform={iconTransform}
-        />
-      )}
-      {title && title}
-    </button>
-  );
-};
+}: ButtonPrimaryProps) => (
+  <button
+    className={
+      "btn-primary" +
+      valOr(sm, "sm", "lg") +
+      valEmpty(space, "space") +
+      valEmpty(inline, "inline")
+    }
+    style={style}
+    type="button"
+    disabled={disabled}
+    onClick={() => {
+      if (typeof onClick == "function") {
+        onClick();
+      }
+    }}
+  >
+    {icon && (
+      <FontAwesomeIcon
+        icon={icon}
+        className={valOr(title, "space", undefined)}
+        transform={valOr(iconTransform, iconTransform, "shrink-1")}
+      />
+    )}
+    {title && title}
+  </button>
+);

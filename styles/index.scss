@@ -2,25 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Currently not in use */
 @layer base {
   :root {
-    --maximised-side-interface-width: 175;
-    --minimised-side-interface-width: 75;
-    --closed-side-interface-left: -200;
+    --my-var: 100;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply font-bold py-2 px-4 rounded;
+    @apply flex-1 flex-row flex-nowrap items-center bg-pink-500 rounded-3xl text-white transition-opacity;
 
     &.sm {
-      @apply font-bold py-4 px-6 rounded;
+      @apply font-bold text-base px-button-small-x py-button-small-y;
     }
-
     &.lg {
-      @apply font-bold py-4 px-6 rounded;
+      @apply font-bold text-plus px-button-large-x py-button-large-y;
+    }
+    &.inline {
+      @apply mx-2;
+    }
+    &.space {
+      @apply m-2.5;
+    }
+    &:disabled {
+      @apply cursor-default opacity-25;
     }
   }
 }

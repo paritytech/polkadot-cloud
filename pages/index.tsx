@@ -2,6 +2,7 @@ import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import { ButtonPrimary } from "../lib/buttons/ButtonPrimary";
 
 const Home: NextPage = () => {
   return (
@@ -15,7 +16,10 @@ const Home: NextPage = () => {
         <h1 className="text-2xl font-bold">
           <Link href="/page">Link</Link>
         </h1>
-        <div></div>
+        <div>
+          <ButtonPrimary title="Button Small" sm />
+          <ButtonPrimary title="Button Large" />
+        </div>
       </main>
     </>
   );

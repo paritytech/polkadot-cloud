@@ -6,11 +6,14 @@ module.exports = {
   ],
   theme: {
     extend: {
-      screens: {
-        'side-menu-sticky': { 'max': '1175px' }, // Currently not in use
+      fontSize: {
+        plus: '1.15rem',
       },
-      transitionTimingFunction: {
-        'out-expo': 'cubic-bezier(0.1, 1, 0.2, 1)'
+      spacing: {
+        'button-small-x': "0.9rem",
+        'button-small-y': "0.42rem",
+        'button-large-x': "1.2rem",
+        'button-large-y': "0.52rem",
       }
     },
   },
