@@ -1,28 +1,23 @@
 import React from "react";
-import { StyledComponentInterface } from "../types";
+import { StyledComponentInterface, CommonButtonInterface } from "../types";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { valOr, valEmpty } from "../utils";
 import { motion } from "framer-motion";
 
-export type ButtonPrimaryProps = StyledComponentInterface & {
-  // whether the button is disabled.
-  disabled?: boolean;
-  // include an icon with the button.
-  icon?: IconProp;
-  // transform icon size.
-  iconTransform?: string;
-  // include x spacing around button.
-  inline?: boolean;
-  // onClick handler of button.
-  onClick?: () => void;
-  // small button, large otherwise.
-  sm?: boolean;
-  // button text.
-  title: string;
-  // include a right margin.
-  space?: boolean;
-};
+export type ButtonPrimaryProps = StyledComponentInterface &
+  CommonButtonInterface & {
+    // include an icon with the button.
+    icon?: IconProp;
+    // transform icon size.
+    iconTransform?: string;
+    // onClick handler of button.
+    onClick?: () => void;
+    // large button, small otherwise.
+    lg?: boolean;
+    // button text.
+    text: string;
+  };
 
 /*
  * Primary button style used within the main interface of dashboards.
@@ -31,21 +26,23 @@ export const ButtonPrimary = ({
   disabled,
   icon,
   iconTransform,
-  inline,
   onClick,
-  sm,
-  space,
+  lg,
+  marginLeft,
+  marginRight,
+  marginX,
   style,
-  title,
+  text,
 }: ButtonPrimaryProps) => (
   <motion.button
     whileHover={{ scale: !disabled ? 1.02 : 1 }}
     whileTap={{ scale: !disabled ? 0.98 : 1 }}
     className={
       "btn-primary" +
-      valOr(sm, "sm", "lg") +
-      valEmpty(space, "space") +
-      valEmpty(inline, "inline")
+      valOr(lg, "lg", "sm") +
+      valEmpty(marginRight, "m-right") +
+      valEmpty(marginLeft, "m-left") +
+      valEmpty(marginX, "m-x")
     }
     style={style}
     type="button"
@@ -59,10 +56,10 @@ export const ButtonPrimary = ({
     {icon ? (
       <FontAwesomeIcon
         icon={icon}
-        className={valOr(title, "space", undefined)}
+        className={valOr(text, "space", undefined)}
         transform={valOr(iconTransform, iconTransform, "shrink-1")}
       />
     ) : null}
-    {title ? title : null}
+    {text ? text : null}
   </motion.button>
 );

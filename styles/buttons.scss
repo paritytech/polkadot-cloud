@@ -7,11 +7,14 @@
     &.lg {
       @apply text-plus px-button-x py-button-y;
     }
-    &.inline {
-      @apply mx-2;
+    &.m-left {
+      @apply ml-2.5;
     }
-    &.space {
-      @apply m-2.5;
+    &.m-right {
+      @apply mr-2.5;
+    }
+    &.m-x {
+      @apply mx-2.5;
     }
     &:disabled {
       @apply cursor-default opacity-25;

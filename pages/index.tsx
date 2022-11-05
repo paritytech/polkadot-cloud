@@ -18,10 +18,8 @@ const Home: NextPage = () => {
       <main className="p-4 flex flex-col gap-8">
         <h1 className="text-2xl">Button Primary</h1>
         <div className="theme-polkadot theme-light">
-          <ButtonPrimary title="Button Small" sm />
-        </div>
-        <div className="theme-polkadot theme-light">
-          <ButtonPrimary title="Button Large" />
+          <ButtonPrimary text="Button Small" marginRight />
+          <ButtonPrimary text="Button Large" lg />
         </div>
       </main>
     </div>
