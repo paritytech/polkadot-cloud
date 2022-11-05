@@ -1,18 +1,16 @@
 import React from "react";
-import { StyledComponentInterface, CommonButtonInterface } from "../types";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import {
+  StyledComponentInterface,
+  CommonButtonInterface,
+  ButtonIconsInferface,
+} from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { valOr, valEmpty } from "../utils";
 import { motion } from "framer-motion";
 
 export type ButtonPrimaryProps = StyledComponentInterface &
+  ButtonIconsInferface &
   CommonButtonInterface & {
-    // include an icon with the button.
-    icon?: IconProp;
-    // transform icon size.
-    iconTransform?: string;
-    // onClick handler of button.
-    onClick?: () => void;
     // large button, small otherwise.
     lg?: boolean;
     // button text.
@@ -24,7 +22,8 @@ export type ButtonPrimaryProps = StyledComponentInterface &
  */
 export const ButtonPrimary = ({
   disabled,
-  icon,
+  iconLeft,
+  iconRight,
   iconTransform,
   onClick,
   lg,
@@ -39,6 +38,7 @@ export const ButtonPrimary = ({
     whileTap={{ scale: !disabled ? 0.98 : 1 }}
     className={
       "btn-common " +
+      "btn-icons " +
       "btn-primary" +
       valOr(lg, "lg", "sm") +
       valEmpty(marginRight, "m-right") +
@@ -54,13 +54,20 @@ export const ButtonPrimary = ({
       }
     }}
   >
-    {icon ? (
+    {iconLeft ? (
       <FontAwesomeIcon
-        icon={icon}
-        className={valOr(text, "icon", undefined)}
-        transform={valOr(iconTransform, iconTransform, "shrink-1")}
+        icon={iconLeft}
+        className={valOr(text, "icon-left", undefined)}
+        transform={valOr(iconTransform, iconTransform, undefined)}
       />
     ) : null}
     {text ? text : null}
+    {iconRight ? (
+      <FontAwesomeIcon
+        icon={iconRight}
+        className={valOr(text, "icon-right", undefined)}
+        transform={valOr(iconTransform, iconTransform, undefined)}
+      />
+    ) : null}
   </motion.button>
 );

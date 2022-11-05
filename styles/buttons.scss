@@ -14,6 +14,16 @@
       @apply cursor-default;
     }
   }
+
+  // button icon styles
+  .btn-icons {
+    > .icon-left { 
+      @apply ml-1 mr-2.5;
+    }
+    > .icon-right {
+      @apply ml-2.5 mr-1;
+    }
+  }
     
   // buttons/ButtonPrimary
   .btn-primary {
@@ -42,12 +52,6 @@
       &:disabled {
         @apply bg-color-button-secondary;
       }
-    }
-    > .icon-left {
-      @apply ml-1 mr-2.5;
-    }
-    > .icon-right {
-      @apply ml-2.5 mr-1;
     }
   }
 }

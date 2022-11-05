@@ -1,19 +1,15 @@
 import React from "react";
-import { StyledComponentInterface, CommonButtonInterface } from "../types";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import {
+  StyledComponentInterface,
+  CommonButtonInterface,
+  ButtonIconsInferface,
+} from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { valOr, valEmpty } from "../utils";
 
 export type ButtonSecondaryProps = StyledComponentInterface &
+  ButtonIconsInferface &
   CommonButtonInterface & {
-    // include a left icon with the button.
-    iconLeft?: IconProp;
-    // include a right icon with the button.
-    iconRight?: IconProp;
-    // transform icon size.
-    iconTransform?: string;
-    // onClick handler of button.
-    onClick?: () => void;
     // button text.
     text: string;
   };
@@ -36,7 +32,8 @@ export const ButtonSecondary = ({
   <button
     className={
       "btn-common " +
-      " btn-secondary" +
+      "btn-icons " +
+      "btn-secondary" +
       valEmpty(marginRight, "m-right") +
       valEmpty(marginLeft, "m-left") +
       valEmpty(marginX, "m-x")

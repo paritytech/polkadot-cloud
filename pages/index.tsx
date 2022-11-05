@@ -22,9 +22,15 @@ const Home: NextPage = () => {
         <h2 className="text-xl">Button Primary</h2>
 
         <div className="theme-polkadot theme-light">
-          <ButtonPrimary text="Button" icon={faUser} marginRight />
-          <ButtonPrimary text="Button" icon={faUser} marginRight />
-          <ButtonPrimary text="Button" icon={faUser} lg marginRight />
+          <ButtonPrimary text="Button" iconLeft={faUser} marginRight />
+          <ButtonPrimary text="Button" iconLeft={faUser} marginRight />
+          <ButtonPrimary
+            text="Button"
+            iconLeft={faUser}
+            iconRight={faUser}
+            lg
+            marginRight
+          />
           <ButtonPrimary text="Button" lg disabled />
         </div>
 
