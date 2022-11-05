@@ -2,6 +2,7 @@ import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { ButtonPrimary } from "../lib/buttons/ButtonPrimary";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 /*
  * Sandbox page for component tests and class inclusion.
@@ -18,8 +19,8 @@ const Home: NextPage = () => {
       <main className="p-4 flex flex-col gap-8">
         <h1 className="text-2xl">Button Primary</h1>
         <div className="theme-polkadot theme-light">
-          <ButtonPrimary text="Button Small" marginRight />
-          <ButtonPrimary text="Button Large" lg />
+          <ButtonPrimary text="Button Small" marginRight icon={faUser} />
+          <ButtonPrimary text="Button Large" lg icon={faUser} />
         </div>
       </main>
     </div>

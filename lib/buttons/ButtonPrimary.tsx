@@ -56,7 +56,7 @@ export const ButtonPrimary = ({
     {icon ? (
       <FontAwesomeIcon
         icon={icon}
-        className={valOr(text, "space", undefined)}
+        className={valOr(text, "icon", undefined)}
         transform={valOr(iconTransform, iconTransform, "shrink-1")}
       />
     ) : null}

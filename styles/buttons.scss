@@ -1,4 +1,5 @@
 @layer components {
+  // buttons/ButtonPrimary
   .btn-primary {
     @apply flex-1 flex-row flex-nowrap items-center bg-color-network-primary rounded-3xl text-white transition-opacity font-medium;
     &.sm {
@@ -18,6 +19,9 @@
     }
     &:disabled {
       @apply cursor-default opacity-25;
+    }
+    > .icon {
+      @apply mr-2.5;
     }
   }
 }
