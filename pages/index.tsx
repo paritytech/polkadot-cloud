@@ -45,7 +45,7 @@ const Home: NextPage = () => {
         <div className="theme-polkadot theme-light">
           <ButtonSecondary text="Button" marginRight />
           <ButtonSecondary text="Button" iconLeft={faUser} marginRight />
-          <ButtonSecondary text="Button" iconRight={faUser} marginX />
+          <ButtonSecondary text="Button" iconRight={faUser} marginRight />
           <ButtonSecondary
             text="Button"
             iconLeft={faUser}
@@ -59,7 +59,7 @@ const Home: NextPage = () => {
         <div className="theme-polkadot theme-light">
           <ButtonInvert text="Button" marginRight />
           <ButtonInvert text="Button" iconLeft={faUserReg} marginRight />
-          <ButtonInvert text="Button" iconRight={faUserReg} marginX />
+          <ButtonInvert text="Button" iconRight={faUserReg} marginRight />
           <ButtonInvert
             text="Button"
             iconLeft={faUserReg}
@@ -73,7 +73,11 @@ const Home: NextPage = () => {
         <div className="theme-polkadot theme-light">
           <ButtonInvertRounded text="Button" marginRight />
           <ButtonInvertRounded text="Button" iconLeft={faUserReg} marginRight />
-          <ButtonInvertRounded text="Button" iconRight={faUserReg} marginX />
+          <ButtonInvertRounded
+            text="Button"
+            iconRight={faUserReg}
+            marginRight
+          />
           <ButtonInvertRounded
             text="Button"
             iconLeft={faUserReg}
@@ -91,7 +95,11 @@ const Home: NextPage = () => {
             iconLeft={faArrowAltCircleUp}
             marginRight
           />
-          <ButtonSubmit text="Button" iconRight={faArrowAltCircleUp} marginX />
+          <ButtonSubmit
+            text="Button"
+            iconRight={faArrowAltCircleUp}
+            marginRight
+          />
           <ButtonSubmit
             text="Button"
             iconLeft={faArrowAltCircleUp}
