@@ -51,7 +51,7 @@ export const ButtonSubmit = ({
       <FontAwesomeIcon
         icon={iconLeft}
         className={valOr(text, "icon-left", undefined)}
-        transform={valOr(iconTransform, iconTransform, "grow-4")}
+        transform={valOr(iconTransform, iconTransform, undefined)}
       />
     ) : null}
     {text ? text : null}
@@ -59,7 +59,7 @@ export const ButtonSubmit = ({
       <FontAwesomeIcon
         icon={iconRight}
         className={valOr(text, "icon-right", undefined)}
-        transform={valOr(iconTransform, iconTransform, "grow-4")}
+        transform={valOr(iconTransform, iconTransform, undefined)}
       />
     ) : null}
   </button>
