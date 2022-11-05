@@ -27,6 +27,7 @@
     --color-transparent-dark: theme('colors.networks.westend-transparent');
   }
   .theme-light {
+    --color-text-primary: theme('colors.black');
     --color-network-primary: var(--color-primary-light);
     --color-network-secondary: var(--color-secondary-light);
     --color-network-transparent: var(--color-transparent-light);
@@ -34,6 +35,7 @@
     --color-button-secondary-hover: theme('colors.gray.200');
   }
   .theme-dark {
+    --color-text-primary: theme('colors.gray.50');
     --color-network-primary: var(--color-primary-dark);
     --color-network-secondary: var(--color-secondary-dark);
     --color-network-transparent: var(--color-transparent-dark);

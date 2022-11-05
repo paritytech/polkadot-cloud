@@ -13,6 +13,7 @@ module.exports = {
           'kusama-transparent-dark': 'rgb(102,102,102, 0.05)',
           'westend-transparent': 'rgb(218, 78, 113, 0.05)',
         },
+        'color-text-primary': 'var(--color-text-primary)',
         'color-network-primary': 'var(--color-network-primary)',
         'color-network-secondary': 'var(--color-network-secondary)',
         'color-network-transparent': 'var(--color-network-transparent)',
