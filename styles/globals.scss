@@ -9,6 +9,8 @@
     --color-secondary-dark: theme('colors.pink.400');
     --color-transparent-light: theme('colors.networks.polkadot-transparent');
     --color-transparent-dark: theme('colors.networks.polkadot-transparent');
+    --color-stroke-light: theme('colors.pink.500');
+    --color-stroke-dark: theme('colors.pink.500');
   }
   .theme-kusama {
     --color-primary-light: theme('colors.gray.800');
@@ -17,6 +19,8 @@
     --color-secondary-dark: theme('colors.gray.400');
     --color-transparent-light: theme('colors.networks.kusama-transparent-light');
     --color-transparent-dark: theme('colors.networks.kusama-transparent-dark');
+    --color-stroke-light: theme('colors.gray.600');
+    --color-stroke-dark: theme('colors.gray.300');
   }
   .theme-westend {
     --color-primary-light: theme('colors.rose.500');
@@ -25,12 +29,15 @@
     --color-secondary-dark: theme('colors.orange.500');
     --color-transparent-light: theme('colors.networks.westend-transparent');
     --color-transparent-dark: theme('colors.networks.westend-transparent');
+    --color-stroke-light: theme('colors.rose.500');
+    --color-stroke-dark: theme('colors.rose.500');
   }
   .theme-light {
     --color-text-primary: theme('colors.black');
     --color-network-primary: var(--color-primary-light);
     --color-network-secondary: var(--color-secondary-light);
     --color-network-transparent: var(--color-transparent-light);
+    --color-network-stroke: var(--color-stroke-light);
     --color-button-secondary: theme('colors.gray.100');
     --color-button-secondary-hover: theme('colors.gray.200');
   }
@@ -39,6 +46,7 @@
     --color-network-primary: var(--color-primary-dark);
     --color-network-secondary: var(--color-secondary-dark);
     --color-network-transparent: var(--color-transparent-dark);
+    --color-network-stroke: var(--color-stroke-dark);
     --color-button-secondary: theme('colors.gray.500');
     --color-button-secondary-hover: theme('colors.gray.700');
   }

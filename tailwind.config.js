@@ -17,6 +17,7 @@ module.exports = {
         'color-network-primary': 'var(--color-network-primary)',
         'color-network-secondary': 'var(--color-network-secondary)',
         'color-network-transparent': 'var(--color-network-transparent)',
+        'color-network-stroke': 'var(--color-network-stroke)',
         'color-button-secondary': 'var(--color-button-secondary)',
         'color-button-secondary-hover': 'var(--color-button-secondary-hover)',
       },
@@ -29,7 +30,7 @@ module.exports = {
         'button-secondary-x': "0.9rem",
         'button-secondary-y': "0.35rem",
         'button-invert-x': "0.8rem",
-        'button-invert-y': "0.42rem",
+        'button-invert-y': "0.5rem",
       }
     },
   },
