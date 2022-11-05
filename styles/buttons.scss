@@ -37,9 +37,6 @@
     &:disabled {
       @apply opacity-25;
     }
-    > .icon {
-      @apply mr-2.5;
-    }
   }
     // buttons/ButtonSecondary
   .btn-secondary {

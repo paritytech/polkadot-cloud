@@ -16,7 +16,7 @@ export type ButtonInvertRoundedProps = StyledComponentInterface &
   };
 
 /*
- * Invert button style used in modals.
+ * Invert rounded button style used in modals.
  */
 export const ButtonInvertRounded = ({
   disabled,
