@@ -11,10 +11,10 @@
     --color-transparent-dark: theme('colors.networks.polkadot-transparent');
   }
   .theme-kusama {
-    --color-primary-light: theme('colors.zinc.800');
-    --color-primary-dark: theme('colors.zinc.500');
-    --color-secondary-light: theme('colors.zinc.800');
-    --color-secondary-dark: theme('colors.zinc.400');
+    --color-primary-light: theme('colors.gray.800');
+    --color-primary-dark: theme('colors.gray.500');
+    --color-secondary-light: theme('colors.gray.800');
+    --color-secondary-dark: theme('colors.gray.400');
     --color-transparent-light: theme('colors.networks.kusama-transparent-light');
     --color-transparent-dark: theme('colors.networks.kusama-transparent-dark');
   }
