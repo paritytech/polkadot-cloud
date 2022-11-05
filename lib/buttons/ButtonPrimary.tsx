@@ -56,13 +56,13 @@ export const ButtonPrimary = ({
       }
     }}
   >
-    {icon && (
+    {icon ? (
       <FontAwesomeIcon
         icon={icon}
         className={valOr(title, "space", undefined)}
         transform={valOr(iconTransform, iconTransform, "shrink-1")}
       />
-    )}
-    {title && title}
+    ) : null}
+    {title ? title : null}
   </motion.button>
 );
