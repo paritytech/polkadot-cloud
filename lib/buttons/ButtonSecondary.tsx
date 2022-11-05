@@ -3,9 +3,8 @@ import { StyledComponentInterface, CommonButtonInterface } from "../types";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { valOr, valEmpty } from "../utils";
-import { motion } from "framer-motion";
 
-export type ButtonPrimaryProps = StyledComponentInterface &
+export type ButtonSecondaryProps = StyledComponentInterface &
   CommonButtonInterface & {
     // include an icon with the button.
     icon?: IconProp;
@@ -13,34 +12,28 @@ export type ButtonPrimaryProps = StyledComponentInterface &
     iconTransform?: string;
     // onClick handler of button.
     onClick?: () => void;
-    // large button, small otherwise.
-    lg?: boolean;
     // button text.
     text: string;
   };
 
 /*
- * Primary button style used within the main interface of dashboards.
+ * Secondary button style used within the main interface of dashboards.
  */
-export const ButtonPrimary = ({
+export const ButtonSecondary = ({
   disabled,
   icon,
   iconTransform,
   onClick,
-  lg,
   marginLeft,
   marginRight,
   marginX,
   style,
   text,
-}: ButtonPrimaryProps) => (
-  <motion.button
-    whileHover={{ scale: !disabled ? 1.02 : 1 }}
-    whileTap={{ scale: !disabled ? 0.98 : 1 }}
+}: ButtonSecondaryProps) => (
+  <button
     className={
       "btn-common " +
-      "btn-primary" +
-      valOr(lg, "lg", "sm") +
+      " btn-secondary" +
       valEmpty(marginRight, "m-right") +
       valEmpty(marginLeft, "m-left") +
       valEmpty(marginX, "m-x")
@@ -62,5 +55,5 @@ export const ButtonPrimary = ({
       />
     ) : null}
     {text ? text : null}
-  </motion.button>
+  </button>
 );

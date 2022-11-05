@@ -16,13 +16,17 @@ module.exports = {
         'color-network-primary': 'var(--color-network-primary)',
         'color-network-secondary': 'var(--color-network-secondary)',
         'color-network-transparent': 'var(--color-network-transparent)',
+        'color-button-secondary': 'var(--color-button-secondary)',
+        'color-button-secondary-hover': 'var(--color-button-secondary-hover)',
       },
       fontSize: {
         plus: '1.15rem',
       },
       spacing: {
-        'button-x': "1rem",
-        'button-y': "0.42rem",
+        'button-pri-x': "1rem",
+        'button-pri-y': "0.42rem",
+        'button-sec-x': "0.8rem",
+        'button-sec-y': "0.35rem",
       }
     },
   },

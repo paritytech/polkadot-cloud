@@ -1,14 +1,7 @@
 @layer components {
-  // buttons/ButtonPrimary
-  .btn-primary {
-    @apply flex-1 flex-row flex-nowrap items-center bg-color-network-primary rounded-3xl text-white transition-opacity font-medium;
-    &.sm {
-      @apply text-base px-button-x py-button-y;
-    }
-    &.lg {
-      @apply text-plus px-button-x py-button-y;
-    }
-    &.m-left {
+  // common buton styles
+  .btn-common {
+     &.m-left {
       @apply ml-2.5;
     }
     &.m-right {
@@ -18,7 +11,34 @@
       @apply mx-2.5;
     }
     &:disabled {
-      @apply cursor-default opacity-25;
+      @apply cursor-default;
+    }
+  }
+    
+  // buttons/ButtonPrimary
+  .btn-primary {
+    @apply flex-1 flex-row flex-nowrap items-center rounded-3xl font-medium text-white transition-opacity bg-color-network-primary px-button-pri-x py-button-pri-y;
+    &.sm {
+      @apply text-base;
+    }
+    &.lg {
+      @apply text-plus;
+    }
+    &:disabled {
+      @apply opacity-25;
+    }
+    > .icon {
+      @apply mr-2.5;
+    }
+  }
+    // buttons/ButtonSecondary
+  .btn-secondary {
+    @apply flex-1 flex-row flex-nowrap items-center rounded-3xl font-medium bg-color-button-secondary px-button-sec-x py-button-sec-y;
+    &:disabled {
+      @apply opacity-30;
+    }
+    &:hover {
+      @apply bg-color-button-secondary-hover;
     }
     > .icon {
       @apply mr-2.5;
