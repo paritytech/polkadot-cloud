@@ -23,10 +23,10 @@ module.exports = {
         plus: '1.15rem',
       },
       spacing: {
-        'button-pri-x': "1rem",
-        'button-pri-y': "0.42rem",
-        'button-sec-x': "0.8rem",
-        'button-sec-y': "0.35rem",
+        'button-primary-x': "1rem",
+        'button-primary-y': "0.42rem",
+        'button-secondary-x': "0.9rem",
+        'button-secondary-y': "0.35rem",
       }
     },
   },

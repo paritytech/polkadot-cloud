@@ -17,7 +17,7 @@
     
   // buttons/ButtonPrimary
   .btn-primary {
-    @apply flex-1 flex-row flex-nowrap items-center rounded-3xl font-medium text-white transition-opacity bg-color-network-primary px-button-pri-x py-button-pri-y;
+    @apply flex-1 flex-row flex-nowrap items-center rounded-3xl font-medium text-white transition-opacity bg-color-network-primary px-button-primary-x py-button-primary-y;
     &.sm {
       @apply text-base;
     }
@@ -33,15 +33,21 @@
   }
     // buttons/ButtonSecondary
   .btn-secondary {
-    @apply flex-1 flex-row flex-nowrap items-center rounded-3xl font-medium bg-color-button-secondary px-button-sec-x py-button-sec-y transition-colors duration-100;
+    @apply flex-1 flex-row flex-nowrap items-center rounded-3xl font-medium bg-color-button-secondary px-button-secondary-x py-button-secondary-y transition-colors duration-100;
     &:disabled {
       @apply opacity-30;
     }
     &:hover {
       @apply bg-color-button-secondary-hover;
+      &:disabled {
+        @apply bg-color-button-secondary;
+      }
     }
-    > .icon {
-      @apply mr-2.5;
+    > .icon-left {
+      @apply ml-1 mr-2.5;
+    }
+    > .icon-right {
+      @apply ml-2.5 mr-1;
     }
   }
 }

@@ -20,14 +20,22 @@ const Home: NextPage = () => {
       <main className="p-4 flex flex-col gap-8">
         <h1 className="text-2xl">Button Primary</h1>
         <div className="theme-polkadot theme-light">
-          <ButtonPrimary text="Small" icon={faUser} />
-          <ButtonPrimary text="Disabled" marginX disabled icon={faUser} />
-          <ButtonPrimary text="Large" lg icon={faUser} />
+          <ButtonPrimary text="Button" icon={faUser} marginRight />
+          <ButtonPrimary text="Button" icon={faUser} marginRight />
+          <ButtonPrimary text="Button" icon={faUser} lg marginRight />
+          <ButtonPrimary text="Button" lg disabled />
         </div>
         <div className="theme-polkadot theme-light">
-          <ButtonSecondary text="Seconary " marginRight icon={faUser} />
-          <ButtonSecondary text="Secondary" />
-          <ButtonSecondary text="Secondary" disabled />
+          <ButtonSecondary text="Button" marginRight />
+          <ButtonSecondary text="Button" iconLeft={faUser} marginRight />
+          <ButtonSecondary text="Button" iconRight={faUser} marginX />
+          <ButtonSecondary
+            text="Two Icons "
+            iconLeft={faUser}
+            iconRight={faUser}
+            marginRight
+          />
+          <ButtonSecondary text="Button" disabled />
         </div>
       </main>
     </div>

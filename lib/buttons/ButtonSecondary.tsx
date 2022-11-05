@@ -6,8 +6,10 @@ import { valOr, valEmpty } from "../utils";
 
 export type ButtonSecondaryProps = StyledComponentInterface &
   CommonButtonInterface & {
-    // include an icon with the button.
-    icon?: IconProp;
+    // include a left icon with the button.
+    iconLeft?: IconProp;
+    // include a right icon with the button.
+    iconRight?: IconProp;
     // transform icon size.
     iconTransform?: string;
     // onClick handler of button.
@@ -21,7 +23,8 @@ export type ButtonSecondaryProps = StyledComponentInterface &
  */
 export const ButtonSecondary = ({
   disabled,
-  icon,
+  iconLeft,
+  iconRight,
   iconTransform,
   onClick,
   marginLeft,
@@ -47,13 +50,20 @@ export const ButtonSecondary = ({
       }
     }}
   >
-    {icon ? (
+    {iconLeft ? (
       <FontAwesomeIcon
-        icon={icon}
-        className={valOr(text, "icon", undefined)}
-        transform={valOr(iconTransform, iconTransform, "shrink-1")}
+        icon={iconLeft}
+        className={valOr(text, "icon-left", undefined)}
+        transform={valOr(iconTransform, iconTransform, undefined)}
       />
     ) : null}
     {text ? text : null}
+    {iconRight ? (
+      <FontAwesomeIcon
+        icon={iconRight}
+        className={valOr(text, "icon-right", undefined)}
+        transform={valOr(iconTransform, iconTransform, undefined)}
+      />
+    ) : null}
   </button>
 );
