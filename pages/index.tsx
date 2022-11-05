@@ -18,13 +18,17 @@ const Home: NextPage = () => {
         <meta name="description" content="Polkadot Dashboard UI" />
       </Head>
       <main className="p-4 flex flex-col gap-8">
-        <h1 className="text-2xl">Button Primary</h1>
+        <h1 className="text-3xl">Components</h1>
+        <h2 className="text-xl">Button Primary</h2>
+
         <div className="theme-polkadot theme-light">
           <ButtonPrimary text="Button" icon={faUser} marginRight />
           <ButtonPrimary text="Button" icon={faUser} marginRight />
           <ButtonPrimary text="Button" icon={faUser} lg marginRight />
           <ButtonPrimary text="Button" lg disabled />
         </div>
+
+        <h2 className="text-xl">Button Secondary</h2>
         <div className="theme-polkadot theme-light">
           <ButtonSecondary text="Button" marginRight />
           <ButtonSecondary text="Button" iconLeft={faUser} marginRight />
