@@ -27,6 +27,8 @@ module.exports = {
         'button-primary-y': "0.42rem",
         'button-secondary-x': "0.9rem",
         'button-secondary-y': "0.35rem",
+        'button-invert-x': "0.8rem",
+        'button-invert-y': "0.42rem",
       }
     },
   },

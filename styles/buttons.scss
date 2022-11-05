@@ -54,7 +54,7 @@
   
   // buttons/ButtonInvertPrimary
   .btn-invert {
-    @apply flex-1 flex-row flex-nowrap items-center rounded-xl font-medium border border-solid px-button-primary-x py-button-primary-y border-color-network-primary text-color-network-primary;
+    @apply flex-1 flex-row flex-nowrap items-center rounded-xl font-medium border border-solid px-button-invert-x py-button-invert-y border-color-network-primary text-color-network-primary;
     &:disabled {
       @apply opacity-30;
     }
@@ -65,6 +65,20 @@
     @apply flex-1 flex-row flex-nowrap items-center rounded-3xl font-medium border border-solid px-button-primary-x py-button-primary-y border-color-network-primary text-color-network-primary;
      &:disabled {
       @apply opacity-30;
+    }
+  }
+
+  // buttons/ButtonSubmit
+  .btn-submit {
+    @apply flex-1 flex-row flex-nowrap items-center rounded-xl font-medium text-white transition-opacity bg-color-network-primary px-button-invert-x py-button-invert-y;
+    &.sm {
+      @apply text-base;
+    }
+    &.lg {
+      @apply text-plus;
+    }
+    &:disabled {
+      @apply opacity-25;
     }
   }
 }

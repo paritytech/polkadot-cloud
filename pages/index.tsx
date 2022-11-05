@@ -5,8 +5,12 @@ import { ButtonPrimary } from "../lib/buttons/ButtonPrimary";
 import { ButtonSecondary } from "../lib/buttons/ButtonSecondary";
 import { ButtonInvert } from "../lib/buttons/ButtonInvert";
 import { ButtonInvertRounded } from "../lib/buttons/ButtonInvertRounded";
+import { ButtonSubmit } from "../lib/buttons/ButtonSubmit";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { faUser as faUserReg } from "@fortawesome/free-regular-svg-icons";
+import {
+  faUser as faUserReg,
+  faArrowAltCircleUp,
+} from "@fortawesome/free-regular-svg-icons";
 
 /*
  * Sandbox page for component tests and class inclusion.
@@ -77,6 +81,24 @@ const Home: NextPage = () => {
             marginRight
           />
           <ButtonInvertRounded text="Button" disabled />
+        </div>
+
+        <h2 className="text-xl">Button Submit</h2>
+        <div className="theme-polkadot theme-light">
+          <ButtonSubmit text="Button" marginRight />
+          <ButtonSubmit
+            text="Button"
+            iconLeft={faArrowAltCircleUp}
+            marginRight
+          />
+          <ButtonSubmit text="Button" iconRight={faArrowAltCircleUp} marginX />
+          <ButtonSubmit
+            text="Button"
+            iconLeft={faArrowAltCircleUp}
+            iconRight={faArrowAltCircleUp}
+            marginRight
+          />
+          <ButtonSubmit text="Button" disabled />
         </div>
       </main>
     </div>
