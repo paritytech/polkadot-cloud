@@ -33,7 +33,7 @@
   }
     // buttons/ButtonSecondary
   .btn-secondary {
-    @apply flex-1 flex-row flex-nowrap items-center rounded-3xl font-medium bg-color-button-secondary px-button-sec-x py-button-sec-y;
+    @apply flex-1 flex-row flex-nowrap items-center rounded-3xl font-medium bg-color-button-secondary px-button-sec-x py-button-sec-y transition-colors duration-100;
     &:disabled {
       @apply opacity-30;
     }
