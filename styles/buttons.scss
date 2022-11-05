@@ -54,4 +54,20 @@
       }
     }
   }
+  
+  // buttons/ButtonInvertPrimary
+  .btn-invert {
+    @apply flex-1 flex-row flex-nowrap items-center rounded-xl font-medium border border-solid px-button-primary-x py-button-primary-y border-color-network-primary text-color-network-primary;
+    &:disabled {
+      @apply opacity-30;
+    }
+  }
+
+  // buttons/ButtonInvertRounded
+  .btn-invert-rounded {
+    @apply flex-1 flex-row flex-nowrap items-center rounded-3xl font-medium border border-solid px-button-primary-x py-button-primary-y border-color-network-primary text-color-network-primary;
+     &:disabled {
+      @apply opacity-30;
+    }
+  }
 }

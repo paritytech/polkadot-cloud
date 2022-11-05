@@ -3,7 +3,10 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { ButtonPrimary } from "../lib/buttons/ButtonPrimary";
 import { ButtonSecondary } from "../lib/buttons/ButtonSecondary";
+import { ButtonInvert } from "../lib/buttons/ButtonInvert";
+import { ButtonInvertRounded } from "../lib/buttons/ButtonInvertRounded";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faUser as faUserReg } from "@fortawesome/free-regular-svg-icons";
 
 /*
  * Sandbox page for component tests and class inclusion.
@@ -46,6 +49,34 @@ const Home: NextPage = () => {
             marginRight
           />
           <ButtonSecondary text="Button" disabled />
+        </div>
+
+        <h2 className="text-xl">Button Invert</h2>
+        <div className="theme-polkadot theme-light">
+          <ButtonInvert text="Button" marginRight />
+          <ButtonInvert text="Button" iconLeft={faUserReg} marginRight />
+          <ButtonInvert text="Button" iconRight={faUserReg} marginX />
+          <ButtonInvert
+            text="Button"
+            iconLeft={faUserReg}
+            iconRight={faUserReg}
+            marginRight
+          />
+          <ButtonInvert text="Button" disabled />
+        </div>
+
+        <h2 className="text-xl">Button Invert Rounded</h2>
+        <div className="theme-polkadot theme-light">
+          <ButtonInvertRounded text="Button" marginRight />
+          <ButtonInvertRounded text="Button" iconLeft={faUserReg} marginRight />
+          <ButtonInvertRounded text="Button" iconRight={faUserReg} marginX />
+          <ButtonInvertRounded
+            text="Button"
+            iconLeft={faUserReg}
+            iconRight={faUserReg}
+            marginRight
+          />
+          <ButtonInvertRounded text="Button" disabled />
         </div>
       </main>
     </div>
