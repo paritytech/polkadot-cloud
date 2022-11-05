@@ -30,7 +30,7 @@ const Home: NextPage = () => {
           <ButtonSecondary text="Button" iconLeft={faUser} marginRight />
           <ButtonSecondary text="Button" iconRight={faUser} marginX />
           <ButtonSecondary
-            text="Two Icons "
+            text="Button"
             iconLeft={faUser}
             iconRight={faUser}
             marginRight
