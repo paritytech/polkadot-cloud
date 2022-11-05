@@ -15,7 +15,7 @@ export type ButtonSubmitProps = StyledComponentInterface &
   };
 
 /*
- * Primary button style used within the main interface of dashboards.
+ * Submit button style used within modals to submit transactions.
  */
 export const ButtonSubmit = ({
   disabled,
