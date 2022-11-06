@@ -31,6 +31,7 @@ export const ButtonSecondary = ({
 }: ButtonSecondaryProps) => (
   <button
     className={
+      "btn-layout " +
       "btn-common " +
       "btn-icons " +
       "btn-secondary" +

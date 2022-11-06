@@ -1,4 +1,8 @@
 @layer components {
+  // button layout styles
+  .btn-layout {
+      @apply flex-1 flex-row flex-nowrap items-center font-medium
+  }
   // common buton styles
   .btn-common {
      &.m-left {
@@ -27,7 +31,7 @@
     
   // buttons/ButtonPrimary
   .btn-primary {
-    @apply flex-1 flex-row flex-nowrap items-center rounded-3xl font-medium text-white transition-opacity bg-color-network-primary px-button-primary-x py-button-primary-y;
+    @apply rounded-3xl text-white transition-opacity bg-color-network-primary px-button-primary-x py-button-primary-y;
     &.sm {
       @apply text-base;
     }
@@ -40,7 +44,7 @@
   }
     // buttons/ButtonSecondary
   .btn-secondary {
-    @apply flex-1 flex-row flex-nowrap items-center rounded-3xl font-medium bg-color-button-secondary px-button-secondary-x py-button-secondary-y transition-colors duration-100;
+    @apply rounded-3xl bg-color-button-secondary px-button-secondary-x py-button-secondary-y transition-colors duration-100;
     &:disabled {
       @apply opacity-30;
     }
@@ -54,15 +58,15 @@
   
   // buttons/ButtonInvert
   .btn-invert {
-    @apply flex-1 flex-row flex-nowrap items-center rounded-xl font-medium border border-solid px-button-invert-x py-button-invert-y border-color-network-stroke text-color-network-stroke;
+    @apply rounded-xl border border-solid px-button-invert-x py-button-invert-y border-color-network-stroke text-color-network-stroke;
     &:disabled {
-      @apply opacity-30;
+      @apply opacity-30; 
     }
   }
 
   // buttons/ButtonInvertRounded
   .btn-invert-rounded {
-    @apply flex-1 flex-row flex-nowrap items-center rounded-3xl font-medium border border-solid px-button-primary-x py-button-primary-y border-color-network-stroke text-color-network-stroke;
+    @apply rounded-3xl border border-solid px-button-primary-x py-button-primary-y border-color-network-stroke text-color-network-stroke;
      &:disabled {
       @apply opacity-30;
     }
@@ -70,7 +74,7 @@
 
   // buttons/ButtonSubmit
   .btn-submit {
-    @apply flex-1 flex-row flex-nowrap items-center rounded-xl font-medium text-white transition-opacity bg-color-network-primary px-button-invert-x py-button-invert-y;
+    @apply rounded-xl text-white transition-opacity bg-color-network-primary px-button-invert-x py-button-invert-y;
     &.sm {
       @apply text-base;
     }

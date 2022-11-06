@@ -31,6 +31,7 @@ export const ButtonSubmit = ({
 }: ButtonSubmitProps) => (
   <button
     className={
+      "btn-layout " +
       "btn-common " +
       "btn-icons " +
       "btn-submit" +

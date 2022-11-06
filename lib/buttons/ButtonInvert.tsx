@@ -31,6 +31,7 @@ export const ButtonInvert = ({
 }: ButtonInvertProps) => (
   <button
     className={
+      "btn-layout " +
       "btn-common " +
       "btn-icons " +
       "btn-invert" +
