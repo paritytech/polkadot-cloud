@@ -6,6 +6,7 @@ import {
 } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { valOr, valEmpty } from "../utils";
+import { motion } from "framer-motion";
 
 export type ButtonSubmitProps = StyledComponentInterface &
   ButtonIconsInferface &
@@ -29,7 +30,9 @@ export const ButtonSubmit = ({
   style,
   text,
 }: ButtonSubmitProps) => (
-  <button
+  <motion.button
+    whileHover={{ scale: !disabled ? 1.02 : 1 }}
+    whileTap={{ scale: !disabled ? 0.98 : 1 }}
     className={
       "btn-layout " +
       "btn-common " +
@@ -63,5 +66,5 @@ export const ButtonSubmit = ({
         transform={valOr(iconTransform, iconTransform, undefined)}
       />
     ) : null}
-  </button>
+  </motion.button>
 );
