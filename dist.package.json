@@ -8,6 +8,9 @@
     "./"
   ],
   "peerDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "framer-motion": "^7.6.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
