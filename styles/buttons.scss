@@ -31,12 +31,12 @@
     
   // buttons/ButtonPrimary
   .btn-primary {
-    @apply rounded-3xl text-white transition-opacity bg-color-network-primary px-button-primary-x py-button-primary-y;
+    @apply rounded-3xl text-white transition-opacity bg-color-network-primary;
     &.sm {
-      @apply text-base;
+      @apply text-base px-button-small-x py-button-small-y;
     }
     &.lg {
-      @apply text-plus;
+      @apply text-plus px-button-large-x py-button-large-y;
     }
     &:disabled {
       @apply opacity-25;
@@ -44,7 +44,7 @@
   }
     // buttons/ButtonSecondary
   .btn-secondary {
-    @apply rounded-3xl bg-color-button-secondary px-button-secondary-x py-button-secondary-y transition-colors duration-100;
+    @apply rounded-3xl bg-color-button-secondary px-button-small-x py-button-small-y transition-colors duration-100;
     &:disabled {
       @apply opacity-30;
     }
@@ -66,7 +66,7 @@
 
   // buttons/ButtonInvertRounded
   .btn-invert-rounded {
-    @apply rounded-3xl border border-solid px-button-primary-x py-button-primary-y border-color-network-stroke text-color-network-stroke;
+    @apply rounded-3xl border border-solid px-button-large-x py-button-large-y border-color-network-stroke text-color-network-stroke;
      &:disabled {
       @apply opacity-30;
     }

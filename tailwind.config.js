@@ -13,11 +13,15 @@ module.exports = {
           'kusama-transparent-dark': 'rgb(102,102,102, 0.05)',
           'westend-transparent': 'rgb(218, 78, 113, 0.05)',
         },
+        // text colors
         'color-text-primary': 'var(--color-text-primary)',
+
+        // network colors
         'color-network-primary': 'var(--color-network-primary)',
         'color-network-secondary': 'var(--color-network-secondary)',
         'color-network-transparent': 'var(--color-network-transparent)',
         'color-network-stroke': 'var(--color-network-stroke)',
+        // button colors
         'color-button-secondary': 'var(--color-button-secondary)',
         'color-button-secondary-hover': 'var(--color-button-secondary-hover)',
       },
@@ -25,10 +29,15 @@ module.exports = {
         plus: '1.15rem',
       },
       spacing: {
-        'button-primary-x': "1rem",
-        'button-primary-y': "0.42rem",
-        'button-secondary-x': "0.9rem",
-        'button-secondary-y': "0.35rem",
+        // small button spacing
+        'button-small-x': "0.9rem",
+        'button-small-y': "0.32rem",
+
+        // large button spacing
+        'button-large-x': "0.9rem",
+        'button-large-y': "0.42rem",
+
+        // invert button spacing
         'button-invert-x': "0.8rem",
         'button-invert-y': "0.5rem",
       }
