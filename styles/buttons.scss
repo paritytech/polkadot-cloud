@@ -22,10 +22,10 @@
   // button icon styles
   .btn-icons {
     > .icon-left { 
-      @apply ml-1 mr-2.5;
+      @apply ml-0.5 mr-2.5;
     }
     > .icon-right {
-      @apply ml-2.5 mr-1;
+      @apply ml-2.5 mr-0.5;
     }
   }
     
