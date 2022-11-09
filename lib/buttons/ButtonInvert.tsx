@@ -20,6 +20,7 @@ export type ButtonInvertProps = StyledComponentInterface &
  */
 export const ButtonInvert = ({
   disabled,
+  grow,
   iconLeft,
   iconRight,
   iconTransform,
@@ -38,6 +39,7 @@ export const ButtonInvert = ({
       "btn-common " +
       "btn-icons " +
       "btn-invert" +
+      valEmpty(grow, "grow") +
       valEmpty(marginRight, "m-right") +
       valEmpty(marginLeft, "m-left") +
       valEmpty(marginX, "m-x")

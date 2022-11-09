@@ -22,6 +22,7 @@ export type ButtonPrimaryProps = StyledComponentInterface &
  */
 export const ButtonPrimary = ({
   disabled,
+  grow,
   iconLeft,
   iconRight,
   iconTransform,
@@ -42,6 +43,7 @@ export const ButtonPrimary = ({
       "btn-icons " +
       "btn-primary" +
       valOr(lg, "lg", "sm") +
+      valEmpty(grow, "grow") +
       valEmpty(marginRight, "m-right") +
       valEmpty(marginLeft, "m-left") +
       valEmpty(marginX, "m-x")

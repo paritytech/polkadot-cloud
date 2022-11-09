@@ -20,6 +20,7 @@ export type ButtonSubmitProps = StyledComponentInterface &
  */
 export const ButtonSubmit = ({
   disabled,
+  grow,
   iconLeft,
   iconRight,
   iconTransform,
@@ -38,6 +39,7 @@ export const ButtonSubmit = ({
       "btn-common " +
       "btn-icons " +
       "btn-submit" +
+      valEmpty(grow, "grow") +
       valEmpty(marginRight, "m-right") +
       valEmpty(marginLeft, "m-left") +
       valEmpty(marginX, "m-x")

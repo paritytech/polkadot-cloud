@@ -22,6 +22,8 @@ export interface CommonButtonInterface {
   marginRight?: boolean;
   // include x margin around button.
   marginX?: boolean;
+  // enable flex grow.
+  grow?: boolean;
 }
 
 // Icon support for buttons

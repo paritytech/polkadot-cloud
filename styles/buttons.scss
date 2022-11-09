@@ -1,7 +1,10 @@
 @layer components {
   // button layout styles
   .btn-layout {
-      @apply flex-1 flex-row flex-nowrap items-center font-medium
+      @apply flex-initial flex-row flex-nowrap items-center font-medium;
+      &.grow {
+        @apply flex-1;
+      }
   }
   // common buton styles
   .btn-common {

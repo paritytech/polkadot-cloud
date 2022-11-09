@@ -19,6 +19,7 @@ export type ButtonSecondaryProps = StyledComponentInterface &
  */
 export const ButtonSecondary = ({
   disabled,
+  grow,
   iconLeft,
   iconRight,
   iconTransform,
@@ -35,6 +36,7 @@ export const ButtonSecondary = ({
       "btn-common " +
       "btn-icons " +
       "btn-secondary" +
+      valEmpty(grow, "grow") +
       valEmpty(marginRight, "m-right") +
       valEmpty(marginLeft, "m-left") +
       valEmpty(marginX, "m-x")
