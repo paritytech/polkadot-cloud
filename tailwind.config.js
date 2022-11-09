@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         networks: {
+          'polkadot-primary': 'rgb(211, 48, 121)',
           'polkadot-transparent': 'rgb(211, 48, 121, 0.05)',
           'kusama-transparent-light': 'rgb(51,51,51,0.05)',
           'kusama-transparent-dark': 'rgb(102,102,102, 0.05)',
