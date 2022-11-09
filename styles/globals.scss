@@ -23,14 +23,14 @@
     --color-stroke-dark: theme('colors.gray.300');
   }
   .theme-westend {
-    --color-primary-light: theme('colors.rose.500');
-    --color-primary-dark: theme('colors.rose.500');
+    --color-primary-light: theme('colors.networks.westend-primary');
+    --color-primary-dark: theme('colors.networks.westend-primary');
     --color-secondary-light: theme('colors.orange.500');
     --color-secondary-dark: theme('colors.orange.500');
     --color-transparent-light: theme('colors.networks.westend-transparent');
     --color-transparent-dark: theme('colors.networks.westend-transparent');
-    --color-stroke-light: theme('colors.rose.500');
-    --color-stroke-dark: theme('colors.rose.500');
+    --color-stroke-light: theme('colors.networks.westend-primary');
+    --color-stroke-dark: theme('colors.networks.westend-primary');
   }
   .theme-light {
     --color-text-primary: theme('colors.black');
