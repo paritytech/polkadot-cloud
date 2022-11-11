@@ -47,7 +47,13 @@
   }
     // buttons/ButtonSecondary
   .btn-secondary {
-    @apply rounded-3xl bg-color-button-secondary px-button-small-x py-button-small-y transition-colors duration-100;
+    @apply rounded-3xl bg-color-button-secondary transition-colors duration-100;
+    &.sm {
+      @apply text-base px-button-small-x py-button-small-y;
+    }
+    &.lg {
+      @apply text-plus px-button-large-x py-button-large-y;
+    }
     &:disabled {
       @apply opacity-30;
     }

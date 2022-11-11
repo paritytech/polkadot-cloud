@@ -50,8 +50,6 @@ const Home: NextPage = () => {
           <h2 className="text-xl">Button Primary</h2>
 
           <div>
-            <input type="text" value="test" />
-
             <ButtonPrimary text="Button" iconLeft={faUser} marginRight />
             <ButtonPrimary text="Button" iconLeft={faUser} marginRight />
             <ButtonPrimary
@@ -70,12 +68,13 @@ const Home: NextPage = () => {
             <ButtonSecondary text="Button" iconLeft={faUser} marginRight />
             <ButtonSecondary text="Button" iconRight={faUser} marginRight />
             <ButtonSecondary
+              lg
               text="Button"
               iconLeft={faUser}
               iconRight={faUser}
               marginRight
             />
-            <ButtonSecondary text="Button" disabled />
+            <ButtonSecondary lg text="Button" disabled />
           </div>
 
           <h2 className="text-xl">Button Invert</h2>

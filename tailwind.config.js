@@ -15,6 +15,15 @@ module.exports = {
           'westend-primary': '#da4e71',
           'westend-transparent': 'rgb(218, 78, 113, 0.05)',
         },
+        buttons: {
+          secondary: {
+            'active-light': '#eeecec',
+            'active-dark': '#333',
+            'hover-light': '#e8e6e6',
+            'hover-dark': '#222',
+          }
+        },
+
         // text colors
         'color-text-primary': 'var(--color-text-primary)',
 

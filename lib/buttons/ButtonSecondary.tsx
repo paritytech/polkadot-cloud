@@ -10,6 +10,8 @@ import { valOr, valEmpty } from "../utils";
 export type ButtonSecondaryProps = StyledComponentInterface &
   ButtonIconsInferface &
   CommonButtonInterface & {
+    // large button, small otherwise.
+    lg?: boolean;
     // button text.
     text: string;
   };
@@ -23,6 +25,7 @@ export const ButtonSecondary = ({
   iconLeft,
   iconRight,
   iconTransform,
+  lg,
   onClick,
   marginLeft,
   marginRight,
@@ -36,6 +39,7 @@ export const ButtonSecondary = ({
       "btn-common " +
       "btn-icons " +
       "btn-secondary" +
+      valOr(lg, "lg", "sm") +
       valEmpty(grow, "grow") +
       valEmpty(marginRight, "m-right") +
       valEmpty(marginLeft, "m-left") +

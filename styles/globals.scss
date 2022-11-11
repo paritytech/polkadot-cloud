@@ -35,8 +35,8 @@
     --color-network-secondary: var(--color-secondary-light);
     --color-network-transparent: var(--color-transparent-light);
     --color-network-stroke: var(--color-stroke-light);
-    --color-button-secondary: theme('colors.gray.100');
-    --color-button-secondary-hover: theme('colors.gray.200');
+    --color-button-secondary: theme('colors.buttons.secondary.active-light');
+    --color-button-secondary-hover: theme('colors.buttons.secondary.hover-light');
   }
   .theme-dark {
     --color-text-primary: theme('colors.gray.50');
@@ -44,8 +44,8 @@
     --color-network-secondary: var(--color-secondary-dark);
     --color-network-transparent: var(--color-transparent-dark);
     --color-network-stroke: var(--color-stroke-dark);
-    --color-button-secondary: theme('colors.gray.500');
-    --color-button-secondary-hover: theme('colors.gray.700');
+    --color-button-secondary: theme('colors.buttons.secondary.active-dark');;
+    --color-button-secondary-hover: theme('colors.buttons.secondary.hover-dark');;
   }
   :root {
     [type='text']:focus, 
