@@ -50,6 +50,8 @@ const Home: NextPage = () => {
           <h2 className="text-xl">Button Primary</h2>
 
           <div>
+            <input type="text" value="test" />
+
             <ButtonPrimary text="Button" iconLeft={faUser} marginRight />
             <ButtonPrimary text="Button" iconLeft={faUser} marginRight />
             <ButtonPrimary

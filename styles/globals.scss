@@ -1,7 +1,4 @@
 @layer base {
-  :root {
-    --my-var: 1; // Not in use
-  }
   .theme-polkadot {
     --color-primary-light: theme('colors.networks.polkadot-primary');
     --color-primary-dark: theme('colors.networks.polkadot-primary');
@@ -49,5 +46,26 @@
     --color-network-stroke: var(--color-stroke-dark);
     --color-button-secondary: theme('colors.gray.500');
     --color-button-secondary-hover: theme('colors.gray.700');
+  }
+  :root {
+    [type='text']:focus, 
+    [type='email']:focus, 
+    [type='url']:focus, 
+    [type='password']:focus, 
+    [type='number']:focus, 
+    [type='date']:focus, 
+    [type='datetime-local']:focus, 
+    [type='month']:focus, 
+    [type='search']:focus, 
+    [type='tel']:focus, 
+    [type='time']:focus, 
+    [type='week']:focus, 
+    [multiple]:focus, 
+    textarea:focus, 
+    select:focus, 
+    input:focus,
+    input {
+      @apply ring-0 ring-offset-0 border-transparent;
+    }
   }
 }
