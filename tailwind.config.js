@@ -42,11 +42,11 @@ module.exports = {
       },
       spacing: {
         // small button spacing
-        'button-small-x': "0.9rem",
+        'button-small-x': "1rem",
         'button-small-y': "0.32rem",
 
         // large button spacing
-        'button-large-x': "0.9rem",
+        'button-large-x': "1rem",
         'button-large-y': "0.42rem",
 
         // invert button spacing
