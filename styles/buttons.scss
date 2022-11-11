@@ -45,6 +45,7 @@
       @apply opacity-25;
     }
   }
+  
     // buttons/ButtonSecondary
   .btn-secondary {
     @apply rounded-3xl bg-color-button-secondary transition-colors duration-100;
@@ -67,7 +68,7 @@
   
   // buttons/ButtonInvert
   .btn-invert {
-    @apply rounded-xl border border-solid px-button-invert-x py-button-invert-y border-color-network-stroke text-color-network-stroke;
+    @apply rounded-xl border border-solid px-button-invert-x py-button-invert-y border-color-network-stroke text-color-network-stroke text-base;
     &:disabled {
       @apply opacity-30; 
     }
