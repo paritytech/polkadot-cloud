@@ -48,7 +48,7 @@
   
     // buttons/ButtonSecondary
   .btn-secondary {
-    @apply rounded-3xl bg-color-button-secondary transition-colors duration-100;
+    @apply rounded-3xl bg-color-button-secondary transition-colors duration-100 text-color-text-primary;
     &.sm {
       @apply text-base px-button-small-x py-button-small-y;
     }
