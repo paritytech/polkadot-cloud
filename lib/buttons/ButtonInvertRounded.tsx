@@ -6,11 +6,12 @@ import {
 } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { valOr, valEmpty } from "../utils";
-import { motion } from "framer-motion";
 
 export type ButtonInvertRoundedProps = StyledComponentInterface &
   ButtonIconsInferface &
   CommonButtonInterface & {
+    // large button, small otherwise.
+    lg?: boolean;
     // button text.
     text: string;
   };
@@ -24,6 +25,7 @@ export const ButtonInvertRounded = ({
   iconLeft,
   iconRight,
   iconTransform,
+  lg,
   onClick,
   marginLeft,
   marginRight,
@@ -31,15 +33,14 @@ export const ButtonInvertRounded = ({
   style,
   text,
 }: ButtonInvertRoundedProps) => (
-  <motion.button
-    whileHover={{ scale: !disabled ? 1.02 : 1 }}
-    whileTap={{ scale: !disabled ? 0.98 : 1 }}
+  <button
     className={
       "btn-layout " +
       "btn-common " +
       "btn-icons " +
       "btn-invert-rounded" +
       valEmpty(grow, "grow") +
+      valOr(lg, "lg", "sm") +
       valEmpty(marginRight, "m-right") +
       valEmpty(marginLeft, "m-left") +
       valEmpty(marginX, "m-x")
@@ -68,5 +69,5 @@ export const ButtonInvertRounded = ({
         transform={valOr(iconTransform, iconTransform, undefined)}
       />
     ) : null}
-  </motion.button>
+  </button>
 );

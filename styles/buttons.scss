@@ -75,7 +75,13 @@
 
   // buttons/ButtonInvertRounded
   .btn-invert-rounded {
-    @apply rounded-3xl border border-solid px-button-large-x py-button-large-y border-color-network-stroke text-color-network-stroke;
+    @apply rounded-3xl border border-solid border-color-network-stroke text-color-network-stroke;
+    &.sm {
+      @apply text-base px-button-small-x py-button-small-y;
+    }
+    &.lg {
+      @apply text-plus px-button-large-x py-button-large-y;
+    }
      &:disabled {
       @apply opacity-30;
     }

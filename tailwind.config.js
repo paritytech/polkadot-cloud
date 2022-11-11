@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     './lib/**/*.{js,jsx,ts,tsx}',
@@ -50,7 +51,7 @@ module.exports = {
 
         // invert button spacing
         'button-invert-x': "0.8rem",
-        'button-invert-y': "0.5rem",
+        'button-invert-y': "0.4rem",
       }
     },
   },
