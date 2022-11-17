@@ -134,6 +134,15 @@ const Home: NextPage = () => {
             />
             <ButtonSubmit text="Button" disabled />
           </div>
+          <div>
+            <input
+              type="text"
+              defaultValue="Input"
+              onChange={() => {
+                /* empty */
+              }}
+            />
+          </div>
         </main>
       </div>
     </>

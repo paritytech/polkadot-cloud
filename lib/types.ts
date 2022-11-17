@@ -1,4 +1,4 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { IconDefinition, IconProp } from "@fortawesome/fontawesome-svg-core";
 import React from "react";
 
 // A generic type to handle React components. We assume the component may have
@@ -29,9 +29,9 @@ export interface CommonButtonInterface {
 // Icon support for buttons
 export interface ButtonIconsInferface {
   // include a left icon with the button.
-  iconLeft?: IconProp;
+  iconLeft?: IconProp | IconDefinition;
   // include a right icon with the button.
-  iconRight?: IconProp;
+  iconRight?: IconProp | IconDefinition;
   // transform icon size.
   iconTransform?: string;
 }
