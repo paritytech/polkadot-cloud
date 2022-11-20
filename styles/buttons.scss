@@ -34,7 +34,7 @@
     
   // buttons/ButtonPrimary
   .btn-primary {
-    @apply rounded-3xl text-white transition-opacity bg-color-network-primary;
+    @apply rounded-3xl text-white transition-opacity bg-color-network-primary border border-solid border-color-network-primary;
     &.sm {
       @apply text-base px-button-small-x py-button-small-y;
     }
@@ -48,7 +48,7 @@
   
     // buttons/ButtonSecondary
   .btn-secondary {
-    @apply rounded-3xl bg-color-button-secondary transition-colors duration-100 text-color-text-primary;
+    @apply rounded-3xl bg-color-button-secondary transition-colors duration-100 text-color-text-primary border border-solid border-color-button-secondary;
     &.sm {
       @apply text-base px-button-small-x py-button-small-y;
     }
