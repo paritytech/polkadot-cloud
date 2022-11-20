@@ -105,12 +105,13 @@ const Home: NextPage = () => {
               marginRight
             />
             <ButtonInvertRounded
+              lg
               text="Button"
               iconLeft={faUserReg}
               iconRight={faUserReg}
               marginRight
             />
-            <ButtonInvertRounded text="Button" disabled />
+            <ButtonInvertRounded lg text="Button" disabled />
           </div>
 
           <h2 className="text-xl">Button Submit</h2>
