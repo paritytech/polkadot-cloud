@@ -90,7 +90,7 @@
 
   // buttons/ButtonSubmit
   .btn-submit {
-    @apply rounded-xl border border-solid border-color-network-stroke text-white transition-opacity bg-color-network-primary px-button-invert-x py-button-invert-y;
+    @apply rounded-xl border border-solid border-color-network-primary text-white transition-opacity bg-color-network-primary px-button-invert-x py-button-invert-y;
     &.sm {
       @apply text-base;
     }
