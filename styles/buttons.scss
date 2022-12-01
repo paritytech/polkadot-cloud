@@ -1,7 +1,7 @@
 @layer components {
   // button layout styles
   .btn-layout {
-      @apply inline-flex flex-initial flex-row flex-nowrap justify-center items-center font-medium;
+      @apply flex-row flex-nowrap justify-center items-center font-medium;
       &.grow {
         @apply flex-1;
       }
