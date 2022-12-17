@@ -2,8 +2,8 @@
   .theme-polkadot {
     --color-primary-light: theme('colors.networks.polkadot-primary');
     --color-primary-dark: theme('colors.networks.polkadot-primary');
-    --color-secondary-light: theme('colors.pink.400');
-    --color-secondary-dark: theme('colors.pink.400');
+    --color-secondary-light: theme('colors.networks.polkadot-secondary-light');
+    --color-secondary-dark: theme('colors.networks.polkadot-secondary-dark');
     --color-transparent-light: theme('colors.networks.polkadot-transparent');
     --color-transparent-dark: theme('colors.networks.polkadot-transparent');
     --color-stroke-light: theme('colors.networks.polkadot-primary');
@@ -22,8 +22,8 @@
   .theme-westend {
     --color-primary-light: theme('colors.networks.westend-primary');
     --color-primary-dark: theme('colors.networks.westend-primary');
-    --color-secondary-light: theme('colors.orange.500');
-    --color-secondary-dark: theme('colors.orange.500');
+    --color-secondary-light: theme('colors.networks.westend-secondary');
+    --color-secondary-dark: theme('colors.networks.westend-secondary');
     --color-transparent-light: theme('colors.networks.westend-transparent');
     --color-transparent-dark: theme('colors.networks.westend-transparent');
     --color-stroke-light: theme('colors.networks.westend-primary');
