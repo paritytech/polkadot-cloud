@@ -11,6 +11,8 @@ import { motion } from "framer-motion";
 export type ButtonSubmitProps = StyledComponentInterface &
   ButtonIconsInferface &
   CommonButtonInterface & {
+    // use secondary network color.
+    colorSecondary?: boolean;
     // button text.
     text: string;
   };
@@ -19,6 +21,7 @@ export type ButtonSubmitProps = StyledComponentInterface &
  * Submit button style used within modals to submit transactions.
  */
 export const ButtonSubmit = ({
+  colorSecondary,
   disabled,
   grow,
   iconLeft,
@@ -39,6 +42,7 @@ export const ButtonSubmit = ({
       "btn-common " +
       "btn-icons " +
       "btn-submit" +
+      valEmpty(colorSecondary, "secondary-color") +
       valEmpty(grow, "grow") +
       valEmpty(marginRight, "m-right") +
       valEmpty(marginLeft, "m-left") +

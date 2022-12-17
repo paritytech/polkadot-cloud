@@ -11,6 +11,8 @@ import { motion } from "framer-motion";
 export type ButtonPrimaryProps = StyledComponentInterface &
   ButtonIconsInferface &
   CommonButtonInterface & {
+    // use secondary network color.
+    colorSecondary?: boolean;
     // large button, small otherwise.
     lg?: boolean;
     // button text.
@@ -21,6 +23,7 @@ export type ButtonPrimaryProps = StyledComponentInterface &
  * Primary button style used within the main interface of dashboards.
  */
 export const ButtonPrimary = ({
+  colorSecondary,
   disabled,
   grow,
   iconLeft,
@@ -43,6 +46,7 @@ export const ButtonPrimary = ({
       "btn-icons " +
       "btn-primary" +
       valOr(lg, "lg", "sm") +
+      valEmpty(colorSecondary, "secondary-color") +
       valEmpty(grow, "grow") +
       valEmpty(marginRight, "m-right") +
       valEmpty(marginLeft, "m-left") +

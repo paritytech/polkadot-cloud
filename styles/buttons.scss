@@ -35,6 +35,9 @@
   // buttons/ButtonPrimary
   .btn-primary {
     @apply rounded-3xl text-white transition-opacity bg-color-network-primary border border-solid border-color-network-primary;
+    &.secondary-color {
+      @apply border-color-network-secondary bg-color-network-secondary;
+    }
     &.sm {
       @apply text-base px-button-small-x py-button-small-y;
     }
@@ -91,6 +94,9 @@
   // buttons/ButtonSubmit
   .btn-submit {
     @apply rounded-xl border border-solid border-color-network-primary text-white transition-opacity bg-color-network-primary px-button-invert-x py-button-invert-y;
+    &.secondary-color {
+      @apply border-color-network-secondary bg-color-network-secondary;
+    }
     &.sm {
       @apply text-base;
     }

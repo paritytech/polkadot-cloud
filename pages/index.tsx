@@ -51,7 +51,12 @@ const Home: NextPage = () => {
 
           <div>
             <ButtonPrimary text="Button" iconLeft={faUser} marginRight />
-            <ButtonPrimary text="Button" iconLeft={faUser} marginRight />
+            <ButtonPrimary
+              text="Button"
+              iconLeft={faUser}
+              marginRight
+              colorSecondary
+            />
             <ButtonPrimary
               text="Button"
               iconLeft={faUser}
@@ -121,6 +126,7 @@ const Home: NextPage = () => {
               text="Button"
               iconLeft={faArrowAltCircleUp}
               marginRight
+              colorSecondary
             />
             <ButtonSubmit
               text="Button"

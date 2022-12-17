@@ -16,6 +16,9 @@ module.exports = {
           'westend-primary': '#da4e71',
           'westend-transparent': 'rgb(218, 78, 113, 0.05)',
         },
+        backgrounds: {
+
+        },
         buttons: {
           secondary: {
             'active-light': '#eeecec',
@@ -24,10 +27,8 @@ module.exports = {
             'hover-dark': '#222',
           }
         },
-
         // text colors
         'color-text-primary': 'var(--color-text-primary)',
-
         // network colors
         'color-network-primary': 'var(--color-network-primary)',
         'color-network-secondary': 'var(--color-network-secondary)',
@@ -44,11 +45,9 @@ module.exports = {
         // small button spacing
         'button-small-x': "0.92rem",
         'button-small-y': "0.2rem",
-
         // large button spacing
         'button-large-x': "0.95rem",
         'button-large-y': "0.25rem",
-
         // invert button spacing
         'button-invert-x': "0.8rem",
         'button-invert-y': "0.4rem",
