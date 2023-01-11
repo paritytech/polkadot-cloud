@@ -16,7 +16,8 @@ module.exports = {
           'kusama-transparent-light': 'rgb(51,51,51,0.05)',
           'kusama-transparent-dark': 'rgb(102,102,102, 0.05)',
           'westend-primary': '#da4e71',
-          'westend-secondary': '#d7674e',
+          'westend-secondary-light': '#de6a50',
+          'westend-secondary-dark': '#d7674e',
           'westend-transparent': 'rgb(218, 78, 113, 0.05)',
         },
         backgrounds: {
@@ -57,9 +58,6 @@ module.exports = {
       }
     },
   },
-  presets: [
-    require('cirque/themes/polkadot/tw-preset')
-  ],
   plugins: [
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms")
