@@ -8,6 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // static theme values: to be replaced with theme/index object --
         networks: {
           'polkadot-primary': 'rgb(211, 48, 121)',
           'polkadot-secondary-light': '#552bbf',
@@ -21,7 +22,6 @@ module.exports = {
           'westend-transparent': 'rgb(218, 78, 113, 0.05)',
         },
         backgrounds: {
-
         },
         buttons: {
           secondary: {
@@ -31,14 +31,14 @@ module.exports = {
             'hover-dark': '#222',
           }
         },
-        // text colors
-        'color-text-primary': 'var(--color-text-primary)',
-        // network colors
+        // ---
+
+        // color-[theme-key]
         'color-network-primary': 'var(--color-network-primary)',
         'color-network-secondary': 'var(--color-network-secondary)',
         'color-network-transparent': 'var(--color-network-transparent)',
         'color-network-stroke': 'var(--color-network-stroke)',
-        // button colors
+        'color-text-primary': 'var(--color-text-primary)',
         'color-button-secondary': 'var(--color-button-secondary)',
         'color-button-secondary-hover': 'var(--color-button-secondary-hover)',
       },

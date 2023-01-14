@@ -1,5 +1,9 @@
 @layer base {
+  /* these should be automatically generated ------------------------------------- */
+  
+  /*.theme-[network.key] */
   .theme-polkadot {
+    /* --color-[key]-[theme] */
     --color-primary-light: theme('colors.networks.polkadot-primary');
     --color-primary-dark: theme('colors.networks.polkadot-primary');
     --color-secondary-light: theme('colors.networks.polkadot-secondary-light');
@@ -29,7 +33,11 @@
     --color-stroke-light: theme('colors.networks.westend-primary');
     --color-stroke-dark: theme('colors.networks.westend-primary');
   }
+  /* -------------------------- */
+
+
   .theme-light {
+    /* --color-[key]: theme(--color-[key]-light) */
     --color-text-primary: theme('colors.black');
     --color-network-primary: var(--color-primary-light);
     --color-network-secondary: var(--color-secondary-light);
@@ -39,6 +47,7 @@
     --color-button-secondary-hover: theme('colors.buttons.secondary.hover-light');
   }
   .theme-dark {
+    /* --color-[key]: theme(--color-[key]-dark) */
     --color-text-primary: theme('colors.gray.50');
     --color-network-primary: var(--color-primary-dark);
     --color-network-secondary: var(--color-secondary-dark);
