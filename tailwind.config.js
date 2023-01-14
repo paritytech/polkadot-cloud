@@ -9,26 +9,36 @@ module.exports = {
     extend: {
       colors: {
         // static theme values: to be replaced with theme/index object --
-        networks: {
+        network: {
           'polkadot-primary': 'rgb(211, 48, 121)',
-          'polkadot-secondary-light': '#552bbf',
-          'polkadot-secondary-dark': '#6d39ee',
+          'polkadot-secondary-light': 'rgb(85, 43, 191)',
+          'polkadot-secondary-dark': 'rgb(109, 57, 238)',
           'polkadot-transparent': 'rgb(211, 48, 121, 0.05)',
+          'kusama-primary-light': 'rgb(31, 41, 55)',
+          'kusama-primary-dark': 'rgb(107, 114, 128)',
+          'kusama-secondary-light': 'rgb(31, 41, 55)',
+          'kusama-secondary-dark': 'rgb(156, 163, 175)',
           'kusama-transparent-light': 'rgb(51,51,51,0.05)',
           'kusama-transparent-dark': 'rgb(102,102,102, 0.05)',
-          'westend-primary': '#da4e71',
-          'westend-secondary-light': '#de6a50',
-          'westend-secondary-dark': '#d7674e',
+          'kusama-stroke-light': 'rgb(75, 85, 99)',
+          'kusama-stroke-dark': 'rgb(209, 213, 219)',
+          'westend-primary': 'rgb(218, 78, 113)',
+          'westend-secondary-light': 'rgb(222, 106, 80)',
+          'westend-secondary-dark': 'rgb(215, 103, 78)',
           'westend-transparent': 'rgb(218, 78, 113, 0.05)',
         },
-        backgrounds: {
+        text: {
+          'primary-light': 'rgb(0,0,0)',
+          'primary-dark': 'rgb(249, 250, 251)'
         },
-        buttons: {
+        background: {
+        },
+        button: {
           secondary: {
-            'active-light': '#eeecec',
-            'active-dark': '#333',
-            'hover-light': '#e8e6e6',
-            'hover-dark': '#222',
+            'active-light': 'rgb(238, 236, 236)',
+            'active-dark': 'rgb(51, 51, 51)',
+            'hover-light': 'rgb(232, 230, 230)',
+            'hover-dark': 'rgb(34, 34, 34)',
           }
         },
         // ---
