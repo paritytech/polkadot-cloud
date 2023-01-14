@@ -1,3 +1,4 @@
+// TODO: migrate from manual styling to automated styling that uses this object.
 export const colors = {
   network: {
     polkadot: {

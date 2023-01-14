@@ -1,6 +1,5 @@
 @layer base {
-  /* these should be automatically generated ------------------------------------- */
-  
+  /* TODO: automatically generate these styles
   /*.theme-[network.key] */
   .theme-polkadot {
     /* --color-[key]-[theme] */
@@ -20,7 +19,7 @@
     --color-secondary-dark: theme('colors.network.kusama-secondary-dark');
     --color-transparent-light: theme('colors.network.kusama-transparent-light');
     --color-transparent-dark: theme('colors.network.kusama-transparent-dark');
-    --color-stroke-light: theme('colors.network.kusama-stroke-light'); // #4b5563
+    --color-stroke-light: theme('colors.network.kusama-stroke-light');
     --color-stroke-dark: theme('colors.network.kusama-stroke-dark');
   }
   .theme-westend {
@@ -33,28 +32,23 @@
     --color-stroke-light: theme('colors.network.westend-primary');
     --color-stroke-dark: theme('colors.network.westend-primary');
   }
-  /* -------------------------- */
-
-
   .theme-light {
-    /* --color-[key]: theme(--color-[key]-light) */
-    --color-text-primary: theme('colors.text.primary-light');
     --color-network-primary: var(--color-primary-light);
     --color-network-secondary: var(--color-secondary-light);
     --color-network-transparent: var(--color-transparent-light);
     --color-network-stroke: var(--color-stroke-light);
+    --color-text-primary: theme('colors.text.primary-light');
     --color-button-secondary: theme('colors.button.secondary.active-light');
     --color-button-secondary-hover: theme('colors.button.secondary.hover-light');
   }
   .theme-dark {
-    /* --color-[key]: theme(--color-[key]-dark) */
-    --color-text-primary: theme('colors.text.primary-dark');
     --color-network-primary: var(--color-primary-dark);
     --color-network-secondary: var(--color-secondary-dark);
     --color-network-transparent: var(--color-transparent-dark);
     --color-network-stroke: var(--color-stroke-dark);
-    --color-button-secondary: theme('colors.button.secondary.active-dark');;
-    --color-button-secondary-hover: theme('colors.button.secondary.hover-dark');;
+    --color-text-primary: theme('colors.text.primary-dark');
+    --color-button-secondary: theme('colors.button.secondary.active-dark');
+    --color-button-secondary-hover: theme('colors.button.secondary.hover-dark');
   }
   :root {
     [type='text']:focus, 
