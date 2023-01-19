@@ -69,6 +69,23 @@
       }
     }
   }
+
+  // buttons/ButtonMono
+  .btn-mono {
+    @apply rounded-3xl text-color-text-invert transition-opacity bg-color-text-primary border border-solid border-color-text-primary;
+    &.secondary-color {
+      @apply border-color-network-secondary bg-color-network-secondary;
+    }
+    &.sm {
+      @apply text-base px-button-small-x py-button-small-y;
+    }
+    &.lg {
+      @apply text-plus px-button-large-x py-button-large-y;
+    }
+    &:disabled {
+      @apply opacity-25;
+    }
+  }
   
   // buttons/ButtonInvert
   .btn-invert {

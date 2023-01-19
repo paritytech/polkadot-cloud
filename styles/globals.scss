@@ -38,6 +38,7 @@
     --color-network-transparent: var(--color-transparent-light);
     --color-network-stroke: var(--color-stroke-light);
     --color-text-primary: theme('colors.text.primary-light');
+    --color-text-invert: theme('colors.text.invert-light');
     --color-button-secondary: theme('colors.button.secondary.active-light');
     --color-button-secondary-hover: theme('colors.button.secondary.hover-light');
   }
@@ -47,6 +48,7 @@
     --color-network-transparent: var(--color-transparent-dark);
     --color-network-stroke: var(--color-stroke-dark);
     --color-text-primary: theme('colors.text.primary-dark');
+    --color-text-invert: theme('colors.text.invert-dark');
     --color-button-secondary: theme('colors.button.secondary.active-dark');
     --color-button-secondary-hover: theme('colors.button.secondary.hover-dark');
   }

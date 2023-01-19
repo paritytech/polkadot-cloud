@@ -28,8 +28,10 @@ module.exports = {
           'westend-transparent': 'rgb(218, 78, 113, 0.05)',
         },
         text: {
-          'primary-light': 'rgb(0,0,0)',
-          'primary-dark': 'rgb(249, 250, 251)'
+          'primary-light': 'rgb(8, 8, 8)',
+          'primary-dark': 'rgb(249, 250, 251)',
+          'invert-light': 'rgb(249, 250, 251)',
+          'invert-dark': 'rgb(8, 8, 8)',
         },
         background: {
         },
@@ -49,6 +51,7 @@ module.exports = {
         'color-network-transparent': 'var(--color-network-transparent)',
         'color-network-stroke': 'var(--color-network-stroke)',
         'color-text-primary': 'var(--color-text-primary)',
+        'color-text-invert': 'var(--color-text-invert)',
         'color-button-secondary': 'var(--color-button-secondary)',
         'color-button-secondary-hover': 'var(--color-button-secondary-hover)',
       },

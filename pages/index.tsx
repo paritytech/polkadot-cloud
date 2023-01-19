@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { ButtonPrimary } from "../lib/buttons/ButtonPrimary";
+import { ButtonMono } from "../lib/buttons/ButtonMono";
 import { ButtonSecondary } from "../lib/buttons/ButtonSecondary";
 import { ButtonInvert } from "../lib/buttons/ButtonInvert";
 import { ButtonInvertRounded } from "../lib/buttons/ButtonInvertRounded";
@@ -80,6 +81,21 @@ const Home: NextPage = () => {
               marginRight
             />
             <ButtonSecondary lg text="Button" disabled />
+          </div>
+
+          <h2 className="text-xl">Button Mono</h2>
+          <div>
+            <ButtonMono text="Button" marginRight />
+            <ButtonMono text="Button" iconLeft={faUser} marginRight />
+            <ButtonMono text="Button" iconRight={faUser} marginRight />
+            <ButtonMono
+              lg
+              text="Button"
+              iconLeft={faUser}
+              iconRight={faUser}
+              marginRight
+            />
+            <ButtonMono lg text="Button" disabled />
           </div>
 
           <h2 className="text-xl">Button Invert</h2>
