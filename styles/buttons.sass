@@ -1,0 +1,100 @@
+@layer components
+  // button layout styles
+  .btn-layout
+      @apply flex-row flex-nowrap justify-center items-center font-medium
+      &.grow
+        @apply flex-1
+      
+  
+  // common buton styles
+  .btn-common
+    &.m-left
+      @apply ml-2.5
+    &.m-right
+      @apply mr-2.5
+    &.m-x
+      @apply mx-2.5
+    &:disabled
+      @apply cursor-default
+    
+  
+  // button icon styles
+  .btn-icons
+    > .icon-left 
+      @apply ml-0.5 mr-2.5
+    > .icon-right
+      @apply ml-2.5 mr-0.5
+    
+    
+  // buttons/ButtonPrimary
+  .btn-primary
+    @apply rounded-3xl text-white transition-opacity bg-color-network-primary border border-solid border-color-network-primary
+    &.secondary-color
+      @apply border-color-network-secondary bg-color-network-secondary
+    &.sm
+      @apply text-base px-button-small-x py-button-small-y
+    &.lg
+      @apply text-plus px-button-large-x py-button-large-y
+    &:disabled
+      @apply opacity-25
+  
+  
+    // buttons/ButtonSecondary
+  .btn-secondary
+    @apply rounded-3xl bg-color-button-secondary transition-colors duration-100 text-color-text-primary border border-solid border-color-button-secondary
+    &.sm
+      @apply text-base px-button-small-x py-button-small-y
+    &.lg
+      @apply text-plus px-button-large-x py-button-large-y
+    &:disabled
+      @apply opacity-30
+    &:hover
+      @apply bg-color-button-secondary-hover
+      &:disabled
+        @apply bg-color-button-secondary
+      
+
+  // buttons/ButtonMono
+  .btn-mono
+    @apply rounded-3xl text-color-text-invert transition-opacity bg-color-text-primary border border-solid border-color-text-primary
+    &.secondary-color
+      @apply border-color-network-secondary bg-color-network-secondary
+    &.sm
+      @apply text-base px-button-small-x py-button-small-y
+    &.lg
+      @apply text-plus px-button-large-x py-button-large-y
+    &:disabled
+      @apply opacity-25
+  
+  
+  // buttons/ButtonInvert
+  .btn-invert
+    @apply rounded-xl border border-solid px-button-invert-x py-button-invert-y border-color-network-stroke text-color-network-stroke text-base
+    &:disabled
+      @apply opacity-30 
+    
+
+  // buttons/ButtonInvertRounded
+  .btn-invert-rounded
+    @apply rounded-3xl border border-solid border-color-network-stroke text-color-network-stroke
+    &.sm
+      @apply text-base px-button-small-x py-button-small-y
+    &.lg
+      @apply text-plus px-button-large-x py-button-large-y
+    &:disabled
+      @apply opacity-30
+    
+
+  // buttons/ButtonSubmit
+  .btn-submit
+    @apply rounded-xl border border-solid border-color-network-primary text-white transition-opacity bg-color-network-primary px-button-invert-x py-button-invert-y
+    &.secondary-color
+      @apply border-color-network-secondary bg-color-network-secondary
+    &.sm
+      @apply text-base
+    &.lg
+      @apply text-plus
+    &:disabled
+      @apply opacity-25
+    
+  
