@@ -35,9 +35,6 @@ export const ButtonInvert = ({
     whileHover={{ scale: !disabled ? 1.02 : 1 }}
     whileTap={{ scale: !disabled ? 0.98 : 1 }}
     className={
-      "btn-layout " +
-      "btn-common " +
-      "btn-icons " +
       "btn-invert" +
       valEmpty(grow, "grow") +
       valEmpty(marginRight, "m-right") +

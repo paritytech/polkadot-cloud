@@ -1,5 +1,5 @@
 // button layout styles
-.btn-layout {
+@mixin layout {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,8 +10,8 @@
   }
 }
     
-// common buton styles
-.btn-common {
+// button common styles
+@mixin common {
   &.m-left {
     margin-left: 0.625rem;
   }
@@ -27,7 +27,7 @@
 }
 
 // button icon styles
-.btn-icons {
+@mixin icons {
   > .icon-left {
     margin-left: 0.125rem;
     margin-right: 0.625rem;
@@ -40,6 +40,9 @@
 
 // buttons/ButtonPrimary
 .btn-primary {
+  @include layout;
+  @include common;
+  @include icons;
   background: var(--network-color-primary);
   border: 1px solid var(--network-color-primary);
   color: white;
@@ -65,6 +68,9 @@
 
   // buttons/ButtonSecondary
 .btn-secondary {
+  @include layout;
+  @include common;
+  @include icons;
   color: var(--text-color-primary);
   background: var(--button-secondary-background);
   border: 1px solid var(--button-secondary-background);
@@ -92,6 +98,9 @@
 
 // buttons/ButtonMono
 .btn-mono {
+  @include layout;
+  @include common;
+  @include icons;
   color: var(--text-color-invert);
   background: var(--text-color-primary);
   border: 1px solid var(--text-color-primary);
@@ -117,6 +126,9 @@
 
 // buttons/ButtonInvert
 .btn-invert {
+  @include layout;
+  @include common;
+  @include icons;
   border: 1px solid var(--network-color-stroke);
   color: var(--network-color-stroke);
   font-size: 1rem;
@@ -129,6 +141,9 @@
 
 // buttons/ButtonInvertRounded
 .btn-invert-rounded {
+  @include layout;
+  @include common;
+  @include icons;
   border: 1px solid var(--network-color-stroke);
   color: var(--network-color-stroke);
   border-radius: 1.5rem;
@@ -147,6 +162,9 @@
 
 // buttons/ButtonSubmit
 .btn-submit {
+  @include layout;
+  @include common;
+  @include icons;
   border: 1px solid var(--network-color-primary);
   background: var(--network-color-primary);
   border-radius: 1.5rem;
