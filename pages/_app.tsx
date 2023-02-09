@@ -1,7 +1,6 @@
 import React from "react";
 import type { AppProps } from "next/app";
-import "../styles/index.sass";
-import "./styles.sass";
+import "./styles.scss";
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <Component {...pageProps} />

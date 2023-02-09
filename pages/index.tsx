@@ -25,8 +25,6 @@ const Home: NextPage = () => {
 
   return (
     <>
-      {/* dump all themes here as to not be purged at build */}
-      <div className="theme-polkadot theme-kusama theme-westend theme-light theme-dark"></div>
       <div
         className={`theme-${network} theme-${theme}`}
         style={{
@@ -38,7 +36,7 @@ const Home: NextPage = () => {
           <title>Polkadot Dashboard UI</title>
           <meta name="description" content="Polkadot Dashboard UI" />
         </Head>
-        <main className="p-4 flex flex-col gap-8 text-color-text-primary">
+        <main>
           <h3>
             Network:{" "}
             <button onClick={() => setNetwork("polkadot")}>Polkadot</button> |{" "}
@@ -47,10 +45,10 @@ const Home: NextPage = () => {
             Theme: <button onClick={() => setTheme("light")}>Light</button> |{" "}
             <button onClick={() => setTheme("dark")}>Dark</button>
           </h3>
-          <h1 className="text-3xl">Components</h1>
-          <h2 className="text-xl">Button Primary</h2>
+          <h1>Components</h1>
+          <h2>Button Primary</h2>
 
-          <div>
+          <div className="row">
             <ButtonPrimary text="Button" iconLeft={faUser} marginRight />
             <ButtonPrimary
               text="Button"
@@ -68,8 +66,8 @@ const Home: NextPage = () => {
             <ButtonPrimary text="Button" lg disabled />
           </div>
 
-          <h2 className="text-xl">Button Secondary</h2>
-          <div>
+          <h2>Button Secondary</h2>
+          <div className="row">
             <ButtonSecondary text="Button" marginRight />
             <ButtonSecondary text="Button" iconLeft={faUser} marginRight />
             <ButtonSecondary text="Button" iconRight={faUser} marginRight />
@@ -83,8 +81,8 @@ const Home: NextPage = () => {
             <ButtonSecondary lg text="Button" disabled />
           </div>
 
-          <h2 className="text-xl">Button Mono</h2>
-          <div>
+          <h2>Button Mono</h2>
+          <div className="row">
             <ButtonMono text="Button" marginRight />
             <ButtonMono text="Button" iconLeft={faUser} marginRight />
             <ButtonMono text="Button" iconRight={faUser} marginRight />
@@ -98,8 +96,8 @@ const Home: NextPage = () => {
             <ButtonMono lg text="Button" disabled />
           </div>
 
-          <h2 className="text-xl">Button Invert</h2>
-          <div>
+          <h2>Button Invert</h2>
+          <div className="row">
             <ButtonInvert text="Button" marginRight />
             <ButtonInvert text="Button" iconLeft={faUserReg} marginRight />
             <ButtonInvert text="Button" iconRight={faUserReg} marginRight />
@@ -112,8 +110,8 @@ const Home: NextPage = () => {
             <ButtonInvert text="Button" disabled />
           </div>
 
-          <h2 className="text-xl">Button Invert Rounded</h2>
-          <div>
+          <h2>Button Invert Rounded</h2>
+          <div className="row">
             <ButtonInvertRounded text="Button" marginRight />
             <ButtonInvertRounded
               text="Button"
@@ -135,8 +133,8 @@ const Home: NextPage = () => {
             <ButtonInvertRounded lg text="Button" disabled />
           </div>
 
-          <h2 className="text-xl">Button Submit</h2>
-          <div>
+          <h2>Button Submit</h2>
+          <div className="row">
             <ButtonSubmit text="Button" marginRight />
             <ButtonSubmit
               text="Button"

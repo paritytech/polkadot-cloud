@@ -1,4 +1,4 @@
-import "../styles/index.sass";
+import "../styles/index.scss";
 
 // Core
 export { BodyInterface } from "./core/BodyInterface";

@@ -35,9 +35,6 @@ export const ButtonInvertRounded = ({
 }: ButtonInvertRoundedProps) => (
   <button
     className={
-      "btn-layout " +
-      "btn-common " +
-      "btn-icons " +
       "btn-invert-rounded" +
       valEmpty(grow, "grow") +
       valOr(lg, "lg", "sm") +
