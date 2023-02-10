@@ -21,9 +21,6 @@
   &.m-x {
     margin: 0 0.625rem;
   }
-  &:disabled {
-    cursor: default;
-  }
 }
 
 // button icon styles
@@ -38,11 +35,31 @@
   }
 }
 
+@mixin paddingSmall {
+  padding: 0.34rem 0.92rem;
+}
+
+@mixin paddingLarge {
+  padding: 0.45rem 0.95rem;
+}
+
+@mixin paddingSubmit {
+  padding: 0.45rem 0.8rem;
+}
+
+@mixin disabled {
+  &:disabled {
+    opacity: var(--opacity-disabled);
+    cursor: default;
+  }
+}
+
 // buttons/ButtonPrimary
 .btn-primary {
   @include layout;
   @include common;
   @include icons;
+  @include disabled;
   background: var(--network-color-primary);
   border: 1px solid var(--network-color-primary);
   color: white;
@@ -54,15 +71,11 @@
     border: 1px solid var(--network-color-secondary);
   }
   &.sm {
-    font-size: 1rem;
-    padding: 0.34rem 0.92em;
+    @include paddingSmall;
   }
   &.lg {
+    @include paddingLarge;
     font-size: 1.15rem;
-    padding: 0.45rem 0.95rem;
-  }
-  &:disabled {
-    opacity: 0.25;
   }
 }
 
@@ -71,22 +84,20 @@
   @include layout;
   @include common;
   @include icons;
+  @include disabled;
   color: var(--text-color-primary);
   background: var(--button-secondary-background);
   border: 1px solid var(--button-secondary-background);
   border-radius: 1.5rem;
   transition: color 0.15s;
   &.sm {
+    @include paddingSmall;
     border-radius: 1.5rem;
     font-size: 1rem;
-    padding: 0.34rem 0.92em;
   }
   &.lg {
+    @include paddingLarge;
     font-size: 1.15rem;
-    padding: 0.45rem 0.95rem;
-  }
-  &:disabled {
-    opacity: 0.3;
   }
   &:hover {
     background: var(--button-hover-background);
@@ -101,6 +112,7 @@
   @include layout;
   @include common;
   @include icons;
+  @include disabled;
   color: var(--text-color-invert);
   background: var(--text-color-primary);
   border: 1px solid var(--text-color-primary);
@@ -112,15 +124,12 @@
     background: var(--text-color-secondary);
   }
   &.sm {
+    @include paddingSmall;
     font-size: 1rem;
-    padding: 0.34rem 0.92rem;
   }
   &.lg {
+    @include paddingLarge;
     font-size: 1.15rem;
-    padding: 0.45rem 0.95rem;
-  }
-  &:disabled {
-    opacity: 0.25;
   }
 }
 
@@ -129,14 +138,12 @@
   @include layout;
   @include common;
   @include icons;
+  @include paddingSubmit;
+  @include disabled;
   border: 1px solid var(--network-color-stroke);
   color: var(--network-color-stroke);
   font-size: 1rem;
   border-radius: 0.75rem;
-  padding: 0.45rem 0.8rem;
-  &:disabled {
-    opacity: 0.3;
-  }
 }
 
 // buttons/ButtonInvertRounded
@@ -144,19 +151,17 @@
   @include layout;
   @include common;
   @include icons;
+  @include disabled;
   border: 1px solid var(--network-color-stroke);
   color: var(--network-color-stroke);
   border-radius: 1.5rem;
   &.sm {
+    @include paddingSmall;
     font-size: 1rem;
-    padding: 0.34rem 0.92rem;
   }
   &.lg {
+    @include paddingLarge;
     font-size: 1.15rem;
-    padding: 0.45rem 0.95rem;
-  }
-  &:disabled {
-    opacity: 0.3;
   }
 }
 
@@ -165,12 +170,13 @@
   @include layout;
   @include common;
   @include icons;
+  @include paddingSubmit;
+  @include disabled;
   border: 1px solid var(--network-color-primary);
   background: var(--network-color-primary);
   border-radius: 0.75rem;
   color: white;
   transition: opacity 0.15s;
-  padding: 0.45rem 0.8rem;
 
   &.secondary-color {
     border-color: var(--network-color-secondary);
@@ -181,8 +187,5 @@
   }
   &.lg {
     font-size: 1.15rem;
-  }
-  &:disabled {
-    opacity: 0.25;
   }
 }
