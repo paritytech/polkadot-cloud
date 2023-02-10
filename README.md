@@ -1,4 +1,4 @@
-# [WIP] Polkadot Dashboard UI
+# Polkadot Dashboard UI
 
 UI components for Polkadot Dashboards. 
 
