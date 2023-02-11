@@ -177,16 +177,11 @@
   background: var(--network-color-primary);
   border-radius: 0.75rem;
   color: white;
+  font-size: 1rem;
   transition: opacity 0.15s;
 
   &.secondary-color {
     border-color: var(--network-color-secondary);
     background: var(--network-color-secondary);
-  }
-  &.sm {
-    font-size: 1rem;
-  }
-  &.lg {
-    font-size: 1.15rem;
   }
 }
