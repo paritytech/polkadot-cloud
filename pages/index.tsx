@@ -25,28 +25,22 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <div
-        className={`theme-${network} theme-${theme}`}
-        style={{
-          background: theme === "light" ? "white" : "black",
-          minHeight: "100vh",
-        }}
-      >
-        <Head>
-          <title>Polkadot Dashboard UI</title>
-          <meta name="description" content="Polkadot Dashboard UI" />
-        </Head>
-        <main>
-          <h3>
-            Network:{" "}
+      <Head>
+        <title>Polkadot Dashboard UI</title>
+        <meta name="description" content="Polkadot Dashboard UI" />
+      </Head>
+      <main className={`theme-${network} theme-${theme}`}>
+        <div className="header">
+          <h5>
             <button onClick={() => setNetwork("polkadot")}>Polkadot</button> |{" "}
             <button onClick={() => setNetwork("kusama")}>Kusama</button> |{" "}
             <button onClick={() => setNetwork("westend")}>Westend</button>.{" "}
             Theme: <button onClick={() => setTheme("light")}>Light</button> |{" "}
             <button onClick={() => setTheme("dark")}>Dark</button>
-          </h3>
-          <h1>Components</h1>
-          <h2>Button Primary</h2>
+          </h5>
+        </div>
+        <div className="body">
+          <h4>Button Primary</h4>
 
           <div className="row">
             <ButtonPrimary text="Button" iconLeft={faUser} marginRight />
@@ -66,7 +60,7 @@ const Home: NextPage = () => {
             <ButtonPrimary text="Button" lg disabled />
           </div>
 
-          <h2>Button Secondary</h2>
+          <h4>Button Secondary</h4>
           <div className="row">
             <ButtonSecondary text="Button" marginRight />
             <ButtonSecondary text="Button" iconLeft={faUser} marginRight />
@@ -81,7 +75,7 @@ const Home: NextPage = () => {
             <ButtonSecondary lg text="Button" disabled />
           </div>
 
-          <h2>Button Mono</h2>
+          <h4>Button Mono</h4>
           <div className="row">
             <ButtonMono text="Button" marginRight />
             <ButtonMono text="Button" iconLeft={faUser} marginRight />
@@ -96,7 +90,7 @@ const Home: NextPage = () => {
             <ButtonMono lg text="Button" disabled />
           </div>
 
-          <h2>Button Invert</h2>
+          <h4>Button Invert</h4>
           <div className="row">
             <ButtonInvert text="Button" marginRight />
             <ButtonInvert text="Button" iconLeft={faUserReg} marginRight />
@@ -110,7 +104,7 @@ const Home: NextPage = () => {
             <ButtonInvert text="Button" disabled />
           </div>
 
-          <h2>Button Invert Rounded</h2>
+          <h4>Button Invert Rounded</h4>
           <div className="row">
             <ButtonInvertRounded text="Button" marginRight />
             <ButtonInvertRounded
@@ -133,7 +127,7 @@ const Home: NextPage = () => {
             <ButtonInvertRounded lg text="Button" disabled />
           </div>
 
-          <h2>Button Submit</h2>
+          <h4>Button Submit</h4>
           <div className="row">
             <ButtonSubmit text="Button" marginRight />
             <ButtonSubmit
@@ -155,17 +149,8 @@ const Home: NextPage = () => {
             />
             <ButtonSubmit text="Button" disabled />
           </div>
-          <div>
-            <input
-              type="text"
-              defaultValue="Input"
-              onChange={() => {
-                /* empty */
-              }}
-            />
-          </div>
-        </main>
-      </div>
+        </div>
+      </main>
     </>
   );
 };

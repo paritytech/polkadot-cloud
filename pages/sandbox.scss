@@ -1,0 +1,28 @@
+main {
+  background: var(--background-primary);
+}
+
+.header {
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  border: 1px solid var(--background-primary);
+  > h5 > button {
+    font-size: 0.92rem;
+  }
+}
+
+.body {
+  min-height: 100vh;
+  padding: 0 1.5rem; 
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-primary-color);
+  padding-bottom: 1.5rem;
+}
+
