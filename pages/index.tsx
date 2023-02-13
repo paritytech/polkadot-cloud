@@ -3,9 +3,11 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { ButtonPrimary } from "../lib/buttons/ButtonPrimary";
 import { ButtonMono } from "../lib/buttons/ButtonMono";
+import { ButtonMonoInvert } from "../lib/buttons/ButtonMonoInvert";
 import { ButtonSecondary } from "../lib/buttons/ButtonSecondary";
 import { ButtonInvert } from "../lib/buttons/ButtonInvert";
 import { ButtonInvertRounded } from "../lib/buttons/ButtonInvertRounded";
+import { ButtonText } from "../lib/buttons/ButtonText";
 import { ButtonSubmit } from "../lib/buttons/ButtonSubmit";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -90,6 +92,21 @@ const Home: NextPage = () => {
             <ButtonMono lg text="Button" disabled />
           </div>
 
+          <h4>Button Mono Invert</h4>
+          <div className="row">
+            <ButtonMonoInvert text="Button" marginRight />
+            <ButtonMonoInvert text="Button" iconLeft={faUser} marginRight />
+            <ButtonMonoInvert text="Button" iconRight={faUser} marginRight />
+            <ButtonMonoInvert
+              lg
+              text="Button"
+              iconLeft={faUser}
+              iconRight={faUser}
+              marginRight
+            />
+            <ButtonMonoInvert lg text="Button" disabled />
+          </div>
+
           <h4>Button Invert</h4>
           <div className="row">
             <ButtonInvert text="Button" marginRight />
@@ -125,6 +142,20 @@ const Home: NextPage = () => {
               marginRight
             />
             <ButtonInvertRounded lg text="Button" disabled />
+          </div>
+
+          <h4>Button Text</h4>
+          <div className="row">
+            <ButtonText text="Button" marginRight />
+            <ButtonText text="Button" iconLeft={faUserReg} marginRight />
+            <ButtonText text="Button" iconRight={faUserReg} marginRight />
+            <ButtonText
+              text="Button"
+              iconLeft={faUserReg}
+              iconRight={faUserReg}
+              marginRight
+            />
+            <ButtonText text="Button" disabled />
           </div>
 
           <h4>Button Submit</h4>

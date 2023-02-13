@@ -35,12 +35,14 @@
   }
 }
 
-@mixin paddingSmall {
+@mixin smallButton {
   padding: 0.34rem 0.92rem;
+  font-size: 1rem;
 }
 
-@mixin paddingLarge {
+@mixin largeButton {
   padding: 0.45rem 0.95rem;
+  font-size: 1.15rem;
 }
 
 @mixin paddingSubmit {
@@ -48,6 +50,8 @@
 }
 
 @mixin disabled {
+  transition: opacity 0.15s, color 0.15s;
+
   &:disabled {
     opacity: var(--opacity-disabled);
     cursor: default;
@@ -64,19 +68,16 @@
   border: 1px solid var(--network-color-primary);
   color: white;
   border-radius: 1.5rem;
-  transition: opacity 0.15s;
 
   &.secondary-color {
     background: var(--network-color-secondary);
     border: 1px solid var(--network-color-secondary);
   }
   &.sm {
-    @include paddingSmall;
-    font-size: 1rem;
+    @include smallButton;
   }
   &.lg {
-    @include paddingLarge;
-    font-size: 1.15rem;
+    @include largeButton;
   }
 }
 
@@ -90,15 +91,13 @@
   background: var(--button-secondary-background);
   border: 1px solid var(--button-secondary-background);
   border-radius: 1.5rem;
-  transition: color 0.15s;
+
   &.sm {
-    @include paddingSmall;
+    @include smallButton;
     border-radius: 1.5rem;
-    font-size: 1rem;
   }
   &.lg {
-    @include paddingLarge;
-    font-size: 1.15rem;
+    @include largeButton;
   }
   &:hover {
     background: var(--button-hover-background);
@@ -118,19 +117,54 @@
   background: var(--text-color-primary);
   border: 1px solid var(--text-color-primary);
   border-radius: 1.5rem;
-  transition: opacity 0.15s;
 
   &.secondary-color {
     border-color: var(--text-color-secondary);
     background: var(--text-color-secondary);
   }
   &.sm {
-    @include paddingSmall;
-    font-size: 1rem;
+    @include smallButton;
   }
   &.lg {
-    @include paddingLarge;
-    font-size: 1.15rem;
+    @include largeButton;
+  }
+}
+
+// buttons/ButtonMonoRounded
+.btn-mono-invert {
+  @include layout;
+  @include common;
+  @include icons;
+  @include disabled;
+  color: var(--text-color-primary);
+  border: 1px solid var(--text-color-primary);
+  border-radius: 1.5rem;
+
+  &.secondary-color {
+    border-color: var(--text-color-secondary);
+    background: var(--text-color-secondary);
+  }
+  &.sm {
+    @include smallButton;
+  }
+  &.lg {
+    @include largeButton;
+  }
+}
+
+// buttons/ButtonText
+.btn-text {
+  @include layout;
+  @include common;
+  @include icons;
+  @include disabled;
+  color: var(--text-color-primary);
+  border-radius: 1.5rem;
+  padding: 0.45rem;
+  font-size: 1rem;
+
+  &.secondary-color {
+    border-color: var(--text-color-secondary);
   }
 }
 
@@ -157,12 +191,10 @@
   color: var(--network-color-stroke);
   border-radius: 1.5rem;
   &.sm {
-    @include paddingSmall;
-    font-size: 1rem;
+    @include smallButton;
   }
   &.lg {
-    @include paddingLarge;
-    font-size: 1.15rem;
+    @include largeButton;
   }
 }
 
@@ -178,7 +210,6 @@
   border-radius: 0.75rem;
   color: white;
   font-size: 1rem;
-  transition: opacity 0.15s;
 
   &.secondary-color {
     border-color: var(--network-color-secondary);
