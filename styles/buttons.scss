@@ -58,6 +58,21 @@
   }
 }
 
+// help icon button
+.btn-help {
+  @include layout;
+  background: var(--button-tertiary-background);
+  color: var(--text-color-secondary);
+  fill: var(--text-color-secondary);
+  border-radius: 50%;
+  padding:0.05rem;
+  transition: all 0.15s;
+
+  &:hover {
+    fill: var(--network-color-primary);
+  }
+}
+
 // buttons/ButtonPrimary
 .btn-primary {
   @include layout;
