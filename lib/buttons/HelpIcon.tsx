@@ -1,16 +1,13 @@
-import { StyledComponentInterface } from "../types";
-import React from "react";
+import React, { ReactElement } from "react";
 
-export type HelpIconProps = StyledComponentInterface & {
-  helpKey: string;
-  onClick: () => void;
-  icon: any;
+export type HelpIconProps = {
+  onClick?: () => void;
+  icon?: ReactElement;
 };
 
-export const HelpIcon = ({ helpKey, style, onClick, icon }: HelpIconProps) => (
+export const HelpIcon = ({ onClick, icon }: HelpIconProps) => (
   <button
     className="btn-help"
-    style={style}
     onClick={() => {
       if (typeof onClick == "function") {
         onClick();
