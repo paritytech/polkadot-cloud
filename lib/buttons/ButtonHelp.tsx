@@ -1,36 +1,36 @@
 import React from "react";
 import { InfoSVG } from "../svg/Info";
+import { StyledComponentInterface, CommonButtonInterface } from "../types";
 import { valEmpty } from "../utils";
-import { CommonButtonInterface } from "../types";
 
-export type ButtonHelpProps = CommonButtonInterface & {
-  light?: boolean;
-  style?: React.CSSProperties;
-};
+export type ButtonHelpProps = StyledComponentInterface &
+  CommonButtonInterface & {
+    // whether to use secondary background
+    backgroundSecondary?: boolean;
+  };
 
 /*
  * Help button used throughout dashboard apps.
  */
 export const ButtonHelp = ({
-  onClick,
-  light,
-  style,
   disabled,
+  onClick,
   marginLeft,
   marginRight,
   marginX,
-  grow,
+  backgroundSecondary,
+  style,
 }: ButtonHelpProps) => (
   <button
     className={
       "btn-help" +
-      valEmpty(light, "light") +
-      valEmpty(grow, "grow") +
+      valEmpty(backgroundSecondary, "background-secondary") +
       valEmpty(marginRight, "m-right") +
       valEmpty(marginLeft, "m-left") +
       valEmpty(marginX, "m-x")
     }
     style={style}
+    type="button"
     disabled={disabled}
     onClick={() => {
       if (typeof onClick == "function") {
