@@ -9,7 +9,7 @@ import { ButtonInvert } from "../lib/buttons/ButtonInvert";
 import { ButtonInvertRounded } from "../lib/buttons/ButtonInvertRounded";
 import { ButtonText } from "../lib/buttons/ButtonText";
 import { ButtonSubmit } from "../lib/buttons/ButtonSubmit";
-import { HelpIcon } from "../lib/buttons/HelpIcon";
+import { ButtonHelpIcon } from "../lib/buttons/ButtonHelpIcon";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import {
   faUser as faUserReg,
@@ -182,7 +182,7 @@ const Home: NextPage = () => {
             <ButtonSubmit text="Button" disabled />
           </div>
           <div>
-            <HelpIcon />
+            <ButtonHelpIcon />
           </div>
         </div>
       </main>
