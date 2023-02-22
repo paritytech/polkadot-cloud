@@ -10,4 +10,4 @@ export { ButtonMono } from "./buttons/ButtonMono";
 export { ButtonInvert } from "./buttons/ButtonInvert";
 export { ButtonInvertRounded } from "./buttons/ButtonInvertRounded";
 export { ButtonSubmit } from "./buttons/ButtonSubmit";
-export { ButtonHelpIcon } from "./buttons/ButtonHelpIcon";
+export { ButtonHelp } from "./buttons/ButtonHelp";

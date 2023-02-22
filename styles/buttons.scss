@@ -71,6 +71,10 @@
   width: 1.3rem;
   height: 1.3rem;
 
+  &.light{
+    background: var(--button-primary-background);
+  }
+
   &:hover {
     fill: var(--network-color-primary);
   }
