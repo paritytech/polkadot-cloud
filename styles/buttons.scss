@@ -61,6 +61,8 @@
 // help icon button
 .btn-help {
   @include layout;
+  @include common;
+  @include disabled;
   background: var(--button-tertiary-background);
   color: var(--text-color-secondary);
   fill: var(--text-color-secondary);
