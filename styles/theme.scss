@@ -24,6 +24,8 @@
     --network-color-stroke-dark: rgb(211, 48, 121);
     --network-color-transparent-light: rgb(211, 48, 121, 0.05);
     --network-color-transparent-dark: rgb(211, 48, 121, 0.05);
+    --network-color-pending-light:rgb(211, 48, 121, 0.33);
+    --network-color-pending-dark:rgb(211, 48, 121, 0.33);
   }
   
   .theme-kusama {
@@ -35,6 +37,8 @@
     --network-color-stroke-dark: #d1d1db;
     --network-color-transparent-light: rgb(51, 51, 51, 0.05);
     --network-color-transparent-dark: rgb(102, 102, 102, 0.05);
+    --network-color-pending-light:rgb(51,51,51,0.33);
+    --network-color-pending-dark:rgb(102,102,102, 0.33);
   }
   
   .theme-westend {
@@ -46,6 +50,8 @@
     --network-color-stroke-dark: #da4e71;
     --network-color-transparent-light: rgb(218, 78, 113, 0.05);
     --network-color-transparent-dark: rgb(218, 78, 113, 0.05);
+    --network-color-pending-light:rgb(218, 78, 113, 0.33);
+    --network-color-pending-dark:rgb(218, 78, 113, 0.33);
   }  
 
   .theme-light {
