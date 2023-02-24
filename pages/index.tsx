@@ -181,6 +181,7 @@ const Home: NextPage = () => {
             />
             <ButtonSubmit text="Button" disabled />
           </div>
+          <h4>Button Help</h4>
           <div className="row">
             <ButtonHelp marginRight />
             <ButtonHelp backgroundSecondary />
