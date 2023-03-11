@@ -113,7 +113,7 @@
   }
 
   .theme-dark {
-    --background-default: rgb(54,48,54); 
+    --background-default: rgb(48,44,48);
     --background-primary: rgb(39,35,39);
     --background-invert: #ddd;
     --background-list-item: rgba(48,43,48,0.6);
@@ -121,7 +121,7 @@
     --background-floating-card: rgba(0,0,0,0.85);
     --background-app-footer: #262327;
     --background-warning: #33332a;
-    --background-modal: rgb(48,42,48);
+    --background-modal: rgb(48,43,48);
     --background-modal-footer: rgb(43,38,43);
     --background-menu: rgb(57,52,58);
     --background-input: rgb(72,70,72);
@@ -151,9 +151,9 @@
     --text-color-secondary: #948e95;
     --text-color-invert: #0f0e0f;
     --gradient-background: linear-gradient(180deg, 
-    rgb(54,48,54) 0%,
-    rgb(54,48,54) 100px, 
-    rgb(48,40,48) 100%);
+    rgb(48,44,48) 0%,
+    rgb(48,44,48) 100px, 
+    rgb(44,38,44) 100%);
     --gradient-side-menu: 
       linear-gradient(180deg, 
         rgb(48,41,48) 0%, 
