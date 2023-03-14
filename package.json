@@ -66,7 +66,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rossbulat/polkadot-dashboard-ui.git"
+    "url": "git+https://github.com/paritytech/polkadot-dashboard-ui.git"
   },
   "keywords": [
     "Polkadot",
@@ -75,7 +75,7 @@
   ],
   "author": "Ross Bulat",
   "bugs": {
-    "url": "https://github.com/rossbulat/polkadot-dashboard-ui/issues"
+    "url": "https://github.com/paritytech/polkadot-dashboard-ui/issues"
   },
-  "homepage": "https://github.com/rossbulat/polkadot-dashboard-ui#readme"
+  "homepage": "https://github.com/paritytech/polkadot-dashboard-ui#readme"
 }
