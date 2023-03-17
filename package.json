@@ -2,10 +2,19 @@
   "name": "polkadot-dashboard-ui",
   "version": "0.2.0",
   "license": "Apache-2.0",
+  "author": "Ross Bulat",
+  "description": "UI Components for Polkadot Dashboards.",
   "types": "dist/index.d.ts",
+  "main": "dist/index.ts",
   "files": [
     "dist"
   ],
+  "scripts": {
+    "dev": "vite",
+    "build": "rollup -c && cp dist.package.json dist/package.json && yarn fix",
+    "fix": "sed '1d' ./dist/index.d.ts > ./tmp.d.ts; mv ./tmp.d.ts ./dist/index.d.ts",
+    "lint": "eslint './**' --fix"
+  },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
@@ -17,6 +26,7 @@
     "@types/react": "^18.0.17",
     "@typescript-eslint/eslint-plugin": "^5.35.1",
     "@typescript-eslint/parser": "^5.35.1",
+    "@vitejs/plugin-react-swc": "^3.0.0",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.23.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -30,7 +40,6 @@
     "eslint-plugin-react": "^7.31.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "framer-motion": "^7.6.2",
-    "next": "^12.2.5",
     "postcss": "^8.4.18",
     "prettier": "^2.7.1",
     "react": "^18.2.0",
@@ -44,7 +53,8 @@
     "rollup-plugin-typescript2": "^0.33.0",
     "sass": "^1.56.0",
     "tslib": "^2.4.0",
-    "typescript": "^4.8.2"
+    "typescript": "^4.8.2",
+    "vite": "^4.2.0"
   },
   "peerDependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
@@ -53,14 +63,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "scripts": {
-    "dev": "next dev",
-    "build": "rollup -c && cp dist.package.json dist/package.json && yarn fix",
-    "fix": "sed '1d' ./dist/index.d.ts > ./tmp.d.ts; mv ./tmp.d.ts ./dist/index.d.ts",
-    "lint": "eslint './**' --fix"
-  },
-  "description": "UI Components for Polkadot Dashboards. This library outlines the styling guide, prop types, and peer dependencies required by dashboards to integate them.",
-  "main": "dist/index.ts",
   "directories": {
     "lib": "lib"
   },
@@ -73,7 +75,6 @@
     "UI",
     "Substrate"
   ],
-  "author": "Ross Bulat",
   "bugs": {
     "url": "https://github.com/paritytech/polkadot-dashboard-ui/issues"
   },

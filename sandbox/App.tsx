@@ -2,8 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import React, { useState } from "react";
-import type { NextPage } from "next";
-import Head from "next/head";
 import { ButtonPrimary } from "../lib/buttons/ButtonPrimary";
 import { ButtonMono } from "../lib/buttons/ButtonMono";
 import { ButtonMonoInvert } from "../lib/buttons/ButtonMonoInvert";
@@ -22,7 +20,7 @@ import {
 /*
  * Sandbox page for component tests and class inclusion.
  */
-const Home: NextPage = () => {
+const Home = () => {
   // store the current theme
   const [theme, setTheme] = useState<string>("light");
 
@@ -31,10 +29,6 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Polkadot Dashboard UI</title>
-        <meta name="description" content="Polkadot Dashboard UI" />
-      </Head>
       <main className={`theme-${network} theme-${theme}`}>
         <div className="header">
           <h5>

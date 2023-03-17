@@ -2,7 +2,7 @@
 
 ### UI themes and components for Polkadot dashboards. 
 
-Components are viewable on a Next server and exportable via a minimised Rollup build.
+Components are viewable on a Vite server and exportable via a minimised Rollup build.
 
 - [x] Zero dependency React components.
 - [x] Formalised props with interface support.

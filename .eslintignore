@@ -14,5 +14,4 @@
 *.webmanifest
 LICENSE
 dist
-next.config.js
 postcss.config.js
