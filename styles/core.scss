@@ -1,11 +1,14 @@
 // Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-// global styling
 
+$show-accounts-button-width-threshold: 850px;
+$side-menut-sicky-threshold: 1175px;
 @mixin media {
     padding: 0 5rem 0 2.5rem;
 }
+
+// global styling
 .core-entry {
     background: var(--gradient-background);
     width:100%;
@@ -60,11 +63,11 @@
         padding-left: 1.25rem;
         padding-right: 1.25rem;
 
-        @media (min-width: 850px) {
+        @media (min-width:  ($show-accounts-button-width-threshold - 1px)) {
         padding-left: 2.25rem;
         padding-right: 2.25rem;
         }
-        @media (min-width: 1175px) {
+        @media (min-width: ($side-menut-sicky-threshold + 1px) ){
             @include media;
         }
         @media (min-width: 1500px) {
