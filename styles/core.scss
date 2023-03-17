@@ -1,0 +1,70 @@
+// Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+// SPDX-License-Identifier: Apache-2.0
+
+// global styling
+.core-entry {
+    background: var(--gradient-background);
+    width:100%;
+    background-attachment:fixed;
+    display:flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+    flex-grow: 1;
+
+    h1, h2, h3, input {
+        color: var(--text-color-primary);
+    }
+    h4, h5, p, a {
+        color: var(--text-color-secondary);
+    }
+    path.primary, ellipse.primary{
+        fill: var(--text-color-primary);
+    }
+    input:focus, textarea:focus, select:focus {
+        outline: none;
+    }
+    input {
+        border: none;
+        padding: 0.7rem 0rem;
+        font-size: 1.1rem;
+        background: none;
+        transition: all 0.1s;
+    }
+    input::placeholder {
+        color: #aaa;
+    }
+
+   .textbox,
+   .textbox:focus {
+    border-bottom: 1px solid #ddd;
+   }
+
+    .searchbox,
+    .searchbox:focus {
+        border: 1px solid #ddd;
+    }
+
+    .label {
+        font-size: 0.85rem;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-end;
+      }
+
+
+    .page-padding {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+
+        @media (min-width: 850px) {
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
+        }
+        @media (min-width: 1175px) {
+        padding: 0 5rem 0 2.5rem;
+        }
+        @media (min-width: 1500px) {
+        padding: 0 5rem 0 2.5rem;
+        }
+    }
+}
