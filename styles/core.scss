@@ -2,6 +2,10 @@
 // SPDX-License-Identifier: Apache-2.0
 
 // global styling
+
+@mixin media {
+    padding: 0 5rem 0 2.5rem;
+}
 .core-entry {
     background: var(--gradient-background);
     width:100%;
@@ -61,10 +65,10 @@
         padding-right: 2.25rem;
         }
         @media (min-width: 1175px) {
-        padding: 0 5rem 0 2.5rem;
+            @include media;
         }
         @media (min-width: 1500px) {
-        padding: 0 5rem 0 2.5rem;
+            @include media;
         }
     }
 }
