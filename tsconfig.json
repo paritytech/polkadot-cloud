@@ -11,7 +11,7 @@
       "es2017"
     ],
     "sourceMap": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true

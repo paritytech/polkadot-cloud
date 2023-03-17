@@ -1,4 +1,6 @@
-import React from "react";
+// Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+// SPDX-License-Identifier: Apache-2.0
+
 import { InfoSVG } from "../svg/Info";
 import { StyledComponentInterface, CommonButtonInterface } from "../types";
 import { valEmpty } from "../utils";

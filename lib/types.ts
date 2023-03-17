@@ -1,5 +1,7 @@
+// Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+// SPDX-License-Identifier: Apache-2.0
+
 import { IconDefinition, IconProp } from "@fortawesome/fontawesome-svg-core";
-import React from "react";
 
 // A generic type to handle React components. We assume the component may have
 // children and styling applied to it.
