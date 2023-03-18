@@ -10,6 +10,8 @@ export interface StyledComponentInterface {
   children?: React.ReactNode;
   // passing custom styling.
   style?: React.CSSProperties;
+  // passing custom className.
+  className?: string;
 }
 
 // Common button props, applied to all buttons

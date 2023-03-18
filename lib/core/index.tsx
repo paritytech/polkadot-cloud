@@ -3,8 +3,12 @@
 
 import { StyledComponentInterface } from "../types";
 
-export const Entry = ({ children, style }: StyledComponentInterface) => (
-  <div className="core-entry" style={style}>
+export const Entry = ({
+  children,
+  style,
+  className,
+}: StyledComponentInterface) => (
+  <div className={"core-entry " + className} style={style}>
     {children}
   </div>
 );
