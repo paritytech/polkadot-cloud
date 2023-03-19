@@ -84,20 +84,20 @@ If you are using a toolchain with similar rules, ensure that they are amended to
 It is now possible to test components from the local package, and replace currently published components with the development version. Before testing updated local components, replace the published CSS file in your app's entry file with the local version. For Polkadot staking dashboard this is [`src/main.tsx`](https://github.com/paritytech/polkadot-staking-dashboard/blob/4c07fb786f2f82b7f18f1acb1dd4183b7e04bebe/src/main.tsx#L4):
 
 ```
-// Published:
+// Replace published import:
 import '@polkadotcloud/dashboard-ui/index.css';
 
-// Local:
+// with local import:
 import '@polkadotcloud/dashboard-ui-dev/index.css';
 ```
 
 Now components can be added or replaced with those from your local version. Changes can be committed to this `package-dev` branch without impacting your main branch configs, linting rules and existing published component imports:
 
 ```
-// Published:
+// Replace published import:
 import { ButtonHelp } from '@polkadotcloud/dashboard-ui';
 
-// Local:
+// with local import:
 import { ButtonHelp } from '@polkadotcloud/dashboard-ui-dev';
 ```
 
