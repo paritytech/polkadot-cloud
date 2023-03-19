@@ -91,7 +91,7 @@ import '@polkadotcloud/dashboard-ui/index.css';
 import '@polkadotcloud/dashboard-ui-dev/index.css';
 ```
 
-Now components can be added or replaced with those from your local version. Changes can be committed to this `package-dev` branch without impacting your main branch configs, linting rules and existing published component imports:
+Now components can be added or replaced with those from your local version:
 
 ```
 // Replace published import:
@@ -100,4 +100,6 @@ import { ButtonHelp } from '@polkadotcloud/dashboard-ui';
 // with local import:
 import { ButtonHelp } from '@polkadotcloud/dashboard-ui-dev';
 ```
+
+Changes can be committed to this `package-dev` branch without impacting your main branch configs, linting rules and existing published component imports.
 
