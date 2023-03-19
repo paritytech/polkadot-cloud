@@ -1,3 +1,5 @@
+![example workflow](https://github.com/paritytech/polkadot-dashboard-ui/actions/workflows/main.yml/badge.svg)
+
 # Polkadot Dashboard UI
 
 ## UI themes and components for Polkadot dashboards. 
