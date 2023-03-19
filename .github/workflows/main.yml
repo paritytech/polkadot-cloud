@@ -1,4 +1,4 @@
-name: CI Passing
+name: CI
 
 on:
   push:
