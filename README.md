@@ -80,7 +80,8 @@ server: {
 
 If you are using a toolchain with similar rules, ensure that they are amended to allow for global imports.
 
-It is now possible to test components from the local package, and replace currently published components with the development version. Before testing updated local components, replace the published CSS file in your App's index with the local version:
+### Testing Local CSS and Components
+It is now possible to test components from the local package, and replace currently published components with the development version. Before testing updated local components, replace the published CSS file in your app's entry file with the local version. For Polkadot staking dashboard this is [`src/main.tsx`](https://github.com/paritytech/polkadot-staking-dashboard/blob/4c07fb786f2f82b7f18f1acb1dd4183b7e04bebe/src/main.tsx#L4):
 
 ```
 // Published:
