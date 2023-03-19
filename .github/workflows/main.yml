@@ -1,4 +1,4 @@
-name: Dashboard UI CI
+name: CI Passing
 
 on:
   push:
