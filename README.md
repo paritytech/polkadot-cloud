@@ -1,6 +1,6 @@
 # Polkadot Dashboard UI
 
-### UI themes and components for Polkadot dashboards. 
+## UI themes and components for Polkadot dashboards. 
 
 Components are viewable on a Vite server and exportable via a minimised Rollup build.
 
