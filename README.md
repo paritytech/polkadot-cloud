@@ -80,7 +80,17 @@ server: {
 
 If you are using a toolchain with similar rules, ensure that they are amended to allow for global imports.
 
-It is now possible to test components from the local package, and replace currently published components with the development version:
+It is now possible to test components from the local package, and replace currently published components with the development version. Before testing updated local components, replace the published CSS file in your App's index with the local version:
+
+```
+// Published:
+import '@polkadotcloud/dashboard-ui/index.css';
+
+// Local:
+import '@polkadotcloud/dashboard-ui-dev/index.css';
+```
+
+Now components can be added or replaced with those from your local version. Changes can be committed to this `package-dev` branch without impacting your main branch configs, linting rules and existing published component imports:
 
 ```
 // Published:
@@ -90,4 +100,3 @@ import { ButtonHelp } from '@polkadotcloud/dashboard-ui';
 import { ButtonHelp } from '@polkadotcloud/dashboard-ui-dev';
 ```
 
-Changes can now be committed to this `package-dev` branch without impacting your main branch configs, linting rules and existing published component imports.
