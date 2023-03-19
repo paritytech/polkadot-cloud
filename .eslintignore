@@ -13,5 +13,6 @@
 *.html
 *.webmanifest
 LICENSE
+README
 dist
 postcss.config.js
