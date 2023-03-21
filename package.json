@@ -39,7 +39,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "framer-motion": "^10.5.0",
+    "framer-motion": "^10.6.1",
     "postcss": "^8.4.18",
     "prettier": "^2.7.1",
     "react": "^18.2.0",
@@ -59,7 +59,7 @@
   "peerDependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "framer-motion": "^10.5.0",
+    "framer-motion": "^10.6.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
