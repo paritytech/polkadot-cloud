@@ -30,7 +30,7 @@
         padding: 0.7rem 0rem;
         font-size: 1.1rem;
         background: none;
-        transition: all 0.1s;
+        transition: all v.$transition-duration;
 
         &::placeholder {
             color: #aaa;
@@ -58,11 +58,11 @@
         padding-left: 1.25rem;
         padding-right: 1.25rem;
 
-        @media (min-width:  (v.$page-width-threshold + 1px)) {
+        @media (min-width:  (v.$page-width-small-threshold + 1px)) {
         padding-left: 2.25rem;
         padding-right: 2.25rem;
         }
-        @media (min-width: (v.$side-menut-sicky-threshold + 1px) ){
+        @media (min-width: (v.$page-width-medium-threshold + 1px) ){
             padding: 0 5rem 0 2.5rem;
         }
         @media (min-width: 1500px) {

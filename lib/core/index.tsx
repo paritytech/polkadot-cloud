@@ -2,13 +2,17 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { StyledComponentInterface } from "../types";
+import { valEmpty } from "../utils";
 
 export const Entry = ({
   children,
   style,
   className,
 }: StyledComponentInterface) => (
-  <div className={"core-entry " + className} style={style}>
+  <div
+    className={"core-entry " + valEmpty(className, "className")}
+    style={style}
+  >
     {children}
   </div>
 );
