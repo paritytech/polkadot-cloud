@@ -30,7 +30,7 @@
         padding: 0.7rem 0rem;
         font-size: 1.1rem;
         background: none;
-        transition: all v.$transition-duration;
+        transition: all var(--transition-duration);
 
         &::placeholder {
             color: #aaa;
