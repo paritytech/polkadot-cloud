@@ -1,6 +1,5 @@
 // Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-@use 'theme';
-@use 'core';
-@use 'buttons';
+$page-width-small-threshold: 850px;
+$page-width-medium-threshold: 1175px;
