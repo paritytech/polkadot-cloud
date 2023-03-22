@@ -103,9 +103,11 @@ import { ButtonHelp } from '@polkadotcloud/dashboard-ui-dev';
 
 Changes can be committed to this `package-dev` branch without impacting your main branch configs, linting rules and existing published component imports.
 
-### Unlink the package
-If you are trying to rename your pacakge, it is a good practice to unlink(remove) the unused one by running `yarn unlink [package]`:
+### Unlinking
+If you wish to rename or deprecate a local development package, it is a good practice to unlink (remove) it by running `yarn unlink [package]` in The App project directory:
 
 ```
 yarn unlink @polkadotcloud/dashboard-ui-dev
 ```
+
+ Followed by `yarn unlink` in The Package project directory.
