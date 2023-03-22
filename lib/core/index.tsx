@@ -9,7 +9,7 @@ export const Entry = ({
   style,
   className,
 }: StyledComponentInterface) => (
-  <div className={"core-entry " + valEmpty(className, className)} style={style}>
+  <div className={"core-entry" + valEmpty(className, className)} style={style}>
     {children}
   </div>
 );
