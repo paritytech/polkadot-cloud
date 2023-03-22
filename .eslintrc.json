@@ -19,22 +19,13 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "prefer-arrow-functions"
-  ],
+  "plugins": ["react", "@typescript-eslint", "prefer-arrow-functions"],
   "rules": {
-    "semi": [
-      2,
-      "always"
-    ],
+    "semi": [2, "always"],
     "react/jsx-filename-extension": [
       "warn",
       {
-        "extensions": [
-          ".tsx"
-        ]
+        "extensions": [".tsx"]
       }
     ],
     "import/extensions": [
@@ -47,9 +38,7 @@
     ],
     "no-shadow": "off",
     "react/react-in-jsx-scope": "off",
-    "@typescript-eslint/no-shadow": [
-      "error"
-    ],
+    "@typescript-eslint/no-shadow": ["error"],
     "prefer-arrow-functions/prefer-arrow-functions": [
       "warn",
       {

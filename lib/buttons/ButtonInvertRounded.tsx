@@ -2,12 +2,12 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import {
-  StyledComponentInterface,
-  CommonButtonInterface,
   ButtonIconsInferface,
+  CommonButtonInterface,
+  StyledComponentInterface,
 } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { valOr, valEmpty } from "../utils";
+import { valEmpty, valOr } from "../utils";
 
 export type ButtonInvertRoundedProps = StyledComponentInterface &
   ButtonIconsInferface &
@@ -36,14 +36,14 @@ export const ButtonInvertRounded = ({
   text,
 }: ButtonInvertRoundedProps) => (
   <button
-    className={
-      "btn-invert-rounded" +
-      valEmpty(grow, "grow") +
-      valOr(lg, "lg", "sm") +
-      valEmpty(marginRight, "m-right") +
-      valEmpty(marginLeft, "m-left") +
-      valEmpty(marginX, "m-x")
-    }
+    className={`btn-invert-rounded${valEmpty(grow, "grow")}${valOr(
+      lg,
+      "lg",
+      "sm"
+    )}${valEmpty(marginRight, "m-right")}${valEmpty(
+      marginLeft,
+      "m-left"
+    )}${valEmpty(marginX, "m-x")}`}
     style={style}
     type="button"
     disabled={disabled}

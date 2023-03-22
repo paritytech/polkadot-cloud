@@ -12,10 +12,7 @@
   },
   "description": "UI components for Polkadot Dashboards.",
   "main": "index.tsx",
-  "keywords": [
-    "Polkadot",
-    "UI"
-  ],
+  "keywords": ["Polkadot", "UI"],
   "typescript": {
     "definition": "index.d.ts"
   },
