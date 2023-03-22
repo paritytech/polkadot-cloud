@@ -24,7 +24,7 @@ The following walkthrough uses the [Polkadot staking dashboard](https://github.c
 1. Checkout the `package-dev` branch:
 
 ```
-yarn checkout package-dev
+git checkout package-dev
 ```
 
 This branch should be identical to `main`, with the exception of the [`dist.package.json`](https://github.com/paritytech/polkadot-dashboard-ui/blob/4d66892e73afe7cc17465411b6bc7fe5817c7447/dist.package.json#L2) package name having `-dev` appended.
