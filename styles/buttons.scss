@@ -1,8 +1,8 @@
-// Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
-// SPDX-License-Identifier: Apache-2.0
+/* Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+SPDX-License-Identifier: Apache-2.0 */
 
 // button layout styles
-@mixin layout {
+@mixin btn-layout {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,47 +12,50 @@
     flex: 1 1 0%;
   }
 }
-    
-// button common styles
-@mixin common {
+
+// button btn-common styles
+@mixin btn-common {
   &.m-left {
     margin-left: 0.625rem;
   }
+
   &.m-right {
     margin-right: 0.625rem;
   }
+
   &.m-x {
     margin: 0 0.625rem;
   }
 }
 
 // button icon styles
-@mixin icons {
+@mixin btn-icons {
   > .icon-left {
     margin-left: 0.125rem;
     margin-right: 0.625rem;
   }
+
   > .icon-right {
     margin-left: 0.625rem;
     margin-right: 0.125rem;
   }
 }
 
-@mixin smallButton {
+@mixin btn-small-button {
   padding: 0.34rem 0.92rem;
   font-size: 1rem;
 }
 
-@mixin largeButton {
+@mixin btn-large-button {
   padding: 0.45rem 0.95rem;
   font-size: 1.15rem;
 }
 
-@mixin paddingSubmit {
+@mixin btn-padding-submit {
   padding: 0.45rem 0.8rem;
 }
 
-@mixin disabled {
+@mixin btn-disabled {
   transition: opacity 0.15s, color 0.15s;
 
   &:disabled {
@@ -63,20 +66,22 @@
 
 // help icon button
 .btn-help {
-  @include layout;
-  @include common;
-  @include disabled;
+  @include btn-layout;
+  @include btn-common;
+  @include btn-disabled;
+
   background: var(--button-tertiary-background);
   color: var(--text-color-secondary);
   fill: var(--text-color-secondary);
   border-radius: 50%;
-  padding: 0rem;
+  padding: 0;
   width: 1.3rem;
   height: 1.3rem;
 
   &.background-secondary {
     background: var(--button-primary-background);
   }
+
   &:hover {
     fill: var(--network-color-primary);
   }
@@ -84,10 +89,11 @@
 
 // buttons/ButtonPrimary
 .btn-primary {
-  @include layout;
-  @include common;
-  @include icons;
-  @include disabled;
+  @include btn-layout;
+  @include btn-common;
+  @include btn-icons;
+  @include btn-disabled;
+
   background: var(--network-color-primary);
   border: 1px solid var(--network-color-primary);
   color: white;
@@ -97,34 +103,41 @@
     background: var(--network-color-secondary);
     border: 1px solid var(--network-color-secondary);
   }
+
   &.sm {
-    @include smallButton;
+    @include btn-small-button;
   }
+
   &.lg {
-    @include largeButton;
+    @include btn-large-button;
   }
 }
 
-  // buttons/ButtonSecondary
+// buttons/ButtonSecondary
 .btn-secondary {
-  @include layout;
-  @include common;
-  @include icons;
-  @include disabled;
+  @include btn-layout;
+  @include btn-common;
+  @include btn-icons;
+  @include btn-disabled;
+
   color: var(--text-color-primary);
   background: var(--button-secondary-background);
   border: 1px solid var(--button-secondary-background);
   border-radius: 1.5rem;
 
   &.sm {
-    @include smallButton;
+    @include btn-small-button;
+
     border-radius: 1.5rem;
   }
+
   &.lg {
-    @include largeButton;
+    @include btn-large-button;
   }
+
   &:hover {
     background: var(--button-hover-background);
+
     &:disabled {
       background: var(--button-secondary-background);
     }
@@ -133,10 +146,11 @@
 
 // buttons/ButtonMono
 .btn-mono {
-  @include layout;
-  @include common;
-  @include icons;
-  @include disabled;
+  @include btn-layout;
+  @include btn-common;
+  @include btn-icons;
+  @include btn-disabled;
+
   color: var(--text-color-invert);
   background: var(--text-color-primary);
   border: 1px solid var(--text-color-primary);
@@ -146,20 +160,23 @@
     border-color: var(--text-color-secondary);
     background: var(--text-color-secondary);
   }
+
   &.sm {
-    @include smallButton;
+    @include btn-small-button;
   }
+
   &.lg {
-    @include largeButton;
+    @include btn-large-button;
   }
 }
 
 // buttons/ButtonMonoRounded
 .btn-mono-invert {
-  @include layout;
-  @include common;
-  @include icons;
-  @include disabled;
+  @include btn-layout;
+  @include btn-common;
+  @include btn-icons;
+  @include btn-disabled;
+
   color: var(--text-color-primary);
   border: 1px solid var(--text-color-primary);
   border-radius: 1.5rem;
@@ -168,20 +185,23 @@
     border-color: var(--text-color-secondary);
     background: var(--text-color-secondary);
   }
+
   &.sm {
-    @include smallButton;
+    @include btn-small-button;
   }
+
   &.lg {
-    @include largeButton;
+    @include btn-large-button;
   }
 }
 
 // buttons/ButtonText
 .btn-text {
-  @include layout;
-  @include common;
-  @include icons;
-  @include disabled;
+  @include btn-layout;
+  @include btn-common;
+  @include btn-icons;
+  @include btn-disabled;
+
   color: var(--text-color-primary);
   border-radius: 1.5rem;
   padding: 0.45rem;
@@ -194,11 +214,12 @@
 
 // buttons/ButtonInvert
 .btn-invert {
-  @include layout;
-  @include common;
-  @include icons;
-  @include paddingSubmit;
-  @include disabled;
+  @include btn-layout;
+  @include btn-common;
+  @include btn-icons;
+  @include btn-padding-submit;
+  @include btn-disabled;
+
   border: 1px solid var(--network-color-stroke);
   color: var(--network-color-stroke);
   font-size: 1rem;
@@ -207,28 +228,32 @@
 
 // buttons/ButtonInvertRounded
 .btn-invert-rounded {
-  @include layout;
-  @include common;
-  @include icons;
-  @include disabled;
+  @include btn-layout;
+  @include btn-common;
+  @include btn-icons;
+  @include btn-disabled;
+
   border: 1px solid var(--network-color-stroke);
   color: var(--network-color-stroke);
   border-radius: 1.5rem;
+
   &.sm {
-    @include smallButton;
+    @include btn-small-button;
   }
+
   &.lg {
-    @include largeButton;
+    @include btn-large-button;
   }
 }
 
 // buttons/ButtonSubmit
 .btn-submit {
-  @include layout;
-  @include common;
-  @include icons;
-  @include paddingSubmit;
-  @include disabled;
+  @include btn-layout;
+  @include btn-common;
+  @include btn-icons;
+  @include btn-padding-submit;
+  @include btn-disabled;
+
   border: 1px solid var(--network-color-primary);
   background: var(--network-color-primary);
   border-radius: 0.75rem;

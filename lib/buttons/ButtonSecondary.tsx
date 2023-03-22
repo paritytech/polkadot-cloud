@@ -2,12 +2,12 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import {
-  StyledComponentInterface,
-  CommonButtonInterface,
   ButtonIconsInferface,
+  CommonButtonInterface,
+  StyledComponentInterface,
 } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { valOr, valEmpty } from "../utils";
+import { valEmpty, valOr } from "../utils";
 
 export type ButtonSecondaryProps = StyledComponentInterface &
   ButtonIconsInferface &
@@ -36,14 +36,13 @@ export const ButtonSecondary = ({
   text,
 }: ButtonSecondaryProps) => (
   <button
-    className={
-      "btn-secondary" +
-      valOr(lg, "lg", "sm") +
-      valEmpty(grow, "grow") +
-      valEmpty(marginRight, "m-right") +
-      valEmpty(marginLeft, "m-left") +
-      valEmpty(marginX, "m-x")
-    }
+    className={`btn-secondary${valOr(lg, "lg", "sm")}${valEmpty(
+      grow,
+      "grow"
+    )}${valEmpty(marginRight, "m-right")}${valEmpty(
+      marginLeft,
+      "m-left"
+    )}${valEmpty(marginX, "m-x")}`}
     style={style}
     type="button"
     disabled={disabled}

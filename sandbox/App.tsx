@@ -13,8 +13,8 @@ import { ButtonSubmit } from "../lib/buttons/ButtonSubmit";
 import { ButtonHelp } from "../lib/buttons/ButtonHelp";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import {
-  faUser as faUserReg,
   faArrowAltCircleUp,
+  faUser as faUserReg,
 } from "@fortawesome/free-regular-svg-icons";
 
 /*

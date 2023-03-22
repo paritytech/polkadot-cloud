@@ -2,7 +2,7 @@
 
 # Polkadot Dashboard UI
 
-## UI themes and components for Polkadot dashboards. 
+## UI themes and components for Polkadot dashboards.
 
 Components are viewable on a Vite server and exportable via a minimised Rollup build.
 
@@ -17,7 +17,7 @@ Components can be viewed in the sandbox (accessed via `yarn dev`) while developi
 
 So in addition to the sandbox, It is also possible to build the package and test it in other projects locally, before publishing the updated package to NPM. Doing this allows testing of newly updated components in a production app use-case before they are published .
 
-The following walkthrough uses the [Polkadot staking dashboard](https://github.com/paritytech/polkadot-staking-dashboard) as **_The App_**  and a local build of the UI library as **_The Package_** to test.
+The following walkthrough uses the [Polkadot staking dashboard](https://github.com/paritytech/polkadot-staking-dashboard) as **_The App_** and a local build of the UI library as **_The Package_** to test.
 
 ### The Package Setup
 
@@ -81,6 +81,7 @@ server: {
 If you are using a toolchain with similar rules, ensure that they are amended to allow for global imports.
 
 ### Importing Local CSS and Components
+
 It is now possible to test components from the local package, and replace currently published components with the development version. Before testing updated local components, replace the published CSS file in your app's entry file with the local version. For Polkadot staking dashboard this is [`src/main.tsx`](https://github.com/paritytech/polkadot-staking-dashboard/blob/4c07fb786f2f82b7f18f1acb1dd4183b7e04bebe/src/main.tsx#L4):
 
 ```
@@ -104,10 +105,11 @@ import { ButtonHelp } from '@polkadotcloud/dashboard-ui-dev';
 Changes can be committed to this `package-dev` branch without impacting your main branch configs, linting rules and existing published component imports.
 
 ### Unlinking
+
 If you wish to rename or deprecate a local development package, it is a good practice to unlink (remove) it by running `yarn unlink [package]` in The App project directory:
 
 ```
 yarn unlink @polkadotcloud/dashboard-ui-dev
 ```
 
- Followed by `yarn unlink` in The Package project directory.
+Followed by `yarn unlink` in The Package project directory.

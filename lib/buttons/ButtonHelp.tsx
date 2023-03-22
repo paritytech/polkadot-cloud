@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { InfoSVG } from "../svg/Info";
-import { StyledComponentInterface, CommonButtonInterface } from "../types";
+import { CommonButtonInterface, StyledComponentInterface } from "../types";
 import { valEmpty } from "../utils";
 
 export type ButtonHelpProps = StyledComponentInterface &
@@ -24,13 +24,13 @@ export const ButtonHelp = ({
   style,
 }: ButtonHelpProps) => (
   <button
-    className={
-      "btn-help" +
-      valEmpty(backgroundSecondary, "background-secondary") +
-      valEmpty(marginRight, "m-right") +
-      valEmpty(marginLeft, "m-left") +
-      valEmpty(marginX, "m-x")
-    }
+    className={`btn-help${valEmpty(
+      backgroundSecondary,
+      "background-secondary"
+    )}${valEmpty(marginRight, "m-right")}${valEmpty(
+      marginLeft,
+      "m-left"
+    )}${valEmpty(marginX, "m-x")}`}
     style={style}
     type="button"
     disabled={disabled}

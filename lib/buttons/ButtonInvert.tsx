@@ -2,12 +2,12 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import {
-  StyledComponentInterface,
-  CommonButtonInterface,
   ButtonIconsInferface,
+  CommonButtonInterface,
+  StyledComponentInterface,
 } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { valOr, valEmpty } from "../utils";
+import { valEmpty, valOr } from "../utils";
 import { motion } from "framer-motion";
 
 export type ButtonInvertProps = StyledComponentInterface &
@@ -36,13 +36,11 @@ export const ButtonInvert = ({
   <motion.button
     whileHover={{ scale: !disabled ? 1.02 : 1 }}
     whileTap={{ scale: !disabled ? 0.98 : 1 }}
-    className={
-      "btn-invert" +
-      valEmpty(grow, "grow") +
-      valEmpty(marginRight, "m-right") +
-      valEmpty(marginLeft, "m-left") +
-      valEmpty(marginX, "m-x")
-    }
+    className={`btn-invert${valEmpty(grow, "grow")}
+    ${valEmpty(marginRight, "m-right")}${valEmpty(
+      marginLeft,
+      "m-left"
+    )}${valEmpty(marginX, "m-x")}`}
     style={style}
     type="button"
     disabled={disabled}
