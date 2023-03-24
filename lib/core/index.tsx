@@ -13,3 +13,11 @@ export const Entry = ({
     {children}
   </div>
 );
+
+export const Body = ({ children }: StyledComponentInterface) => {
+  return <div className={`body-interface`}>{children}</div>;
+};
+
+export const Main = ({ children }: StyledComponentInterface) => (
+  <div className={`main-interface`}>{children}</div>
+);
