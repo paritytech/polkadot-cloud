@@ -15,13 +15,20 @@ export const Entry = ({
   </div>
 );
 
-export const Body = ({ children }: StyledComponentInterface) => {
-  return <div className="body-interface">{children}</div>;
+export const Body = ({ children, style }: StyledComponentInterface) => {
+  return (
+    <div className="body-interface" style={style}>
+      {children}
+    </div>
+  );
 };
 
 export const Main = forwardRef(
-  ({ children }: StyledComponentInterface, ref: RefObject<HTMLDivElement>) => (
-    <div ref={ref} className="main-interface">
+  (
+    { children, style }: StyledComponentInterface,
+    ref: RefObject<HTMLDivElement>
+  ) => (
+    <div ref={ref} className="main-interface" style={style}>
       {children}
     </div>
   )
