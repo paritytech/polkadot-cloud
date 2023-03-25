@@ -5,17 +5,20 @@ import { IconDefinition, IconProp } from "@fortawesome/fontawesome-svg-core";
 
 // A generic type to handle React components. We assume the component may have
 // children and styling applied to it.
-export interface StyledComponentInterface {
+export interface ComponentBase {
   // passing react children.
   children?: React.ReactNode;
   // passing custom styling.
   style?: React.CSSProperties;
-  // passing a className string.
-  className?: string;
 }
 
+export type ComponentBaseWithClassName = ComponentBase & {
+  // passing a className string.
+  className?: string;
+};
+
 // Common button props, applied to all buttons
-export interface CommonButtonInterface {
+export interface ButtonCommonProps {
   // whether the button is disabled.
   disabled?: boolean;
   // onClick handler of button.
@@ -31,7 +34,7 @@ export interface CommonButtonInterface {
 }
 
 // Icon support for buttons
-export interface ButtonIconsInferface {
+export interface ButtonIconProps {
   // include a left icon with the button.
   iconLeft?: IconProp | IconDefinition;
   // include a right icon with the button.
