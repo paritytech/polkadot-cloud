@@ -2,17 +2,17 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import {
-  ButtonIconsInferface,
-  CommonButtonInterface,
-  StyledComponentInterface,
+  ButtonIconProps,
+  ButtonCommonProps,
+  ComponentBase,
 } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { valEmpty, valOr } from "../utils";
 import { motion } from "framer-motion";
 
-export type ButtonInvertProps = StyledComponentInterface &
-  ButtonIconsInferface &
-  CommonButtonInterface & {
+export type ButtonInvertProps = ComponentBase &
+  ButtonIconProps &
+  ButtonCommonProps & {
     // button text.
     text: string;
   };

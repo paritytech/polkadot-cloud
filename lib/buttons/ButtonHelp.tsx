@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { InfoSVG } from "../svg/Info";
-import { CommonButtonInterface, StyledComponentInterface } from "../types";
+import { ButtonCommonProps, ComponentBase } from "../types";
 import { valEmpty } from "../utils";
 
-export type ButtonHelpProps = StyledComponentInterface &
-  CommonButtonInterface & {
+export type ButtonHelpProps = ComponentBase &
+  ButtonCommonProps & {
     // whether to use secondary background
     backgroundSecondary?: boolean;
   };

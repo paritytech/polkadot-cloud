@@ -1,18 +1,14 @@
 // Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import {
-  ButtonIconsInferface,
-  CommonButtonInterface,
-  StyledComponentInterface,
-} from "../types";
+import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { valEmpty, valOr } from "../utils";
 import { motion } from "framer-motion";
 
-export type ButtonMonoProps = StyledComponentInterface &
-  ButtonIconsInferface &
-  CommonButtonInterface & {
+export type ButtonMonoProps = ComponentBase &
+  ButtonIconProps &
+  ButtonCommonProps & {
     // button text.
     text: string;
   };
