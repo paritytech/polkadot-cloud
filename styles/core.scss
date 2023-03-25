@@ -87,14 +87,14 @@ SPDX-License-Identifier: Apache-2.0 */
 }
 
 .body-interface {
-  display: flex;
   position: relative;
+  display: flex;
   flex-grow: 1;
 }
 
 .main-interface {
-  flex: 1;
-  display: flex;
-  flex-flow: column nowrap;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }

@@ -16,12 +16,12 @@ export const Entry = ({
 );
 
 export const Body = ({ children }: StyledComponentInterface) => {
-  return <div className={`body-interface`}>{children}</div>;
+  return <div className="body-interface">{children}</div>;
 };
 
 export const Main = forwardRef(
   ({ children }: StyledComponentInterface, ref: RefObject<HTMLDivElement>) => (
-    <div ref={ref} className={`main-interface`}>
+    <div ref={ref} className="main-interface">
       {children}
     </div>
   )

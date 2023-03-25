@@ -113,11 +113,3 @@ yarn unlink @polkadotcloud/dashboard-ui-dev
 ```
 
 Followed by `yarn unlink` in The Package project directory.
-
-### Unregister
-
-There might be case that you want to reuse the package name you had, to do that you need to unregister the package by running `rm ~/.config/yarn/link/[package]` in your terminal:
-
-```
-rm ~/.config/yarn/link/@polkadotcloud/dashboard-ui-dev
-```
