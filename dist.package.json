@@ -1,5 +1,5 @@
 {
-  "name": "@polkadotcloud/dashboard-ui",
+  "name": "@polkadotcloud/dashboard-ui-dev",
   "version": "0.2.2",
   "license": "Apache-2.0",
   "types": "index.d.ts",
