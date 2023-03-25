@@ -24,7 +24,7 @@ export const Body = ({ children, style }: ComponentBase) => {
 };
 
 export const Main = forwardRef(
-  ({ children, style }: ComponentBase, ref: RefObject<HTMLDivElement>) => (
+  ({ children, style }: ComponentBase, ref?: RefObject<HTMLDivElement>) => (
     <div ref={ref} className="main-interface" style={style}>
       {children}
     </div>
