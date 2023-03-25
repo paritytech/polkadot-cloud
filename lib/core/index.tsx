@@ -3,11 +3,7 @@
 
 import { StyledComponentInterface } from "../types";
 import { valEmpty } from "../utils";
-import { RefObject } from "react";
-
-export type MainProps = StyledComponentInterface & {
-  ref: RefObject<HTMLDivElement>;
-};
+import { RefObject, forwardRef } from "react";
 
 export const Entry = ({
   children,
@@ -23,6 +19,11 @@ export const Body = ({ children }: StyledComponentInterface) => {
   return <div className={`body-interface`}>{children}</div>;
 };
 
-export const Main = ({ children }: MainProps) => (
-  <div className={`main-interface`}>{children}</div>
+export const Main = forwardRef(
+  ({ children }: StyledComponentInterface, ref: RefObject<HTMLDivElement>) => (
+    <div ref={ref} className={`main-interface`}>
+      {children}
+    </div>
+  )
 );
+Main.displayName = "Main";
