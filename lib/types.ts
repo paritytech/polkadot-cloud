@@ -3,6 +3,9 @@
 
 import { IconDefinition, IconProp } from "@fortawesome/fontawesome-svg-core";
 
+// A list of supported networks
+export type Networks = "polkadot" | "kusama" | "westend";
+
 // A generic type to handle React components. We assume the component may have
 // children and styling applied to it.
 export interface ComponentBase {
