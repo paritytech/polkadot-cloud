@@ -1,16 +1,18 @@
 // Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { ComponentBase, ComponentBaseWithClassName } from "../types";
-import { valEmpty } from "../utils";
+import { ComponentBase, Networks } from "../types";
 import { RefObject, forwardRef } from "react";
 
-export const Entry = ({
-  children,
-  style,
-  className,
-}: ComponentBaseWithClassName) => (
-  <div className={`core-entry${valEmpty(className, className)}`} style={style}>
+export type EntryProps = ComponentBase & {
+  // the theme mode
+  mode: "light" | "dark";
+  // the active network
+  network: Networks;
+};
+
+export const Entry = ({ children, style, mode, network }: EntryProps) => (
+  <div className={`core-entry ${mode} ${network}`} style={style}>
     {children}
   </div>
 );
