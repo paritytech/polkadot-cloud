@@ -12,7 +12,7 @@ export type EntryProps = ComponentBase & {
 };
 
 export const Entry = ({ children, style, mode, network }: EntryProps) => (
-  <div className={`core-entry ${mode} ${network}`} style={style}>
+  <div className={`core-entry theme-${mode} theme-${network}`} style={style}>
     {children}
   </div>
 );
