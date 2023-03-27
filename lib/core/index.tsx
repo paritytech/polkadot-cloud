@@ -3,12 +3,18 @@
 
 import { ComponentBase, Networks } from "../types";
 import { RefObject, forwardRef } from "react";
+import { valOr } from "../utils";
 
 export type EntryProps = ComponentBase & {
   // the theme mode
   mode: "light" | "dark";
   // the active network
   network: Networks;
+};
+
+export type SideProps = ComponentBase & {
+  open: number;
+  minimised: number;
 };
 
 export const Entry = ({ children, style, mode, network }: EntryProps) => (
@@ -33,3 +39,16 @@ export const Main = forwardRef(
   )
 );
 Main.displayName = "Main";
+
+export const Side = ({ children, style, open, minimised }: SideProps) => (
+  <div
+    className={`side-interface${valOr(open === 1, "zero", "minus")}${valOr(
+      minimised === 1,
+      "min",
+      "max"
+    )}`}
+    style={style}
+  >
+    {children}
+  </div>
+);
