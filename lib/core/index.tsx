@@ -4,6 +4,7 @@
 import { ComponentBase, Networks } from "../types";
 import { RefObject, forwardRef } from "react";
 import { valOr } from "../utils";
+import { VariantLabels, motion } from "framer-motion";
 
 export type EntryProps = ComponentBase & {
   // the theme mode
@@ -15,6 +16,14 @@ export type EntryProps = ComponentBase & {
 export type SideProps = ComponentBase & {
   open: number;
   minimised: number;
+};
+
+export type PageProps = ComponentBase & {
+  key: string;
+  initial: VariantLabels;
+  animate: VariantLabels;
+  exit: VariantLabels;
+  transition: any;
 };
 
 export const Entry = ({ children, style, mode, network }: EntryProps) => (
@@ -51,4 +60,26 @@ export const Side = ({ children, style, open, minimised }: SideProps) => (
   >
     {children}
   </div>
+);
+
+export const Page = ({
+  children,
+  style,
+  key,
+  initial,
+  animate,
+  exit,
+  transition,
+}: PageProps) => (
+  <motion.div
+    className="page"
+    style={style}
+    key={key}
+    initial={initial}
+    animate={animate}
+    exit={exit}
+    transition={transition}
+  >
+    {children}
+  </motion.div>
 );
