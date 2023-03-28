@@ -4,7 +4,6 @@
 import { ComponentBase, Networks } from "../types";
 import { RefObject, forwardRef } from "react";
 import { valOr } from "../utils";
-import { VariantLabels, motion } from "framer-motion";
 
 export type EntryProps = ComponentBase & {
   // the theme mode
