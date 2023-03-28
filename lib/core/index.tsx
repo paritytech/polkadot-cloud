@@ -3,12 +3,17 @@
 
 import { ComponentBase, Networks } from "../types";
 import { RefObject, forwardRef } from "react";
+import { motion } from "framer-motion";
 
 export type EntryProps = ComponentBase & {
   // the theme mode
   mode: "light" | "dark";
   // the active network
   network: Networks;
+};
+
+export type PageProps = ComponentBase & {
+  key: string | undefined;
 };
 
 /* Entry
@@ -42,3 +47,24 @@ export const Main = forwardRef(
   )
 );
 Main.displayName = "Main";
+
+/* Page
+ * A motion.div that wraps every page.
+ * Transitions can be applied to this wrapper that will
+ * affect the entire page.
+ */
+export const Page = ({ children, style, key }: PageProps) => {
+  return (
+    <motion.div
+      className="page-interface"
+      style={style}
+      key={key}
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 10 }}
+      transition={{ duration: 0.2 }}
+    >
+      {children}
+    </motion.div>
+  );
+};
