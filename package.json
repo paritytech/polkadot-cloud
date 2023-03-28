@@ -16,7 +16,7 @@
     "lint": "eslint './**' --fix && npx prettier --write . && npx stylelint '**/*.scss' --fix"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-brands-svg-icons": "^6.3.0",
     "@fortawesome/free-regular-svg-icons": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
@@ -59,7 +59,7 @@
     "vite": "^4.2.1"
   },
   "peerDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.3.0",
     "framer-motion": "^10.9.1",
     "react": "^18.2.0",
