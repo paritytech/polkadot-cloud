@@ -50,7 +50,7 @@ export const Main = forwardRef(
 Main.displayName = "Main";
 
 /* Side
- * A column flex wrapper that hosts the side menus content.
+ * An element that houses the side menu and handles resizing on smaller screens.
  */
 export const Side = ({ children, style, open, minimised }: SideProps) => (
   <div
