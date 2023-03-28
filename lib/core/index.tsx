@@ -12,10 +12,6 @@ export type EntryProps = ComponentBase & {
   network: Networks;
 };
 
-export type PageProps = ComponentBase & {
-  key: string | undefined;
-};
-
 /* Entry
  * The outer-most wrapper that hosts core tag styling.
  */
@@ -53,12 +49,11 @@ Main.displayName = "Main";
  * Transitions can be applied to this wrapper that will
  * affect the entire page.
  */
-export const Page = ({ children, style, key }: PageProps) => {
+export const Page = ({ children, style }: ComponentBase) => {
   return (
     <motion.div
       className="page-interface"
       style={style}
-      key={key}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 10 }}
