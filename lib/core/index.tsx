@@ -18,14 +18,6 @@ export type SideProps = ComponentBase & {
   minimised: number;
 };
 
-export type PageProps = ComponentBase & {
-  key: string;
-  initial: VariantLabels;
-  animate: VariantLabels;
-  exit: VariantLabels;
-  transition: any;
-};
-
 /* Entry
  * The outer-most wrapper that hosts core tag styling.
  */
@@ -58,6 +50,9 @@ export const Main = forwardRef(
 );
 Main.displayName = "Main";
 
+/* Side
+ * A column flex wrapper that hosts the side menus content.
+ */
 export const Side = ({ children, style, open, minimised }: SideProps) => (
   <div
     className={`side-interface${valOr(open === 1, "zero", "minus")}${valOr(
@@ -69,26 +64,4 @@ export const Side = ({ children, style, open, minimised }: SideProps) => (
   >
     {children}
   </div>
-);
-
-export const Page = ({
-  children,
-  style,
-  key,
-  initial,
-  animate,
-  exit,
-  transition,
-}: PageProps) => (
-  <motion.div
-    className="page"
-    style={style}
-    key={key}
-    initial={initial}
-    animate={animate}
-    exit={exit}
-    transition={transition}
-  >
-    {children}
-  </motion.div>
 );
