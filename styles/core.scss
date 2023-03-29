@@ -99,7 +99,7 @@ SPDX-License-Identifier: Apache-2.0 */
 }
 
 .core-page {
-  max-width: v.$interface-maximum-width;
+  max-width: v.$page-max-width;
   display: flex;
   flex-direction: column;
   padding-bottom: 4.5rem;
