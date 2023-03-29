@@ -14,7 +14,7 @@ export type EntryProps = ComponentBase & {
 
 export type SideProps = ComponentBase & {
   open: boolean;
-  minimised: boolean;
+  minimised: boolean | string;
 };
 
 /* Entry
