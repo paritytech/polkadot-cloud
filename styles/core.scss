@@ -99,26 +99,24 @@ SPDX-License-Identifier: Apache-2.0 */
 }
 
 .side-interface {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+  z-index: 7;
   position: sticky;
   top: 0;
-  z-index: 7;
+  height: 100vh;
   flex: 0;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.1, 1, 0.2, 1);
 
-  &.min {
+  /* maximised by default, or minimised otherwise. */
+  min-width: v.$side-menu-maximised-width;
+  max-width: v.$side-menu-maximised-width;
+
+  &.minimised {
     min-width: v.$side-menu-minimised-width;
     max-width: v.$side-menu-minimised-width;
   }
-
-  &.max {
-    min-width: v.$side-menu-maximised-width;
-    max-width: v.$side-menu-maximised-width;
-  }
-
-  transition: all 0.5s cubic-bezier(0.1, 1, 0.2, 1);
 
   @media (max-width: v.$page-width-medium-threshold) {
     position: fixed;
@@ -126,7 +124,7 @@ SPDX-License-Identifier: Apache-2.0 */
     left: 0;
 
     &.hidden {
-      left: (0 - v.$side-menu-maximised-width);
+      left: (-(v.$side-menu-maximised-width));
     }
   }
 }

@@ -3,7 +3,7 @@
 
 import { ComponentBase, Networks } from "../types";
 import { RefObject, forwardRef } from "react";
-import { valEmpty, valOr } from "../utils";
+import { valEmpty } from "../utils";
 
 export type EntryProps = ComponentBase & {
   // the theme mode
@@ -54,10 +54,9 @@ Main.displayName = "Main";
  */
 export const Side = ({ children, style, open, minimised }: SideProps) => (
   <div
-    className={`side-interface${valEmpty(!open, "hidden")}${valOr(
+    className={`side-interface${valEmpty(!open, "hidden")}${valEmpty(
       minimised,
-      "min",
-      "max"
+      "minimised"
     )}`}
     style={style}
   >
