@@ -16,16 +16,16 @@
     "lint": "eslint './**' --fix && npx prettier --write . && npx stylelint '**/*.scss' --fix"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.3.0",
-    "@fortawesome/free-brands-svg-icons": "^6.3.0",
-    "@fortawesome/free-regular-svg-icons": "^6.3.0",
-    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
-    "@types/react": "^18.0.29",
-    "@typescript-eslint/eslint-plugin": "^5.56.0",
-    "@typescript-eslint/parser": "^5.56.0",
+    "@types/react": "^18.0.30",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
     "@vitejs/plugin-react-swc": "^3.0.0",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.23.0",
@@ -59,8 +59,8 @@
     "vite": "^4.2.1"
   },
   "peerDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.3.0",
-    "@fortawesome/react-fontawesome": "^0.3.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.4.0",
     "framer-motion": "^10.9.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
