@@ -106,3 +106,34 @@ SPDX-License-Identifier: Apache-2.0 */
   width: 100%;
   margin: 0 auto;
 }
+
+.side-interface {
+  z-index: 7;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  flex: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.1, 1, 0.2, 1);
+
+  /* maximised by default, or minimised otherwise. */
+  min-width: v.$side-menu-maximised-width;
+  max-width: v.$side-menu-maximised-width;
+
+  &.minimised {
+    min-width: v.$side-menu-minimised-width;
+    max-width: v.$side-menu-minimised-width;
+  }
+
+  @media (max-width: v.$page-width-medium-threshold) {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    &.hidden {
+      left: (-(v.$side-menu-maximised-width));
+    }
+  }
+}
