@@ -13,8 +13,10 @@ export type EntryProps = ComponentBase & {
 };
 
 export type SideProps = ComponentBase & {
+  // whether the side menu should be open on smaller screens.
   open: boolean;
-  minimised: boolean | string;
+  // whether side menu is in minimised state.
+  minimised: boolean;
 };
 
 /* Entry
