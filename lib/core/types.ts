@@ -1,13 +1,13 @@
 // Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { ComponentBase, Networks } from "../types";
+import { ComponentBase, Network, ThemeMode } from "../types";
 
 export type EntryProps = ComponentBase & {
   // the theme mode
-  mode: "light" | "dark";
+  mode: ThemeMode;
   // the active network
-  network: Networks;
+  network: Network;
 };
 
 export type SideProps = ComponentBase & {
