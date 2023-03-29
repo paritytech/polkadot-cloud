@@ -20,6 +20,7 @@ export type SideProps = ComponentBase & {
 };
 
 /* Entry
+ *
  * The outer-most wrapper that hosts core tag styling.
  */
 export const Entry = ({ children, style, mode, network }: EntryProps) => (
@@ -29,6 +30,7 @@ export const Entry = ({ children, style, mode, network }: EntryProps) => (
 );
 
 /* Body
+ *
  * An element that houses Side and Main.
  */
 export const Body = ({ children, style }: ComponentBase) => {
@@ -40,6 +42,7 @@ export const Body = ({ children, style }: ComponentBase) => {
 };
 
 /* Main
+ *
  * A column flex wrapper that hosts the main page content.
  */
 export const Main = forwardRef(
@@ -52,7 +55,9 @@ export const Main = forwardRef(
 Main.displayName = "Main";
 
 /* Side
- * An element that houses the side menu and handles resizing on smaller screens.
+ *
+ * An element that houses the side menu and transitions to a toggle-able fixed overlay on smaller
+ * screens. Handles maximised and minimised transitions.
  */
 export const Side = ({ children, style, open, minimised }: SideProps) => (
   <div
