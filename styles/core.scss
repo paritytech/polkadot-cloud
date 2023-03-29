@@ -85,20 +85,20 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 }
 
-.body-interface {
+.core-body {
   position: relative;
   display: flex;
   flex-grow: 1;
 }
 
-.main-interface {
+.core-main {
   position: relative;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.page-interface {
+.core-page {
   max-width: v.$interface-maximum-width;
   display: flex;
   flex-direction: column;
@@ -107,7 +107,7 @@ SPDX-License-Identifier: Apache-2.0 */
   margin: 0 auto;
 }
 
-.side-interface {
+.core-side {
   z-index: 7;
   position: sticky;
   top: 0;

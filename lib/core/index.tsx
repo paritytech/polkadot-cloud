@@ -23,7 +23,7 @@ export const Entry = ({ children, style, mode, network }: EntryProps) => (
  */
 export const Body = ({ children, style }: ComponentBase) => {
   return (
-    <div className="body-interface" style={style}>
+    <div className="core-body" style={style}>
       {children}
     </div>
   );
@@ -35,7 +35,7 @@ export const Body = ({ children, style }: ComponentBase) => {
  */
 export const Main = forwardRef(
   ({ children, style }: ComponentBase, ref?: RefObject<HTMLDivElement>) => (
-    <div ref={ref} className="main-interface" style={style}>
+    <div ref={ref} className="core-main" style={style}>
       {children}
     </div>
   )
@@ -43,14 +43,14 @@ export const Main = forwardRef(
 Main.displayName = "Main";
 
 /* Page
- * A motion.div that wraps every page.
- * Transitions can be applied to this wrapper that will
- * affect the entire page.
+ *
+ * A motion.div that wraps every page. Transitions can be applied to this wrapper that will affect
+ * the entire page.
  */
 export const Page = ({ children, style }: ComponentBase) => {
   return (
     <motion.div
-      className="page-interface"
+      className="core-page"
       style={style}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
@@ -61,6 +61,7 @@ export const Page = ({ children, style }: ComponentBase) => {
     </motion.div>
   );
 };
+
 /* Side
  *
  * An element that houses the side menu and transitions to a toggle-able fixed overlay on smaller
@@ -68,7 +69,7 @@ export const Page = ({ children, style }: ComponentBase) => {
  */
 export const Side = ({ children, style, open, minimised }: SideProps) => (
   <div
-    className={`side-interface${valEmpty(!open, "hidden")}${valEmpty(
+    className={`core-side${valEmpty(!open, "hidden")}${valEmpty(
       minimised,
       "minimised"
     )}`}
