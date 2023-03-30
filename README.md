@@ -20,7 +20,6 @@ Update your [`dist.package.json`](https://github.com/paritytech/polkadot-dashboa
 yarn build
 ```
 
-The package bundle will be built to the `dist` folder.
 
 #### Publish the package to NPM.
 
