@@ -1,5 +1,6 @@
 /* Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
+@use "../styles/variables" as v;
 
 main {
   background: var(--background-primary);
@@ -10,10 +11,11 @@ main {
   padding: 0 1.5rem;
   width: 100%;
   max-width: 900px;
-  margin: 0 auto;
-  > h3 {
-    font-weight: bolder;
-    padding-top: 1rem;
+  margin: 0 0 0 15rem;
+
+  /* We need the body not to over come sidebar */
+  @media (min-width: (v.$page-width-medium-threshold + 26px)) {
+    margin: 0 auto;
   }
 }
 
