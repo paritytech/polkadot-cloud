@@ -5,16 +5,6 @@ main {
   background: var(--background-primary);
 }
 
-.header {
-  margin-bottom: 2rem;
-  padding: 0 1rem;
-  border: 1px solid var(--background-primary);
-
-  > h5 > button {
-    font-size: 0.92rem;
-  }
-}
-
 .body {
   min-height: 100vh;
   padding: 0 1.5rem;
@@ -78,4 +68,31 @@ main {
   border: 0.1rem solid var(--border-primary-color);
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.sidenav {
+  height: 100%;
+  width: 10rem;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background-color: var(--background-primary);
+  border-right: 1px solid var(--border-secondary-color);
+
+  > h5 > p {
+    padding-left: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: block;
+  }
+
+  > h5 > button {
+    padding-left: 2rem;
+    text-decoration: none;
+    display: block;
+  }
 }
