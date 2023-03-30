@@ -65,7 +65,7 @@ Components can be viewed in the sandbox (accessed via `yarn dev`) while developi
 
 So in addition to the sandbox, It is also possible to build the package and test it in other projects locally, before publishing the updated package to NPM. Doing this allows testing of newly updated components in a production app use-case before they are published .
 
-The following walkthrough uses the [Polkadot staking dashboard](https://github.com/paritytech/polkadot-staking-dashboard) as **_The App_** and a local build of the UI library as **_The Package_** to test.
+The following walkthrough uses the [Polkadot staking dashboard](https://github.com/paritytech/polkadot-staking-dashboard) as **The App** and a local build of the UI library as **The Package** to test.
 
 ### The Package Setup
 
