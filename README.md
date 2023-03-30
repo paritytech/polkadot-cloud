@@ -2,7 +2,7 @@
 
 # Polkadot Dashboard UI
 
-UI themes and core components for Polkadot dashboards, using React, TypeScript, Vite, SCSS, Rollup, and publishable to NPM.
+CSS themes and core components for Polkadot dashboards, using React, TypeScript, Vite, SCSS, Rollup. Publishable to NPM.
 
 ## Managing the Package
 
