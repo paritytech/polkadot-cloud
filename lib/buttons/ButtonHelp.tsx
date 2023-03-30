@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { InfoSVG } from "../svg/Info";
-import { ButtonCommonProps, ComponentBase } from "../types";
-import { valEmpty } from "../utils";
+import { ButtonCommonProps, ComponentBase } from "@types";
+import { valEmpty } from "@utils";
 
 export type ButtonHelpProps = ComponentBase &
   ButtonCommonProps & {
