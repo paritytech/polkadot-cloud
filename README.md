@@ -22,7 +22,7 @@ yarn build
 
 The package bundle will be built to the `dist` folder.
 
-#### Publish the package to NPM:
+#### Publish the package to NPM.
 
 ```
 cd dist && npm publish --access public
