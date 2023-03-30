@@ -1790,7 +1790,7 @@ fraction.js@^4.2.0:
 
 framer-motion@^10.10.0:
   version "10.10.0"
-  resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-10.10.0.tgz#929f3d3ca653af9885e162a979fc941acfa2ce7a"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-10.10.0.tgz#929f3d3ca653af9885e162a979fc941acfa2ce7a"
   integrity sha512-eCsyOcJimIRbx9KOzBTO3j9u1rF/H8/o/ybizYqdrzHkEeHx9L2NcEfGWfV0OHTc1JV17ECVzuZpomupEJ4+dw==
   dependencies:
     tslib "^2.4.0"
