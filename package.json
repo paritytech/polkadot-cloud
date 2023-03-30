@@ -13,6 +13,7 @@
     "dev": "vite",
     "build": "rollup -c && cp dist.package.json dist/package.json && yarn fix",
     "fix": "sed '1d' ./dist/index.d.ts > ./tmp.d.ts; mv ./tmp.d.ts ./dist/index.d.ts",
+    "lint:check": "eslint './**' && npx prettier -c .",
     "lint": "eslint './**' --fix && npx prettier --write . && npx stylelint '**/*.scss' --fix"
   },
   "devDependencies": {
