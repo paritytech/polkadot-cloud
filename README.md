@@ -29,7 +29,7 @@ cd dist && npm publish --access public
 
 ## Using the Package
 
-#### 1. Import the CSS file to to top-level component.
+#### 1. Import the CSS file in your app index.
 
 ```
 import '@polkadotcloud/dashboard-ui/index.css';
