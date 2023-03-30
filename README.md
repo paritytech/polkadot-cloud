@@ -2,14 +2,63 @@
 
 # Polkadot Dashboard UI
 
-## UI themes and components for Polkadot dashboards.
+UI themes and core components for Polkadot dashboards, using React, TypeScript, Vite, SCSS, Rollup, and publishable to NPM.
 
-Components are viewable on a Vite server and exportable via a minimised Rollup build.
+## Managing the Package
 
-- [x] Zero dependency React components.
-- [x] Formalised props with interface support.
-- [x] 2-Dimensional theming of networks / light and dark modes.
-- [x] Modular SCSS in development, minified CSS as a single export.
+#### Start the development server for real-time component feedback.
+
+```
+yarn dev
+```
+
+#### Build the package into an optimised Rollup build.
+
+Update your [`dist.package.json`](https://github.com/paritytech/polkadot-dashboard-ui/blob/main/dist.package.json) before building the package. `dist.package.json` is injected into the `dist` folder as `package.json` after a build completes.
+
+```
+yarn build
+```
+
+The package bundle will be built to the `dist` folder.
+
+#### Publish the package to NPM:
+
+```
+cd dist && npm publish --access public
+```
+
+## Using the Package
+
+#### 1. Import the CSS file to to top-level component.
+
+```
+import '@polkadotcloud/dashboard-ui/index.css';
+```
+
+#### 2. Wrap your app with `Entry`, providing the current theme `mode` and active `network`.
+
+```
+import { Entry } from '@polkadotcloud/dashboard-ui';
+
+export const WrappedApp: React.FC = () => {
+
+  // light, dark
+  const { mode } = useTheme();
+  
+  // polkadot, kusama, westend
+  const { network } = useApi();
+
+  return (
+    <Entry mode={mode} network={network}>
+      <App />
+    </Entry>
+  );
+};
+```
+
+#### 3. Import core components.
+Any [core component](https://github.com/paritytech/polkadot-dashboard-ui/tree/main/lib) can now be imported and used within the app. 
 
 ## Package Testing in Local Development
 
@@ -21,7 +70,7 @@ The following walkthrough uses the [Polkadot staking dashboard](https://github.c
 
 ### The Package Setup
 
-1. Checkout the `package-dev` branch:
+#### 1. Checkout the `package-dev` branch.
 
 ```
 git checkout package-dev
@@ -29,13 +78,13 @@ git checkout package-dev
 
 This branch should be identical to `main`, with the exception of the [`dist.package.json`](https://github.com/paritytech/polkadot-dashboard-ui/blob/4d66892e73afe7cc17465411b6bc7fe5817c7447/dist.package.json#L2) package name having `-dev` appended.
 
-2. Build the package:
+#### 2. Build the package.
 
 ```
 yarn build
 ```
 
-3. Enter `dist` and link the package as a global namespace:
+#### 3. Enter `dist` and link the package as a global namespace.
 
 ```
 cd dist && yarn link
@@ -47,13 +96,13 @@ The package is now globally accessible to other projects in your development env
 
 Polkadot staking dashboard already has a `package-dev` branch set up for local package development. To allow your own app to import and test local packages, follow these steps.
 
-1. Create a `package-dev` branch (or any naming of your choosing) specifically for local package development:
+#### 1. Create a `package-dev` branch (or any naming of your choosing) specifically for local package development.
 
 ```
 git checkout -b package-dev
 ```
 
-2. Link the previously linked package to your project:
+#### 2. Link the previously linked package to your project.
 
 ```
 yarn link @polkadotcloud/dashboard-ui-dev
@@ -68,7 +117,9 @@ Rules: {
 }
 ```
 
-3. Ensure global imports are supported. Polkadot staking dashboard uses [Vite.js](https://vitejs.dev) as its toolchain. Vite by default does not allow package imports from outside the project directory without explicitly allowing them. To allow global imports, simply turn off strict mode in `vite.config.js`.
+#### 3. Ensure global imports are supported. 
+
+Polkadot staking dashboard uses [Vite.js](https://vitejs.dev) as its toolchain. Vite by default does not allow package imports from outside the project directory without explicitly allowing them. To allow global imports, simply turn off strict mode in `vite.config.js`
 
 ```
 server: {
