@@ -32,10 +32,12 @@ const Home = () => {
       <main className={`theme-${network} theme-${theme}`}>
         <div className="sidenav">
           <h5>
-            <button onClick={() => setNetwork("polkadot")}>Polkadot</button> |{" "}
-            <button onClick={() => setNetwork("kusama")}>Kusama</button> |{" "}
-            <button onClick={() => setNetwork("westend")}>Westend</button>.{" "}
-            Theme: <button onClick={() => setTheme("light")}>Light</button> |{" "}
+            <p>Network:</p>
+            <button onClick={() => setNetwork("polkadot")}>Polkadot</button>
+            <button onClick={() => setNetwork("kusama")}>Kusama</button>
+            <button onClick={() => setNetwork("westend")}>Westend</button>
+            <p>Theme:</p>
+            <button onClick={() => setTheme("light")}>Light</button>
             <button onClick={() => setTheme("dark")}>Dark</button>
           </h5>
         </div>
