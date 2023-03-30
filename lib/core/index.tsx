@@ -79,15 +79,17 @@ export const Side = ({ children, style, open, minimised }: SideProps) => (
   </div>
 );
 
+export type PageTitleProps = ComponentBase & {
+  sticky?: boolean;
+};
 /* PageTitle
  *
  * The element that wraps a page title. Determines the padding and position relative to top of screen when the element is stuck.
  */
-export const PageTitle = forwardRef(
+export const PagesTitle = forwardRef(
   (
-    { children, style }: ComponentBase,
-    ref?: RefObject<HTMLDivElement>,
-    sticky?: boolean
+    { children, style, sticky }: PageTitleProps,
+    ref?: RefObject<HTMLElement>
   ) => (
     <header
       ref={ref}
@@ -98,7 +100,7 @@ export const PageTitle = forwardRef(
     </header>
   )
 );
-PageTitle.displayName = "PageTitle";
+PagesTitle.displayName = "PagesTitle";
 
 /* MenuPadding
  *
@@ -111,14 +113,19 @@ export const MenusPadding = ({ children, style }: ComponentBase) => (
   </div>
 );
 
+export type PageRowProps = ComponentBase & {
+  noVerticalSpacer?: boolean;
+};
+
 /* PageRow
  *
  * Used to separate page content based on rows. Commonly used with RowPrimary and RowSecondary.
  */
-export const PageRow = (
-  { children, style }: ComponentBase,
-  noVerticalSpacer: boolean
-) => (
+export const PageRow = ({
+  children,
+  style,
+  noVerticalSpacer,
+}: PageRowProps) => (
   <div
     className={`core-page-row${valEmpty(
       noVerticalSpacer,
@@ -187,14 +194,19 @@ export const TopBar = ({ children, style }: ComponentBase) => (
   </div>
 );
 
+export type ButtonRowProps = ComponentBase & {
+  verticalSpacing?: boolean;
+};
+
 /* ButtonRow
  *
  * A flex container for a row of buttons
  */
-export const ButtonRow = (
-  { children, style }: ComponentBase,
-  verticalSpacing?: boolean
-) => (
+export const ButtonRow = ({
+  children,
+  style,
+  verticalSpacing,
+}: ButtonRowProps) => (
   <div
     className={`core-button-row${valEmpty(
       verticalSpacing,
