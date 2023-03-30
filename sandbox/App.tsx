@@ -30,7 +30,7 @@ const Home = () => {
   return (
     <>
       <main className={`theme-${network} theme-${theme}`}>
-        <div className="header">
+        <div className="sidenav">
           <h5>
             <button onClick={() => setNetwork("polkadot")}>Polkadot</button> |{" "}
             <button onClick={() => setNetwork("kusama")}>Kusama</button> |{" "}
