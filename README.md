@@ -20,7 +20,6 @@ Update your [`dist.package.json`](https://github.com/paritytech/polkadot-dashboa
 yarn build
 ```
 
-
 #### Publish the package to NPM.
 
 ```
@@ -44,7 +43,7 @@ export const WrappedApp: React.FC = () => {
 
   // light, dark
   const { mode } = useTheme();
-  
+
   // polkadot, kusama, westend
   const { network } = useApi();
 
@@ -57,7 +56,8 @@ export const WrappedApp: React.FC = () => {
 ```
 
 #### 3. Import core components.
-Any [core component](https://github.com/paritytech/polkadot-dashboard-ui/tree/main/lib) can now be imported and used within the app. 
+
+Any [core component](https://github.com/paritytech/polkadot-dashboard-ui/tree/main/lib) can now be imported and used within the app.
 
 ## Package Testing in Local Development
 
@@ -116,7 +116,7 @@ Rules: {
 }
 ```
 
-#### 3. Ensure global imports are supported. 
+#### 3. Ensure global imports are supported.
 
 Polkadot staking dashboard uses [Vite.js](https://vitejs.dev) as its toolchain. Vite by default does not allow package imports from outside the project directory without explicitly allowing them. To allow global imports, simply turn off strict mode in `vite.config.js`
 

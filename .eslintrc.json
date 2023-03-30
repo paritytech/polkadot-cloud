@@ -54,7 +54,16 @@
       "version": "detect"
     },
     "import/resolver": {
-      "typescript": {}
+      "typescript": {},
+      // alias must be also set in vite.config.ts
+      "alias": {
+        "map": [
+          ["@utils", "./lib/utils"],
+          ["@types", "./lib/types"],
+          ["@styles", "./styles"]
+        ],
+        "extensions": [".ts", ".js", ".jsx", ".json"]
+      }
     }
   }
 }

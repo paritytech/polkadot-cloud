@@ -2,15 +2,18 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import React, { useState } from "react";
-import { ButtonPrimary } from "@lib/buttons/ButtonPrimary";
-import { ButtonMono } from "@lib/buttons/ButtonMono";
-import { ButtonMonoInvert } from "@lib/buttons/ButtonMonoInvert";
-import { ButtonSecondary } from "@lib/buttons/ButtonSecondary";
-import { ButtonInvert } from "@lib/buttons/ButtonInvert";
-import { ButtonInvertRounded } from "@lib/buttons/ButtonInvertRounded";
-import { ButtonText } from "@lib/buttons/ButtonText";
-import { ButtonSubmit } from "@lib/buttons/ButtonSubmit";
-import { ButtonHelp } from "@lib/buttons/ButtonHelp";
+import {
+  ButtonPrimary,
+  ButtonMono,
+  ButtonMonoInvert,
+  ButtonSecondary,
+  ButtonInvert,
+  ButtonInvertRounded,
+  ButtonText,
+  ButtonSubmit,
+  ButtonHelp,
+  // eslint-disable-next-line import/no-unresolved
+} from "@lib/buttons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import {
   faArrowAltCircleUp,

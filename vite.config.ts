@@ -13,6 +13,7 @@ export default defineConfig({
   },
   plugins: [react()],
   resolve: {
+    // alias must be also set in .eslintrc.json
     alias: [
       { find: "@lib", replacement: path.resolve(__dirname, "lib") },
       { find: "@types", replacement: path.resolve(__dirname, "lib/types") },
