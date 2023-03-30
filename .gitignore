@@ -96,3 +96,7 @@ typings/
 
 # macOS
 .DS_Store
+
+
+# next cache
+.next
