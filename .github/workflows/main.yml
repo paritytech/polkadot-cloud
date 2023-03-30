@@ -20,7 +20,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn install
       - run: yarn build
-      # lint cannot fix things during CI (it could run as a pre-commit hook) - here we should check
       - run: yarn lint:check
 
   all:
