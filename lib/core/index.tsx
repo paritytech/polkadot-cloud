@@ -120,7 +120,10 @@ export const PageRow = (
   noVerticalSpacer: boolean
 ) => (
   <div
-    className={`core-page-row${valEmpty(noVerticalSpacer, "noVerticalSpacer")}`}
+    className={`core-page-row${valEmpty(
+      noVerticalSpacer,
+      "no-vertical-spacer"
+    )}`}
     style={style}
   >
     {children}
@@ -138,9 +141,9 @@ export type RowProps = ComponentBase & {
  */
 export const RowPrimary = ({ children, style, vOrder, hOrder }: RowProps) => (
   <div
-    className={`core-row-primary${valEmpty(vOrder, "vOrder")}${valEmpty(
+    className={`core-row-primary${valEmpty(vOrder, "v-order")}${valEmpty(
       hOrder,
-      "hOrder"
+      "h-order"
     )}`}
     style={style}
   >
@@ -154,9 +157,9 @@ export const RowPrimary = ({ children, style, vOrder, hOrder }: RowProps) => (
  */
 export const RowSecondary = ({ children, style, vOrder, hOrder }: RowProps) => (
   <div
-    className={`core-row-secondary${valEmpty(vOrder, "vOrder")}${valEmpty(
+    className={`core-row-secondary${valEmpty(vOrder, "v-order")}${valEmpty(
       hOrder,
-      "hOrder"
+      "h-order"
     )}`}
     style={style}
   >
@@ -193,7 +196,10 @@ export const ButtonRow = (
   verticalSpacing?: boolean
 ) => (
   <div
-    className={`core-button-row${valEmpty(verticalSpacing, "verticalSpacing")}`}
+    className={`core-button-row${valEmpty(
+      verticalSpacing,
+      "vertical-spacing"
+    )}`}
     style={style}
   >
     {children}
