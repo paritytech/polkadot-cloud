@@ -6,7 +6,15 @@ import { RefObject, forwardRef } from "react";
 import { motion } from "framer-motion";
 
 import { valEmpty } from "../utils";
-import { EntryProps, SideProps } from "./types";
+import {
+  EntryProps,
+  SideProps,
+  PageTitleProps,
+  PageRowProps,
+  RowProps,
+  ButtonRowProps,
+} from "./types";
+
 /* Entry
  *
  * The outer-most wrapper that hosts core tag styling.
@@ -79,9 +87,6 @@ export const Side = ({ children, style, open, minimised }: SideProps) => (
   </div>
 );
 
-export type PageTitleProps = ComponentBase & {
-  sticky?: boolean;
-};
 /* PageTitle
  *
  * The element that wraps a page title. Determines the padding and position relative to top of screen when the element is stuck.
@@ -113,10 +118,6 @@ export const MenusPadding = ({ children, style }: ComponentBase) => (
   </div>
 );
 
-export type PageRowProps = ComponentBase & {
-  noVerticalSpacer?: boolean;
-};
-
 /* PageRow
  *
  * Used to separate page content based on rows. Commonly used with RowPrimary and RowSecondary.
@@ -136,11 +137,6 @@ export const PageRow = ({
     {children}
   </div>
 );
-
-export type RowProps = ComponentBase & {
-  vOrder: boolean;
-  hOrder: boolean;
-};
 
 /* RowPrimary
  *
@@ -193,10 +189,6 @@ export const TopBar = ({ children, style }: ComponentBase) => (
     {children}
   </div>
 );
-
-export type ButtonRowProps = ComponentBase & {
-  verticalSpacing?: boolean;
-};
 
 /* ButtonRow
  *

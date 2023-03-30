@@ -16,3 +16,20 @@ export type SideProps = ComponentBase & {
   // whether side menu is in minimised state
   minimised: boolean;
 };
+
+export type PageTitleProps = ComponentBase & {
+  sticky?: boolean;
+};
+
+export type PageRowProps = ComponentBase & {
+  noVerticalSpacer?: boolean;
+};
+
+export type RowProps = ComponentBase & {
+  vOrder: boolean;
+  hOrder: boolean;
+};
+
+export type ButtonRowProps = ComponentBase & {
+  verticalSpacing?: boolean;
+};
