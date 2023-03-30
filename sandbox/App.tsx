@@ -2,6 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import React, { useState } from "react";
+import { CodeDrawer } from "./CodeDrawer";
+
 import { ButtonPrimary } from "../lib/buttons/ButtonPrimary";
 import { ButtonMono } from "../lib/buttons/ButtonMono";
 import { ButtonMonoInvert } from "../lib/buttons/ButtonMonoInvert";
@@ -40,7 +42,7 @@ const Home = () => {
           </h5>
         </div>
         <div className="body">
-          <h4>Button Primary</h4>
+          <h3>Button Primary</h3>
 
           <div className="row">
             <ButtonPrimary text="Button" iconLeft={faUser} marginRight />
@@ -59,8 +61,19 @@ const Home = () => {
             />
             <ButtonPrimary text="Button" lg disabled />
           </div>
+          <CodeDrawer label="Show Code" finalHeight={130}>
+            <div className="content">
+              <code>
+                <p>{`<ButtonPrimary text="Button" iconLeft={faUser} marginRight />`}</p>
+                <p>{`<ButtonPrimary text="Button" iconLeft={faUser} marginRight colorSecondary />`}</p>
+                <p>{`<ButtonPrimary text="Button" iconLeft={faUser} iconRight={faUser} lg marginRight />`}</p>
+                <p>{`<ButtonPrimary text="Button" lg disabled />`}</p>
+              </code>
+            </div>
+          </CodeDrawer>
+          <div className="rowDivider" />
 
-          <h4>Button Secondary</h4>
+          <h3>Button Secondary</h3>
           <div className="row">
             <ButtonSecondary text="Button" marginRight />
             <ButtonSecondary text="Button" iconLeft={faUser} marginRight />
@@ -75,7 +88,20 @@ const Home = () => {
             <ButtonSecondary lg text="Button" disabled />
           </div>
 
-          <h4>Button Mono</h4>
+          <CodeDrawer label="Show Code" finalHeight={150}>
+            <div className="content">
+              <code>
+                <p>{`<ButtonSecondary text="Button" marginRight />`}</p>
+                <p>{`<ButtonSecondary text="Button" iconLeft={faUser} marginRight />`}</p>
+                <p>{`<ButtonSecondary text="Button" iconRight={faUser} marginRight />`}</p>
+                <p>{`<ButtonSecondary lg text="Button" iconLeft={faUser} iconRight={faUser} marginRight />`}</p>
+                <p>{`<ButtonSecondary lg text="Button" disabled />`}</p>
+              </code>
+            </div>
+          </CodeDrawer>
+          <div className="rowDivider" />
+
+          <h3>Button Mono</h3>
           <div className="row">
             <ButtonMono text="Button" marginRight />
             <ButtonMono text="Button" iconLeft={faUser} marginRight />
@@ -90,7 +116,20 @@ const Home = () => {
             <ButtonMono lg text="Button" disabled />
           </div>
 
-          <h4>Button Mono Invert</h4>
+          <CodeDrawer label="Show Code" finalHeight={150}>
+            <div className="content">
+              <code>
+                <p>{`<ButtonMono text="Button" marginRight />`}</p>
+                <p>{`<ButtonMono text="Button" iconLeft={faUser} marginRight />`}</p>
+                <p>{`<ButtonMono text="Button" iconRight={faUser} marginRight />`}</p>
+                <p>{`<ButtonMono lg text="Button" iconLeft={faUser} iconRight={faUser} marginRight />`}</p>
+                <p>{`<ButtonMono lg text="Button" disabled />`}</p>
+              </code>
+            </div>
+          </CodeDrawer>
+          <div className="rowDivider" />
+
+          <h3>Button Mono Invert</h3>
           <div className="row">
             <ButtonMonoInvert text="Button" marginRight />
             <ButtonMonoInvert text="Button" iconLeft={faUser} marginRight />
@@ -105,7 +144,20 @@ const Home = () => {
             <ButtonMonoInvert lg text="Button" disabled />
           </div>
 
-          <h4>Button Invert</h4>
+          <CodeDrawer label="Show Code" finalHeight={150}>
+            <div className="content">
+              <code>
+                <p>{`<ButtonMonoInvert text="Button" marginRight />`}</p>
+                <p>{`<ButtonMonoInvert text="Button" iconLeft={faUser} marginRight />`}</p>
+                <p>{`<ButtonMonoInvert text="Button" iconRight={faUser} marginRight />`}</p>
+                <p>{`<ButtonMonoInvert lg text="Button" iconLeft={faUser} iconRight={faUser} marginRight />`}</p>
+                <p>{`<ButtonMonoInvert lg text="Button" disabled />`}</p>
+              </code>
+            </div>
+          </CodeDrawer>
+          <div className="rowDivider" />
+
+          <h3>Button Invert</h3>
           <div className="row">
             <ButtonInvert text="Button" marginRight />
             <ButtonInvert text="Button" iconLeft={faUserReg} marginRight />
@@ -119,7 +171,20 @@ const Home = () => {
             <ButtonInvert text="Button" disabled />
           </div>
 
-          <h4>Button Invert Rounded</h4>
+          <CodeDrawer label="Show Code" finalHeight={150}>
+            <div className="content">
+              <code>
+                <p>{`<ButtonInvert text="Button" marginRight />`}</p>
+                <p>{`<ButtonInvert text="Button" iconLeft={faUserReg} marginRight />`}</p>
+                <p>{`<ButtonInvert text="Button" iconRight={faUserReg} marginRight />`}</p>
+                <p>{`<ButtonInvert text="Button" iconLeft={faUserReg} iconRight={faUserReg} marginRight />`}</p>
+                <p>{`<ButtonInvert text="Button" disabled />`}</p>
+              </code>
+            </div>
+          </CodeDrawer>
+          <div className="rowDivider" />
+
+          <h3>Button Invert Rounded</h3>
           <div className="row">
             <ButtonInvertRounded text="Button" marginRight />
             <ButtonInvertRounded
@@ -142,7 +207,20 @@ const Home = () => {
             <ButtonInvertRounded lg text="Button" disabled />
           </div>
 
-          <h4>Button Text</h4>
+          <CodeDrawer label="Show Code" finalHeight={150}>
+            <div className="content">
+              <code>
+                <p>{`<ButtonInvertRounded text="Button" marginRight />`}</p>
+                <p>{`<ButtonInvertRounded text="Button" iconLeft={faUserReg} marginRight />`}</p>
+                <p>{`<ButtonInvertRounded text="Button" iconRight={faUserReg} marginRight />`}</p>
+                <p>{`<ButtonInvertRounded lg text="Button" iconLeft={faUserReg} iconRight={faUserReg} marginRight />`}</p>
+                <p>{`<ButtonInvertRounded lg text="Button" disabled />`}</p>
+              </code>
+            </div>
+          </CodeDrawer>
+          <div className="rowDivider" />
+
+          <h3>Button Text</h3>
           <div className="row">
             <ButtonText text="Button" marginRight />
             <ButtonText text="Button" iconLeft={faUserReg} marginRight />
@@ -156,7 +234,25 @@ const Home = () => {
             <ButtonText text="Button" disabled />
           </div>
 
-          <h4>Button Submit</h4>
+          <CodeDrawer label="Show Code" finalHeight={150}>
+            <div className="content">
+              <code>
+                <p>{`<ButtonText text="Button" marginRight />`}</p>
+                <p>{`<ButtonText text="Button" iconLeft={faUserReg} marginRight />`}</p>
+                <p>{`<ButtonText text="Button" iconRight={faUserReg} marginRight />`}</p>
+                <p>{`<ButtonText
+                  text="Button"
+                  iconLeft={faUserReg}
+                  iconRight={faUserReg}
+                  marginRight
+                />`}</p>
+                <p>{`<ButtonText text="Button" disabled />`}</p>
+              </code>
+            </div>
+          </CodeDrawer>
+          <div className="rowDivider" />
+
+          <h3>Button Submit</h3>
           <div className="row">
             <ButtonSubmit text="Button" marginRight />
             <ButtonSubmit
@@ -178,11 +274,35 @@ const Home = () => {
             />
             <ButtonSubmit text="Button" disabled />
           </div>
+
+          <CodeDrawer label="Show Code" finalHeight={150}>
+            <div className="content">
+              <code>
+                <p>{`<ButtonSubmit text="Button" marginRight />`}</p>
+                <p>{`<ButtonSubmit text="Button" iconLeft={faArrowAltCircleUp} marginRight colorSecondary />`}</p>
+                <p>{`<ButtonSubmit text="Button" iconRight={faArrowAltCircleUp} marginRight />`}</p>
+                <p>{`<ButtonSubmit text="Button" iconLeft={faArrowAltCircleUp} iconRight={faArrowAltCircleUp} marginRight />`}</p>
+                <p>{`<ButtonSubmit text="Button" disabled />`}</p>
+              </code>
+            </div>
+          </CodeDrawer>
+          <div className="rowDivider" />
+
           <h4>Button Help</h4>
           <div className="row">
             <ButtonHelp marginRight />
             <ButtonHelp backgroundSecondary />
           </div>
+
+          <CodeDrawer label="Show Code" finalHeight={80}>
+            <div className="content">
+              <code>
+                <p>{`<ButtonHelp marginRight />`}</p>
+                <p>{`<ButtonHelp backgroundSecondary />`}</p>
+              </code>
+            </div>
+          </CodeDrawer>
+          <div className="rowDivider" />
         </div>
       </main>
     </>
