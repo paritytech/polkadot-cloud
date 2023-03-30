@@ -80,5 +80,6 @@
   "bugs": {
     "url": "https://github.com/paritytech/polkadot-dashboard-ui/issues"
   },
-  "homepage": "https://github.com/paritytech/polkadot-dashboard-ui#readme"
+  "homepage": "https://github.com/paritytech/polkadot-dashboard-ui#readme",
+  "dependencies": {}
 }

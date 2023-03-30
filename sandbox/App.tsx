@@ -11,6 +11,9 @@ import { ButtonInvertRounded } from "../lib/buttons/ButtonInvertRounded";
 import { ButtonText } from "../lib/buttons/ButtonText";
 import { ButtonSubmit } from "../lib/buttons/ButtonSubmit";
 import { ButtonHelp } from "../lib/buttons/ButtonHelp";
+
+import { CardWrapper } from "../lib/containers/CardWrapper";
+
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import {
   faArrowAltCircleUp,
@@ -40,6 +43,11 @@ const Home = () => {
           </h5>
         </div>
         <div className="body">
+          <h4>Container</h4>
+          <div className="row">
+            <CardWrapper>abc</CardWrapper>
+          </div>
+
           <h4>Button Primary</h4>
 
           <div className="row">
