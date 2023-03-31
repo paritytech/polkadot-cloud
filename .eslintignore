@@ -12,8 +12,8 @@
 *.txt
 *.html
 *.webmanifest
-LICENSE
-README
 dist
+LICENSE
 postcss.config.js
+README.md
 tsconfig.json
