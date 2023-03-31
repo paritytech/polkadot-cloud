@@ -1,7 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "composite": true,
     "declarationDir": "lib",
+    "rootDir": "./lib",
     "outDir": "dist",
     "module": "esnext",
     "target": "es5",
