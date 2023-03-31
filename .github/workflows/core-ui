@@ -22,10 +22,3 @@ jobs:
       - run: yarn lint:check
       - run: yarn build
         working-directory: packages/core-ui
-
-  all:
-    # This job ensures that all jobs above (now we have just build) are successful.
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo Success

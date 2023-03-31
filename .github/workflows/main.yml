@@ -13,10 +13,3 @@ jobs:
       - uses: actions/checkout@main
       - name: Check License Lines
         uses: kt3k/license_checker@v1.0.6
-
-  all:
-    # This job ensures that all jobs above (now we have just build) are successful.
-    needs: [check-license-lines]
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo Success
