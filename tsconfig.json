@@ -6,4 +6,9 @@
     "noEmitOnError": true,
     "skipLibCheck": true,
   },
+  "references": [
+    {
+      "path": "packages/core-ui"
+    },
+  ]
 }
