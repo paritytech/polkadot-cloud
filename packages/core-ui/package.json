@@ -13,7 +13,9 @@
   "scripts": {
     "dev": "vite",
     "build": "rollup -c && cp dist.package.json dist/package.json && yarn fix",
-    "fix": "sed '1d' ./dist/index.d.ts > ./tmp.d.ts; mv ./tmp.d.ts ./dist/index.d.ts"
+    "fix": "sed '1d' ./dist/index.d.ts > ./tmp.d.ts; mv ./tmp.d.ts ./dist/index.d.ts",
+    "lint": "eslint './**' && npx prettier -c .",
+    "lint:write": "eslint './**' --fix && npx prettier --write . && npx stylelint '**/*.scss' --fix"
   },
   "peerDependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
