@@ -25,8 +25,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install
-      - run: yarn build
       - run: yarn lint:check
+      - run: yarn build
+        working-directory: packages/core-ui
 
   all:
     # This job ensures that all jobs above (now we have just build) are successful.

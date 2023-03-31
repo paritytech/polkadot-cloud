@@ -1,13 +1,10 @@
 {
   "compilerOptions": {
-    "composite": true,
     "declaration": true,
     "declarationMap": true,
-    "files": [],
     "incremental": true,
     "noEmitOnError": true,
     "skipLibCheck": true,
-    "strict": true
   },
   "references": [
     {

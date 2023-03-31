@@ -4,6 +4,7 @@
   "license": "Apache-2.0",
   "author": "Ross Bulat",
   "description": "Polkadot Dashboard UI",
+  "private": "true",
   "scripts": {
     "lint:check": "eslint './**' && npx prettier -c .",
     "lint": "eslint './**' --fix && npx prettier --write . && npx stylelint '**/*.scss' --fix"

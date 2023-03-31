@@ -6,6 +6,7 @@
   "description": "Core UI Components for Polkadot Dashboards.",
   "types": "dist/index.d.ts",
   "main": "dist/index.ts",
+  "module": "dist/index.tsx",
   "files": [
     "dist"
   ],
