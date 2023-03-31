@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@main
       - name: Check License Lines
         uses: kt3k/license_checker@v1.0.6
-  build:
+  build-core-ui:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -31,7 +31,7 @@ jobs:
 
   all:
     # This job ensures that all jobs above (now we have just build) are successful.
-    needs: [check-license-lines, build]
+    needs: [check-license-lines, build-core-ui]
     runs-on: ubuntu-latest
     steps:
       - run: echo Success
