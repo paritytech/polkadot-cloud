@@ -16,3 +16,4 @@ LICENSE
 README
 dist
 postcss.config.js
+tsconfig.json
