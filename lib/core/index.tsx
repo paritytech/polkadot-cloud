@@ -91,7 +91,7 @@ export const Side = ({ children, style, open, minimised }: SideProps) => (
  *
  * The element that wraps a page title. Determines the padding and position relative to top of screen when the element is stuck.
  */
-export const PagesTitle = forwardRef(
+export const PageTitle = forwardRef(
   (
     { children, style, sticky }: PageTitleProps,
     ref?: RefObject<HTMLElement>
@@ -105,15 +105,15 @@ export const PagesTitle = forwardRef(
     </header>
   )
 );
-PagesTitle.displayName = "PagesTitle";
+PageTitle.displayName = "PageTitle";
 
-/* MenuPadding
+/* HideScrollable
  *
  * A fixed block that is used to hide scrollable content on smaller screens when a PageTitle is fixed.
  * Purely cosmetic. Applied in Pagetitle.
  */
-export const MenusPadding = ({ children, style }: ComponentBase) => (
-  <div className="core-menu-padding" style={style}>
+export const HideScrollable = ({ children, style }: ComponentBase) => (
+  <div className="core-hide-scrollable" style={style}>
     {children}
   </div>
 );
@@ -125,12 +125,12 @@ export const MenusPadding = ({ children, style }: ComponentBase) => (
 export const PageRow = ({
   children,
   style,
-  noVerticalSpacer,
+  noVerticalMargin,
 }: PageRowProps) => (
   <div
     className={`core-page-row${valEmpty(
-      noVerticalSpacer,
-      "no-vertical-spacer"
+      noVerticalMargin,
+      "no-vertical-margin"
     )}`}
     style={style}
   >
@@ -142,11 +142,16 @@ export const PageRow = ({
  *
  * The primary module in a PageRow.
  */
-export const RowPrimary = ({ children, style, vOrder, hOrder }: RowProps) => (
+export const RowPrimary = ({
+  children,
+  style,
+  order,
+  paddingRightLeft,
+}: RowProps) => (
   <div
-    className={`core-row-primary${valEmpty(vOrder, "v-order")}${valEmpty(
-      hOrder,
-      "h-order"
+    className={`core-row-primary${valEmpty(order, "order")}${valEmpty(
+      paddingRightLeft,
+      "padding-right-left"
     )}`}
     style={style}
   >
@@ -158,11 +163,16 @@ export const RowPrimary = ({ children, style, vOrder, hOrder }: RowProps) => (
  *
  * The secondary module in a PageRow.
  */
-export const RowSecondary = ({ children, style, vOrder, hOrder }: RowProps) => (
+export const RowSecondary = ({
+  children,
+  style,
+  order,
+  paddingRightLeft,
+}: RowProps) => (
   <div
-    className={`core-row-secondary${valEmpty(vOrder, "v-order")}${valEmpty(
-      hOrder,
-      "h-order"
+    className={`core-row-secondary${valEmpty(order, "order")}${valEmpty(
+      paddingRightLeft,
+      "padding-right-left"
     )}`}
     style={style}
   >
@@ -184,8 +194,8 @@ export const Separator = ({ children, style }: ComponentBase) => (
  *
  * Positioned under titles for a Go Back button and other page header info.
  */
-export const TopBar = ({ children, style }: ComponentBase) => (
-  <div className="core-top-bar" style={style}>
+export const PageTopBar = ({ children, style }: ComponentBase) => (
+  <div className="core-page-top-bar" style={style}>
     {children}
   </div>
 );
@@ -197,13 +207,10 @@ export const TopBar = ({ children, style }: ComponentBase) => (
 export const ButtonRow = ({
   children,
   style,
-  verticalSpacing,
+  verticalMargin,
 }: ButtonRowProps) => (
   <div
-    className={`core-button-row${valEmpty(
-      verticalSpacing,
-      "vertical-spacing"
-    )}`}
+    className={`core-button-row${valEmpty(verticalMargin, "vertical-margin")}`}
     style={style}
   >
     {children}

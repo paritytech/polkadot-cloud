@@ -18,18 +18,23 @@ export type SideProps = ComponentBase & {
 };
 
 export type PageTitleProps = ComponentBase & {
+  // whether the title stick on the same position
   sticky?: boolean;
 };
 
 export type PageRowProps = ComponentBase & {
-  noVerticalSpacer?: boolean;
+  // whether there is margin space vertically
+  noVerticalMargin?: boolean;
 };
 
 export type RowProps = ComponentBase & {
-  vOrder: boolean;
-  hOrder: boolean;
+  // the css order of the component
+  order: boolean;
+  // false means padding on the right and true means padding on the left
+  paddingRightLeft: boolean;
 };
 
 export type ButtonRowProps = ComponentBase & {
-  verticalSpacing?: boolean;
+  // whether there is margin space vertically
+  verticalMargin?: boolean;
 };
