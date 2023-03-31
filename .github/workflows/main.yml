@@ -1,4 +1,4 @@
-name: Core UI
+name: CI
 
 on:
   push:
