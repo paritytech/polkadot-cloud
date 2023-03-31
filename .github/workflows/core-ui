@@ -2,9 +2,9 @@ name: Core UI
 
 on:
   push:
-    branches: [main]
+    branches: [main, rb-mono-repo]
   pull_request:
-    branches: [main]
+    branches: [main, rb-mono-repo]
 
 jobs:
   build:
