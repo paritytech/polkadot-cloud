@@ -1,4 +1,4 @@
-name: Main
+name: Core UI
 
 on:
   push:
@@ -7,9 +7,18 @@ on:
     branches: [main]
 
 jobs:
-  check-license-lines:
+  build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x, 19.x]
     steps:
-      - uses: actions/checkout@main
-      - name: Check License Lines
-        uses: kt3k/license_checker@v1.0.6
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn install
+      - run: yarn lib:build
+      - run: yarn lint
+        working-directory: packages/core-ui
