@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x, 19.x]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn install
+      - run: yarn lint:check
+      - run: yarn build
+        working-directory: packages/core-ui
+
+  all:
+    # This job ensures that all jobs above (now we have just build) are successful.
+    needs: [build-core-ui]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Success
