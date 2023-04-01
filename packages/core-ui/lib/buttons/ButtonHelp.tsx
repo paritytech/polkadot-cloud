@@ -3,7 +3,7 @@
 
 import { InfoSVG } from "../svg/Info";
 import { ButtonCommonProps, ComponentBase } from "../types";
-import { valEmpty } from "../utils";
+import { valEmpty } from "lib/utils";
 
 export type ButtonHelpProps = ComponentBase &
   ButtonCommonProps & {
