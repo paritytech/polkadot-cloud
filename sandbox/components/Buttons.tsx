@@ -16,7 +16,7 @@ import {
   faArrowAltCircleUp,
   faUser as faUserReg,
 } from "@fortawesome/free-regular-svg-icons";
-import { CodeDrawer } from "../CodeDrawer";
+import { CodeDrawer } from "./CodeDrawer";
 
 export const Buttons = () => (
   <>
@@ -39,15 +39,13 @@ export const Buttons = () => (
       />
       <ButtonPrimary text="Button" lg disabled />
     </div>
-    <CodeDrawer label="Show Code" finalHeight={130}>
-      <div className="content">
-        <code>
-          <p>{`<ButtonPrimary text="Button" iconLeft={faUser} marginRight />`}</p>
-          <p>{`<ButtonPrimary text="Button" iconLeft={faUser} marginRight colorSecondary />`}</p>
-          <p>{`<ButtonPrimary text="Button" iconLeft={faUser} iconRight={faUser} lg marginRight />`}</p>
-          <p>{`<ButtonPrimary text="Button" lg disabled />`}</p>
-        </code>
-      </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<ButtonPrimary text="Button" iconLeft={faUser} marginRight />`}</p>
+        <p>{`<ButtonPrimary text="Button" iconLeft={faUser} marginRight colorSecondary />`}</p>
+        <p>{`<ButtonPrimary text="Button" iconLeft={faUser} iconRight={faUser} lg marginRight />`}</p>
+        <p>{`<ButtonPrimary text="Button" lg disabled />`}</p>
+      </code>
     </CodeDrawer>
 
     <h4>Button Secondary</h4>
@@ -64,16 +62,14 @@ export const Buttons = () => (
       />
       <ButtonSecondary lg text="Button" disabled />
     </div>
-    <CodeDrawer label="Show Code" finalHeight={150}>
-      <div className="content">
-        <code>
-          <p>{`<ButtonSecondary text="Button" marginRight />`}</p>
-          <p>{`<ButtonSecondary text="Button" iconLeft={faUser} marginRight />`}</p>
-          <p>{`<ButtonSecondary text="Button" iconRight={faUser} marginRight />`}</p>
-          <p>{`<ButtonSecondary lg text="Button" iconLeft={faUser} iconRight={faUser} marginRight />`}</p>
-          <p>{`<ButtonSecondary lg text="Button" disabled />`}</p>
-        </code>
-      </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<ButtonSecondary text="Button" marginRight />`}</p>
+        <p>{`<ButtonSecondary text="Button" iconLeft={faUser} marginRight />`}</p>
+        <p>{`<ButtonSecondary text="Button" iconRight={faUser} marginRight />`}</p>
+        <p>{`<ButtonSecondary lg text="Button" iconLeft={faUser} iconRight={faUser} marginRight />`}</p>
+        <p>{`<ButtonSecondary lg text="Button" disabled />`}</p>
+      </code>
     </CodeDrawer>
 
     <h4>Button Mono</h4>
@@ -90,16 +86,14 @@ export const Buttons = () => (
       />
       <ButtonMono lg text="Button" disabled />
     </div>
-    <CodeDrawer label="Show Code" finalHeight={150}>
-      <div className="content">
-        <code>
-          <p>{`<ButtonMono text="Button" marginRight />`}</p>
-          <p>{`<ButtonMono text="Button" iconLeft={faUser} marginRight />`}</p>
-          <p>{`<ButtonMono text="Button" iconRight={faUser} marginRight />`}</p>
-          <p>{`<ButtonMono lg text="Button" iconLeft={faUser} iconRight={faUser} marginRight />`}</p>
-          <p>{`<ButtonMono lg text="Button" disabled />`}</p>
-        </code>
-      </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<ButtonMono text="Button" marginRight />`}</p>
+        <p>{`<ButtonMono text="Button" iconLeft={faUser} marginRight />`}</p>
+        <p>{`<ButtonMono text="Button" iconRight={faUser} marginRight />`}</p>
+        <p>{`<ButtonMono lg text="Button" iconLeft={faUser} iconRight={faUser} marginRight />`}</p>
+        <p>{`<ButtonMono lg text="Button" disabled />`}</p>
+      </code>
     </CodeDrawer>
 
     <h4>Button Mono Invert</h4>
@@ -116,16 +110,14 @@ export const Buttons = () => (
       />
       <ButtonMonoInvert lg text="Button" disabled />
     </div>
-    <CodeDrawer label="Show Code" finalHeight={150}>
-      <div className="content">
-        <code>
-          <p>{`<ButtonMonoInvert text="Button" marginRight />`}</p>
-          <p>{`<ButtonMonoInvert text="Button" iconLeft={faUser} marginRight />`}</p>
-          <p>{`<ButtonMonoInvert text="Button" iconRight={faUser} marginRight />`}</p>
-          <p>{`<ButtonMonoInvert lg text="Button" iconLeft={faUser} iconRight={faUser} marginRight />`}</p>
-          <p>{`<ButtonMonoInvert lg text="Button" disabled />`}</p>
-        </code>
-      </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<ButtonMonoInvert text="Button" marginRight />`}</p>
+        <p>{`<ButtonMonoInvert text="Button" iconLeft={faUser} marginRight />`}</p>
+        <p>{`<ButtonMonoInvert text="Button" iconRight={faUser} marginRight />`}</p>
+        <p>{`<ButtonMonoInvert lg text="Button" iconLeft={faUser} iconRight={faUser} marginRight />`}</p>
+        <p>{`<ButtonMonoInvert lg text="Button" disabled />`}</p>
+      </code>
     </CodeDrawer>
 
     <h4>Button Invert</h4>
@@ -141,16 +133,14 @@ export const Buttons = () => (
       />
       <ButtonInvert text="Button" disabled />
     </div>
-    <CodeDrawer label="Show Code" finalHeight={150}>
-      <div className="content">
-        <code>
-          <p>{`<ButtonInvert text="Button" marginRight />`}</p>
-          <p>{`<ButtonInvert text="Button" iconLeft={faUserReg} marginRight />`}</p>
-          <p>{`<ButtonInvert text="Button" iconRight={faUserReg} marginRight />`}</p>
-          <p>{`<ButtonInvert text="Button" iconLeft={faUserReg} iconRight={faUserReg} marginRight />`}</p>
-          <p>{`<ButtonInvert text="Button" disabled />`}</p>
-        </code>
-      </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<ButtonInvert text="Button" marginRight />`}</p>
+        <p>{`<ButtonInvert text="Button" iconLeft={faUserReg} marginRight />`}</p>
+        <p>{`<ButtonInvert text="Button" iconRight={faUserReg} marginRight />`}</p>
+        <p>{`<ButtonInvert text="Button" iconLeft={faUserReg} iconRight={faUserReg} marginRight />`}</p>
+        <p>{`<ButtonInvert text="Button" disabled />`}</p>
+      </code>
     </CodeDrawer>
 
     <h4>Button Invert Rounded</h4>
@@ -167,16 +157,14 @@ export const Buttons = () => (
       />
       <ButtonInvertRounded lg text="Button" disabled />
     </div>
-    <CodeDrawer label="Show Code" finalHeight={150}>
-      <div className="content">
-        <code>
-          <p>{`<ButtonInvertRounded text="Button" marginRight />`}</p>
-          <p>{`<ButtonInvertRounded text="Button" iconLeft={faUserReg} marginRight />`}</p>
-          <p>{`<ButtonInvertRounded text="Button" iconRight={faUserReg} marginRight />`}</p>
-          <p>{`<ButtonInvertRounded lg text="Button" iconLeft={faUserReg} iconRight={faUserReg} marginRight />`}</p>
-          <p>{`<ButtonInvertRounded lg text="Button" disabled />`}</p>
-        </code>
-      </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<ButtonInvertRounded text="Button" marginRight />`}</p>
+        <p>{`<ButtonInvertRounded text="Button" iconLeft={faUserReg} marginRight />`}</p>
+        <p>{`<ButtonInvertRounded text="Button" iconRight={faUserReg} marginRight />`}</p>
+        <p>{`<ButtonInvertRounded lg text="Button" iconLeft={faUserReg} iconRight={faUserReg} marginRight />`}</p>
+        <p>{`<ButtonInvertRounded lg text="Button" disabled />`}</p>
+      </code>
     </CodeDrawer>
 
     <h4>Button Text</h4>
@@ -192,21 +180,19 @@ export const Buttons = () => (
       />
       <ButtonText text="Button" disabled />
     </div>
-    <CodeDrawer label="Show Code" finalHeight={150}>
-      <div className="content">
-        <code>
-          <p>{`<ButtonText text="Button" marginRight />`}</p>
-          <p>{`<ButtonText text="Button" iconLeft={faUserReg} marginRight />`}</p>
-          <p>{`<ButtonText text="Button" iconRight={faUserReg} marginRight />`}</p>
-          <p>{`<ButtonText
+    <CodeDrawer>
+      <code>
+        <p>{`<ButtonText text="Button" marginRight />`}</p>
+        <p>{`<ButtonText text="Button" iconLeft={faUserReg} marginRight />`}</p>
+        <p>{`<ButtonText text="Button" iconRight={faUserReg} marginRight />`}</p>
+        <p>{`<ButtonText
                   text="Button"
                   iconLeft={faUserReg}
                   iconRight={faUserReg}
                   marginRight
                 />`}</p>
-          <p>{`<ButtonText text="Button" disabled />`}</p>
-        </code>
-      </div>
+        <p>{`<ButtonText text="Button" disabled />`}</p>
+      </code>
     </CodeDrawer>
 
     <h4>Button Submit</h4>
@@ -227,16 +213,14 @@ export const Buttons = () => (
       />
       <ButtonSubmit text="Button" disabled />
     </div>
-    <CodeDrawer label="Show Code" finalHeight={150}>
-      <div className="content">
-        <code>
-          <p>{`<ButtonSubmit text="Button" marginRight />`}</p>
-          <p>{`<ButtonSubmit text="Button" iconLeft={faArrowAltCircleUp} marginRight colorSecondary />`}</p>
-          <p>{`<ButtonSubmit text="Button" iconRight={faArrowAltCircleUp} marginRight />`}</p>
-          <p>{`<ButtonSubmit text="Button" iconLeft={faArrowAltCircleUp} iconRight={faArrowAltCircleUp} marginRight />`}</p>
-          <p>{`<ButtonSubmit text="Button" disabled />`}</p>
-        </code>
-      </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<ButtonSubmit text="Button" marginRight />`}</p>
+        <p>{`<ButtonSubmit text="Button" iconLeft={faArrowAltCircleUp} marginRight colorSecondary />`}</p>
+        <p>{`<ButtonSubmit text="Button" iconRight={faArrowAltCircleUp} marginRight />`}</p>
+        <p>{`<ButtonSubmit text="Button" iconLeft={faArrowAltCircleUp} iconRight={faArrowAltCircleUp} marginRight />`}</p>
+        <p>{`<ButtonSubmit text="Button" disabled />`}</p>
+      </code>
     </CodeDrawer>
 
     <h4>Button Help</h4>
@@ -244,13 +228,11 @@ export const Buttons = () => (
       <ButtonHelp marginRight />
       <ButtonHelp backgroundSecondary />
     </div>
-    <CodeDrawer label="Show Code" finalHeight={80}>
-      <div className="content">
-        <code>
-          <p>{`<ButtonHelp marginRight />`}</p>
-          <p>{`<ButtonHelp backgroundSecondary />`}</p>
-        </code>
-      </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<ButtonHelp marginRight />`}</p>
+        <p>{`<ButtonHelp backgroundSecondary />`}</p>
+      </code>
     </CodeDrawer>
   </>
 );
