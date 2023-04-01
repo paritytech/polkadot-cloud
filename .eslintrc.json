@@ -1,7 +1,18 @@
 {
+  "root": true,
   "env": {
     "browser": true,
     "es2021": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {
+        "project": ["./tsconfig.json", "packages/core-ui/tsconfig.json"]
+      }
+    }
   },
   "extends": [
     "eslint:recommended",
@@ -48,13 +59,5 @@
         "singleReturnOnly": false
       }
     ]
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    },
-    "import/resolver": {
-      "typescript": {}
-    }
   }
 }
