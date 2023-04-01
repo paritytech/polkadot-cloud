@@ -1,5 +1,6 @@
 // Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 // SPDX-License-Identifier: Apache-2.0
+
 import React from "react";
 import { ButtonPrimary } from "../../lib/buttons/ButtonPrimary";
 import { ButtonMono } from "../../lib/buttons/ButtonMono";
