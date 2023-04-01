@@ -22,4 +22,3 @@ jobs:
       - run: yarn build
         working-directory: packages/core-ui
       - run: yarn lint
-        working-directory: packages/core-ui
