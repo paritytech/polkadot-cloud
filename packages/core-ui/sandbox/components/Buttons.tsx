@@ -1,16 +1,15 @@
 // Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import React from "react";
-import { ButtonPrimary } from "../../lib/buttons/ButtonPrimary";
-import { ButtonMono } from "../../lib/buttons/ButtonMono";
-import { ButtonMonoInvert } from "../../lib/buttons/ButtonMonoInvert";
-import { ButtonSecondary } from "../../lib/buttons/ButtonSecondary";
-import { ButtonInvert } from "../../lib/buttons/ButtonInvert";
-import { ButtonInvertRounded } from "../../lib/buttons/ButtonInvertRounded";
-import { ButtonText } from "../../lib/buttons/ButtonText";
-import { ButtonSubmit } from "../../lib/buttons/ButtonSubmit";
-import { ButtonHelp } from "../../lib/buttons/ButtonHelp";
+import { ButtonPrimary } from "lib/buttons/ButtonPrimary";
+import { ButtonMono } from "lib/buttons/ButtonMono";
+import { ButtonMonoInvert } from "lib/buttons/ButtonMonoInvert";
+import { ButtonSecondary } from "lib/buttons/ButtonSecondary";
+import { ButtonInvert } from "lib/buttons/ButtonInvert";
+import { ButtonInvertRounded } from "lib/buttons/ButtonInvertRounded";
+import { ButtonText } from "lib/buttons/ButtonText";
+import { ButtonSubmit } from "lib/buttons/ButtonSubmit";
+import { ButtonHelp } from "lib/buttons/ButtonHelp";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import {
   faArrowAltCircleUp,

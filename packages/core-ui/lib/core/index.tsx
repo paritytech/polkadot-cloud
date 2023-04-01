@@ -4,9 +4,9 @@
 import { ComponentBase } from "../types";
 import { RefObject, forwardRef } from "react";
 import { motion } from "framer-motion";
-
 import { valEmpty } from "../utils";
 import { EntryProps, SideProps } from "./types";
+
 /* Entry
  *
  * The outer-most wrapper that hosts core tag styling.

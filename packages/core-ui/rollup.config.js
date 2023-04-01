@@ -25,7 +25,7 @@ export default {
     peerDepsExternal(),
     postcss({
       config: {
-        path: "./postcss.config.js",
+        path: "postcss.config.js",
       },
       extensions: [".css", ".scss"],
       minimize: true,
@@ -33,11 +33,14 @@ export default {
       extract: "index.css",
     }),
     resolve(),
-    typescript({
-      useTsconfigDeclarationDir: true,
-    }),
+    typescript({ tsconfig: "rollup.tsconfig.json" }),
     copy({
-      targets: [{ src: "styles/fonts/**/*", dest: "dist/fonts" }],
+      targets: [
+        {
+          src: "styles/fonts/**/*",
+          dest: "dist/fonts",
+        },
+      ],
     }),
   ],
   external: [

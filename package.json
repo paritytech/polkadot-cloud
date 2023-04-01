@@ -1,18 +1,11 @@
 {
-  "name": "polkadot-dashboard-ui",
+  "name": "@polkadotcloud/dashboard-ui",
   "version": "0.2.5",
   "license": "Apache-2.0",
   "author": "Ross Bulat",
-  "description": "UI Components for Polkadot Dashboards.",
-  "types": "dist/index.d.ts",
-  "main": "dist/index.ts",
-  "files": [
-    "dist"
-  ],
+  "description": "Polkadot Dashboard UI",
+  "private": "true",
   "scripts": {
-    "dev": "vite",
-    "build": "rollup -c && cp dist.package.json dist/package.json && yarn fix",
-    "fix": "sed '1d' ./dist/index.d.ts > ./tmp.d.ts; mv ./tmp.d.ts ./dist/index.d.ts",
     "lint:check": "eslint './**' && npx prettier -c .",
     "lint": "eslint './**' --fix && npx prettier --write . && npx stylelint '**/*.scss' --fix"
   },
@@ -59,16 +52,9 @@
     "typescript": "^5.0.3",
     "vite": "^4.2.1"
   },
-  "peerDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.0",
-    "@fortawesome/react-fontawesome": "^0.4.0",
-    "framer-motion": "^10.10.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "directories": {
-    "lib": "lib"
-  },
+  "workspaces": [
+    "packages/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/paritytech/polkadot-dashboard-ui.git"
@@ -78,8 +64,5 @@
     "UI",
     "Substrate"
   ],
-  "bugs": {
-    "url": "https://github.com/paritytech/polkadot-dashboard-ui/issues"
-  },
   "homepage": "https://github.com/paritytech/polkadot-dashboard-ui#readme"
 }
