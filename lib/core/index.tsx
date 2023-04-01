@@ -6,7 +6,7 @@ import { RefObject, forwardRef } from "react";
 import { motion } from "framer-motion";
 
 import { valEmpty } from "../utils";
-import { EntryProps, SideProps } from "./types";
+import { EntryProps, SideProps, PageTitleProps } from "./types";
 /* Entry
  *
  * The outer-most wrapper that hosts core tag styling.
@@ -78,3 +78,23 @@ export const Side = ({ children, style, open, minimised }: SideProps) => (
     {children}
   </div>
 );
+
+/* PageTitle
+ *
+ * The element that wraps a page title. Determines the padding and position relative to top of screen when the element is stuck.
+ */
+export const PageTitle = forwardRef(
+  (
+    { children, style, sticky }: PageTitleProps,
+    ref?: RefObject<HTMLElement>
+  ) => (
+    <header
+      ref={ref}
+      className={`core-page-title${valEmpty(sticky, "sticky")}`}
+      style={style}
+    >
+      {children}
+    </header>
+  )
+);
+PageTitle.displayName = "PageTitle";

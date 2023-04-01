@@ -137,3 +137,139 @@ SPDX-License-Identifier: Apache-2.0 */
     }
   }
 }
+
+.core-page-title {
+  background: var(--background-default);
+  position: sticky;
+  top: 0px;
+  padding-top: 0.5rem;
+  margin-top: 4rem;
+  margin-bottom: 0.25rem;
+  padding-bottom: 0;
+  width: 100%;
+  z-index: 5;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  transition: padding 0.3s ease-out;
+
+  @media (max-width: v.$page-width-medium-threshold) {
+    top: 4rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .title {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0;
+
+    > div {
+      &:last-child {
+        padding-left: 1rem;
+        flex-grow: 1;
+      }
+    }
+
+    button {
+      color: var(--text-color-secondary);
+      border: 1px solid var(--border-primary-color);
+      padding: 0.5rem 0.75rem;
+      margin: 0;
+      border-radius: 0.75rem;
+      font-size: 1.1rem;
+
+      &:hover {
+        background: var(--button-secondary-background);
+      }
+
+      .icon {
+        margin-left: 0.75rem;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    font-family: Unbounded, sans-serif;
+    position: relative;
+    transform: scale(1);
+    left: 0;
+
+    @media (max-width: v.$page-width-medium-threshold) {
+      left: -1rem;
+      transform: scale(0.75);
+    }
+
+    transition: all var(--transition-duration);
+    margin: 0;
+  }
+
+  .tabs {
+    border-bottom: 1px solid;
+    border-bottom-color: var(--border-primary-color);
+    overflow: hidden;
+    max-width: v.$page-max-width;
+    height: 3.6rem;
+    margin-top: 0.9rem;
+
+    @media (max-width: v.$page-width-medium-threshold) {
+      margin-top: 0.5rem;
+    }
+
+    > .scroll {
+      width: 100%;
+      height: 4.5rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    .inner {
+      display: flex;
+
+      > button {
+        color: var(--text-color-secondary);
+        padding: 0.65rem 1rem;
+        margin-bottom: 0.5rem;
+        margin-right: 0.75rem;
+        font-size: 1.15rem;
+        transition: opacity var(--transition-duration),
+          font-size var(--transition-duration);
+        border-radius: 0.5rem;
+
+        &.active {
+          background: var(--button-secondary-background);
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  &.sticky {
+    padding-top: 1.5rem;
+    padding-bottom: 0.25rem;
+
+    .title {
+      margin-bottom: 0.75rem;
+
+      h1 {
+        transform: scale(0);
+        left: -1.25rem;
+      }
+
+      .tabs {
+        border-bottom: 0;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
