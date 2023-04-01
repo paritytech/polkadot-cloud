@@ -1,10 +1,10 @@
 // Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { ComponentBase } from "lib/types";
+import { ComponentBase } from "../types";
 import { RefObject, forwardRef } from "react";
 import { motion } from "framer-motion";
-import { valEmpty } from "lib/utils";
+import { valEmpty } from "../utils";
 import { EntryProps, SideProps } from "./types";
 
 /* Entry

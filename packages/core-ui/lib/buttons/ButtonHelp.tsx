@@ -1,9 +1,9 @@
 // Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { InfoSVG } from "lib/svg/Info";
-import { ButtonCommonProps, ComponentBase } from "lib/types";
-import { valEmpty } from "lib/utils";
+import { InfoSVG } from "../svg/Info";
+import { ButtonCommonProps, ComponentBase } from "../types";
+import { valEmpty } from "../utils";
 
 export type ButtonHelpProps = ComponentBase &
   ButtonCommonProps & {

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import React, { useState } from "react";
-import { ButtonPrimary } from "../lib/buttons/ButtonPrimary";
+import { ButtonPrimary } from "lib/buttons/ButtonPrimary";
 import { ButtonMono } from "../lib/buttons/ButtonMono";
 import { ButtonMonoInvert } from "../lib/buttons/ButtonMonoInvert";
 import { ButtonSecondary } from "../lib/buttons/ButtonSecondary";
