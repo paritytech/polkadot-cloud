@@ -10,10 +10,7 @@
     },
     "import/resolver": {
       "typescript": {
-        "project": [
-          "./tsconfig.json",
-          "packages/core-ui/tsconfig.json"
-        ]
+        "project": ["./tsconfig.json", "packages/core-ui/tsconfig.json"]
       }
     }
   },
