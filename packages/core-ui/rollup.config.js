@@ -33,9 +33,14 @@ export default {
       extract: "index.css",
     }),
     resolve(),
-    typescript({ tsconfig: "tsconfig.json" }),
+    typescript({ tsconfig: "rollup.tsconfig.json" }),
     copy({
-      targets: [{ src: "styles/fonts/**/*", dest: "dist/fonts" }],
+      targets: [
+        {
+          src: "styles/fonts/**/*",
+          dest: "dist/fonts",
+        },
+      ],
     }),
   ],
   external: [

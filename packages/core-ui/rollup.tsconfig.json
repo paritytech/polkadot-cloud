@@ -3,7 +3,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "composite": true,
-    "rootDir": "./",
+    "declarationDir": "dist",
+    "rootDir": "./lib",
     "outDir": "dist",
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -15,9 +16,7 @@
     "esModuleInterop": false
   },
   "include": [
-    "./lib/**/*",
-    "./sandbox/**/*"
-
+    "./lib/**/*"
   ],
   "exclude": [
     "**/*/node_modules",
