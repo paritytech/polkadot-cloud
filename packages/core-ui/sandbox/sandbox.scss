@@ -45,6 +45,27 @@ main {
   }
 }
 
+.code {
+  overflow: hidden;
+  height: auto;
+  border: 1px solid var(--border-primary-color);
+  border-radius: 0.75rem;
+  transition: border-color 0.5s ease-out;
+  padding: 0 0.75rem;
+  margin-top: 0.5rem;
+
+  > .hide {
+    max-height: 0;
+    transition: max-height 0.25s ease-out;
+    overflow: hidden;
+  }
+
+  > .show {
+    max-height: 500px;
+    transition: max-height 0.35s ease-in;
+  }
+}
+
 .nav {
   border-right: 1px solid var(--border-primary-color);
   background-color: var(--background-primary);
