@@ -1,31 +1,63 @@
 /* Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
+@use "../styles/variables" as v;
 
 main {
-  background: var(--background-primary);
-}
-
-.header {
-  margin-bottom: 2rem;
-  padding: 0 1rem;
-  border: 1px solid var(--background-primary);
-
-  > h5 > button {
-    font-size: 0.92rem;
-  }
+  background: var(--background-default);
 }
 
 .body {
   min-height: 100vh;
-  padding: 0 1.5rem;
+  padding: 1rem 1.5rem 0;
   width: 100%;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 0 0 0 15rem;
+
+  /* We need the body not to over come sidebar */
+  @media (min-width: (v.$page-width-medium-threshold + 26px)) {
+    margin: 0 auto;
+  }
 }
 
 .row {
   display: flex;
   margin-bottom: 1.25rem;
-  border-bottom: 1px solid var(--border-primary-color);
   padding-bottom: 1.5rem;
+}
+
+.nav {
+  border-right: 1px solid var(--border-primary-color);
+  background-color: var(--background-primary);
+  width: 10rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  z-index: 1;
+  padding-left: 1.5rem;
+
+  section {
+    font-size: 1.05rem;
+    margin: 1.25rem 0;
+
+    h5 {
+      font-size: inherit;
+      font-weight: bold;
+      text-decoration: none;
+      display: block;
+      margin: 0.75rem 0;
+    }
+
+    > button {
+      font-size: inherit;
+      text-decoration: none;
+      display: block;
+      line-height: 2.25rem;
+
+      &.selected {
+        color: var(--network-color-primary);
+      }
+    }
+  }
 }
