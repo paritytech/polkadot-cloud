@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": false,
+    "incremental": true,
+    "noEmitOnError": true,
+    "skipLibCheck": true,
+  },
+  "references": [
+    {
+      "path": "packages/core-ui"
+    },
+  ]
+}
