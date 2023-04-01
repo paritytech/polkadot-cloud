@@ -1,14 +1,27 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "declaration": true,
-    "declarationMap": false,
-    "incremental": true,
-    "noEmitOnError": true,
-    "skipLibCheck": true,
+    "baseUrl": "./",
+    "composite": true,
+    "rootDir": "./",
+    "outDir": "dist",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "target": "es5",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "sourceMap": true,
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": false
   },
-  "references": [
-    {
-      "path": "packages/core-ui"
-    },
-  ]
+  "include": [
+    "./lib/**/*",
+    "./sandbox/**/*"
+  ],
+  "exclude": [
+    "**/*/node_modules",
+    "**/*/dist",
+    "**/*.test.tsx"
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
