@@ -1,7 +1,7 @@
 // Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { Buttons } from "./components/Buttons";
 
 const getComponent = (component: string) => {
