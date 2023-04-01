@@ -19,6 +19,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install
-      - run: yarn lib:build
+      - run: yarn build
+        working-directory: packages/core-ui
       - run: yarn lint
         working-directory: packages/core-ui
