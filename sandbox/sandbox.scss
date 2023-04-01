@@ -81,3 +81,40 @@ main {
     }
   }
 }
+
+.nav {
+  border-right: 1px solid var(--border-primary-color);
+  background-color: var(--background-primary);
+  width: 10rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  z-index: 1;
+  padding-left: 1.5rem;
+
+  section {
+    font-size: 1.05rem;
+    margin: 1.25rem 0;
+
+    h5 {
+      font-size: inherit;
+      font-weight: bold;
+      text-decoration: none;
+      display: block;
+      margin: 0.75rem 0;
+    }
+
+    > button {
+      font-size: inherit;
+      text-decoration: none;
+      display: block;
+      line-height: 2.25rem;
+
+      &.selected {
+        color: var(--network-color-primary);
+      }
+    }
+  }
+}
