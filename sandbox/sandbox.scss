@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 */
 @use "../styles/variables" as v;
 
 main {
-  background: var(--background-primary);
+  background: var(--background-default);
 }
 
 .body {
@@ -73,28 +73,40 @@ main {
   padding-bottom: 1.5rem;
 }
 
-.sidenav {
-  height: 100%;
+.nav {
+  border-right: 1px solid var(--border-primary-color);
+  background-color: var(--background-primary);
   width: 10rem;
+  height: 100vh;
   position: fixed;
-  z-index: 1;
   top: 0;
   left: 0;
-  overflow-x: hidden;
-  background-color: var(--background-primary);
-  border-right: 1px solid var(--border-secondary-color);
+  overflow: auto;
+  z-index: 1;
+  padding-left: 1.5rem;
 
-  > h5 > p {
-    padding-left: 1rem;
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-decoration: none;
-    display: block;
-  }
 
-  > h5 > button {
-    padding-left: 2rem;
-    text-decoration: none;
-    display: block;
+  section {
+    font-size: 1.05rem;
+    margin: 1.25rem 0;
+
+    h5 {
+      font-size: inherit;
+      font-weight: bold;
+      text-decoration: none;
+      display: block;
+      margin: 0.75rem 0;
+    }
+
+    > button {
+      font-size: inherit;
+      text-decoration: none;
+      display: block;
+      line-height: 2.25rem;
+
+      &.selected {
+        color: var(--network-color-primary);
+      }
+    }
   }
 }
