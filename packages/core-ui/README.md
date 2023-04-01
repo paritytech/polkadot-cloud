@@ -61,9 +61,9 @@ Any [core component](https://github.com/paritytech/polkadot-dashboard-ui/tree/ma
 
 ## Package Testing in Local Development
 
-Components can be viewed in the showcase (accessed via `yarn dev`) while developing, with real time updates via HMR. But it can be challenging to test components like wrappers or large items, that should ideally be tested within an existing app.
+Components can be viewed in the sandbox (accessed via `yarn dev`) while developing, with real time updates via HMR. But it can be challenging to test components like wrappers or large items, that should ideally be tested within an existing app.
 
-So in addition to the showcase, It is also possible to build the package and test it in other projects locally, before publishing the updated package to NPM. Doing this allows testing of newly updated components in a production app use-case before they are published .
+So in addition to the sandbox, It is also possible to build the package and test it in other projects locally, before publishing the updated package to NPM. Doing this allows testing of newly updated components in a production app use-case before they are published .
 
 The following walkthrough uses the [Polkadot staking dashboard](https://github.com/paritytech/polkadot-staking-dashboard) as **The App** and a local build of the UI library as **The Package** to test.
 

@@ -18,7 +18,7 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 
 /*
- * Showcase page for component tests and class inclusion.
+ * Sandbox page for component tests and class inclusion.
  */
 const Home = () => {
   // store the current theme
