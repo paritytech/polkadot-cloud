@@ -11,11 +11,6 @@
       "core-ui/*": ["./packages/core-ui/lib/*"]
     },
   },
-  "references": [
-    {
-      "path": "packages/core-ui"
-    },
-  ],
   "include": [
     "./packages/**/*",
   ],
