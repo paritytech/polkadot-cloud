@@ -50,7 +50,8 @@
     "stylelint-config-standard-scss": "^7.0.1",
     "tslib": "^2.4.0",
     "typescript": "^5.0.3",
-    "vite": "^4.2.1"
+    "vite": "^4.2.1",
+    "vite-tsconfig-paths": "^4.0.7"
   },
   "workspaces": [
     "packages/*"
