@@ -1,7 +1,10 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": "./",
-    "rootDir": "./",
+    "composite": true,
+    "declarationDir": "dist",
+    "rootDir": "./lib",
     "outDir": "dist",
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -12,14 +15,6 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": false
   },
-  "include": [
-    "./lib/**/*",
-    "./sandbox/**/*"
-  ],
-  "exclude": [
-    "**/*/node_modules",
-    "**/*/dist",
-    "**/*.test.tsx"
-  ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["./lib/**/*"],
+  "exclude": ["**/*/node_modules", "**/*/dist", "**/*.test.tsx"]
 }

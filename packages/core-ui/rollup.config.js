@@ -33,7 +33,7 @@ export default {
       extract: "index.css",
     }),
     resolve(),
-    typescript({ tsconfig: "rollup.tsconfig.json" }),
+    typescript(),
     copy({
       targets: [
         {
