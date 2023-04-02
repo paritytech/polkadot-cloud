@@ -2,6 +2,11 @@
 SPDX-License-Identifier: Apache-2.0 */
 @use "../styles/variables" as v;
 
+
+:root {
+  --sandbox-active-color: rgb(211 48 121);
+}
+
 main {
   background: var(--background-default);
 }
@@ -76,7 +81,7 @@ main {
       line-height: 2.25rem;
 
       &.selected {
-        color: var(--network-color-primary);
+        color: var(--sandbox-active-color);
       }
     }
   }
