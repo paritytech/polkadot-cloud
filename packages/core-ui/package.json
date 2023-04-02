@@ -11,7 +11,6 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
     "build": "rollup -c && cp dist.package.json dist/package.json && yarn fix",
     "fix": "sed '1d' ./dist/index.d.ts > ./tmp.d.ts; mv ./tmp.d.ts ./dist/index.d.ts"
   },
