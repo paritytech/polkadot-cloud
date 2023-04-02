@@ -11,9 +11,10 @@
     "import/resolver": {
       "typescript": {
         "project": [
-          "./tsconfig.json", 
+          "./tsconfig.json",
           "packages/core-ui/tsconfig.json",
-          "sandbox/tsconfig.json"]
+          "sandbox/tsconfig.json"
+        ]
       }
     }
   },
