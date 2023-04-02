@@ -40,7 +40,8 @@
     "typescript": "^5.0.3"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "sandbox"
   ],
   "repository": {
     "type": "git",
