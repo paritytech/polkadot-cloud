@@ -1,8 +1,6 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": "./",
-    "composite": true,
     "rootDir": "./",
     "outDir": "dist",
     "module": "ESNext",
