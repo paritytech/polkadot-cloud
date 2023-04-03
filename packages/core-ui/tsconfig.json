@@ -16,5 +16,4 @@
     "esModuleInterop": false
   },
   "include": ["./lib/**/*"],
-  "exclude": ["**/*/node_modules", "**/*/dist", "**/*.test.tsx"]
 }
