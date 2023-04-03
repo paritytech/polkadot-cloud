@@ -8,7 +8,8 @@
     "noEmitOnError": true,
     "skipLibCheck": true,
     "paths": {
-      "core-ui/*": ["./packages/core-ui/lib/*"]
+      "core-ui/*": ["./packages/core-ui/lib/*"],
+      "utils/*": ["./packages/utils/lib/*"]
     },
   },
   "include": [

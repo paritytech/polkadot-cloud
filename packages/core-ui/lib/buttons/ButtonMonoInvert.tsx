@@ -1,5 +1,5 @@
-// Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
-// SPDX-License-Identifier: Apache-2.0
+/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+SPDX-License-Identifier: Apache-2.0 */
 
 import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

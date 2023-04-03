@@ -1,0 +1,13 @@
+{
+  "name": "@polkadotcloud/utils",
+  "version": "0.2.6",
+  "license": "Apache-2.0",
+  "author": "Ross Bulat",
+  "description": "Utilities for Polkadot Dashboards.",
+  "scripts": {
+    "build": "rollup -c && cp dist.package.json dist/package.json"
+  },
+  "devDependencies": {
+    "rollup-plugin-cleanup": "^3.2.1"
+  }
+}
