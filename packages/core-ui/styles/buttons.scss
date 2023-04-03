@@ -13,8 +13,8 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 }
 
-// button btn-common styles
-@mixin btn-common {
+// button btn-spacing styles
+@mixin btn-spacing {
   &.m-left {
     margin-left: var(--button-spacing-small);
   }
@@ -69,7 +69,7 @@ SPDX-License-Identifier: Apache-2.0 */
 // buttons/ButtonPrimary
 .btn-primary {
   @include btn-layout;
-  @include btn-common;
+  @include btn-spacing;
   @include btn-icons;
   @include btn-disabled;
 
@@ -95,7 +95,7 @@ SPDX-License-Identifier: Apache-2.0 */
 // buttons/ButtonSecondary
 .btn-secondary {
   @include btn-layout;
-  @include btn-common;
+  @include btn-spacing;
   @include btn-icons;
   @include btn-disabled;
 
@@ -126,7 +126,7 @@ SPDX-License-Identifier: Apache-2.0 */
 // buttons/ButtonMono
 .btn-mono {
   @include btn-layout;
-  @include btn-common;
+  @include btn-spacing;
   @include btn-icons;
   @include btn-disabled;
 
@@ -152,7 +152,7 @@ SPDX-License-Identifier: Apache-2.0 */
 // buttons/ButtonMonoRounded
 .btn-mono-invert {
   @include btn-layout;
-  @include btn-common;
+  @include btn-spacing;
   @include btn-icons;
   @include btn-disabled;
 
@@ -177,7 +177,7 @@ SPDX-License-Identifier: Apache-2.0 */
 // buttons/ButtonText
 .btn-text {
   @include btn-layout;
-  @include btn-common;
+  @include btn-spacing;
   @include btn-icons;
   @include btn-disabled;
 
@@ -194,7 +194,7 @@ SPDX-License-Identifier: Apache-2.0 */
 // buttons/ButtonInvert
 .btn-invert {
   @include btn-layout;
-  @include btn-common;
+  @include btn-spacing;
   @include btn-icons;
   @include btn-submit-button;
   @include btn-disabled;
@@ -207,7 +207,7 @@ SPDX-License-Identifier: Apache-2.0 */
 // buttons/ButtonInvertRounded
 .btn-invert-rounded {
   @include btn-layout;
-  @include btn-common;
+  @include btn-spacing;
   @include btn-icons;
   @include btn-disabled;
 
@@ -227,7 +227,7 @@ SPDX-License-Identifier: Apache-2.0 */
 // buttons/ButtonSubmit
 .btn-submit {
   @include btn-layout;
-  @include btn-common;
+  @include btn-spacing;
   @include btn-icons;
   @include btn-submit-button;
   @include btn-disabled;
@@ -246,7 +246,7 @@ SPDX-License-Identifier: Apache-2.0 */
 // buttons/ButtonHelp
 .btn-help {
   @include btn-layout;
-  @include btn-common;
+  @include btn-spacing;
   @include btn-disabled;
 
   background: var(--button-tertiary-background);
