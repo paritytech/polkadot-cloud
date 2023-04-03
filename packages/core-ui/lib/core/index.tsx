@@ -5,7 +5,7 @@ import { ComponentBase } from "../types";
 import { RefObject, forwardRef } from "react";
 import { motion } from "framer-motion";
 import { valEmpty } from "../utils";
-import { EntryProps, SideProps } from "./types";
+import { EntryProps, SideProps, PageTitleProps } from "./types";
 
 /* Entry
  *
@@ -73,6 +73,39 @@ export const Side = ({ children, style, open, minimised }: SideProps) => (
       minimised,
       "minimised"
     )}`}
+    style={style}
+  >
+    {children}
+  </div>
+);
+
+/* PageTitle
+ *
+ * The element that wraps a page title. Determines the padding and position relative to top of screen when the element is stuck.
+ */
+export const PageTitle = forwardRef(
+  (
+    { children, style, sticky }: PageTitleProps,
+    ref?: RefObject<HTMLElement>
+  ) => (
+    <header
+      ref={ref}
+      className={`core-page-title${valEmpty(sticky, "sticky")}`}
+      style={style}
+    >
+      {children}
+    </header>
+  )
+);
+PageTitle.displayName = "PageTitle";
+
+/* PageTitleTabs
+ *
+ * The element in a page title. Inculding the ButtonTab.
+ */
+export const PageTitleTabs = ({ children, style, sticky }: PageTitleProps) => (
+  <div
+    className={`core-page-title-tabs${valEmpty(sticky, "sticky")}`}
     style={style}
   >
     {children}

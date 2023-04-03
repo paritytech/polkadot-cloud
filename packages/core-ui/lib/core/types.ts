@@ -16,3 +16,8 @@ export type SideProps = ComponentBase & {
   // whether side menu is in minimised state
   minimised: boolean;
 };
+
+export type PageTitleProps = ComponentBase & {
+  // whether the title stick on the same position
+  sticky?: boolean;
+};
