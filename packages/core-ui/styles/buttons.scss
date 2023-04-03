@@ -42,21 +42,23 @@ SPDX-License-Identifier: Apache-2.0 */
 }
 
 @mixin btn-small-button {
-  padding: 0.34rem 0.92rem;
-  font-size: 1rem;
+  padding: var(--button-padding-small);
+  font-size: var(--button-font-size-small);
 }
 
 @mixin btn-large-button {
-  padding: 0.45rem 0.95rem;
-  font-size: 1.15rem;
+  padding: var(--button-padding-large);
+  font-size: var(--button-font-size-large);
 }
 
-@mixin btn-padding-submit {
-  padding: 0.45rem 0.8rem;
+@mixin btn-submit-button {
+  padding: var(--button-padding-large);
+  font-size: var(--button-font-size-small);
 }
 
 @mixin btn-disabled {
-  transition: opacity 0.15s, color 0.15s;
+  transition: opacity var(--transition-duration),
+    color var(--transition-duration);
 
   &:disabled {
     opacity: var(--opacity-disabled);
@@ -204,8 +206,8 @@ SPDX-License-Identifier: Apache-2.0 */
 
   color: var(--text-color-primary);
   border-radius: var(--button-border-radius-large);
+  font-size: var(--button-font-size-small);
   padding: 0.45rem;
-  font-size: 1rem;
 
   &.secondary-color {
     border-color: var(--text-color-secondary);
@@ -217,13 +219,12 @@ SPDX-License-Identifier: Apache-2.0 */
   @include btn-layout;
   @include btn-common;
   @include btn-icons;
-  @include btn-padding-submit;
+  @include btn-submit-button;
   @include btn-disabled;
 
   border: 1px solid var(--network-color-stroke);
   border-radius: var(--button-border-radius-small);
   color: var(--network-color-stroke);
-  font-size: 1rem;
 }
 
 // buttons/ButtonInvertRounded
@@ -251,14 +252,13 @@ SPDX-License-Identifier: Apache-2.0 */
   @include btn-layout;
   @include btn-common;
   @include btn-icons;
-  @include btn-padding-submit;
+  @include btn-submit-button;
   @include btn-disabled;
 
   border: 1px solid var(--network-color-primary);
   border-radius: var(--button-border-radius-small);
   background: var(--network-color-primary);
   color: white;
-  font-size: 1rem;
 
   &.secondary-color {
     border-color: var(--network-color-secondary);

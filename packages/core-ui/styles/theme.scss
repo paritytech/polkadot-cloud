@@ -14,12 +14,21 @@ SPDX-License-Identifier: Apache-2.0 */
 }
 
 :root {
+  /* button styling */
   --button-border-radius-small: 0.75rem;
-  --button-border-radius-large: 1.5rem;  
+  --button-border-radius-large: 1.5rem;
+  --button-padding-small: 0.34rem 0.92rem;
+  --button-padding-large: 0.45rem 0.95rem;
+  --button-font-size-small: 1rem;
+  --button-font-size-large: 1.15rem;
+
+  /* miscellaneous styling */
   --card-shadow: 0px 2px 16px;
   --opacity-disabled: 0.3;
   --transparent-color: rgb(0 0 0 / 0%);
   --transition-duration: 0.15s;
+
+  /* network colors */
 
   .theme-polkadot {
     --network-color-primary-light: rgb(211 48 121);
@@ -59,6 +68,8 @@ SPDX-License-Identifier: Apache-2.0 */
     --network-color-pending-light: rgb(218 78 113 / 33%);
     --network-color-pending-dark: rgb(218 78 113 / 33%);
   }
+
+  /* light and dark theme colors */
 
   .theme-light {
     --background-default: #f5f4f4;
