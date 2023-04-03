@@ -92,6 +92,31 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 }
 
+// buttons/ButtonPrimaryInvert
+.btn-primary-invert {
+  @include btn-layout;
+  @include btn-spacing;
+  @include btn-icons;
+  @include btn-disabled;
+
+  border: 1px solid var(--network-color-stroke);
+  border-radius: var(--button-border-radius-large);
+  color: var(--network-color-stroke);
+
+  &.secondary-color {
+    border: 1px solid var(--network-color-secondary);
+    color: var(--network-color-secondary);
+  }
+
+  &.sm {
+    @include btn-small;
+  }
+
+  &.lg {
+    @include btn-large;
+  }
+}
+
 // buttons/ButtonSecondary
 .btn-secondary {
   @include btn-layout;
@@ -188,31 +213,6 @@ SPDX-License-Identifier: Apache-2.0 */
 
   &.secondary-color {
     border-color: var(--text-color-secondary);
-  }
-}
-
-// buttons/ButtonPrimaryInvert
-.btn-primary-invert {
-  @include btn-layout;
-  @include btn-spacing;
-  @include btn-icons;
-  @include btn-disabled;
-
-  border: 1px solid var(--network-color-stroke);
-  border-radius: var(--button-border-radius-large);
-  color: var(--network-color-stroke);
-
-  &.secondary-color {
-    border: 1px solid var(--network-color-secondary);
-    color: var(--network-color-secondary);
-  }
-
-  &.sm {
-    @include btn-small;
-  }
-
-  &.lg {
-    @include btn-large;
   }
 }
 
