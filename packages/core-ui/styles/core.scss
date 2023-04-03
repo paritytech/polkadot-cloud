@@ -62,13 +62,6 @@ SPDX-License-Identifier: Apache-2.0 */
   position: relative;
   display: flex;
   flex-grow: 1;
-
-  .label {
-    font-size: 0.85rem;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: flex-end;
-  }
 }
 
 .core-main {
