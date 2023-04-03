@@ -11,10 +11,8 @@
   "typescript": {
     "definition": "index.d.ts"
   },
-  "peerDependencies": {
-  },
-  "devDependencies": {
-  },
+  "peerDependencies": {},
+  "devDependencies": {},
   "bugs": {
     "url": "https://github.com/paritytech/polkadot-dashboard-ui/issues"
   },
