@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { ButtonPrimary } from "core-ui/buttons/ButtonPrimary";
+import { ButtonPrimaryInvert } from "core-ui/buttons/ButtonPrimaryInvert";
 import { ButtonMono } from "core-ui/buttons/ButtonMono";
 import { ButtonMonoInvert } from "core-ui/buttons/ButtonMonoInvert";
 import { ButtonSecondary } from "core-ui/buttons/ButtonSecondary";
 import { ButtonSubmitInvert } from "core-ui/buttons/ButtonSubmitInvert";
-import { ButtonInvertRounded } from "core-ui/buttons/ButtonInvertRounded";
 import { ButtonText } from "core-ui/buttons/ButtonText";
 import { ButtonSubmit } from "core-ui/buttons/ButtonSubmit";
 import { ButtonHelp } from "core-ui/buttons/ButtonHelp";
@@ -44,6 +44,30 @@ export const Buttons = () => (
         <p>{`<ButtonPrimary text="Button" iconLeft={faUser} marginRight colorSecondary />`}</p>
         <p>{`<ButtonPrimary text="Button" iconLeft={faUser} iconRight={faUser} lg marginRight />`}</p>
         <p>{`<ButtonPrimary text="Button" lg disabled />`}</p>
+      </code>
+    </CodeDrawer>
+
+    <h4>Button Primary Invert</h4>
+    <div className="row">
+      <ButtonPrimaryInvert text="Button" marginRight />
+      <ButtonPrimaryInvert text="Button" iconLeft={faUserReg} marginRight />
+      <ButtonPrimaryInvert text="Button" iconRight={faUserReg} marginRight />
+      <ButtonPrimaryInvert
+        lg
+        text="Button"
+        iconLeft={faUserReg}
+        iconRight={faUserReg}
+        marginRight
+      />
+      <ButtonPrimaryInvert lg text="Button" disabled />
+    </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<ButtonPrimaryInvert text="Button" marginRight />`}</p>
+        <p>{`<ButtonPrimaryInvert text="Button" iconLeft={faUserReg} marginRight />`}</p>
+        <p>{`<ButtonPrimaryInvert text="Button" iconRight={faUserReg} marginRight />`}</p>
+        <p>{`<ButtonPrimaryInvert lg text="Button" iconLeft={faUserReg} iconRight={faUserReg} marginRight />`}</p>
+        <p>{`<ButtonPrimaryInvert lg text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
 
@@ -116,30 +140,6 @@ export const Buttons = () => (
         <p>{`<ButtonMonoInvert text="Button" iconRight={faUser} marginRight />`}</p>
         <p>{`<ButtonMonoInvert lg text="Button" iconLeft={faUser} iconRight={faUser} marginRight />`}</p>
         <p>{`<ButtonMonoInvert lg text="Button" disabled />`}</p>
-      </code>
-    </CodeDrawer>
-
-    <h4>Button Invert Rounded</h4>
-    <div className="row">
-      <ButtonInvertRounded text="Button" marginRight />
-      <ButtonInvertRounded text="Button" iconLeft={faUserReg} marginRight />
-      <ButtonInvertRounded text="Button" iconRight={faUserReg} marginRight />
-      <ButtonInvertRounded
-        lg
-        text="Button"
-        iconLeft={faUserReg}
-        iconRight={faUserReg}
-        marginRight
-      />
-      <ButtonInvertRounded lg text="Button" disabled />
-    </div>
-    <CodeDrawer>
-      <code>
-        <p>{`<ButtonInvertRounded text="Button" marginRight />`}</p>
-        <p>{`<ButtonInvertRounded text="Button" iconLeft={faUserReg} marginRight />`}</p>
-        <p>{`<ButtonInvertRounded text="Button" iconRight={faUserReg} marginRight />`}</p>
-        <p>{`<ButtonInvertRounded lg text="Button" iconLeft={faUserReg} iconRight={faUserReg} marginRight />`}</p>
-        <p>{`<ButtonInvertRounded lg text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
 

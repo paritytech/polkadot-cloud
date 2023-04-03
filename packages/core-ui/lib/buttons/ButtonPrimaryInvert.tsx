@@ -5,7 +5,7 @@ import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { valEmpty, valOr } from "../utils";
 
-export type ButtonInvertRoundedProps = ComponentBase &
+export type ButtonPrimaryInvertProps = ComponentBase &
   ButtonIconProps &
   ButtonCommonProps & {
     // large button, small otherwise.
@@ -15,9 +15,9 @@ export type ButtonInvertRoundedProps = ComponentBase &
   };
 
 /*
- * Invert rounded button style used in modals.
+ * Invert primary button style.
  */
-export const ButtonInvertRounded = ({
+export const ButtonPrimaryInvert = ({
   disabled,
   grow,
   iconLeft,
@@ -30,9 +30,9 @@ export const ButtonInvertRounded = ({
   marginX,
   style,
   text,
-}: ButtonInvertRoundedProps) => (
+}: ButtonPrimaryInvertProps) => (
   <button
-    className={`btn-invert-rounded${valEmpty(grow, "grow")}${valOr(
+    className={`btn-primary-invert${valEmpty(grow, "grow")}${valOr(
       lg,
       "lg",
       "sm"

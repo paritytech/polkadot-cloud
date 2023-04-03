@@ -14,11 +14,11 @@ export * from "./core";
 
 // Buttons
 export { ButtonPrimary } from "./buttons/ButtonPrimary";
+export { ButtonPrimaryInvert } from "./buttons/ButtonPrimaryInvert";
 export { ButtonSecondary } from "./buttons/ButtonSecondary";
 export { ButtonMono } from "./buttons/ButtonMono";
 export { ButtonMonoInvert } from "./buttons/ButtonMonoInvert";
 export { ButtonSubmitInvert } from "./buttons/ButtonSubmitInvert";
 export { ButtonText } from "./buttons/ButtonText";
-export { ButtonInvertRounded } from "./buttons/ButtonInvertRounded";
 export { ButtonSubmit } from "./buttons/ButtonSubmit";
 export { ButtonHelp } from "./buttons/ButtonHelp";

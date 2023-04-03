@@ -191,8 +191,8 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 }
 
-// buttons/ButtonInvertRounded
-.btn-invert-rounded {
+// buttons/ButtonPrimaryInvert
+.btn-primary-invert {
   @include btn-layout;
   @include btn-spacing;
   @include btn-icons;
