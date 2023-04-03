@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { ButtonPrimary } from "core-ui/buttons/ButtonPrimary";
+import { ButtonPrimaryInvert } from "core-ui/buttons/ButtonPrimaryInvert";
 import { ButtonMono } from "core-ui/buttons/ButtonMono";
 import { ButtonMonoInvert } from "core-ui/buttons/ButtonMonoInvert";
 import { ButtonSecondary } from "core-ui/buttons/ButtonSecondary";
-import { ButtonInvert } from "core-ui/buttons/ButtonInvert";
-import { ButtonInvertRounded } from "core-ui/buttons/ButtonInvertRounded";
+import { ButtonSubmitInvert } from "core-ui/buttons/ButtonSubmitInvert";
 import { ButtonText } from "core-ui/buttons/ButtonText";
 import { ButtonSubmit } from "core-ui/buttons/ButtonSubmit";
 import { ButtonHelp } from "core-ui/buttons/ButtonHelp";
@@ -44,6 +44,35 @@ export const Buttons = () => (
         <p>{`<ButtonPrimary text="Button" iconLeft={faUser} marginRight colorSecondary />`}</p>
         <p>{`<ButtonPrimary text="Button" iconLeft={faUser} iconRight={faUser} lg marginRight />`}</p>
         <p>{`<ButtonPrimary text="Button" lg disabled />`}</p>
+      </code>
+    </CodeDrawer>
+
+    <h4>Button Primary Invert</h4>
+    <div className="row">
+      <ButtonPrimaryInvert text="Button" marginRight />
+      <ButtonPrimaryInvert
+        text="Button"
+        iconLeft={faUserReg}
+        marginRight
+        colorSecondary
+      />
+      <ButtonPrimaryInvert text="Button" iconRight={faUserReg} marginRight />
+      <ButtonPrimaryInvert
+        lg
+        text="Button"
+        iconLeft={faUserReg}
+        iconRight={faUserReg}
+        marginRight
+      />
+      <ButtonPrimaryInvert lg text="Button" disabled />
+    </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<ButtonPrimaryInvert text="Button" marginRight />`}</p>
+        <p>{`<ButtonPrimaryInvert text="Button" iconLeft={faUserReg} marginRight />`}</p>
+        <p>{`<ButtonPrimaryInvert text="Button" iconRight={faUserReg} marginRight />`}</p>
+        <p>{`<ButtonPrimaryInvert lg text="Button" iconLeft={faUserReg} iconRight={faUserReg} marginRight />`}</p>
+        <p>{`<ButtonPrimaryInvert lg text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
 
@@ -119,53 +148,6 @@ export const Buttons = () => (
       </code>
     </CodeDrawer>
 
-    <h4>Button Invert</h4>
-    <div className="row">
-      <ButtonInvert text="Button" marginRight />
-      <ButtonInvert text="Button" iconLeft={faUserReg} marginRight />
-      <ButtonInvert text="Button" iconRight={faUserReg} marginRight />
-      <ButtonInvert
-        text="Button"
-        iconLeft={faUserReg}
-        iconRight={faUserReg}
-        marginRight
-      />
-      <ButtonInvert text="Button" disabled />
-    </div>
-    <CodeDrawer>
-      <code>
-        <p>{`<ButtonInvert text="Button" marginRight />`}</p>
-        <p>{`<ButtonInvert text="Button" iconLeft={faUserReg} marginRight />`}</p>
-        <p>{`<ButtonInvert text="Button" iconRight={faUserReg} marginRight />`}</p>
-        <p>{`<ButtonInvert text="Button" iconLeft={faUserReg} iconRight={faUserReg} marginRight />`}</p>
-        <p>{`<ButtonInvert text="Button" disabled />`}</p>
-      </code>
-    </CodeDrawer>
-
-    <h4>Button Invert Rounded</h4>
-    <div className="row">
-      <ButtonInvertRounded text="Button" marginRight />
-      <ButtonInvertRounded text="Button" iconLeft={faUserReg} marginRight />
-      <ButtonInvertRounded text="Button" iconRight={faUserReg} marginRight />
-      <ButtonInvertRounded
-        lg
-        text="Button"
-        iconLeft={faUserReg}
-        iconRight={faUserReg}
-        marginRight
-      />
-      <ButtonInvertRounded lg text="Button" disabled />
-    </div>
-    <CodeDrawer>
-      <code>
-        <p>{`<ButtonInvertRounded text="Button" marginRight />`}</p>
-        <p>{`<ButtonInvertRounded text="Button" iconLeft={faUserReg} marginRight />`}</p>
-        <p>{`<ButtonInvertRounded text="Button" iconRight={faUserReg} marginRight />`}</p>
-        <p>{`<ButtonInvertRounded lg text="Button" iconLeft={faUserReg} iconRight={faUserReg} marginRight />`}</p>
-        <p>{`<ButtonInvertRounded lg text="Button" disabled />`}</p>
-      </code>
-    </CodeDrawer>
-
     <h4>Button Text</h4>
     <div className="row">
       <ButtonText text="Button" marginRight />
@@ -219,6 +201,29 @@ export const Buttons = () => (
         <p>{`<ButtonSubmit text="Button" iconRight={faArrowAltCircleUp} marginRight />`}</p>
         <p>{`<ButtonSubmit text="Button" iconLeft={faArrowAltCircleUp} iconRight={faArrowAltCircleUp} marginRight />`}</p>
         <p>{`<ButtonSubmit text="Button" disabled />`}</p>
+      </code>
+    </CodeDrawer>
+
+    <h4>Button Submit Invert</h4>
+    <div className="row">
+      <ButtonSubmitInvert text="Button" marginRight />
+      <ButtonSubmitInvert text="Button" iconLeft={faUserReg} marginRight />
+      <ButtonSubmitInvert text="Button" iconRight={faUserReg} marginRight />
+      <ButtonSubmitInvert
+        text="Button"
+        iconLeft={faUserReg}
+        iconRight={faUserReg}
+        marginRight
+      />
+      <ButtonSubmitInvert text="Button" disabled />
+    </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<ButtonSubmitInvert text="Button" marginRight />`}</p>
+        <p>{`<ButtonSubmitInvert text="Button" iconLeft={faUserReg} marginRight />`}</p>
+        <p>{`<ButtonSubmitInvert text="Button" iconRight={faUserReg} marginRight />`}</p>
+        <p>{`<ButtonSubmitInvert text="Button" iconLeft={faUserReg} iconRight={faUserReg} marginRight />`}</p>
+        <p>{`<ButtonSubmitInvert text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
 

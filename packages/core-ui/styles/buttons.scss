@@ -92,6 +92,31 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 }
 
+// buttons/ButtonPrimaryInvert
+.btn-primary-invert {
+  @include btn-layout;
+  @include btn-spacing;
+  @include btn-icons;
+  @include btn-disabled;
+
+  border: 1px solid var(--network-color-stroke);
+  border-radius: var(--button-border-radius-large);
+  color: var(--network-color-stroke);
+
+  &.secondary-color {
+    border: 1px solid var(--network-color-secondary);
+    color: var(--network-color-secondary);
+  }
+
+  &.sm {
+    @include btn-small;
+  }
+
+  &.lg {
+    @include btn-large;
+  }
+}
+
 // buttons/ButtonSecondary
 .btn-secondary {
   @include btn-layout;
@@ -191,39 +216,6 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 }
 
-// buttons/ButtonInvert
-.btn-invert {
-  @include btn-layout;
-  @include btn-spacing;
-  @include btn-icons;
-  @include btn-submit;
-  @include btn-disabled;
-
-  border: 1px solid var(--network-color-stroke);
-  border-radius: var(--button-border-radius-small);
-  color: var(--network-color-stroke);
-}
-
-// buttons/ButtonInvertRounded
-.btn-invert-rounded {
-  @include btn-layout;
-  @include btn-spacing;
-  @include btn-icons;
-  @include btn-disabled;
-
-  border: 1px solid var(--network-color-stroke);
-  border-radius: var(--button-border-radius-large);
-  color: var(--network-color-stroke);
-
-  &.sm {
-    @include btn-small;
-  }
-
-  &.lg {
-    @include btn-large;
-  }
-}
-
 // buttons/ButtonSubmit
 .btn-submit {
   @include btn-layout;
@@ -241,6 +233,19 @@ SPDX-License-Identifier: Apache-2.0 */
     border-color: var(--network-color-secondary);
     background: var(--network-color-secondary);
   }
+}
+
+// buttons/ButtonSubmitInvert
+.btn-submit-invert {
+  @include btn-layout;
+  @include btn-spacing;
+  @include btn-icons;
+  @include btn-submit;
+  @include btn-disabled;
+
+  border: 1px solid var(--network-color-stroke);
+  border-radius: var(--button-border-radius-small);
+  color: var(--network-color-stroke);
 }
 
 // buttons/ButtonHelp
