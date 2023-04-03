@@ -27,6 +27,8 @@ jobs:
       - run: yarn install
       - run: yarn build
         working-directory: packages/core-ui
+      - run: yarn build
+        working-directory: packages/utils
       - run: yarn lint:check
 
   all:
