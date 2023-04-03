@@ -22,3 +22,4 @@ export { ButtonText } from "./buttons/ButtonText";
 export { ButtonInvertRounded } from "./buttons/ButtonInvertRounded";
 export { ButtonSubmit } from "./buttons/ButtonSubmit";
 export { ButtonHelp } from "./buttons/ButtonHelp";
+export { ButtonTab } from "./buttons/ButtonTab";

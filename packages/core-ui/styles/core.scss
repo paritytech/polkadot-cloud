@@ -224,29 +224,6 @@ SPDX-License-Identifier: Apache-2.0 */
 
   .inner {
     display: flex;
-
-    > button {
-      color: var(--text-color-secondary);
-      padding: 0.65rem 1rem;
-      margin-bottom: 0.5rem;
-      margin-right: 0.75rem;
-      font-size: 1.15rem;
-      transition: opacity var(--transition-duration),
-        font-size var(--transition-duration);
-      border-radius: 0.5rem;
-
-      &.active {
-        background: var(--button-secondary-background);
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      &:hover {
-        opacity: 0.8;
-      }
-    }
   }
 
   &.sticky {
