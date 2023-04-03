@@ -1,4 +1,4 @@
-// Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+// @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
@@ -7,6 +7,7 @@ import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
 import del from "rollup-plugin-delete";
 import copy from "rollup-plugin-copy";
+import cleanup from "rollup-plugin-cleanup";
 
 /**
  * @type {import('rollup').RollupOptions}
@@ -41,6 +42,9 @@ export default {
           dest: "dist/fonts",
         },
       ],
+    }),
+    cleanup({
+      extensions: ["tsx", "ts"],
     }),
   ],
   external: [
