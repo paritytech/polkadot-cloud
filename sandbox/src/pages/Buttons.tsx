@@ -15,7 +15,7 @@ import {
   faArrowAltCircleUp,
   faUser as faUserReg,
 } from "@fortawesome/free-regular-svg-icons";
-import { CodeDrawer } from "./CodeDrawer";
+import { CodeDrawer } from "../components/CodeDrawer";
 
 export const Buttons = () => (
   <>

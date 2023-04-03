@@ -2,19 +2,10 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { useState } from "react";
-import { Buttons } from "./components/Buttons";
+import { Buttons } from "./pages/Buttons";
+import { SideMenu } from "./components/SideMenu";
 
-const getComponent = (component: string) => {
-  switch (component) {
-    default:
-      return <Buttons />;
-  }
-};
-
-/*
- * Sandbox page for component tests and class inclusion.
- */
-const Home = () => {
+export const App = () => {
   // store the current theme
   const [theme, setTheme] = useState<string>("light");
 
@@ -24,60 +15,25 @@ const Home = () => {
   // store the visible Component
   const [component, setComponent] = useState<string>("buttons");
 
+  const getComponent = (key: string) => {
+    switch (key) {
+      default:
+        return <Buttons />;
+    }
+  };
+
   return (
     <>
       <main className={`theme-${network} theme-${theme}`}>
-        <div className="nav">
-          <section>
-            <h5>Network</h5>
-            <button
-              className={network === "polkadot" ? "selected" : undefined}
-              onClick={() => setNetwork("polkadot")}
-            >
-              Polkadot
-            </button>
-            <button
-              className={network === "kusama" ? "selected" : undefined}
-              onClick={() => setNetwork("kusama")}
-            >
-              Kusama
-            </button>
-            <button
-              className={network === "westend" ? "selected" : undefined}
-              onClick={() => setNetwork("westend")}
-            >
-              Westend
-            </button>
-          </section>
-          <section>
-            <h5>Theme</h5>
-            <button
-              className={theme === "light" ? "selected" : undefined}
-              onClick={() => setTheme("light")}
-            >
-              Light
-            </button>
-            <button
-              className={theme === "dark" ? "selected" : undefined}
-              onClick={() => setTheme("dark")}
-            >
-              Dark
-            </button>
-          </section>
-          <section>
-            <h5>Category</h5>
-            <button
-              className="selected"
-              onClick={() => setComponent("buttons")}
-            >
-              Buttons
-            </button>
-          </section>
-        </div>
+        <SideMenu
+          theme={theme}
+          setTheme={setTheme}
+          network={network}
+          setNetwork={setNetwork}
+          setComponent={setComponent}
+        />
         <div className="body">{getComponent(component)}</div>
       </main>
     </>
   );
 };
-
-export default Home;
