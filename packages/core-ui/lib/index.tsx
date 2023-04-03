@@ -17,7 +17,7 @@ export { ButtonPrimary } from "./buttons/ButtonPrimary";
 export { ButtonSecondary } from "./buttons/ButtonSecondary";
 export { ButtonMono } from "./buttons/ButtonMono";
 export { ButtonMonoInvert } from "./buttons/ButtonMonoInvert";
-export { ButtonInvert } from "./buttons/ButtonInvert";
+export { ButtonSubmitInvert } from "./buttons/ButtonSubmitInvert";
 export { ButtonText } from "./buttons/ButtonText";
 export { ButtonInvertRounded } from "./buttons/ButtonInvertRounded";
 export { ButtonSubmit } from "./buttons/ButtonSubmit";
