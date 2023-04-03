@@ -3,13 +3,7 @@
 
 import { useState } from "react";
 import { Buttons } from "./pages/Buttons";
-
-const getComponent = (component: string) => {
-  switch (component) {
-    default:
-      return <Buttons />;
-  }
-};
+import { SideMenu } from "./components/SideMenu";
 
 export const App = () => {
   // store the current theme
@@ -21,56 +15,23 @@ export const App = () => {
   // store the visible Component
   const [component, setComponent] = useState<string>("buttons");
 
+  const getComponent = (key: string) => {
+    switch (key) {
+      default:
+        return <Buttons />;
+    }
+  };
+
   return (
     <>
       <main className={`theme-${network} theme-${theme}`}>
-        <div className="nav">
-          <section>
-            <h5>Network</h5>
-            <button
-              className={network === "polkadot" ? "selected" : undefined}
-              onClick={() => setNetwork("polkadot")}
-            >
-              Polkadot
-            </button>
-            <button
-              className={network === "kusama" ? "selected" : undefined}
-              onClick={() => setNetwork("kusama")}
-            >
-              Kusama
-            </button>
-            <button
-              className={network === "westend" ? "selected" : undefined}
-              onClick={() => setNetwork("westend")}
-            >
-              Westend
-            </button>
-          </section>
-          <section>
-            <h5>Theme</h5>
-            <button
-              className={theme === "light" ? "selected" : undefined}
-              onClick={() => setTheme("light")}
-            >
-              Light
-            </button>
-            <button
-              className={theme === "dark" ? "selected" : undefined}
-              onClick={() => setTheme("dark")}
-            >
-              Dark
-            </button>
-          </section>
-          <section>
-            <h5>Category</h5>
-            <button
-              className="selected"
-              onClick={() => setComponent("buttons")}
-            >
-              Buttons
-            </button>
-          </section>
-        </div>
+        <SideMenu
+          theme={theme}
+          setTheme={setTheme}
+          network={network}
+          setNetwork={setNetwork}
+          setComponent={setComponent}
+        />
         <div className="body">{getComponent(component)}</div>
       </main>
     </>
