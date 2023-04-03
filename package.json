@@ -6,8 +6,11 @@
   "description": "Polkadot Dashboard UI",
   "private": "true",
   "scripts": {
-    "lint:check": "eslint './**' && npx prettier -c .",
-    "lint": "eslint './**' --fix && npx prettier --write . && npx stylelint '**/*.scss' --fix"
+    "clear": "npm run --workspaces clear && rm -rf node_modules",
+    "sandbox": "npm run dev -w sandbox",
+    "build": "npm run build -w packages/core-ui",
+    "lint": "eslint './**' && npx prettier -c .",
+    "lint:write": "eslint './**' --fix && npx prettier --write . && npx stylelint '**/*.scss' --fix"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
@@ -40,7 +43,7 @@
     "typescript": "^5.0.3"
   },
   "workspaces": [
-    "packages/*",
+    "packages/core-ui",
     "sandbox"
   ],
   "repository": {
