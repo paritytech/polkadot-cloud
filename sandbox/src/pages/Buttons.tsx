@@ -50,7 +50,12 @@ export const Buttons = () => (
     <h4>Button Primary Invert</h4>
     <div className="row">
       <ButtonPrimaryInvert text="Button" marginRight />
-      <ButtonPrimaryInvert text="Button" iconLeft={faUserReg} marginRight />
+      <ButtonPrimaryInvert
+        text="Button"
+        iconLeft={faUserReg}
+        marginRight
+        colorSecondary
+      />
       <ButtonPrimaryInvert text="Button" iconRight={faUserReg} marginRight />
       <ButtonPrimaryInvert
         lg

@@ -8,6 +8,8 @@ import { valEmpty, valOr } from "../utils";
 export type ButtonPrimaryInvertProps = ComponentBase &
   ButtonIconProps &
   ButtonCommonProps & {
+    // use secondary network color.
+    colorSecondary?: boolean;
     // large button, small otherwise.
     lg?: boolean;
     // button text.
@@ -18,6 +20,7 @@ export type ButtonPrimaryInvertProps = ComponentBase &
  * Invert primary button style.
  */
 export const ButtonPrimaryInvert = ({
+  colorSecondary,
   disabled,
   grow,
   iconLeft,
@@ -32,14 +35,13 @@ export const ButtonPrimaryInvert = ({
   text,
 }: ButtonPrimaryInvertProps) => (
   <button
-    className={`btn-primary-invert${valEmpty(grow, "grow")}${valOr(
-      lg,
-      "lg",
-      "sm"
-    )}${valEmpty(marginRight, "m-right")}${valEmpty(
-      marginLeft,
-      "m-left"
-    )}${valEmpty(marginX, "m-x")}`}
+    className={`btn-primary-invert${valEmpty(
+      colorSecondary,
+      "secondary-color"
+    )}${valEmpty(grow, "grow")}${valOr(lg, "lg", "sm")}${valEmpty(
+      marginRight,
+      "m-right"
+    )}${valEmpty(marginLeft, "m-left")}${valEmpty(marginX, "m-x")}`}
     style={style}
     type="button"
     disabled={disabled}
