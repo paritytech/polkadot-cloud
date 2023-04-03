@@ -4,6 +4,7 @@
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import react from "@vitejs/plugin-react-swc";
+import checker from "vite-plugin-checker";
 import eslint from "vite-plugin-eslint";
 
 // https://vitejs.dev/config/
@@ -12,5 +13,12 @@ export default defineConfig({
   server: {
     port: 5174,
   },
-  plugins: [react(), eslint(), tsconfigPaths()],
+  plugins: [
+    react(),
+    eslint(),
+    tsconfigPaths(),
+    checker({
+      typescript: true,
+    }),
+  ],
 });
