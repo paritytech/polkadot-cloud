@@ -16,28 +16,28 @@ SPDX-License-Identifier: Apache-2.0 */
 // button btn-common styles
 @mixin btn-common {
   &.m-left {
-    margin-left: 0.625rem;
+    margin-left: var(--button-spacing-small);
   }
 
   &.m-right {
-    margin-right: 0.625rem;
+    margin-right: var(--button-spacing-large);
   }
 
   &.m-x {
-    margin: 0 0.625rem;
+    margin: 0 var(--button-spacing-large);
   }
 }
 
 // button icon styles
 @mixin btn-icons {
   > .icon-left {
-    margin-left: 0.125rem;
-    margin-right: 0.625rem;
+    margin-left: var(--button-spacing-small);
+    margin-right: var(--button-spacing-large);
   }
 
   > .icon-right {
-    margin-left: 0.625rem;
-    margin-right: 0.125rem;
+    margin-left: var(--button-spacing-large);
+    margin-right: var(--button-spacing-small);
   }
 }
 
