@@ -7,6 +7,6 @@
 //
 // Because of this relative file paths should be used in this directory.
 
-export const testUtil = () => {
+export const helloWorld = () => {
   console.log("Hello world!");
 };
