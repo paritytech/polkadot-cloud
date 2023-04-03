@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { useState } from "react";
-import { Buttons } from "./components/Buttons";
+import { Buttons } from "./pages/Buttons";
 
 const getComponent = (component: string) => {
   switch (component) {
@@ -11,10 +11,7 @@ const getComponent = (component: string) => {
   }
 };
 
-/*
- * Sandbox page for component tests and class inclusion.
- */
-const Home = () => {
+export const App = () => {
   // store the current theme
   const [theme, setTheme] = useState<string>("light");
 
@@ -79,5 +76,3 @@ const Home = () => {
     </>
   );
 };
-
-export default Home;
