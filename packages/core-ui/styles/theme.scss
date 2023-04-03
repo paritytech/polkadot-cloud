@@ -14,6 +14,8 @@ SPDX-License-Identifier: Apache-2.0 */
 }
 
 :root {
+  --button-border-radius-small: 0.75rem;
+  --button-border-radius-large: 1.5rem;  
   --card-shadow: 0px 2px 16px;
   --opacity-disabled: 0.3;
   --transparent-color: rgb(0 0 0 / 0%);

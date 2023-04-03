@@ -96,8 +96,8 @@ SPDX-License-Identifier: Apache-2.0 */
 
   background: var(--network-color-primary);
   border: 1px solid var(--network-color-primary);
+  border-radius: var(--button-border-radius-large);
   color: white;
-  border-radius: 1.5rem;
 
   &.secondary-color {
     background: var(--network-color-secondary);
@@ -120,15 +120,15 @@ SPDX-License-Identifier: Apache-2.0 */
   @include btn-icons;
   @include btn-disabled;
 
-  color: var(--text-color-primary);
   background: var(--button-secondary-background);
   border: 1px solid var(--button-secondary-background);
-  border-radius: 1.5rem;
+  border-radius: var(--button-border-radius-large);
+  color: var(--text-color-primary);
 
   &.sm {
     @include btn-small-button;
 
-    border-radius: 1.5rem;
+    border-radius: var(--button-border-radius-large);
   }
 
   &.lg {
@@ -151,10 +151,10 @@ SPDX-License-Identifier: Apache-2.0 */
   @include btn-icons;
   @include btn-disabled;
 
-  color: var(--text-color-invert);
   background: var(--text-color-primary);
   border: 1px solid var(--text-color-primary);
-  border-radius: 1.5rem;
+  border-radius: var(--button-border-radius-large);
+  color: var(--text-color-invert);
 
   &.secondary-color {
     border-color: var(--text-color-secondary);
@@ -177,9 +177,9 @@ SPDX-License-Identifier: Apache-2.0 */
   @include btn-icons;
   @include btn-disabled;
 
-  color: var(--text-color-primary);
   border: 1px solid var(--text-color-primary);
-  border-radius: 1.5rem;
+  border-radius: var(--button-border-radius-large);
+  color: var(--text-color-primary);
 
   &.secondary-color {
     border-color: var(--text-color-secondary);
@@ -203,7 +203,7 @@ SPDX-License-Identifier: Apache-2.0 */
   @include btn-disabled;
 
   color: var(--text-color-primary);
-  border-radius: 1.5rem;
+  border-radius: var(--button-border-radius-large);
   padding: 0.45rem;
   font-size: 1rem;
 
@@ -221,9 +221,9 @@ SPDX-License-Identifier: Apache-2.0 */
   @include btn-disabled;
 
   border: 1px solid var(--network-color-stroke);
+  border-radius: var(--button-border-radius-small);
   color: var(--network-color-stroke);
   font-size: 1rem;
-  border-radius: 0.75rem;
 }
 
 // buttons/ButtonInvertRounded
@@ -234,8 +234,8 @@ SPDX-License-Identifier: Apache-2.0 */
   @include btn-disabled;
 
   border: 1px solid var(--network-color-stroke);
+  border-radius: var(--button-border-radius-large);
   color: var(--network-color-stroke);
-  border-radius: 1.5rem;
 
   &.sm {
     @include btn-small-button;
@@ -255,8 +255,8 @@ SPDX-License-Identifier: Apache-2.0 */
   @include btn-disabled;
 
   border: 1px solid var(--network-color-primary);
+  border-radius: var(--button-border-radius-small);
   background: var(--network-color-primary);
-  border-radius: 0.75rem;
   color: white;
   font-size: 1rem;
 
