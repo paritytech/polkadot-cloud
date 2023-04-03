@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { valEmpty, valOr } from "../utils";
 import { motion } from "framer-motion";
 
-export type ButtonInvertProps = ComponentBase &
+export type ButtonSubmitInvertProps = ComponentBase &
   ButtonIconProps &
   ButtonCommonProps & {
     // button text.
@@ -14,9 +14,9 @@ export type ButtonInvertProps = ComponentBase &
   };
 
 /*
- * Invert button style used in modals.
+ * Invert submit button style used in modals.
  */
-export const ButtonInvert = ({
+export const ButtonSubmitInvert = ({
   disabled,
   grow,
   iconLeft,
@@ -28,11 +28,11 @@ export const ButtonInvert = ({
   marginX,
   style,
   text,
-}: ButtonInvertProps) => (
+}: ButtonSubmitInvertProps) => (
   <motion.button
     whileHover={{ scale: !disabled ? 1.02 : 1 }}
     whileTap={{ scale: !disabled ? 0.98 : 1 }}
-    className={`btn-invert${valEmpty(grow, "grow")}
+    className={`btn-submit-invert${valEmpty(grow, "grow")}
     ${valEmpty(marginRight, "m-right")}${valEmpty(
       marginLeft,
       "m-left"

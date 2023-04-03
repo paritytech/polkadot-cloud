@@ -5,9 +5,11 @@ import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { valEmpty, valOr } from "../utils";
 
-export type ButtonInvertRoundedProps = ComponentBase &
+export type ButtonPrimaryInvertProps = ComponentBase &
   ButtonIconProps &
   ButtonCommonProps & {
+    // use secondary network color.
+    colorSecondary?: boolean;
     // large button, small otherwise.
     lg?: boolean;
     // button text.
@@ -15,9 +17,10 @@ export type ButtonInvertRoundedProps = ComponentBase &
   };
 
 /*
- * Invert rounded button style used in modals.
+ * Invert primary button style.
  */
-export const ButtonInvertRounded = ({
+export const ButtonPrimaryInvert = ({
+  colorSecondary,
   disabled,
   grow,
   iconLeft,
@@ -30,16 +33,15 @@ export const ButtonInvertRounded = ({
   marginX,
   style,
   text,
-}: ButtonInvertRoundedProps) => (
+}: ButtonPrimaryInvertProps) => (
   <button
-    className={`btn-invert-rounded${valEmpty(grow, "grow")}${valOr(
-      lg,
-      "lg",
-      "sm"
-    )}${valEmpty(marginRight, "m-right")}${valEmpty(
-      marginLeft,
-      "m-left"
-    )}${valEmpty(marginX, "m-x")}`}
+    className={`btn-primary-invert${valEmpty(
+      colorSecondary,
+      "secondary-color"
+    )}${valEmpty(grow, "grow")}${valOr(lg, "lg", "sm")}${valEmpty(
+      marginRight,
+      "m-right"
+    )}${valEmpty(marginLeft, "m-left")}${valEmpty(marginX, "m-x")}`}
     style={style}
     type="button"
     disabled={disabled}
