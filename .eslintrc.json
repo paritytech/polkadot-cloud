@@ -12,7 +12,7 @@
       "typescript": {
         "project": [
           "./tsconfig.json",
-          "packages/core-ui/tsconfig.json",
+          "packages/*/tsconfig.json",
           "sandbox/tsconfig.json"
         ]
       }

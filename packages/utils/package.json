@@ -1,0 +1,15 @@
+{
+  "name": "@polkadotcloud/utils",
+  "version": "0.2.6",
+  "license": "Apache-2.0",
+  "author": "Ross Bulat",
+  "description": "Utilities for Polkadot Dashboards.",
+  "scripts": {
+    "build": "rollup -c && cp dist.package.json dist/package.json"
+  },
+  "peerDependencies": {
+    "@polkadot/keyring": "^11.0.1",
+    "@polkadot/util": "^11.0.1",
+    "bignumber.js": "^9.1.1"
+  }
+}
