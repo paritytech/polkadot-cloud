@@ -16,3 +16,8 @@ export type SideProps = ComponentBase & {
   // whether side menu is in minimised state
   minimised: boolean;
 };
+
+export type PageRowProps = ComponentBase & {
+  // whether there is margin space vertically
+  noVerticalMargin?: boolean;
+};
