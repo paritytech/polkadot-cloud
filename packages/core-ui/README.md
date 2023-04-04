@@ -14,7 +14,7 @@ yarn dev
 
 #### Build the package into an optimised Rollup build.
 
-Update your [`dist.package.json`](https://github.com/paritytech/polkadot-dashboard-ui/blob/main/dist.package.json) before building the package. `dist.package.json` is injected into the `dist` folder as `package.json` after a build completes.
+Update your [`dist.package.json`](https://github.com/paritytech/polkadot-dashboard-ui/blob/main/packages/core-ui/dist.package.json) before building the package. `dist.package.json` is injected into the `dist` folder as `package.json` after a build completes.
 
 ```
 yarn build
@@ -31,13 +31,13 @@ cd dist && npm publish --access public
 #### 1. Import the CSS file in your app index.
 
 ```
-import '@polkadotcloud/dashboard-ui/index.css';
+import '@polkadotcloud/core-ui/index.css';
 ```
 
 #### 2. Wrap your app with `Entry`, providing the current theme `mode` and active `network`.
 
 ```
-import { Entry } from '@polkadotcloud/dashboard-ui';
+import { Entry } from '@polkadotcloud/core-ui';
 
 export const WrappedApp: React.FC = () => {
 
@@ -57,7 +57,7 @@ export const WrappedApp: React.FC = () => {
 
 #### 3. Import core components.
 
-Any [core component](https://github.com/paritytech/polkadot-dashboard-ui/tree/main/lib) can now be imported and used within the app.
+Any [core component](https://github.com/paritytech/polkadot-dashboard-ui/tree/main/packages/core-ui/lib) can now be imported and used within the app.
 
 ## Package Testing in Local Development
 
@@ -72,10 +72,10 @@ The following walkthrough uses the [Polkadot staking dashboard](https://github.c
 #### 1. Checkout the `package-dev` branch.
 
 ```
-git checkout package-dev
+git checkout -b package-dev
 ```
 
-This branch should be identical to `main`, with the exception of the [`dist.package.json`](https://github.com/paritytech/polkadot-dashboard-ui/blob/4d66892e73afe7cc17465411b6bc7fe5817c7447/dist.package.json#L2) package name having `-dev` appended.
+This branch should be identical to `main`, with the exception of the [`dist.package.json`](https://github.com/paritytech/polkadot-dashboard-ui/blob/main/packages/core-ui/dist.package.json) package `name` property having `-dev` appended.
 
 #### 2. Build the package.
 
@@ -104,7 +104,7 @@ git checkout -b package-dev
 #### 2. Link the previously linked package to your project.
 
 ```
-yarn link @polkadotcloud/dashboard-ui-dev
+yarn link @polkadotcloud/core-ui-dev
 ```
 
 Ensure that your `eslintrc` config allows global imports by turning off the extraneous dependencies rule:
@@ -136,20 +136,20 @@ It is now possible to test components from the local package, and replace curren
 
 ```
 // Replace published import:
-import '@polkadotcloud/dashboard-ui/index.css';
+import '@polkadotcloud/core-ui/index.css';
 
 // with local import:
-import '@polkadotcloud/dashboard-ui-dev/index.css';
+import '@polkadotcloud/core-ui-dev/index.css';
 ```
 
 Now components can be added or replaced with those from your local version:
 
 ```
 // Replace published import:
-import { ButtonHelp } from '@polkadotcloud/dashboard-ui';
+import { ButtonHelp } from '@polkadotcloud/core-ui';
 
 // with local import:
-import { ButtonHelp } from '@polkadotcloud/dashboard-ui-dev';
+import { ButtonHelp } from '@polkadotcloud/core-ui-dev';
 ```
 
 Changes can be committed to this `package-dev` branch without impacting your main branch configs, linting rules and existing published component imports.
@@ -159,7 +159,7 @@ Changes can be committed to this `package-dev` branch without impacting your mai
 If you wish to rename or deprecate a local development package, it is a good practice to unlink (remove) it by running `yarn unlink [package]` in The App project directory:
 
 ```
-yarn unlink @polkadotcloud/dashboard-ui-dev
+yarn unlink @polkadotcloud/core-ui-dev
 ```
 
 Followed by `yarn unlink` in The Package project directory.
