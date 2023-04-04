@@ -147,7 +147,7 @@ SPDX-License-Identifier: Apache-2.0 */
 
 .core-page-row {
   @include page-padding;
-  
+
   display: flex;
   flex-shrink: 0;
   flex-flow: row wrap;
