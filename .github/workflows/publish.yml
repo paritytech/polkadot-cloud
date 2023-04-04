@@ -17,12 +17,12 @@ jobs:
         run: yarn build
       - name: Check if 'core-ui' version has been updated
         id: core_ui_version
-        uses: PostHog/check-package-version@v2
+        uses: PostHog/check-package-version@v2.0.0
         with:
           path: "./packages/core-ui"
       - name: Check if 'utils' version has been updated
         id: utils_version
-        uses: PostHog/check-package-version@v2
+        uses: PostHog/check-package-version@v2.0.0
         with:
           path: "./packages/core-ui"
 
