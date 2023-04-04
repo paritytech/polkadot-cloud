@@ -31,7 +31,7 @@ jobs:
         run: npm publish --unsafe-perm --dry-run
       - name: Publish core-ui to npm
         if: steps.core_ui_version.outputs.committed-version > steps.core_ui_version.outputs.published-version
-        id: publish
+        id: publish_core_ui
         uses: JS-DevTools/npm-publish@v1
         # Warning: this GitHub action doesn't seem to run prepublish scripts, hence
         # the `npm publish --dry-run` done right above is important to ensure this.
@@ -44,7 +44,7 @@ jobs:
         run: npm publish --unsafe-perm --dry-run
       - name: Publish utils to npm
         if: steps.utils_version.outputs.committed-version > steps.utils_version.outputs.published-version
-        id: publish
+        id: publish_utils
         uses: JS-DevTools/npm-publish@v1
         # Warning: this GitHub action doesn't seem to run prepublish scripts, hence
         # the `npm publish --dry-run` done right above is important to ensure this.
