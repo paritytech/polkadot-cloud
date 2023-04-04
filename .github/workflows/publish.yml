@@ -29,6 +29,7 @@ jobs:
       - name: Publish Dry Run Core UI
         working-directory: "./packages/core-ui"
         run: npm publish --unsafe-perm --dry-run
+      ### this will be executed only if the commited version has increased over the published version or else will be skipped
       - name: Publish core-ui to npm
         if: steps.core_ui_version.outputs.committed-version > steps.core_ui_version.outputs.published-version
         id: publish_core_ui
@@ -42,6 +43,7 @@ jobs:
       - name: Publish Dry Run Utils
         working-directory: "./packages/utils"
         run: npm publish --unsafe-perm --dry-run
+      ### this will be executed only if the commited version has increased over the published version or else will be skipped
       - name: Publish utils to npm
         if: steps.utils_version.outputs.committed-version > steps.utils_version.outputs.published-version
         id: publish_utils
