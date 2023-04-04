@@ -5,7 +5,7 @@ import { ComponentBase } from "../types";
 import { RefObject, forwardRef } from "react";
 import { motion } from "framer-motion";
 import { valEmpty } from "../utils";
-import { EntryProps, SideProps, PageTitleProps } from "./types";
+import { EntryProps, PageRowProps, SideProps, PageTitleProps } from "./types";
 
 /* Entry
  *
@@ -106,6 +106,37 @@ PageTitle.displayName = "PageTitle";
 export const PageTitleTabs = ({ children, style, sticky }: PageTitleProps) => (
   <div
     className={`core-page-title-tabs${valEmpty(sticky, "sticky")}`}
+    style={style}
+  >
+    {children}
+  </div>
+);
+
+/* HideScrollable
+ *
+ * A fixed block that is used to hide scrollable content on smaller screens when a PageTitle is fixed.
+ * Purely cosmetic. Applied in Pagetitle.
+ */
+export const HideScrollable = ({ children, style }: ComponentBase) => (
+  <div className="core-hide-scrollable" style={style}>
+    {children}
+  </div>
+);
+
+/* PageRow
+ *
+ * Used to separate page content based on rows. Commonly used with RowPrimary and RowSecondary.
+ */
+export const PageRow = ({
+  children,
+  style,
+  noVerticalMargin,
+}: PageRowProps) => (
+  <div
+    className={`core-page-row${valEmpty(
+      noVerticalMargin,
+      "no-vertical-margin"
+    )}`}
     style={style}
   >
     {children}

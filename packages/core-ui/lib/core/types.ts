@@ -21,3 +21,7 @@ export type PageTitleProps = ComponentBase & {
   // whether the title stick on the same position
   sticky?: boolean;
 };
+export type PageRowProps = ComponentBase & {
+  // whether there is margin space vertically
+  noVerticalMargin?: boolean;
+};
