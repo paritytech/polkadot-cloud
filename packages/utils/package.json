@@ -6,8 +6,5 @@
   "description": "Utilities for Polkadot Dashboards.",
   "scripts": {
     "build": "rollup -c && cp dist.package.json dist/package.json"
-  },
-  "devDependencies": {
-    "rollup-plugin-cleanup": "^3.2.1"
   }
 }

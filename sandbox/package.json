@@ -5,6 +5,7 @@
   "author": "Ross Bulat",
   "description": "Core UI Components for Polkadot Dashboards.",
   "scripts": {
+    "clear": "rm -rf node_modules",
     "dev": "vite"
   },
   "peerDependencies": {
