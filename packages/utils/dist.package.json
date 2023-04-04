@@ -1,12 +1,12 @@
 {
   "name": "@polkadotcloud/utils",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "author": "Ross Bulat",
   "license": "Apache-2.0",
   "types": "index.d.ts",
   "description": "Utils for Polkadot Dashboards.",
-  "main": "index.tsx",
-  "module": "index.tsx",
+  "main": "index.ts",
+  "module": "index.ts",
   "keywords": ["Polkadot", "UI"],
   "typescript": {
     "definition": "index.d.ts"
