@@ -11,10 +11,10 @@ import cleanup from "rollup-plugin-cleanup";
  * @type {import('rollup').RollupOptions}
  */
 export default {
-  input: "lib/index.tsx",
+  input: "lib/index.ts",
   output: [
     {
-      file: "dist/index.tsx",
+      file: "dist/index.ts",
       format: "es",
       sourcemap: false,
     },
@@ -25,7 +25,7 @@ export default {
     resolve(),
     typescript(),
     cleanup({
-      extensions: ["tsx", "ts"],
+      extensions: ["ts"],
     }),
   ],
   external: [
