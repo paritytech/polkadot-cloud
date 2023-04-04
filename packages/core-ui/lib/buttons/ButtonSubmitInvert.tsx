@@ -1,42 +1,39 @@
-// Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
-// SPDX-License-Identifier: Apache-2.0
+/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+SPDX-License-Identifier: Apache-2.0 */
 
 import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { valEmpty, valOr } from "../utils";
+import { motion } from "framer-motion";
 
-export type ButtonInvertRoundedProps = ComponentBase &
+export type ButtonSubmitInvertProps = ComponentBase &
   ButtonIconProps &
   ButtonCommonProps & {
-    // large button, small otherwise.
-    lg?: boolean;
     // button text.
     text: string;
   };
 
 /*
- * Invert rounded button style used in modals.
+ * Invert submit button style used in modals.
  */
-export const ButtonInvertRounded = ({
+export const ButtonSubmitInvert = ({
   disabled,
   grow,
   iconLeft,
   iconRight,
   iconTransform,
-  lg,
   onClick,
   marginLeft,
   marginRight,
   marginX,
   style,
   text,
-}: ButtonInvertRoundedProps) => (
-  <button
-    className={`btn-invert-rounded${valEmpty(grow, "grow")}${valOr(
-      lg,
-      "lg",
-      "sm"
-    )}${valEmpty(marginRight, "m-right")}${valEmpty(
+}: ButtonSubmitInvertProps) => (
+  <motion.button
+    whileHover={{ scale: !disabled ? 1.02 : 1 }}
+    whileTap={{ scale: !disabled ? 0.98 : 1 }}
+    className={`btn-submit-invert${valEmpty(grow, "grow")}
+    ${valEmpty(marginRight, "m-right")}${valEmpty(
       marginLeft,
       "m-left"
     )}${valEmpty(marginX, "m-x")}`}
@@ -64,5 +61,5 @@ export const ButtonInvertRounded = ({
         transform={valOr(iconTransform, iconTransform, undefined)}
       />
     ) : null}
-  </button>
+  </motion.button>
 );

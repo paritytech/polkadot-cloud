@@ -1,23 +1,18 @@
 {
-  "name": "@polkadotcloud/dashboard-ui",
+  "name": "@polkadotcloud/utils",
   "version": "0.2.6",
+  "author": "Ross Bulat",
   "license": "Apache-2.0",
   "types": "index.d.ts",
-  "peerDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.0",
-    "@fortawesome/react-fontawesome": "^0.4.0",
-    "framer-motion": "^10.3.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "description": "UI components for Polkadot Dashboards.",
+  "description": "Utils for Polkadot Dashboards.",
   "main": "index.tsx",
   "module": "index.tsx",
   "keywords": ["Polkadot", "UI"],
   "typescript": {
     "definition": "index.d.ts"
   },
-  "author": "Ross Bulat",
+  "peerDependencies": {},
+  "devDependencies": {},
   "bugs": {
     "url": "https://github.com/paritytech/polkadot-dashboard-ui/issues"
   },

@@ -1,9 +1,9 @@
-/* Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
 /* Inject styles from core-ui */
-@use "../packages/core-ui/styles/variables" as v;
-@import "../packages/core-ui/styles/index";
+@use "../../packages/core-ui/styles/variables" as v;
+@import "../../packages/core-ui/styles/index";
 
 :root {
   --sandbox-active-color: rgb(211 48 121);

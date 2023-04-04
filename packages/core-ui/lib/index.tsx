@@ -1,5 +1,5 @@
-// Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
-// SPDX-License-Identifier: Apache-2.0
+/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+SPDX-License-Identifier: Apache-2.0 */
 
 // IMPORTANT: Rollup treats this file as the entry point for the package, the build of which is
 // configured with a separate tsconfig.json file that treats `lib` as the `baseUrl` of the project.
@@ -14,11 +14,11 @@ export * from "./core";
 
 // Buttons
 export { ButtonPrimary } from "./buttons/ButtonPrimary";
+export { ButtonPrimaryInvert } from "./buttons/ButtonPrimaryInvert";
 export { ButtonSecondary } from "./buttons/ButtonSecondary";
 export { ButtonMono } from "./buttons/ButtonMono";
 export { ButtonMonoInvert } from "./buttons/ButtonMonoInvert";
-export { ButtonInvert } from "./buttons/ButtonInvert";
+export { ButtonSubmitInvert } from "./buttons/ButtonSubmitInvert";
 export { ButtonText } from "./buttons/ButtonText";
-export { ButtonInvertRounded } from "./buttons/ButtonInvertRounded";
 export { ButtonSubmit } from "./buttons/ButtonSubmit";
 export { ButtonHelp } from "./buttons/ButtonHelp";

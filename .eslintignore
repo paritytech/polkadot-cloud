@@ -17,3 +17,4 @@ LICENSE
 postcss.config.js
 README.md
 *.tsconfig.json
+*.tsbuildinfo
