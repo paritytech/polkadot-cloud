@@ -131,6 +131,30 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 }
 
+.core-page-row {
+  @include page-padding;
+
+  display: flex;
+  flex-shrink: 0;
+  flex-flow: row wrap;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  &.no-vertical-margin {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* kill heading padding, already applied to wrapper */
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-top: 0;
+  }
+}
+
 .core-page-title {
   background: var(--background-default);
   position: sticky;
@@ -224,6 +248,7 @@ SPDX-License-Identifier: Apache-2.0 */
     margin-top: 0.5rem;
   }
 }
+
 .core-hide-scrollable {
   background: var(--background-default);
   display: none;
@@ -235,29 +260,5 @@ SPDX-License-Identifier: Apache-2.0 */
 
   @media (max-width: v.$page-width-medium-threshold) {
     display: block;
-  }
-}
-
-.core-page-row {
-  @include page-padding;
-
-  display: flex;
-  flex-shrink: 0;
-  flex-flow: row wrap;
-  width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-
-  &.no-vertical-margin {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  /* kill heading padding, already applied to wrapper */
-  h1,
-  h2,
-  h3,
-  h4 {
-    margin-top: 0;
   }
 }
