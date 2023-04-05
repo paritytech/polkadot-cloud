@@ -10,7 +10,7 @@ export const Statistics = () => {
     "top"
   );
   const [showTitle, setShowTitle] = useState<boolean>(true);
-  const [percentage, setPercentage] = useState<number | undefined>();
+  const [percentage, setPercentage] = useState<number | undefined>(42);
   return (
     <>
       <h4>Pie Chart - Default</h4>
@@ -110,7 +110,7 @@ export const Statistics = () => {
               max={100}
               min={0}
               checked={titlePos === "left"}
-              defaultValue={42}
+              defaultValue={percentage}
               value={percentage}
               onChange={(e) => {
                 const val = parseInt(e.target.value);
