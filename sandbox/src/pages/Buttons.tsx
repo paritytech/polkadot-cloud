@@ -242,22 +242,13 @@ export const Buttons = () => (
 
     <h4>Button Tab</h4>
     <div className="row">
-      <ButtonTab title={"TabA"} />
-      <ButtonTab active title={"TabB"} />
-      <ButtonTab
-        title={"TabC"}
-        onClick={() =>
-          window.open("https://github.com/paritytech/polkadot-dashboard-ui")
-        }
-      />
+      <ButtonTab title={"Inactive"} />
+      <ButtonTab active title={"Active"} />
     </div>
     <CodeDrawer>
       <code>
-        <p>{`<ButtonTab title={"TabA"} />`}</p>
-        <p>{`<ButtonTab active title={"TabB"} />`}</p>
-        <p>
-          {`<ButtonTab title={"TabC"} onClick={() => window.open("https://github.com/paritytech/polkadot-dashboard-ui")} />`}
-        </p>
+        <p>{`<ButtonTab title={"Inactive"} />`}</p>
+        <p>{`<ButtonTab active title={"Active"} />`}</p>
       </code>
     </CodeDrawer>
   </>
