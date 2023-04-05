@@ -17,6 +17,7 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { CodeDrawer } from "../components/CodeDrawer";
 import { Separator } from "core-ui/core";
+import { ButtonTab } from "core-ui/index";
 
 export const Buttons = () => (
   <>
@@ -236,6 +237,18 @@ export const Buttons = () => (
       <code>
         <p>{`<ButtonHelp marginRight />`}</p>
         <p>{`<ButtonHelp backgroundSecondary />`}</p>
+      </code>
+    </CodeDrawer>
+
+    <h4>Button Tab</h4>
+    <div className="row">
+      <ButtonTab title={"Inactive"} />
+      <ButtonTab active title={"Active"} />
+    </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<ButtonTab title={"Inactive"} />`}</p>
+        <p>{`<ButtonTab active title={"Active"} />`}</p>
       </code>
     </CodeDrawer>
   </>
