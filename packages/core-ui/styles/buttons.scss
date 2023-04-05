@@ -271,18 +271,18 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 }
 
-// buttons/Tab
+// buttons/ButtonTab
 .btn-tab {
   @include btn-layout;
   @include btn-disabled;
 
   color: var(--text-color-secondary);
+  transition: opacity var(--transition-duration),
+    font-size var(--transition-duration);
+  font-size: 1.15rem;
   padding: 0.65rem 1rem;
   margin-bottom: 0.5rem;
   margin-right: 0.75rem;
-  font-size: 1.15rem;
-  transition: opacity var(--transition-duration),
-    font-size var(--transition-duration);
   border-radius: 0.5rem;
 
   &:last-child {
