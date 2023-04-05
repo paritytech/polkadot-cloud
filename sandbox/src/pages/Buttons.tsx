@@ -11,6 +11,7 @@ import { ButtonText } from "core-ui/buttons/ButtonText";
 import { ButtonSubmit } from "core-ui/buttons/ButtonSubmit";
 import { ButtonHelp } from "core-ui/buttons/ButtonHelp";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+
 import {
   faArrowAltCircleUp,
   faUser as faUserReg,

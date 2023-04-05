@@ -9,6 +9,7 @@ interface SideMenuProps {
   network: string;
   setNetwork: Dispatch<SetStateAction<string>>;
   setComponent: Dispatch<SetStateAction<string>>;
+  component: string;
 }
 
 export const SideMenu = ({
@@ -17,6 +18,7 @@ export const SideMenu = ({
   network,
   setNetwork,
   setComponent,
+  component,
 }: SideMenuProps) => {
   return (
     <div className="nav">
@@ -58,8 +60,17 @@ export const SideMenu = ({
       </section>
       <section>
         <h5>Category</h5>
-        <button className="selected" onClick={() => setComponent("buttons")}>
+        <button
+          className={component === "buttons" ? "selected" : undefined}
+          onClick={() => setComponent("buttons")}
+        >
           Buttons
+        </button>
+        <button
+          className={component === "statistics" ? "selected" : undefined}
+          onClick={() => setComponent("statistics")}
+        >
+          Statistics
         </button>
       </section>
     </div>

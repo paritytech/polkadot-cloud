@@ -4,6 +4,7 @@ SPDX-License-Identifier: Apache-2.0 */
 import { useState } from "react";
 import { Buttons } from "./pages/Buttons";
 import { SideMenu } from "./components/SideMenu";
+import { Statistics } from "./pages/Statistics";
 
 export const App = () => {
   // store the current theme
@@ -17,6 +18,9 @@ export const App = () => {
 
   const getComponent = (key: string) => {
     switch (key) {
+      case "statistics": {
+        return <Statistics />;
+      }
       default:
         return <Buttons />;
     }
@@ -31,6 +35,7 @@ export const App = () => {
           network={network}
           setNetwork={setNetwork}
           setComponent={setComponent}
+          component={component}
         />
         <div className="body">{getComponent(component)}</div>
       </main>
