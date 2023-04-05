@@ -24,14 +24,14 @@ jobs:
         id: utils_version
         uses: PostHog/check-package-version@v2
         with:
-          path: "./packages/core-ui"
+          path: "./packages/utils"
 
       - name: Publish Dry Run Core UI
         working-directory: "./packages/core-ui"
         run: npm publish --unsafe-perm --dry-run
       ### this will be executed only if the commited version has increased over the published version or else will be skipped
       - name: Publish core-ui to npm
-        if: steps.core_ui_version.outputs.committed-version > steps.core_ui_version.outputs.published-version
+        if: steps.core_ui_version.outputs.is-new-version == 'true'
         id: publish_core_ui
         uses: JS-DevTools/npm-publish@v1
         # Warning: this GitHub action doesn't seem to run prepublish scripts, hence
@@ -45,7 +45,7 @@ jobs:
         run: npm publish --unsafe-perm --dry-run
       ### this will be executed only if the commited version has increased over the published version or else will be skipped
       - name: Publish utils to npm
-        if: steps.utils_version.outputs.committed-version > steps.utils_version.outputs.published-version
+        if: steps.utils_version.outputs.is-new-version == 'true'
         id: publish_utils
         uses: JS-DevTools/npm-publish@v1
         # Warning: this GitHub action doesn't seem to run prepublish scripts, hence
