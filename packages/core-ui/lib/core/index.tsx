@@ -12,7 +12,10 @@ import { EntryProps, PageRowProps, SideProps, PageTitleProps } from "./types";
  * The outer-most wrapper that hosts core tag styling.
  */
 export const Entry = ({ children, style, mode, network }: EntryProps) => (
-  <div className={`core-entry theme-${mode} theme-${network}`} style={style}>
+  <div
+    className={`core-entry theme-${mode} theme-${network} page-padding`}
+    style={style}
+  >
     {children}
   </div>
 );
@@ -136,7 +139,7 @@ export const PageRow = ({
     className={`core-page-row page-padding${valEmpty(
       noVerticalMargin,
       "no-vertical-margin"
-    )}`}
+    )} page-padding`}
     style={style}
   >
     {children}
