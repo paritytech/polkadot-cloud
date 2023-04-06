@@ -38,7 +38,7 @@ jobs:
         # the `npm publish --dry-run` done right above is important to ensure this.
         with:
           token: ${{ secrets.NPM_TOKEN }}
-          package: ./packages/core-ui/package.json
+          package: ./packages/core-ui/dist/package.json
           access: public
       - name: Publish Dry Run Utils
         working-directory: "./packages/utils"
@@ -52,7 +52,7 @@ jobs:
         # the `npm publish --dry-run` done right above is important to ensure this.
         with:
           token: ${{ secrets.NPM_TOKEN }}
-          package: ./packages/utils/package.json
+          package: ./packages/utils/dist/package.json
           access: public
 
   all:

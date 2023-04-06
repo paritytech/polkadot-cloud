@@ -1,11 +1,8 @@
 {
   "name": "@polkadotcloud/utils",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "license": "Apache-2.0",
   "author": "Ross Bulat",
-  "directories":{
-    "lib": "./dist"
-  },
   "description": "Utilities for Polkadot Dashboards.",
   "scripts": {
     "build": "rollup -c && cp dist.package.json dist/package.json"

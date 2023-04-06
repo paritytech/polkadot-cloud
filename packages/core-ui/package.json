@@ -3,9 +3,6 @@
   "version": "0.2.13",
   "license": "Apache-2.0",
   "author": "Ross Bulat",
-  "directories":{
-    "lib": "./dist"
-  },
   "description": "Core UI Components for Polkadot Dashboards.",
   "scripts": {
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo",
