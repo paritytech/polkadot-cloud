@@ -1,8 +1,10 @@
 {
   "name": "@polkadotcloud/core-ui",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "license": "Apache-2.0",
   "author": "Ross Bulat",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "description": "Core UI Components for Polkadot Dashboards.",
   "scripts": {
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo",
