@@ -16,7 +16,7 @@ SPDX-License-Identifier: Apache-2.0 */
 // button btn-spacing styles
 @mixin btn-spacing {
   &.m-left {
-    margin-left: var(--button-spacing-small);
+    margin-left: var(--button-spacing-large);
   }
 
   &.m-right {
