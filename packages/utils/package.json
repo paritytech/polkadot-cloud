@@ -1,6 +1,6 @@
 {
   "name": "@polkadotcloud/utils",
-  "version": "0.2.6",
+  "version": "0.2.8",
   "license": "Apache-2.0",
   "author": "Ross Bulat",
   "description": "Utilities for Polkadot Dashboards.",
