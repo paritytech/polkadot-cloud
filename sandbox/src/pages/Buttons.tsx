@@ -16,12 +16,12 @@ import {
   faUser as faUserReg,
 } from "@fortawesome/free-regular-svg-icons";
 import { CodeDrawer } from "../components/CodeDrawer";
+import { Separator } from "core-ui/core";
 import { ButtonTab } from "core-ui/index";
 
 export const Buttons = () => (
   <>
     <h4>Button Primary</h4>
-
     <div className="row">
       <ButtonPrimary text="Button" iconLeft={faUser} marginRight />
       <ButtonPrimary
@@ -47,7 +47,7 @@ export const Buttons = () => (
         <p>{`<ButtonPrimary text="Button" lg disabled />`}</p>
       </code>
     </CodeDrawer>
-
+    <Separator />
     <h4>Button Primary Invert</h4>
     <div className="row">
       <ButtonPrimaryInvert text="Button" marginRight />
@@ -76,7 +76,7 @@ export const Buttons = () => (
         <p>{`<ButtonPrimaryInvert lg text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
-
+    <Separator />
     <h4>Button Secondary</h4>
     <div className="row">
       <ButtonSecondary text="Button" marginRight />
@@ -100,7 +100,7 @@ export const Buttons = () => (
         <p>{`<ButtonSecondary lg text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
-
+    <Separator />
     <h4>Button Mono</h4>
     <div className="row">
       <ButtonMono text="Button" marginRight />
@@ -124,7 +124,7 @@ export const Buttons = () => (
         <p>{`<ButtonMono lg text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
-
+    <Separator />
     <h4>Button Mono Invert</h4>
     <div className="row">
       <ButtonMonoInvert text="Button" marginRight />
@@ -148,7 +148,7 @@ export const Buttons = () => (
         <p>{`<ButtonMonoInvert lg text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
-
+    <Separator />
     <h4>Button Text</h4>
     <div className="row">
       <ButtonText text="Button" marginRight />
@@ -176,7 +176,7 @@ export const Buttons = () => (
         <p>{`<ButtonText text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
-
+    <Separator />
     <h4>Button Submit</h4>
     <div className="row">
       <ButtonSubmit text="Button" marginRight />
@@ -204,7 +204,7 @@ export const Buttons = () => (
         <p>{`<ButtonSubmit text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
-
+    <Separator />
     <h4>Button Submit Invert</h4>
     <div className="row">
       <ButtonSubmitInvert text="Button" marginRight />
@@ -227,7 +227,7 @@ export const Buttons = () => (
         <p>{`<ButtonSubmitInvert text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
-
+    <Separator />
     <h4>Button Help</h4>
     <div className="row">
       <ButtonHelp marginRight />

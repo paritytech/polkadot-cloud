@@ -142,3 +142,13 @@ export const PageRow = ({
     {children}
   </div>
 );
+
+/* Separator
+ *
+ * A horizontal spacer with a bottom border. General spacer for separating content by row.
+ */
+export const Separator = ({ children, style }: ComponentBase) => (
+  <div className="core-separator" style={style}>
+    {children}
+  </div>
+);

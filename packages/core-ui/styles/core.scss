@@ -259,4 +259,8 @@ SPDX-License-Identifier: Apache-2.0 */
   @media (max-width: v.$page-width-medium-threshold) {
     display: block;
   }
+.core-separator {
+  border-bottom: 1px solid var(--border-primary-color);
+  width: 100%;
+  margin: 0.67rem 0;
 }
