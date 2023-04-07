@@ -5,7 +5,16 @@ import { ComponentBase } from "../types";
 import { RefObject, forwardRef } from "react";
 import { motion } from "framer-motion";
 import { valEmpty } from "../utils";
-import { EntryProps, PageRowProps, SideProps, PageTitleProps } from "./types";
+import {
+  EntryProps,
+  PageRowProps,
+  SideProps,
+  PageTitleProps,
+  PageTitleTabProps,
+} from "./types";
+import { ButtonSecondary } from "lib/buttons/ButtonSecondary";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { ButtonTab } from "lib/buttons/ButtonTab";
 
 /* Entry
  *
@@ -85,7 +94,7 @@ export const Side = ({ children, style, open, minimised }: SideProps) => (
  */
 export const PageTitle = forwardRef(
   (
-    { children, style, sticky }: PageTitleProps,
+    { style, sticky, title, button, tabs }: PageTitleProps,
     ref?: RefObject<HTMLElement>
   ) => (
     <header
@@ -93,7 +102,24 @@ export const PageTitle = forwardRef(
       className={`core-page-title${valEmpty(sticky, "sticky")}`}
       style={style}
     >
-      {children}
+      <div className="page-padding">
+        <section className="title">
+          <div>
+            <h1>{title}</h1>
+          </div>
+          <div>
+            {button && (
+              <ButtonSecondary
+                text={button.title}
+                onClick={() => button.onClick()}
+                iconLeft={faBars}
+                iconTransform={"shrink-4"}
+              />
+            )}
+          </div>
+        </section>
+        {tabs.length > 0 && <PageTitleTabs sticky={sticky} tabs={tabs} />}
+      </div>
     </header>
   )
 );
@@ -103,13 +129,21 @@ PageTitle.displayName = "PageTitle";
  *
  * The element in a page title. Inculding the ButtonTab.
  */
-export const PageTitleTabs = ({ children, style, sticky }: PageTitleProps) => (
-  <div
-    className={`core-page-title-tabs${valEmpty(sticky, "sticky")}`}
-    style={style}
-  >
-    {children}
-  </div>
+export const PageTitleTabs = ({ sticky, tabs }: PageTitleProps) => (
+  <section className={`core-page-title-tabs${valEmpty(sticky, "sticky")}`}>
+    <div className="scroll">
+      <div className="inner">
+        {tabs.map((tab: PageTitleTabProps, i: number) => (
+          <ButtonTab
+            active={!!tab.active}
+            key={`page_tab_${i}`}
+            onClick={() => tab.onClick()}
+            title={tab.title}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
 );
 
 /* HideScrollable

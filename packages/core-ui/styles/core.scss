@@ -156,6 +156,8 @@ SPDX-License-Identifier: Apache-2.0 */
 }
 
 .core-page-title {
+  @include page-padding;
+
   background: var(--background-default);
   display: flex;
   flex-flow: column wrap;
