@@ -164,6 +164,7 @@ SPDX-License-Identifier: Apache-2.0 */
   margin-top: 4rem;
   margin-bottom: 0.25rem;
   padding-top: 0.5rem;
+  padding-bottom: 0;
   top: 0;
   transition: padding 0.3s ease-out;
   width: 100%;
@@ -171,7 +172,8 @@ SPDX-License-Identifier: Apache-2.0 */
 
   @media (max-width: v.$page-width-medium-threshold) {
     top: 4rem;
-    padding: 0.75rem 0;
+    padding-top: 0.75rem;
+    padding-bottom: 0.5rem;
   }
 
   .title {
@@ -213,7 +215,7 @@ SPDX-License-Identifier: Apache-2.0 */
       margin-bottom: 0.75rem;
 
       h1 {
-        transform: scale(0);
+        transform: scale(0.75);
         left: -1.25rem;
       }
     }
@@ -225,8 +227,8 @@ SPDX-License-Identifier: Apache-2.0 */
   border-bottom: 1px solid var(--border-primary-color);
   overflow: hidden;
   height: 3.6rem;
-  
   margin-top: 0.9rem;
+
   @media (max-width: v.$page-width-medium-threshold) {
     margin-top: 0.5rem;
   }
@@ -259,6 +261,8 @@ SPDX-License-Identifier: Apache-2.0 */
   @media (max-width: v.$page-width-medium-threshold) {
     display: block;
   }
+}
+
 .core-separator {
   border-bottom: 1px solid var(--border-primary-color);
   width: 100%;
