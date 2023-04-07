@@ -100,7 +100,7 @@ export const PageRow = ({
   noVerticalMargin,
 }: PageRowProps) => (
   <div
-    className={`core-page-row${valEmpty(
+    className={`core-page-row page-padding${valEmpty(
       noVerticalMargin,
       "no-vertical-margin"
     )}`}
