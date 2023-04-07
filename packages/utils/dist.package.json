@@ -1,6 +1,6 @@
 {
   "name": "@polkadotcloud/utils",
-  "version": "0.2.9",
+  "version": "0.2.14",
   "author": "Ross Bulat",
   "license": "Apache-2.0",
   "types": "index.d.ts",
