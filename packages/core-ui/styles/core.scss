@@ -28,7 +28,7 @@ SPDX-License-Identifier: Apache-2.0 */
   width: 100%;
   background-attachment: fixed;
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
   min-height: 100vh;
   flex-grow: 1;
 
@@ -158,14 +158,6 @@ SPDX-License-Identifier: Apache-2.0 */
   &.no-vertical-margin {
     margin-top: 0;
     margin-bottom: 0;
-  }
-
-  /* kill heading padding, already applied to wrapper */
-  h1,
-  h2,
-  h3,
-  h4 {
-    margin-top: 0;
   }
 }
 
