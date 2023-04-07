@@ -32,7 +32,7 @@ jobs:
       - name: Publish core-ui to npm
         if: steps.core_ui_version.outputs.is-new-version == 'true'
         working-directory: "./packages/core-ui/dist"
-        run: npm publish --dry-run
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -41,7 +41,7 @@ jobs:
         working-directory: "./packages/utils/dist"
       - name: Publish utils to npm
         if: steps.utils_version.outputs.is-new-version == 'true'
-        run: npm publish --dry-run
+        run: npm publish
         working-directory: "./packages/utils/dist"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
