@@ -1,0 +1,17 @@
+/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+SPDX-License-Identifier: Apache-2.0 */
+
+/* Every element conforms to border-box by default. */
+* {
+  box-sizing: border-box;
+}
+
+/* Define default body style and cancel out spacing. */
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  font-variation-settings: "wght" 500;
+}

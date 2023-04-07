@@ -5,23 +5,9 @@ SPDX-License-Identifier: Apache-2.0 */
 
 html {
   font-size: 10px;
-
   @media (min-width: 600px) {
     font-size: 11.2px;
   }
-}
-
-body {
-  margin: 0;
-  font-family: Inter, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  font-variation-settings: "wght" 500;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 h1 {
