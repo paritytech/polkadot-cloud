@@ -100,12 +100,22 @@ export const PageRow = ({
   noVerticalMargin,
 }: PageRowProps) => (
   <div
-    className={`core-page-row${valEmpty(
+    className={`core-page-row page-padding${valEmpty(
       noVerticalMargin,
       "no-vertical-margin"
     )}`}
     style={style}
   >
+    {children}
+  </div>
+);
+
+/* Separator
+ *
+ * A horizontal spacer with a bottom border. General spacer for separating content by row.
+ */
+export const Separator = ({ children, style }: ComponentBase) => (
+  <div className="core-separator" style={style}>
     {children}
   </div>
 );
