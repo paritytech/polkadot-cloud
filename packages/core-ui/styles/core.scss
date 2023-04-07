@@ -52,21 +52,13 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 
   input {
-    border: none;
     padding: 0.7rem 0;
     font-size: 1.1rem;
-    background: none;
     transition: all var(--transition-duration);
 
     &::placeholder {
       color: #aaa;
     }
-  }
-
-  input:focus,
-  textarea:focus,
-  select:focus {
-    outline: none;
   }
 
   .textbox {

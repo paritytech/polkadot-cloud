@@ -86,4 +86,12 @@ button {
 /* Define default input style. */
 input {
   font-family: Inter, sans-serif;
+  background: none;
+  border: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
 }
