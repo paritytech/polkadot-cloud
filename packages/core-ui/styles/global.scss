@@ -8,58 +8,53 @@ SPDX-License-Identifier: Apache-2.0 */
 
 /* Define default body style and cancel out spacing. */
 body {
-  font-family: 'Inter', 'sans-serif', sans-serif;
+  font-family: Inter, sans-serif, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   font-weight: 500;
-  font-variation-settings: 'wght' 500;
+  font-variation-settings: "wght" 500;
   margin: 0;
 }
 
 /* Define default header tag styling. */
 h1 {
-  font-weight: normal;
   font-size: 1.6rem;
   line-height: 1.6rem;
   font-weight: 600;
-  font-variation-settings: 'wght' 600;
+  font-variation-settings: "wght" 600;
   margin: 0;
 }
 
 h2 {
-  font-weight: normal;
   font-size: 1.4rem;
   line-height: 1.6rem;
   font-weight: 600;
-  font-variation-settings: 'wght' 650;
+  font-variation-settings: "wght" 650;
   margin: 0;
 }
 
 h3 {
-  font-weight: normal;
   font-size: 1.25rem;
   line-height: 1.55rem;
   font-weight: 500;
-  font-variation-settings: 'wght' 560;
+  font-variation-settings: "wght" 560;
   margin: 0;
 }
 
 h4 {
-  font-weight: normal;
   font-size: 1.08rem;
   line-height: 1.65rem;
   font-weight: 500;
-  font-variation-settings: 'wght' 500;
+  font-variation-settings: "wght" 500;
   margin: 0;
 }
 
 h5 {
-  font-weight: normal;
   font-size: 0.92rem;
   line-height: 1.02rem;
   font-weight: 500;
-  font-variation-settings: 'wght' 540;
+  font-variation-settings: "wght" 540;
   margin: 0;
 }
 
@@ -78,18 +73,17 @@ a {
 
 /* Define bare-bones button style. */
 button {
-  font-family: 'Inter', sans-serif;
-  font-weight: normal;
+  font-family: Inter, sans-serif;
   background: none;
   border: none;
   cursor: pointer;
   font-weight: 600;
-  font-variation-settings: 'wght' 600;
+  font-variation-settings: "wght" 600;
   margin: 0;
   padding: 0;
 }
 
 /* Define default input style. */
 input {
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
 }
