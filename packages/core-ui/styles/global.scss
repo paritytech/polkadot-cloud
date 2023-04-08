@@ -90,8 +90,9 @@ input {
   border: none;
 }
 
+button:focus,
 input:focus,
-textarea:focus,
-select:focus {
+select:focus,
+textarea:focus {
   outline: none;
 }
