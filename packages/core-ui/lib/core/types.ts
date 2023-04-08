@@ -17,9 +17,7 @@ export type SideProps = ComponentBase & {
   minimised: boolean;
 };
 
-export type PageTitleProps = ComponentBase & {
-  // whether the title stick on the same position
-  sticky?: boolean;
+export type PageTitleProps = PageTitleTabsProps & {
   // title of the page
   title?: string;
   // a button right next to the page title
@@ -29,6 +27,11 @@ export type PageTitleProps = ComponentBase & {
     // function of the button when it is clicked
     onClick: () => void;
   };
+};
+
+export type PageTitleTabsProps = {
+  // whether the title stick on the same position
+  sticky?: boolean;
   // an array of tab pages
   tabs?: Array<PageTitleTabProps>;
 };

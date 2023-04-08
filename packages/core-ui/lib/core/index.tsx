@@ -2,7 +2,7 @@
 SPDX-License-Identifier: Apache-2.0 */
 
 import { ComponentBase } from "../types";
-import { RefObject, forwardRef } from "react";
+import { RefObject, forwardRef, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { valEmpty } from "../utils";
 import {
@@ -92,44 +92,67 @@ export const Side = ({ children, style, open, minimised }: SideProps) => (
  *
  * The element that wraps a page title. Determines the padding and position relative to top of screen when the element is stuck.
  */
-export const PageTitle = forwardRef(
-  (
-    { style, sticky, title, button, tabs }: PageTitleProps,
-    ref?: RefObject<HTMLElement>
-  ) => (
-    <header
-      ref={ref}
-      className={`core-page-title${valEmpty(sticky, "sticky")}`}
-      style={style}
-    >
-      <div className="page-padding">
-        <section className="title">
-          <div>
-            <h1>{title}</h1>
-          </div>
-          <div>
-            {button && (
-              <ButtonSecondary
-                text={button.title}
-                onClick={() => button.onClick()}
-                iconLeft={faBars}
-                iconTransform={"shrink-4"}
-              />
-            )}
-          </div>
-        </section>
-        {tabs.length > 0 && <PageTitleTabs sticky={sticky} tabs={tabs} />}
-      </div>
-    </header>
-  )
-);
+export const PageTitle = ({ title, button, tabs = [] }: PageTitleProps) => {
+  const [sticky, setSticky] = useState(false);
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const cachedRef = ref.current;
+    const observer = new IntersectionObserver(
+      ([e]) => {
+        setSticky(e.intersectionRatio < 1);
+      },
+      { threshold: [1], rootMargin: "-1px 0px 0px 0px" }
+    );
+
+    if (cachedRef) {
+      observer.observe(cachedRef);
+    }
+    // unmount
+    return () => {
+      if (cachedRef) {
+        observer.unobserve(cachedRef);
+      }
+    };
+  }, [sticky]);
+
+  return (
+    <>
+      <HideScrollable />
+      <header
+        ref={ref}
+        className={`core-page-title${valEmpty(sticky, "sticky")}`}
+      >
+        <div className="page-padding">
+          <section className="title">
+            <div>
+              <h1>{title}</h1>
+            </div>
+            <div>
+              {button && (
+                <ButtonSecondary
+                  text={button.title}
+                  onClick={() => button.onClick()}
+                  iconLeft={faBars}
+                  iconTransform={"shrink-4"}
+                />
+              )}
+            </div>
+          </section>
+          {tabs.length > 0 && <PageTitleTabs sticky={sticky} tabs={tabs} />}
+        </div>
+      </header>
+    </>
+  );
+};
+
 PageTitle.displayName = "PageTitle";
 
 /* PageTitleTabs
  *
  * The element in a page title. Inculding the ButtonTab.
  */
-export const PageTitleTabs = ({ sticky, tabs }: PageTitleProps) => (
+export const PageTitleTabs = ({ sticky, tabs = [] }: PageTitleProps) => (
   <section className={`core-page-title-tabs${valEmpty(sticky, "sticky")}`}>
     <div className="scroll">
       <div className="inner">
