@@ -5,8 +5,8 @@
   "author": "Ross Bulat",
   "description": "Utilities for Polkadot Dashboards.",
   "scripts": {
-    "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo",
-    "build": "rollup -c && cp dist.package.json dist/package.json"
+    "build": "rollup -c && cp dist.package.json dist/package.json",
+    "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   },
   "peerDependencies": {
     "@polkadot/keyring": "^11.0.1",
