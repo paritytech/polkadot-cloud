@@ -7,16 +7,17 @@ import BigNumber from "bignumber.js";
 import type { MutableRefObject, RefObject } from "react";
 import { AnyJson } from "./types";
 
-// IMPORTANT: Rollup treats this file as the entry point for the package, the build of which is
-// configured with a separate tsconfig.json file that treats `lib` as the `baseUrl` of the project.
-// This is to build `lib` files at the top-level of the final bundled package.
-//
-// Because of this relative file paths should be used in this directory.
-
-// TODO: add JSDoc comment styling to each of the utils.
+/**
+ * IMPORTANT: Rollup treats this file as the entry point for the package, the build of which is
+ * configured with a separate tsconfig.json file that treats `lib` as the `baseUrl` of the project.
+ * This is to build `lib` files at the top-level of the final bundled package.
+ *
+ * Because of this relative file paths should be used in this directory.
+ */
 
 /**
- * Clips an address to the first 6 and last 6 characters.
+ * @name clipAddress
+ * @description Clips an address to the first 6 and last 6 characters.
  */
 export const clipAddress = (val: string) => {
   if (typeof val !== "string") {
@@ -29,15 +30,19 @@ export const clipAddress = (val: string) => {
 };
 
 /**
- * Converts a rem string to numbers.
+ * @name remToUnit
+ * @description Converts a rem string to numbers.
  */
 export const remToUnit = (rem: string) =>
   Number(rem.slice(0, rem.length - 3)) *
   parseFloat(getComputedStyle(document.documentElement).fontSize);
 
 /**
- * Converts an on chain balance value in BigNumber planck to a decimal value in token unit. (1 token
- * token = 10^units planck).
+ * @name planckToUnit
+ * @description
+ * Converts an on chain balance value in BigNumber planck to a decimal value in token unit.
+ * (1 token = 10^units planck).
+ * @summary convert planck to the token unit
  */
 export const planckToUnit = (val: BigNumber, units: number) =>
   new BigNumber(
@@ -45,20 +50,39 @@ export const planckToUnit = (val: BigNumber, units: number) =>
   );
 
 /**
- * Converts a balance in token unit to an equivalent value in planck by applying the chain decimals
- * point. (1 token = 10^units planck).
+ * @name unitToPlanck
+ * @description
+ * Converts a balance in token unit to an equivalent value in planck by applying
+ * the chain decimals point. (1 token = 10^units planck).
+ * @summary convert the token unit to planck
  */
 export const unitToPlanck = (val: string, units: number): BigNumber =>
   new BigNumber(!val.length || !val ? "0" : val)
     .multipliedBy(new BigNumber(10).exponentiatedBy(units))
     .integerValue();
 
+/**
+ * @name rmCommas
+ * @description removes the commas from a number
+ */
 export const rmCommas = (val: string): string => val.replace(/,/g, "");
 
+/**
+ * @name greaterThanZero
+ * @description verify whether the number is greater than zero
+ */
 export const greaterThanZero = (val: BigNumber) => val.isGreaterThan(0);
 
+/**
+ * @name isNotZero
+ * @description verify whether the number is zero
+ */
 export const isNotZero = (val: BigNumber) => !val.isZero();
 
+/**
+ * @name shuffle
+ * @description shuffle a set of objects
+ */
 export const shuffle = <T>(array: Array<T>) => {
   let currentIndex = array.length;
   let randomIndex;
@@ -73,15 +97,27 @@ export const shuffle = <T>(array: Array<T>) => {
   return array;
 };
 
+/**
+ * @name pageFromUri
+ * @description use url variables to load the default components upon the first page visit
+ */
 export const pageFromUri = (pathname: string) => {
   const lastUriItem = pathname.substring(pathname.lastIndexOf("/") + 1);
   const page = lastUriItem.trim() === "" ? "overview" : lastUriItem;
   return page;
 };
 
+/**
+ * @name capitalizeFirstLetter
+ * @description capitalize the first letter of a string
+ */
 export const capitalizeFirstLetter = (string: string) =>
   string.charAt(0).toUpperCase() + string.slice(1);
 
+/**
+ * @name setStateWithRef
+ * @description synchronize the current state and its reference state with the same value
+ */
 export const setStateWithRef = <T>(
   value: T,
   setState: (_state: T) => void,
@@ -91,6 +127,10 @@ export const setStateWithRef = <T>(
   ref.current = value;
 };
 
+/**
+ * @name localStorageOrDefault
+ * @description retrieve the local stroage value with the key, return defult value if it is not found
+ */
 export const localStorageOrDefault = <T>(
   key: string,
   _default: T,
@@ -108,6 +148,10 @@ export const localStorageOrDefault = <T>(
   return val;
 };
 
+/**
+ * @name isValidAddress
+ * @description whether the address is valid in Substrate chain
+ */
 export const isValidAddress = (address: string) => {
   try {
     encodeAddress(isHex(address) ? hexToU8a(address) : decodeAddress(address));
@@ -117,6 +161,10 @@ export const isValidAddress = (address: string) => {
   }
 };
 
+/**
+ * @name determinePoolDisplay
+ * @description a pool will be displayed with either its super identitiy or its address
+ */
 export const determinePoolDisplay = (adddress: string, batchItem: AnyJson) => {
   // default display value
   const defaultDisplay = clipAddress(adddress);
@@ -137,14 +185,20 @@ export const determinePoolDisplay = (adddress: string, batchItem: AnyJson) => {
   return display;
 };
 
-// extracts a URL value from a URL string
+/**
+ * @name extractUrlValue
+ * @description extracts a URL value from a URL string
+ */
 export const extractUrlValue = (key: string, url?: string) => {
   if (typeof url === "undefined") url = window.location.href;
   const match = url.match(`[?&]${key}=([^&]+)`);
   return match ? match[1] : null;
 };
 
-// converts a string of text to camelCase
+/**
+ * @name camelize
+ * @description converts a string of text to camelCase
+ */
 export const camelize = (str: string) =>
   str
     .replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) =>
@@ -152,10 +206,13 @@ export const camelize = (str: string) =>
     )
     .replace(/\s+/g, "");
 
-// Puts a variable into the URL hash as a param.
-//
-// Since url variables are added to the hash and are not treated as URL params, the params are split
-// and parsed into a `URLSearchParams`.
+/**
+ * @name varToUrlHash
+ * @description
+ * Since url variables are added to the hash and are not treated as URL params,
+ * the params are split and parsed into a `URLSearchParams`.
+ * @summary Puts a variable into the URL hash as a param.
+ */
 export const varToUrlHash = (
   key: string,
   val: string,
@@ -172,9 +229,12 @@ export const varToUrlHash = (
   window.location.hash = `${page}?${searchParams.toString()}`;
 };
 
-// Removes a variable `key` from the URL hash if it exists.
-//
-// Removes dangling `?` if no URL variables exist.
+/**
+ * @name removeVarFromUrlHash
+ * @description
+ * Removes a variable `key` from the URL hash if it exists.
+ * Removes dangling `?` if no URL variables exist.
+ */
 export const removeVarFromUrlHash = (key: string) => {
   const hash = window.location.hash;
   const [page, params] = hash.split("?");
@@ -187,7 +247,10 @@ export const removeVarFromUrlHash = (key: string) => {
   window.location.hash = `${page}${paramsAsStr ? `?${paramsAsStr}` : ``}`;
 };
 
-// Sorts an array with nulls last.
+/**
+ * @name sortWithNull
+ * @description Sorts an array with nulls last.
+ */
 export const sortWithNull =
   (ascending: boolean) => (a: AnyJson, b: AnyJson) => {
     // equal items sort equally
@@ -209,7 +272,10 @@ export const sortWithNull =
     return a < b ? 1 : -1;
   };
 
-// Applies width of subject to paddingRight of container
+/**
+ * @name applyWidthAsPadding
+ * @description Applies width of subject to paddingRight of container
+ */
 export const applyWidthAsPadding = (
   subjectRef: RefObject<HTMLDivElement>,
   containerRef: RefObject<HTMLDivElement>
@@ -221,8 +287,16 @@ export const applyWidthAsPadding = (
   }
 };
 
+/**
+ * @name unescape
+ * @description
+ */
 export const unescape = (val: string) => val.replace(/\\"/g, '"');
 
+/**
+ * @name inChrome
+ * @description whether the application rendering in Chrome
+ */
 export const inChrome = () => {
   const isChromium = (window as AnyJson)?.chrome || null;
   const winNav = (window as AnyJson)?.navigator || null;
