@@ -121,26 +121,25 @@ export const PageTitle = ({ title, button, tabs = [] }: PageTitleProps) => {
       <HideScrollable />
       <header
         ref={ref}
-        className={`core-page-title${valEmpty(sticky, "sticky")}`}
+        className={`core-page-title page-padding${valEmpty(sticky, "sticky")}`}
       >
-        <div className="page-padding">
-          <section className="title">
-            <div>
-              <h1>{title}</h1>
-            </div>
-            <div>
-              {button && (
-                <ButtonSecondary
-                  text={button.title}
-                  onClick={() => button.onClick()}
-                  iconLeft={faBars}
-                  iconTransform={"shrink-4"}
-                />
-              )}
-            </div>
-          </section>
-          {tabs.length > 0 && <PageTitleTabs sticky={sticky} tabs={tabs} />}
-        </div>
+        <section className="title">
+          <div>
+            <h1>{title}</h1>
+          </div>
+          <div>
+            {button && (
+              <ButtonSecondary
+                text={button.title}
+                onClick={() => button.onClick()}
+                iconRight={faBars}
+                iconTransform={"shrink-4"}
+                lg
+              />
+            )}
+          </div>
+        </section>
+        {tabs.length > 0 && <PageTitleTabs sticky={sticky} tabs={tabs} />}
       </header>
     </>
   );
@@ -156,14 +155,16 @@ export const PageTitleTabs = ({ sticky, tabs = [] }: PageTitleProps) => (
   <section className={`core-page-title-tabs${valEmpty(sticky, "sticky")}`}>
     <div className="scroll">
       <div className="inner">
-        {tabs.map((tab: PageTitleTabProps, i: number) => (
-          <ButtonTab
-            active={!!tab.active}
-            key={`page_tab_${i}`}
-            onClick={() => tab.onClick()}
-            title={tab.title}
-          />
-        ))}
+        {tabs.map(
+          ({ active, onClick, title }: PageTitleTabProps, i: number) => (
+            <ButtonTab
+              active={!!active}
+              key={`page_tab_${i}`}
+              onClick={() => onClick()}
+              title={title}
+            />
+          )
+        )}
       </div>
     </div>
   </section>
