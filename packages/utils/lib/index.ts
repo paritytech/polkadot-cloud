@@ -95,8 +95,8 @@ export const localStorageOrDefault = <T>(
   key: string,
   _default: T,
   parse = false
-): T | string => {
-  const val: string | null = localStorage.getItem(key);
+): T => {
+  const val = localStorage.getItem(key);
 
   if (val === null) {
     return _default;
@@ -105,7 +105,6 @@ export const localStorageOrDefault = <T>(
   if (parse) {
     return JSON.parse(val) as T;
   }
-  return val;
 };
 
 export const isValidAddress = (address: string) => {
