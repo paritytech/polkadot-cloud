@@ -144,12 +144,10 @@ SPDX-License-Identifier: Apache-2.0 */
   flex-shrink: 0;
   flex-flow: row wrap;
   width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 0;
 
-  &.no-vertical-margin {
-    margin-top: 0;
-    margin-bottom: 0;
+  &.y-margin {
+    margin: 1rem 0;
   }
 }
 

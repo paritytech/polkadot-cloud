@@ -94,16 +94,9 @@ export const HideScrollable = ({ children, style }: ComponentBase) => (
  *
  * Used to separate page content based on rows. Commonly used with RowPrimary and RowSecondary.
  */
-export const PageRow = ({
-  children,
-  style,
-  noVerticalMargin,
-}: PageRowProps) => (
+export const PageRow = ({ children, style, yMargin }: PageRowProps) => (
   <div
-    className={`core-page-row page-padding${valEmpty(
-      noVerticalMargin,
-      "no-vertical-margin"
-    )}`}
+    className={`core-page-row page-padding${valEmpty(yMargin, "y-margin")}`}
     style={style}
   >
     {children}
