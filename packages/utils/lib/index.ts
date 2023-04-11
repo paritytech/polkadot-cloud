@@ -84,7 +84,7 @@ export const capitalizeFirstLetter = (string: string) =>
 
 export const setStateWithRef = <T>(
   value: T,
-  setState: (_state: T) => void,
+  setState: (state: T) => void,
   ref: MutableRefObject<T>
 ): void => {
   setState(value);
@@ -93,23 +93,23 @@ export const setStateWithRef = <T>(
 
 export const localStorageOrDefault = <T>(
   key: string,
-  _default: T,
+  defaultValue: T,
   parse = false
 ): T => {
   const val: string | null = localStorage.getItem(key);
 
   if (val === null) {
-    return _default;
+    return defaultValue;
   }
 
   if (parse) {
     return JSON.parse(val) as T;
   }
 
-  if (typeof _default === typeof val) {
+  if (typeof defaultValue === typeof val) {
     return val as T;
   } else {
-    return _default;
+    return defaultValue;
   }
 };
 
