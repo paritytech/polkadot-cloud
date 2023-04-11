@@ -96,7 +96,7 @@ export const localStorageOrDefault = <T>(
   _default: T,
   parse = false
 ): T => {
-  const val = localStorage.getItem(key);
+  const val: string | null = localStorage.getItem(key);
 
   if (val === null) {
     return _default;
@@ -104,6 +104,12 @@ export const localStorageOrDefault = <T>(
 
   if (parse) {
     return JSON.parse(val) as T;
+  }
+
+  if (typeof _default === typeof val) {
+    return val as T;
+  } else {
+    return _default;
   }
 };
 
