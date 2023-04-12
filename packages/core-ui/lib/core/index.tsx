@@ -209,7 +209,7 @@ export const Separator = ({ children, style }: ComponentBase) => (
  * Positioned under titles for a Go Back button and other page header info.
  */
 export const PageHeading = ({ children, style }: ComponentBase) => (
-  <div className="core-page-top-bar" style={style}>
+  <div className="core-page-heading" style={style}>
     {children}
   </div>
 );
