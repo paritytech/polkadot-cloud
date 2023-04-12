@@ -4,8 +4,8 @@ SPDX-License-Identifier: Apache-2.0 */
 import { ComponentBase } from "../types";
 import { RefObject, forwardRef } from "react";
 import { motion } from "framer-motion";
-import { valEmpty } from "../utils";
-import { EntryProps, PageRowProps, SideProps } from "./types";
+import { valEmpty, valOr } from "../utils";
+import { EntryProps, PageRowProps, SideProps, RowProps } from "./types";
 
 /* Entry
  *
@@ -109,6 +109,32 @@ export const PageRow = ({ children, style, yMargin }: PageRowProps) => (
  */
 export const Separator = ({ children, style }: ComponentBase) => (
   <div className="core-separator" style={style}>
+    {children}
+  </div>
+);
+
+/* RowPrimaryOrRowSecondary
+ *
+ * The primary/secondary module in a PageRow.
+ */
+export const RowPrimaryOrRowSecondary = ({
+  children,
+  style,
+  verticalOrder,
+  paddingLeft,
+  secondary,
+}: RowProps) => (
+  <div
+    className={`${valOr(
+      secondary,
+      "core-row-secondary",
+      "core-row-primary"
+    )}${valEmpty(verticalOrder, "vertical-order")}${valEmpty(
+      paddingLeft,
+      "paddingleft"
+    )}`}
+    style={style}
+  >
     {children}
   </div>
 );

@@ -21,3 +21,12 @@ export type PageRowProps = ComponentBase & {
   // whether there is margin space vertically
   yMargin?: boolean;
 };
+
+export type RowProps = ComponentBase & {
+  // the css order of the component
+  verticalOrder: boolean;
+  // true means padding on the left and false means padding on the right
+  paddingLeft: boolean;
+  // true means the secondary element and  false means the primary one
+  secondary: boolean;
+};

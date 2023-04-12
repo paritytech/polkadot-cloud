@@ -156,3 +156,68 @@ SPDX-License-Identifier: Apache-2.0 */
   width: 100%;
   margin: 0.67rem 0;
 }
+
+.core-row-primary {
+  order: 0;
+  flex: 1;
+  flex-basis: 100%;
+  max-width: 100%;
+
+  @media (min-width: (v.$page-width-medium-threshold + 1px)) {
+    padding-right: 0.75rem;
+    order: 0;
+    flex: 1;
+    flex-basis: 56%;
+    width: 56%;
+    max-width: none;
+  }
+
+  @media (min-width: (v.$section-full-width-threshold + 400px)) {
+    flex-basis: 62%;
+    width: 62%;
+    max-width: none;
+  }
+
+  &.vertical-order {
+    order: 1;
+  }
+
+  &.padding-left {
+    @media (min-width: (v.$page-width-medium-threshold + 1px)) {
+      padding-left: 0.75rem;
+      order: 1;
+    }
+  }
+}
+
+.core-row-secondary {
+  order: 0;
+  flex-basis: 100%;
+  width: 100%;
+  border-radius: 1rem;
+
+  @media (min-width: (v.$page-width-medium-threshold + 1px)) {
+    padding-right: 0.75rem;
+    order: 0;
+    flex: 1;
+    flex-basis: 44%;
+    width: 44%;
+    max-width: none;
+  }
+
+  @media (min-width: (v.$section-full-width-threshold + 400px)) {
+    flex-basis: 38%;
+    max-width: 38%;
+  }
+
+  &.vertical-order {
+    order: 1;
+  }
+
+  &.padding-left {
+    @media (min-width: (v.$page-width-medium-threshold + 1px)) {
+      padding-left: 0.75rem;
+      order: 1;
+    }
+  }
+}

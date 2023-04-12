@@ -4,6 +4,9 @@ SPDX-License-Identifier: Apache-2.0 */
 /* outer container max width */
 $page-max-width: 1550px;
 
+/* inner container max width */
+$section-full-width-threshold: 1050px;
+
 /* media query width thresholds */
 $page-width-small-threshold: 850px;
 $page-width-medium-threshold: 1175px;
