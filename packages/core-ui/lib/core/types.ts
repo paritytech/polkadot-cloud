@@ -17,7 +17,7 @@ export type SideProps = ComponentBase & {
   minimised: boolean;
 };
 
-export type PageRowProps = ComponentBase & {
+export type RowProps = ComponentBase & {
   // whether there is margin space vertically
   yMargin?: boolean;
 };
