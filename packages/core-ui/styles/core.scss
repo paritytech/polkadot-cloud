@@ -21,6 +21,15 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 }
 
+@mixin padding-left {
+  .padding-left {
+    @media (min-width: (v.$page-width-medium-threshold + 1px)) {
+      padding-left: 0.75rem;
+      order: 1;
+    }
+  }
+}
+
 .core-entry {
   @include page-padding;
 
@@ -158,6 +167,8 @@ SPDX-License-Identifier: Apache-2.0 */
 }
 
 .core-row-primary {
+  @include padding-left;
+
   order: 0;
   flex: 1;
   flex-basis: 100%;
@@ -169,28 +180,21 @@ SPDX-License-Identifier: Apache-2.0 */
     flex: 1;
     flex-basis: 56%;
     width: 56%;
-    max-width: none;
   }
 
   @media (min-width: (v.$section-full-width-threshold + 400px)) {
     flex-basis: 62%;
     width: 62%;
-    max-width: none;
   }
 
   &.vertical-order {
     order: 1;
   }
-
-  &.padding-left {
-    @media (min-width: (v.$page-width-medium-threshold + 1px)) {
-      padding-left: 0.75rem;
-      order: 1;
-    }
-  }
 }
 
 .core-row-secondary {
+  @include padding-left;
+
   order: 0;
   flex-basis: 100%;
   width: 100%;
@@ -212,12 +216,5 @@ SPDX-License-Identifier: Apache-2.0 */
 
   &.vertical-order {
     order: 1;
-  }
-
-  &.padding-left {
-    @media (min-width: (v.$page-width-medium-threshold + 1px)) {
-      padding-left: 0.75rem;
-      order: 1;
-    }
   }
 }
