@@ -255,12 +255,12 @@ SPDX-License-Identifier: Apache-2.0 */
 .core-page-heading {
   border-bottom: 1px solid var(--border-primary-color);
   display: flex;
-  flex-flow: row wrap;
   align-items: center;
-  padding-top: 0.75rem;
+  flex-flow: row wrap;
   padding-bottom: 0.75rem;
-  width: 100%;
+  padding-top: 0.75rem;
   margin-bottom: 0.25rem;
+  width: 100%;
 
   > span {
     margin-right: 1rem;
