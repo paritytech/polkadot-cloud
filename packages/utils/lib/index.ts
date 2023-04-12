@@ -42,7 +42,7 @@ export const remToUnit = (rem: string) =>
  * @description
  * Converts an on chain balance value in BigNumber planck to a decimal value in token unit.
  * (1 token = 10^units planck).
- * @summary convert planck to the token unit
+ * @summary convert planck to the token unit.
  */
 export const planckToUnit = (val: BigNumber, units: number) =>
   new BigNumber(
@@ -54,7 +54,7 @@ export const planckToUnit = (val: BigNumber, units: number) =>
  * @description
  * Converts a balance in token unit to an equivalent value in planck by applying
  * the chain decimals point. (1 token = 10^units planck).
- * @summary Convert the token unit to planck
+ * @summary Convert the token unit to planck.
  */
 export const unitToPlanck = (val: string, units: number): BigNumber =>
   new BigNumber(!val.length || !val ? "0" : val)
@@ -63,25 +63,25 @@ export const unitToPlanck = (val: string, units: number): BigNumber =>
 
 /**
  * @name rmCommas
- * @description Removes the commas from a number
+ * @description Removes the commas from a number.
  */
 export const rmCommas = (val: string): string => val.replace(/,/g, "");
 
 /**
  * @name greaterThanZero
- * @description Verify whether the number is greater than zero
+ * @description Verify whether the number is greater than zero.
  */
 export const greaterThanZero = (val: BigNumber) => val.isGreaterThan(0);
 
 /**
  * @name isNotZero
- * @description Verify whether the number is zero
+ * @description Verify whether the number is zero.
  */
 export const isNotZero = (val: BigNumber) => !val.isZero();
 
 /**
  * @name shuffle
- * @description Shuffle a set of objects
+ * @description Shuffle a set of objects.
  */
 export const shuffle = <T>(array: Array<T>) => {
   let currentIndex = array.length;
@@ -99,7 +99,7 @@ export const shuffle = <T>(array: Array<T>) => {
 
 /**
  * @name pageFromUri
- * @description Use url variables to load the default components upon the first page visit
+ * @description Use url variables to load the default components upon the first page visit.
  */
 export const pageFromUri = (pathname: string) => {
   const lastUriItem = pathname.substring(pathname.lastIndexOf("/") + 1);
@@ -109,14 +109,14 @@ export const pageFromUri = (pathname: string) => {
 
 /**
  * @name capitalizeFirstLetter
- * @description Capitalize the first letter of a string
+ * @description Capitalize the first letter of a string.
  */
 export const capitalizeFirstLetter = (string: string) =>
   string.charAt(0).toUpperCase() + string.slice(1);
 
 /**
  * @name setStateWithRef
- * @description Synchronize the current state and its reference state with the same value
+ * @description Synchronize the current state and its reference state with the same value.
  */
 export const setStateWithRef = <T>(
   value: T,
@@ -129,7 +129,7 @@ export const setStateWithRef = <T>(
 
 /**
  * @name localStorageOrDefault
- * @description Retrieve the local stroage value with the key, return defult value if it is not found
+ * @description Retrieve the local stroage value with the key, return defult value if it is not found.
  */
 export const localStorageOrDefault = <T>(
   key: string,
@@ -150,7 +150,7 @@ export const localStorageOrDefault = <T>(
 
 /**
  * @name isValidAddress
- * @description Whether the address is valid in Substrate chain
+ * @description Whether the address is valid in Substrate chain.
  */
 export const isValidAddress = (address: string) => {
   try {
@@ -163,7 +163,7 @@ export const isValidAddress = (address: string) => {
 
 /**
  * @name determinePoolDisplay
- * @description A pool will be displayed with either its super identitiy or its address
+ * @description A pool will be displayed with either its super identitiy or its address.
  */
 export const determinePoolDisplay = (adddress: string, batchItem: AnyJson) => {
   // default display value
@@ -187,7 +187,7 @@ export const determinePoolDisplay = (adddress: string, batchItem: AnyJson) => {
 
 /**
  * @name extractUrlValue
- * @description Extracts a URL value from a URL string
+ * @description Extracts a URL value from a URL string.
  */
 export const extractUrlValue = (key: string, url?: string) => {
   if (typeof url === "undefined") url = window.location.href;
@@ -197,7 +197,7 @@ export const extractUrlValue = (key: string, url?: string) => {
 
 /**
  * @name camelize
- * @description Converts a string of text to camelCase
+ * @description Converts a string of text to camelCase.
  */
 export const camelize = (str: string) =>
   str
@@ -274,7 +274,7 @@ export const sortWithNull =
 
 /**
  * @name applyWidthAsPadding
- * @description Applies width of subject to paddingRight of container
+ * @description Applies width of subject to paddingRight of container.
  */
 export const applyWidthAsPadding = (
   subjectRef: RefObject<HTMLDivElement>,
@@ -295,7 +295,7 @@ export const unescape = (val: string) => val.replace(/\\"/g, '"');
 
 /**
  * @name inChrome
- * @description Whether the application is rendering in Chrome
+ * @description Whether the application is rendering in Chrome.
  */
 export const inChrome = () => {
   const isChromium = (window as AnyJson)?.chrome || null;
