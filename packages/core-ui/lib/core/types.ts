@@ -47,7 +47,7 @@ export type PageTitleTabProps = {
   onClick: () => void;
 };
 
-export type PageRowProps = ComponentBase & {
+export type RowProps = ComponentBase & {
   // whether there is margin space vertically
   yMargin?: boolean;
 };

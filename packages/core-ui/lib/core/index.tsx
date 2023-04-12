@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { valEmpty } from "../utils";
 import {
   EntryProps,
-  PageRowProps,
+  RowProps,
   SideProps,
   PageTitleProps,
   PageTitleTabProps,
@@ -185,7 +185,7 @@ export const HideScrollable = ({ children, style }: ComponentBase) => (
  *
  * Used to separate page content based on rows. Commonly used with RowPrimary and RowSecondary.
  */
-export const PageRow = ({ children, style, yMargin }: PageRowProps) => (
+export const PageRow = ({ children, style, yMargin }: RowProps) => (
   <div
     className={`core-page-row page-padding${valEmpty(yMargin, "y-margin")}`}
     style={style}
@@ -200,6 +200,29 @@ export const PageRow = ({ children, style, yMargin }: PageRowProps) => (
  */
 export const Separator = ({ children, style }: ComponentBase) => (
   <div className="core-separator" style={style}>
+    {children}
+  </div>
+);
+
+/* PageHeading
+ *
+ * Positioned under titles for a Go Back button and other page header info.
+ */
+export const PageHeading = ({ children, style }: ComponentBase) => (
+  <div className="core-page-heading" style={style}>
+    {children}
+  </div>
+);
+
+/* ButtonRow
+ *
+ * A flex container for a row of buttons
+ */
+export const ButtonRow = ({ children, style, yMargin }: RowProps) => (
+  <div
+    className={`core-button-row${valEmpty(yMargin, "y-margin")}`}
+    style={style}
+  >
     {children}
   </div>
 );
