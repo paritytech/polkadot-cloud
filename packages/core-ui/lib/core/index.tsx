@@ -12,9 +12,9 @@ import {
   PageTitleProps,
   PageTitleTabProps,
 } from "./types";
-import { ButtonSecondary } from "lib/buttons/ButtonSecondary";
+import { ButtonSecondary } from "../buttons/ButtonSecondary";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { ButtonTab } from "lib/buttons/ButtonTab";
+import { ButtonTab } from "../buttons/ButtonTab";
 
 /* Entry
  *
