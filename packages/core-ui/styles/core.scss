@@ -175,7 +175,7 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 
   h1 {
-    font-size: 1.75rem;
+    font-size: var(--title-font-size);
     font-family: Unbounded, sans-serif;
     position: relative;
     transform: scale(1);
