@@ -16,7 +16,6 @@ import { ButtonSecondary } from "../buttons/ButtonSecondary";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { ButtonTab } from "../buttons/ButtonTab";
 
-
 /* Entry
  *
  * The outer-most wrapper that hosts core tag styling.
@@ -205,11 +204,11 @@ export const Separator = ({ children, style }: ComponentBase) => (
   </div>
 );
 
-/* PageTopBar
+/* PageHeading
  *
  * Positioned under titles for a Go Back button and other page header info.
  */
-export const PageTopBar = ({ children, style }: ComponentBase) => (
+export const PageHeading = ({ children, style }: ComponentBase) => (
   <div className="core-page-top-bar" style={style}>
     {children}
   </div>
