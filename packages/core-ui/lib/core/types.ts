@@ -54,9 +54,9 @@ export type RowProps = ComponentBase & {
 
 export type RowPrimaryOrRowSecondaryProps = ComponentBase & {
   // the css order of the component
-  verticalOrder: boolean;
+  verticalOrder?: boolean;
   // true means padding on the left and false means padding on the right
-  paddingLeft: boolean;
+  paddingLeft?: boolean;
   // true means the secondary element and  false means the primary one
-  secondary: boolean;
+  secondary?: boolean;
 };
