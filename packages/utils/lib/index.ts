@@ -40,8 +40,8 @@ export const remToUnit = (rem: string) =>
 /**
  * @name planckToUnit
  * @description
- * Converts an on chain balance value in BigNumber planck to a decimal value in token unit.
- * (1 token = 10^units planck).
+ * Converts an on chain balance value in BigNumber planck to a decimal value in token unit. (1 token
+ * = 10^units planck).
  * @summary convert planck to the token unit.
  */
 export const planckToUnit = (val: BigNumber, units: number) =>
@@ -52,8 +52,8 @@ export const planckToUnit = (val: BigNumber, units: number) =>
 /**
  * @name unitToPlanck
  * @description
- * Converts a balance in token unit to an equivalent value in planck by applying
- * the chain decimals point. (1 token = 10^units planck).
+ * Converts a balance in token unit to an equivalent value in planck by applying the chain decimals
+ * point. (1 token = 10^units planck).
  * @summary Convert the token unit to planck.
  */
 export const unitToPlanck = (val: string, units: number): BigNumber =>
@@ -63,19 +63,19 @@ export const unitToPlanck = (val: string, units: number): BigNumber =>
 
 /**
  * @name rmCommas
- * @description Removes the commas from a number.
+ * @description Removes the commas from a string.
  */
 export const rmCommas = (val: string): string => val.replace(/,/g, "");
 
 /**
  * @name greaterThanZero
- * @description Verify whether the number is greater than zero.
+ * @description Returns whether a BigNumber is greater than zero.
  */
 export const greaterThanZero = (val: BigNumber) => val.isGreaterThan(0);
 
 /**
  * @name isNotZero
- * @description Verify whether the number is zero.
+ * @description Returns whether a BigNumber is zero.
  */
 export const isNotZero = (val: BigNumber) => !val.isZero();
 
@@ -116,7 +116,7 @@ export const capitalizeFirstLetter = (string: string) =>
 
 /**
  * @name setStateWithRef
- * @description Synchronize the current state and its reference state with the same value.
+ * @description Synchronize React state and its reference with the provided value.
  */
 export const setStateWithRef = <T>(
   value: T,
@@ -129,7 +129,8 @@ export const setStateWithRef = <T>(
 
 /**
  * @name localStorageOrDefault
- * @description Retrieve the local stroage value with the key, return defult value if it is not found.
+ * @description Retrieve the local stroage value with the key, return defult value if it is not
+ * found.
  */
 export const localStorageOrDefault = <T>(
   key: string,
@@ -150,7 +151,7 @@ export const localStorageOrDefault = <T>(
 
 /**
  * @name isValidAddress
- * @description Whether the address is valid in Substrate chain.
+ * @description Return whether an address is valid Substrate address.
  */
 export const isValidAddress = (address: string) => {
   try {
@@ -163,7 +164,7 @@ export const isValidAddress = (address: string) => {
 
 /**
  * @name determinePoolDisplay
- * @description A pool will be displayed with either its super identitiy or its address.
+ * @description A pool will be displayed with either its set metadata or its address.
  */
 export const determinePoolDisplay = (adddress: string, batchItem: AnyJson) => {
   // default display value
@@ -209,8 +210,8 @@ export const camelize = (str: string) =>
 /**
  * @name varToUrlHash
  * @description
- * Since url variables are added to the hash and are not treated as URL params,
- * the params are split and parsed into a `URLSearchParams`.
+ * Since url variables are added to the hash and are not treated as URL params, the params are split
+ * and parsed into a `URLSearchParams`.
  * @summary Puts a variable into the URL hash as a param.
  */
 export const varToUrlHash = (
@@ -232,8 +233,8 @@ export const varToUrlHash = (
 /**
  * @name removeVarFromUrlHash
  * @description
- * Removes a variable `key` from the URL hash if it exists.
- * Removes dangling `?` if no URL variables exist.
+ * Removes a variable `key` from the URL hash if it exists. Removes dangling `?` if no URL variables
+ * exist.
  */
 export const removeVarFromUrlHash = (key: string) => {
   const hash = window.location.hash;
@@ -289,7 +290,7 @@ export const applyWidthAsPadding = (
 
 /**
  * @name unescape
- * @description Replace \” with “
+ * @description Replaces \” with “
  */
 export const unescape = (val: string) => val.replace(/\\"/g, '"');
 
