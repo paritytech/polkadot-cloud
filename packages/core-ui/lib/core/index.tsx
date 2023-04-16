@@ -246,7 +246,7 @@ export const RowPrimaryOrRowSecondary = ({
       "core-row-primary"
     )}${valEmpty(verticalOrder, "vertical-order")}${valEmpty(
       paddingLeft,
-      "paddingleft"
+      "padding-left"
     )}`}
     style={style}
   >
