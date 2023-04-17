@@ -4,21 +4,22 @@ SPDX-License-Identifier: Apache-2.0 */
 import { ComponentBase } from "../types";
 import { RefObject, forwardRef, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { valEmpty } from "../utils";
+import { valEmpty, valOr } from "../utils";
 import {
   EntryProps,
   RowProps,
   SideProps,
   PageTitleProps,
   PageTitleTabProps,
+  RowSectionProps,
 } from "./types";
 import { ButtonSecondary } from "../buttons/ButtonSecondary";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { ButtonTab } from "../buttons/ButtonTab";
 
-/* Entry
- *
- * The outer-most wrapper that hosts core tag styling.
+/**
+ * @name Entry
+ * @description The outer-most wrapper that hosts core tag styling.
  */
 export const Entry = ({ children, style, mode, network }: EntryProps) => (
   <div className={`core-entry theme-${mode} theme-${network}`} style={style}>
@@ -26,9 +27,9 @@ export const Entry = ({ children, style, mode, network }: EntryProps) => (
   </div>
 );
 
-/* Body
- *
- * An element that houses Side and Main.
+/**
+ * @name Body
+ * @description An element that houses Side and Main.
  */
 export const Body = ({ children, style }: ComponentBase) => {
   return (
@@ -38,9 +39,9 @@ export const Body = ({ children, style }: ComponentBase) => {
   );
 };
 
-/* Main
- *
- * A column flex wrapper that hosts the main page content.
+/**
+ * @name Main
+ * @description A column flex wrapper that hosts the main page content.
  */
 export const Main = forwardRef(
   ({ children, style }: ComponentBase, ref?: RefObject<HTMLDivElement>) => (
@@ -51,8 +52,9 @@ export const Main = forwardRef(
 );
 Main.displayName = "Main";
 
-/* Page
- *
+/**
+ * @name Page
+ * @description
  * A motion.div that wraps every page. Transitions can be applied to this wrapper that will affect
  * the entire page.
  */
@@ -71,10 +73,11 @@ export const Page = ({ children, style }: ComponentBase) => {
   );
 };
 
-/* Side
- *
- * An element that houses the side menu and transitions to a toggle-able fixed overlay on smaller
- * screens. Handles maximised and minimised transitions.
+/**
+ * @name Side
+ * @description An element that houses the side menu and transitions to a toggle-able fixed overlay
+ * on smaller screens.
+ * @summary Handles maximised and minimised transitions.
  */
 export const Side = ({ children, style, open, minimised }: SideProps) => (
   <div
@@ -88,9 +91,11 @@ export const Side = ({ children, style, open, minimised }: SideProps) => (
   </div>
 );
 
-/* PageTitle
- *
- * The element that wraps a page title. Determines the padding and position relative to top of screen when the element is stuck.
+/**
+ * @name PageTitle
+ * @description
+ * The element that wraps a page title. Determines the padding and position relative to top of
+ * screen when the element is stuck.
  */
 export const PageTitle = ({ title, button, tabs = [] }: PageTitleProps) => {
   const [sticky, setSticky] = useState(false);
@@ -147,9 +152,9 @@ export const PageTitle = ({ title, button, tabs = [] }: PageTitleProps) => {
 
 PageTitle.displayName = "PageTitle";
 
-/* PageTitleTabs
- *
- * The element in a page title. Inculding the ButtonTab.
+/**
+ * @name PageTitleTabs
+ * @description The element in a page title. Inculding the ButtonTab.
  */
 export const PageTitleTabs = ({ sticky, tabs = [] }: PageTitleProps) => (
   <section className={`core-page-title-tabs${valEmpty(sticky, "sticky")}`}>
@@ -170,10 +175,11 @@ export const PageTitleTabs = ({ sticky, tabs = [] }: PageTitleProps) => (
   </section>
 );
 
-/* HideScrollable
- *
- * A fixed block that is used to hide scrollable content on smaller screens when a PageTitle is fixed.
- * Purely cosmetic. Applied in Pagetitle.
+/**
+ * @name HideScrollable
+ * @description
+ * A fixed block that is used to hide scrollable content on smaller screens when a PageTitle is
+ * fixed. Purely cosmetic. Applied in PageTitle.
  */
 export const HideScrollable = ({ children, style }: ComponentBase) => (
   <div className="core-hide-scrollable" style={style}>
@@ -181,9 +187,10 @@ export const HideScrollable = ({ children, style }: ComponentBase) => (
   </div>
 );
 
-/* PageRow
- *
- * Used to separate page content based on rows. Commonly used with RowPrimary and RowSecondary.
+/**
+ * @name PageRow
+ * @description Used to separate page content based on rows. Commonly used with RowPrimary and
+ * RowSecondary.
  */
 export const PageRow = ({ children, style, yMargin }: RowProps) => (
   <div
@@ -194,9 +201,10 @@ export const PageRow = ({ children, style, yMargin }: RowProps) => (
   </div>
 );
 
-/* Separator
- *
- * A horizontal spacer with a bottom border. General spacer for separating content by row.
+/**
+ * @name Separator
+ * @description A horizontal spacer with a bottom border. General spacer for separating content by
+ * row.
  */
 export const Separator = ({ children, style }: ComponentBase) => (
   <div className="core-separator" style={style}>
@@ -204,9 +212,9 @@ export const Separator = ({ children, style }: ComponentBase) => (
   </div>
 );
 
-/* PageHeading
- *
- * Positioned under titles for a Go Back button and other page header info.
+/**
+ * @name PageHeading
+ * @description Positioned under titles for a Go Back button and other page header info.
  */
 export const PageHeading = ({ children, style }: ComponentBase) => (
   <div className="core-page-heading" style={style}>
@@ -214,13 +222,39 @@ export const PageHeading = ({ children, style }: ComponentBase) => (
   </div>
 );
 
-/* ButtonRow
- *
- * A flex container for a row of buttons
+/**
+ * @name ButtonRow
+ * @description A flex container for a row of buttons.
  */
 export const ButtonRow = ({ children, style, yMargin }: RowProps) => (
   <div
     className={`core-button-row${valEmpty(yMargin, "y-margin")}`}
+    style={style}
+  >
+    {children}
+  </div>
+);
+
+/* RowSection
+ *
+ * The primary/secondary module in a PageRow.
+ */
+export const RowSection = ({
+  children,
+  style,
+  verticalOrder,
+  paddingLeft,
+  secondary,
+}: RowSectionProps) => (
+  <div
+    className={`${valOr(
+      secondary,
+      "core-row-secondary",
+      "core-row-primary"
+    )}${valEmpty(verticalOrder, "vertical-order")}${valEmpty(
+      paddingLeft,
+      "padding-left"
+    )}`}
     style={style}
   >
     {children}
