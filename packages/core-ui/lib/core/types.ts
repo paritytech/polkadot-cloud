@@ -52,7 +52,7 @@ export type RowProps = ComponentBase & {
   yMargin?: boolean;
 };
 
-export type RowPrimaryOrRowSecondaryProps = ComponentBase & {
+export type RowSectionProps = ComponentBase & {
   // the css order of the component
   verticalOrder?: boolean;
   // true means padding on the left and false means padding on the right

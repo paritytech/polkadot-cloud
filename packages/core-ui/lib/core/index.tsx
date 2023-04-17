@@ -11,7 +11,7 @@ import {
   SideProps,
   PageTitleProps,
   PageTitleTabProps,
-  RowPrimaryOrRowSecondaryProps,
+  RowSectionProps,
 } from "./types";
 import { ButtonSecondary } from "../buttons/ButtonSecondary";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -228,17 +228,17 @@ export const ButtonRow = ({ children, style, yMargin }: RowProps) => (
   </div>
 );
 
-/* RowPrimaryOrRowSecondary
+/* RowSection
  *
  * The primary/secondary module in a PageRow.
  */
-export const RowPrimaryOrRowSecondary = ({
+export const RowSection = ({
   children,
   style,
   verticalOrder,
   paddingLeft,
   secondary,
-}: RowPrimaryOrRowSecondaryProps) => (
+}: RowSectionProps) => (
   <div
     className={`${valOr(
       secondary,
