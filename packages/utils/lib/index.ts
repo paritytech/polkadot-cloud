@@ -101,7 +101,7 @@ export const shuffle = <T>(array: Array<T>) => {
  * @name pageFromUri
  * @description Use url variables to load the default components upon the first page visit.
  */
-export const pageFromUri = (pathname: string, fallback?: string) => {
+export const pageFromUri = (pathname: string, fallback: string) => {
   const lastUriItem = pathname.substring(pathname.lastIndexOf("/") + 1);
   const page = lastUriItem.trim() === "" ? fallback : lastUriItem;
   return page;
