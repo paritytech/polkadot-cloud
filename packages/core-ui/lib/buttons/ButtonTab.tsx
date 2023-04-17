@@ -12,8 +12,9 @@ export type ButtonTabProps = ComponentBase &
     title: string;
   };
 
-/*
- * Tab button used throughout dashboard apps.
+/**
+ * @name ButtonTab
+ * @description Tab button used throughout dashboard apps.
  */
 export const ButtonTab = ({
   disabled,

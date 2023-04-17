@@ -13,8 +13,9 @@ export type ButtonMonoProps = ComponentBase &
     text: string;
   };
 
-/*
- * Plain button style used within the main interface of dashboards.
+/**
+ * @name ButtonText
+ * @description Plain button style used within the main interface of dashboards.
  */
 export const ButtonText = ({
   disabled,

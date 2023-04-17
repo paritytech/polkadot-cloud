@@ -15,8 +15,9 @@ export type ButtonMonoProps = ComponentBase &
     text: string;
   };
 
-/*
- * Inverted monotone button style used within the main interface of dashboards.
+/**
+ * @name ButtonMonoInvert
+ * @description Inverted monotone button style used within the main interface of dashboards.
  */
 export const ButtonMonoInvert = ({
   disabled,

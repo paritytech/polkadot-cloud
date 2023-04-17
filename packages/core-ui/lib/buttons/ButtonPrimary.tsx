@@ -17,8 +17,9 @@ export type ButtonPrimaryProps = ComponentBase &
     text: string;
   };
 
-/*
- * Primary button style used within the main interface of dashboards.
+/**
+ * @name ButtonPrimary
+ * @description Primary button style used within the main interface of dashboards.
  */
 export const ButtonPrimary = ({
   colorSecondary,
