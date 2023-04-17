@@ -4,13 +4,14 @@ SPDX-License-Identifier: Apache-2.0 */
 import { ComponentBase } from "../types";
 import { RefObject, forwardRef, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { valEmpty } from "../utils";
+import { valEmpty, valOr } from "../utils";
 import {
   EntryProps,
   RowProps,
   SideProps,
   PageTitleProps,
   PageTitleTabProps,
+  RowSectionProps,
 } from "./types";
 import { ButtonSecondary } from "../buttons/ButtonSecondary";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -221,6 +222,32 @@ export const PageHeading = ({ children, style }: ComponentBase) => (
 export const ButtonRow = ({ children, style, yMargin }: RowProps) => (
   <div
     className={`core-button-row${valEmpty(yMargin, "y-margin")}`}
+    style={style}
+  >
+    {children}
+  </div>
+);
+
+/* RowSection
+ *
+ * The primary/secondary module in a PageRow.
+ */
+export const RowSection = ({
+  children,
+  style,
+  verticalOrder,
+  paddingLeft,
+  secondary,
+}: RowSectionProps) => (
+  <div
+    className={`${valOr(
+      secondary,
+      "core-row-secondary",
+      "core-row-primary"
+    )}${valEmpty(verticalOrder, "vertical-order")}${valEmpty(
+      paddingLeft,
+      "padding-left"
+    )}`}
     style={style}
   >
     {children}
