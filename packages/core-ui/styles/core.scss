@@ -277,7 +277,7 @@ SPDX-License-Identifier: Apache-2.0 */
     width: 56%;
   }
 
-  @media (min-width: (v.$inner-container-max-width + 400px)) {
+  @media (min-width: (v.$section-full-width-threshold + 400px)) {
     flex-basis: 62%;
     width: 62%;
   }
@@ -308,7 +308,7 @@ SPDX-License-Identifier: Apache-2.0 */
     max-width: none;
   }
 
-  @media (min-width: (v.$inner-container-max-width + 400px)) {
+  @media (min-width: (v.$section-full-width-threshold + 400px)) {
     flex-basis: 38%;
     max-width: 38%;
   }
