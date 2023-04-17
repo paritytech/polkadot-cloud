@@ -54,8 +54,8 @@ Main.displayName = "Main";
 /**
  * @name Page
  * @description
- * A motion.div that wraps every page.
- * Transitions can be applied to this wrapper that will affect the entire page.
+ * A motion.div that wraps every page. Transitions can be applied to this wrapper that will affect
+ * the entire page.
  */
 export const Page = ({ children, style }: ComponentBase) => {
   return (
@@ -74,7 +74,8 @@ export const Page = ({ children, style }: ComponentBase) => {
 
 /**
  * @name Side
- * @description An element that houses the side menu and transitions to a toggle-able fixed overlay on smaller screens.
+ * @description An element that houses the side menu and transitions to a toggle-able fixed overlay
+ * on smaller screens.
  * @summary Handles maximised and minimised transitions.
  */
 export const Side = ({ children, style, open, minimised }: SideProps) => (
@@ -92,8 +93,8 @@ export const Side = ({ children, style, open, minimised }: SideProps) => (
 /**
  * @name PageTitle
  * @description
- * The element that wraps a page title.
- * Determines the padding and position relative to top of screen when the element is stuck.
+ * The element that wraps a page title. Determines the padding and position relative to top of
+ * screen when the element is stuck.
  */
 export const PageTitle = ({ title, button, tabs = [] }: PageTitleProps) => {
   const [sticky, setSticky] = useState(false);
@@ -176,8 +177,8 @@ export const PageTitleTabs = ({ sticky, tabs = [] }: PageTitleProps) => (
 /**
  * @name HideScrollable
  * @description
- * A fixed block that is used to hide scrollable content on smaller screens when a PageTitle is fixed.
- * Purely cosmetic. Applied in Pagetitle.
+ * A fixed block that is used to hide scrollable content on smaller screens when a PageTitle is
+ * fixed. Purely cosmetic. Applied in PageTitle.
  */
 export const HideScrollable = ({ children, style }: ComponentBase) => (
   <div className="core-hide-scrollable" style={style}>
@@ -187,7 +188,8 @@ export const HideScrollable = ({ children, style }: ComponentBase) => (
 
 /**
  * @name PageRow
- * @description Used to separate page content based on rows. Commonly used with RowPrimary and RowSecondary.
+ * @description Used to separate page content based on rows. Commonly used with RowPrimary and
+ * RowSecondary.
  */
 export const PageRow = ({ children, style, yMargin }: RowProps) => (
   <div
@@ -200,7 +202,8 @@ export const PageRow = ({ children, style, yMargin }: RowProps) => (
 
 /**
  * @name Separator
- * @description A horizontal spacer with a bottom border. General spacer for separating content by row.
+ * @description A horizontal spacer with a bottom border. General spacer for separating content by
+ * row.
  */
 export const Separator = ({ children, style }: ComponentBase) => (
   <div className="core-separator" style={style}>
@@ -220,7 +223,7 @@ export const PageHeading = ({ children, style }: ComponentBase) => (
 
 /**
  * @name ButtonRow
- * @description A flex container for a row of buttons
+ * @description A flex container for a row of buttons.
  */
 export const ButtonRow = ({ children, style, yMargin }: RowProps) => (
   <div
