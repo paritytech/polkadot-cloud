@@ -16,8 +16,9 @@ export type ButtonPrimaryInvertProps = ComponentBase &
     text: string;
   };
 
-/*
- * Invert primary button style.
+/**
+ * @name ButtonPrimaryInvert
+ * @description Invert primary button style.
  */
 export const ButtonPrimaryInvert = ({
   colorSecondary,

@@ -13,8 +13,9 @@ export type ButtonSubmitInvertProps = ComponentBase &
     text: string;
   };
 
-/*
- * Invert submit button style used in modals.
+/**
+ * @name ButtonSubmitInvert
+ * @description Invert submit button style used in modals.
  */
 export const ButtonSubmitInvert = ({
   disabled,

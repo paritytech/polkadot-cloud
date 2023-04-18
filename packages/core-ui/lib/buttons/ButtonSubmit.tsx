@@ -15,8 +15,9 @@ export type ButtonSubmitProps = ComponentBase &
     text: string;
   };
 
-/*
- * Submit button style used within modals to submit transactions.
+/**
+ * @name ButtonSubmit
+ * @description Submit button style used within modals to submit transactions.
  */
 export const ButtonSubmit = ({
   colorSecondary,

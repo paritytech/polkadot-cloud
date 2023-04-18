@@ -14,8 +14,9 @@ export type ButtonSecondaryProps = ComponentBase &
     text: string;
   };
 
-/*
- * Secondary button style used within the main interface of dashboards.
+/**
+ * @name ButtonSecondary
+ * @description Secondary button style used within the main interface of dashboards.
  */
 export const ButtonSecondary = ({
   disabled,
