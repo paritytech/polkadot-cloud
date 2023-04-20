@@ -45,6 +45,8 @@ export type PageTitleTabProps = {
   active: boolean;
   // it leads to the corresponding tab page
   onClick: () => void;
+  // a badge that can have a glance at before visting the tab page
+  badge?: string | number;
 };
 
 export type RowProps = ComponentBase & {
