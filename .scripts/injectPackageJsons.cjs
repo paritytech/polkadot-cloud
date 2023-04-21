@@ -45,8 +45,6 @@ fs.readdir(packagesDir, (_, files) => {
     // Merge properties with `hardcoded`.
     const merged = Object.assign({}, Object.fromEntries(filtered), hardcoded);
 
-    console.log(merged);
-
     // Write `package.json` to the bundle.
     fs.writeFile(
       `${pathtoPackage}/dist/package.json`,
