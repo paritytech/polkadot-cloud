@@ -4,12 +4,9 @@
 const fs = require('fs');
 const { join } = require("path");
 const prettier = require("prettier");
+const packagesDir = join(__dirname, '..', 'packages');
 
-// Components locale directory.
-const coreUilocaleDir = join(__dirname, "..", "packages/core-ui");
-// TODO: will add this session when the formating is fixed
-const utilslocaleDir = join(__dirname, "..", "packages/utils");
-
+// Hardcoded properties that will be included in resulting `package.json`.
 const hardcoded = {
   types: "index.d.ts",
   main: "index.tsx",
@@ -19,28 +16,41 @@ const hardcoded = {
   },
 };
 
-// Read the package.json and copy the necessary properties
-const json = JSON.parse(
-  fs.readFileSync(`${coreUilocaleDir}/package.json`).toString()
-);
+// Loop packages to inject `package.json` into bundles.
+fs.readdir(packagesDir, (_, files) => {
+  files.forEach((file) => {
+    const pathToFile = path.join(packagesDir, file);
 
-const keys = [
-  "name",
-  "license",
-  "version",
-  "author",
-  "description",
-  "peerDependencies",
-];
-const filted = Object.entries(json).filter((k) => keys.includes(k));
+    // Read `package.json` of the package.
+    const json = JSON.parse(
+      fs.readFileSync(pathToFile).toString()
+    );
 
-fs.writeFileSync(
-  `${coreUilocaleDir}/package.json`,
-  prettier.format(JSON.stringify(filted), { parser: "json" }),
-  (err) => {
-    if (err) {
-      console.log(err.message);
-    }
-    console.log("File has been edited");
-  }
-);
+    // Keys to copy from the file.
+    const keys = [
+      "name",
+      "license",
+      "version",
+      "author",
+      "description",
+      "peerDependencies",
+    ];
+
+    // Get properties of interest.
+    const filtered = Object.entries(json).filter((k) => keys.includes(k));
+
+    // Merge properties with hardcoded
+    const merged = Object.assign({}, Object.fromEntries(filtered), hardcoded);
+
+    fs.writeFileSync(
+      `${packagesDir}/dist/package.json`,
+      prettier.format(JSON.stringify(merged), { parser: "json" }),
+      (err) => {
+        if (err) {
+          console.log(err.message);
+        }
+        console.log("File has been injected into the package bundle.");
+      }
+    );
+  });
+});
