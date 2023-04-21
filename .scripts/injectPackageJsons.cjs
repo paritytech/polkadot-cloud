@@ -19,7 +19,7 @@ const hardcoded = {
 // Loop packages to inject `package.json` into bundles.
 fs.readdir(packagesDir, (_, files) => {
   files.forEach((file) => {
-    const pathToFile = path.join(packagesDir, file);
+    const pathToFile = join(packagesDir, file);
 
     // Read `package.json` of the package.
     const json = JSON.parse(
