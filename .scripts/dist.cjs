@@ -39,9 +39,10 @@ fs.readdir(packagesDir, (_, files) => {
     // Get properties of interest.
     const filtered = Object.entries(json).filter((k) => keys.includes(k));
 
-    // Merge properties with hardcoded
+    // Merge properties with `hardcoded`.
     const merged = Object.assign({}, Object.fromEntries(filtered), hardcoded);
 
+    // Write `package.json` to the bundle.
     fs.writeFileSync(
       `${packagesDir}/dist/package.json`,
       prettier.format(JSON.stringify(merged), { parser: "json" }),
