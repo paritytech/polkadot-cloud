@@ -1,7 +1,7 @@
-/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
-SPDX-License-Identifier: Apache-2.0 */
+// Copyright 2023 @paritytech/polkadot-staking-dashboard authors & contributors
+// SPDX-License-Identifier: Apache-2.0
 
-const fs = require("fs");
+const fs = require('fs');
 const { join } = require("path");
 const prettier = require("prettier");
 
