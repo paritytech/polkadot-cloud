@@ -19,7 +19,8 @@ const hardcoded = {
 // Loop packages to inject `package.json` into bundles.
 fs.readdir(packagesDir, (_, files) => {
   files.forEach((file) => {
-    const pathToFile = join(packagesDir, file);
+    const pathtoPackage = join(packagesDir, file);
+    const pathToFile = join(pathtoPackage, 'package.json');
 
     // Read `package.json` of the package.
     const json = JSON.parse(
@@ -37,14 +38,18 @@ fs.readdir(packagesDir, (_, files) => {
     ];
 
     // Get properties of interest.
-    const filtered = Object.entries(json).filter((k) => keys.includes(k));
+    const filtered = Object.entries(json).filter((k) => {
+      return keys.includes(k[0]);
+    });
 
     // Merge properties with `hardcoded`.
     const merged = Object.assign({}, Object.fromEntries(filtered), hardcoded);
 
+    console.log(merged);
+
     // Write `package.json` to the bundle.
-    fs.writeFileSync(
-      `${packagesDir}/dist/package.json`,
+    fs.writeFile(
+      `${pathtoPackage}/dist/package.json`,
       prettier.format(JSON.stringify(merged), { parser: "json" }),
       (err) => {
         if (err) {
