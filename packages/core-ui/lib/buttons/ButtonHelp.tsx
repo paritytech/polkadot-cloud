@@ -11,8 +11,9 @@ export type ButtonHelpProps = ComponentBase &
     backgroundSecondary?: boolean;
   };
 
-/*
- * Help button used throughout dashboard apps.
+/**
+ * @name ButtonHelp
+ * @description Help button used throughout dashboard apps.
  */
 export const ButtonHelp = ({
   disabled,

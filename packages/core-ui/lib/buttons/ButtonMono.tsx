@@ -15,8 +15,9 @@ export type ButtonMonoProps = ComponentBase &
     text: string;
   };
 
-/*
- * Monotone button style used within the main interface of dashboards.
+/**
+ * @name ButtonMono
+ * @description Monotone button style used within the main interface of dashboards.
  */
 export const ButtonMono = ({
   disabled,
