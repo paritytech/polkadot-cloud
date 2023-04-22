@@ -21,8 +21,8 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 }
 
-@mixin padding-left {
-  &.padding-left {
+@mixin row-section-first {
+  &.first{
     @media (min-width: (v.$page-width-medium-threshold + 1px)) {
       padding-left: 0.75rem;
       order: 1;
@@ -30,8 +30,8 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 }
 
-@mixin padding-right {
-  &.padding-right {
+@mixin row-section-last {
+  &.last{
     @media (min-width: (v.$page-width-medium-threshold + 1px)) {
       padding-right: 0.75rem;
     }
@@ -270,8 +270,8 @@ SPDX-License-Identifier: Apache-2.0 */
 }
 
 .core-row-primary {
-  @include padding-left;
-  @include padding-right;
+  @include row-section-first;
+  @include row-section-last;
 
   order: 0;
   flex: 1;
@@ -290,21 +290,21 @@ SPDX-License-Identifier: Apache-2.0 */
     width: 62%;
   }
 
-  &.vertical-order {
+  &.v-last {
     order: 1;
   }
 }
 
 .core-row-secondary {
-  @include padding-left;
-  @include padding-right;
+  @include row-section-first;
+  @include row-section-last;
 
   order: 0;
   flex-basis: 100%;
   width: 100%;
   border-radius: 1rem;
 
-  &.vertical-order {
+  &.v-last {
     order: 1;
   }
 

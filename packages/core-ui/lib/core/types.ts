@@ -54,9 +54,9 @@ export type RowProps = ComponentBase & {
 
 export type RowSectionProps = ComponentBase & {
   // the css order of the component for vertical layouts
-  verticalOrder?: boolean;
+  vLast?: boolean;
   // true means padding on the left and false means padding on the right
-  paddingLeft?: boolean;
+  hLast?: boolean;
   // true means the secondary element and  false means the primary one
   secondary?: boolean;
 };

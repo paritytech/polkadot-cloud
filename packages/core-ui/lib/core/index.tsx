@@ -242,8 +242,8 @@ export const ButtonRow = ({ children, style, yMargin }: RowProps) => (
 export const RowSection = ({
   children,
   style,
-  verticalOrder,
-  paddingLeft,
+  vLast,
+  hLast,
   secondary,
 }: RowSectionProps) => (
   <div
@@ -251,11 +251,7 @@ export const RowSection = ({
       secondary,
       "core-row-secondary",
       "core-row-primary"
-    )}${valEmpty(verticalOrder, "vertical-order")}${valOr(
-      paddingLeft,
-      "padding-left",
-      "padding-right"
-    )}`}
+    )}${valEmpty(vLast, "v-last")}${valOr(hLast, "first", "last")}`}
     style={style}
   >
     {children}
