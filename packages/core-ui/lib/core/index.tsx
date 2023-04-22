@@ -252,9 +252,10 @@ export const RowSection = ({
       secondary,
       "core-row-secondary",
       "core-row-primary"
-    )}${valEmpty(verticalOrder, "vertical-order")}${valEmpty(
+    )}${valEmpty(verticalOrder, "vertical-order")}${valOr(
       paddingLeft,
-      "padding-left"
+      "padding-left",
+      "padding-right"
     )}`}
     style={style}
   >
