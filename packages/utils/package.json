@@ -4,8 +4,13 @@
   "version": "0.2.15",
   "author": "Ross Bulat",
   "description": "Utilities for Polkadot Dashboards.",
+  "keywords": ["Polkadot", "UI"],
+  "bugs": {
+    "url": "https://github.com/paritytech/polkadot-dashboard-ui/issues"
+  },
+  "homepage": "https://github.com/paritytech/polkadot-dashboard-ui#readme",
   "scripts": {
-    "build": "rollup -c && cp dist.package.json dist/package.json",
+    "build": "rollup -c",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   },
   "peerDependencies": {

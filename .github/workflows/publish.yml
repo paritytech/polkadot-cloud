@@ -1,64 +1,55 @@
-# name: Publish
+name: Publish
 
-# on:
-#   push:
-#     branches: [main]
+on:
+  push:
+    branches: [nik-fix-publish]
 
-# jobs:
-#   npm-publish:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v3.5.0
-#       - run: yarn install
-#       - uses: actions/setup-node@v3
-#         with:
-#           node-version: 18
-#       - name: Build NPM Package
-#         run: yarn build
-#       - name: Check if 'core-ui' version has been updated
-#         id: core_ui_version
-#         uses: PostHog/check-package-version@v2
-#         with:
-#           path: "./packages/core-ui"
-#       - name: Check if 'utils' version has been updated
-#         id: utils_version
-#         uses: PostHog/check-package-version@v2
-#         with:
-#           path: "./packages/utils"
+jobs:
+  npm-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.5.0
+      - run: yarn install
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Build NPM Package
+        run: yarn build
+      - name: Check if 'core-ui' version has been updated
+        id: core_ui_version
+        uses: PostHog/check-package-version@v2
+        with:
+          path: "./packages/core-ui"
+      - name: Check if 'utils' version has been updated
+        id: utils_version
+        uses: PostHog/check-package-version@v2
+        with:
+          path: "./packages/utils"
 
-#       - name: Publish Dry Run Core UI
-#         working-directory: "./packages/core-ui"
-#         run: npm publish --unsafe-perm --dry-run
-#       ### this will be executed only if the commited version has increased over the published version or else will be skipped
-#       - name: Publish core-ui to npm
-#         if: steps.core_ui_version.outputs.is-new-version == 'true'
-#         id: publish_core_ui
-#         uses: JS-DevTools/npm-publish@v1
-#         # Warning: this GitHub action doesn't seem to run prepublish scripts, hence
-#         # the `npm publish --dry-run` done right above is important to ensure this.
-#         with:
-#           token: ${{ secrets.NPM_TOKEN }}
-#           package: ./packages/core-ui/package.json
-#           access: public
-#       - name: Publish Dry Run Utils
-#         working-directory: "./packages/utils"
-#         run: npm publish --unsafe-perm --dry-run
-#       ### this will be executed only if the commited version has increased over the published version or else will be skipped
-#       - name: Publish utils to npm
-#         if: steps.utils_version.outputs.is-new-version == 'true'
-#         id: publish_utils
-#         uses: JS-DevTools/npm-publish@v1
-#         # Warning: this GitHub action doesn't seem to run prepublish scripts, hence
-#         # the `npm publish --dry-run` done right above is important to ensure this.
-#         with:
-#           token: ${{ secrets.NPM_TOKEN }}
-#           package: ./packages/utils/package.json
-#           access: public
+      - name: Publish Dry Run Core UI
+        run: npm publish --unsafe-perm --dry-run
+        working-directory: "./packages/core-ui/dist"
+      - name: Publish core-ui to npm
+        if: steps.core_ui_version.outputs.is-new-version == 'true'
+        working-directory: "./packages/core-ui/dist"
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-#   all:
-#     # This dummy job depends on all the mandatory checks. It succeeds if and only if all CI checks
-#     # are successful.
-#     needs: [npm-publish]
-#     runs-on: ubuntu-latest
-#     steps:
-#       - run: echo Success
+      - name: Publish Dry Run Utils
+        run: npm publish --unsafe-perm --dry-run
+        working-directory: "./packages/utils/dist"
+      - name: Publish utils to npm
+        if: steps.utils_version.outputs.is-new-version == 'true'
+        run: npm publish
+        working-directory: "./packages/utils/dist"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  all:
+    # This dummy job depends on all the mandatory checks. It succeeds if and only if all CI checks
+    # are successful.
+    needs: [npm-publish]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Success

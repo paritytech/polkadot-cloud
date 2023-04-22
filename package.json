@@ -6,7 +6,7 @@
   "description": "Polkadot Dashboard UI",
   "private": "true",
   "scripts": {
-    "build": "npm run build --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present && node .scripts/injectPackageJsons.cjs",
     "clear": "npm run --workspaces clear && rm -rf node_modules",
     "lint": "eslint './**' --fix && npx prettier --write . && npx stylelint '**/*.scss' --fix",
     "sandbox": "npm run dev -w sandbox"
