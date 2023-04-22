@@ -8,7 +8,7 @@
     "SPDX-License-Identifier: Apache-2.0 */"
   ],
   "**/*.cjs": [
-    "// Copyright 2023 @paritytech/polkadot-staking-dashboard authors & contributors",
+    "// Copyright 2023 @paritytech/polkadot-staking-dashboard-ui authors & contributors",
     "// SPDX-License-Identifier: Apache-2.0"
   ],
   "ignore": ["testdata", "npm"]
