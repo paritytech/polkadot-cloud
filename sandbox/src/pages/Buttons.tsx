@@ -18,6 +18,7 @@ import {
 import { CodeDrawer } from "../components/CodeDrawer";
 import { Separator } from "core-ui/core";
 import { ButtonTab } from "core-ui/index";
+import { ButtonPulse } from "core-ui/buttons/ButtonPulse";
 
 export const Buttons = () => (
   <>
@@ -239,7 +240,7 @@ export const Buttons = () => (
         <p>{`<ButtonHelp backgroundSecondary />`}</p>
       </code>
     </CodeDrawer>
-
+    <Separator />
     <h4>Button Tab</h4>
     <div className="row">
       <ButtonTab title={"Inactive"} />
@@ -250,6 +251,28 @@ export const Buttons = () => (
         <p>{`<ButtonTab title={"Inactive"} />`}</p>
         <p>{`<ButtonTab active title={"Active"} />`}</p>
       </code>
+    </CodeDrawer>
+    <Separator />
+    <h4>Button Pulse</h4>
+    <div className="row">
+      <ButtonPulse text="Button" marginRight />
+      <ButtonPulse
+        text="Button"
+        iconLeft={faArrowAltCircleUp}
+        marginRight
+        colorSecondary
+      />
+      <ButtonPulse text="Button" iconRight={faArrowAltCircleUp} marginRight />
+      <ButtonPulse
+        text="Button"
+        iconLeft={faArrowAltCircleUp}
+        iconRight={faArrowAltCircleUp}
+        marginRight
+      />
+      <ButtonPulse text="Button" disabled />
+    </div>
+    <CodeDrawer>
+      <code></code>
     </CodeDrawer>
   </>
 );

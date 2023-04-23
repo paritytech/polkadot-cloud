@@ -44,6 +44,8 @@ SPDX-License-Identifier: Apache-2.0 */
     --network-color-transparent-dark: rgb(211 48 121 / 5%);
     --network-color-pending-light: rgb(211 48 121 / 33%);
     --network-color-pending-dark: rgb(211 48 121 / 33%);
+    --network-color-pulse-light: rgb(211 48 121 / 70%);
+    --network-color-pulse-dark: rgb(211 48 121 / 70%);
   }
 
   .theme-kusama {
@@ -57,6 +59,8 @@ SPDX-License-Identifier: Apache-2.0 */
     --network-color-transparent-dark: rgb(102 102 102 / 5%);
     --network-color-pending-light: rgb(51 51 51 / 33%);
     --network-color-pending-dark: rgb(102 102 102 / 33%);
+    --network-color-pulse-light: rgb(51 51 51 / 70%);
+    --network-color-pulse-dark: rgb(102 102 102 / 70%);
   }
 
   .theme-westend {
@@ -70,6 +74,8 @@ SPDX-License-Identifier: Apache-2.0 */
     --network-color-transparent-dark: rgb(218 78 113 / 5%);
     --network-color-pending-light: rgb(218 78 113 / 33%);
     --network-color-pending-dark: rgb(218 78 113 / 33%);
+    --network-color-pulse-light: rgb(218 78 113 / 70%);
+    --network-color-pulse-dark: rgb(218 78 113 / 70%);
   }
 
   /* light and dark theme colors */
@@ -100,6 +106,7 @@ SPDX-License-Identifier: Apache-2.0 */
     --network-color-stroke: var(--network-color-stroke-light);
     --network-color-transparent: var(--network-color-transparent-light);
     --network-color-pending: var(--network-color-pending-light);
+    --network-color-pulse: var(--network-color-pulse-light);
     --overlay-modal-color: rgb(230 228 228 / 60%);
     --shimmer-foreground: #e0e0e0;
     --shimmer-background: #ccc;
@@ -162,6 +169,7 @@ SPDX-License-Identifier: Apache-2.0 */
     --network-color-stroke: var(--network-color-stroke-dark);
     --network-color-transparent: var(--network-color-transparent-dark);
     --network-color-pending: var(--network-color-pending-dark);
+    --network-color-pulse: var(--network-color-pulse-dark);
     --overlay-modal-color: rgb(24 20 24 / 60%);
     --shimmer-background: rgb(47 42 48);
     --shimmer-foreground: rgb(32 29 33);
