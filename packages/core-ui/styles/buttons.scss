@@ -66,6 +66,32 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 }
 
+@mixin btn-pulse {
+ box-shadow: 0 0 30px 0 var(--network-color-pending);
+ transform: scale(1);
+ animation: pulse 2s infinite;
+
+ @keyframes pulse {
+   0% {
+     transform: scale(0.95);
+     box-shadow: 0 0 0 0 var(--network-color-pulse);
+   }
+ 
+   70% {
+     transform: scale(1);
+     box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+   }
+ 
+   100% {
+     transform: scale(0.95);
+     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+   }
+ }
+ &:hover {
+   animation: none;
+ }
+}
+
 // buttons/ButtonPrimary
 .btn-primary {
   @include btn-layout;
@@ -233,6 +259,9 @@ SPDX-License-Identifier: Apache-2.0 */
     border-color: var(--network-color-secondary);
     background: var(--network-color-secondary);
   }
+  &.pulse {
+    @include btn-pulse;
+  }
 }
 
 // buttons/ButtonSubmitInvert
@@ -295,48 +324,5 @@ SPDX-License-Identifier: Apache-2.0 */
 
   &.active {
     background: var(--button-secondary-background);
-  }
-}
-
- // buttons/ButtonPulse
- .btn-pulse {
-  @include btn-layout;
-  @include btn-spacing;
-  @include btn-icons;
-  @include btn-submit;
-  @include btn-disabled;
-
-  border: 1px solid var(--network-color-primary);
-  border-radius: var(--button-border-radius-small);
-  background: var(--network-color-primary);
-  color: white;
-
-  &.secondary-color {
-    border-color: var(--network-color-secondary);
-    background: var(--network-color-secondary);
-  }
-
-  box-shadow: 0 0 30px 0 var(--network-color-pending);
-  transform: scale(1);
-  animation: pulse 2s infinite;
-
-  @keyframes pulse {
-    0% {
-      transform: scale(0.95);
-      box-shadow: 0 0 0 0 var(--network-color-pulse);
-    }
-  
-    70% {
-      transform: scale(1);
-      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-    }
-  
-    100% {
-      transform: scale(0.95);
-      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    }
-  }
-  &:hover {
-    animation: none;
   }
 }

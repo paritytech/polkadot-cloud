@@ -18,7 +18,6 @@ import {
 import { CodeDrawer } from "../components/CodeDrawer";
 import { Separator } from "core-ui/core";
 import { ButtonTab } from "core-ui/index";
-import { ButtonPulse } from "core-ui/buttons/ButtonPulse";
 
 export const Buttons = () => (
   <>
@@ -194,6 +193,7 @@ export const Buttons = () => (
         iconRight={faArrowAltCircleUp}
         marginRight
       />
+      <ButtonSubmit text="Button" pulse marginRight />
       <ButtonSubmit text="Button" disabled />
     </div>
     <CodeDrawer>
@@ -202,6 +202,7 @@ export const Buttons = () => (
         <p>{`<ButtonSubmit text="Button" iconLeft={faArrowAltCircleUp} marginRight colorSecondary />`}</p>
         <p>{`<ButtonSubmit text="Button" iconRight={faArrowAltCircleUp} marginRight />`}</p>
         <p>{`<ButtonSubmit text="Button" iconLeft={faArrowAltCircleUp} iconRight={faArrowAltCircleUp} marginRight />`}</p>
+        <p>{`<ButtonSubmit text="Button" pulse marginRight />`}</p>
         <p>{`<ButtonSubmit text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
@@ -253,26 +254,5 @@ export const Buttons = () => (
       </code>
     </CodeDrawer>
     <Separator />
-    <h4>Button Pulse</h4>
-    <div className="row">
-      <ButtonPulse text="Button" marginRight />
-      <ButtonPulse
-        text="Button"
-        iconLeft={faArrowAltCircleUp}
-        marginRight
-        colorSecondary
-      />
-      <ButtonPulse text="Button" iconRight={faArrowAltCircleUp} marginRight />
-      <ButtonPulse
-        text="Button"
-        iconLeft={faArrowAltCircleUp}
-        iconRight={faArrowAltCircleUp}
-        marginRight
-      />
-      <ButtonPulse text="Button" disabled />
-    </div>
-    <CodeDrawer>
-      <code></code>
-    </CodeDrawer>
   </>
 );
