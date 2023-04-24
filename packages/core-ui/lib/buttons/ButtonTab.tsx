@@ -38,6 +38,6 @@ export const ButtonTab = ({
     }}
   >
     {title}
-    {badge}
+    {badge ? <div>{badge}</div> : null}
   </button>
 );

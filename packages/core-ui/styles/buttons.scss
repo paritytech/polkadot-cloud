@@ -296,4 +296,15 @@ SPDX-License-Identifier: Apache-2.0 */
   &.active {
     background: var(--button-secondary-background);
   }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 30%;
+    width: 20px;
+    border-radius: 35%;
+    margin-left: var(--button-spacing-large);
+    background: var( --network-color-secondary);
+    color: white;
+  }
 }
