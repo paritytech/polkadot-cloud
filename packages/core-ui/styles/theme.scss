@@ -75,11 +75,11 @@ SPDX-License-Identifier: Apache-2.0 */
   /* light and dark theme colors */
 
   .theme-light {
-    --background-default: #f5f4f4;
+    --background-default: #f1f0f0;
     --background-primary: #f8f7f7;
     --background-invert: #333;
-    --background-list-item: rgb(237 237 237 / 60%);
-    --background-modal-item: rgb(244 244 244 / 60%);
+    --background-list-item: rgb(238 238 238 / 75%);
+    --background-modal-item: rgb(237 237 237 / 75%);
     --background-floating-card: rgb(255 255 255 / 90%);
     --background-app-footer: rgb(244 225 225 / 75%);
     --background-warning: #fdf9eb;
@@ -87,10 +87,10 @@ SPDX-License-Identifier: Apache-2.0 */
     --background-modal-footer: #efefef;
     --background-menu: #eaeaea;
     --background-input: #fdfdfd;
-    --border-primary-color: #e6e6e6;
+    --border-primary-color: #e4e4e4;
     --border-secondary-color: #ccc;
     --button-primary-background: #efeeee;
-    --button-secondary-background: #eeecec;
+    --button-secondary-background: #e7e5e5;
     --button-tertiary-background: #ececec;
     --button-hover-background: #e8e6e6;
     --card-shadow-color: rgb(158 158 158 / 18%);
@@ -100,7 +100,7 @@ SPDX-License-Identifier: Apache-2.0 */
     --network-color-stroke: var(--network-color-stroke-light);
     --network-color-transparent: var(--network-color-transparent-light);
     --network-color-pending: var(--network-color-pending-light);
-    --overlay-modal-color: rgb(230 228 228 / 60%);
+    --overlay-modal-color: rgb(230 228 228 / 70%);
     --shimmer-foreground: #e0e0e0;
     --shimmer-background: #ccc;
     --status-success-color: green;
@@ -114,9 +114,9 @@ SPDX-License-Identifier: Apache-2.0 */
     --text-color-invert: #fafafa;
     --gradient-background: linear-gradient(
       180deg,
-      #f5f4f4 0%,
-      #f5f4f4 100px,
-      #e6e6e6 80%,
+      #f1f0f0 0%,
+      #f1f0f0 100px,
+      #eaeaea 80%,
       #fdefea 100%
     );
     --gradient-side-menu: linear-gradient(
@@ -137,7 +137,7 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 
   .theme-dark {
-    --background-default: rgb(48 44 48);
+    --background-default: rgb(50 46 50);
     --background-primary: rgb(36 32 36);
     --background-invert: #ddd;
     --background-list-item: rgb(48 43 48 / 60%);
@@ -145,8 +145,8 @@ SPDX-License-Identifier: Apache-2.0 */
     --background-floating-card: rgb(37 32 37 / 94%);
     --background-app-footer: #262327;
     --background-warning: #33332a;
-    --background-modal: rgb(48 43 48);
-    --background-modal-footer: rgb(43 38 43);
+    --background-modal: rgb(43 38 43);
+    --background-modal-footer: rgb(39 34 39);
     --background-menu: rgb(57 52 58);
     --background-input: rgb(72 70 72);
     --border-primary-color: rgb(58 50 58);
@@ -162,7 +162,7 @@ SPDX-License-Identifier: Apache-2.0 */
     --network-color-stroke: var(--network-color-stroke-dark);
     --network-color-transparent: var(--network-color-transparent-dark);
     --network-color-pending: var(--network-color-pending-dark);
-    --overlay-modal-color: rgb(24 20 24 / 60%);
+    --overlay-modal-color: rgb(20 16 20 / 70%);
     --shimmer-background: rgb(47 42 48);
     --shimmer-foreground: rgb(32 29 33);
     --status-success-color: green;
@@ -176,9 +176,9 @@ SPDX-License-Identifier: Apache-2.0 */
     --text-color-invert: #0f0e0f;
     --gradient-background: linear-gradient(
       180deg,
-      rgb(48 44 48) 0%,
-      rgb(48 44 48) 100px,
-      rgb(44 38 44) 100%
+      rgb(50 46 50) 0%,
+      rgb(50 46 50) 100px,
+      rgb(46 40 46) 100%
     );
     --gradient-side-menu: linear-gradient(
       180deg,
