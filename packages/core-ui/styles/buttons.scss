@@ -300,8 +300,8 @@ SPDX-License-Identifier: Apache-2.0 */
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 30%;
-    width: 20px;
+    min-width: 20px;
+    width: fit-content;
     border-radius: 35%;
     margin-left: var(--button-spacing-large);
     background: var( --network-color-secondary);
