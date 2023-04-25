@@ -42,8 +42,8 @@ SPDX-License-Identifier: Apache-2.0 */
     --network-color-stroke-dark: rgb(211 48 121);
     --network-color-transparent-light: rgb(211 48 121 / 5%);
     --network-color-transparent-dark: rgb(211 48 121 / 5%);
-    --network-color-pending-light: rgb(211 48 121 / 33%);
-    --network-color-pending-dark: rgb(211 48 121 / 33%);
+    --network-color-pending-light: rgb(211 48 121 / 50%);
+    --network-color-pending-dark: rgb(211 48 121 / 50%);
   }
 
   .theme-kusama {
@@ -55,8 +55,8 @@ SPDX-License-Identifier: Apache-2.0 */
     --network-color-stroke-dark: #d1d1db;
     --network-color-transparent-light: rgb(51 51 51 / 5%);
     --network-color-transparent-dark: rgb(102 102 102 / 5%);
-    --network-color-pending-light: rgb(51 51 51 / 33%);
-    --network-color-pending-dark: rgb(102 102 102 / 33%);
+    --network-color-pending-light: rgb(51 51 51 / 50%);
+    --network-color-pending-dark: rgb(102 102 102 / 50%);
   }
 
   .theme-westend {
@@ -68,8 +68,8 @@ SPDX-License-Identifier: Apache-2.0 */
     --network-color-stroke-dark: #da4e71;
     --network-color-transparent-light: rgb(218 78 113 / 5%);
     --network-color-transparent-dark: rgb(218 78 113 / 5%);
-    --network-color-pending-light: rgb(218 78 113 / 33%);
-    --network-color-pending-dark: rgb(218 78 113 / 33%);
+    --network-color-pending-light: rgb(218 78 113 / 50%);
+    --network-color-pending-dark: rgb(218 78 113 / 50%);
   }
 
   /* light and dark theme colors */

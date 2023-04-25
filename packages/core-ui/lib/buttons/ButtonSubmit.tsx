@@ -13,6 +13,8 @@ export type ButtonSubmitProps = ComponentBase &
     colorSecondary?: boolean;
     // button text.
     text: string;
+    // pulsing effect.
+    pulse?: boolean;
   };
 
 /**
@@ -32,6 +34,7 @@ export const ButtonSubmit = ({
   marginX,
   style,
   text,
+  pulse,
 }: ButtonSubmitProps) => (
   <motion.button
     whileHover={{ scale: !disabled ? 1.02 : 1 }}
@@ -42,7 +45,7 @@ export const ButtonSubmit = ({
     )}${valEmpty(grow, "grow")}${valEmpty(marginRight, "m-right")}${valEmpty(
       marginLeft,
       "m-left"
-    )}${valEmpty(marginX, "m-x")}`}
+    )}${valEmpty(marginX, "m-x")}${valEmpty(pulse, "pulse")}`}
     style={style}
     type="button"
     disabled={disabled}
