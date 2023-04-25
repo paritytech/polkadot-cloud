@@ -13,7 +13,7 @@ export type ButtonSubmitProps = ComponentBase &
     colorSecondary?: boolean;
     // button text.
     text: string;
-    // pulsing effect
+    // pulsing effect.
     pulse?: boolean;
   };
 
