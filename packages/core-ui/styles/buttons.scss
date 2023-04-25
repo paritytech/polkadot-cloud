@@ -66,7 +66,7 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 }
 
-@mixin btn-pulse {
+@mixin pulse {
  box-shadow: 0 0 30px 0 var(--network-color-pending);
  transform: scale(1);
  animation: pulse 2s infinite;
@@ -86,9 +86,6 @@ SPDX-License-Identifier: Apache-2.0 */
      transform: scale(0.95);
      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
    }
- }
- &:hover {
-   animation: none;
  }
 }
 
@@ -260,7 +257,7 @@ SPDX-License-Identifier: Apache-2.0 */
     background: var(--network-color-secondary);
   }
   &.pulse {
-    @include btn-pulse;
+    @include pulse;
   }
 }
 
