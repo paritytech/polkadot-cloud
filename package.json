@@ -41,7 +41,7 @@
     "rollup-plugin-cleanup": "^3.2.1",
     "sass": "^1.62.0",
     "stylelint": "^15.6.0",
-    "stylelint-config-standard-scss": "^8.0.0",
+    "stylelint-config-standard-scss": "^9.0.0",
     "tslib": "^2.4.0",
     "typescript": "^5.0.4"
   },
