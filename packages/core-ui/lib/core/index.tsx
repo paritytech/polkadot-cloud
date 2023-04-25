@@ -3,7 +3,6 @@ SPDX-License-Identifier: Apache-2.0 */
 
 import { ComponentBase } from "../types";
 import { RefObject, forwardRef, useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 import { valEmpty, valOr } from "../utils";
 import {
   EntryProps,
