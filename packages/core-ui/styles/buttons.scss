@@ -322,15 +322,18 @@ SPDX-License-Identifier: Apache-2.0 */
   &.active {
     background: var(--button-secondary-background);
   }
-  div {
+  > div {
+    @include btn-small;
+    
+    margin-left: var(--button-spacing-large);
+    background: var( --network-color-secondary);
+    font-size: var(--button-font-size-small);
     display: flex;
     align-items: center;
     justify-content: center;
     min-width: 20px;
     width: fit-content;
-    border-radius: 35%;
-    margin-left: var(--button-spacing-large);
-    background: var( --network-color-secondary);
+    border-radius: 15%;
     color: white;
   }
 }

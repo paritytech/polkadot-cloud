@@ -105,7 +105,7 @@ export const PageTitle = ({ title, button, tabs = [] }: PageTitleProps) => {
     if (cachedRef) {
       observer.observe(cachedRef);
     }
-    // unmount
+    // unmount.
     return () => {
       if (cachedRef) {
         observer.unobserve(cachedRef);
