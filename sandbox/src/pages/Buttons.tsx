@@ -193,6 +193,7 @@ export const Buttons = () => (
         iconRight={faArrowAltCircleUp}
         marginRight
       />
+      <ButtonSubmit text="Button" pulse marginRight />
       <ButtonSubmit text="Button" disabled />
     </div>
     <CodeDrawer>
@@ -201,6 +202,7 @@ export const Buttons = () => (
         <p>{`<ButtonSubmit text="Button" iconLeft={faArrowAltCircleUp} marginRight colorSecondary />`}</p>
         <p>{`<ButtonSubmit text="Button" iconRight={faArrowAltCircleUp} marginRight />`}</p>
         <p>{`<ButtonSubmit text="Button" iconLeft={faArrowAltCircleUp} iconRight={faArrowAltCircleUp} marginRight />`}</p>
+        <p>{`<ButtonSubmit text="Button" pulse marginRight />`}</p>
         <p>{`<ButtonSubmit text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
@@ -239,7 +241,7 @@ export const Buttons = () => (
         <p>{`<ButtonHelp backgroundSecondary />`}</p>
       </code>
     </CodeDrawer>
-
+    <Separator />
     <h4>Button Tab</h4>
     <div className="row">
       <ButtonTab title={"Inactive"} />
@@ -251,5 +253,6 @@ export const Buttons = () => (
         <p>{`<ButtonTab active title={"Active"} />`}</p>
       </code>
     </CodeDrawer>
+    <Separator />
   </>
 );

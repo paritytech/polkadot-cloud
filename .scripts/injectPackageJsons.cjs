@@ -1,10 +1,10 @@
 // Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-const fs = require('fs');
+const fs = require("fs");
 const { join } = require("path");
 const prettier = require("prettier");
-const packagesDir = join(__dirname, '..', 'packages');
+const packagesDir = join(__dirname, "..", "packages");
 
 // Hardcoded properties that will be included in resulting `package.json`.
 const hardcoded = {
@@ -20,12 +20,10 @@ const hardcoded = {
 fs.readdir(packagesDir, (_, files) => {
   files.forEach((file) => {
     const pathtoPackage = join(packagesDir, file);
-    const pathToFile = join(pathtoPackage, 'package.json');
+    const pathToFile = join(pathtoPackage, "package.json");
 
     // Read `package.json` of the package.
-    const json = JSON.parse(
-      fs.readFileSync(pathToFile).toString()
-    );
+    const json = JSON.parse(fs.readFileSync(pathToFile).toString());
 
     // Keys to copy from the file.
     const keys = [
