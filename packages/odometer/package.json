@@ -1,5 +1,5 @@
 {
-  "name": "@polkadotcloud/polkadotcloud/odometer",
+  "name": "@polkadotcloud/odometer",
   "license": "Apache-2.0",
   "version": "0.0.1",
   "description": "Odometer Components for Polkadot Dashboards.",
@@ -31,5 +31,5 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "latest",
     "typescript": "*"
-  },
+  }
 }
