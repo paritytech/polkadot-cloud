@@ -18,8 +18,7 @@
     "fix": "sed '1d' ./dist/index.d.ts > ./tmp.d.ts; mv ./tmp.d.ts ./dist/index.d.ts"
   },
   "dependencies": {
-    "@rollup/plugin-commonjs": "^24.1.0",
-    "odometer": "^0.4.8"
+    "@rollup/plugin-commonjs": "^24.1.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
