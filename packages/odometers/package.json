@@ -1,0 +1,41 @@
+{
+  "name": "@polkadotcloud/odometers",
+  "license": "Apache-2.0",
+  "version": "0.0.01",
+  "author": "Ross Bulat",
+  "description": "Odometers Components for Polkadot Dashboards.",
+  "keywords": [
+    "Polkadot",
+    "Odometers"
+  ],
+  "bugs": {
+    "url": "https://github.com/paritytech/polkadot-dashboard-ui/issues"
+  },
+  "homepage": "https://github.com/paritytech/polkadot-dashboard-ui#readme",
+  "scripts": {
+    "build": "rollup -c && yarn fix",
+    "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo",
+    "fix": "sed '1d' ./dist/index.d.ts > ./tmp.d.ts; mv ./tmp.d.ts ./dist/index.d.ts"
+  },
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "odometer": "^0.4.8"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.23",
+    "rollup": "^2.78.1",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.34.1"
+  }
+}
