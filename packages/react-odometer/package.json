@@ -15,7 +15,7 @@
   "scripts": {
     "build": "rollup -c && yarn fix",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo",
-    "fix": "sed '1d' ./dist/index.d.ts > ./tmp.d.ts; mv ./tmp.d.ts ./dist/index.d.ts"
+    "fix": "sed '3d' ./dist/index.d.ts > ./tmp.d.ts; mv ./tmp.d.ts ./dist/index.d.ts"
   },
   "peerDependencies": {
     "react": "^18.2.0",
