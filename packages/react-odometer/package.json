@@ -1,9 +1,9 @@
 {
-  "name": "@polkadotcloud/odometers",
+  "name": "@polkadotcloud/react-odometer",
   "license": "Apache-2.0",
   "version": "0.0.01",
   "author": "Ross Bulat",
-  "description": "Odometers Components for Polkadot Dashboards.",
+  "description": "React Odometer for Polkadot Dashboards.",
   "keywords": [
     "Polkadot",
     "Odometers"
@@ -17,9 +17,6 @@
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo",
     "fix": "sed '1d' ./dist/index.d.ts > ./tmp.d.ts; mv ./tmp.d.ts ./dist/index.d.ts"
   },
-  "dependencies": {
-    "@rollup/plugin-commonjs": "^24.1.0"
-  },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -27,6 +24,7 @@
   "devDependencies": {
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-commonjs": "^24.1.0",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.23",
     "rollup": "^2.78.1",

@@ -1,10 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-shadow */
-/* eslint-disable @typescript-eslint/no-this-alias */
-/* eslint-disable no-constant-condition */
-/* eslint-disable no-undef */
-/* eslint-disable no-useless-escape */
-/* eslint-disable no-setter-return */
 (function () {
   var COUNT_FRAMERATE,
     COUNT_MS_PER_FRAME,
