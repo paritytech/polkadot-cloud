@@ -4,6 +4,7 @@ SPDX-License-Identifier: Apache-2.0 */
 import { useEffect, useRef, type FC } from "react";
 import { ReactOdometerProps } from "./types";
 import Odometer from "odometer";
+import "../mini.css";
 
 export const ReactOdometer: FC<ReactOdometerProps> = ({ duration, value }) => {
   const node = useRef<HTMLDivElement>(null);
