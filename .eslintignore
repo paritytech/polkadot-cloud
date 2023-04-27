@@ -18,4 +18,6 @@ postcss.config.js
 README.md
 *.tsconfig.json
 *.tsbuildinfo
-*.js
+
+# react-odometer
+odometer.js
