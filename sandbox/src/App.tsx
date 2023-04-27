@@ -4,6 +4,7 @@ SPDX-License-Identifier: Apache-2.0 */
 import { useState } from "react";
 import { Buttons } from "./pages/Buttons";
 import { SideMenu } from "./components/SideMenu";
+import { Odometer } from "./pages/Odometer";
 
 export const App = () => {
   // store the current theme
@@ -17,6 +18,9 @@ export const App = () => {
 
   const getComponent = (key: string) => {
     switch (key) {
+      case "odometer": {
+        return <Odometer />;
+      }
       default:
         return <Buttons />;
     }
@@ -30,6 +34,7 @@ export const App = () => {
           setTheme={setTheme}
           network={network}
           setNetwork={setNetwork}
+          component={component}
           setComponent={setComponent}
         />
         <div className="body">{getComponent(component)}</div>

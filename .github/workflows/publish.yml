@@ -20,6 +20,11 @@ jobs:
         uses: PostHog/check-package-version@v2
         with:
           path: "./packages/core-ui"
+      - name: Check if 'react-odometer' version has been updated
+        id: odometer_version
+        uses: PostHog/check-package-version@v2
+        with:
+          path: "./packages/react-odometer"
       - name: Check if 'utils' version has been updated
         id: utils_version
         uses: PostHog/check-package-version@v2

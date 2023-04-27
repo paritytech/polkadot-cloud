@@ -48,6 +48,7 @@
   "workspaces": [
     "packages/utils",
     "packages/core-ui",
+    "packages/react-odometer",
     "sandbox"
   ],
   "repository": {
