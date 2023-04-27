@@ -4,6 +4,7 @@ SPDX-License-Identifier: Apache-2.0 */
 import { ReactOdometer } from "packages/react-odometer/lib";
 import { useState } from "react";
 import { ButtonPrimary } from "core-ui/index";
+import { CodeDrawer } from "../components/CodeDrawer";
 
 export const Odometer = () => {
   const [value, setValue] = useState<number>(0);
@@ -17,8 +18,13 @@ export const Odometer = () => {
           onClick={() => setValue(value + 1000)}
           marginRight
         />
-        <ReactOdometer duration={250} value={value} />
+        <ReactOdometer duration={150} value={value} />
       </div>
+      <CodeDrawer>
+        <code>
+          <p>{`<ReactOdometer duration={150} value={value} />`}</p>
+        </code>
+      </CodeDrawer>
     </>
   );
 };
