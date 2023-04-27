@@ -1,9 +1,9 @@
 {
-  "name": "@polkadotcloud/odometers",
+  "name": "@polkadotcloud/react-odometer",
   "license": "Apache-2.0",
   "version": "0.0.01",
   "author": "Ross Bulat",
-  "description": "Odometers Components for Polkadot Dashboards.",
+  "description": "React Odometer for Polkadot Dashboards.",
   "keywords": [
     "Polkadot",
     "Odometers"

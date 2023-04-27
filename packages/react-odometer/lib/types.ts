@@ -9,8 +9,6 @@ export interface ReactOdometerProps extends HTMLProps<HTMLDivElement> {
    * @default 2000
    */
   duration?: number;
-  /**
-   * Current value. Change it to run animation.
-   */
+  // Current odometer value.
   value: number;
 }

@@ -8,7 +8,7 @@ import "../styles/index.css";
 
 export const ReactOdometer: FC<ReactOdometerProps> = ({ duration, value }) => {
   const node = useRef<HTMLDivElement>(null);
-  const odometer = useRef<any>();
+  const odometer = useRef<Odometer>();
 
   useEffect(() => {
     odometer.current = new Odometer({
