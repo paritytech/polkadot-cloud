@@ -10,11 +10,11 @@ export const Odometer = () => {
 
   return (
     <>
-      <h4>Odometer Showcase</h4>
-      <div className="row">
+      <h4>React Odometer</h4>
+      <div className="row" style={{ alignItems: "center" }}>
         <ButtonPrimary
           text="Click Me"
-          onClick={() => setValue(value + 100000)}
+          onClick={() => setValue(value + 1000)}
           marginRight
         />
         <ReactOdometer duration={250} value={value} />
