@@ -14,7 +14,6 @@ export const ReactOdometer: FC<ReactOdometerProps> = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const odometer = useRef<Odometer>(null);
-
   const instantiated = useRef<boolean>(false);
 
   useEffect(() => {
