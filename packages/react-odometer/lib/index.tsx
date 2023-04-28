@@ -21,7 +21,9 @@ export const ReactOdometer: FC<ReactOdometerProps> = ({ duration, value }) => {
   }, []);
 
   useEffect(() => {
-    odometer.current?.update(value);
+    if (odometer.current?.value !== value) {
+      odometer.current?.update(value);
+    }
   }, [value]);
 
   return <div ref={node} />;

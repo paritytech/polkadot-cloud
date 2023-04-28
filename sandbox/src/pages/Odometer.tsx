@@ -7,7 +7,7 @@ import { ButtonPrimary } from "core-ui/index";
 import { CodeDrawer } from "../components/CodeDrawer";
 
 export const Odometer = () => {
-  const [value, setValue] = useState<number>(0);
+  const [value, setValue] = useState<number>(1000);
 
   return (
     <>
