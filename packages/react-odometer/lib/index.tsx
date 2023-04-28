@@ -15,7 +15,7 @@ export const ReactOdometer: FC<ReactOdometerProps> = ({ duration, value }) => {
       el: node.current,
       value,
       duration,
-      format: "",
+      format: "(ddd).dd",
       theme: "minimal",
     });
   }, []);
