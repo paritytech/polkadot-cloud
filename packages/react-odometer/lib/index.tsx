@@ -1,33 +1,35 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import { useEffect, useRef, type FC } from "react";
-import { ReactOdometerProps } from "./types";
-import Odometer from "./odometer.js";
-import "../styles/index.css";
+import type { FC } from "react";
+import { useEffect, useRef } from "react";
+import Odometer from "./odometer";
+import type { ReactOdometerProps } from "./types";
+import "../styles/index.scss";
 
 export const ReactOdometer: FC<ReactOdometerProps> = ({
   duration,
   value,
   decimals,
 }) => {
-  const node = useRef<HTMLDivElement>(null);
-  const odometer = useRef<Odometer | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const odometer = useRef<Odometer>(null);
+
   const instantiated = useRef<boolean>(false);
 
   useEffect(() => {
-    if (!instantiated.current && node.current !== null) {
+    if (!instantiated.current && ref.current) {
       instantiated.current = true;
 
       odometer.current = new Odometer({
-        el: node.current,
+        el: ref.current,
         value,
         duration,
         format: `(,ddd).${"d".repeat(decimals || 12)}`,
         theme: "minimal",
       });
     }
-  }, [node.current]);
+  }, [ref.current]);
 
   useEffect(() => {
     if (odometer.current?.value !== value) {
@@ -35,5 +37,9 @@ export const ReactOdometer: FC<ReactOdometerProps> = ({
     }
   }, [value]);
 
-  return <div ref={node} />;
+  return (
+    <>
+      <div ref={ref} />
+    </>
+  );
 };

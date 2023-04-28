@@ -49,11 +49,5 @@ export default {
       extensions: ["tsx", "ts"],
     }),
   ],
-  external: [
-    "prop-types",
-    "react",
-    "react-dom",
-    "@fortawesome/react-fontawesome",
-    "framer-motion",
-  ],
+  external: ["react", "react-dom"],
 };
