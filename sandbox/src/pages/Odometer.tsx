@@ -18,7 +18,7 @@ export const Odometer = () => {
           onClick={() => setValue(Number(value) + 1000)}
           marginRight
         />
-        <ReactOdometer duration={150} value={value} />
+        <ReactOdometer duration={150} value={value} decimals={3} />
       </div>
       <CodeDrawer>
         <code>

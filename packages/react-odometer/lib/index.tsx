@@ -6,7 +6,11 @@ import { ReactOdometerProps } from "./types";
 import Odometer from "./odometer.js";
 import "../styles/index.css";
 
-export const ReactOdometer: FC<ReactOdometerProps> = ({ duration, value }) => {
+export const ReactOdometer: FC<ReactOdometerProps> = ({
+  duration,
+  value,
+  decimals,
+}) => {
   const node = useRef<HTMLDivElement>(null);
   const odometer = useRef<Odometer>();
   useEffect(() => {
@@ -14,7 +18,7 @@ export const ReactOdometer: FC<ReactOdometerProps> = ({ duration, value }) => {
       el: node.current,
       value,
       duration,
-      format: `(,ddd).${"d".repeat(12)}`,
+      format: `(,ddd).${"d".repeat(decimals || 12)}`,
       theme: "minimal",
     });
   }, []);
