@@ -7,7 +7,7 @@ import { ButtonPrimary } from "core-ui/index";
 import { CodeDrawer } from "../components/CodeDrawer";
 
 export const Odometer = () => {
-  const [value, setValue] = useState<number>(1000);
+  const [value, setValue] = useState<number>(1000000.123456);
 
   return (
     <>
@@ -15,7 +15,7 @@ export const Odometer = () => {
       <div className="row" style={{ alignItems: "center" }}>
         <ButtonPrimary
           text="Click Me"
-          onClick={() => setValue(value + 1000)}
+          onClick={() => setValue(Number(value) + 1000)}
           marginRight
         />
         <ReactOdometer duration={150} value={value} />

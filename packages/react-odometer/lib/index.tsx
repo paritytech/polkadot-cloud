@@ -9,13 +9,12 @@ import "../styles/index.css";
 export const ReactOdometer: FC<ReactOdometerProps> = ({ duration, value }) => {
   const node = useRef<HTMLDivElement>(null);
   const odometer = useRef<Odometer>();
-
   useEffect(() => {
     odometer.current = new Odometer({
       el: node.current,
       value,
       duration,
-      format: "(ddd).dd",
+      format: `(ddd).${"d".repeat(12)}`,
       theme: "minimal",
     });
   }, []);
