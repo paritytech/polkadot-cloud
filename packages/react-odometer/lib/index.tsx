@@ -12,16 +12,22 @@ export const ReactOdometer: FC<ReactOdometerProps> = ({
   decimals,
 }) => {
   const node = useRef<HTMLDivElement>(null);
-  const odometer = useRef<Odometer>();
+  const odometer = useRef<Odometer | null>(null);
+  const instantiated = useRef<boolean>(false);
+
   useEffect(() => {
-    odometer.current = new Odometer({
-      el: node.current,
-      value,
-      duration,
-      format: `(,ddd).${"d".repeat(decimals || 12)}`,
-      theme: "minimal",
-    });
-  }, []);
+    if (!instantiated.current && node.current !== null) {
+      instantiated.current = true;
+
+      odometer.current = new Odometer({
+        el: node.current,
+        value,
+        duration,
+        format: `(,ddd).${"d".repeat(decimals || 12)}`,
+        theme: "minimal",
+      });
+    }
+  }, [node.current]);
 
   useEffect(() => {
     if (odometer.current?.value !== value) {
