@@ -328,8 +328,8 @@ export const addedTo = (
   fresh: AnyObject[],
   stale: AnyObject[],
   keys: string[]
-): AnyObject[] =>
-  typeof fresh !== "object" || typeof stale !== "object" || !keys.length
+): AnyObject[] => {
+  return typeof fresh !== "object" || typeof stale !== "object" || !keys.length
     ? []
     : fresh.filter(
         (freshItem) =>
@@ -341,6 +341,7 @@ export const addedTo = (
             )
           )
       );
+};
 
 /**
  * @name removedFrom
@@ -351,8 +352,8 @@ export const removedFrom = (
   fresh: AnyObject[],
   stale: AnyObject[],
   keys: string[]
-): AnyObject[] =>
-  typeof fresh !== "object" || typeof stale !== "object" || !keys.length
+): AnyObject[] => {
+  return typeof fresh !== "object" || typeof stale !== "object" || !keys.length
     ? []
     : stale.filter(
         (staleItem) =>
@@ -364,6 +365,7 @@ export const removedFrom = (
             )
           )
       );
+};
 
 /**
  * @name matchedProperties
@@ -374,8 +376,8 @@ export const matchedProperties = (
   objX: AnyObject[],
   objY: AnyObject[],
   keys: string[]
-): AnyObject[] =>
-  typeof objX !== "object" || typeof objY !== "object" || !keys.length
+): AnyObject[] => {
+  return typeof objX !== "object" || typeof objY !== "object" || !keys.length
     ? []
     : objY.filter((x) =>
         objX.find((y) =>
@@ -384,3 +386,4 @@ export const matchedProperties = (
           )
         )
       );
+};
