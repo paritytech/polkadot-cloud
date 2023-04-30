@@ -364,3 +364,23 @@ export const removedFrom = (
             )
           )
       );
+
+/**
+ * @name matchedProperties
+ * @summary Given 2 objects and some keys, return items in object 1 that also exist in object 2 by
+ * matching the given common key values of both objects.
+ */
+export const matchedProperties = (
+  objX: AnyObject[],
+  objY: AnyObject[],
+  keys: string[]
+): AnyObject[] =>
+  typeof objX !== "object" || typeof objY !== "object" || !keys.length
+    ? []
+    : objY.filter((x) =>
+        objX.find((y) =>
+          keys.every((key) =>
+            !(key in x) || !(key in y) ? false : y[key] === x[key]
+          )
+        )
+      );
