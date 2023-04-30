@@ -11,4 +11,6 @@ export interface ReactOdometerProps extends HTMLProps<HTMLDivElement> {
   duration?: number;
   // Current odometer value.
   value: number;
+  // The number of decimal places to display.
+  decimals?: number;
 }

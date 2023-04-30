@@ -5,7 +5,7 @@ import { decodeAddress, encodeAddress } from "@polkadot/keyring";
 import { hexToU8a, isHex, u8aToString, u8aUnwrapBytes } from "@polkadot/util";
 import BigNumber from "bignumber.js";
 import type { MutableRefObject, RefObject } from "react";
-import { AnyJson } from "./types";
+import { AnyJson, AnyObject } from "./types";
 
 /**
  * IMPORTANT: Rollup treats this file as the entry point for the package, the build of which is
@@ -318,3 +318,69 @@ export const inChrome = () => {
   }
   return false;
 };
+
+/**
+ * @name addedTo
+ * @summary Given 2 objects and some keys, return items in the fresh object that do not exist in the
+ * stale object by matching the given common key values of both objects.
+ */
+export const addedTo = (
+  fresh: AnyObject[],
+  stale: AnyObject[],
+  keys: string[]
+): AnyObject[] =>
+  typeof fresh !== "object" || typeof stale !== "object" || !keys.length
+    ? []
+    : fresh.filter(
+        (freshItem) =>
+          !stale.find((staleItem) =>
+            keys.every((key) =>
+              !(key in staleItem) || !(key in freshItem)
+                ? false
+                : staleItem[key] === freshItem[key]
+            )
+          )
+      );
+
+/**
+ * @name removedFrom
+ * @summary Given 2 objects and some keys, return items in the stale object that do not exist in the
+ * fresh object by matching the given common key values of both objects.
+ */
+export const removedFrom = (
+  fresh: AnyObject[],
+  stale: AnyObject[],
+  keys: string[]
+): AnyObject[] =>
+  typeof fresh !== "object" || typeof stale !== "object" || !keys.length
+    ? []
+    : stale.filter(
+        (staleItem) =>
+          !fresh.find((freshItem) =>
+            keys.every((key) =>
+              !(key in staleItem) || !(key in freshItem)
+                ? false
+                : freshItem[key] === staleItem[key]
+            )
+          )
+      );
+
+/**
+ * @name matchedProperties
+ * @summary Given 2 objects and some keys, return items in object 1 that also exist in object 2 by
+ * matching the given common key values of both objects.
+ */
+export const matchedProperties = (
+  objX: AnyObject[],
+  objY: AnyObject[],
+  keys: string[]
+): AnyObject[] =>
+  typeof objX !== "object" || typeof objY !== "object" || !keys.length
+    ? []
+    : objY.filter((x) =>
+        objX.find((y) =>
+          keys.every((key) =>
+            !(key in x) || !(key in y) ? false : y[key] === x[key]
+          )
+        )
+      );
