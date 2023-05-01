@@ -14,8 +14,13 @@ import {
   TxProps,
 } from "./types";
 import { ButtonSecondary } from "../buttons/ButtonSecondary";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPenToSquare,
+  faBars,
+  faWarning,
+} from "@fortawesome/free-solid-svg-icons";
 import { ButtonTab } from "../buttons/ButtonTab";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 /**
  * @name Entry
@@ -253,6 +258,39 @@ export const RowSection = ({
 
 /**
  * @name tx
- * @description A wrapper to handle transaction submit button status.
+ * @description A wrapper to handle transaction submitting status.
  */
-export const tx = ({ margin }: TxProps) => <div></div>;
+export const tx = ({
+  margin,
+  label,
+  name,
+  notEnoughFunds,
+  dangerMessage,
+  requiresManualSign,
+  manualSign,
+  defalutSign,
+}: TxProps) => (
+  <div className={`tx${valEmpty(margin, "margin")}`}>
+    <div className="inner">
+      <p className="sign">
+        <span className="badge">
+          <FontAwesomeIcon icon={faPenToSquare} className="icon" />
+          {label}
+        </span>
+        {name}
+        {notEnoughFunds && (
+          <span className="notEnough">
+            / &nbsp;
+            <FontAwesomeIcon
+              icon={faWarning}
+              className="danger"
+              transform="shrink-1"
+            />{" "}
+            <span className="danger">{dangerMessage}</span>
+          </span>
+        )}
+      </p>
+      <section>{requiresManualSign ? manualSign : defalutSign}</section>
+    </div>
+  </div>
+);

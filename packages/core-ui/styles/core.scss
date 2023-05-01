@@ -361,50 +361,17 @@ SPDX-License-Identifier: Apache-2.0 */
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 0;
 
   &.margin {
     margin-top: 1rem;
   }
 
-  .sign {
-    display: flex;
-    align-items: center;
-    opacity: 0.75;
-    font-size: 0.9rem;
-    margin: 0;
-    padding-bottom: 0.5rem;
-
-    .badge {
-      border: 1px solid var(--border-secondary-color);
-      border-radius: 0.45rem;
-      padding: 0.2rem 0.5rem;
-      margin-right: 0.75rem;
-
-      > svg {
-        margin-right: 0.5rem;
-      }
-    }
-
-    .notEnough {
-      margin-left: 0.5rem;
-    }
-
-    .danger {
-      color: var(--status-danger-color);
-    }
-
-    > .icon {
-      margin-right: 0.3rem;
-    }
-  }
-
   > .inner {
+    display: flex;
+    flex-direction: column;
     background: var(--background-modal-footer);
     width: 100%;
     padding: 1rem;
-    display: flex;
-    flex-direction: column;
 
     > section {
       width: 100%;
@@ -437,6 +404,38 @@ SPDX-License-Identifier: Apache-2.0 */
           }
         }
       }
+    }
+  }
+
+  .sign {
+    display: flex;
+    align-items: center;
+    opacity: 0.75;
+    font-size: 0.9rem;
+    margin: 0;
+    padding-bottom: 0.5rem;
+
+    .badge {
+      border: 1px solid var(--border-secondary-color);
+      border-radius: 0.45rem;
+      padding: 0.2rem 0.5rem;
+      margin-right: 0.75rem;
+
+      > svg {
+        margin-right: 0.5rem;
+      }
+    }
+
+    .notEnough {
+      margin-left: 0.5rem;
+    }
+
+    .danger {
+      color: var(--status-danger-color);
+    }
+
+    > .icon {
+      margin-right: 0.3rem;
     }
   }
 }

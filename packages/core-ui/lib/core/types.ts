@@ -2,6 +2,7 @@
 SPDX-License-Identifier: Apache-2.0 */
 
 import { ComponentBase, Network, ThemeMode } from "../types";
+import React from "react";
 
 export type EntryProps = ComponentBase & {
   // the theme mode
@@ -64,4 +65,18 @@ export type RowSectionProps = ComponentBase & {
 export type TxProps = {
   // whether there is margin on tops
   margin?: boolean;
+  // account type for the transaction signing
+  label: string;
+  // account id
+  name: string;
+  // whether there is enough funds for the transaction
+  notEnoughFunds: boolean;
+  // warning messgae
+  dangerMessage: string;
+  // whether it needs manual sign like ledger
+  requiresManualSign: boolean;
+  // ledger signing process
+  manualSign: any;
+  // default signing process
+  defalutSign: any;
 };
