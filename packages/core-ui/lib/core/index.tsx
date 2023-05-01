@@ -279,7 +279,7 @@ export const tx = ({
         </span>
         {name}
         {notEnoughFunds && (
-          <span className="notEnough">
+          <span className="not-enough">
             / &nbsp;
             <FontAwesomeIcon
               icon={faWarning}
