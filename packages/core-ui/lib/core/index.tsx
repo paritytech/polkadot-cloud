@@ -11,6 +11,7 @@ import {
   PageTitleProps,
   PageTitleTabProps,
   RowSectionProps,
+  TxProps,
 } from "./types";
 import { ButtonSecondary } from "../buttons/ButtonSecondary";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -227,9 +228,9 @@ export const ButtonRow = ({ children, style, yMargin }: RowProps) => (
   </div>
 );
 
-/* RowSection
- *
- * The primary/secondary module in a PageRow.
+/**
+ * @name RowSection
+ * @description The primary/secondary module in a PageRow.
  */
 export const RowSection = ({
   children,
@@ -249,3 +250,9 @@ export const RowSection = ({
     {children}
   </div>
 );
+
+/**
+ * @name tx
+ * @description A wrapper to handle transaction submit button status.
+ */
+export const tx = ({ margin }: TxProps) => <div></div>;

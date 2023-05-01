@@ -60,3 +60,8 @@ export type RowSectionProps = ComponentBase & {
   // true means the secondary element and  false means the primary one
   secondary?: boolean;
 };
+
+export type TxProps = {
+  // whether there is margin on tops
+  margin?: boolean;
+};
