@@ -258,10 +258,10 @@ export const RowSection = ({
 );
 
 /**
- * @name tx
+ * @name Tx
  * @description A wrapper to handle transaction submitting status.
  */
-export const tx = ({
+export const Tx = ({
   margin,
   label,
   name,

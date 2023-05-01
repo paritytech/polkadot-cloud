@@ -78,7 +78,7 @@ export type TxProps = {
   // whether it needs manual sign like ledger
   requiresManualSign: boolean;
   // ledger signing process
-  manualSign: any;
+  manualSign: React.ReactElement;
   // default signing process
-  defalutSign: any;
+  defalutSign: React.ReactElement;
 };
