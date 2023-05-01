@@ -41,6 +41,16 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: Publish Dry Run React Odometer
+        run: npm publish --unsafe-perm --dry-run
+        working-directory: "./packages/react-odometer/dist"
+      - name: Publish react-odometer to npm
+        if: steps.odometer_version.outputs.is-new-version == 'true'
+        run: npm publish
+        working-directory: "./packages/react-odometer/dist"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Publish Dry Run Utils
         run: npm publish --unsafe-perm --dry-run
         working-directory: "./packages/utils/dist"
