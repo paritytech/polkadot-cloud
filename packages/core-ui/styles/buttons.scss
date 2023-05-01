@@ -329,12 +329,13 @@ SPDX-License-Identifier: Apache-2.0 */
     margin-left: var(--button-spacing-large);
     background: var(--network-color-secondary);
     font-size: var(--button-font-size-small);
+    border-radius: 0.4rem;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 20px;
+    max-width: 3rem;
     width: fit-content;
-    border-radius: 0.4rem;
-    color: white;
+    overflow: hidden;
   }
 }
