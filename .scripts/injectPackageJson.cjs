@@ -4,19 +4,19 @@
 const fs = require("fs");
 const { join } = require("path");
 const prettier = require("prettier");
-const { exit } = require('process');
+const { exit } = require("process");
 const packagesDir = join(__dirname, "..", "packages");
 
-const argv = require('minimist')(process.argv.slice(2));
+const argv = require("minimist")(process.argv.slice(2));
 const { p: packageName, m: main } = argv;
 
 if (!packageName) {
-  console.error('❌ Please provide package name with the -p flag');
+  console.error("❌ Please provide package name with the -p flag");
   exit();
 }
 
 if (!main) {
-  console.error('❌ Please provide a main file with the -m flag');
+  console.error("❌ Please provide a main file with the -m flag");
   exit();
 }
 
@@ -64,9 +64,13 @@ try {
       if (err) {
         console.error(`❌ ${err.message}`);
       }
-      console.debug(`✅ package.json has been injected into ${packageName} bundle.`);
+      console.debug(
+        `✅ package.json has been injected into ${packageName} bundle.`
+      );
     }
   );
-} catch(e){
-  console.error(`❌ Could not find package.json in the specified package directory: ${packageName}`);
+} catch (e) {
+  console.error(
+    `❌ Could not find package.json in the specified package directory: ${packageName}`
+  );
 }
