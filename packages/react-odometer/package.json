@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/paritytech/polkadot-dashboard-ui#readme",
   "scripts": {
-    "build": "rollup -c && yarn fix",
+    "build": "rollup -c && yarn fix && node ../../.scripts/injectPackageJsons.cjs -p react-odometer -m index.tsx",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo",
     "fix": "sed '3d' ./dist/index.d.ts > ./tmp.d.ts; mv ./tmp.d.ts ./dist/index.d.ts"
   },
