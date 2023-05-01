@@ -6,7 +6,7 @@
   "description": "Polkadot Dashboard UI",
   "private": "true",
   "scripts": {
-    "build": "npm run build --workspaces --if-present && node .scripts/injectPackageJsons.cjs",
+    "build": "npm run build --workspaces --if-present",
     "clear": "npm run --workspaces clear && rm -rf node_modules",
     "lint": "eslint './**' --fix && npx prettier --write . && npx stylelint '**/*.scss' --fix",
     "sandbox": "npm run dev -w sandbox"
@@ -35,6 +35,7 @@
     "eslint-plugin-react": "^7.31.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "framer-motion": "^10.12.4",
+    "minimist": "^1.2.8",
     "prettier": "^2.8.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
