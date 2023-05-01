@@ -2,7 +2,7 @@ name: Publish
 
 on:
   push:
-    branches: [nik-fix-publish]
+    branches: [main]
 
 jobs:
   npm-publish:
