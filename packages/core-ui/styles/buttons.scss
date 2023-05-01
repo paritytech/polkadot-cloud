@@ -326,9 +326,9 @@ SPDX-License-Identifier: Apache-2.0 */
   > .badge {
     @include btn-small;
 
-    margin-left: var(--button-spacing-large);
     background: var(--network-color-secondary);
     font-size: var(--button-font-size-small);
+    margin-left: var(--button-spacing-large);
     border-radius: 0.4rem;
     color: white;
     display: flex;
