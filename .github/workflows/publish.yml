@@ -15,46 +15,46 @@ jobs:
           node-version: 18
       - name: Build NPM Package
         run: yarn build
-      - name: Check if 'core-ui' version has been updated
+      - name: New 'core-ui' version
         id: core_ui_version
         uses: PostHog/check-package-version@v2
         with:
           path: "./packages/core-ui"
-      - name: Check if 'react-odometer' version has been updated
-        id: odometer_version
+      - name: New 'react-odometer' version
+        id: react_odometer_version
         uses: PostHog/check-package-version@v2
         with:
           path: "./packages/react-odometer"
-      - name: Check if 'utils' version has been updated
+      - name: New 'utils' version
         id: utils_version
         uses: PostHog/check-package-version@v2
         with:
           path: "./packages/utils"
 
-      - name: Publish Dry Run Core UI
+      - name: Publish 'core-ui' Dry Run
         run: npm publish --unsafe-perm --dry-run
         working-directory: "./packages/core-ui/dist"
-      - name: Publish core-ui to npm
+      - name: Publish 'core-ui'
         if: steps.core_ui_version.outputs.is-new-version == 'true'
         working-directory: "./packages/core-ui/dist"
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Publish Dry Run React Odometer
+      - name: Publish 'react-odometer' Dry Run
         run: npm publish --unsafe-perm --dry-run
         working-directory: "./packages/react-odometer/dist"
-      - name: Publish react-odometer to npm
-        if: steps.odometer_version.outputs.is-new-version == 'true'
+      - name: Publish 'react-odometer'
+        if: steps.react_odometer_version.outputs.is-new-version == 'true'
         run: npm publish
         working-directory: "./packages/react-odometer/dist"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Publish Dry Run Utils
+      - name: Publish 'utils' Dry Run
         run: npm publish --unsafe-perm --dry-run
         working-directory: "./packages/utils/dist"
-      - name: Publish utils to npm
+      - name: Publish 'utils'
         if: steps.utils_version.outputs.is-new-version == 'true'
         run: npm publish
         working-directory: "./packages/utils/dist"
