@@ -10,6 +10,8 @@ export type ButtonTabProps = ComponentBase &
     active?: boolean;
     // the title of the button
     title: string;
+    // a badge value can represent the main content of the tab page
+    badge?: string | number;
   };
 
 /**
@@ -22,6 +24,7 @@ export const ButtonTab = ({
   style,
   active,
   title,
+  badge,
 }: ButtonTabProps) => (
   <button
     className={`btn-tab${valEmpty(active, "active")}`}
@@ -35,5 +38,6 @@ export const ButtonTab = ({
     }}
   >
     {title}
+    {badge ? <span className="badge">{badge}</span> : null}
   </button>
 );

@@ -322,4 +322,20 @@ SPDX-License-Identifier: Apache-2.0 */
   &.active {
     background: var(--button-secondary-background);
   }
+
+  > .badge {
+    @include btn-small;
+
+    background: var(--network-color-secondary);
+    font-size: var(--button-font-size-small);
+    margin-left: var(--button-spacing-large);
+    border-radius: 0.4rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 3rem;
+    width: fit-content;
+    overflow: hidden;
+  }
 }

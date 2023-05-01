@@ -246,11 +246,13 @@ export const Buttons = () => (
     <div className="row">
       <ButtonTab title={"Inactive"} />
       <ButtonTab active title={"Active"} />
+      <ButtonTab active title={"Active"} badge={"123"} />
     </div>
     <CodeDrawer>
       <code>
         <p>{`<ButtonTab title={"Inactive"} />`}</p>
         <p>{`<ButtonTab active title={"Active"} />`}</p>
+        <p>{`<ButtonTab active title={"Active"} badge={"123"} `}</p>
       </code>
     </CodeDrawer>
     <Separator />

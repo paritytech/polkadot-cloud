@@ -105,7 +105,7 @@ export const PageTitle = ({ title, button, tabs = [] }: PageTitleProps) => {
     if (cachedRef) {
       observer.observe(cachedRef);
     }
-    // unmount
+    // unmount.
     return () => {
       if (cachedRef) {
         observer.unobserve(cachedRef);
@@ -153,12 +153,13 @@ export const PageTitleTabs = ({ sticky, tabs = [] }: PageTitleProps) => (
     <div className="scroll">
       <div className="inner">
         {tabs.map(
-          ({ active, onClick, title }: PageTitleTabProps, i: number) => (
+          ({ active, onClick, title, badge }: PageTitleTabProps, i: number) => (
             <ButtonTab
               active={!!active}
               key={`page_tab_${i}`}
               onClick={() => onClick()}
               title={title}
+              badge={badge}
             />
           )
         )}
