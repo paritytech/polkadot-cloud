@@ -77,8 +77,8 @@ export type TxProps = {
   dangerMessage: string;
   // whether it needs manual sign like ledger.
   requiresManualSign: boolean;
-  // ledger signing process.
-  manualSign: React.ReactElement;
-  // default signing process.
-  defaultSign: React.ReactElement;
+  // manual signing component.
+  ManualSign: React.ReactElement;
+  // default signing component.
+  DefaultSign: React.ReactElement;
 };

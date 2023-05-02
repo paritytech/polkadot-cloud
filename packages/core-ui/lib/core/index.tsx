@@ -130,7 +130,7 @@ export const PageTitle = ({ title, button, tabs = [] }: PageTitleProps) => {
           <div>
             <h1>{title}</h1>
           </div>
-          <div>
+          <div className="right">
             {button && (
               <ButtonSecondary
                 text={button.title}
@@ -268,8 +268,8 @@ export const Tx = ({
   notEnoughFunds,
   dangerMessage,
   requiresManualSign,
-  manualSign,
-  defaultSign,
+  ManualSign,
+  DefaultSign,
 }: TxProps) => (
   <div className={`tx${valEmpty(margin, "margin")}`}>
     <div className="inner">
@@ -291,7 +291,7 @@ export const Tx = ({
           </span>
         )}
       </p>
-      <section>{requiresManualSign ? manualSign : defaultSign}</section>
+      <section>{requiresManualSign ? ManualSign : DefaultSign}</section>
     </div>
   </div>
 );

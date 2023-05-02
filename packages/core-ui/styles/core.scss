@@ -209,11 +209,9 @@ SPDX-License-Identifier: Apache-2.0 */
     align-items: center;
     width: 100%;
 
-    > div {
-      &:last-child {
-        padding-left: 1rem;
-        flex-grow: 1;
-      }
+    > .right {
+      padding-left: 1rem;
+      flex-grow: 1;
     }
   }
 
@@ -282,6 +280,7 @@ SPDX-License-Identifier: Apache-2.0 */
 
       > div {
         display: flex;
+
         &:first-child {
           flex-direction: column;
           justify-content: center;
