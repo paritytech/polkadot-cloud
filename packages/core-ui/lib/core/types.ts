@@ -65,20 +65,20 @@ export type RowSectionProps = ComponentBase & {
 };
 
 export type TxProps = {
-  // whether there is margin on tops
+  // whether there is margin on top.
   margin?: boolean;
-  // account type for the transaction signing
+  // account type for the transaction signing.
   label: string;
   // account id
   name: string;
-  // whether there is enough funds for the transaction
+  // whether there is enough funds for the transaction.
   notEnoughFunds: boolean;
-  // warning messgae
+  // warning messgae.
   dangerMessage: string;
-  // whether it needs manual sign like ledger
+  // whether it needs manual sign like ledger.
   requiresManualSign: boolean;
-  // ledger signing process
+  // ledger signing process.
   manualSign: React.ReactElement;
-  // default signing process
+  // default signing process.
   defaultSign: React.ReactElement;
 };

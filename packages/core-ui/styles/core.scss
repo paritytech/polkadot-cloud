@@ -258,10 +258,10 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 
   > .inner {
-    display: flex;
-    flex-direction: column;
     background: var(--background-modal-footer);
     width: 100%;
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
 
     > section {
@@ -282,7 +282,6 @@ SPDX-License-Identifier: Apache-2.0 */
 
       > div {
         display: flex;
-
         &:first-child {
           flex-direction: column;
           justify-content: center;
@@ -303,8 +302,8 @@ SPDX-License-Identifier: Apache-2.0 */
     align-items: center;
     opacity: 0.75;
     font-size: 0.9rem;
-    margin: 0;
     padding-bottom: 0.5rem;
+    margin: 0;
 
     .badge {
       border: 1px solid var(--border-secondary-color);
