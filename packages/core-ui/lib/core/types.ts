@@ -80,5 +80,5 @@ export type TxProps = {
   // ledger signing process
   manualSign: React.ReactElement;
   // default signing process
-  defalutSign: React.ReactElement;
+  defaultSign: React.ReactElement;
 };

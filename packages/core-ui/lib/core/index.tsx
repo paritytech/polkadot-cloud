@@ -259,7 +259,7 @@ export const RowSection = ({
 
 /**
  * @name Tx
- * @description A wrapper to handle transaction submitting status.
+ * @description A wrapper to handle transaction submission.
  */
 export const Tx = ({
   margin,
@@ -269,7 +269,7 @@ export const Tx = ({
   dangerMessage,
   requiresManualSign,
   manualSign,
-  defalutSign,
+  defaultSign,
 }: TxProps) => (
   <div className={`tx${valEmpty(margin, "margin")}`}>
     <div className="inner">
@@ -291,7 +291,7 @@ export const Tx = ({
           </span>
         )}
       </p>
-      <section>{requiresManualSign ? manualSign : defalutSign}</section>
+      <section>{requiresManualSign ? manualSign : defaultSign}</section>
     </div>
   </div>
 );
