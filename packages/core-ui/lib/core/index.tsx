@@ -11,10 +11,16 @@ import {
   PageTitleProps,
   PageTitleTabProps,
   RowSectionProps,
+  TxProps,
 } from "./types";
 import { ButtonSecondary } from "../buttons/ButtonSecondary";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPenToSquare,
+  faBars,
+  faWarning,
+} from "@fortawesome/free-solid-svg-icons";
 import { ButtonTab } from "../buttons/ButtonTab";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 /**
  * @name Entry
@@ -124,7 +130,7 @@ export const PageTitle = ({ title, button, tabs = [] }: PageTitleProps) => {
           <div>
             <h1>{title}</h1>
           </div>
-          <div>
+          <div className="right">
             {button && (
               <ButtonSecondary
                 text={button.title}
@@ -228,9 +234,9 @@ export const ButtonRow = ({ children, style, yMargin }: RowProps) => (
   </div>
 );
 
-/* RowSection
- *
- * The primary/secondary module in a PageRow.
+/**
+ * @name RowSection
+ * @description The primary/secondary module in a PageRow.
  */
 export const RowSection = ({
   children,
@@ -248,5 +254,44 @@ export const RowSection = ({
     style={style}
   >
     {children}
+  </div>
+);
+
+/**
+ * @name Tx
+ * @description A wrapper to handle transaction submission.
+ */
+export const Tx = ({
+  margin,
+  label,
+  name,
+  notEnoughFunds,
+  dangerMessage,
+  requiresManualSign,
+  ManualSign,
+  DefaultSign,
+}: TxProps) => (
+  <div className={`tx${valEmpty(margin, "margin")}`}>
+    <div className="inner">
+      <p className="sign">
+        <span className="badge">
+          <FontAwesomeIcon icon={faPenToSquare} className="icon" />
+          {label}
+        </span>
+        {name}
+        {notEnoughFunds && (
+          <span className="not-enough">
+            / &nbsp;
+            <FontAwesomeIcon
+              icon={faWarning}
+              className="danger"
+              transform="shrink-1"
+            />{" "}
+            <span className="danger">{dangerMessage}</span>
+          </span>
+        )}
+      </p>
+      <section>{requiresManualSign ? ManualSign : DefaultSign}</section>
+    </div>
   </div>
 );
