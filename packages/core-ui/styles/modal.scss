@@ -1,6 +1,56 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
+.modal-footer {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 100%;
+
+  h3 {
+    color: var(--text-color-secondary);
+    opacity: 0.5;
+    position: relative;
+    top: 1.25rem;
+
+    &.active {
+      opacity: 1;
+      color: var(--network-color-primary);
+    }
+  }
+
+  > div {
+    margin-left: 1rem;
+  }
+
+  .submit {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.7rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+
+    &.primary {
+      color: white;
+      background: var(--network-color-primary);
+      border: 1px solid var(--network-color-primary);
+    }
+
+    &.secondary {
+      color: var(--network-color-primary);
+      border: 1px solid var(--network-color-primary);
+    }
+
+    &:disabled {
+      opacity: var(--opacity-disabled);
+    }
+
+    svg {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
 .modal-content {
   background: var(--background-modal);
   width: 100%;
@@ -91,4 +141,50 @@ SPDX-License-Identifier: Apache-2.0 */
       font-size: 1rem;
     }
   }
+}
+
+.modal-blur {
+  background: var(--overlay-modal-color);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  backdrop-filter: blur(4px);
+}
+
+.modal-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  backdrop-filter: blur(4px);
+
+  > div {
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+
+    /* click anywhere behind modal content to close */
+    .close {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 8;
+      cursor: default;
+    }
+  }
+}
+
+.modal-height {
+  box-shadow: 0 2px 16px 1px var(--card-shadow-color);
+  transition: height 0.5s cubic-bezier(0.1, 1, 0.2, 1);
+  width: 100%;
+  max-width: 1250px;
+  max-height: 100%;
+  border-radius: 1.5rem;
+  z-index: 9;
+  position: relative;
 }

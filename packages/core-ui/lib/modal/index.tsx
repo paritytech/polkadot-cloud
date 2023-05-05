@@ -16,3 +16,51 @@ export const ModalContent = forwardRef(
   )
 );
 ModalContent.displayName = "ModalContent";
+
+/**
+ * @name Blur
+ * @description
+ */
+export const Blur = ({ children, style }: ComponentBase) => {
+  return (
+    <div className="modal-blur" style={style}>
+      {children}
+    </div>
+  );
+};
+
+/**
+ * @name Wrapper
+ * @description
+ */
+export const Wrapper = ({ children, style }: ComponentBase) => {
+  return (
+    <div className="modal-wrapper" style={style}>
+      {children}
+    </div>
+  );
+};
+
+/**
+ * @name Height
+ * @description
+ */
+export const Height = ({ children, style }: ComponentBase) => {
+  return (
+    <div className="modal-height" style={style}>
+      {children}
+    </div>
+  );
+};
+
+/**
+ * @name Footer
+ * @description
+ */
+export const Footer = ({ children, style }: ComponentBase) => {
+  return (
+    <div className="modal-footer" style={style}>
+      {children}
+    </div>
+  );
+};
