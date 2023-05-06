@@ -76,5 +76,5 @@ export type TxProps = {
   // warning messgae.
   dangerMessage: string;
   // signing component.
-  sign: React.ReactElement;
+  SignerComponent: React.ReactElement;
 };

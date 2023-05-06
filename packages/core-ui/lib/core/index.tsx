@@ -267,7 +267,7 @@ export const Tx = ({
   name,
   notEnoughFunds,
   dangerMessage,
-  sign,
+  SignerComponent,
 }: TxProps) => (
   <div className={`tx${valEmpty(margin, "margin")}`}>
     <div className="inner">
@@ -289,7 +289,7 @@ export const Tx = ({
           </span>
         )}
       </p>
-      <section>{sign}</section>
+      <section>{SignerComponent}</section>
     </div>
   </div>
 );
