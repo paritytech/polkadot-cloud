@@ -19,7 +19,7 @@ ModalContent.displayName = "ModalContent";
 
 /**
  * @name Blur
- * @description
+ * @description Blurred background wrapper.
  */
 export const Blur = ({ children, style }: ComponentBase) => {
   return (
@@ -43,7 +43,7 @@ export const Wrapper = ({ children, style }: ComponentBase) => {
 
 /**
  * @name Height
- * @description
+ * @description Used for modal window height.
  */
 export const Height = ({ children, style }: ComponentBase) => {
   return (
@@ -55,7 +55,7 @@ export const Height = ({ children, style }: ComponentBase) => {
 
 /**
  * @name Footer
- * @description
+ * @description Used for extrinsics forms.
  */
 export const Footer = ({ children, style }: ComponentBase) => {
   return (
