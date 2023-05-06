@@ -75,10 +75,6 @@ export type TxProps = {
   notEnoughFunds: boolean;
   // warning messgae.
   dangerMessage: string;
-  // whether it needs manual sign like ledger.
-  requiresManualSign: boolean;
-  // manual signing component.
-  ManualSign: React.ReactElement;
-  // default signing component.
-  DefaultSign: React.ReactElement;
+  // signing component.
+  sign: React.ReactElement;
 };

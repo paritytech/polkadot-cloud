@@ -267,9 +267,7 @@ export const Tx = ({
   name,
   notEnoughFunds,
   dangerMessage,
-  requiresManualSign,
-  ManualSign,
-  DefaultSign,
+  sign,
 }: TxProps) => (
   <div className={`tx${valEmpty(margin, "margin")}`}>
     <div className="inner">
@@ -291,7 +289,7 @@ export const Tx = ({
           </span>
         )}
       </p>
-      <section>{requiresManualSign ? ManualSign : DefaultSign}</section>
+      <section>{sign}</section>
     </div>
   </div>
 );
