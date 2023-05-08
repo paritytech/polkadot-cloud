@@ -12,6 +12,9 @@ import "../styles/index.scss";
 // Core
 export * from "./core";
 
+// Modal
+export * from "./modal";
+
 // Buttons
 export { ButtonPrimary } from "./buttons/ButtonPrimary";
 export { ButtonPrimaryInvert } from "./buttons/ButtonPrimaryInvert";
