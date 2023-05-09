@@ -82,5 +82,18 @@ SPDX-License-Identifier: Apache-2.0 */
       color: var(--text-color-primary);
       font-size: 1rem;
     }
+    
+.modal-action-item {
+  border-bottom: 1px solid var(--border-primary-color);
+  color: var(--text-color-primary);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 1.25rem 0 0;
+  padding-bottom: 0.75rem;
+  font-variation-settings: "wght" 650;
+
+  > svg {
+    margin-right: 0.5rem;
   }
 }

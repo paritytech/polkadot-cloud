@@ -24,7 +24,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 /**
  * @name Entry
- * @description The outer-most wrapper that hosts core tag styling.
+ * @summary The outer-most wrapper that hosts core tag styling.
  */
 export const Entry = ({ children, style, mode, network }: EntryProps) => (
   <div className={`core-entry theme-${mode} theme-${network}`} style={style}>
@@ -34,7 +34,7 @@ export const Entry = ({ children, style, mode, network }: EntryProps) => (
 
 /**
  * @name Body
- * @description An element that houses Side and Main.
+ * @summary An element that houses Side and Main.
  */
 export const Body = ({ children, style }: ComponentBase) => {
   return (
@@ -46,7 +46,7 @@ export const Body = ({ children, style }: ComponentBase) => {
 
 /**
  * @name Main
- * @description A column flex wrapper that hosts the main page content.
+ * @summary A column flex wrapper that hosts the main page content.
  */
 export const Main = forwardRef(
   ({ children, style }: ComponentBase, ref?: RefObject<HTMLDivElement>) => (
@@ -59,7 +59,7 @@ Main.displayName = "Main";
 
 /**
  * @name Page
- * @description
+ * @summary
  * A motion.div that wraps every page. Transitions can be applied to this wrapper that will affect
  * the entire page.
  */
@@ -73,7 +73,7 @@ export const Page = ({ children, style }: ComponentBase) => {
 
 /**
  * @name Side
- * @description An element that houses the side menu and transitions to a toggle-able fixed overlay
+ * @summary An element that houses the side menu and transitions to a toggle-able fixed overlay
  * on smaller screens.
  * @summary Handles maximised and minimised transitions.
  */
@@ -91,7 +91,7 @@ export const Side = ({ children, style, open, minimised }: SideProps) => (
 
 /**
  * @name PageTitle
- * @description
+ * @summary
  * The element that wraps a page title. Determines the padding and position relative to top of
  * screen when the element is stuck.
  */
@@ -152,7 +152,7 @@ PageTitle.displayName = "PageTitle";
 
 /**
  * @name PageTitleTabs
- * @description The element in a page title. Inculding the ButtonTab.
+ * @summary The element in a page title. Inculding the ButtonTab.
  */
 export const PageTitleTabs = ({ sticky, tabs = [] }: PageTitleProps) => (
   <section className={`core-page-title-tabs${valEmpty(sticky, "sticky")}`}>
@@ -176,7 +176,7 @@ export const PageTitleTabs = ({ sticky, tabs = [] }: PageTitleProps) => (
 
 /**
  * @name HideScrollable
- * @description
+ * @summary
  * A fixed block that is used to hide scrollable content on smaller screens when a PageTitle is
  * fixed. Purely cosmetic. Applied in PageTitle.
  */
@@ -188,7 +188,7 @@ export const HideScrollable = ({ children, style }: ComponentBase) => (
 
 /**
  * @name PageRow
- * @description Used to separate page content based on rows. Commonly used with RowPrimary and
+ * @summary Used to separate page content based on rows. Commonly used with RowPrimary and
  * RowSecondary.
  */
 export const PageRow = ({ children, style, yMargin }: RowProps) => (
@@ -202,7 +202,7 @@ export const PageRow = ({ children, style, yMargin }: RowProps) => (
 
 /**
  * @name Separator
- * @description A horizontal spacer with a bottom border. General spacer for separating content by
+ * @summary A horizontal spacer with a bottom border. General spacer for separating content by
  * row.
  */
 export const Separator = ({ children, style }: ComponentBase) => (
@@ -213,7 +213,7 @@ export const Separator = ({ children, style }: ComponentBase) => (
 
 /**
  * @name PageHeading
- * @description Positioned under titles for a Go Back button and other page header info.
+ * @summary Positioned under titles for a Go Back button and other page header info.
  */
 export const PageHeading = ({ children, style }: ComponentBase) => (
   <div className="core-page-heading" style={style}>
@@ -223,7 +223,7 @@ export const PageHeading = ({ children, style }: ComponentBase) => (
 
 /**
  * @name ButtonRow
- * @description A flex container for a row of buttons.
+ * @summary A flex container for a row of buttons.
  */
 export const ButtonRow = ({ children, style, yMargin }: RowProps) => (
   <div
@@ -236,7 +236,7 @@ export const ButtonRow = ({ children, style, yMargin }: RowProps) => (
 
 /**
  * @name RowSection
- * @description The primary/secondary module in a PageRow.
+ * @summary The primary/secondary module in a PageRow.
  */
 export const RowSection = ({
   children,
@@ -259,7 +259,7 @@ export const RowSection = ({
 
 /**
  * @name Tx
- * @description A wrapper to handle transaction submission.
+ * @summary A wrapper to handle transaction submission.
  */
 export const Tx = ({
   margin,
@@ -267,9 +267,7 @@ export const Tx = ({
   name,
   notEnoughFunds,
   dangerMessage,
-  requiresManualSign,
-  ManualSign,
-  DefaultSign,
+  SignerComponent,
 }: TxProps) => (
   <div className={`tx${valEmpty(margin, "margin")}`}>
     <div className="inner">
@@ -291,7 +289,7 @@ export const Tx = ({
           </span>
         )}
       </p>
-      <section>{requiresManualSign ? ManualSign : DefaultSign}</section>
+      <section>{SignerComponent}</section>
     </div>
   </div>
 );
