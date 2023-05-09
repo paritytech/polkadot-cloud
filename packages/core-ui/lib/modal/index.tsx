@@ -3,6 +3,7 @@ SPDX-License-Identifier: Apache-2.0 */
 
 import { ComponentBase } from "../types";
 import { RefObject, forwardRef } from "react";
+import { valOr } from "../utils";
 
 /**
  * @name ModalContent
@@ -21,21 +22,12 @@ ModalContent.displayName = "ModalContent";
  * @name Blur
  * @description Blurred background wrapper.
  */
-export const Blur = ({ children, style }: ComponentBase) => {
+export const Blur = ({ blur, children, style }: ComponentBase) => {
   return (
-    <div className="modal-blur" style={style}>
-      {children}
-    </div>
-  );
-};
-
-/**
- * @name Wrapper
- * @description
- */
-export const Wrapper = ({ children, style }: ComponentBase) => {
-  return (
-    <div className="modal-wrapper" style={style}>
+    <div
+      className={`${valOr(blur, "modal-blur", "modal-wrapper")}`}
+      style={style}
+    >
       {children}
     </div>
   );
@@ -45,7 +37,7 @@ export const Wrapper = ({ children, style }: ComponentBase) => {
  * @name Height
  * @description Used for modal window height.
  */
-export const Height = ({ children, style }: ComponentBase) => {
+export const Height = ({ size, children, style }: ComponentBase) => {
   return (
     <div className="modal-height" style={style}>
       {children}
