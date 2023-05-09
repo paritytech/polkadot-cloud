@@ -3,6 +3,9 @@ SPDX-License-Identifier: Apache-2.0 */
 
 import { ComponentBase } from "../types";
 import { RefObject, forwardRef } from "react";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ActionItemProps } from "./types";
 
 /**
  * @name ModalContent
@@ -16,9 +19,6 @@ export const ModalContent = forwardRef(
   )
 );
 ModalContent.displayName = "ModalContent";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ActionItemProps } from "./types";
 
 /**
  * @name ActionItem
