@@ -39,6 +39,7 @@ SPDX-License-Identifier: Apache-2.0 */
 
   .action-button {
     background: var(--button-primary-background);
+    transition: all var(--transition-duration);
     padding: 1rem;
     cursor: pointer;
     margin-bottom: 1rem;
@@ -46,7 +47,6 @@ SPDX-License-Identifier: Apache-2.0 */
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    transition: all var(--transition-duration);
     width: 100%;
 
     &:last-child {

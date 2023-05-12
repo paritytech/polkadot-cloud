@@ -9,7 +9,7 @@ import { ActionItemProps } from "./types";
 
 /**
  * @name ModalContent
- * @description Modal content wrapper.
+ * @summary Modal content wrapper.
  */
 export const ModalContent = forwardRef(
   ({ children, style }: ComponentBase, ref?: RefObject<HTMLDivElement>) => (
