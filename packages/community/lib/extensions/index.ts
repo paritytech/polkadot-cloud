@@ -1,16 +1,15 @@
 // Copyright 2023 @paritytech/polkadot-staking-dashboard authors & contributors
 // SPDX-License-Identifier: Apache-2.0
-/* eslint-disable */
 
 import type { ExtensionConfig } from "./types";
-const EnkryptSVG = require("./icons/enkrypt.svg");
-const FearlessSVG = require("./icons/fearless.svg");
-const NovaWalletSVG = require("./icons/novawallet.svg");
-const ParitySignerSVG = require("./icons/paritysigner.svg");
-const PolkadotJSSVG = require("./icons/polkadotjs.svg");
-const PolkaGateSVG = require("./icons/polkagate.svg");
-const SubwalletSVG = require("./icons/subwallet.svg");
-const TalismanSVG = require("./icons/talisman.svg");
+import EnkryptSVG from "./icons/enkrypt.svg";
+import FearlessSVG from "./icons/fearless.svg";
+import NovaWalletSVG from "./icons/novawallet.svg";
+import ParitySignerSVG from "./icons/paritysigner.svg";
+import PolkadotJSSVG from "./icons/polkadotjs.svg";
+import PolkaGateSVG from "./icons/polkagate.svg";
+import SubwalletSVG from "./icons/subwallet.svg";
+import TalismanSVG from "./icons/talisman.svg";
 
 export const Extensions: ExtensionConfig[] = [
   {

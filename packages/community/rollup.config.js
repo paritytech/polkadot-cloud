@@ -6,6 +6,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import typescript from "rollup-plugin-typescript2";
 import del from "rollup-plugin-delete";
 import cleanup from "rollup-plugin-cleanup";
+import svgo from "rollup-plugin-svgo";
 
 /**
  * @type {import('rollup').RollupOptions}
@@ -20,6 +21,7 @@ export default {
     },
   ],
   plugins: [
+    svgo(),
     del({ targets: "dist/*" }),
     peerDepsExternal(),
     resolve(),
