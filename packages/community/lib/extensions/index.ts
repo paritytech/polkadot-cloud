@@ -2,14 +2,14 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { ExtensionConfig } from "./types";
-import { ReactComponent as EnkryptSVG } from "./icons/enkrypt.svg";
-import { ReactComponent as FearlessSVG } from "./icons/fearless.svg";
-import { ReactComponent as NovaWalletSVG } from "./icons/novawallet.svg";
-import { ReactComponent as ParitySignerSVG } from "./icons/paritysigner.svg";
-import { ReactComponent as PolkadotJSSVG } from "./icons/polkadotjs.svg";
-import { ReactComponent as PolkaGateSVG } from "./icons/polkagate.svg";
-import { ReactComponent as SubwalletSVG } from "./icons/subwallet.svg";
-import { ReactComponent as TalismanSVG } from "./icons/talisman.svg";
+const EnkryptSVG = require("./icons/enkrypt.svg");
+const FearlessSVG = require("./icons/fearless.svg");
+const NovaWalletSVG = require("./icons/novawallet.svg");
+const ParitySignerSVG = require("./icons/paritysigner.svg");
+const PolkadotJSSVG = require("./icons/polkadotjs.svg");
+const PolkaGateSVG = require("./icons/polkagate.svg");
+const SubwalletSVG = require("./icons/subwallet.svg");
+const TalismanSVG = require("./icons/talisman.svg");
 
 export const Extensions: ExtensionConfig[] = [
   {
