@@ -6,7 +6,9 @@
   "description": "Community for Polkadot Dashboards.",
   "keywords": [
     "Polkadot",
-    "UI"
+    "UI",
+    "Validator",
+    "Extension"
   ],
   "bugs": {
     "url": "https://github.com/paritytech/polkadot-dashboard-ui/issues"
