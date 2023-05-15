@@ -50,6 +50,7 @@
     "packages/utils",
     "packages/core-ui",
     "packages/react-odometer",
+    "packages/connect",
     "sandbox"
   ],
   "repository": {
