@@ -1,0 +1,469 @@
+.customHeaderWrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin: 0.5rem 0;
+
+  h1 {
+    color: var(--text-color-primary);
+    font-size: 1.4rem;
+    font-family: "Unbounded", "sans-serif", sans-serif;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    display: flex;
+    align-items: center;
+    > button {
+      margin-left: 1.25rem;
+    }
+  }
+}
+
+.paddingWrapper {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  padding: "1rem 0 0.25rem 0";
+}
+
+.extensionWrapper {
+  width: 100%;
+  padding: 0 0.4rem;
+  margin: 0.5rem 0;
+
+  @media (max-width: 800px) {
+    padding: 0;
+  }
+}
+
+.extensionItem {
+  padding: 0.5rem;
+  flex-grow: 0;
+  width: 50%;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
+
+  &.canConnect {
+    > .inner {
+      transition: transform 0.15s;
+      &:hover {
+        transform: scale(1.015);
+      }
+    }
+  }
+
+  > .inner {
+    background: var(--button-primary-background);
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+
+    h3 {
+      margin: 1rem 0 0 0;
+      font-variation-settings: "wght" 600;
+      > svg {
+        margin-right: 0.5rem;
+      }
+    }
+    h5 {
+      margin: 0;
+    }
+    p {
+      color: var(--text-color-secondary);
+      padding: 0;
+      margin: 0;
+      .plus {
+        margin-right: 0.4rem;
+      }
+    }
+    .body {
+      width: 100%;
+      padding: 1.35rem 0.85rem 0.75rem 0.85rem;
+      position: relative;
+
+      .button {
+        z-index: 1;
+        position: absolute;
+        background: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        &:disabled {
+          cursor: default;
+        }
+      }
+    }
+    .foot {
+      border-top: 1px solid var(--border-primary-color);
+      width: 100%;
+      padding: 0.85rem 0.85rem;
+
+      a {
+        color: var(--text-secondary-color);
+        transition: color 0.15s;
+        display: flex;
+        align-items: center;
+        font-size: 0.92rem;
+        &:hover {
+          color: var(--network-color-primary);
+        }
+        > svg {
+          margin-left: 0.3rem;
+          margin-top: 0.1rem;
+        }
+      }
+    }
+    .row {
+      width: 100%;
+      display: flex;
+    }
+    .status {
+      position: absolute;
+      top: 0.9rem;
+      right: 0.9rem;
+      .success {
+        color: var(--status-success-color);
+      }
+      .active {
+        color: var(--network-color-primary);
+      }
+    }
+    .icon {
+      width: 2.6rem;
+      height: 2.6rem;
+    }
+    svg {
+      .light {
+        fill: var(--text-color-invert);
+      }
+      .dark {
+        fill: var(--text-color-secondary);
+      }
+    }
+  }
+}
+
+.readOnlyWrapper {
+  width: 100%;
+  margin-top: 0.5rem;
+
+  .input {
+    border: 1px solid var(--border-primary-color);
+    border-radius: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 0.25rem 0.5rem 0.25rem 1rem;
+
+    > section {
+      display: flex;
+      flex-flow: column wrap;
+
+      > input {
+        width: 100%;
+        border: none;
+        padding-right: 1rem;
+      }
+
+      &:first-child {
+        flex: 1;
+      }
+    }
+  }
+  h5 {
+    margin: 0.75rem 0.25rem;
+    &.neutral {
+      color: var(--text-color-secondary);
+      opacity: 0.8;
+    }
+    &.danger {
+      color: var(--status-danger-color);
+    }
+    &.success {
+      color: var(--status-success-color);
+    }
+  }
+}
+
+.readOnly {
+  color: var(--text-color-primary);
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-bottom: 1.5rem;
+
+  h3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    > span {
+      margin-left: 1rem;
+    }
+  }
+  h4 {
+    margin: 0.25rem 0 0 0;
+  }
+
+  > .content {
+    width: 100%;
+  }
+
+  .accounts {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .account {
+    background: var(--button-primary-background);
+    width: 100%;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    transition: border 0.1s;
+
+    > div {
+      color: var(--text-color-secondary);
+      transition: opacity 0.2s;
+
+      &:first-child {
+        flex: 1;
+        display: flex;
+        flex-flow: row wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      &:last-child {
+        padding-left: 2rem;
+        opacity: 0.25;
+      }
+    }
+
+    &:hover {
+      border-color: var(--border-secondary-color);
+    }
+
+    button {
+      font-size: 1rem;
+    }
+  }
+}
+
+.layout {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+
+  &.two-col {
+    /* Remove outer padding for 2-per-row layout */
+    @media (min-width: 801px) {
+      > div:nth-child(2n) {
+        padding-right: 0;
+      }
+      > div:nth-child(2n + 1) {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &.three-col {
+    /* Remove outer padding for 2-per-row layout */
+    @media (min-width: 801px) and (max-width: 1301px) {
+      > div:nth-child(2n) {
+        padding-right: 0;
+      }
+      > div:nth-child(2n + 1) {
+        padding-left: 0;
+      }
+    }
+    /* Remove outer padding for 3-per-row layout */
+    @media (min-width: 1301px) {
+      > div:nth-child(3n) {
+        padding-right: 0;
+      }
+      > div:nth-child(3n + 1) {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+$TwoThreshold: 800;
+$ThreeRowThreshold: 1300;
+
+.itemWrapperGrow {
+  flex-grow: 1;
+}
+
+.itemWrapperNoGrow {
+  flex-grow: 0;
+}
+
+.selectItemsWrapper {
+  padding: 0.6rem;
+  width: 100%;
+
+  &.two-col {
+    width: 50%;
+    /* flex basis for 3-per-row layout */
+    @media (max-width: $TwoThresholdpx) {
+      width: 100%;
+    }
+  }
+
+  &.three-col {
+    width: 33.33%;
+    /* flex basis for 2-per-row layout */
+    @media (min-width: $TwoThresholdpx) and (max-width: $ThreeRowThresholdpx) {
+      width: 50%;
+    }
+    /* flex basis for 3-per-row layout */
+    @media (max-width: $TwoThresholdpx) {
+      width: 100%;
+    }
+  }
+
+  .not-selected {
+    > .inner {
+      border: 1.75px solid var(--border-primary-color);
+      border-radius: 1rem;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      transition: border var(--transition-duration);
+
+      &:hover {
+        .border {
+          &:hover {
+            border-color: var(--network-color-primary);
+          }
+        }
+        .noborder {
+          &:hover {
+            border-color: var(--border-primary-color);
+          }
+        }
+      }
+
+      > button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: left;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+
+        &:disabled {
+          opacity: var(--opacity-disabled);
+        }
+
+        > .icon {
+          background: var(--background-list-item);
+          color: var(--network-color-primary);
+          width: 6rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        > .body {
+          flex: 1;
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: center;
+          padding: 1.25rem 1.35rem;
+          overflow: hidden;
+
+          p {
+            margin: 0.4rem 0 0 0;
+          }
+        }
+
+        > .toggle {
+          color: var(--text-color-secondary);
+          opacity: 0.5;
+          width: 4rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  .selected {
+    > .inner {
+      border: 1.75px solid var(--network-color-primary);
+      border-radius: 1rem;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      transition: border var(--transition-duration);
+
+      .border {
+        &:hover {
+          border-color: var(--network-color-primary);
+        }
+      }
+      .noborder {
+        &:hover {
+          border-color: var(--network-color-primary);
+        }
+      }
+
+      > button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: left;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+
+        &:disabled {
+          opacity: var(--opacity-disabled);
+        }
+
+        > .icon {
+          background: var(--background-list-item);
+          color: var(--network-color-primary);
+          width: 6rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        > .body {
+          flex: 1;
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: center;
+          padding: 1.25rem 1.35rem;
+          overflow: hidden;
+
+          p {
+            margin: 0.4rem 0 0 0;
+          }
+        }
+
+        > .toggle {
+          color: var(--network-color-primary);
+          opacity: 1;
+          width: 4rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
