@@ -6,5 +6,6 @@ import { ComponentBase } from "../types";
 export type ActionItemProps = ComponentBase & {
   text: string;
   toggled?: boolean;
+  disabled?: boolean;
   onToggle?: (val: boolean) => void;
 };

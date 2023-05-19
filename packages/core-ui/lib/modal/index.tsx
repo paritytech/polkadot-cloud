@@ -15,6 +15,7 @@ export const ActionItem = ({
   style,
   text,
   toggled,
+  disabled,
   onToggle,
 }: ActionItemProps) => {
   const [toggle, setToggle] = useState<boolean>(toggled);
@@ -26,6 +27,7 @@ export const ActionItem = ({
         <button
           type="button"
           className="toggle"
+          disabled={disabled}
           onClick={() => {
             if (typeof onToggle === "function") {
               onToggle(!toggle);
