@@ -17,7 +17,7 @@ import { AnyJson, AnyObject } from "./types";
 
 /**
  * @name clipAddress
- * @description Clips an address to the first 6 and last 6 characters.
+ * @summary Clips an address to the first 6 and last 6 characters.
  */
 export const clipAddress = (val: string) => {
   if (typeof val !== "string") {
@@ -31,7 +31,7 @@ export const clipAddress = (val: string) => {
 
 /**
  * @name remToUnit
- * @description Converts a rem string to a number.
+ * @summary Converts a rem string to a number.
  */
 export const remToUnit = (rem: string) =>
   Number(rem.slice(0, rem.length - 3)) *
@@ -39,7 +39,7 @@ export const remToUnit = (rem: string) =>
 
 /**
  * @name planckToUnit
- * @description
+ * @summary
  * Converts an on chain balance value in BigNumber planck to a decimal value in token unit. (1 token
  * = 10^units planck).
  * @summary convert planck to the token unit.
@@ -51,7 +51,7 @@ export const planckToUnit = (val: BigNumber, units: number) =>
 
 /**
  * @name unitToPlanck
- * @description
+ * @summary
  * Converts a balance in token unit to an equivalent value in planck by applying the chain decimals
  * point. (1 token = 10^units planck).
  * @summary Convert the token unit to planck.
@@ -63,25 +63,25 @@ export const unitToPlanck = (val: string, units: number): BigNumber =>
 
 /**
  * @name rmCommas
- * @description Removes the commas from a string.
+ * @summary Removes the commas from a string.
  */
 export const rmCommas = (val: string): string => val.replace(/,/g, "");
 
 /**
  * @name greaterThanZero
- * @description Returns whether a BigNumber is greater than zero.
+ * @summary Returns whether a BigNumber is greater than zero.
  */
 export const greaterThanZero = (val: BigNumber) => val.isGreaterThan(0);
 
 /**
  * @name isNotZero
- * @description Returns whether a BigNumber is zero.
+ * @summary Returns whether a BigNumber is zero.
  */
 export const isNotZero = (val: BigNumber) => !val.isZero();
 
 /**
  * @name shuffle
- * @description Shuffle a set of objects.
+ * @summary Shuffle a set of objects.
  */
 export const shuffle = <T>(array: Array<T>) => {
   let currentIndex = array.length;
@@ -99,7 +99,7 @@ export const shuffle = <T>(array: Array<T>) => {
 
 /**
  * @name pageFromUri
- * @description Use url variables to load the default components upon the first page visit.
+ * @summary Use url variables to load the default components upon the first page visit.
  */
 export const pageFromUri = (pathname: string, fallback: string) => {
   const lastUriItem = pathname.substring(pathname.lastIndexOf("/") + 1);
@@ -109,14 +109,14 @@ export const pageFromUri = (pathname: string, fallback: string) => {
 
 /**
  * @name capitalizeFirstLetter
- * @description Capitalize the first letter of a string.
+ * @summary Capitalize the first letter of a string.
  */
 export const capitalizeFirstLetter = (string: string) =>
   string.charAt(0).toUpperCase() + string.slice(1);
 
 /**
  * @name setStateWithRef
- * @description Synchronize React state and its reference with the provided value.
+ * @summary Synchronize React state and its reference with the provided value.
  */
 export const setStateWithRef = <T>(
   value: T,
@@ -129,7 +129,7 @@ export const setStateWithRef = <T>(
 
 /**
  * @name localStorageOrDefault
- * @description Retrieve the local stroage value with the key, return defult value if it is not
+ * @summary Retrieve the local stroage value with the key, return defult value if it is not
  * found.
  */
 export const localStorageOrDefault = <T>(
@@ -151,7 +151,7 @@ export const localStorageOrDefault = <T>(
 
 /**
  * @name isValidAddress
- * @description Return whether an address is valid Substrate address.
+ * @summary Return whether an address is valid Substrate address.
  */
 export const isValidAddress = (address: string) => {
   try {
@@ -164,7 +164,7 @@ export const isValidAddress = (address: string) => {
 
 /**
  * @name determinePoolDisplay
- * @description A pool will be displayed with either its set metadata or its address.
+ * @summary A pool will be displayed with either its set metadata or its address.
  */
 export const determinePoolDisplay = (adddress: string, batchItem: AnyJson) => {
   // default display value
@@ -188,7 +188,7 @@ export const determinePoolDisplay = (adddress: string, batchItem: AnyJson) => {
 
 /**
  * @name extractUrlValue
- * @description Extracts a URL value from a URL string.
+ * @summary Extracts a URL value from a URL string.
  */
 export const extractUrlValue = (key: string, url?: string) => {
   if (typeof url === "undefined") url = window.location.href;
@@ -198,7 +198,7 @@ export const extractUrlValue = (key: string, url?: string) => {
 
 /**
  * @name camelize
- * @description Converts a string of text to camelCase.
+ * @summary Converts a string of text to camelCase.
  */
 export const camelize = (str: string) =>
   str
@@ -209,7 +209,7 @@ export const camelize = (str: string) =>
 
 /**
  * @name varToUrlHash
- * @description
+ * @summary
  * Since url variables are added to the hash and are not treated as URL params, the params are split
  * and parsed into a `URLSearchParams`.
  * @summary Puts a variable into the URL hash as a param.
@@ -232,7 +232,7 @@ export const varToUrlHash = (
 
 /**
  * @name removeVarFromUrlHash
- * @description
+ * @summary
  * Removes a variable `key` from the URL hash if it exists. Removes dangling `?` if no URL variables
  * exist.
  */
@@ -250,7 +250,7 @@ export const removeVarFromUrlHash = (key: string) => {
 
 /**
  * @name sortWithNull
- * @description Sorts an array with nulls last.
+ * @summary Sorts an array with nulls last.
  */
 export const sortWithNull =
   (ascending: boolean) => (a: AnyJson, b: AnyJson) => {
@@ -275,7 +275,7 @@ export const sortWithNull =
 
 /**
  * @name applyWidthAsPadding
- * @description Applies width of subject to paddingRight of container.
+ * @summary Applies width of subject to paddingRight of container.
  */
 export const applyWidthAsPadding = (
   subjectRef: RefObject<HTMLDivElement>,
@@ -290,13 +290,13 @@ export const applyWidthAsPadding = (
 
 /**
  * @name unescape
- * @description Replaces \” with “
+ * @summary Replaces \” with “
  */
 export const unescape = (val: string) => val.replace(/\\"/g, '"');
 
 /**
  * @name inChrome
- * @description Whether the application is rendering in Chrome.
+ * @summary Whether the application is rendering in Chrome.
  */
 export const inChrome = () => {
   const isChromium = (window as AnyJson)?.chrome || null;
@@ -386,4 +386,19 @@ export const matchedProperties = (
           )
         )
       );
+};
+
+/**
+ * @name isValidHttpUrl
+ * @summary Give a string, return whether it is a valid http URL.
+ * @param string  - The string to check.
+ */
+export const isValidHttpUrl = (string: string) => {
+  let url: URL;
+  try {
+    url = new URL(string);
+  } catch (_) {
+    return false;
+  }
+  return url.protocol === "http:" || url.protocol === "https:";
 };
