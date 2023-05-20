@@ -12,6 +12,18 @@ SPDX-License-Identifier: Apache-2.0 */
   font-variation-settings: "wght" 650;
 
   > svg {
-    margin-right: 0.5rem;
+    margin-right: 0.65rem;
+  }
+
+  .toggle {
+    background: var(--background-input);
+    border: 1px solid var(--border-primary-color);
+    border-radius: 0.4rem;
+    margin-right: 0.65rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

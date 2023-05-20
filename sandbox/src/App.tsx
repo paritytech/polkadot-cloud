@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Buttons } from "./pages/Buttons";
 import { SideMenu } from "./components/SideMenu";
 import { Odometer } from "./pages/Odometer";
+import { Modal } from "./pages/Modal";
 
 export const App = () => {
   // store the current theme
@@ -18,9 +19,10 @@ export const App = () => {
 
   const getComponent = (key: string) => {
     switch (key) {
-      case "odometer": {
+      case "odometer":
         return <Odometer />;
-      }
+      case "modal":
+        return <Modal />;
       default:
         return <Buttons />;
     }
