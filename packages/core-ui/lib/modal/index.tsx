@@ -6,53 +6,52 @@ import { useState } from "react";
 import { valOr } from "../utils";
 import { faCheck, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ActionItemProps, HeightProps } from "./types";
+import {
+  ActionItemProps,
+  ModalHeightProps,
+  ModalBackgroundProps,
+} from "./types";
 import { motion } from "framer-motion";
 
 /**
- * @name ModalWrapper
- * @summary Modal wrapper.
- */
-export const ModalWrapper = ({ children, style }: ComponentBase) => {
-  return (
-    <motion.div className="modal-wrapper" style={style}>
-      {children}
-    </motion.div>
-  );
-};
-
-/**
- * @name Blur
+ * @name BlurredBackground
  * @summary Blurred background wrapper.
  */
-export const Blur = () => <motion.div className="modal-blur" />;
+export const ModalBackground = ({
+  blurOnly,
+  children,
+  style,
+}: ModalBackgroundProps) => (
+  <motion.div
+    className={`${valOr(blurOnly, "modal-blur", "modal-wrapper")}`}
+    style={style}
+  >
+    {children}
+  </motion.div>
+);
 
 /**
  * @name Height
  * @summary Used for modal window height.
  */
-export const Height = ({ size, children, style }: HeightProps) => {
-  return (
-    <div
-      className={`modal-height ${valOr(size === "xl", "xl", "large")}`}
-      style={style}
-    >
-      {children}
-    </div>
-  );
-};
+export const ModalHeight = ({ size, children, style }: ModalHeightProps) => (
+  <div
+    className={`modal-height ${valOr(size === "xl", "xl", "large")}`}
+    style={style}
+  >
+    {children}
+  </div>
+);
 
 /**
  * @name Footer
  * @summary Used for extrinsics forms.
  */
-export const Footer = ({ children, style }: ComponentBase) => {
-  return (
-    <div className="modal-footer" style={style}>
-      {children}
-    </div>
-  );
-};
+export const ModalFooter = ({ children, style }: ComponentBase) => (
+  <div className="modal-footer" style={style}>
+    {children}
+  </div>
+);
 
 /**
  * @name ActionItem

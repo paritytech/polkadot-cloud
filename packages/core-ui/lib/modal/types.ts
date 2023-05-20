@@ -4,12 +4,22 @@ SPDX-License-Identifier: Apache-2.0 */
 import { ComponentBase } from "../types";
 
 export type ActionItemProps = ComponentBase & {
+  // the title
   text: string;
+  // the state of the item
   toggled?: boolean;
+  // whether the item is disabled.
   disabled?: boolean;
+  // the switch action
   onToggle?: (val: boolean) => void;
 };
 
-export type HeightProps = ComponentBase & {
+export type ModalHeightProps = ComponentBase & {
+  // the maximum width
   size: string;
+};
+
+export type ModalBackgroundProps = ComponentBase & {
+  // whether just implement the blurred background with other css
+  blurOnly: boolean;
 };
