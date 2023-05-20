@@ -9,3 +9,7 @@ export type ActionItemProps = ComponentBase & {
   disabled?: boolean;
   onToggle?: (val: boolean) => void;
 };
+
+export type HeightProps = ComponentBase & {
+  size: string;
+};

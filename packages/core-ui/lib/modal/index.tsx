@@ -2,33 +2,39 @@
 SPDX-License-Identifier: Apache-2.0 */
 
 import { ComponentBase } from "../types";
-import { RefObject, forwardRef, useState } from "react";
+import { useState } from "react";
 import { valOr } from "../utils";
 import { faCheck, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ActionItemProps } from "./types";
+import { ActionItemProps, HeightProps } from "./types";
+import { motion } from "framer-motion";
 
 /**
- * @name ModalContent
- * @description Modal content wrapper.
+ * @name ModalWrapper
+ * @summary Modal wrapper.
  */
-export const ModalContent = forwardRef(
-  ({ children, style }: ComponentBase, ref?: RefObject<HTMLDivElement>) => (
-    <div ref={ref} className="modal-content" style={style}>
+export const ModalWrapper = ({ children, style }: ComponentBase) => {
+  return (
+    <motion.div className="modal-wrapper" style={style}>
       {children}
-    </div>
-  )
-);
-ModalContent.displayName = "ModalContent";
+    </motion.div>
+  );
+};
 
 /**
  * @name Blur
- * @description Blurred background wrapper.
+ * @summary Blurred background wrapper.
  */
-export const Blur = ({ blur, children, style }: ComponentBase) => {
+export const Blur = () => <motion.div className="modal-blur" />;
+
+/**
+ * @name Height
+ * @summary Used for modal window height.
+ */
+export const Height = ({ size, children, style }: HeightProps) => {
   return (
     <div
-      className={`${valOr(blur, "modal-blur", "modal-wrapper")}`}
+      className={`modal-height ${valOr(size === "xl", "xl", "large")}`}
       style={style}
     >
       {children}
@@ -37,20 +43,8 @@ export const Blur = ({ blur, children, style }: ComponentBase) => {
 };
 
 /**
- * @name Height
- * @description Used for modal window height.
- */
-export const Height = ({ size, children, style }: ComponentBase) => {
-  return (
-    <div className="modal-height" style={style}>
-      {children}
-    </div>
-  );
-};
-
-/**
  * @name Footer
- * @description Used for extrinsics forms.
+ * @summary Used for extrinsics forms.
  */
 export const Footer = ({ children, style }: ComponentBase) => {
   return (
