@@ -2,8 +2,8 @@
 SPDX-License-Identifier: Apache-2.0 */
 
 import { ComponentBase } from "../types";
-import { RefObject, forwardRef } from "react";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { RefObject, forwardRef, useState } from "react";
+import { faCheck, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ActionItemProps } from "./types";
 
@@ -25,9 +25,34 @@ ModalContent.displayName = "ModalContent";
  * @summary A call to action item as a header.
  * @param {string} text - The text to display.
  */
-export const ActionItem = ({ style, text }: ActionItemProps) => (
-  <h3 className={`modal-action-item`} style={style}>
-    <FontAwesomeIcon icon={faChevronRight} transform="shrink-7" />
-    {text}
-  </h3>
-);
+export const ActionItem = ({
+  style,
+  text,
+  toggled,
+  disabled,
+  onToggle,
+}: ActionItemProps) => {
+  const [toggle, setToggle] = useState<boolean>(toggled);
+  return (
+    <h3 className={`modal-action-item`} style={style}>
+      {toggled === undefined ? (
+        <FontAwesomeIcon icon={faChevronRight} transform="shrink-6" />
+      ) : (
+        <button
+          type="button"
+          className="toggle"
+          disabled={disabled}
+          onClick={() => {
+            if (typeof onToggle === "function") {
+              onToggle(!toggle);
+            }
+            setToggle(!toggle);
+          }}
+        >
+          {toggle && <FontAwesomeIcon icon={faCheck} transform="shrink-3" />}
+        </button>
+      )}
+      {text}
+    </h3>
+  );
+};

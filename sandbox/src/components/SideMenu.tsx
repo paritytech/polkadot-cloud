@@ -67,6 +67,12 @@ export const SideMenu = ({
           Buttons
         </button>
         <button
+          className={component === "modal" ? "selected" : undefined}
+          onClick={() => setComponent("modal")}
+        >
+          Modal
+        </button>
+        <button
           className={component === "odometer" ? "selected" : undefined}
           onClick={() => setComponent("odometer")}
         >
