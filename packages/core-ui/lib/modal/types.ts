@@ -2,6 +2,10 @@
 SPDX-License-Identifier: Apache-2.0 */
 
 import { ComponentBase } from "../types";
+import { AnimationControls } from "framer-motion";
+
+// eslint-disable-next-line
+export type AnyObject = any;
 
 export type ActionItemProps = ComponentBase & {
   // the title
@@ -21,5 +25,13 @@ export type ModalHeightProps = ComponentBase & {
 
 export type ModalBackgroundProps = ComponentBase & {
   // whether just implement the blurred background with other css
-  blurOnly: boolean;
+  blurOnly?: boolean;
+  // the origin state of the object
+  initial: AnyObject;
+  // manually start and control animations
+  animate: AnimationControls;
+  // how values animate from one state to another
+  transition: AnyObject;
+  // define animation states and organise them by name
+  variants: AnyObject;
 };

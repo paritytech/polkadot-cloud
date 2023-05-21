@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 */
 
 import { ComponentBase } from "../types";
 import { useState } from "react";
-import { valOr } from "../utils";
+import { valEmpty, valOr } from "../utils";
 import { faCheck, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -21,10 +21,18 @@ export const ModalBackground = ({
   blurOnly,
   children,
   style,
+  initial,
+  animate,
+  transition,
+  variants,
 }: ModalBackgroundProps) => (
   <motion.div
     className={`${valOr(blurOnly, "modal-blur", "modal-wrapper")}`}
     style={style}
+    initial={initial}
+    animate={animate}
+    transition={transition}
+    variants={variants}
   >
     {children}
   </motion.div>
@@ -36,7 +44,10 @@ export const ModalBackground = ({
  */
 export const ModalHeight = ({ size, children, style }: ModalHeightProps) => (
   <div
-    className={`modal-height ${valOr(size === "xl", "xl", "large")}`}
+    className={`modal-height${valEmpty(size === "xl", "xl")}${valEmpty(
+      size === "large",
+      "large"
+    )}`}
     style={style}
   >
     {children}
