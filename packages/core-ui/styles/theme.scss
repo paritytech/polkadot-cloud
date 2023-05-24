@@ -94,7 +94,8 @@ SPDX-License-Identifier: Apache-2.0 */
     --button-tertiary-background: #ececec;
     --button-hover-background: #e8e6e6;
     --card-shadow-color: rgb(158 158 158 / 20%);
-    --card-shadow-color-secondary: #eaeaea;
+    --card-deep-shadow-color: rgb(158 158 158 / 50%);
+    --card-shadow-color-secondary: #e6e6e6;
     --network-color-primary: var(--network-color-primary-light);
     --network-color-secondary: var(--network-color-secondary-light);
     --network-color-stroke: var(--network-color-stroke-light);
@@ -134,8 +135,9 @@ SPDX-License-Identifier: Apache-2.0 */
       rgb(0 0 0 / 4%) 0%,
       rgb(0 0 0 / 1%) 100%
     );
-    --card-shadow: 0px 2px 1px 0px var(--card-shadow-color),
-      0 3.5px 4px -1px var(--card-shadow-color),
+    --card-shadow: -1px -2px 12px 1px var(--card-shadow-color-secondary),
+      0px 1.5px 1px 0px var(--card-deep-shadow-color),
+      0 3.5px 6px -1px var(--card-shadow-color),
       0.4px -0.4px 0px 0px var(--card-shadow-color),
       -0.4px 0px 0px 0px var(--card-shadow-color);
     --card-shadow-secondary: 0px 2px 1px 0px var(--card-shadow-color-secondary),
@@ -164,6 +166,7 @@ SPDX-License-Identifier: Apache-2.0 */
     --button-tertiary-background: rgb(39 37 39);
     --button-hover-background: rgb(66 61 68);
     --card-shadow-color: rgb(28 24 28 / 25%);
+    --card-deep-shadow-color: rgb(28 24 28 / 50%);
     --card-shadow-color-secondary: rgb(28 24 28 / 25%);
     --network-color-primary: var(--network-color-primary-dark);
     --network-color-secondary: var(--network-color-secondary-dark);
@@ -203,8 +206,9 @@ SPDX-License-Identifier: Apache-2.0 */
       rgb(255 255 255 / 3%) 0%,
       rgb(255 255 255 / 1%) 100%
     );
-    --card-shadow: 0px 2px 1px 0px var(--card-shadow-color),
-      0 3.5px 4px -1px var(--card-shadow-color),
+    --card-shadow: -1px -2px 12px 1px var(--card-shadow-color-secondary),
+      0px 1.5px 1px 0px var(--card-deep-shadow-color),
+      0 3.5px 6px -1px var(--card-shadow-color),
       0.4px -0.4px 0px 0px var(--card-shadow-color),
       -0.4px 0px 0px 0px var(--card-shadow-color);
     --card-shadow-secondary: 0px 2px 1px 0px var(--card-shadow-color-secondary),

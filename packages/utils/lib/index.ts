@@ -402,3 +402,28 @@ export const isValidHttpUrl = (string: string) => {
   }
   return url.protocol === "http:" || url.protocol === "https:";
 };
+
+/**
+ * @name makeCancelable
+ * @summary Makes a promise cancellable.
+ * @param promise  - The promise to make cancellable.
+ */
+export const makeCancelable = (promise: Promise<AnyObject>) => {
+  let hasCanceled = false;
+
+  const wrappedPromise = new Promise((resolve, reject) => {
+    promise.then((val) =>
+      hasCanceled ? reject(Error("Cancelled")) : resolve(val)
+    );
+    promise.catch((error) =>
+      hasCanceled ? reject(Error("Cancelled")) : reject(error)
+    );
+  });
+
+  return {
+    promise: wrappedPromise,
+    cancel: () => {
+      hasCanceled = true;
+    },
+  };
+};
