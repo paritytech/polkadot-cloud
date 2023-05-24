@@ -1,10 +1,12 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import { useState } from "react";
 import { faCheck, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ActionItemProps } from "./types";
+import { ComponentBase } from "../types";
+import { RefObject, forwardRef, useState } from "react";
+import { motion } from "framer-motion";
 
 /**
  * @name ActionItem
@@ -42,3 +44,86 @@ export const ActionItem = ({
     </h3>
   );
 };
+
+/**
+ * @name ModalPadding
+ * @summary Generic wrapper for modal padding
+ */
+export const ModalPadding = forwardRef(
+  ({ children, style }: ComponentBase, ref?: RefObject<HTMLDivElement>) => (
+    <div ref={ref} className="modal-padding" style={style}>
+      {children}
+    </div>
+  )
+);
+ModalPadding.displayName = "ModalPadding";
+
+/**
+ * @name ModalSeparator
+ * @summary
+ */
+export const ModalSeparator = ({ children, style }: ComponentBase) => (
+  <div className="modal-separator" style={style}>
+    {children}
+  </div>
+);
+
+/**
+ * @name ModalNotes
+ * @summary
+ */
+export const ModalNotes = ({ children, style }: ComponentBase) => (
+  <div className="modal-notes" style={style}>
+    {children}
+  </div>
+);
+
+/**
+ * @name
+ * @summary
+ */
+export const ModalWarnings = ({ children, style }: ComponentBase) => (
+  <div className="modal-warnings" style={style}>
+    {children}
+  </div>
+);
+
+/**
+ * @name
+ * @summary
+ */
+export const ModalCustomHeader = ({ children, style }: ComponentBase) => (
+  <div className="modal-custom-header" style={style}>
+    {children}
+  </div>
+);
+
+/**
+ * @name
+ * @summary
+ */
+export const ModalFixedTitle = ({ children, style }: ComponentBase) => (
+  <div className="modal-fixed-title" style={style}>
+    {children}
+  </div>
+);
+
+/**
+ * @name
+ * @summary
+ */
+export const ModalSection = ({ children, style }: ComponentBase) => (
+  <div className="modal-multi-section" style={style}>
+    {children}
+  </div>
+);
+
+/**
+ * @name
+ * @summary
+ */
+export const ModalMotionSection = ({ children, style }: ComponentBase) => (
+  <motion.div className="modal-three-section" style={style}>
+    {children}
+  </motion.div>
+);

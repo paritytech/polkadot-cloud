@@ -27,3 +27,139 @@ SPDX-License-Identifier: Apache-2.0 */
     align-items: center;
   }
 }
+
+.modal-padding {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  padding: 1rem;
+
+  &.vertical-only {
+    padding: 1rem 0 0.25rem 0;
+  }
+
+  &.horizontal-only {
+    padding: 0 1rem;
+  }
+}
+
+.modal-separator {
+  border-top: 1px solid var(--text-color-secondary);
+  width: 100%;
+  opacity: 0.1;
+  margin: 0.8rem 0rem 0.8rem 0;
+}
+
+.modal-notes {
+  width: 100%;
+  padding: 0;
+
+  &.with-padding {
+    padding: 0.75rem 0;
+  }
+
+  > p {
+    color: var(--text-color-secondary);
+  }
+}
+
+.modal-warnings {
+  margin-top: 0;
+  width: 100%;
+
+  &.with-margin {
+    margin-top: 0.75rem;
+  }
+}
+
+.modal-custom-header {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-top: 0.5rem;
+  position: relative;
+
+  > div {
+    &.first {
+      display: flex;
+      flex-grow: 1;
+
+      h1 {
+        color: var(--text-color-primary);
+        font-size: 1.4rem;
+        font-family: 'Unbounded', 'sans-serif', sans-serif;
+        padding: 0.5rem 0.5rem 0 0.5rem;
+        display: flex;
+        align-items: center;
+        > button {
+          margin-left: 1.25rem;
+        }
+      }
+    }
+    &.last {
+      display: flex;
+    }
+  }
+
+  .closeModal {
+    position: absolute;
+    top: 0rem;
+    right: 1.5rem;
+    opacity: 0.25;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.modal-fixed-title {
+  width: 100%;
+  background: transparent;
+  padding: 1rem 0 0 0;
+
+  &.with-style {
+    background: var(--background-default);
+    padding: 1rem 1rem 0rem 1rem;
+  }
+}
+
+.modal-multi-section {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 0;
+  position: relative;
+}
+
+.modal-three-section {
+  border-radius: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  flex-basis: 33.33%;
+  min-width: 33.33%;
+  height: auto;
+  overflow: auto;
+  flex-grow: 1;
+}
+
+.modal-tabs {
+  width: 100%;
+  display: flex;
+  margin: 1.25rem 0 0.25rem 0;
+}
+
+.modal-two-sections {
+  width: 200%;
+  height: auto;
+  display: flex;
+  overflow: auto;
+  position: relative;
+}
+
+.modal-three-sections {
+  width: 300%;
+  height: auto;
+  display: flex;
+  overflow: auto;
+  position: relative;
+}
