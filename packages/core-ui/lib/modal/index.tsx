@@ -50,7 +50,7 @@ export const ModalHeight = ({ size, children, style }: ModalHeightProps) => (
 );
 
 /**
- * @name Footer
+ * @name ModalFooter
  * @summary Used for extrinsics forms.
  */
 export const ModalFooter = ({ children, style }: ComponentBase) => (
