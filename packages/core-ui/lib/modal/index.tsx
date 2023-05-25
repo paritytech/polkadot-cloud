@@ -34,7 +34,7 @@ export const ModalContainer = ({ children, ...rest }: ModalContainerProps) => (
 );
 
 /**
- * @name Height
+ * @name ModalHeight
  * @summary Used for modal window height.
  */
 export const ModalHeight = ({ size, children, style }: ModalHeightProps) => (
