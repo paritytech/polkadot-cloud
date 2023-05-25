@@ -29,7 +29,7 @@ SPDX-License-Identifier: Apache-2.0 */
   @include modal-position;
 
   background: var(--overlay-modal-color);
-  z-index: 7;
+  z-index: 9;
 }
 
 .modal-container {
