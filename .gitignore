@@ -96,3 +96,6 @@ typings/
 
 # macOS
 .DS_Store
+
+# fonts
+*.woff2
