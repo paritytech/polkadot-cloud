@@ -1,6 +1,6 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
-@mixin blur {
+@mixin modal-position {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -25,16 +25,16 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 }
 
-.modal-blur {
-  @include blur;
+.modal-background {
+  @include modal-position;
 
   background: var(--overlay-modal-color);
   z-index: 7;
 }
 
 .modal-container {
-  @include blur;
-  
+  @include modal-position;
+
   z-index: 9;
 
   > div {

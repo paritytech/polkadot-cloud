@@ -3,37 +3,32 @@ SPDX-License-Identifier: Apache-2.0 */
 
 import { ComponentBase } from "../types";
 import { useState } from "react";
-import { valEmpty, valOr } from "../utils";
+import { valEmpty } from "../utils";
 import { faCheck, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   ActionItemProps,
   ModalHeightProps,
-  ModalBackgroundProps,
+  ModalContainerProps,
 } from "./types";
 import { motion } from "framer-motion";
 
 /**
- * @name BlurredBackground
- * @summary Blurred background wrapper.
+ * @name ModalBackground
+ * @summary Modal background wrapper.
  */
-export const ModalBackground = ({
-  blurOnly,
-  children,
-  style,
-  initial,
-  animate,
-  transition,
-  variants,
-}: ModalBackgroundProps) => (
-  <motion.div
-    className={`${valOr(blurOnly, "modal-blur", "modal-wrapper")}`}
-    style={style}
-    initial={initial}
-    animate={animate}
-    transition={transition}
-    variants={variants}
-  >
+export const ModalBackground = ({ children, ...rest }: ModalContainerProps) => (
+  <motion.div className="modal-background" {...rest}>
+    {children}
+  </motion.div>
+);
+
+/**
+ * @name ModalContainer
+ * @summary Modal container wrapper.
+ */
+export const ModalContainer = ({ children, ...rest }: ModalContainerProps) => (
+  <motion.div className="modal-container" {...rest}>
     {children}
   </motion.div>
 );

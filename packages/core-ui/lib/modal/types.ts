@@ -23,7 +23,7 @@ export type ModalHeightProps = ComponentBase & {
   size: string;
 };
 
-export type ModalBackgroundProps = ComponentBase &
+export type ModalContainerProps = ComponentBase &
   AnimationProps & {
     // whether just implement the blurred background with other css
     blurOnly?: boolean;
