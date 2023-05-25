@@ -3,10 +3,19 @@ SPDX-License-Identifier: Apache-2.0 */
 
 import { faCheck, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ActionItemProps } from "./types";
+import {
+  ActionItemProps,
+  ModalPaddingProps,
+  ModalNotesProps,
+  ModalWarningsProps,
+  ModalFixedTitleProps,
+  ModalSectionProps,
+  ModalMotionSectionProps,
+} from "./types";
 import { ComponentBase } from "../types";
 import { RefObject, forwardRef, useState } from "react";
 import { motion } from "framer-motion";
+import { valEmpty } from "lib/utils";
 
 /**
  * @name ActionItem
@@ -50,8 +59,18 @@ export const ActionItem = ({
  * @summary Generic wrapper for modal padding
  */
 export const ModalPadding = forwardRef(
-  ({ children, style }: ComponentBase, ref?: RefObject<HTMLDivElement>) => (
-    <div ref={ref} className="modal-padding" style={style}>
+  (
+    { children, style, verticalOnly, horizontalOnly }: ModalPaddingProps,
+    ref?: RefObject<HTMLDivElement>
+  ) => (
+    <div
+      ref={ref}
+      className={`modal-padding${valEmpty(
+        verticalOnly,
+        "vertical-only"
+      )}${valEmpty(horizontalOnly, "horizontal-only")}`}
+      style={style}
+    >
       {children}
     </div>
   )
@@ -62,18 +81,21 @@ ModalPadding.displayName = "ModalPadding";
  * @name ModalSeparator
  * @summary
  */
-export const ModalSeparator = ({ children, style }: ComponentBase) => (
-  <div className="modal-separator" style={style}>
-    {children}
-  </div>
-);
+export const ModalSeparator = () => <div className="modal-separator" />;
 
 /**
  * @name ModalNotes
  * @summary
  */
-export const ModalNotes = ({ children, style }: ComponentBase) => (
-  <div className="modal-notes" style={style}>
+export const ModalNotes = ({
+  children,
+  style,
+  withPadding,
+}: ModalNotesProps) => (
+  <div
+    className={`modal-notes${valEmpty(withPadding, "with-padding")}`}
+    style={style}
+  >
     {children}
   </div>
 );
@@ -82,8 +104,15 @@ export const ModalNotes = ({ children, style }: ComponentBase) => (
  * @name
  * @summary
  */
-export const ModalWarnings = ({ children, style }: ComponentBase) => (
-  <div className="modal-warnings" style={style}>
+export const ModalWarnings = ({
+  children,
+  style,
+  withMargin,
+}: ModalWarningsProps) => (
+  <div
+    className={`modal-warnings${valEmpty(withMargin, "with-margin")}`}
+    style={style}
+  >
     {children}
   </div>
 );
@@ -102,8 +131,40 @@ export const ModalCustomHeader = ({ children, style }: ComponentBase) => (
  * @name
  * @summary
  */
-export const ModalFixedTitle = ({ children, style }: ComponentBase) => (
-  <div className="modal-fixed-title" style={style}>
+export const ModalFixedTitle = forwardRef(
+  (
+    { children, style, withStyle }: ModalFixedTitleProps,
+    ref?: RefObject<HTMLDivElement>
+  ) => (
+    <div
+      ref={ref}
+      className={`modal-fixed-title${valEmpty(withStyle, "with-style")}`}
+      style={style}
+    >
+      {children}
+    </div>
+  )
+);
+ModalFixedTitle.displayName = "ModalFixedTitle";
+
+/**
+ * @name
+ * @summary
+ */
+export const ModalSection = ({
+  children,
+  style,
+  multiSections,
+  threeSections,
+  tabs,
+}: ModalSectionProps) => (
+  <div
+    className={`${valEmpty(multiSections, "modal-multi-section")}${valEmpty(
+      threeSections,
+      "modal-three-section"
+    )}${valEmpty(tabs, "modal-tabs")}`}
+    style={style}
+  >
     {children}
   </div>
 );
@@ -112,18 +173,19 @@ export const ModalFixedTitle = ({ children, style }: ComponentBase) => (
  * @name
  * @summary
  */
-export const ModalSection = ({ children, style }: ComponentBase) => (
-  <div className="modal-multi-section" style={style}>
-    {children}
-  </div>
-);
-
-/**
- * @name
- * @summary
- */
-export const ModalMotionSection = ({ children, style }: ComponentBase) => (
-  <motion.div className="modal-three-section" style={style}>
+export const ModalMotionSection = ({
+  children,
+  style,
+  twoSections,
+  threeSections,
+}: ModalMotionSectionProps) => (
+  <motion.div
+    className={`${valEmpty(twoSections, "modal-motion-two-sections")}${valEmpty(
+      threeSections,
+      "modal-motion-three-sections"
+    )}`}
+    style={style}
+  >
     {children}
   </motion.div>
 );
