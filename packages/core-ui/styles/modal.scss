@@ -31,11 +31,11 @@ SPDX-License-Identifier: Apache-2.0 */
 .modal-padding {
   display: flex;
   flex-flow: column wrap;
-  width: 100%;
+  // width: 100%;
   padding: 1rem;
 
   &.vertical-only {
-    padding: 1rem 0 0.25rem 0;
+    padding: 1rem 0 0.25rem;
   }
 
   &.horizontal-only {
@@ -47,7 +47,7 @@ SPDX-License-Identifier: Apache-2.0 */
   border-top: 1px solid var(--text-color-secondary);
   width: 100%;
   opacity: 0.1;
-  margin: 0.8rem 0rem 0.8rem 0;
+  margin: 0.8rem 0;
 }
 
 .modal-notes {
@@ -88,25 +88,28 @@ SPDX-License-Identifier: Apache-2.0 */
       h1 {
         color: var(--text-color-primary);
         font-size: 1.4rem;
-        font-family: 'Unbounded', 'sans-serif', sans-serif;
-        padding: 0.5rem 0.5rem 0 0.5rem;
+        font-family: Unbounded, sans-serif;
+        padding: 0.5rem 0.5rem 0;
         display: flex;
         align-items: center;
+
         > button {
           margin-left: 1.25rem;
         }
       }
     }
+
     &.last {
       display: flex;
     }
   }
 
-  .closeModal {
+  .close-modal {
     position: absolute;
-    top: 0rem;
+    top: 0;
     right: 1.5rem;
     opacity: 0.25;
+
     &:hover {
       opacity: 1;
     }
@@ -116,11 +119,11 @@ SPDX-License-Identifier: Apache-2.0 */
 .modal-fixed-title {
   width: 100%;
   background: transparent;
-  padding: 1rem 0 0 0;
+  padding: 1rem 0 0;
 
   &.with-style {
     background: var(--background-default);
-    padding: 1rem 1rem 0rem 1rem;
+    padding: 1rem 1rem 0;
   }
 }
 
@@ -145,7 +148,7 @@ SPDX-License-Identifier: Apache-2.0 */
 .modal-tabs {
   width: 100%;
   display: flex;
-  margin: 1.25rem 0 0.25rem 0;
+  margin: 1.25rem 0 0.25rem;
 }
 
 .modal-motion-two-sections {
