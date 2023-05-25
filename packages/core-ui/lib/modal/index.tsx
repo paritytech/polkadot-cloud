@@ -56,7 +56,7 @@ export const ActionItem = ({
 
 /**
  * @name ModalPadding
- * @summary Generic wrapper for modal padding
+ * @summary Generic wrapper for modal padding.
  */
 export const ModalPadding = forwardRef(
   (
@@ -78,58 +78,8 @@ export const ModalPadding = forwardRef(
 ModalPadding.displayName = "ModalPadding";
 
 /**
- * @name ModalSeparator
- * @summary
- */
-export const ModalSeparator = () => <div className="modal-separator" />;
-
-/**
- * @name ModalNotes
- * @summary
- */
-export const ModalNotes = ({
-  children,
-  style,
-  withPadding,
-}: ModalNotesProps) => (
-  <div
-    className={`modal-notes${valEmpty(withPadding, "with-padding")}`}
-    style={style}
-  >
-    {children}
-  </div>
-);
-
-/**
- * @name
- * @summary
- */
-export const ModalWarnings = ({
-  children,
-  style,
-  withMargin,
-}: ModalWarningsProps) => (
-  <div
-    className={`modal-warnings${valEmpty(withMargin, "with-margin")}`}
-    style={style}
-  >
-    {children}
-  </div>
-);
-
-/**
- * @name
- * @summary
- */
-export const ModalCustomHeader = ({ children, style }: ComponentBase) => (
-  <div className="modal-custom-header" style={style}>
-    {children}
-  </div>
-);
-
-/**
- * @name
- * @summary
+ * @name ModalFixedTitle
+ * @summary Fixed the title.
  */
 export const ModalFixedTitle = forwardRef(
   (
@@ -148,8 +98,58 @@ export const ModalFixedTitle = forwardRef(
 ModalFixedTitle.displayName = "ModalFixedTitle";
 
 /**
- * @name
- * @summary
+ * @name ModalSeparator
+ * @summary A line to separate the content.
+ */
+export const ModalSeparator = () => <div className="modal-separator" />;
+
+/**
+ * @name ModalNotes
+ * @summary Note styling.
+ */
+export const ModalNotes = ({
+  children,
+  style,
+  withPadding,
+}: ModalNotesProps) => (
+  <div
+    className={`modal-notes${valEmpty(withPadding, "with-padding")}`}
+    style={style}
+  >
+    {children}
+  </div>
+);
+
+/**
+ * @name ModalWarnings
+ * @summary Warnings styling.
+ */
+export const ModalWarnings = ({
+  children,
+  style,
+  withMargin,
+}: ModalWarningsProps) => (
+  <div
+    className={`modal-warnings${valEmpty(withMargin, "with-margin")}`}
+    style={style}
+  >
+    {children}
+  </div>
+);
+
+/**
+ * @name ModalCustomHeader
+ * @summary The header section along with the title.
+ */
+export const ModalCustomHeader = ({ children, style }: ComponentBase) => (
+  <div className="modal-custom-header" style={style}>
+    {children}
+  </div>
+);
+
+/**
+ * @name  ModalSection
+ * @summary Section wrapper.
  */
 export const ModalSection = ({
   children,
@@ -170,8 +170,8 @@ export const ModalSection = ({
 );
 
 /**
- * @name
- * @summary
+ * @name ModalMotionSection
+ * @summary Section wrapper with motion animation.
  */
 export const ModalMotionSection = ({
   children,
