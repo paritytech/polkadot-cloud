@@ -42,7 +42,7 @@ export type ModalFixedTitleProps = ComponentBase & {
 
 export type ModalSectionProps = ComponentBase & {
   // the type of window (tab | carousel).
-  type: string;
+  type: "tab" | "carousel";
 };
 
 export type ModalHeightProps = ComponentBase & {
