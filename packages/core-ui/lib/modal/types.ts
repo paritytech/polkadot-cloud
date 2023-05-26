@@ -19,25 +19,33 @@ export type ActionItemProps = ComponentBase & {
 };
 
 export type ModalPaddingProps = ComponentBase & {
+  // whether there is padding vertically.
   verticalOnly?: boolean;
+  // whether there is padding horizontally.
   horizontalOnly?: boolean;
 };
 
 export type ModalNotesProps = ComponentBase & {
+  // whether there is padding vertically.
   withPadding?: boolean;
 };
 
 export type ModalWarningsProps = ComponentBase & {
+  // whether there is margin on top.
   withMargin?: boolean;
 };
 
 export type ModalFixedTitleProps = ComponentBase & {
+  // whether there is customized css.
   withStyle?: boolean;
 };
 
 export type ModalSectionProps = ComponentBase & {
+  // the css for multiple-section window.
   multiSections?: boolean;
+  // the css for three-section window.
   threeSections?: boolean;
+  // the css for tab windows.
   tabs?: boolean;
 };
 
