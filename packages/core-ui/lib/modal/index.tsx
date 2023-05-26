@@ -14,7 +14,7 @@ import {
   ModalAnimationProps,
   ModalHeightProps,
 } from "./types";
-import { RefObject, forwardRef, useState } from "react";
+import { RefObject, forwardRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { valEmpty } from "lib/utils";
 
@@ -77,6 +77,8 @@ export const ActionItem = ({
   onToggle,
 }: ActionItemProps) => {
   const [toggle, setToggle] = useState<boolean>(toggled);
+
+  useEffect(() => setToggle(toggled), [toggled]);
   return (
     <h3 className={`modal-action-item`} style={style}>
       {toggled === undefined ? (
