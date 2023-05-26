@@ -45,6 +45,7 @@ export type ModalMotionSectionProps = ComponentBase & {
   twoSections?: boolean;
   threeSections?: boolean;
 };
+
 export type ModalHeightProps = ComponentBase & {
   // the maximum width
   size: string;

@@ -204,13 +204,12 @@ export const ModalSection = ({
   style,
   multiSections,
   threeSections,
-  tabs,
 }: ModalSectionProps) => (
   <div
     className={`${valEmpty(multiSections, "modal-multi-section")}${valEmpty(
       threeSections,
       "modal-three-section"
-    )}${valEmpty(tabs, "modal-tabs")}`}
+    )}`}
     style={style}
   >
     {children}
