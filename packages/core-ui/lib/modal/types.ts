@@ -18,9 +18,36 @@ export type ActionItemProps = ComponentBase & {
   onToggle?: (val: boolean) => void;
 };
 
+export type ModalPaddingProps = ComponentBase & {
+  // whether there is only vertical padding.
+  verticalOnly?: boolean;
+  // whether there is only horizontal padding.
+  horizontalOnly?: boolean;
+};
+
+export type ModalNotesProps = ComponentBase & {
+  // whether there is padding vertically.
+  withPadding?: boolean;
+};
+
+export type ModalWarningsProps = ComponentBase & {
+  // whether there is margin on top.
+  withMargin?: boolean;
+};
+
+export type ModalFixedTitleProps = ComponentBase & {
+  // whether there is customized css.
+  withStyle?: boolean;
+};
+
+export type ModalSectionProps = ComponentBase & {
+  // the type of window (tab | carousel).
+  type: "tab" | "carousel";
+};
+
 export type ModalHeightProps = ComponentBase & {
   // the maximum width
   size: string;
 };
 
-export type ModalContainerProps = ComponentBase & AnimationProps;
+export type ModalAnimationProps = ComponentBase & AnimationProps;
