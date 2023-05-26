@@ -154,7 +154,7 @@ SPDX-License-Identifier: Apache-2.0 */
 .modal-custom-header {
   width: 100%;
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
   align-items: center;
   margin-top: 0.5rem;
   position: relative;
@@ -212,7 +212,7 @@ SPDX-License-Identifier: Apache-2.0 */
 .modal-three-section {
   border-radius: 1rem;
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
   flex-basis: 33.33%;
   min-width: 33.33%;
   height: auto;
