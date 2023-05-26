@@ -41,14 +41,11 @@ export type ModalSectionProps = ComponentBase & {
   tabs?: boolean;
 };
 
-export type ModalMotionSectionProps = ComponentBase & {
-  twoSections?: boolean;
-  threeSections?: boolean;
-};
-
 export type ModalHeightProps = ComponentBase & {
   // the maximum width
   size: string;
 };
 
 export type ModalContainerProps = ComponentBase & AnimationProps;
+
+export type ModalMotionSectionProps = ComponentBase & AnimationProps;

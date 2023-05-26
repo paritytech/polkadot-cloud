@@ -7,6 +7,13 @@ SPDX-License-Identifier: Apache-2.0 */
   backdrop-filter: blur(4px);
 }
 
+@mixin modal-motion-sections {
+  height: auto;
+  display: flex;
+  overflow: auto;
+  position: relative;
+}
+
 .modal-footer {
   display: flex;
   align-items: center;
@@ -216,17 +223,13 @@ SPDX-License-Identifier: Apache-2.0 */
 }
 
 .modal-motion-two-sections {
+  @include modal-motion-sections;
+
   width: 200%;
-  height: auto;
-  display: flex;
-  overflow: auto;
-  position: relative;
 }
 
 .modal-motion-three-sections {
+  @include modal-motion-sections;
+
   width: 300%;
-  height: auto;
-  display: flex;
-  overflow: auto;
-  position: relative;
 }

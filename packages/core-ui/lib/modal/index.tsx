@@ -217,22 +217,27 @@ export const ModalSection = ({
 );
 
 /**
- * @name ModalMotionSection
- * @summary Section wrapper with motion animation.
+ * @name ModalMotionTwoSection
+ * @summary Two section wrapper with motion animation.
  */
-export const ModalMotionSection = ({
+export const ModalMotionTwoSection = ({
   children,
-  style,
-  twoSections,
-  threeSections,
+  ...rest
 }: ModalMotionSectionProps) => (
-  <motion.div
-    className={`${valEmpty(twoSections, "modal-motion-two-sections")}${valEmpty(
-      threeSections,
-      "modal-motion-three-sections"
-    )}`}
-    style={style}
-  >
+  <motion.div className="modal-motion-two-sections" {...rest}>
+    {children}
+  </motion.div>
+);
+
+/**
+ * @name ModalMotionThreeSection
+ * @summary Three section wrapper with motion animation.
+ */
+export const ModalMotionThreeSection = ({
+  children,
+  ...rest
+}: ModalMotionSectionProps) => (
+  <motion.div className="modal-motion-three-sections" {...rest}>
     {children}
   </motion.div>
 );
