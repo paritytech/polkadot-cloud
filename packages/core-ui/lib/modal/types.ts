@@ -21,7 +21,7 @@ export type ActionItemProps = ComponentBase & {
 export type ModalPaddingProps = ComponentBase & {
   // whether there is only vertical padding.
   verticalOnly?: boolean;
-  // whether there is padding horizontally.
+  // whether there is only horizontal padding.
   horizontalOnly?: boolean;
 };
 
