@@ -41,12 +41,8 @@ export type ModalFixedTitleProps = ComponentBase & {
 };
 
 export type ModalSectionProps = ComponentBase & {
-  // the css for multiple-section window.
-  multiSections?: boolean;
-  // the css for three-section window.
-  threeSections?: boolean;
-  // the css for tab windows.
-  tabs?: boolean;
+  // the type of window. tab | multi-section
+  type: string;
 };
 
 export type ModalHeightProps = ComponentBase & {

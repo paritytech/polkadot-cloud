@@ -198,18 +198,12 @@ export const ModalCustomHeader = ({ children, style }: ComponentBase) => (
  * @name  ModalSection
  * @summary Section wrapper.
  */
-export const ModalSection = ({
-  children,
-  style,
-  multiSections,
-  threeSections,
-  tabs,
-}: ModalSectionProps) => (
+export const ModalSection = ({ children, style, type }: ModalSectionProps) => (
   <div
-    className={`${valEmpty(multiSections, "modal-multi-section")}${valEmpty(
-      threeSections,
-      "modal-three-section"
-    )}${valEmpty(tabs, "modal-tabs")}`}
+    className={`${valEmpty(
+      type === "multiSections",
+      "modal-multi-section"
+    )}${valEmpty(type === "tab", "modal-tabs")}`}
     style={style}
   >
     {children}
