@@ -209,16 +209,16 @@ SPDX-License-Identifier: Apache-2.0 */
   position: relative;
 }
 
-.modal-three-section {
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  flex-basis: 33.33%;
-  min-width: 33.33%;
-  height: auto;
-  overflow: auto;
-  flex-grow: 1;
-}
+// .modal-three-section {
+//   border-radius: 1rem;
+//   display: flex;
+//   flex-direction: column;
+//   flex-basis: 33.33%;
+//   min-width: 33.33%;
+//   height: auto;
+//   overflow: auto;
+//   flex-grow: 1;
+// }
 
 .modal-tabs {
   width: 100%;
@@ -236,4 +236,15 @@ SPDX-License-Identifier: Apache-2.0 */
   @include modal-motion-sections;
 
   width: 300%;
+
+  > .section {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 33.33%;
+    min-width: 33.33%;
+    height: auto;
+    overflow: auto;
+    flex-grow: 1;
+  }
 }
