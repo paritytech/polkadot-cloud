@@ -222,6 +222,12 @@ SPDX-License-Identifier: Apache-2.0 */
   flex-grow: 1;
 }
 
+.modal-tabs {
+  width: 100%;
+  display: flex;
+  margin: 1.25rem 0 0.25rem;
+}
+
 .modal-motion-two-sections {
   @include modal-motion-sections;
 
