@@ -46,6 +46,4 @@ export type ModalHeightProps = ComponentBase & {
   size: string;
 };
 
-export type ModalContainerProps = ComponentBase & AnimationProps;
-
-export type ModalMotionSectionProps = ComponentBase & AnimationProps;
+export type ModalAnimationProps = ComponentBase & AnimationProps;

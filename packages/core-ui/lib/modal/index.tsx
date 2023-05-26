@@ -11,8 +11,7 @@ import {
   ModalWarningsProps,
   ModalFixedTitleProps,
   ModalSectionProps,
-  ModalMotionSectionProps,
-  ModalContainerProps,
+  ModalAnimationProps,
   ModalHeightProps,
 } from "./types";
 import { RefObject, forwardRef, useState } from "react";
@@ -23,7 +22,7 @@ import { valEmpty } from "lib/utils";
  * @name ModalBackground
  * @summary Modal background wrapper.
  */
-export const ModalBackground = ({ children, ...rest }: ModalContainerProps) => (
+export const ModalBackground = ({ children, ...rest }: ModalAnimationProps) => (
   <motion.div className="modal-background" {...rest}>
     {children}
   </motion.div>
@@ -33,7 +32,7 @@ export const ModalBackground = ({ children, ...rest }: ModalContainerProps) => (
  * @name ModalContainer
  * @summary Modal container wrapper.
  */
-export const ModalContainer = ({ children, ...rest }: ModalContainerProps) => (
+export const ModalContainer = ({ children, ...rest }: ModalAnimationProps) => (
   <motion.div className="modal-container" {...rest}>
     {children}
   </motion.div>
@@ -224,7 +223,7 @@ export const ModalSection = ({
 export const ModalMotionTwoSection = ({
   children,
   ...rest
-}: ModalMotionSectionProps) => (
+}: ModalAnimationProps) => (
   <motion.div className="modal-motion-two-sections" {...rest}>
     {children}
   </motion.div>
@@ -237,7 +236,7 @@ export const ModalMotionTwoSection = ({
 export const ModalMotionThreeSection = ({
   children,
   ...rest
-}: ModalMotionSectionProps) => (
+}: ModalAnimationProps) => (
   <motion.div className="modal-motion-three-sections" {...rest}>
     {children}
   </motion.div>
