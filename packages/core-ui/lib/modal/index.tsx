@@ -1,6 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
+import { ComponentBase } from "../types";
 import { faCheck, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,11 +12,58 @@ import {
   ModalFixedTitleProps,
   ModalSectionProps,
   ModalMotionSectionProps,
+  ModalContainerProps,
+  ModalHeightProps,
 } from "./types";
-import { ComponentBase } from "../types";
 import { RefObject, forwardRef, useState } from "react";
 import { motion } from "framer-motion";
 import { valEmpty } from "lib/utils";
+
+/**
+ * @name ModalBackground
+ * @summary Modal background wrapper.
+ */
+export const ModalBackground = ({ children, ...rest }: ModalContainerProps) => (
+  <motion.div className="modal-background" {...rest}>
+    {children}
+  </motion.div>
+);
+
+/**
+ * @name ModalContainer
+ * @summary Modal container wrapper.
+ */
+export const ModalContainer = ({ children, ...rest }: ModalContainerProps) => (
+  <motion.div className="modal-container" {...rest}>
+    {children}
+  </motion.div>
+);
+
+/**
+ * @name ModalHeight
+ * @summary Used for modal window height.
+ */
+export const ModalHeight = ({ size, children, style }: ModalHeightProps) => (
+  <div
+    className={`modal-height${valEmpty(size === "xl", "xl")}${valEmpty(
+      size === "large",
+      "large"
+    )}`}
+    style={style}
+  >
+    {children}
+  </div>
+);
+
+/**
+ * @name ModalFooter
+ * @summary Used for extrinsics forms.
+ */
+export const ModalFooter = ({ children, style }: ComponentBase) => (
+  <div className="modal-footer" style={style}>
+    {children}
+  </div>
+);
 
 /**
  * @name ActionItem

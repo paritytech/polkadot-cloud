@@ -1,5 +1,78 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
+@mixin modal-position {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  h3 {
+    color: var(--text-color-secondary);
+    opacity: 0.5;
+    position: relative;
+    top: 1.25rem;
+
+    &.active {
+      color: var(--network-color-primary);
+      opacity: 1;
+    }
+  }
+}
+
+.modal-background {
+  @include modal-position;
+
+  background: var(--overlay-modal-color);
+  z-index: 9;
+}
+
+.modal-container {
+  @include modal-position;
+
+  z-index: 9;
+
+  > div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+
+    /* click anywhere behind modal content to close */
+    .close {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 8;
+      cursor: default;
+    }
+  }
+}
+
+.modal-height {
+  box-shadow: 0 2px 16px 1px var(--card-shadow-color);
+  transition: height 0.5s cubic-bezier(0.1, 1, 0.2, 1);
+  width: 100%;
+  max-width: 600px;
+  max-height: 100%;
+  border-radius: 1.5rem;
+  position: relative;
+  z-index: 9;
+
+  &.large {
+    max-width: 800px;
+  }
+
+  &.xl {
+    max-width: 1250px;
+  }
+}
 
 .modal-action-item {
   border-bottom: 1px solid var(--border-primary-color);
