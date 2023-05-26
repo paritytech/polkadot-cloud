@@ -200,10 +200,10 @@ export const ModalCustomHeader = ({ children, style }: ComponentBase) => (
  */
 export const ModalSection = ({ children, style, type }: ModalSectionProps) => (
   <div
-    className={`${valEmpty(
-      type === "multiSections",
-      "modal-multi-section"
-    )}${valEmpty(type === "tab", "modal-tabs")}`}
+    className={`${valEmpty(type === "carousel", "modal-carousel")}${valEmpty(
+      type === "tab",
+      "modal-tabs"
+    )}`}
     style={style}
   >
     {children}
