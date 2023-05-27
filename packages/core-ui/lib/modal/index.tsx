@@ -75,12 +75,16 @@ export const ActionItem = ({
   toggled,
   disabled,
   onToggle,
+  inactive = false,
 }: ActionItemProps) => {
   const [toggle, setToggle] = useState<boolean>(toggled);
 
   useEffect(() => setToggle(toggled), [toggled]);
   return (
-    <h3 className={`modal-action-item`} style={style}>
+    <h3
+      className={`modal-action-item`}
+      style={{ ...style, opacity: inactive ? "var(--opacity-disabled)" : 1 }}
+    >
       {toggled === undefined ? (
         <FontAwesomeIcon icon={faChevronRight} transform="shrink-6" />
       ) : (

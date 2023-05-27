@@ -8,14 +8,16 @@ import { AnimationProps } from "framer-motion";
 export type AnyObject = any;
 
 export type ActionItemProps = ComponentBase & {
-  // the title
+  // the title.
   text: string;
-  // the state of the item
+  // the state of the item.
   toggled?: boolean;
   // whether the item is disabled.
   disabled?: boolean;
-  // the switch action
+  // the switch action.
   onToggle?: (val: boolean) => void;
+  // whether the item should be inactive.
+  inactive?: boolean;
 };
 
 export type ModalPaddingProps = ComponentBase & {
