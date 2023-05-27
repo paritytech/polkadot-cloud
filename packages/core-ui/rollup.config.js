@@ -8,6 +8,7 @@ import postcss from "rollup-plugin-postcss";
 import del from "rollup-plugin-delete";
 import copy from "rollup-plugin-copy";
 import cleanup from "rollup-plugin-cleanup";
+import { uglify } from "rollup-plugin-uglify";
 
 /**
  * @type {import('rollup').RollupOptions}
@@ -46,6 +47,7 @@ export default {
     cleanup({
       extensions: ["tsx", "ts"],
     }),
+    uglify(),
   ],
   external: [
     "prop-types",
