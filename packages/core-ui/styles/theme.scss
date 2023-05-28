@@ -4,7 +4,15 @@ SPDX-License-Identifier: Apache-2.0 */
 @font-face {
   font-family: Inter;
   font-style: normal;
-  src: url("./fonts/Inter.ttf");
+  font-weight: 500;
+  src: url("./fonts/Inter500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: InterSemiBold;
+  font-style: normal;
+  font-weight: 600;
+  src: url("./fonts/Inter600.woff2") format("woff2");
 }
 
 @font-face {
