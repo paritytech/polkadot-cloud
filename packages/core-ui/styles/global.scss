@@ -13,7 +13,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   font-weight: normal;
-  font-variation-settings: "wght" 500;
   margin: 0;
 }
 
@@ -22,15 +21,13 @@ h1 {
   font-size: 1.6rem;
   line-height: 1.6rem;
   font-weight: 600;
-  font-variation-settings: "wght" 600;
   margin: 0;
 }
 
 h2 {
   font-size: 1.4rem;
   line-height: 1.6rem;
-  font-weight: 500;
-  font-variation-settings: "wght" 600;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -38,7 +35,6 @@ h3 {
   font-size: 1.25rem;
   line-height: 1.55rem;
   font-weight: 500;
-  font-variation-settings: "wght" 600;
   margin: 0;
 }
 
@@ -46,7 +42,6 @@ h4 {
   font-size: 1.08rem;
   line-height: 1.65rem;
   font-weight: 500;
-  font-variation-settings: "wght" 500;
   margin: 0;
 }
 
@@ -54,7 +49,6 @@ h5 {
   font-size: 0.92rem;
   line-height: 1.02rem;
   font-weight: 500;
-  font-variation-settings: "wght" 500;
   margin: 0;
 }
 
@@ -77,8 +71,7 @@ button {
   background: none;
   border: none;
   cursor: pointer;
-  font-weight: 500;
-  font-variation-settings: "wght" 600;
+  font-weight: 600;
   margin: 0;
   padding: 0;
 }
