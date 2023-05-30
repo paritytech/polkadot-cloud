@@ -21,6 +21,7 @@ h1 {
   font-family: InterSemiBold, sans-serif;
   font-size: 1.6rem;
   line-height: 1.6rem;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -28,6 +29,7 @@ h2 {
   font-family: InterSemiBold, sans-serif;
   font-size: 1.4rem;
   line-height: 1.6rem;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -67,11 +69,11 @@ a {
 
 /* Define bare-bones button style. */
 button {
-  font-family: Inter, sans-serif;
+  font-family:  InterSemiBold, sans-serif;
   background: none;
   border: none;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0;
   padding: 0;
 }
