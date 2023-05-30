@@ -16,7 +16,7 @@ import {
 } from "./types";
 import { RefObject, forwardRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { valEmpty } from "lib/utils";
+import { valEmpty } from "../utils";
 
 /**
  * @name ModalBackground
@@ -76,6 +76,7 @@ export const ActionItem = ({
   disabled,
   onToggle,
   inactive = false,
+  inlineButton,
 }: ActionItemProps) => {
   const [toggle, setToggle] = useState<boolean>(toggled);
 
@@ -103,6 +104,7 @@ export const ActionItem = ({
         </button>
       )}
       {text}
+      {inlineButton && <span>{inlineButton}</span>}
     </h3>
   );
 };

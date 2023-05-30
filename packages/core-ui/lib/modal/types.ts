@@ -18,6 +18,8 @@ export type ActionItemProps = ComponentBase & {
   onToggle?: (val: boolean) => void;
   // whether the item should be inactive.
   inactive?: boolean;
+  // optional inline button.
+  inlineButton?: React.ReactNode;
 };
 
 export type ModalPaddingProps = ComponentBase & {
