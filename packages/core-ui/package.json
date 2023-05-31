@@ -1,14 +1,17 @@
 {
   "name": "@polkadotcloud/core-ui",
   "license": "Apache-2.0",
-  "version": "0.2.48",
+  "version": "0.2.72",
   "author": "Ross Bulat",
   "description": "Core UI Components for Polkadot Dashboards.",
-  "keywords": ["Polkadot", "UI"],
+  "keywords": [
+    "Polkadot",
+    "UI"
+  ],
   "bugs": {
     "url": "https://github.com/paritytech/polkadot-dashboard-ui/issues"
   },
-  "homepage": "https://github.com/paritytech/polkadot2-dashboard-ui#readme",
+  "homepage": "https://github.com/paritytech/polkadot-dashboard-ui#readme",
   "scripts": {
     "build": "rollup -c && yarn fix && node ../../.scripts/injectPackageJson.cjs -p core-ui -m index.tsx",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo",
@@ -25,13 +28,14 @@
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.23",
+    "postcss": "^8.4.24",
     "rollup": "^2.78.1",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.34.1"
+    "rollup-plugin-typescript2": "^0.34.1",
+    "rollup-plugin-uglify": "^6.0.4"
   }
 }

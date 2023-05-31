@@ -6,6 +6,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import typescript from "rollup-plugin-typescript2";
 import del from "rollup-plugin-delete";
 import cleanup from "rollup-plugin-cleanup";
+import { uglify } from "rollup-plugin-uglify";
 
 /**
  * @type {import('rollup').RollupOptions}
@@ -27,6 +28,7 @@ export default {
     cleanup({
       extensions: ["ts"],
     }),
+    uglify(),
   ],
   external: [
     "prop-types",

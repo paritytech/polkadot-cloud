@@ -2,7 +2,7 @@
 SPDX-License-Identifier: Apache-2.0 */
 
 import { useState } from "react";
-import { ActionItem } from "core-ui/index";
+import { ActionItem, ButtonHelp } from "core-ui/index";
 import { CodeDrawer } from "../components/CodeDrawer";
 
 export const Modal = () => {
@@ -29,6 +29,7 @@ export const Modal = () => {
             console.log(val);
             setParentToggle(val);
           }}
+          inlineButton={<ButtonHelp />}
         />
       </div>
       <div style={{ margin: "1rem 0" }}>

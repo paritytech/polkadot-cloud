@@ -6,7 +6,6 @@ SPDX-License-Identifier: Apache-2.0 */
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 500;
 
   &.grow {
     flex: 1 1 0%;
@@ -199,7 +198,7 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 }
 
-// buttons/ButtonMonoRounded
+// buttons/ButtonMonoInvert
 .btn-mono-invert {
   @include btn-layout;
   @include btn-spacing;
