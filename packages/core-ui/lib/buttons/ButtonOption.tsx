@@ -8,6 +8,7 @@ import { valEmpty } from "../utils";
 
 export type ButtonOptionProps = ComponentBase &
   ButtonCommonProps & {
+    // button content including icon and html styling.
     content?: boolean;
   };
 
