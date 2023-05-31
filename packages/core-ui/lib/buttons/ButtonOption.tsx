@@ -4,8 +4,12 @@ SPDX-License-Identifier: Apache-2.0 */
 import { ButtonCommonProps, ComponentBase } from "../types";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { valEmpty } from "../utils";
 
-export type ButtonOptionProps = ComponentBase & ButtonCommonProps;
+export type ButtonOptionProps = ComponentBase &
+  ButtonCommonProps & {
+    content?: boolean;
+  };
 
 /**
  * @name ButtonOption
@@ -16,9 +20,10 @@ export const ButtonOption = ({
   children,
   style,
   disabled,
+  content,
 }: ButtonOptionProps) => (
   <button
-    className="btn-option"
+    className={`btn-option${valEmpty(content, "content")}`}
     style={style}
     type="button"
     disabled={disabled}
