@@ -19,6 +19,19 @@ import { motion } from "framer-motion";
 import { valEmpty } from "../utils";
 
 /**
+ * @name ModalContent
+ * @summary Modal content wrapper.
+ */
+export const ModalContent = forwardRef(
+  ({ children, style }: ComponentBase, ref?: RefObject<HTMLDivElement>) => (
+    <div ref={ref} className="modal-content" style={style}>
+      {children}
+    </div>
+  )
+);
+ModalContent.displayName = "ModalContent";
+
+/**
  * @name ModalBackground
  * @summary Modal background wrapper.
  */
