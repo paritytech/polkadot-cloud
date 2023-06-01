@@ -256,3 +256,13 @@ export const ModalMotionThreeSection = ({
     {children}
   </motion.div>
 );
+
+/**
+ * @name  ModalHardwareItem
+ * @summary Wrapper for a hardware connect item.
+ */
+export const ModalHardwareItem = ({ children, style }: ComponentBase) => (
+  <div className={"modal-hardware-item"} style={style}>
+    {children}
+  </div>
+);
