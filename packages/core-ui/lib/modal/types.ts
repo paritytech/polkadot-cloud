@@ -58,5 +58,5 @@ export type ModalAnimationProps = ComponentBase & AnimationProps;
 
 export type ModalConnectItemProps = ComponentBase & {
   // whether the item can be connected to.
-  canConnect: boolean;
+  canConnect?: boolean;
 };
