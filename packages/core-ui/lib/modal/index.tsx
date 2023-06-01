@@ -13,6 +13,7 @@ import {
   ModalSectionProps,
   ModalAnimationProps,
   ModalHeightProps,
+  ModalConnectItemProps,
 } from "./types";
 import { RefObject, forwardRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -261,8 +262,15 @@ export const ModalMotionThreeSection = ({
  * @name  ModalConnectItem
  * @summary Wrapper for a modal connect item.
  */
-export const ModalConnectItem = ({ children, style }: ComponentBase) => (
-  <div className={"modal-connect-item"} style={style}>
+export const ModalConnectItem = ({
+  children,
+  style,
+  canConnect,
+}: ModalConnectItemProps) => (
+  <div
+    className={`modal-connect-item${valEmpty(canConnect, "can-connect")}`}
+    style={style}
+  >
     {children}
   </div>
 );
