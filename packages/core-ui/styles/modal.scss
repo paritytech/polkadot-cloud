@@ -298,7 +298,6 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 
   .foot {
-    border-top: 1px solid var(--border-secondary-color);
     padding: 0.85rem;
 
     .link {
@@ -345,7 +344,7 @@ SPDX-License-Identifier: Apache-2.0 */
 
       .logo {
         height: 3rem;
-        margin: 0.5rem;
+        margin: 0.75rem 0.5rem 0.5rem 0.5rem;
 
         &.mono {
           path {
