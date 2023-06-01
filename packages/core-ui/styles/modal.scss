@@ -1,6 +1,8 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
+@use "variables" as v;
+
 @mixin modal-position {
   position: fixed;
   width: 100%;
@@ -276,6 +278,45 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 }
 
+.modal-connect-item {
+  padding: 0.5rem;
+  flex-grow: 0;
+  width: 50%;
+
+  @media (max-width: v.$modal-two-item-threshold) {
+    width: 100%;
+  }
+
+  &.canConnect {
+    > .inner {
+      transition: transform var(--transition-duration);
+
+      &:hover {
+        transform: scale(1.015);
+      }
+    }
+  }
+
+  .foot {
+    border-top: 1px solid var(--border-primary-color);
+    padding: 0.85rem;
+
+    .link {
+      color: var(--text-color-secondary);
+      transition: color var(--transition-duration);
+
+      &:hover {
+        color: var(--network-color-primary);
+      }
+
+      > svg {
+        margin-left: 0.35rem;
+        margin-top: 0.3rem;
+      }
+    }
+  }
+}
+
 .modal-hardware-item {
   background: var(--button-primary-background);
   border-radius: 1rem;
@@ -284,7 +325,7 @@ SPDX-License-Identifier: Apache-2.0 */
   width: 100%;
 
   .body {
-    padding: 1.35rem 0.85rem 0.75rem 0.85rem;
+    padding: 1.35rem 0.85rem 0.75rem;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -301,6 +342,7 @@ SPDX-License-Identifier: Apache-2.0 */
       &.margin {
         margin-top: 0.75rem;
       }
+
       .logo {
         height: 3rem;
         margin: 0.5rem;
@@ -312,6 +354,7 @@ SPDX-License-Identifier: Apache-2.0 */
         }
       }
     }
+
     .status {
       position: absolute;
       top: 0.9rem;

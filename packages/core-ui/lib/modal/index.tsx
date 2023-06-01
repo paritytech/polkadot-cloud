@@ -258,8 +258,18 @@ export const ModalMotionThreeSection = ({
 );
 
 /**
+ * @name  ModalConnectItem
+ * @summary Wrapper for a modal connect item.
+ */
+export const ModalConnectItem = ({ children, style }: ComponentBase) => (
+  <div className={"modal-connect-item"} style={style}>
+    {children}
+  </div>
+);
+
+/**
  * @name  ModalHardwareItem
- * @summary Wrapper for a hardware connect item.
+ * @summary Inner wrapper for a hardware connect item.
  */
 export const ModalHardwareItem = ({ children, style }: ComponentBase) => (
   <div className={"modal-hardware-item"} style={style}>
