@@ -14,8 +14,11 @@ SPDX-License-Identifier: Apache-2.0 */
 /* Core wrappers, tag styles and structural component styles. */
 @use "core";
 
+/* Button component styles. */
+@use "buttons";
+
 /* Modal component styles. */
 @use "modal";
 
-/* Button component styles. */
-@use "buttons";
+/* Hardware related component styles. */
+@use "hardware";
