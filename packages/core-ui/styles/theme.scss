@@ -84,7 +84,7 @@ SPDX-License-Identifier: Apache-2.0 */
   /* light and dark theme colors */
 
   .theme-light {
-    --background-default: #efeeee;
+    --background-default: #f1f0f0;
     --background-primary: #f8f7f7;
     --background-invert: #333;
     --background-list-item: rgb(238 238 238 / 85%);
@@ -125,9 +125,9 @@ SPDX-License-Identifier: Apache-2.0 */
     --text-color-invert: #fafafa;
     --gradient-background: linear-gradient(
       180deg,
-      #efeeee 0%,
-      #efeeee 100px,
-      #e8e6e6 80%,
+      #f1f0f0 0%,
+      #f1f0f0 100px,
+      #e8e8e8 80%,
       #fdefea 100%
     );
     --gradient-side-menu: linear-gradient(
