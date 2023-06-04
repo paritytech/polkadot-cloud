@@ -286,8 +286,8 @@ SPDX-License-Identifier: Apache-2.0 */
   fill: var(--text-color-secondary);
   border-radius: 50%;
   padding: 0;
-  width: 1.3rem;
-  height: 1.3rem;
+  width: 1.4rem;
+  height: 1.4rem;
 
   &.background-secondary {
     background: var(--button-primary-background);
@@ -317,11 +317,11 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 
   &:hover {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 
   &.active {
-    background: var(--button-secondary-background);
+    background: var(--button-tab-background);
   }
 
   > .badge {

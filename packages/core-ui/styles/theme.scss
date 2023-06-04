@@ -18,6 +18,7 @@ SPDX-License-Identifier: Apache-2.0 */
 @font-face {
   font-family: Unbounded;
   font-style: normal;
+  font-weight: 700;
   src: url("./fonts/Unbounded.woff2") format("woff2");
 }
 
@@ -25,8 +26,8 @@ SPDX-License-Identifier: Apache-2.0 */
   /* button styling */
   --button-border-radius-small: 0.75rem;
   --button-border-radius-large: 1.5rem;
-  --button-padding-small: 0.34rem 0.92rem;
-  --button-padding-large: 0.45rem 0.95rem;
+  --button-padding-small: 0.41rem 1rem;
+  --button-padding-large: 0.53rem 1rem;
   --button-spacing-small: 0.125rem;
   --button-spacing-large: 0.625rem;
   --button-font-size-small: 1rem;
@@ -83,7 +84,7 @@ SPDX-License-Identifier: Apache-2.0 */
   /* light and dark theme colors */
 
   .theme-light {
-    --background-default: #f3f2f2;
+    --background-default: #f1f0f0;
     --background-primary: #f8f7f7;
     --background-invert: #333;
     --background-list-item: rgb(238 238 238 / 85%);
@@ -99,6 +100,7 @@ SPDX-License-Identifier: Apache-2.0 */
     --border-secondary-color: #ccc;
     --button-primary-background: #efeeee;
     --button-secondary-background: #e7e5e5;
+    --button-tab-background: #e4e2e2;
     --button-tertiary-background: #ececec;
     --button-hover-background: #e8e6e6;
     --card-shadow-color: rgb(158 158 158 / 20%);
@@ -123,9 +125,9 @@ SPDX-License-Identifier: Apache-2.0 */
     --text-color-invert: #fafafa;
     --gradient-background: linear-gradient(
       180deg,
-      #f3f2f2 0%,
-      #f3f2f2 100px,
-      #eaeaea 80%,
+      #f1f0f0 0%,
+      #f1f0f0 100px,
+      #e8e8e8 80%,
       #fdefea 100%
     );
     --gradient-side-menu: linear-gradient(
@@ -167,6 +169,7 @@ SPDX-License-Identifier: Apache-2.0 */
     --border-secondary-color: rgb(95 90 95);
     --button-primary-background: rgb(58 52 58);
     --button-secondary-background: rgb(55 50 55);
+    --button-tab-background: rgb(65 60 65);
     --button-tertiary-background: rgb(39 37 39);
     --button-hover-background: rgb(66 61 68);
     --card-shadow-color: rgb(28 24 28 / 25%);
