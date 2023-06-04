@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 */
 
 // button layout styles
 @mixin btn-layout {
+  font-family: InterSemiBold, sans-serif;
+  font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;
