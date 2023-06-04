@@ -133,12 +133,8 @@ SPDX-License-Identifier: Apache-2.0 */
       rgb(244 242 242 / 93%) 0%,
       rgb(228 225 225 / 93%) 100%
     );
-    --gradient-highlight-primary: linear-gradient(
-      90deg,
-      rgb(0 0 0 / 6%) 0%,
-      rgb(0 0 0 / 3%) 100%
-    );
-    --gradient-highlight-secondary: linear-gradient(
+    --highlight-primary: rgba(224, 222, 222, 0.75);
+    --highlight-secondary: linear-gradient(
       90deg,
       rgb(0 0 0 / 4%) 0%,
       rgb(0 0 0 / 1%) 100%
@@ -204,12 +200,8 @@ SPDX-License-Identifier: Apache-2.0 */
       rgb(48 41 48) 0%,
       rgb(30 27 30) 100%
     );
-    --gradient-highlight-primary: linear-gradient(
-      90deg,
-      rgb(255 255 255 / 6%) 0%,
-      rgb(255 255 255 / 4%) 100%
-    );
-    --gradient-highlight-secondary: linear-gradient(
+    --highlight-primary: rgb(255 255 255 / 8%);
+    --highlight-secondary: linear-gradient(
       90deg,
       rgb(255 255 255 / 3%) 0%,
       rgb(255 255 255 / 1%) 100%
