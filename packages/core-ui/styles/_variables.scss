@@ -2,15 +2,15 @@
 SPDX-License-Identifier: Apache-2.0 */
 
 /* outer container max width. */
-$page-max-width: 1500px;
+$page-max-width: 1450px;
 
 /* the threshold at which elements adjust to the full page width. Applies to any value below this
 threshold.  */
-$section-full-width-threshold: 1050px;
+$section-full-width-threshold: 1000px;
 
 /* media query width thresholds. */
-$page-width-small-threshold: 850px;
-$page-width-medium-threshold: 1175px;
+$page-width-small-threshold: 825px;
+$page-width-medium-threshold: 1150px;
 
 /* side menu format thresholds. */
 $side-menu-minimised-width: 75px;
