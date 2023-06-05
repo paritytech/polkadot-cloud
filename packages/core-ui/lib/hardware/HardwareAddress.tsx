@@ -27,7 +27,7 @@ export type HardwareAddressProps = ComponentBase & {
   // whether to disable editing if address is imported.
   disableEditIfImported?: boolean;
   // identicon of address.
-  Identicon: AnyObject;
+  Identicon: React.ReactNode;
   // handle rename
   renameHandler: (address: string, newName: string) => void;
   // handle whether address already exists.
@@ -96,7 +96,7 @@ export const HardwareAddress = ({
       <div className="content">
         <div className="inner">
           <div className="identicon">
-            <Identicon />
+            {Identicon}
             <div className="index-icon ">{index + 1}</div>
           </div>
           <div>
