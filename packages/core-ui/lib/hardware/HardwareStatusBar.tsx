@@ -9,6 +9,8 @@ import { FunctionComponent, SVGProps } from "react";
 import { ButtonHelp } from "../buttons/ButtonHelp";
 
 export type HardwareStatusBarProps = ComponentBase & {
+  // whether to animate in the status bar.
+  show?: boolean;
   // help key and handler related to current status.
   help?: {
     // help key to display.
@@ -40,6 +42,7 @@ export type HardwareStatusBarProps = ComponentBase & {
 export const HardwareStatusBar = ({
   handleCancel,
   handleDone,
+  show,
   help,
   Icon,
   inProgress,
@@ -54,7 +57,7 @@ export const HardwareStatusBar = ({
       style={style}
       className="hardware-status-bar"
       initial="hidden"
-      animate="show"
+      animate={show ? "show" : undefined}
       variants={{
         hidden: { bottom: -50 },
         show: {
