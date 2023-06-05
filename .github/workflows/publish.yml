@@ -20,17 +20,17 @@ jobs:
         id: core_ui_version
         uses: PostHog/check-package-version@v2
         with:
-          path: "./packages/core-ui"
+          path: "./packages/core-ui/dist"
       - name: New 'react-odometer' version
         id: react_odometer_version
         uses: PostHog/check-package-version@v2
         with:
-          path: "./packages/react-odometer"
+          path: "./packages/react-odometer/dist"
       - name: New 'utils' version
         id: utils_version
         uses: PostHog/check-package-version@v2
         with:
-          path: "./packages/utils"
+          path: "./packages/utils/dist"
 
       - name: Publish 'core-ui' Dry Run
         run: npm publish --unsafe-perm --dry-run
