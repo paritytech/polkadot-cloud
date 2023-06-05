@@ -17,9 +17,11 @@
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo",
     "fix": "sed '1d' ./dist/index.d.ts > ./tmp.d.ts; mv ./tmp.d.ts ./dist/index.d.ts"
   },
+  "dependencies": {
+    "@polkadotcloud/utils": "^0.2.22"
+  },
   "peerDependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
-    "@polkadotcloud/utils": "^0.2.22",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "framer-motion": "^10.12.4",
     "react": "^18.2.0",
