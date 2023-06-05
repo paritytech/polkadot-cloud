@@ -124,7 +124,7 @@ export const PageTitle = ({ title, button, tabs = [] }: PageTitleProps) => {
       <HideScrollable />
       <header
         ref={ref}
-        className={`core-page-title page-padding${valEmpty(sticky, "sticky")}`}
+        className={`core-page-title${valEmpty(sticky, "sticky")}`}
       >
         <section className="title">
           <div>
@@ -193,7 +193,7 @@ export const HideScrollable = ({ children, style }: ComponentBase) => (
  */
 export const PageRow = ({ children, style, yMargin }: RowProps) => (
   <div
-    className={`core-page-row page-padding${valEmpty(yMargin, "y-margin")}`}
+    className={`core-page-row${valEmpty(yMargin, "y-margin")}`}
     style={style}
   >
     {children}
@@ -253,6 +253,16 @@ export const RowSection = ({
     )}${valEmpty(vLast, "v-last")}${valOr(hLast, "first", "last")}`}
     style={style}
   >
+    {children}
+  </div>
+);
+
+/**
+ * @name StatBoxRow
+ * @summary Used to house a row of `StatBox` items.
+ */
+export const StatBoxRow = ({ children, style }: ComponentBase) => (
+  <div className="core-stat-box-row" style={style}>
     {children}
   </div>
 );

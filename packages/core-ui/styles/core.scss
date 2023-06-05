@@ -4,20 +4,17 @@ SPDX-License-Identifier: Apache-2.0 */
 @use "variables" as v;
 
 // padding of a page row component.
-// TODO: remove need to wrap class name and inject directly into classes that require page padding.
 @mixin page-padding {
-  .page-padding {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 
-    @media (min-width: (v.$page-width-small-threshold + 1px)) {
-      padding-left: 2.25rem;
-      padding-right: 2.25rem;
-    }
+  @media (min-width: (v.$page-width-small-threshold + 1px)) {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
 
-    @media (min-width: (v.$page-width-medium-threshold + 1px)) {
-      padding: 0 5rem 0 2.5rem;
-    }
+  @media (min-width: (v.$page-width-medium-threshold + 1px)) {
+    padding: 0 5rem 0 2.5rem;
   }
 }
 
@@ -39,8 +36,6 @@ SPDX-License-Identifier: Apache-2.0 */
 }
 
 .core-entry {
-  @include page-padding;
-
   background: var(--gradient-background);
   width: 100%;
   background-attachment: fixed;
@@ -435,4 +430,11 @@ SPDX-License-Identifier: Apache-2.0 */
   &.y-margin {
     margin-top: 1rem;
   }
+}
+
+.core-stat-box-row {
+  @include page-padding;
+
+  display: flex;
+  flex-direction: column;
 }

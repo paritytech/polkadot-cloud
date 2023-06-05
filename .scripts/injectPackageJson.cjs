@@ -8,7 +8,7 @@ const { exit } = require("process");
 const packagesDir = join(__dirname, "..", "packages");
 
 // // Scope of packages to be published.
-const scope = '@polkadotcloud';
+const scope = "@polkadotcloud";
 
 const argv = require("minimist")(process.argv.slice(2));
 const { p: packageName, m: main } = argv;
@@ -56,7 +56,7 @@ try {
     return keys.includes(k[0]);
   });
 
-  filtered[0] = ['name', `${scope}/${packageName}`];
+  filtered[0] = ["name", `${scope}/${packageName}`];
 
   // Merge properties with `hardcoded`.
   const merged = Object.assign({}, Object.fromEntries(filtered), hardcoded);
