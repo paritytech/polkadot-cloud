@@ -14,8 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import { clipAddress } from "@polkadotcloud/utils";
-import { AnyObject } from "lib/modal/types";
+import { clipAddress, unescape } from "@polkadotcloud/utils";
 
 export type HardwareAddressProps = ComponentBase & {
   // the address to import.
@@ -62,6 +61,7 @@ export const HardwareAddress = ({
   // store whether this address is being edited.
   const [editing, setEditing] = useState<boolean>(false);
 
+  // store the currently saved name.
   const [name, setName] = useState<string>(initial);
 
   // store the currently edited name.
