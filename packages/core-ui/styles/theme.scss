@@ -142,7 +142,7 @@ SPDX-License-Identifier: Apache-2.0 */
       rgb(244 242 242 / 93%) 0%,
       rgb(228 225 225 / 93%) 100%
     );
-    --highlight-primary: rgba(224, 222, 222, 0.75);
+    --highlight-primary: rgb(224 222 222 / 75%);
     --highlight-secondary: linear-gradient(
       90deg,
       rgb(0 0 0 / 4%) 0%,
@@ -153,7 +153,7 @@ SPDX-License-Identifier: Apache-2.0 */
       0 3.5px 6px -1px var(--card-shadow-color),
       0.4px -0.4px 0px 0px var(--card-shadow-color),
       -0.4px 0px 0px 0px var(--card-shadow-color);
-      --card-shadow-secondary: 0px 1px 1px 0px var(--card-shadow-color-secondary),
+    --card-shadow-secondary: 0px 1px 1px 0px var(--card-shadow-color-secondary),
       0 0.5px 1px -1px var(--card-shadow-color-secondary),
       0.4px -0.4px 0px 0px var(--card-shadow-color-secondary),
       -0.4px 0px 0px 0px var(--card-shadow-color-secondary);

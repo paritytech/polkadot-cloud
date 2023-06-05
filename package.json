@@ -61,5 +61,8 @@
     "UI",
     "Substrate"
   ],
-  "homepage": "https://github.com/paritytech/polkadot-dashboard-ui#readme"
+  "homepage": "https://github.com/paritytech/polkadot-dashboard-ui#readme",
+  "dependencies": {
+    "@polkadotcloud/utils": "^0.2.22"
+  }
 }

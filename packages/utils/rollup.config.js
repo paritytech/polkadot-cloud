@@ -30,11 +30,5 @@ export default {
     }),
     uglify(),
   ],
-  external: [
-    "prop-types",
-    "react",
-    "react-dom",
-    "@fortawesome/react-fontawesome",
-    "framer-motion",
-  ],
+  external: ["@polkadot/keyring", "@polkadot/util", "bignumber.js"],
 };

@@ -50,10 +50,11 @@ export default {
     uglify(),
   ],
   external: [
+    "@fortawesome/react-fontawesome",
+    "@polkadotcloud/utils",
+    "framer-motion",
     "prop-types",
     "react",
     "react-dom",
-    "@fortawesome/react-fontawesome",
-    "framer-motion",
   ],
 };
