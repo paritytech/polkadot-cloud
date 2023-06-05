@@ -71,7 +71,7 @@ export const HardwareStatusBar = ({
       }}
     >
       <div className="inner">
-        <div>
+        <section>
           <Icon width="24" height="24" className="icon" />
           <div className="text">
             <h3>
@@ -89,8 +89,8 @@ export const HardwareStatusBar = ({
               )}
             </h3>
           </div>
-        </div>
-        <div>
+        </section>
+        <section>
           {inProgress ? (
             <ButtonMonoInvert
               text={tCancel}
@@ -108,7 +108,7 @@ export const HardwareStatusBar = ({
               }}
             />
           )}
-        </div>
+        </section>
       </div>
     </motion.div>
   );

@@ -31,3 +31,4 @@ export { ButtonOption } from "./buttons/ButtonOption";
 // Hardware Import
 
 export { HardwareStatusBar } from "./hardware/HardwareStatusBar";
+export { HardwareAddress } from "./hardware/HardwareAddress";
