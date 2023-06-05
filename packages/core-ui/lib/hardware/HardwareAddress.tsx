@@ -13,8 +13,9 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { FunctionComponent, useState } from "react";
 import { clipAddress } from "@polkadotcloud/utils";
+import { AnyJson } from "@polkadotcloud/utils/types";
 
 export type HardwareAddressProps = ComponentBase & {
   // the address to import.
@@ -26,7 +27,7 @@ export type HardwareAddressProps = ComponentBase & {
   // whether to disable editing if address is imported.
   disableEditIfImported?: boolean;
   // identicon of address.
-  Identicon: React.FC;
+  Identicon: FunctionComponent<AnyJson>;
   // handle rename
   renameHandler: (address: string, newName: string) => void;
   // handle whether address already exists.
