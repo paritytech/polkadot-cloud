@@ -7,6 +7,9 @@ const prettier = require("prettier");
 const { exit } = require("process");
 const packagesDir = join(__dirname, "..", "packages");
 
+// // Scope of packages to be published.
+const scope = '@polkadotcloud';
+
 const argv = require("minimist")(process.argv.slice(2));
 const { p: packageName, m: main } = argv;
 
@@ -52,6 +55,8 @@ try {
   const filtered = Object.entries(json).filter((k) => {
     return keys.includes(k[0]);
   });
+
+  filtered[0] = ['name', `${scope}/${packageName}`];
 
   // Merge properties with `hardcoded`.
   const merged = Object.assign({}, Object.fromEntries(filtered), hardcoded);
