@@ -241,7 +241,7 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 }
 
-.tx {
+.core-tx {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -263,7 +263,7 @@ SPDX-License-Identifier: Apache-2.0 */
       align-items: center;
 
       p {
-        color: var(--text-color-secondary);
+        color: var(--text-color-primary);
         display: flex;
         align-items: center;
         font-size: 1rem;

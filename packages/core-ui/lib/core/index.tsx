@@ -279,7 +279,7 @@ export const Tx = ({
   dangerMessage,
   SignerComponent,
 }: TxProps) => (
-  <div className={`tx${valEmpty(margin, "margin")}`}>
+  <div className={`core-tx${valEmpty(margin, "margin")}`}>
     <div className="inner">
       <p className="sign">
         <span className="badge">
