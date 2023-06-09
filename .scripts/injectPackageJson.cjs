@@ -56,7 +56,8 @@ try {
     return keys.includes(k[0]);
   });
 
-  filtered[0] = ["name", `${scope}/${packageName}`];
+  // Replace `name` with scope and package name.
+  filtered[0] = ["name", `${scope}/${json.name.split(/-(.*)/s)[1]}`];
 
   // Merge properties with `hardcoded`.
   const merged = Object.assign({}, Object.fromEntries(filtered), hardcoded);

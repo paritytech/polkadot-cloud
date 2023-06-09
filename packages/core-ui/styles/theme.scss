@@ -107,8 +107,8 @@ SPDX-License-Identifier: Apache-2.0 */
     --border-secondary-color: #ccc;
     --button-primary-background: #efeeee;
     --button-secondary-background: #e7e5e5;
-    --button-tab-background: #e4e2e2;
     --button-tertiary-background: #ececec;
+    --button-tab-background: #e4e2e2;
     --button-hover-background: #e8e6e6;
     --card-shadow-color: rgb(158 158 158 / 20%);
     --card-deep-shadow-color: rgb(158 158 158 / 50%);
@@ -118,7 +118,8 @@ SPDX-License-Identifier: Apache-2.0 */
     --network-color-stroke: var(--network-color-stroke-light);
     --network-color-transparent: var(--network-color-transparent-light);
     --network-color-pending: var(--network-color-pending-light);
-    --overlay-modal-color: rgb(230 228 228 / 70%);
+    --modal-background-color: rgb(224 222 222 / 70%);
+    --overlay-background-color: rgb(214 212 212 / 70%);
     --shimmer-foreground: #e0e0e0;
     --shimmer-background: #ccc;
     --status-success-color: green;
@@ -160,24 +161,24 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 
   .theme-dark {
-    --background-default: rgb(50 46 50);
-    --background-primary: rgb(36 32 36);
+    --background-default: rgb(36 32 36);
+    --background-primary: rgb(45 41 45);
     --background-invert: #ddd;
-    --background-list-item: rgb(48 43 48 / 100%);
-    --background-modal-item: rgb(34 28 34 / 40%);
-    --background-floating-card: rgb(37 32 37 / 94%);
+    --background-list-item: rgb(40 35 40 / 100%);
+    --background-modal-item: rgb(32 26 32 / 50%);
+    --background-floating-card: rgb(43 38 43 / 95%);
     --background-app-footer: #262327;
     --background-warning: #33332a;
     --background-modal: rgb(43 38 43);
-    --background-modal-footer: rgb(39 34 39);
+    --background-modal-footer: rgb(37 32 37);
     --background-menu: rgb(57 52 58);
     --background-input: rgb(72 70 72);
-    --border-primary-color: rgb(58 50 58);
+    --border-primary-color: rgb(60 52 60);
     --border-secondary-color: rgb(95 90 95);
     --button-primary-background: rgb(58 52 58);
     --button-secondary-background: rgb(55 50 55);
-    --button-tab-background: rgb(65 60 65);
-    --button-tertiary-background: rgb(39 37 39);
+    --button-tertiary-background: rgb(37 35 37);
+    --button-tab-background: rgb(56 51 56);
     --button-hover-background: rgb(66 61 68);
     --card-shadow-color: rgb(28 24 28 / 25%);
     --card-deep-shadow-color: rgb(28 24 28 / 50%);
@@ -187,23 +188,24 @@ SPDX-License-Identifier: Apache-2.0 */
     --network-color-stroke: var(--network-color-stroke-dark);
     --network-color-transparent: var(--network-color-transparent-dark);
     --network-color-pending: var(--network-color-pending-dark);
-    --overlay-modal-color: rgb(20 16 20 / 70%);
+    --modal-background-color: rgb(22 18 22 / 70%);
+    --overlay-background-color: rgb(18 14 18 / 70%);
     --shimmer-background: rgb(47 42 48);
     --shimmer-foreground: rgb(32 29 33);
-    --status-success-color: green;
+    --status-success-color: #74da77;
     --status-success-color-transparent: rgb(0 128 0 / 25%);
     --status-warning-color: rgb(219 161 0 / 100%);
     --status-warning-color-transparent: rgb(255 165 0 / 50%);
     --status-danger-color: #d14445;
     --status-danger-color-transparent: rgb(255 0 0 / 25%);
     --text-color-primary: #b8b3b9;
-    --text-color-secondary: #948e95;
+    --text-color-secondary: #938e94;
     --text-color-invert: #0f0e0f;
     --gradient-background: linear-gradient(
       180deg,
-      rgb(50 46 50) 0%,
-      rgb(50 46 50) 100px,
-      rgb(46 40 46) 100%
+      rgb(36 32 36) 0%,
+      rgb(36 32 36) 100px,
+      rgb(32 28 32) 100%
     );
     --gradient-side-menu: linear-gradient(
       180deg,
