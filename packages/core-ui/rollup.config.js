@@ -25,6 +25,7 @@ export default {
   plugins: [
     del({ targets: "dist/*" }),
     peerDepsExternal(),
+    resolve(),
     postcss({
       config: {
         path: "postcss.config.js",
@@ -34,7 +35,6 @@ export default {
       modules: false,
       extract: "index.css",
     }),
-    resolve(),
     typescript(),
     copy({
       targets: [

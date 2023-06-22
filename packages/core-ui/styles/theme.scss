@@ -1,34 +1,6 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-@font-face {
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 500;
-  src: url("./fonts/Inter500.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: InterSemiBold;
-  font-style: normal;
-  font-weight: 600;
-  src: url("./fonts/Inter600.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: InterBold;
-  font-style: normal;
-  font-weight: 700;
-  src: url("./fonts/Inter700.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: Unbounded;
-  font-style: normal;
-  font-weight: 700;
-  src: url("./fonts/Unbounded.woff2") format("woff2");
-}
-
 :root {
   /* button styling */
   --button-border-radius-small: 0.75rem;

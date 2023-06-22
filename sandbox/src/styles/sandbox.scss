@@ -3,6 +3,7 @@ SPDX-License-Identifier: Apache-2.0 */
 
 /* Inject styles from core-ui */
 @use "../../packages/core-ui/styles/variables" as v;
+@import "../../packages/core-ui/styles/fonts/index";
 @import "../../packages/core-ui/styles/index";
 
 :root {
