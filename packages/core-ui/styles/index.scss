@@ -5,8 +5,8 @@ SPDX-License-Identifier: Apache-2.0 */
  * This file is the entry point to which all of core-ui styles are built.
  * Additional files imported here will be a part of the final bundle. */
 
-/* Global styling. */
-@use "global";
+/* Tag styling. */
+@use "tags";
 
 /* UI theme variables. */
 @use "theme";
