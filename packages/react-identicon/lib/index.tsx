@@ -12,12 +12,12 @@ import {
 } from "./utils/circles";
 import { getColors } from "./utils/colors";
 
-interface IdenticonProps {
+export interface IdenticonProps {
   size: number;
-  value: string;
   disableCursorCopy?: boolean;
   disableClipboardCopy?: boolean;
   colors?: string[];
+  value: string;
 }
 
 export const Identicon = ({
