@@ -22,7 +22,7 @@ interface IdenticonProps {
 
 export const Identicon = ({
   size,
-  value: address,
+  value,
   disableCursorCopy = false,
   disableClipboardCopy = false,
   colors: initialColors,
@@ -32,16 +32,16 @@ export const Identicon = ({
   const defaultColors =
     initialColors || new Array<string>(xy.length).fill("#ddd");
 
-  const colors = address ? initialColors || getColors(address) : defaultColors;
+  const colors = value ? initialColors || getColors(value) : defaultColors;
 
   const copyToClipboard = useCallback(() => {
     if (disableClipboardCopy) {
       return;
     }
     if (navigator) {
-      navigator.clipboard.writeText(address);
+      navigator.clipboard.writeText(value);
     }
-  }, [address]);
+  }, [value]);
 
   return (
     <div
@@ -52,8 +52,8 @@ export const Identicon = ({
     >
       <svg
         height={size}
-        id={address}
-        name={address}
+        id={value}
+        name={value}
         viewBox="0 0 64 64"
         width={size}
       >
