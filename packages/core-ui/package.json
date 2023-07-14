@@ -29,7 +29,7 @@
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.25",
+    "postcss": "^8.4.26",
     "rollup": "^2.78.1",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-delete": "^2.0.0",
