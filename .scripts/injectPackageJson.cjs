@@ -62,19 +62,18 @@ try {
   // Merge properties with `hardcoded`.
   const merged = Object.assign({}, Object.fromEntries(filtered), hardcoded);
 
-  // Write `package.json` to the bundle.
-  fs.writeFile(
-    `${pathtoPackage}/dist/package.json`,
-    prettier.format(JSON.stringify(merged), { parser: "json" }),
-    (err) => {
+  // Format merged JSON
+  prettier.format(JSON.stringify(merged), { parser: "json" }).then((data) => {
+    // Write `package.json` to the bundle.
+    fs.writeFile(`${pathtoPackage}/dist/package.json`, data, (err) => {
       if (err) {
         console.error(`❌ ${err.message}`);
       }
       console.debug(
         `✅ package.json has been injected into ${packageName} bundle.`
       );
-    }
-  );
+    });
+  });
 } catch (e) {
   console.error(
     `❌ Could not find package.json in the specified package directory: ${packageName}`

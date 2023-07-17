@@ -39,7 +39,7 @@ export default {
     copy({
       targets: [
         {
-          src: "styles/fonts/**/*",
+          src: "fonts/**/*",
           dest: "dist/fonts",
         },
       ],

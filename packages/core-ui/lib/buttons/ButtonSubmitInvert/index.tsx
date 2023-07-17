@@ -1,45 +1,41 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../types";
+import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { valEmpty, valOr } from "../utils";
+import { valEmpty, valOr } from "../../utils";
 import { motion } from "framer-motion";
+import "./index.scss";
 
-export type ButtonMonoProps = ComponentBase &
+export type ButtonSubmitInvertProps = ComponentBase &
   ButtonIconProps &
   ButtonCommonProps & {
-    // large button, small otherwise.
-    lg?: boolean;
     // button text.
     text: string;
   };
 
 /**
- * @name ButtonMonoInvert
- * @description Inverted monotone button style used within the main interface of dashboards.
+ * @name ButtonSubmitInvert
+ * @description Invert submit button style used in modals.
  */
-export const ButtonMonoInvert = ({
+export const ButtonSubmitInvert = ({
   disabled,
   grow,
   iconLeft,
   iconRight,
   iconTransform,
   onClick,
-  lg,
   marginLeft,
   marginRight,
   marginX,
   style,
   text,
-}: ButtonMonoProps) => (
+}: ButtonSubmitInvertProps) => (
   <motion.button
     whileHover={{ scale: !disabled ? 1.02 : 1 }}
     whileTap={{ scale: !disabled ? 0.98 : 1 }}
-    className={`btn-mono-invert${valOr(lg, "lg", "sm")}${valEmpty(
-      grow,
-      "grow"
-    )}${valEmpty(marginRight, "m-right")}${valEmpty(
+    className={`btn-submit-invert${valEmpty(grow, "grow")}
+    ${valEmpty(marginRight, "m-right")}${valEmpty(
       marginLeft,
       "m-left"
     )}${valEmpty(marginX, "m-x")}`}

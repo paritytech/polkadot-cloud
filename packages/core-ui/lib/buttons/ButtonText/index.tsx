@@ -1,28 +1,24 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../types";
+import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { valEmpty, valOr } from "../utils";
+import { valEmpty, valOr } from "../../utils";
 import { motion } from "framer-motion";
+import "./index.scss";
 
-export type ButtonSubmitProps = ComponentBase &
+export type ButtonMonoProps = ComponentBase &
   ButtonIconProps &
   ButtonCommonProps & {
-    // use secondary network color.
-    colorSecondary?: boolean;
     // button text.
     text: string;
-    // pulsing effect.
-    pulse?: boolean;
   };
 
 /**
- * @name ButtonSubmit
- * @description Submit button style used within modals to submit transactions.
+ * @name ButtonText
+ * @description Plain button style used within the main interface of dashboards.
  */
-export const ButtonSubmit = ({
-  colorSecondary,
+export const ButtonText = ({
   disabled,
   grow,
   iconLeft,
@@ -34,18 +30,14 @@ export const ButtonSubmit = ({
   marginX,
   style,
   text,
-  pulse,
-}: ButtonSubmitProps) => (
+}: ButtonMonoProps) => (
   <motion.button
     whileHover={{ scale: !disabled ? 1.02 : 1 }}
     whileTap={{ scale: !disabled ? 0.98 : 1 }}
-    className={`btn-submit${valEmpty(
-      colorSecondary,
-      "secondary-color"
-    )}${valEmpty(grow, "grow")}${valEmpty(marginRight, "m-right")}${valEmpty(
-      marginLeft,
-      "m-left"
-    )}${valEmpty(marginX, "m-x")}${valEmpty(pulse, "pulse")}`}
+    className={`btn-text${valEmpty(grow, "grow")}${valEmpty(
+      marginRight,
+      "m-right"
+    )}${valEmpty(marginLeft, "m-left")}${valEmpty(marginX, "m-x")}`}
     style={style}
     type="button"
     disabled={disabled}
