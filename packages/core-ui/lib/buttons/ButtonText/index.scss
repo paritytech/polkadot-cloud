@@ -1,0 +1,20 @@
+/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+SPDX-License-Identifier: Apache-2.0 */
+
+@use "../styles";
+
+.btn-text {
+  @include styles.btn-layout;
+  @include styles.btn-spacing;
+  @include styles.btn-icons;
+  @include styles.btn-disabled;
+
+  color: var(--text-color-primary);
+  border-radius: var(--button-border-radius-large);
+  font-size: var(--button-font-size-small);
+  padding: 0.45rem;
+
+  &.secondary-color {
+    border-color: var(--text-color-secondary);
+  }
+}

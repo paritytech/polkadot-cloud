@@ -1,8 +1,9 @@
 // Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { ComponentBase, ButtonCommonProps } from "../types";
-import { valEmpty } from "../utils";
+import { ComponentBase, ButtonCommonProps } from "../../types";
+import { valEmpty } from "../../utils";
+import "./index.scss";
 
 export type ButtonTabProps = ComponentBase &
   ButtonCommonProps & {

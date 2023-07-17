@@ -1,42 +1,52 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../types";
+import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { valEmpty, valOr } from "../utils";
+import { valEmpty, valOr } from "../../utils";
 import { motion } from "framer-motion";
+import "./index.scss";
 
-export type ButtonMonoProps = ComponentBase &
+export type ButtonPrimaryProps = ComponentBase &
   ButtonIconProps &
   ButtonCommonProps & {
+    // use secondary network color.
+    colorSecondary?: boolean;
+    // large button, small otherwise.
+    lg?: boolean;
     // button text.
     text: string;
   };
 
 /**
- * @name ButtonText
- * @description Plain button style used within the main interface of dashboards.
+ * @name ButtonPrimary
+ * @description Primary button style used within the main interface of dashboards.
  */
-export const ButtonText = ({
+export const ButtonPrimary = ({
+  colorSecondary,
   disabled,
   grow,
   iconLeft,
   iconRight,
   iconTransform,
   onClick,
+  lg,
   marginLeft,
   marginRight,
   marginX,
   style,
   text,
-}: ButtonMonoProps) => (
+}: ButtonPrimaryProps) => (
   <motion.button
     whileHover={{ scale: !disabled ? 1.02 : 1 }}
     whileTap={{ scale: !disabled ? 0.98 : 1 }}
-    className={`btn-text${valEmpty(grow, "grow")}${valEmpty(
-      marginRight,
-      "m-right"
-    )}${valEmpty(marginLeft, "m-left")}${valEmpty(marginX, "m-x")}`}
+    className={`btn-primary${valOr(lg, "lg", "sm")}${valEmpty(
+      colorSecondary,
+      "secondary-color"
+    )}${valEmpty(grow, "grow")}${valEmpty(marginRight, "m-right")}${valEmpty(
+      marginLeft,
+      "m-left"
+    )}${valEmpty(marginX, "m-x")}`}
     style={style}
     type="button"
     disabled={disabled}

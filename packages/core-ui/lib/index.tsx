@@ -7,7 +7,7 @@ SPDX-License-Identifier: Apache-2.0 */
 //
 // Because of this relative file paths should be used in this directory.
 
-import "../styles/index.scss";
+import "./styles/index.scss";
 
 // Core
 export * from "./core";

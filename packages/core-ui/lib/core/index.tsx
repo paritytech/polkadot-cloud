@@ -21,6 +21,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { ButtonTab } from "../buttons/ButtonTab";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./styles.scss";
 
 /**
  * @name Entry

@@ -1,0 +1,34 @@
+/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+SPDX-License-Identifier: Apache-2.0 */
+
+@use "../styles";
+
+.btn-secondary {
+  @include styles.btn-layout;
+  @include styles.btn-spacing;
+  @include styles.btn-icons;
+  @include styles.btn-disabled;
+
+  background: var(--button-secondary-background);
+  border: 1px solid var(--button-secondary-background);
+  border-radius: var(--button-border-radius-large);
+  color: var(--text-color-primary);
+
+  &.sm {
+    @include styles.btn-small;
+
+    border-radius: var(--button-border-radius-large);
+  }
+
+  &.lg {
+    @include styles.btn-large;
+  }
+
+  &:hover {
+    background: var(--button-hover-background);
+
+    &:disabled {
+      background: var(--button-secondary-background);
+    }
+  }
+}

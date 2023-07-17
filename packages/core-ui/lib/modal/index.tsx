@@ -18,6 +18,7 @@ import {
 import { RefObject, forwardRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { valEmpty } from "../utils";
+import "./styles.scss";
 
 /**
  * @name ModalContent

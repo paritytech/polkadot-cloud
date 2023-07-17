@@ -1,11 +1,13 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../types";
+import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { valEmpty, valOr } from "../utils";
+import { valEmpty, valOr } from "../../utils";
+import { motion } from "framer-motion";
+import "./index.scss";
 
-export type ButtonSecondaryProps = ComponentBase &
+export type ButtonMonoProps = ComponentBase &
   ButtonIconProps &
   ButtonCommonProps & {
     // large button, small otherwise.
@@ -15,25 +17,27 @@ export type ButtonSecondaryProps = ComponentBase &
   };
 
 /**
- * @name ButtonSecondary
- * @description Secondary button style used within the main interface of dashboards.
+ * @name ButtonMonoInvert
+ * @description Inverted monotone button style used within the main interface of dashboards.
  */
-export const ButtonSecondary = ({
+export const ButtonMonoInvert = ({
   disabled,
   grow,
   iconLeft,
   iconRight,
   iconTransform,
-  lg,
   onClick,
+  lg,
   marginLeft,
   marginRight,
   marginX,
   style,
   text,
-}: ButtonSecondaryProps) => (
-  <button
-    className={`btn-secondary${valOr(lg, "lg", "sm")}${valEmpty(
+}: ButtonMonoProps) => (
+  <motion.button
+    whileHover={{ scale: !disabled ? 1.02 : 1 }}
+    whileTap={{ scale: !disabled ? 0.98 : 1 }}
+    className={`btn-mono-invert${valOr(lg, "lg", "sm")}${valEmpty(
       grow,
       "grow"
     )}${valEmpty(marginRight, "m-right")}${valEmpty(
@@ -64,5 +68,5 @@ export const ButtonSecondary = ({
         transform={valOr(iconTransform, iconTransform, undefined)}
       />
     ) : null}
-  </button>
+  </motion.button>
 );

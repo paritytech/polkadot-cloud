@@ -1,12 +1,13 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import { ButtonMonoInvert } from "../buttons/ButtonMonoInvert";
-import { ComponentBase } from "../types";
+import { ButtonMonoInvert } from "../../buttons/ButtonMonoInvert";
+import { ComponentBase } from "../../types";
 import { motion } from "framer-motion";
-import { ButtonPrimaryInvert } from "../buttons/ButtonPrimaryInvert";
+import { ButtonPrimaryInvert } from "../../buttons/ButtonPrimaryInvert";
 import { FunctionComponent, SVGProps } from "react";
-import { ButtonHelp } from "../buttons/ButtonHelp";
+import { ButtonHelp } from "../../buttons/ButtonHelp";
+import "./index.scss";
 
 export type HardwareStatusBarProps = ComponentBase & {
   // whether to animate in the status bar.

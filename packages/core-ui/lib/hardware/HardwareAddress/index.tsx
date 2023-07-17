@@ -4,8 +4,8 @@ SPDX-License-Identifier: Apache-2.0 */
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import { ButtonText } from "../buttons/ButtonText";
-import { ComponentBase } from "../types";
+import { ButtonText } from "../../buttons/ButtonText";
+import { ComponentBase } from "../../types";
 import {
   faCheck,
   faPlus,
@@ -15,6 +15,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { clipAddress, unescape } from "@polkadotcloud/utils";
+import "./index.scss";
 
 export type HardwareAddressProps = ComponentBase & {
   // the address to import.

@@ -1,43 +1,49 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../types";
+import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { valEmpty, valOr } from "../utils";
-import { motion } from "framer-motion";
+import { valEmpty, valOr } from "../../utils";
+import "./index.scss";
 
-export type ButtonSubmitInvertProps = ComponentBase &
+export type ButtonPrimaryInvertProps = ComponentBase &
   ButtonIconProps &
   ButtonCommonProps & {
+    // use secondary network color.
+    colorSecondary?: boolean;
+    // large button, small otherwise.
+    lg?: boolean;
     // button text.
     text: string;
   };
 
 /**
- * @name ButtonSubmitInvert
- * @description Invert submit button style used in modals.
+ * @name ButtonPrimaryInvert
+ * @description Invert primary button style.
  */
-export const ButtonSubmitInvert = ({
+export const ButtonPrimaryInvert = ({
+  colorSecondary,
   disabled,
   grow,
   iconLeft,
   iconRight,
   iconTransform,
+  lg,
   onClick,
   marginLeft,
   marginRight,
   marginX,
   style,
   text,
-}: ButtonSubmitInvertProps) => (
-  <motion.button
-    whileHover={{ scale: !disabled ? 1.02 : 1 }}
-    whileTap={{ scale: !disabled ? 0.98 : 1 }}
-    className={`btn-submit-invert${valEmpty(grow, "grow")}
-    ${valEmpty(marginRight, "m-right")}${valEmpty(
-      marginLeft,
-      "m-left"
-    )}${valEmpty(marginX, "m-x")}`}
+}: ButtonPrimaryInvertProps) => (
+  <button
+    className={`btn-primary-invert${valEmpty(
+      colorSecondary,
+      "secondary-color"
+    )}${valEmpty(grow, "grow")}${valOr(lg, "lg", "sm")}${valEmpty(
+      marginRight,
+      "m-right"
+    )}${valEmpty(marginLeft, "m-left")}${valEmpty(marginX, "m-x")}`}
     style={style}
     type="button"
     disabled={disabled}
@@ -62,5 +68,5 @@ export const ButtonSubmitInvert = ({
         transform={valOr(iconTransform, iconTransform, undefined)}
       />
     ) : null}
-  </motion.button>
+  </button>
 );

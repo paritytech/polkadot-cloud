@@ -74,7 +74,6 @@ try {
       );
     });
   });
-
 } catch (e) {
   console.error(
     `❌ Could not find package.json in the specified package directory: ${packageName}`

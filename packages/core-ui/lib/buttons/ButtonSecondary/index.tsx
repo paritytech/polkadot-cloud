@@ -1,15 +1,14 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../types";
+import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { valEmpty, valOr } from "../utils";
+import { valEmpty, valOr } from "../../utils";
+import "./index.scss";
 
-export type ButtonPrimaryInvertProps = ComponentBase &
+export type ButtonSecondaryProps = ComponentBase &
   ButtonIconProps &
   ButtonCommonProps & {
-    // use secondary network color.
-    colorSecondary?: boolean;
     // large button, small otherwise.
     lg?: boolean;
     // button text.
@@ -17,11 +16,10 @@ export type ButtonPrimaryInvertProps = ComponentBase &
   };
 
 /**
- * @name ButtonPrimaryInvert
- * @description Invert primary button style.
+ * @name ButtonSecondary
+ * @description Secondary button style used within the main interface of dashboards.
  */
-export const ButtonPrimaryInvert = ({
-  colorSecondary,
+export const ButtonSecondary = ({
   disabled,
   grow,
   iconLeft,
@@ -34,15 +32,15 @@ export const ButtonPrimaryInvert = ({
   marginX,
   style,
   text,
-}: ButtonPrimaryInvertProps) => (
+}: ButtonSecondaryProps) => (
   <button
-    className={`btn-primary-invert${valEmpty(
-      colorSecondary,
-      "secondary-color"
-    )}${valEmpty(grow, "grow")}${valOr(lg, "lg", "sm")}${valEmpty(
-      marginRight,
-      "m-right"
-    )}${valEmpty(marginLeft, "m-left")}${valEmpty(marginX, "m-x")}`}
+    className={`btn-secondary${valOr(lg, "lg", "sm")}${valEmpty(
+      grow,
+      "grow"
+    )}${valEmpty(marginRight, "m-right")}${valEmpty(
+      marginLeft,
+      "m-left"
+    )}${valEmpty(marginX, "m-x")}`}
     style={style}
     type="button"
     disabled={disabled}
