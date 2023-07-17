@@ -58,7 +58,8 @@ SPDX-License-Identifier: Apache-2.0 */
 }
 
 @mixin btn-disabled {
-  transition: opacity var(--transition-duration),
+  transition:
+    opacity var(--transition-duration),
     color var(--transition-duration);
 
   &:disabled {
@@ -304,7 +305,8 @@ SPDX-License-Identifier: Apache-2.0 */
   @include btn-disabled;
 
   color: var(--text-color-primary);
-  transition: opacity var(--transition-duration),
+  transition:
+    opacity var(--transition-duration),
     font-size var(--transition-duration);
   font-size: 1.15rem;
   padding: 0.65rem 1rem;
