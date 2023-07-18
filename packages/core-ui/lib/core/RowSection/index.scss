@@ -1,12 +1,12 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-@use "../styles/variables" as v;
+@use "../../styles/_variables" as v;
 @use "../styles";
 
 .core-row-primary {
-  @include row-section-first;
-  @include row-section-last;
+  @include styles.row-section-first;
+  @include styles.row-section-last;
 
   order: 0;
   flex: 1;
@@ -31,8 +31,8 @@ SPDX-License-Identifier: Apache-2.0 */
 }
 
 .core-row-secondary {
-  @include row-section-first;
-  @include row-section-last;
+  @include styles.row-section-first;
+  @include styles.row-section-last;
 
   order: 0;
   flex-basis: 100%;
