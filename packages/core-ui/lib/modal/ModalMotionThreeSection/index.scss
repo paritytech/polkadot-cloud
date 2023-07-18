@@ -1,0 +1,19 @@
+/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+SPDX-License-Identifier: Apache-2.0 */
+
+.modal-motion-three-sections {
+  @include modal-motion-sections;
+
+  width: 300%;
+
+  > .section {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 33.33%;
+    min-width: 33.33%;
+    height: auto;
+    overflow: auto;
+    flex-grow: 1;
+  }
+}

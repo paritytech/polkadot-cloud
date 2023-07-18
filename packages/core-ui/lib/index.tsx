@@ -26,7 +26,23 @@ export { StatBoxRow } from "./core/StatBoxRow";
 export { Tx } from "./core/Tx";
 
 // Modal
-export * from "./modal";
+export { ActionItem } from "./modal/ActionItem";
+export { ModalBackground } from "./modal/ModalBackground";
+export { ModalConnectItem } from "./modal/ModalConnectItem";
+export { ModalContainer } from "./modal/ModalContainer";
+export { ModalContent } from "./modal/ModalContent";
+export { ModalCustomHeader } from "./modal/ModalCustomHeader";
+export { ModalFixedTitle } from "./modal/ModalFixedTitle";
+export { ModalFooter } from "./modal/ModalFooter";
+export { ModalHardwareItem } from "./modal/ModalHardwareItem";
+export { ModalHeight } from "./modal/ModalHeight";
+export { ModalMotionThreeSection } from "./modal/ModalMotionThreeSection";
+export { ModalMotionTwoSection } from "./modal/ModalMotionTwoSection";
+export { ModalNotes } from "./modal/ModalNotes";
+export { ModalPadding } from "./modal/ModalPadding";
+export { ModalSection } from "./modal/ModalSection";
+export { ModalSeparator } from "./modal/ModalSeparator";
+export { ModalWarnings } from "./modal/ModalWarnings";
 
 // Buttons
 export { ButtonPrimary } from "./buttons/ButtonPrimary";

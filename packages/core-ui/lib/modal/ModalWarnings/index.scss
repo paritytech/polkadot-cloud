@@ -1,0 +1,11 @@
+/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+SPDX-License-Identifier: Apache-2.0 */
+
+.modal-warnings {
+  margin-top: 0;
+  width: 100%;
+
+  &.with-margin {
+    margin-top: 0.75rem;
+  }
+}
