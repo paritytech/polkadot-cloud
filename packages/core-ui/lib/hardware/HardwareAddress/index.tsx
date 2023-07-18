@@ -1,9 +1,6 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
-SPDX-License-Identifier: Apache-2.0 */
-
 import { ButtonText } from "../../buttons/ButtonText";
 import { ComponentBase } from "../../types";
 import {
