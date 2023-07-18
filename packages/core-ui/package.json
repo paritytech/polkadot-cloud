@@ -1,7 +1,8 @@
 {
   "name": "polkadotcloud-core-ui",
   "license": "Apache-2.0",
-  "version": "0.3.44",
+  "version": "0.3.45",
+  "type": "module",
   "author": "Ross Bulat",
   "description": "Core UI Components for Polkadot Dashboards.",
   "keywords": [
@@ -13,24 +14,32 @@
   },
   "homepage": "https://github.com/paritytech/polkadot-dashboard-ui#readme",
   "scripts": {
-    "build": "rollup -c && yarn fix && node ../../.scripts/injectPackageJson.cjs -p core-ui -m index.tsx",
-    "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo",
-    "fix": "sed '1d' ./dist/index.d.ts > ./tmp.d.ts; mv ./tmp.d.ts ./dist/index.d.ts"
+    "build": "rollup -c && node ../../.scripts/injectPackageJson.cjs -p core-ui -m index.tsx",
+    "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   },
   "peerDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.0",
-    "@polkadotcloud/utils": "^0.2.22",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@polkadotcloud/utils": "^0.2.22",
     "framer-motion": "^10.12.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.1.0",
+    "@types/react": "^18.2.15",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.26",
-    "rollup": "^2.78.1",
+    "rollup": "^3.26.3",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",

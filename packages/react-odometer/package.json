@@ -2,6 +2,7 @@
   "name": "polkadotcloud-react-odometer",
   "license": "Apache-2.0",
   "version": "0.1.17",
+  "type": "module",
   "author": "Ross Bulat",
   "description": "React Odometer for Polkadot Dashboards.",
   "keywords": [
@@ -22,17 +23,20 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.3",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.1.0",
-    "@rollup/plugin-commonjs": "^25.0.3",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.26",
-    "rollup": "^2.78.1",
+    "rollup": "^3.26.3",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.35.0"
+  },
+  "dependencies": {
+    "rollup-plugin-uglify": "^6.0.4"
   }
 }

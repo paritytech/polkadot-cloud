@@ -8,6 +8,7 @@ import postcss from "rollup-plugin-postcss";
 import del from "rollup-plugin-delete";
 import copy from "rollup-plugin-copy";
 import cleanup from "rollup-plugin-cleanup";
+import commonjs from "@rollup/plugin-commonjs";
 import { uglify } from "rollup-plugin-uglify";
 
 /**
@@ -25,21 +26,22 @@ export default {
   plugins: [
     del({ targets: "dist/*" }),
     peerDepsExternal(),
-    resolve(),
     postcss({
       config: {
-        path: "postcss.config.js",
+        path: "postcss.config.mjs",
       },
       extensions: [".css", ".scss"],
       minimize: true,
       modules: false,
       extract: "index.css",
     }),
+    resolve(),
     typescript(),
+    commonjs(),
     copy({
       targets: [
         {
-          src: "lib/styles/fonts/**/*",
+          src: "styles/fonts/**/*",
           dest: "dist/fonts",
         },
       ],
@@ -49,12 +51,5 @@ export default {
     }),
     uglify(),
   ],
-  external: [
-    "@fortawesome/react-fontawesome",
-    "@polkadotcloud/utils",
-    "framer-motion",
-    "prop-types",
-    "react",
-    "react-dom",
-  ],
+  external: ["react", "react-dom"],
 };
