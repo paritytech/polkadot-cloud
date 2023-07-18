@@ -1,0 +1,11 @@
+/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+SPDX-License-Identifier: Apache-2.0 */
+
+@use "../styles";
+
+.modal-background {
+  @include styles.modal-position;
+
+  background: var(--modal-background-color);
+  z-index: 9;
+}

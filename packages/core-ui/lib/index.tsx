@@ -10,10 +10,39 @@ SPDX-License-Identifier: Apache-2.0 */
 import "./styles/index.scss";
 
 // Core
-export * from "./core";
+export { Body } from "./core/Body";
+export { ButtonRow } from "./core/ButtonRow";
+export { Entry } from "./core/Entry";
+export { Main } from "./core/Main";
+export { Page } from "./core/Page";
+export { PageHeading } from "./core/PageHeading";
+export { PageRow } from "./core/PageRow";
+export { PageTitle } from "./core/PageTitle";
+export { PageTitleTabs } from "./core/PageTitleTabs";
+export { RowSection } from "./core/RowSection";
+export { Separator } from "./core/Separator";
+export { Side } from "./core/Side";
+export { StatBoxRow } from "./core/StatBoxRow";
+export { Tx } from "./core/Tx";
 
 // Modal
-export * from "./modal";
+export { ActionItem } from "./modal/ActionItem";
+export { ModalBackground } from "./modal/ModalBackground";
+export { ModalConnectItem } from "./modal/ModalConnectItem";
+export { ModalContainer } from "./modal/ModalContainer";
+export { ModalContent } from "./modal/ModalContent";
+export { ModalCustomHeader } from "./modal/ModalCustomHeader";
+export { ModalFixedTitle } from "./modal/ModalFixedTitle";
+export { ModalFooter } from "./modal/ModalFooter";
+export { ModalHardwareItem } from "./modal/ModalHardwareItem";
+export { ModalHeight } from "./modal/ModalHeight";
+export { ModalMotionThreeSection } from "./modal/ModalMotionThreeSection";
+export { ModalMotionTwoSection } from "./modal/ModalMotionTwoSection";
+export { ModalNotes } from "./modal/ModalNotes";
+export { ModalPadding } from "./modal/ModalPadding";
+export { ModalSection } from "./modal/ModalSection";
+export { ModalSeparator } from "./modal/ModalSeparator";
+export { ModalWarnings } from "./modal/ModalWarnings";
 
 // Buttons
 export { ButtonPrimary } from "./buttons/ButtonPrimary";
@@ -28,7 +57,6 @@ export { ButtonHelp } from "./buttons/ButtonHelp";
 export { ButtonTab } from "./buttons/ButtonTab";
 export { ButtonOption } from "./buttons/ButtonOption";
 
-// Hardware Import
-
+// Hardware
 export { HardwareStatusBar } from "./hardware/HardwareStatusBar";
 export { HardwareAddress } from "./hardware/HardwareAddress";
