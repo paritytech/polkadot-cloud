@@ -16,8 +16,8 @@ import {
   faUser as faUserReg,
 } from "@fortawesome/free-regular-svg-icons";
 import { CodeDrawer } from "../components/CodeDrawer";
-import { Separator } from "core-ui/core";
-import { ButtonTab } from "core-ui/index";
+import { Separator } from "core-ui/core/Separator";
+import { ButtonTab } from "core-ui/buttons/ButtonTab";
 
 export const Buttons = () => (
   <>
