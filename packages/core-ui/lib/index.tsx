@@ -10,7 +10,20 @@ SPDX-License-Identifier: Apache-2.0 */
 import "./styles/index.scss";
 
 // Core
-export * from "./core";
+export { Body } from "./core/Body";
+export { ButtonRow } from "./core/ButtonRow";
+export { Entry } from "./core/Entry";
+export { Main } from "./core/Main";
+export { Page } from "./core/Page";
+export { PageHeading } from "./core/PageHeading";
+export { PageRow } from "./core/PageRow";
+export { PageTitle } from "./core/PageTitle";
+export { PageTitleTabs } from "./core/PageTitleTabs";
+export { RowSection } from "./core/RowSection";
+export { Separator } from "./core/Separator";
+export { Side } from "./core/Side";
+export { StatBoxRow } from "./core/StatBoxRow";
+export { Tx } from "./core/Tx";
 
 // Modal
 export * from "./modal";
@@ -29,6 +42,5 @@ export { ButtonTab } from "./buttons/ButtonTab";
 export { ButtonOption } from "./buttons/ButtonOption";
 
 // Hardware Import
-
 export { HardwareStatusBar } from "./hardware/HardwareStatusBar";
 export { HardwareAddress } from "./hardware/HardwareAddress";
