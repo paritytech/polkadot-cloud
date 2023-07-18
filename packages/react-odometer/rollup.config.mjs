@@ -28,7 +28,7 @@ export default {
     peerDepsExternal(),
     postcss({
       config: {
-        path: "postcss.config.js",
+        path: "postcss.config.mjs",
       },
       extensions: [".css", ".scss"],
       minimize: true,

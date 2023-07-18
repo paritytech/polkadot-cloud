@@ -2,9 +2,13 @@
   "name": "polkadotcloud-utils",
   "license": "Apache-2.0",
   "version": "0.2.22",
+  "type": "module",
   "author": "Ross Bulat",
   "description": "Utilities for Polkadot Dashboards.",
-  "keywords": ["Polkadot", "UI"],
+  "keywords": [
+    "Polkadot",
+    "UI"
+  ],
   "bugs": {
     "url": "https://github.com/paritytech/polkadot-dashboard-ui/issues"
   },
@@ -28,5 +32,8 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.35.0"
+  },
+  "dependencies": {
+    "rollup-plugin-uglify": "^6.0.4"
   }
 }
