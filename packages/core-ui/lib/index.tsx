@@ -57,6 +57,6 @@ export { ButtonHelp } from "./buttons/ButtonHelp";
 export { ButtonTab } from "./buttons/ButtonTab";
 export { ButtonOption } from "./buttons/ButtonOption";
 
-// Hardware Import
+// Hardware
 export { HardwareStatusBar } from "./hardware/HardwareStatusBar";
 export { HardwareAddress } from "./hardware/HardwareAddress";
