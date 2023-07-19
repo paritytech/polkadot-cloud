@@ -30,7 +30,7 @@
     "prettier": "^3.0.0",
     "rollup-plugin-cleanup": "^3.2.1",
     "sass": "^1.63.6",
-    "stylelint": "^15.10.1",
+    "stylelint": "^15.10.2",
     "stylelint-config-standard-scss": "^10.0.0",
     "tslib": "^2.6.0",
     "typescript": "^5.1.6"
