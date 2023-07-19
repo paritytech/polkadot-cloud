@@ -1,7 +1,7 @@
 {
   "name": "polkadotcloud-core-ui",
   "license": "Apache-2.0",
-  "version": "0.3.45",
+  "version": "0.3.47",
   "type": "module",
   "author": "Ross Bulat",
   "description": "Core UI Components for Polkadot Dashboards.",
