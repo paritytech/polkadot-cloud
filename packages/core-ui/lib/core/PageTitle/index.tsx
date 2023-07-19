@@ -7,6 +7,7 @@ import { valEmpty } from "../../utils";
 import { ButtonSecondary } from "../../buttons/ButtonSecondary";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { PageTitleTabs } from "../PageTitleTabs";
+import "./index.scss";
 
 /**
  * @name PageTitle
