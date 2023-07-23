@@ -1,0 +1,15 @@
+/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+SPDX-License-Identifier: Apache-2.0 */
+
+.theme-kusama-relay {
+  --network-color-primary-light: rgb(31 41 55);
+  --network-color-primary-dark: rgb(126 131 141);
+  --network-color-secondary-light: #414c5c;
+  --network-color-secondary-dark: rgb(141 144 150);
+  --network-color-stroke-light: #4c4b63;
+  --network-color-stroke-dark: #d1d1db;
+  --network-color-transparent-light: rgb(51 51 51 / 5%);
+  --network-color-transparent-dark: rgb(102 102 102 / 5%);
+  --network-color-pending-light: rgb(51 51 51 / 50%);
+  --network-color-pending-dark: rgb(102 102 102 / 50%);
+}
