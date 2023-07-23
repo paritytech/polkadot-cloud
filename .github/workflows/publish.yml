@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org
-      - name: Build NPM Package
+      - name: Build NPM Packages
         run: yarn build
       - name: New 'core-ui' version
         id: core_ui_version
@@ -28,6 +28,11 @@ jobs:
           path: "./packages/react-odometer/dist"
       - name: New 'utils' version
         id: utils_version
+        uses: PostHog/check-package-version@v2
+        with:
+          path: "./packages/utils/dist"
+      - name: New 'themes' version
+        id: themes_version
         uses: PostHog/check-package-version@v2
         with:
           path: "./packages/utils/dist"
@@ -59,6 +64,16 @@ jobs:
         if: steps.utils_version.outputs.is-new-version == 'true'
         run: npm publish
         working-directory: "./packages/utils/dist"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish 'themes' Dry Run
+        run: npm publish --unsafe-perm --dry-run
+        working-directory: "./packages/themes"
+      - name: Publish 'themes'
+        if: steps.utils_version.outputs.is-new-version == 'true'
+        run: npm publish
+        working-directory: "./packages/themes"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
