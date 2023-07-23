@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import { valEmpty } from "lib/utils";
+import { valEmpty } from "../../utils";
 import { ModalConnectItemProps } from "../types";
 import "./index.scss";
 

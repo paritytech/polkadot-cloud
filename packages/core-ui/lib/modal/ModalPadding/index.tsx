@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 */
 
 import { RefObject, forwardRef } from "react";
 import { ModalPaddingProps } from "../types";
-import { valEmpty } from "lib/utils";
+import { valEmpty } from "../../utils";
 import "./index.scss";
 
 /**
