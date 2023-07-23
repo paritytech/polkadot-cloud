@@ -35,7 +35,7 @@ jobs:
         id: themes_version
         uses: PostHog/check-package-version@v2
         with:
-          path: "./packages/utils/dist"
+          path: "./packages/themes"
 
       - name: Publish 'core-ui' Dry Run
         run: npm publish --unsafe-perm --dry-run
