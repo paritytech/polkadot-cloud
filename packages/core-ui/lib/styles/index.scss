@@ -4,9 +4,6 @@ SPDX-License-Identifier: Apache-2.0 */
 /* Developer Notes:
  * This file should be imported in the main library entry file. */
 
-/* UI theme variables. */
-@use "theme";
-
 /* Every element conforms to border-box by default. */
 * {
   box-sizing: border-box;
