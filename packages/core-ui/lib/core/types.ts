@@ -1,14 +1,14 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import { ComponentBase, Network, ThemeMode } from "../types";
+import { ComponentBase, ThemeMode } from "../types";
 import React from "react";
 
 export type EntryProps = ComponentBase & {
   // the theme mode.
   mode: ThemeMode;
-  // the active network.
-  network: Network;
+  // the active chain.
+  chain: string;
 };
 
 export type SideProps = ComponentBase & {
