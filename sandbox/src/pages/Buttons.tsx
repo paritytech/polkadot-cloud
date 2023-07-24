@@ -18,6 +18,7 @@ import {
 import { CodeDrawer } from "../components/CodeDrawer";
 import { Separator } from "core-ui/core/Separator";
 import { ButtonTab } from "core-ui/buttons/ButtonTab";
+import { ButtonTertiary } from "core-ui/buttons/ButtonTertiary";
 
 export const Buttons = () => (
   <>
@@ -77,6 +78,7 @@ export const Buttons = () => (
       </code>
     </CodeDrawer>
     <Separator />
+
     <h4>Button Secondary</h4>
     <div className="row">
       <ButtonSecondary text="Button" marginRight />
@@ -101,6 +103,24 @@ export const Buttons = () => (
       </code>
     </CodeDrawer>
     <Separator />
+
+    <h4>Button Tertiary</h4>
+    <div className="row">
+      <ButtonTertiary text="Button" marginRight />
+      <ButtonTertiary text="Button" iconLeft={faUser} marginRight />
+      <ButtonTertiary text="Button" iconRight={faUser} marginRight />
+      <ButtonTertiary text="Button" disabled />
+    </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<ButtonTertiary text="Button" marginRight />`}</p>
+        <p>{`<ButtonTertiary text="Button" iconLeft={faUser} marginRight />`}</p>
+        <p>{`<ButtonTertiary text="Button" iconRight={faUser} marginRight />`}</p>
+        <p>{`<ButtonTertiary lg text="Button" disabled />`}</p>
+      </code>
+    </CodeDrawer>
+    <Separator />
+
     <h4>Button Mono</h4>
     <div className="row">
       <ButtonMono text="Button" marginRight />
