@@ -48,6 +48,7 @@ export { ModalWarnings } from "./modal/ModalWarnings";
 export { ButtonPrimary } from "./buttons/ButtonPrimary";
 export { ButtonPrimaryInvert } from "./buttons/ButtonPrimaryInvert";
 export { ButtonSecondary } from "./buttons/ButtonSecondary";
+export { ButtonTertiary } from "./buttons/ButtonTertiary";
 export { ButtonMono } from "./buttons/ButtonMono";
 export { ButtonMonoInvert } from "./buttons/ButtonMonoInvert";
 export { ButtonSubmitInvert } from "./buttons/ButtonSubmitInvert";
