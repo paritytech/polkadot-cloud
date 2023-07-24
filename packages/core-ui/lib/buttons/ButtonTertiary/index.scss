@@ -12,13 +12,14 @@ SPDX-License-Identifier: Apache-2.0 */
 
   border: 1px solid var(--border-secondary-color);
   border-radius: var(--button-border-radius-large);
-  color: var(--text-color-secondary);  
+  color: var(--text-color-secondary);
+  transition: background-color var(--transition-duration);
 
   &:hover {
     background: var(--button-hover-background);
 
     &:disabled {
-      background: var(--button-secondary-background);
+      background: var(--button-primary-background);
     }
   }
 }
