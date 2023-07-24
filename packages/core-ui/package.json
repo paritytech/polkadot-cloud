@@ -38,7 +38,7 @@
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@types/react": "^18.2.15",
     "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.26",
+    "postcss": "^8.4.27",
     "rollup": "^3.26.3",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-delete": "^2.0.0",
