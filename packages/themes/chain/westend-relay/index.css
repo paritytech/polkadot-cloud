@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-.theme-westend {
+.theme-westend-relay {
   --network-color-primary-light: #da4e71;
   --network-color-primary-dark: #da4e71;
   --network-color-secondary-light: #de6a50;

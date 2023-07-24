@@ -30,7 +30,7 @@ export const App = () => {
 
   return (
     <>
-      <main className={`theme-${network} theme-${theme}`}>
+      <main className={`theme-${network}-relay theme-${theme}`}>
         <SideMenu
           theme={theme}
           setTheme={setTheme}
