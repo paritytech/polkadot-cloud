@@ -4,6 +4,7 @@ SPDX-License-Identifier: Apache-2.0 */
 import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { valEmpty, valOr } from "../../utils";
+import { motion } from "framer-motion";
 import "./index.scss";
 
 export type ButtonTertiaryProps = ComponentBase &
@@ -30,7 +31,9 @@ export const ButtonTertiary = ({
   style,
   text,
 }: ButtonTertiaryProps) => (
-  <button
+  <motion.button
+    whileHover={{ scale: !disabled ? 1.02 : 1 }}
+    whileTap={{ scale: !disabled ? 0.98 : 1 }}
     className={`btn-tertiary${valEmpty(grow, "grow")}${valEmpty(
       marginRight,
       "m-right"
@@ -59,5 +62,5 @@ export const ButtonTertiary = ({
         transform={valOr(iconTransform, iconTransform, undefined)}
       />
     ) : null}
-  </button>
+  </motion.button>
 );
