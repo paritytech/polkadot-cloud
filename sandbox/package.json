@@ -22,7 +22,7 @@
     "@polkadot/util": "^12.3.2",
     "@polkadotcloud/utils": "^0.2.22",
     "bignumber.js": "^9.1.1",
-    "framer-motion": "^10.13.0",
+    "framer-motion": "^10.13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
