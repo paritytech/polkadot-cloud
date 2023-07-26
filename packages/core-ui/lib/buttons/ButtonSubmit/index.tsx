@@ -29,13 +29,15 @@ export const ButtonSubmit = ({
   iconLeft,
   iconRight,
   iconTransform,
-  onClick,
   marginLeft,
   marginRight,
   marginX,
   style,
   text,
   pulse,
+  onClick,
+  onMouseOver,
+  onMouseOut,
 }: ButtonSubmitProps) => (
   <motion.button
     whileHover={{ scale: !disabled ? 1.02 : 1 }}
@@ -50,11 +52,11 @@ export const ButtonSubmit = ({
     style={style}
     type="button"
     disabled={disabled}
-    onClick={() => {
-      if (typeof onClick == "function") {
-        onClick();
-      }
-    }}
+    onClick={typeof onClick == "function" ? (e) => onClick(e) : undefined}
+    onMouseOver={
+      typeof onClick == "function" ? (e) => onMouseOver(e) : undefined
+    }
+    onMouseOut={typeof onClick == "function" ? (e) => onMouseOut(e) : undefined}
   >
     {iconLeft ? (
       <FontAwesomeIcon

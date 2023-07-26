@@ -26,12 +26,14 @@ export const ButtonSecondary = ({
   iconRight,
   iconTransform,
   lg,
-  onClick,
   marginLeft,
   marginRight,
   marginX,
   style,
   text,
+  onClick,
+  onMouseOver,
+  onMouseOut,
 }: ButtonSecondaryProps) => (
   <button
     className={`btn-secondary${valOr(lg, "lg", "sm")}${valEmpty(
@@ -44,11 +46,11 @@ export const ButtonSecondary = ({
     style={style}
     type="button"
     disabled={disabled}
-    onClick={() => {
-      if (typeof onClick == "function") {
-        onClick();
-      }
-    }}
+    onClick={typeof onClick == "function" ? (e) => onClick(e) : undefined}
+    onMouseOver={
+      typeof onClick == "function" ? (e) => onMouseOver(e) : undefined
+    }
+    onMouseOut={typeof onClick == "function" ? (e) => onMouseOut(e) : undefined}
   >
     {iconLeft ? (
       <FontAwesomeIcon

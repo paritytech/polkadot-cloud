@@ -26,13 +26,15 @@ export const ButtonMonoInvert = ({
   iconLeft,
   iconRight,
   iconTransform,
-  onClick,
   lg,
   marginLeft,
   marginRight,
   marginX,
   style,
   text,
+  onClick,
+  onMouseOver,
+  onMouseOut,
 }: ButtonMonoProps) => (
   <motion.button
     whileHover={{ scale: !disabled ? 1.02 : 1 }}
@@ -47,11 +49,11 @@ export const ButtonMonoInvert = ({
     style={style}
     type="button"
     disabled={disabled}
-    onClick={() => {
-      if (typeof onClick == "function") {
-        onClick();
-      }
-    }}
+    onClick={typeof onClick == "function" ? (e) => onClick(e) : undefined}
+    onMouseOver={
+      typeof onClick == "function" ? (e) => onMouseOver(e) : undefined
+    }
+    onMouseOut={typeof onClick == "function" ? (e) => onMouseOut(e) : undefined}
   >
     {iconLeft ? (
       <FontAwesomeIcon

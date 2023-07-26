@@ -18,22 +18,24 @@ export type ButtonOptionProps = ComponentBase &
  * @description Option button for different action.
  */
 export const ButtonOption = ({
-  onClick,
   children,
   style,
   disabled,
   content,
+  onClick,
+  onMouseOver,
+  onMouseOut,
 }: ButtonOptionProps) => (
   <button
     className={`btn-option${valEmpty(content, "content")}`}
     style={style}
     type="button"
     disabled={disabled}
-    onClick={() => {
-      if (typeof onClick == "function") {
-        onClick();
-      }
-    }}
+    onClick={typeof onClick == "function" ? (e) => onClick(e) : undefined}
+    onMouseOver={
+      typeof onClick == "function" ? (e) => onMouseOver(e) : undefined
+    }
+    onMouseOut={typeof onClick == "function" ? (e) => onMouseOut(e) : undefined}
   >
     {children}
     <div>

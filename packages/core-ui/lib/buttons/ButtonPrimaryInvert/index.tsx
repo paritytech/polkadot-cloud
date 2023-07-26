@@ -29,12 +29,14 @@ export const ButtonPrimaryInvert = ({
   iconRight,
   iconTransform,
   lg,
-  onClick,
   marginLeft,
   marginRight,
   marginX,
   style,
   text,
+  onClick,
+  onMouseOver,
+  onMouseOut,
 }: ButtonPrimaryInvertProps) => (
   <button
     className={`btn-primary-invert${valEmpty(
@@ -47,11 +49,11 @@ export const ButtonPrimaryInvert = ({
     style={style}
     type="button"
     disabled={disabled}
-    onClick={() => {
-      if (typeof onClick == "function") {
-        onClick();
-      }
-    }}
+    onClick={typeof onClick == "function" ? (e) => onClick(e) : undefined}
+    onMouseOver={
+      typeof onClick == "function" ? (e) => onMouseOver(e) : undefined
+    }
+    onMouseOut={typeof onClick == "function" ? (e) => onMouseOut(e) : undefined}
   >
     {iconLeft ? (
       <FontAwesomeIcon

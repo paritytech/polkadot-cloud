@@ -21,22 +21,24 @@ export type ButtonTabProps = ComponentBase &
  */
 export const ButtonTab = ({
   disabled,
-  onClick,
   style,
   active,
   title,
   badge,
+  onClick,
+  onMouseOver,
+  onMouseOut,
 }: ButtonTabProps) => (
   <button
     className={`btn-tab${valEmpty(active, "active")}`}
     style={style}
     type="button"
     disabled={disabled}
-    onClick={() => {
-      if (typeof onClick == "function") {
-        onClick();
-      }
-    }}
+    onClick={typeof onClick == "function" ? (e) => onClick(e) : undefined}
+    onMouseOver={
+      typeof onClick == "function" ? (e) => onMouseOver(e) : undefined
+    }
+    onMouseOut={typeof onClick == "function" ? (e) => onMouseOut(e) : undefined}
   >
     {title}
     {badge ? <span className="badge">{badge}</span> : null}
