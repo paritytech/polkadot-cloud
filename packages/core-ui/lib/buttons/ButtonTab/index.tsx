@@ -1,11 +1,11 @@
 // Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { ComponentBase, ButtonCommonProps } from "../../types";
+import { ButtonCommonProps, ComponentBaseWithClassName } from "../../types";
 import { valEmpty } from "../../utils";
 import "./index.scss";
 
-export type ButtonTabProps = ComponentBase &
+export type ButtonTabProps = ComponentBaseWithClassName &
   ButtonCommonProps & {
     // whether the button is clicked
     active?: boolean;
@@ -21,6 +21,7 @@ export type ButtonTabProps = ComponentBase &
  */
 export const ButtonTab = ({
   disabled,
+  className,
   style,
   active,
   title,
@@ -31,7 +32,7 @@ export const ButtonTab = ({
   onMouseOut,
 }: ButtonTabProps) => (
   <button
-    className={`btn-tab${valEmpty(active, "active")}`}
+    className={`btn-tab${valEmpty(active, "active")}${className || ""}`}
     style={style}
     type="button"
     disabled={disabled}

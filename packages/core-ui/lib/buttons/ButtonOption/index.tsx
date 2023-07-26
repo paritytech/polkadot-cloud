@@ -1,13 +1,13 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import { ButtonCommonProps, ComponentBase } from "../../types";
+import { ButtonCommonProps, ComponentBaseWithClassName } from "../../types";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { valEmpty } from "../../utils";
 import "./index.scss";
 
-export type ButtonOptionProps = ComponentBase &
+export type ButtonOptionProps = ComponentBaseWithClassName &
   ButtonCommonProps & {
     // button content including icon and html styling.
     content?: boolean;
@@ -19,6 +19,7 @@ export type ButtonOptionProps = ComponentBase &
  */
 export const ButtonOption = ({
   children,
+  className,
   style,
   disabled,
   content,
@@ -28,7 +29,7 @@ export const ButtonOption = ({
   onMouseOut,
 }: ButtonOptionProps) => (
   <button
-    className={`btn-option${valEmpty(content, "content")}`}
+    className={`btn-option${valEmpty(content, "content")}${className || ""}`}
     style={style}
     type="button"
     disabled={disabled}

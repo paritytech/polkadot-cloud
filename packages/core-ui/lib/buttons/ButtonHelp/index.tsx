@@ -2,11 +2,11 @@
 SPDX-License-Identifier: Apache-2.0 */
 
 import { InfoSVG } from "../../svg/Info";
-import { ButtonCommonProps, ComponentBase } from "../../types";
+import { ButtonCommonProps, ComponentBaseWithClassName } from "../../types";
 import { valEmpty } from "../../utils";
 import "./index.scss";
 
-export type ButtonHelpProps = ComponentBase &
+export type ButtonHelpProps = ComponentBaseWithClassName &
   ButtonCommonProps & {
     // whether to use secondary background
     backgroundSecondary?: boolean;
@@ -22,6 +22,7 @@ export const ButtonHelp = ({
   marginRight,
   marginX,
   backgroundSecondary,
+  className,
   style,
   onClick,
   onMouseOver,
@@ -35,7 +36,7 @@ export const ButtonHelp = ({
     )}${valEmpty(marginRight, "m-right")}${valEmpty(
       marginLeft,
       "m-left"
-    )}${valEmpty(marginX, "m-x")}`}
+    )}${valEmpty(marginX, "m-x")}${className || ""}`}
     style={style}
     type="button"
     disabled={disabled}

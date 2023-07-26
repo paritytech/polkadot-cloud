@@ -1,13 +1,17 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import { ButtonIconProps, ButtonCommonProps, ComponentBase } from "../../types";
+import {
+  ButtonIconProps,
+  ButtonCommonProps,
+  ComponentBaseWithClassName,
+} from "../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { valEmpty, valOr } from "../../utils";
 import { motion } from "framer-motion";
 import "./index.scss";
 
-export type ButtonSubmitProps = ComponentBase &
+export type ButtonSubmitProps = ComponentBaseWithClassName &
   ButtonIconProps &
   ButtonCommonProps & {
     // use secondary network color.
@@ -32,6 +36,7 @@ export const ButtonSubmit = ({
   marginLeft,
   marginRight,
   marginX,
+  className,
   style,
   text,
   pulse,
@@ -49,7 +54,7 @@ export const ButtonSubmit = ({
     )}${valEmpty(grow, "grow")}${valEmpty(marginRight, "m-right")}${valEmpty(
       marginLeft,
       "m-left"
-    )}${valEmpty(marginX, "m-x")}${valEmpty(pulse, "pulse")}`}
+    )}${valEmpty(marginX, "m-x")}${valEmpty(pulse, "pulse")}${className || ""}`}
     style={style}
     type="button"
     disabled={disabled}
