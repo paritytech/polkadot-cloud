@@ -37,6 +37,7 @@ export const ButtonPrimary = ({
   text,
   onClick,
   onMouseOver,
+  onMouseMove,
   onMouseOut,
 }: ButtonPrimaryProps) => (
   <motion.button
@@ -55,6 +56,9 @@ export const ButtonPrimary = ({
     onClick={typeof onClick == "function" ? (e) => onClick(e) : undefined}
     onMouseOver={
       typeof onClick == "function" ? (e) => onMouseOver(e) : undefined
+    }
+    onMouseMove={
+      typeof onClick == "function" ? (e) => onMouseMove(e) : undefined
     }
     onMouseOut={typeof onClick == "function" ? (e) => onMouseOut(e) : undefined}
   >

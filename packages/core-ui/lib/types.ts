@@ -40,6 +40,8 @@ export interface ButtonCommonProps {
   onClick?: (e?: MouseEvent<HTMLButtonElement>) => void;
   // onMouseOver handler of button.
   onMouseOver?: (e?: MouseEvent<HTMLButtonElement>) => void;
+  // onMouseMove handler of button.
+  onMouseMove?: (e?: MouseEvent<HTMLButtonElement>) => void;
   // onMouseOut handler of button.
   onMouseOut?: (e?: MouseEvent<HTMLButtonElement>) => void;
 }

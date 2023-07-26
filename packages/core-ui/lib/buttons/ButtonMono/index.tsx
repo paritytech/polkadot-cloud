@@ -34,6 +34,7 @@ export const ButtonMono = ({
   text,
   onClick,
   onMouseOver,
+  onMouseMove,
   onMouseOut,
 }: ButtonMonoProps) => (
   <motion.button
@@ -52,6 +53,9 @@ export const ButtonMono = ({
     onClick={typeof onClick == "function" ? (e) => onClick(e) : undefined}
     onMouseOver={
       typeof onClick == "function" ? (e) => onMouseOver(e) : undefined
+    }
+    onMouseMove={
+      typeof onClick == "function" ? (e) => onMouseMove(e) : undefined
     }
     onMouseOut={typeof onClick == "function" ? (e) => onMouseOut(e) : undefined}
   >
