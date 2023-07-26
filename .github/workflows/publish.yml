@@ -71,7 +71,7 @@ jobs:
         run: npm publish --unsafe-perm --dry-run
         working-directory: "./packages/themes"
       - name: Publish 'themes'
-        if: steps.utils_version.outputs.is-new-version == 'true'
+        if: steps.themes_version.outputs.is-new-version == 'true'
         run: npm publish
         working-directory: "./packages/themes"
         env:
