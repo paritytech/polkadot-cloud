@@ -1,6 +1,9 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
+import { AnyJson } from "@polkadotcloud/utils/types";
+import { MouseEvent } from "react";
+
 /* Returns ` t` if truthy, or an empty string otherwise. */
 export const valEmpty = (t: boolean | string | undefined, v: string) =>
   t ? ` ${v}` : "";
@@ -8,3 +11,26 @@ export const valEmpty = (t: boolean | string | undefined, v: string) =>
 /* Returns ` v` if `t` is truthy, or ` w` otherwise. */
 export const valOr = (t: boolean | string | undefined, v: string, w: string) =>
   t ? ` ${v}` : ` ${w}`;
+
+/* Formats mouse handlers for buttons given its props. */
+export const onMouseHandlers = (props: AnyJson) => {
+  const { onClick, onMouseOver, onMouseMove, onMouseOut } = props;
+  return {
+    onClick:
+      typeof onClick == "function"
+        ? (e: MouseEvent<HTMLButtonElement>) => onClick(e)
+        : undefined,
+    onMouseOver:
+      typeof onMouseOver == "function"
+        ? (e: MouseEvent<HTMLButtonElement>) => onMouseOver(e)
+        : undefined,
+    onMouseMove:
+      typeof onMouseMove == "function"
+        ? (e: MouseEvent<HTMLButtonElement>) => onMouseMove(e)
+        : undefined,
+    onMouseOut:
+      typeof onMouseOut == "function"
+        ? (e: MouseEvent<HTMLButtonElement>) => onMouseOut(e)
+        : undefined,
+  };
+};

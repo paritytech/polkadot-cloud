@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { ButtonCommonProps, ComponentBaseWithClassName } from "../../types";
-import { valEmpty } from "../../utils";
+import { onMouseHandlers, valEmpty } from "../../utils";
 import "./index.scss";
 
 export type ButtonTabProps = ComponentBaseWithClassName &
@@ -32,18 +32,13 @@ export const ButtonTab = ({
   onMouseOut,
 }: ButtonTabProps) => (
   <button
-    className={`btn-tab${valEmpty(active, "active")}${className || ""}`}
+    className={`btn-tab${valEmpty(active, "active")}${
+      className ? ` ${className}` : ""
+    }`}
     style={style}
     type="button"
     disabled={disabled}
-    onClick={typeof onClick == "function" ? (e) => onClick(e) : undefined}
-    onMouseOver={
-      typeof onClick == "function" ? (e) => onMouseOver(e) : undefined
-    }
-    onMouseMove={
-      typeof onClick == "function" ? (e) => onMouseMove(e) : undefined
-    }
-    onMouseOut={typeof onClick == "function" ? (e) => onMouseOut(e) : undefined}
+    {...onMouseHandlers({ onClick, onMouseOver, onMouseMove, onMouseOut })}
   >
     {title}
     {badge ? <span className="badge">{badge}</span> : null}

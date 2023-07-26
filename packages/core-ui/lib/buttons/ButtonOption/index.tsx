@@ -4,7 +4,7 @@ SPDX-License-Identifier: Apache-2.0 */
 import { ButtonCommonProps, ComponentBaseWithClassName } from "../../types";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { valEmpty } from "../../utils";
+import { onMouseHandlers, valEmpty } from "../../utils";
 import "./index.scss";
 
 export type ButtonOptionProps = ComponentBaseWithClassName &
@@ -29,18 +29,13 @@ export const ButtonOption = ({
   onMouseOut,
 }: ButtonOptionProps) => (
   <button
-    className={`btn-option${valEmpty(content, "content")}${className || ""}`}
+    className={`btn-option${valEmpty(content, "content")}${
+      className ? ` ${className}` : ""
+    }`}
     style={style}
     type="button"
     disabled={disabled}
-    onClick={typeof onClick == "function" ? (e) => onClick(e) : undefined}
-    onMouseOver={
-      typeof onClick == "function" ? (e) => onMouseOver(e) : undefined
-    }
-    onMouseMove={
-      typeof onClick == "function" ? (e) => onMouseMove(e) : undefined
-    }
-    onMouseOut={typeof onClick == "function" ? (e) => onMouseOut(e) : undefined}
+    {...onMouseHandlers({ onClick, onMouseOver, onMouseMove, onMouseOut })}
   >
     {children}
     <div>

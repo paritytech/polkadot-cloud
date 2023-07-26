@@ -7,7 +7,7 @@ import {
   ComponentBaseWithClassName,
 } from "../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { valEmpty, valOr } from "../../utils";
+import { onMouseHandlers, valEmpty, valOr } from "../../utils";
 import { motion } from "framer-motion";
 import "./index.scss";
 
@@ -51,18 +51,11 @@ export const ButtonMonoInvert = ({
     )}${valEmpty(marginRight, "m-right")}${valEmpty(
       marginLeft,
       "m-left"
-    )}${valEmpty(marginX, "m-x")}${className || ""}`}
+    )}${valEmpty(marginX, "m-x")}${className ? ` ${className}` : ""}`}
     style={style}
     type="button"
     disabled={disabled}
-    onClick={typeof onClick == "function" ? (e) => onClick(e) : undefined}
-    onMouseOver={
-      typeof onClick == "function" ? (e) => onMouseOver(e) : undefined
-    }
-    onMouseMove={
-      typeof onClick == "function" ? (e) => onMouseMove(e) : undefined
-    }
-    onMouseOut={typeof onClick == "function" ? (e) => onMouseOut(e) : undefined}
+    {...onMouseHandlers({ onClick, onMouseOver, onMouseMove, onMouseOut })}
   >
     {iconLeft ? (
       <FontAwesomeIcon
