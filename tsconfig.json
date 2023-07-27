@@ -9,7 +9,9 @@
     "skipLibCheck": true,
     "paths": {
       "core-ui/*": ["./packages/core-ui/lib/*"],
-      "utils/*": ["./packages/utils/lib/*"]
+      "react-odometer/*": ["./packages/react-odometer/lib/*"],
+      "themes/*": ["./packages/themes/*"],
+      "utils/*": ["./packages/utils/lib/*"],
     },
   },
   "include": [
