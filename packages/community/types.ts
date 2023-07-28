@@ -30,7 +30,7 @@ export interface ValidatorConfig {
   twitter?: string;
   website?: string;
   // Must have at least one active validator on at least one network.
-  validators: {
-    [K in SupportedChains]?: string[];
-  };
+  validators: Partial<{
+    [K in SupportedChains]: string[];
+  }>;
 }
