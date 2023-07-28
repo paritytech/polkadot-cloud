@@ -2,50 +2,57 @@
 SPDX-License-Identifier: Apache-2.0 */
 
 import { ExtensionConfig } from "../types";
+import { Enkrypt } from "./jsx/Enkrypt";
+import { FearlessWallet } from "./jsx/FearlessWallet";
+import { PolkadotJS } from "./jsx/PolkadotJS";
+import { PolkaGate } from "./jsx/PolkaGate";
+import { SubwalletJS } from "./jsx/SubwalletJS";
+import { Talisman } from "./jsx/Talisman";
 
 // TODO: add url for instructions (readme section) for adding a new extension.
-export const Extensions: ExtensionConfig[] = [
-  {
-    // NOTE: Nova Wallet use the same identifier as Polkadot JS extension. We therefore test if the
-    // `walletExtension` property exists to determine if the extension is Nova Wallet or Polkadot
-    // JS.
-    id: "polkadot-js",
+export const Extensions: Record<string, ExtensionConfig> = {
+  // NOTE: Nova Wallet use the same identifier as Polkadot JS extension. We therefore test if the
+  // `walletExtension` property exists to determine if the extension is Nova Wallet or Polkadot
+  // JS.
+  "polkadot-js": {
     title: window?.walletExtension?.isNovaWallet
       ? "Nova Wallet"
       : "Polkadot JS",
-    icon: window?.walletExtension?.isNovaWallet ? "novawallet" : "polkadotjs",
+    Icon: window?.walletExtension?.isNovaWallet ? Enkrypt : PolkadotJS,
     website: window?.walletExtension?.isNovaWallet
       ? "novawallet.io"
       : "polkadot.js.org/extension",
   },
-  {
-    id: "enkrypt",
+  enkrypt: {
     title: "Enkrypt",
-    icon: "enkrypt",
+    Icon: Enkrypt,
     website: "enkrypt.com",
   },
-  {
-    id: "fearless-wallet",
+  "fearless-wallet": {
     title: "Fearless Wallet",
-    icon: "fearless",
+    Icon: FearlessWallet,
     website: "fearlesswallet.io",
   },
-  {
-    id: "polkagate",
+  polkagate: {
     title: "PolkaGate",
-    icon: "polkagate",
+    Icon: PolkaGate,
     website: "polkagate.xyz",
   },
-  {
-    id: "subwallet-js",
+  "subwallet-js": {
     title: "SubWallet",
-    icon: "subwallet",
+    Icon: SubwalletJS,
     website: "subwallet.app",
   },
-  {
-    id: "talisman",
+  talisman: {
     title: "Talisman",
-    icon: "talisman",
+    Icon: Talisman,
     website: "talisman.xyz",
   },
-];
+};
+
+export const ExtensionsArray = Object.entries(Extensions).map(
+  ([key, value]) => ({
+    id: key,
+    ...value,
+  })
+);

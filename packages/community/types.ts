@@ -7,9 +7,8 @@ export type SupportedChains = "polkadot" | "kusama" | "westend";
 
 // Structure for an extension configuration.
 export interface ExtensionConfig {
-  id: string;
   title: string;
-  icon: string;
+  Icon: React.FC;
   website: string;
 }
 
