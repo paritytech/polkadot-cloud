@@ -3,7 +3,9 @@ SPDX-License-Identifier: Apache-2.0 */
 
 import { ValidatorConfig } from "../types";
 
-// TODO: add url for instructions (readme section) for adding a new extension.
+// To add a validator operator to this list, refer to the instructions hosted in this package's
+// README file:
+// https://github.com/paritytech/polkadot-cloud/tree/main/packages/community#adding-validator-operators
 export const ValidatorCommunity: ValidatorConfig[] = [
   {
     name: "🍁 HIGH/STAKE 🥩",

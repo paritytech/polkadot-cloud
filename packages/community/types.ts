@@ -2,7 +2,6 @@
 SPDX-License-Identifier: Apache-2.0 */
 
 // The supported chains.
-// TODO: provide instructions (in readme) on how to add your own chain.
 export type SupportedChains = "polkadot" | "kusama" | "westend";
 
 // Structure for an extension configuration.
