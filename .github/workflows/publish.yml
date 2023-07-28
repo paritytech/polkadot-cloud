@@ -36,6 +36,11 @@ jobs:
         uses: PostHog/check-package-version@v2
         with:
           path: "./packages/themes"
+      - name: New 'community' version
+        id: community_version
+        uses: PostHog/check-package-version@v2
+        with:
+          path: "./packages/community"
 
       - name: Publish 'core-ui' Dry Run
         run: npm publish --unsafe-perm --dry-run
@@ -74,6 +79,16 @@ jobs:
         if: steps.themes_version.outputs.is-new-version == 'true'
         run: npm publish
         working-directory: "./packages/themes"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish 'community' Dry Run
+        run: npm publish --unsafe-perm --dry-run
+        working-directory: "./packages/community"
+      - name: Publish 'community'
+        if: steps.community_version.outputs.is-new-version == 'true'
+        run: npm publish
+        working-directory: "./packages/community"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
