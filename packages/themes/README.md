@@ -2,4 +2,4 @@
 
 # Polkadot Cloud: Themes
 
-## Plug-and-Play Themes for Polkadot apps and chains.
+Plug-and-Play Themes for Polkadot apps and chains.

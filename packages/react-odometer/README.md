@@ -2,4 +2,4 @@
 
 # Polkadot Cloud: React Odometer
 
-## An odometer effect used for numbers and balances.
+An odometer effect used for numbers and balances.
