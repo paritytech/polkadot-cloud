@@ -3,6 +3,7 @@ SPDX-License-Identifier: Apache-2.0 */
 
 import { ExtensionConfig } from "../types";
 
+// TODO: add url for instructions (readme section) for adding a new extension.
 export const Extensions: ExtensionConfig[] = [
   {
     // NOTE: Nova Wallet use the same identifier as Polkadot JS extension. We therefore test if the

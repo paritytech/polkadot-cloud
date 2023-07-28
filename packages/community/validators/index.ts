@@ -3,6 +3,7 @@ SPDX-License-Identifier: Apache-2.0 */
 
 import { ValidatorConfig } from "../types";
 
+// TODO: add url for instructions (readme section) for adding a new extension.
 export const ValidatorCommunity: ValidatorConfig[] = [
   {
     name: "🍁 HIGH/STAKE 🥩",
