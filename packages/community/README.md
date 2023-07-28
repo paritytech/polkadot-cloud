@@ -4,14 +4,20 @@
 
 A source of truth for Polkadot web extensions and validator entities.
 
-## Validator Operator Setup Guide
+## Adding Web Extension Wallets
+
+To add a web extension wallet, submit a PR with the following changes:
+* **Icon**: Add the extension icon as an SVG Component in [this folder](https://github.com/paritytech/polkadot-cloud/tree/main/packages/community/extensions/jsx).
+* **Extension details**: Add the extension details to the `Extensions` JSON object in [this file](https://github.com/paritytech/polkadot-cloud/blob/main/packages/community/extensions/index.tsx).
+
+## Adding Validator Operators
 
 Validator operators can add their contact information, icon, and which validators they operate, to the dashboard’s Community section. The Community feature is designed to give non-biased exposure to validator operators, and to host a fully-featured validator browser just for that operator's validators.
 
 To add an operator, submit a PR with the following changes:
 
-- **Thumbnail:** Add your operator's thumbnail as an SVG Component in [this folder](https://github.com/paritytech/polkadot-staking-dashboard/tree/main/src/config/validators/thumbnails).
-- **Operator details:** Add your operator details to the `VALIDATORS_COMMUNITY`JSON object in [this file](https://github.com/paritytech/polkadot-staking-dashboard/blob/main/src/config/validators/index.ts).
+- **Thumbnail:** Add your operator's thumbnail as an SVG Component in [this folder](https://github.com/paritytech/polkadot-cloud/tree/main/packages/community/validators/thumbnails).
+- **Operator details:** Add your operator details to the `ValidatorCommunity` JSON object in [this file](https://github.com/paritytech/polkadot-cloud/blob/main/packages/community/validators/index.ts).
 
 ### Operator Structure
 
@@ -64,6 +70,6 @@ export const ValidatorCommunity = [
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Accuracy    | Operator contact details must be working and valid.                                                                                                                                               |
 | Liveness    | All submitted validator addresses must be discoverable as a validator on the network in question - whether Polkadot or Kusama.                                                                    |
-| Ordering    | Please place your operator in alphabetical order within `ValidatorCommunity`. Operators are shuffled before being displayed in the dashboard, removing any bias associated with ordering methods. |
+| Ordering    | Please place your operator in alphabetical order within `ValidatorCommunity`. |
 
 Please submit an issue for any queries around adding your operator details.
