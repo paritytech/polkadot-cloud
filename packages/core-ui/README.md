@@ -1,8 +1,8 @@
-![Polkadot - Core UI](https://img.shields.io/badge/Polkadot-Core_UI-E6007A?logo=polkadot&logoColor=E6007A) ![example workflow](https://github.com/paritytech/polkadot-dashboard-ui/actions/workflows/main.yml/badge.svg) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![npm version](https://badge.fury.io/js/@polkadotcloud%2Fdashboard-ui.svg)](https://www.npmjs.com/package/@polkadotcloud/dashboard-ui)
+[![Core UI - Package](https://img.shields.io/badge/Core&nbsp;UI-Package-E6007A?logo=polkadot&logoColor=E6007A)](https://github.com/paritytech/polkadot-dashboard-ui) ![ci](https://github.com/paritytech/polkadot-dashboard-ui/actions/workflows/main.yml/badge.svg) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-# Polkadot Core UI
+# Polkadot Cloud: Core UI
 
-CSS themes and core components for Polkadot dashboards, using React, TypeScript, Vite, SCSS. Built using Rollup, publishable to NPM.
+## Core components for Polkadot dashboards. Using React, TypeScript, Vite, SCSS. Built using Rollup, publishable to NPM.
 
 ## Managing the Package
 
