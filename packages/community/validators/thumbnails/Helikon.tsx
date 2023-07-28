@@ -3,8 +3,8 @@ const Helikon = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 300 300"
     style={{
-      backgroundColor: '#000',
-      padding: '5.5px',
+      backgroundColor: "#000",
+      padding: "5.5px",
     }}
     fill="#fff"
   >

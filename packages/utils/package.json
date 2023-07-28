@@ -10,9 +10,9 @@
     "UI"
   ],
   "bugs": {
-    "url": "https://github.com/paritytech/polkadot-dashboard-ui/issues"
+    "url": "https://github.com/paritytech/polkadot-cloud/issues"
   },
-  "homepage": "https://github.com/paritytech/polkadot-dashboard-ui#readme",
+  "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
   "scripts": {
     "build": "rollup -c && node ../../.scripts/injectPackageJson.cjs -p utils -m index.ts",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"

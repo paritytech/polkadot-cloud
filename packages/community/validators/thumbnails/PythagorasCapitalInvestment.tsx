@@ -2,8 +2,8 @@ const PythagorasCapitalInvestment = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 481 481">
     <path
       style={{
-        fill: '#e5d3b0',
-        stroke: '#000',
+        fill: "#e5d3b0",
+        stroke: "#000",
       }}
       d="M.5.5h480v480H.5z"
     />
@@ -11,7 +11,7 @@ const PythagorasCapitalInvestment = () => (
     <path fill="none" stroke="#ff7f00" strokeWidth={12} d="M310.5 240.5h120" />
     <g
       style={{
-        isolation: 'isolate',
+        isolation: "isolate",
       }}
     >
       <path
@@ -23,7 +23,7 @@ const PythagorasCapitalInvestment = () => (
     <path
       style={{
         fillOpacity: 0,
-        stroke: '#e87f6a',
+        stroke: "#e87f6a",
         strokeWidth: 10,
       }}
       d="m239.67 170.92 20.58 35.65 20.57 35.64h-82.31l20.58-35.64 20.58-35.65 20.58 35.65-20.58-35.65z"

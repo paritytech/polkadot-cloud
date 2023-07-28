@@ -1,4 +1,4 @@
-[![Core UI - Package](https://img.shields.io/badge/Core&nbsp;UI-Package-E6007A?logo=polkadot&logoColor=E6007A)](https://github.com/paritytech/polkadot-dashboard-ui) ![ci](https://github.com/paritytech/polkadot-dashboard-ui/actions/workflows/main.yml/badge.svg) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Core UI - Package](https://img.shields.io/badge/Core UI-Package-E6007A?logo=polkadot =E6007A)](https://github.com/paritytech/polkadot-cloud) ![ci](https://github.com/paritytech/polkadot-cloud/actions/workflows/main.yml/badge.svg) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 # Polkadot Cloud: Core UI
 
@@ -14,7 +14,7 @@ yarn dev
 
 #### Build the package into an optimised Rollup build.
 
-Update your [`dist.package.json`](https://github.com/paritytech/polkadot-dashboard-ui/blob/main/packages/core-ui/dist.package.json) before building the package. `dist.package.json` is injected into the `dist` folder as `package.json` after a build completes.
+Update your [`dist.package.json`](https://github.com/paritytech/polkadot-cloud/blob/main/packages/core-ui/dist.package.json) before building the package. `dist.package.json` is injected into the `dist` folder as `package.json` after a build completes.
 
 ```
 yarn build
@@ -57,7 +57,7 @@ export const WrappedApp: React.FC = () => {
 
 #### 3. Import core components.
 
-Any [core component](https://github.com/paritytech/polkadot-dashboard-ui/tree/main/packages/core-ui/lib) can now be imported and used within the app.
+Any [core component](https://github.com/paritytech/polkadot-cloud/tree/main/packages/core-ui/lib) can now be imported and used within the app.
 
 ## Package Testing in Local Development
 
@@ -75,7 +75,7 @@ The following walkthrough uses the [Polkadot staking dashboard](https://github.c
 git checkout -b package-dev
 ```
 
-This branch should be identical to `main`, with the exception of the [`dist.package.json`](https://github.com/paritytech/polkadot-dashboard-ui/blob/main/packages/core-ui/dist.package.json) package `name` property having `-dev` appended.
+This branch should be identical to `main`, with the exception of the [`dist.package.json`](https://github.com/paritytech/polkadot-cloud/blob/main/packages/core-ui/dist.package.json) package `name` property having `-dev` appended.
 
 #### 2. Build the package.
 

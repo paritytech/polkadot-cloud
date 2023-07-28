@@ -19,7 +19,7 @@ const GenericChain = () => (
         <stop offset={0.91} stopColor="#090909" />
         <stop offset={1} stopColor="#010101" />
       </linearGradient>
-      <style>{'.gnrcc-2{fill:#010101}'}</style>
+      <style>{".gnrcc-2{fill:#010101}"}</style>
     </defs>
     <path fill="#fff" d="M0 0h512v512H0z" />
     <g id="Layer_1" data-name="Layer 1">

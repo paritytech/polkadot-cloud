@@ -10,9 +10,9 @@
     "Odometers"
   ],
   "bugs": {
-    "url": "https://github.com/paritytech/polkadot-dashboard-ui/issues"
+    "url": "https://github.com/paritytech/polkadot-cloud/issues"
   },
-  "homepage": "https://github.com/paritytech/polkadot-dashboard-ui#readme",
+  "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
   "scripts": {
     "build": "rollup -c && yarn fix && node ../../.scripts/injectPackageJson.cjs -p react-odometer -m index.tsx",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo",

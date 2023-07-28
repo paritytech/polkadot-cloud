@@ -4,7 +4,7 @@ const Gdot = () => (
       <g>
         <path
           style={{
-            fill: '#161719',
+            fill: "#161719",
           }}
           d="M0 0h512v512H0z"
         />
