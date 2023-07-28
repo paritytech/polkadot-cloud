@@ -2,7 +2,7 @@
 
 # Polkadot Cloud: Core UI
 
-## Core components for Polkadot dashboards. Using React, TypeScript, Vite, SCSS. Built using Rollup, publishable to NPM.
+Core components for Polkadot dashboards. Using React, TypeScript, Vite, SCSS. Built using Rollup, publishable to NPM.
 
 ## Managing the Package
 
