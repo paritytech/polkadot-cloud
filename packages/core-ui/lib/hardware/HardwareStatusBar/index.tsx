@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
 import { ButtonMonoInvert } from "../../buttons/ButtonMonoInvert";

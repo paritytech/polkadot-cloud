@@ -3,7 +3,7 @@ const PDP = () => (
     <path
       d="M0 0h512m0 512H0M0 0h512v512H0z"
       style={{
-        fill: '#fff',
+        fill: "#fff",
       }}
     />
     <path

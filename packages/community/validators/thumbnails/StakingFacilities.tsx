@@ -14,9 +14,9 @@ const StakingFacilities = () => (
     </defs>
     <path
       style={{
-        stroke: '#010101',
+        stroke: "#010101",
         strokeMiterlimit: 10,
-        fill: 'url(#linear-gradient)',
+        fill: "url(#linear-gradient)",
       }}
       d="M0 0h600v600H0z"
     />
