@@ -2,4 +2,26 @@
 
 # Polkadot Cloud
 
-### A Monorepo of Polkadot Assets for Front End Dapps.
+A Monorepo of Polkadot Assets for Front End Dapps.
+
+## Package Directory
+
+### [`@polkadotcloud/community`](https://github.com/paritytech/polkadot-cloud/tree/main/packages/community#polkadot-cloud-community)
+
+A source of truth for Polkadot web extensions and validator entities.
+
+### [`@polkadotcloud/core-ui`](https://github.com/paritytech/polkadot-cloud/tree/main/packages/core-ui#polkadot-cloud-core-ui)
+
+Core components for Polkadot dashboards.
+
+### [`@polkadotcloud/react-odometer`](https://github.com/paritytech/polkadot-cloud/blob/main/packages/react-odometer#polkadot-cloud-react-odometer)
+
+An odometer effect used for numbers and balances.
+
+### [`@polkadotcloud/themes`](https://github.com/paritytech/polkadot-cloud/tree/main/packages/themes#polkadot-cloud-themes)
+
+Plug-and-Play Themes for Polkadot apps and chains.
+
+### [`@polkadotcloud/utils`](https://github.com/paritytech/polkadot-cloud/tree/main/packages/utils#polkadot-cloud-utils)
+
+Utilities for Polkadot apps.
