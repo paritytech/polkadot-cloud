@@ -31,8 +31,6 @@ const Gatotech = () => (
       />
       <path
         style={{ strokeWidth: "15", stroke: "#010101" }}
-        strokeWidth={15}
-        stroke="#010101"
         d="m191.69 231.52 61.38 9.82"
         transform="translate(4.97 4.97)"
       />

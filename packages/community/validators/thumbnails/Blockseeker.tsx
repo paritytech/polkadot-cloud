@@ -9,8 +9,8 @@ const Blockseeker = () => (
         y2="1.5"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stopColor="#010101" />
-        <stop offset="1" stopColor="#010101" />
+        <stop offset="0" style={{ stopColor: "#010101" }} />
+        <stop offset="1" style={{ stopColor: "#010101" }} />
       </linearGradient>
     </defs>
     <path

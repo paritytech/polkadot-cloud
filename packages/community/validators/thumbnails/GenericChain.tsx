@@ -10,14 +10,14 @@ const GenericChain = () => (
         gradientTransform="matrix(1 0 0 -1 1.99 -210.71)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset={0} stopColor="#fff" />
-        <stop offset={0.08} stopColor="#e0e1e0" />
-        <stop offset={0.28} stopColor="#9c9c9d" />
-        <stop offset={0.46} stopColor="#666" />
-        <stop offset={0.63} stopColor="#3a3a39" />
-        <stop offset={0.78} stopColor="#1a1a1a" />
-        <stop offset={0.91} stopColor="#090909" />
-        <stop offset={1} stopColor="#010101" />
+        <stop offset={0} style={{ stopColor: "#fff" }} />
+        <stop offset={0.08} style={{ stopColor: "#e0e1e0" }} />
+        <stop offset={0.28} style={{ stopColor: "#9c9c9d" }} />
+        <stop offset={0.46} style={{ stopColor: "#666" }} />
+        <stop offset={0.63} style={{ stopColor: "#3a3a39" }} />
+        <stop offset={0.78} style={{ stopColor: "#1a1a1a" }} />
+        <stop offset={0.91} style={{ stopColor: "#090909" }} />
+        <stop offset={1} style={{ stopColor: "#010101" }} />
       </linearGradient>
       <style>{".gnrcc-2{fill:#010101}"}</style>
     </defs>

@@ -8,12 +8,12 @@ export const NovaWallet = () => (
         r="323.24"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stopColor="#d7d3e9" />
-        <stop offset=".18" stopColor="#a9b0ea" />
-        <stop offset=".39" stopColor="#7a8ceb" />
-        <stop offset=".54" stopColor="#5d76ec" />
-        <stop offset=".63" stopColor="#526eec" />
-        <stop offset="1" stopColor="#397dcd" />
+        <stop offset="0" style={{ stopColor: "#d7d3e9" }} />
+        <stop offset=".18" style={{ stopColor: "#a9b0ea" }} />
+        <stop offset=".39" style={{ stopColor: "#7a8ceb" }} />
+        <stop offset=".54" style={{ stopColor: "#5d76ec" }} />
+        <stop offset=".63" style={{ stopColor: "#526eec" }} />
+        <stop offset="1" style={{ stopColor: "#397dcd" }} />
       </radialGradient>
     </defs>
     <rect style={{ width: "324", height: "324", fill: "url(#a)" }} rx="84.12" />

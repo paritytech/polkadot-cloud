@@ -18,8 +18,7 @@ export const Talisman = () => (
     <path
       d="M18.731 23a2.766 2.766 0 1 1-5.531 0 2.766 2.766 0 0 1 5.531 0Z"
       className="dark"
-      stroke="currentColor"
-      strokeWidth="0.469"
+      style={{ stroke: "currentColor", strokeWidth: "0.469" }}
     ></path>
   </svg>
 );

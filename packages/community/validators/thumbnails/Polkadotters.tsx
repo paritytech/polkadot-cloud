@@ -8,50 +8,43 @@ const Polkadotters = () => (
   >
     <g transform="translate(-1200)">
       <circle
-        style={{ fill: "#fdebf3" }}
-        fillOpacity={0.33}
+        style={{ fill: "#fdebf3", fillOpacity: "0.33" }}
         cx={1286.7}
         cy={105.8}
         r={20}
       />
       <circle
-        style={{ fill: "#fdebf3" }}
-        fillOpacity={0.33}
+        style={{ fill: "#fdebf3", fillOpacity: "0.33" }}
         cx={1261.7}
         cy={155.8}
         r={20}
       />
       <circle
-        style={{ fill: "#fdebf3" }}
-        fillOpacity={0.33}
+        style={{ fill: "#fdebf3", fillOpacity: "0.33" }}
         cx={1248.7}
         cy={205.8}
         r={20}
       />
       <circle
-        style={{ fill: "#fdebf3" }}
-        fillOpacity={0.33}
+        style={{ fill: "#fdebf3", fillOpacity: "0.33" }}
         cx={1261.7}
         cy={255.8}
         r={20}
       />
       <circle
-        style={{ fill: "#fdebf3" }}
-        fillOpacity={0.33}
+        style={{ fill: "#fdebf3", fillOpacity: "0.33" }}
         cx={1274.7}
         cy={305.8}
         r={20}
       />
       <circle
-        style={{ fill: "#fdebf3" }}
-        fillOpacity={0.33}
+        style={{ fill: "#fdebf3", fillOpacity: "0.33" }}
         cx={1261.7}
         cy={355.8}
         r={20}
       />
       <circle
-        style={{ fill: "#fdebf3" }}
-        fillOpacity={0.33}
+        style={{ fill: "#fdebf3", fillOpacity: "0.33" }}
         cx={1236.7}
         cy={405.8}
         r={20}
@@ -59,50 +52,43 @@ const Polkadotters = () => (
     </g>
     <g transform="translate(-1200)">
       <circle
-        style={{ fill: "#fdebf3" }}
-        fillOpacity={0.66}
+        style={{ fill: "#fdebf3", fillOpacity: "0.66" }}
         cx={1336.7}
         cy={105.8}
         r={20}
       />
       <circle
-        style={{ fill: "#fdebf3" }}
-        fillOpacity={0.66}
+        style={{ fill: "#fdebf3", fillOpacity: "0.66" }}
         cx={1311.7}
         cy={155.8}
         r={20}
       />
       <circle
-        style={{ fill: "#fdebf3" }}
-        fillOpacity={0.66}
+        style={{ fill: "#fdebf3", fillOpacity: "0.66" }}
         cx={1298.7}
         cy={205.8}
         r={20}
       />
       <circle
-        style={{ fill: "#fdebf3" }}
-        fillOpacity={0.66}
+        style={{ fill: "#fdebf3", fillOpacity: "0.66" }}
         cx={1311.7}
         cy={255.8}
         r={20}
       />
       <circle
-        style={{ fill: "#fdebf3" }}
-        fillOpacity={0.66}
+        style={{ fill: "#fdebf3", fillOpacity: "0.66" }}
         cx={1324.7}
         cy={305.8}
         r={20}
       />
       <circle
-        style={{ fill: "#fdebf3" }}
-        fillOpacity={0.66}
+        style={{ fill: "#fdebf3", fillOpacity: "0.66" }}
         cx={1311.7}
         cy={355.8}
         r={20}
       />
       <circle
-        style={{ fill: "#fdebf3" }}
-        fillOpacity={0.66}
+        style={{ fill: "#fdebf3", fillOpacity: "0.66" }}
         cx={1286.7}
         cy={405.8}
         r={20}

@@ -10,9 +10,9 @@ const Amforc = () => (
         gradientTransform="matrix(1 0 0 -1 0 96.38)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stopColor="#507e99" />
-        <stop offset=".78" stopColor="#8fd698" />
-        <stop offset="1" stopColor="#aad4a0" />
+        <stop offset="0" style={{ stopColor: "#507e99" }} />
+        <stop offset=".78" style={{ stopColor: "#8fd698" }} />
+        <stop offset="1" style={{ stopColor: "#aad4a0" }} />
       </linearGradient>
     </defs>
     <path

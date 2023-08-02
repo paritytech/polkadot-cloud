@@ -8,8 +8,8 @@ const StakingFacilities = () => (
         y2={300}
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset={0} stopColor="#141b30" />
-        <stop offset={1} stopColor="#1c3d6f" />
+        <stop offset={0} style={{ stopColor: "#141b30" }} />
+        <stop offset={1} style={{ stopColor: "#1c3d6f" }} />
       </linearGradient>
     </defs>
     <path
