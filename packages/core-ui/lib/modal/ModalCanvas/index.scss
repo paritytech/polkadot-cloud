@@ -3,16 +3,20 @@ SPDX-License-Identifier: Apache-2.0 */
 
 @use "../styles";
 
-.modal-container {
+.modal-canvas {
   @include styles.modal-position;
+
+  background: var(--modal-background-color);
+  backdrop-filter: blur(14px);
   z-index: 9;
 
-  > div {
+  > .inner {
     height: 100%;
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
 
     /* click anywhere behind modal content to close */
     .close {

@@ -6,11 +6,12 @@ import { motion } from "framer-motion";
 import "./index.scss";
 
 /**
- * @name ModalContent
- * @summary Modal content wrapper for `ModalCanvas` content.
+ * @name ModalCanvas
+ * @summary Modal background wrapper with a thick blurred backround, suitable for text content to
+ * overlay it.
  */
-export const ModalContent = ({ children, ...rest }: ModalAnimationProps) => (
-  <motion.div className="modal-content" {...rest}>
+export const ModalCanvas = ({ children, ...rest }: ModalAnimationProps) => (
+  <motion.div className="modal-canvas" {...rest}>
     {children}
   </motion.div>
 );

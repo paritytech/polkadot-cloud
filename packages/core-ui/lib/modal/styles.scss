@@ -5,7 +5,6 @@ SPDX-License-Identifier: Apache-2.0 */
   position: fixed;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(4px);
 }
 
 @mixin modal-motion-sections {

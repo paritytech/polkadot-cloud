@@ -28,8 +28,10 @@ export { Tx } from "./core/Tx";
 // Modal
 export { ActionItem } from "./modal/ActionItem";
 export { ModalBackground } from "./modal/ModalBackground";
+export { ModalCanvas } from "./modal/ModalCanvas";
 export { ModalConnectItem } from "./modal/ModalConnectItem";
 export { ModalContainer } from "./modal/ModalContainer";
+export { ModalCard } from "./modal/ModalCard";
 export { ModalContent } from "./modal/ModalContent";
 export { ModalCustomHeader } from "./modal/ModalCustomHeader";
 export { ModalFixedTitle } from "./modal/ModalFixedTitle";
@@ -40,6 +42,7 @@ export { ModalMotionThreeSection } from "./modal/ModalMotionThreeSection";
 export { ModalMotionTwoSection } from "./modal/ModalMotionTwoSection";
 export { ModalNotes } from "./modal/ModalNotes";
 export { ModalPadding } from "./modal/ModalPadding";
+export { ModalScroll } from "./modal/ModalScroll";
 export { ModalSection } from "./modal/ModalSection";
 export { ModalSeparator } from "./modal/ModalSeparator";
 export { ModalWarnings } from "./modal/ModalWarnings";
