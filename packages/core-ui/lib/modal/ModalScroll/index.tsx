@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 import "./index.scss";
 
 /**
- * @name ModalContent
- * @summary Modal content wrapper for `ModalCanvas` content.
+ * @name ModalScroll
+ * @summary Modal scrollable container. Limits max width of container to an opinionated 800px;
  */
-export const ModalContent = ({ children, ...rest }: ModalAnimationProps) => (
-  <motion.div className="modal-content" {...rest}>
+export const ModalScroll = ({ children, ...rest }: ModalAnimationProps) => (
+  <motion.div className="modal-scroll" {...rest}>
     {children}
   </motion.div>
 );
