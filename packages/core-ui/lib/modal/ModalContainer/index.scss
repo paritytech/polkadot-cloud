@@ -5,6 +5,7 @@ SPDX-License-Identifier: Apache-2.0 */
 
 .modal-container {
   @include styles.modal-position;
+
   z-index: 9;
 
   > div {

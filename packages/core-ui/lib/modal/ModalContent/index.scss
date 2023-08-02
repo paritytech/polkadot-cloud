@@ -19,6 +19,7 @@ SPDX-License-Identifier: Apache-2.0 */
       > svg {
         margin-right: 0.5rem;
       }
+
       color: var(--network-color-primary);
       border: 1px solid var(--network-color-primary);
       border-radius: 1.5rem;
@@ -29,12 +30,12 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 
   h1 {
-    font-family: 'Unbounded', 'sans-serif', sans-serif;
+    font-family: Unbounded, sans-serif;
     margin-bottom: 1.75rem;
   }
 
   h3 {
     font-family: InterBold, sans-serif;
-    margin: 2rem 0.5rem 1rem 0.5rem;
+    margin: 2rem 0.5rem 1rem;
   }
 }
