@@ -2,15 +2,13 @@ const ApertureMining = () => (
   <svg
     version="1.0"
     xmlns="http://www.w3.org/2000/svg"
-    width="376.000000pt"
-    height="376.000000pt"
+    style={{ width: "376pt", height: "376pt" }}
     viewBox="0 0 376.000000 376.000000"
     preserveAspectRatio="xMidYMid meet"
   >
     <g
       transform="translate(0.000000,376.000000) scale(0.100000,-0.100000)"
-      fill="#000000"
-      stroke="none"
+      style={{ fill: "#000000", stroke: "none" }}
     >
       <path
         d="M1683 3713 c-27 -4 -58 -32 -185 -169 -84 -90 -154 -169 -156 -174
