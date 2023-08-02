@@ -1,6 +1,8 @@
 export const FearlessWallet = () => (
   <svg
-    style={{ width: "256", height: "256", fill: "none" }}
+    width="256"
+    height="256"
+    style={{ fill: "none" }}
     viewBox="0 0 256 256"
     xmlns="http://www.w3.org/2000/svg"
   >
