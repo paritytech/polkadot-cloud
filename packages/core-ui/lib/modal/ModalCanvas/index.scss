@@ -4,7 +4,8 @@ SPDX-License-Identifier: Apache-2.0 */
 @use "../styles";
 
 .modal-canvas {
-  height: 100%;
+  @include styles.modal-position;
+
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
