@@ -17,18 +17,18 @@ SPDX-License-Identifier: Apache-2.0 */
   position: relative;
   z-index: 10;
   border-radius: 0.5rem;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem;
   transition: opacity var(--transition-duration);
   text-align: center;
 }
 
-.tooltipWrap {
+.tooltip_wrap {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.tooltipShow {
+.tooltip_show {
   opacity: 1;
 }
 

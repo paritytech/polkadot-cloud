@@ -34,9 +34,11 @@ export const Pie = ({
         {title && (
           <div
             className={`tooltip 
-              ${wrappedTitle ? "tooltipWrap " : ""}
+              ${wrappedTitle ? "tooltip_wrap " : ""}
               ${titlePosition + " "}
-              ${fixedTitle ? "tooltipShow " : showTitle ? "tooltipShow " : ""}`}
+              ${
+                fixedTitle ? "tooltip_show " : showTitle ? "tooltip_show " : ""
+              }`}
             style={{
               maxWidth: `${size * 2}rem`,
             }}
