@@ -7,7 +7,7 @@ import "./index.scss";
 
 /**
  * @name ModalOverlay
- * @summary Modal background wrapper.
+ * @summary Modal overlay wrapper, providing a transparent background to overlaying content.
  */
 export const ModalOverlay = ({ children, ...rest }: ModalAnimationProps) => (
   <motion.div className="modal-overlay" {...rest}>

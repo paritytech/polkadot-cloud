@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 */
 
 @use "../styles";
 
-.modal-background {
+.modal-overlay {
   @include styles.modal-position;
 
   background: var(--modal-background-color);
