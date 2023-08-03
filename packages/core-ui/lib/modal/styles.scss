@@ -3,6 +3,8 @@ SPDX-License-Identifier: Apache-2.0 */
 
 @mixin modal-position {
   position: fixed;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
 }
