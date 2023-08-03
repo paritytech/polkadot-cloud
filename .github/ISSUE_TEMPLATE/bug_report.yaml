@@ -46,17 +46,6 @@ body:
       required: true
 
   - type: dropdown
-    id: upstream_latest
-    attributes:
-      label: Upstream Latest Release
-      description: Have you tried running the ["release candidate version"](https://paritytech.github.io/polkadot-staking-dashboard/)?
-      options:
-        - "Yes"
-        - "No"
-    validations:
-      required: true
-
-  - type: dropdown
     id: browsers
     attributes:
       label: What browsers are you seeing the problem on?
