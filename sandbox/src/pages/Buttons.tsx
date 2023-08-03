@@ -1,15 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import { ButtonPrimary } from "core-ui/buttons/ButtonPrimary";
-import { ButtonPrimaryInvert } from "core-ui/buttons/ButtonPrimaryInvert";
-import { ButtonMono } from "core-ui/buttons/ButtonMono";
-import { ButtonMonoInvert } from "core-ui/buttons/ButtonMonoInvert";
-import { ButtonSecondary } from "core-ui/buttons/ButtonSecondary";
-import { ButtonSubmitInvert } from "core-ui/buttons/ButtonSubmitInvert";
-import { ButtonText } from "core-ui/buttons/ButtonText";
-import { ButtonSubmit } from "core-ui/buttons/ButtonSubmit";
-import { ButtonHelp } from "core-ui/buttons/ButtonHelp";
+import { Button } from "core-ui/buttons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import {
   faArrowAltCircleUp,
@@ -17,262 +9,293 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { CodeDrawer } from "../components/CodeDrawer";
 import { Separator } from "core-ui/core/Separator";
-import { ButtonTab } from "core-ui/buttons/ButtonTab";
-import { ButtonTertiary } from "core-ui/buttons/ButtonTertiary";
 
 export const Buttons = () => (
   <>
     <h4>Button Primary</h4>
     <div className="row">
-      <ButtonPrimary text="Button" iconLeft={faUser} marginRight />
-      <ButtonPrimary
+      <Button text="Button" iconLeft={faUser} marginRight />
+      <Button type="primary" text="Button" iconLeft={faUser} marginRight />
+      <Button
+        type="primary"
         text="Button"
         iconLeft={faUser}
         marginRight
         colorSecondary
       />
-      <ButtonPrimary
+      <Button
+        type="primary"
         text="Button"
         iconLeft={faUser}
         iconRight={faUser}
         lg
         marginRight
       />
-      <ButtonPrimary text="Button" lg disabled />
+      <Button type="primary" text="Button" lg disabled />
     </div>
     <CodeDrawer>
       <code>
-        <p>{`<ButtonPrimary text="Button" iconLeft={faUser} marginRight />`}</p>
-        <p>{`<ButtonPrimary text="Button" iconLeft={faUser} marginRight colorSecondary />`}</p>
-        <p>{`<ButtonPrimary text="Button" iconLeft={faUser} iconRight={faUser} lg marginRight />`}</p>
-        <p>{`<ButtonPrimary text="Button" lg disabled />`}</p>
+        <p>{`<Button text="Button" iconLeft={faUser} marginRight />`}</p>
+        <p>{`<Button type="primary" text="Button" iconLeft={faUser} marginRight />`}</p>
+        <p>{`<Button type="primary" text="Button" iconLeft={faUser} marginRight colorSecondary />`}</p>
+        <p>{`<Button type="primary" text="Button" iconLeft={faUser} iconRight={faUser} lg marginRight />`}</p>
+        <p>{`<Button type="primary" text="Button" lg disabled />`}</p>
       </code>
     </CodeDrawer>
     <Separator />
     <h4>Button Primary Invert</h4>
     <div className="row">
-      <ButtonPrimaryInvert text="Button" marginRight />
-      <ButtonPrimaryInvert
+      <Button type="primaryInvert" text="Button" marginRight />
+      <Button
+        type="primaryInvert"
         text="Button"
         iconLeft={faUserReg}
         marginRight
         colorSecondary
       />
-      <ButtonPrimaryInvert text="Button" iconRight={faUserReg} marginRight />
-      <ButtonPrimaryInvert
+      <Button
+        type="primaryInvert"
+        text="Button"
+        iconRight={faUserReg}
+        marginRight
+      />
+      <Button
+        type="primaryInvert"
         lg
         text="Button"
         iconLeft={faUserReg}
         iconRight={faUserReg}
         marginRight
       />
-      <ButtonPrimaryInvert lg text="Button" disabled />
+      <Button type="primaryInvert" lg text="Button" disabled />
     </div>
     <CodeDrawer>
       <code>
-        <p>{`<ButtonPrimaryInvert text="Button" marginRight />`}</p>
-        <p>{`<ButtonPrimaryInvert text="Button" iconLeft={faUserReg} marginRight />`}</p>
-        <p>{`<ButtonPrimaryInvert text="Button" iconRight={faUserReg} marginRight />`}</p>
-        <p>{`<ButtonPrimaryInvert lg text="Button" iconLeft={faUserReg} iconRight={faUserReg} marginRight />`}</p>
-        <p>{`<ButtonPrimaryInvert lg text="Button" disabled />`}</p>
+        <p>{`<Button type="primaryInvert" text="Button" marginRight />`}</p>
+        <p>{`<Button type="primaryInvert" text="Button" iconLeft={faUserReg} marginRight />`}</p>
+        <p>{`<Button type="primaryInvert" text="Button" iconRight={faUserReg} marginRight />`}</p>
+        <p>{`<Button type="primaryInvert" lg text="Button" iconLeft={faUserReg} iconRight={faUserReg} marginRight />`}</p>
+        <p>{`<Button type="primaryInvert" lg text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
     <Separator />
 
     <h4>Button Secondary</h4>
     <div className="row">
-      <ButtonSecondary text="Button" marginRight />
-      <ButtonSecondary text="Button" iconLeft={faUser} marginRight />
-      <ButtonSecondary text="Button" iconRight={faUser} marginRight />
-      <ButtonSecondary
+      <Button type="secondary" text="Button" marginRight />
+      <Button type="secondary" text="Button" iconLeft={faUser} marginRight />
+      <Button type="secondary" text="Button" iconRight={faUser} marginRight />
+      <Button
+        type="secondary"
         lg
         text="Button"
         iconLeft={faUser}
         iconRight={faUser}
         marginRight
       />
-      <ButtonSecondary lg text="Button" disabled />
+      <Button type="secondary" lg text="Button" disabled />
     </div>
     <CodeDrawer>
       <code>
-        <p>{`<ButtonSecondary text="Button" marginRight />`}</p>
-        <p>{`<ButtonSecondary text="Button" iconLeft={faUser} marginRight />`}</p>
-        <p>{`<ButtonSecondary text="Button" iconRight={faUser} marginRight />`}</p>
-        <p>{`<ButtonSecondary lg text="Button" iconLeft={faUser} iconRight={faUser} marginRight />`}</p>
-        <p>{`<ButtonSecondary lg text="Button" disabled />`}</p>
+        <p>{`<Button type="secondary" text="Button" marginRight />`}</p>
+        <p>{`<Button type="secondary" text="Button" iconLeft={faUser} marginRight />`}</p>
+        <p>{`<Button type="secondary" text="Button" iconRight={faUser} marginRight />`}</p>
+        <p>{`<Button type="secondary" lg text="Button" iconLeft={faUser} iconRight={faUser} marginRight />`}</p>
+        <p>{`<Button type="secondary" lg text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
     <Separator />
 
     <h4>Button Tertiary</h4>
     <div className="row">
-      <ButtonTertiary text="Button" marginRight />
-      <ButtonTertiary text="Button" iconLeft={faUser} marginRight />
-      <ButtonTertiary text="Button" iconRight={faUser} marginRight />
-      <ButtonTertiary text="Button" disabled />
+      <Button type="tertiary" text="Button" marginRight />
+      <Button type="tertiary" text="Button" iconLeft={faUser} marginRight />
+      <Button type="tertiary" text="Button" iconRight={faUser} marginRight />
+      <Button type="tertiary" text="Button" disabled />
     </div>
     <CodeDrawer>
       <code>
-        <p>{`<ButtonTertiary text="Button" marginRight />`}</p>
-        <p>{`<ButtonTertiary text="Button" iconLeft={faUser} marginRight />`}</p>
-        <p>{`<ButtonTertiary text="Button" iconRight={faUser} marginRight />`}</p>
-        <p>{`<ButtonTertiary lg text="Button" disabled />`}</p>
+        <p>{`<Button type="tertiary" text="Button" marginRight />`}</p>
+        <p>{`<Button type="tertiary" text="Button" iconLeft={faUser} marginRight />`}</p>
+        <p>{`<Button type="tertiary" text="Button" iconRight={faUser} marginRight />`}</p>
+        <p>{`<Button type="tertiary" lg text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
     <Separator />
 
     <h4>Button Mono</h4>
     <div className="row">
-      <ButtonMono text="Button" marginRight />
-      <ButtonMono text="Button" iconLeft={faUser} marginRight />
-      <ButtonMono text="Button" iconRight={faUser} marginRight />
-      <ButtonMono
+      <Button type="mono" text="Button" marginRight />
+      <Button type="mono" text="Button" iconLeft={faUser} marginRight />
+      <Button type="mono" text="Button" iconRight={faUser} marginRight />
+      <Button
+        type="mono"
         lg
         text="Button"
         iconLeft={faUser}
         iconRight={faUser}
         marginRight
       />
-      <ButtonMono lg text="Button" disabled />
+      <Button type="mono" lg text="Button" disabled />
     </div>
     <CodeDrawer>
       <code>
-        <p>{`<ButtonMono text="Button" marginRight />`}</p>
-        <p>{`<ButtonMono text="Button" iconLeft={faUser} marginRight />`}</p>
-        <p>{`<ButtonMono text="Button" iconRight={faUser} marginRight />`}</p>
-        <p>{`<ButtonMono lg text="Button" iconLeft={faUser} iconRight={faUser} marginRight />`}</p>
-        <p>{`<ButtonMono lg text="Button" disabled />`}</p>
+        <p>{`<Button type="mono" text="Button" marginRight />`}</p>
+        <p>{`<Button type="mono" text="Button" iconLeft={faUser} marginRight />`}</p>
+        <p>{`<Button type="mono" text="Button" iconRight={faUser} marginRight />`}</p>
+        <p>{`<Button type="mono" lg text="Button" iconLeft={faUser} iconRight={faUser} marginRight />`}</p>
+        <p>{`<Button type="mono" lg text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
     <Separator />
     <h4>Button Mono Invert</h4>
     <div className="row">
-      <ButtonMonoInvert text="Button" marginRight />
-      <ButtonMonoInvert text="Button" iconLeft={faUser} marginRight />
-      <ButtonMonoInvert text="Button" iconRight={faUser} marginRight />
-      <ButtonMonoInvert
+      <Button type="monoInvert" text="Button" marginRight />
+      <Button type="monoInvert" text="Button" iconLeft={faUser} marginRight />
+      <Button type="monoInvert" text="Button" iconRight={faUser} marginRight />
+      <Button
+        type="monoInvert"
         lg
         text="Button"
         iconLeft={faUser}
         iconRight={faUser}
         marginRight
       />
-      <ButtonMonoInvert lg text="Button" disabled />
+      <Button type="monoInvert" lg text="Button" disabled />
     </div>
     <CodeDrawer>
       <code>
-        <p>{`<ButtonMonoInvert text="Button" marginRight />`}</p>
-        <p>{`<ButtonMonoInvert text="Button" iconLeft={faUser} marginRight />`}</p>
-        <p>{`<ButtonMonoInvert text="Button" iconRight={faUser} marginRight />`}</p>
-        <p>{`<ButtonMonoInvert lg text="Button" iconLeft={faUser} iconRight={faUser} marginRight />`}</p>
-        <p>{`<ButtonMonoInvert lg text="Button" disabled />`}</p>
+        <p>{`<Button type="monoInvert" text="Button" marginRight />`}</p>
+        <p>{`<Button type="monoInvert" text="Button" iconLeft={faUser} marginRight />`}</p>
+        <p>{`<Button type="monoInvert" text="Button" iconRight={faUser} marginRight />`}</p>
+        <p>{`<Button type="monoInvert" lg text="Button" iconLeft={faUser} iconRight={faUser} marginRight />`}</p>
+        <p>{`<Button type="monoInvert" lg text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
     <Separator />
     <h4>Button Text</h4>
     <div className="row">
-      <ButtonText text="Button" marginRight />
-      <ButtonText text="Button" iconLeft={faUserReg} marginRight />
-      <ButtonText text="Button" iconRight={faUserReg} marginRight />
-      <ButtonText
+      <Button type="text" text="Button" marginRight />
+      <Button type="text" text="Button" iconLeft={faUserReg} marginRight />
+      <Button type="text" text="Button" iconRight={faUserReg} marginRight />
+      <Button
+        type="text"
         text="Button"
         iconLeft={faUserReg}
         iconRight={faUserReg}
         marginRight
       />
-      <ButtonText text="Button" disabled />
+      <Button type="text" text="Button" disabled />
     </div>
     <CodeDrawer>
       <code>
-        <p>{`<ButtonText text="Button" marginRight />`}</p>
-        <p>{`<ButtonText text="Button" iconLeft={faUserReg} marginRight />`}</p>
-        <p>{`<ButtonText text="Button" iconRight={faUserReg} marginRight />`}</p>
-        <p>{`<ButtonText
+        <p>{`<Button type="text" text="Button" marginRight />`}</p>
+        <p>{`<Button type="text" text="Button" iconLeft={faUserReg} marginRight />`}</p>
+        <p>{`<Button type="text" text="Button" iconRight={faUserReg} marginRight />`}</p>
+        <p>{`<Button type="text"
                   text="Button"
                   iconLeft={faUserReg}
                   iconRight={faUserReg}
                   marginRight
                 />`}</p>
-        <p>{`<ButtonText text="Button" disabled />`}</p>
+        <p>{`<Button type="text" text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
     <Separator />
     <h4>Button Submit</h4>
     <div className="row">
-      <ButtonSubmit text="Button" marginRight />
-      <ButtonSubmit
+      <Button type="submit" text="Button" marginRight />
+      <Button
+        type="submit"
         text="Button"
         iconLeft={faArrowAltCircleUp}
         marginRight
         colorSecondary
       />
-      <ButtonSubmit text="Button" iconRight={faArrowAltCircleUp} marginRight />
-      <ButtonSubmit
+      <Button
+        type="submit"
+        text="Button"
+        iconRight={faArrowAltCircleUp}
+        marginRight
+      />
+      <Button
+        type="submit"
         text="Button"
         iconLeft={faArrowAltCircleUp}
         iconRight={faArrowAltCircleUp}
         marginRight
       />
-      <ButtonSubmit text="Button" pulse marginRight />
-      <ButtonSubmit text="Button" disabled />
+      <Button type="submit" text="Button" pulse marginRight />
+      <Button type="submit" text="Button" disabled />
     </div>
     <CodeDrawer>
       <code>
-        <p>{`<ButtonSubmit text="Button" marginRight />`}</p>
-        <p>{`<ButtonSubmit text="Button" iconLeft={faArrowAltCircleUp} marginRight colorSecondary />`}</p>
-        <p>{`<ButtonSubmit text="Button" iconRight={faArrowAltCircleUp} marginRight />`}</p>
-        <p>{`<ButtonSubmit text="Button" iconLeft={faArrowAltCircleUp} iconRight={faArrowAltCircleUp} marginRight />`}</p>
-        <p>{`<ButtonSubmit text="Button" pulse marginRight />`}</p>
-        <p>{`<ButtonSubmit text="Button" disabled />`}</p>
+        <p>{`<Button type="submit" text="Button" marginRight />`}</p>
+        <p>{`<Button type="submit" text="Button" iconLeft={faArrowAltCircleUp} marginRight colorSecondary />`}</p>
+        <p>{`<Button type="submit" text="Button" iconRight={faArrowAltCircleUp} marginRight />`}</p>
+        <p>{`<Button type="submit" text="Button" iconLeft={faArrowAltCircleUp} iconRight={faArrowAltCircleUp} marginRight />`}</p>
+        <p>{`<Button type="submit" text="Button" pulse marginRight />`}</p>
+        <p>{`<Button type="submit" text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
     <Separator />
     <h4>Button Submit Invert</h4>
     <div className="row">
-      <ButtonSubmitInvert text="Button" marginRight />
-      <ButtonSubmitInvert text="Button" iconLeft={faUserReg} marginRight />
-      <ButtonSubmitInvert text="Button" iconRight={faUserReg} marginRight />
-      <ButtonSubmitInvert
+      <Button type="submitInvert" text="Button" marginRight />
+      <Button
+        type="submitInvert"
+        text="Button"
+        iconLeft={faUserReg}
+        marginRight
+      />
+      <Button
+        type="submitInvert"
+        text="Button"
+        iconRight={faUserReg}
+        marginRight
+      />
+      <Button
+        type="submitInvert"
         text="Button"
         iconLeft={faUserReg}
         iconRight={faUserReg}
         marginRight
       />
-      <ButtonSubmitInvert text="Button" disabled />
+      <Button type="submitInvert" text="Button" disabled />
     </div>
     <CodeDrawer>
       <code>
-        <p>{`<ButtonSubmitInvert text="Button" marginRight />`}</p>
-        <p>{`<ButtonSubmitInvert text="Button" iconLeft={faUserReg} marginRight />`}</p>
-        <p>{`<ButtonSubmitInvert text="Button" iconRight={faUserReg} marginRight />`}</p>
-        <p>{`<ButtonSubmitInvert text="Button" iconLeft={faUserReg} iconRight={faUserReg} marginRight />`}</p>
-        <p>{`<ButtonSubmitInvert text="Button" disabled />`}</p>
+        <p>{`<Button type="submitInvert" text="Button" marginRight />`}</p>
+        <p>{`<Button type="submitInvert" text="Button" iconLeft={faUserReg} marginRight />`}</p>
+        <p>{`<Button type="submitInvert" text="Button" iconRight={faUserReg} marginRight />`}</p>
+        <p>{`<Button type="submitInvert" text="Button" iconLeft={faUserReg} iconRight={faUserReg} marginRight />`}</p>
+        <p>{`<Button type="submitInvert" text="Button" disabled />`}</p>
       </code>
     </CodeDrawer>
     <Separator />
     <h4>Button Help</h4>
     <div className="row">
-      <ButtonHelp marginRight />
-      <ButtonHelp backgroundSecondary />
+      <Button type="help" marginRight />
+      <Button type="help" backgroundSecondary />
     </div>
     <CodeDrawer>
       <code>
-        <p>{`<ButtonHelp marginRight />`}</p>
-        <p>{`<ButtonHelp backgroundSecondary />`}</p>
+        <p>{`<Button type="help" marginRight />`}</p>
+        <p>{`<Button type="help" backgroundSecondary />`}</p>
       </code>
     </CodeDrawer>
     <Separator />
     <h4>Button Tab</h4>
     <div className="row">
-      <ButtonTab title={"Inactive"} />
-      <ButtonTab active title={"Active"} />
-      <ButtonTab active title={"Active"} badge={"123"} />
+      <Button type="tab" title={"Inactive"} />
+      <Button type="tab" active title={"Active"} />
+      <Button type="tab" active title={"Active"} badge={"123"} />
     </div>
     <CodeDrawer>
       <code>
-        <p>{`<ButtonTab title={"Inactive"} />`}</p>
-        <p>{`<ButtonTab active title={"Active"} />`}</p>
-        <p>{`<ButtonTab active title={"Active"} badge={"123"} `}</p>
+        <p>{`<Button type="tab" title={"Inactive"} />`}</p>
+        <p>{`<Button type="tab" active title={"Active"} />`}</p>
+        <p>{`<Button type="tab" active title={"Active"} badge={"123"} `}</p>
       </code>
     </CodeDrawer>
     <Separator />

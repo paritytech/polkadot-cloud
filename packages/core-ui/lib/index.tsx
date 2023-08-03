@@ -48,18 +48,21 @@ export { ModalSeparator } from "./modal/ModalSeparator";
 export { ModalWarnings } from "./modal/ModalWarnings";
 
 // Buttons
-export { ButtonPrimary } from "./buttons/ButtonPrimary";
-export { ButtonPrimaryInvert } from "./buttons/ButtonPrimaryInvert";
-export { ButtonSecondary } from "./buttons/ButtonSecondary";
-export { ButtonTertiary } from "./buttons/ButtonTertiary";
-export { ButtonMono } from "./buttons/ButtonMono";
-export { ButtonMonoInvert } from "./buttons/ButtonMonoInvert";
-export { ButtonSubmitInvert } from "./buttons/ButtonSubmitInvert";
-export { ButtonText } from "./buttons/ButtonText";
-export { ButtonSubmit } from "./buttons/ButtonSubmit";
-export { ButtonHelp } from "./buttons/ButtonHelp";
-export { ButtonTab } from "./buttons/ButtonTab";
-export { ButtonOption } from "./buttons/ButtonOption";
+export { Button } from "./buttons";
+
+// TRIAGE: I do not think that there is a need for exporting the buttons below - maybe for backward compatibility
+// export { ButtonPrimary } from "./buttons/ButtonPrimary";
+// export { ButtonPrimaryInvert } from "./buttons/ButtonPrimaryInvert";
+// export { ButtonSecondary } from "./buttons/ButtonSecondary";
+// export { ButtonTertiary } from "./buttons/ButtonTertiary";
+// export { ButtonMono } from "./buttons/ButtonMono";
+// export { ButtonMonoInvert } from "./buttons/ButtonMonoInvert";
+// export { ButtonSubmitInvert } from "./buttons/ButtonSubmitInvert";
+// export { ButtonText } from "./buttons/ButtonText";
+// export { ButtonSubmit } from "./buttons/ButtonSubmit";
+// export { ButtonHelp } from "./buttons/ButtonHelp";
+// export { ButtonTab } from "./buttons/ButtonTab";
+// export { ButtonOption } from "./buttons/ButtonOption";
 
 // Hardware
 export { HardwareStatusBar } from "./hardware/HardwareStatusBar";
