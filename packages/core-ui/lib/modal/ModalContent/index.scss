@@ -16,16 +16,16 @@ SPDX-License-Identifier: Apache-2.0 */
     position: relative;
 
     > button {
-      > svg {
-        margin-right: 0.5rem;
-      }
-
-      color: var(--network-color-primary);
       border: 1px solid var(--network-color-primary);
+      color: var(--network-color-primary);
       border-radius: 1.5rem;
       padding: 0.4rem 0.8rem;
       margin-right: 1.25rem;
       margin-left: 0;
+
+      > svg {
+        margin-right: 0.5rem;
+      }
     }
   }
 
