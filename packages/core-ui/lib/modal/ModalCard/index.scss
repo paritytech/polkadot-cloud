@@ -1,0 +1,35 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: Apache-2.0 */
+
+.modal-card {
+  background: var(--background-modal);
+
+  h2 {
+    margin: 1rem 0;
+
+    &.unbounded {
+      font-family: Unbounded, sans-serif;
+      font-weight: 700;
+    }
+
+    &.title {
+      font-size: 1.35rem;
+      margin: 1.25rem 0 0;
+    }
+  }
+
+  a {
+    color: var(--network-color-primary);
+  }
+
+  .header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem 1rem 0;
+  }
+
+  .body {
+    padding: 1rem;
+  }
+}

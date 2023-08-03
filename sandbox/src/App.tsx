@@ -1,10 +1,12 @@
-/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
 import { useState } from "react";
 import { Buttons } from "./pages/Buttons";
 import { SideMenu } from "./components/SideMenu";
 import { Statistics } from "./pages/Statistics";
+import { Odometer } from "./pages/Odometer";
+import { Modal } from "./pages/Modal";
 
 export const App = () => {
   // store the current theme
@@ -21,6 +23,10 @@ export const App = () => {
       case "statistics": {
         return <Statistics />;
       }
+      case "odometer":
+        return <Odometer />;
+      case "modal":
+        return <Modal />;
       default:
         return <Buttons />;
     }
@@ -28,14 +34,14 @@ export const App = () => {
 
   return (
     <>
-      <main className={`theme-${network} theme-${theme}`}>
+      <main className={`theme-${network}-relay theme-${theme}`}>
         <SideMenu
           theme={theme}
           setTheme={setTheme}
           network={network}
           setNetwork={setNetwork}
-          setComponent={setComponent}
           component={component}
+          setComponent={setComponent}
         />
         <div className="body">{getComponent(component)}</div>
       </main>

@@ -1,9 +1,10 @@
-/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
 /* Inject styles from core-ui */
-@use "../../packages/core-ui/styles/variables" as v;
-@import "../../packages/core-ui/styles/index";
+@use "../../packages/core-ui/lib/styles/variables" as v;
+@import "../../packages/themes/theme/default/fonts/index";
+@import "../../packages/themes/theme/default/index";
 
 :root {
   --sandbox-active-color: rgb(211 48 121);
@@ -69,8 +70,9 @@ main {
     margin: 1.25rem 0;
 
     h5 {
+      font-family: InterSemiBold, sans-serif;
+      font-weight: 600;
       font-size: inherit;
-      font-weight: bold;
       text-decoration: none;
       display: block;
       margin: 0.75rem 0;

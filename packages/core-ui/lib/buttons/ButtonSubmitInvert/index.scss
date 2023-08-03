@@ -1,0 +1,16 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: Apache-2.0 */
+
+@use "../styles";
+
+.btn-submit-invert {
+  @include styles.btn-layout;
+  @include styles.btn-spacing;
+  @include styles.btn-icons;
+  @include styles.btn-submit;
+  @include styles.btn-disabled;
+
+  border: 1px solid var(--network-color-stroke);
+  border-radius: var(--button-border-radius-small);
+  color: var(--network-color-stroke);
+}

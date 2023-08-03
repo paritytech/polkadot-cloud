@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
 import { Dispatch, SetStateAction } from "react";
@@ -8,6 +8,7 @@ interface SideMenuProps {
   setTheme: Dispatch<SetStateAction<string>>;
   network: string;
   setNetwork: Dispatch<SetStateAction<string>>;
+  component: string;
   setComponent: Dispatch<SetStateAction<string>>;
   component: string;
 }
@@ -17,6 +18,7 @@ export const SideMenu = ({
   setTheme,
   network,
   setNetwork,
+  component,
   setComponent,
   component,
 }: SideMenuProps) => {
@@ -65,6 +67,18 @@ export const SideMenu = ({
           onClick={() => setComponent("buttons")}
         >
           Buttons
+        </button>
+        <button
+          className={component === "modal" ? "selected" : undefined}
+          onClick={() => setComponent("modal")}
+        >
+          Modal
+        </button>
+        <button
+          className={component === "odometer" ? "selected" : undefined}
+          onClick={() => setComponent("odometer")}
+        >
+          Odometer
         </button>
         <button
           className={component === "statistics" ? "selected" : undefined}

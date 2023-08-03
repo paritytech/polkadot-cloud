@@ -1,0 +1,12 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: Apache-2.0 */
+
+@use "../styles";
+
+.modal-overlay {
+  @include styles.modal-position;
+
+  background: var(--modal-background-color);
+  backdrop-filter: blur(4px);
+  z-index: 9;
+}

@@ -13,47 +13,84 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Build NPM Package
+          registry-url: https://registry.npmjs.org
+      - name: Build NPM Packages
         run: yarn build
-      - name: Check if 'core-ui' version has been updated
+      - name: New 'core-ui' version
         id: core_ui_version
         uses: PostHog/check-package-version@v2
         with:
-          path: "./packages/core-ui"
-      - name: Check if 'utils' version has been updated
+          path: "./packages/core-ui/dist"
+      - name: New 'react-odometer' version
+        id: react_odometer_version
+        uses: PostHog/check-package-version@v2
+        with:
+          path: "./packages/react-odometer/dist"
+      - name: New 'utils' version
         id: utils_version
         uses: PostHog/check-package-version@v2
         with:
-          path: "./packages/utils"
+          path: "./packages/utils/dist"
+      - name: New 'themes' version
+        id: themes_version
+        uses: PostHog/check-package-version@v2
+        with:
+          path: "./packages/themes"
+      - name: New 'community' version
+        id: community_version
+        uses: PostHog/check-package-version@v2
+        with:
+          path: "./packages/community"
 
-      - name: Publish Dry Run Core UI
-        working-directory: "./packages/core-ui"
+      - name: Publish 'core-ui' Dry Run
         run: npm publish --unsafe-perm --dry-run
-      ### this will be executed only if the commited version has increased over the published version or else will be skipped
-      - name: Publish core-ui to npm
+        working-directory: "./packages/core-ui/dist"
+      - name: Publish 'core-ui'
         if: steps.core_ui_version.outputs.is-new-version == 'true'
-        id: publish_core_ui
-        uses: JS-DevTools/npm-publish@v1
-        # Warning: this GitHub action doesn't seem to run prepublish scripts, hence
-        # the `npm publish --dry-run` done right above is important to ensure this.
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./packages/core-ui/package.json
-          access: public
-      - name: Publish Dry Run Utils
-        working-directory: "./packages/utils"
+        working-directory: "./packages/core-ui/dist"
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish 'react-odometer' Dry Run
         run: npm publish --unsafe-perm --dry-run
-      ### this will be executed only if the commited version has increased over the published version or else will be skipped
-      - name: Publish utils to npm
+        working-directory: "./packages/react-odometer/dist"
+      - name: Publish 'react-odometer'
+        if: steps.react_odometer_version.outputs.is-new-version == 'true'
+        run: npm publish
+        working-directory: "./packages/react-odometer/dist"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish 'utils' Dry Run
+        run: npm publish --unsafe-perm --dry-run
+        working-directory: "./packages/utils/dist"
+      - name: Publish 'utils'
         if: steps.utils_version.outputs.is-new-version == 'true'
-        id: publish_utils
-        uses: JS-DevTools/npm-publish@v1
-        # Warning: this GitHub action doesn't seem to run prepublish scripts, hence
-        # the `npm publish --dry-run` done right above is important to ensure this.
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./packages/utils/package.json
-          access: public
+        run: npm publish
+        working-directory: "./packages/utils/dist"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish 'themes' Dry Run
+        run: npm publish --unsafe-perm --dry-run
+        working-directory: "./packages/themes"
+      - name: Publish 'themes'
+        if: steps.themes_version.outputs.is-new-version == 'true'
+        run: npm publish
+        working-directory: "./packages/themes"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish 'community' Dry Run
+        run: npm publish --unsafe-perm --dry-run
+        working-directory: "./packages/community"
+      - name: Publish 'community'
+        if: steps.community_version.outputs.is-new-version == 'true'
+        run: npm publish
+        working-directory: "./packages/community"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   all:
     # This dummy job depends on all the mandatory checks. It succeeds if and only if all CI checks
