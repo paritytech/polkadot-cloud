@@ -1,6 +1,6 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export type PieProps = {
   title?: string;
@@ -34,10 +34,10 @@ export const Pie = ({
         {title && (
           <div
             className={`tooltip 
-              ${wrappedTitle ? "tooltip_wrap " : ""}
+              ${wrappedTitle ? "tooltip-wrap " : ""}
               ${titlePosition + " "}
               ${
-                fixedTitle ? "tooltip_show " : showTitle ? "tooltip_show " : ""
+                fixedTitle ? "tooltip-show " : showTitle ? "tooltip-show " : ""
               }`}
             style={{
               maxWidth: `${size * 2}rem`,

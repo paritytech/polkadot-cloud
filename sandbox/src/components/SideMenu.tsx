@@ -10,7 +10,6 @@ interface SideMenuProps {
   setNetwork: Dispatch<SetStateAction<string>>;
   component: string;
   setComponent: Dispatch<SetStateAction<string>>;
-  component: string;
 }
 
 export const SideMenu = ({
@@ -20,7 +19,6 @@ export const SideMenu = ({
   setNetwork,
   component,
   setComponent,
-  component,
 }: SideMenuProps) => {
   return (
     <div className="nav">
