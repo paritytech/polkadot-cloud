@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 import "./index.scss";
 
 /**
- * @name ModalBackground
+ * @name ModalOverlay
  * @summary Modal background wrapper.
  */
-export const ModalBackground = ({ children, ...rest }: ModalAnimationProps) => (
-  <motion.div className="modal-background" {...rest}>
+export const ModalOverlay = ({ children, ...rest }: ModalAnimationProps) => (
+  <motion.div className="modal-overlay" {...rest}>
     {children}
   </motion.div>
 );

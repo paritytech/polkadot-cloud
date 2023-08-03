@@ -27,7 +27,7 @@ export { Tx } from "./core/Tx";
 
 // Modal
 export { ActionItem } from "./modal/ActionItem";
-export { ModalBackground } from "./modal/ModalBackground";
+export { ModalOverlay } from "./modal/ModalOverlay";
 export { ModalCanvas } from "./modal/ModalCanvas";
 export { ModalConnectItem } from "./modal/ModalConnectItem";
 export { ModalContainer } from "./modal/ModalContainer";
