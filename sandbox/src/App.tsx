@@ -6,6 +6,7 @@ import { Buttons } from "./pages/Buttons";
 import { SideMenu } from "./components/SideMenu";
 import { Odometer } from "./pages/Odometer";
 import { Modal } from "./pages/Modal";
+import { GridPage } from "./pages/GridPage";
 
 export const App = () => {
   // store the current theme
@@ -23,6 +24,8 @@ export const App = () => {
         return <Odometer />;
       case "modal":
         return <Modal />;
+      case "grid":
+        return <GridPage />;
       default:
         return <Buttons />;
     }
