@@ -49,6 +49,7 @@ SPDX-License-Identifier: Apache-2.0 */
   display: inline-block;
   vertical-align: middle;
   position: relative;
+  color: var(--text-color-primary);
 
   .odometer-digit {
     display: inline-block;
