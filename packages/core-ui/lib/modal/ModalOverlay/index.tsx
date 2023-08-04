@@ -20,7 +20,7 @@ export const ModalOverlay = ({
   ...rest
 }: ModalOverlayProps) => (
   <motion.div
-    style={blur ? { backdropFilter: `blur(${blur});` } : undefined}
+    style={blur ? { backdropFilter: `blur(${blur})` } : undefined}
     className="modal-overlay"
     {...rest}
   >
