@@ -7,7 +7,7 @@ import { Separator } from "core-ui/core/Separator";
 
 export const GridPage = () => {
   const separatorStyle = {
-    border: "0.1rem dashed #000",
+    border: "0.1rem dashed var(--border-secondary-color)",
     padding: "0.5rem",
     "text-align": "center",
   };
