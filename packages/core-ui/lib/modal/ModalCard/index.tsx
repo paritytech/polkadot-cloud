@@ -11,10 +11,14 @@ import "./index.scss";
  */
 export const ModalCard = forwardRef(
   (
-    { children, style }: ComponentBaseWithClassName,
+    { children, style, className }: ComponentBaseWithClassName,
     ref?: RefObject<HTMLDivElement>
   ) => (
-    <div ref={ref} className="modal-card" style={style}>
+    <div
+      ref={ref}
+      className={`modal-card${className ? ` ${className}` : ""}`}
+      style={style}
+    >
       {children}
     </div>
   )
