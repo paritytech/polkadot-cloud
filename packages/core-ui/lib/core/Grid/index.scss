@@ -1,3 +1,6 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: Apache-2.0 */
+
 .row {
   display: flex;
   flex-flow: row wrap;
@@ -67,13 +70,13 @@
 }
 
 .sm-1 {
-  flex: 0 0 8.33333%;
-  max-width: 8.33333%;
+  flex: 0 0 8.3333%;
+  max-width: 8.3333%;
 }
 
 .sm-2 {
-  flex: 0 0 16.66667%;
-  max-width: 16.66667%;
+  flex: 0 0 16.6667%;
+  max-width: 16.6667%;
 }
 
 .sm-3 {
@@ -82,13 +85,13 @@
 }
 
 .sm-4 {
-  flex: 0 0 33.33333%;
-  max-width: 33.33333%;
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%;
 }
 
 .sm-5 {
-  flex: 0 0 41.66667%;
-  max-width: 41.66667%;
+  flex: 0 0 41.6667%;
+  max-width: 41.6667%;
 }
 
 .sm-6 {
@@ -97,13 +100,13 @@
 }
 
 .sm-7 {
-  flex: 0 0 58.33333%;
-  max-width: 58.33333%;
+  flex: 0 0 58.3333%;
+  max-width: 58.3333%;
 }
 
 .sm-8 {
-  flex: 0 0 66.66667%;
-  max-width: 66.66667%;
+  flex: 0 0 66.6667%;
+  max-width: 66.6667%;
 }
 
 .sm-9 {
@@ -112,13 +115,13 @@
 }
 
 .sm-10 {
-  flex: 0 0 83.33333%;
-  max-width: 83.33333%;
+  flex: 0 0 83.3333%;
+  max-width: 83.3333%;
 }
 
 .sm-11 {
-  flex: 0 0 91.66667%;
-  max-width: 91.66667%;
+  flex: 0 0 91.6667%;
+  max-width: 91.6667%;
 }
 
 .sm-12 {
@@ -126,15 +129,15 @@
   max-width: 100%;
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (width >= 40em) {
   .md-1 {
-    flex: 0 0 8.33333%;
-    max-width: 8.33333%;
+    flex: 0 0 8.3333%;
+    max-width: 8.3333%;
   }
 
   .md-2 {
-    flex: 0 0 16.66667%;
-    max-width: 16.66667%;
+    flex: 0 0 16.6667%;
+    max-width: 16.6667%;
   }
 
   .md-3 {
@@ -143,13 +146,13 @@
   }
 
   .md-4 {
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
   }
 
   .md-5 {
-    flex: 0 0 41.66667%;
-    max-width: 41.66667%;
+    flex: 0 0 41.6667%;
+    max-width: 41.6667%;
   }
 
   .md-6 {
@@ -158,13 +161,13 @@
   }
 
   .md-7 {
-    flex: 0 0 58.33333%;
-    max-width: 58.33333%;
+    flex: 0 0 58.3333%;
+    max-width: 58.3333%;
   }
 
   .md-8 {
-    flex: 0 0 66.66667%;
-    max-width: 66.66667%;
+    flex: 0 0 66.6667%;
+    max-width: 66.6667%;
   }
 
   .md-9 {
@@ -173,13 +176,13 @@
   }
 
   .md-10 {
-    flex: 0 0 83.33333%;
-    max-width: 83.33333%;
+    flex: 0 0 83.3333%;
+    max-width: 83.3333%;
   }
 
   .md-11 {
-    flex: 0 0 91.66667%;
-    max-width: 91.66667%;
+    flex: 0 0 91.6667%;
+    max-width: 91.6667%;
   }
 
   .md-12 {
@@ -188,15 +191,15 @@
   }
 }
 
-@media screen and (min-width: 64em) {
+@media screen and (width >= 64em) {
   .lg-1 {
-    flex: 0 0 8.33333%;
-    max-width: 8.33333%;
+    flex: 0 0 8.3333%;
+    max-width: 8.3333%;
   }
 
   .lg-2 {
-    flex: 0 0 16.66667%;
-    max-width: 16.66667%;
+    flex: 0 0 16.6667%;
+    max-width: 16.6667%;
   }
 
   .lg-3 {
@@ -205,13 +208,13 @@
   }
 
   .lg-4 {
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
   }
 
   .lg-5 {
-    flex: 0 0 41.66667%;
-    max-width: 41.66667%;
+    flex: 0 0 41.6667%;
+    max-width: 41.6667%;
   }
 
   .lg-6 {
@@ -220,13 +223,13 @@
   }
 
   .lg-7 {
-    flex: 0 0 58.33333%;
-    max-width: 58.33333%;
+    flex: 0 0 58.3333%;
+    max-width: 58.3333%;
   }
 
   .lg-8 {
-    flex: 0 0 66.66667%;
-    max-width: 66.66667%;
+    flex: 0 0 66.6667%;
+    max-width: 66.6667%;
   }
 
   .lg-9 {
@@ -235,13 +238,13 @@
   }
 
   .lg-10 {
-    flex: 0 0 83.33333%;
-    max-width: 83.33333%;
+    flex: 0 0 83.3333%;
+    max-width: 83.3333%;
   }
 
   .lg-11 {
-    flex: 0 0 91.66667%;
-    max-width: 91.66667%;
+    flex: 0 0 91.6667%;
+    max-width: 91.6667%;
   }
 
   .lg-12 {
