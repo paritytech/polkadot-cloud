@@ -11,7 +11,7 @@ export const Modal = () => {
   return (
     <>
       <h4>Action Item</h4>
-      <div className="row">
+      <div className="sb-row">
         <ActionItem text="Some Action" />
       </div>
       <CodeDrawer>
@@ -21,7 +21,7 @@ export const Modal = () => {
       </CodeDrawer>
 
       <h4>Action Item with Toggle</h4>
-      <div className="row">
+      <div className="sb-row">
         <ActionItem
           text="Some Action With Toggle"
           toggled={parentToggle}
