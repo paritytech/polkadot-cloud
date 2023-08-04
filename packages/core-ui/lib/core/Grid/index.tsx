@@ -1,6 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
+import { valEmpty } from "../../utils";
 import { GridProps } from "../types";
 import "./index.scss";
 
@@ -22,13 +23,13 @@ export const Grid = ({
     // Clarify if its a column or a row
     (!isRow ? "column" : "row") +
     // In case of a row then style it
-    (isRow && expanded ? ` ${"expanded"}` : "") +
-    (isRow && justify ? ` ${justify}` : "") +
-    (isRow && alignItems ? ` ${"align-" + alignItems}` : "") +
+    valEmpty(isRow && expanded, "expanded") +
+    valEmpty(isRow && justify, justify) +
+    valEmpty(isRow && alignItems, "align-" + alignItems) +
     // In case of a column then style it
-    (!isRow && sm ? ` ${"sm-" + sm}` : "") +
-    (!isRow && md ? ` ${"md-" + md}` : "") +
-    (!isRow && lg ? ` ${"lg-" + lg}` : "");
+    valEmpty(!isRow && !!sm, "sm-" + sm) +
+    valEmpty(!isRow && !!md, "md-" + md) +
+    valEmpty(!isRow && !!lg, "lg-" + lg);
 
   return (
     <div style={style} className={classes}>
