@@ -1,0 +1,29 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: Apache-2.0 */
+
+@use "../styles";
+
+.btn-primary {
+  @include styles.btn-layout;
+  @include styles.btn-spacing;
+  @include styles.btn-icons;
+  @include styles.btn-disabled;
+
+  background: var(--network-color-primary);
+  border: 1px solid var(--network-color-primary);
+  border-radius: var(--button-border-radius-large);
+  color: white;
+
+  &.secondary-color {
+    background: var(--network-color-secondary);
+    border: 1px solid var(--network-color-secondary);
+  }
+
+  &.sm {
+    @include styles.btn-small;
+  }
+
+  &.lg {
+    @include styles.btn-large;
+  }
+}

@@ -1,14 +1,42 @@
-/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import { ComponentBase, Network, ThemeMode } from "../types";
+import { ComponentBase, ThemeMode } from "../types";
 import React from "react";
 
 export type EntryProps = ComponentBase & {
   // the theme mode.
   mode: ThemeMode;
-  // the active network.
-  network: Network;
+  // the active chain.
+  chain: string;
+};
+
+type GridItemsAlignment =
+  | "flex-start"
+  | "center"
+  | "flex-end"
+  | "stretch"
+  | "baseline";
+
+type GridJustify =
+  | "flex-start"
+  | "center"
+  | "flex-end"
+  | "space-between"
+  | "space-around"
+  | "space-evenly";
+
+type GridSizes = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+
+export type GridProps = ComponentBase & {
+  column?: boolean;
+  row?: boolean;
+  alignItems?: GridItemsAlignment;
+  expanded?: boolean;
+  justify?: GridJustify;
+  lg?: GridSizes;
+  md?: GridSizes;
+  sm?: GridSizes;
 };
 
 export type SideProps = ComponentBase & {

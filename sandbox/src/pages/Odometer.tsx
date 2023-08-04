@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
 import { ReactOdometer } from "packages/react-odometer/lib";
@@ -12,7 +12,7 @@ export const Odometer = () => {
   return (
     <>
       <h4>React Odometer</h4>
-      <div className="row" style={{ alignItems: "center" }}>
+      <div className="sb-row" style={{ alignItems: "center" }}>
         <ButtonPrimary
           text="Click Me"
           onClick={() => setValue(Number(value) + 1000)}

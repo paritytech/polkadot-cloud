@@ -1,8 +1,8 @@
-![Polkadot - Core UI](https://img.shields.io/badge/Polkadot-Core_UI-E6007A?logo=polkadot&logoColor=E6007A) ![example workflow](https://github.com/paritytech/polkadot-dashboard-ui/actions/workflows/main.yml/badge.svg) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![npm version](https://badge.fury.io/js/@polkadotcloud%2Fdashboard-ui.svg)](https://www.npmjs.com/package/@polkadotcloud/dashboard-ui)
+[![Core UI - Package](https://img.shields.io/badge/Core UI-Package-E6007A?logo=polkadot =E6007A)](https://github.com/paritytech/polkadot-cloud) ![ci](https://github.com/paritytech/polkadot-cloud/actions/workflows/main.yml/badge.svg) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-# Polkadot Core UI
+# Polkadot Cloud: Core UI
 
-CSS themes and core components for Polkadot dashboards, using React, TypeScript, Vite, SCSS. Built using Rollup, publishable to NPM.
+Core components for Polkadot dashboards. Using React, TypeScript, Vite, SCSS. Built using Rollup, publishable to NPM.
 
 ## Managing the Package
 
@@ -14,7 +14,7 @@ yarn dev
 
 #### Build the package into an optimised Rollup build.
 
-Update your [`dist.package.json`](https://github.com/paritytech/polkadot-dashboard-ui/blob/main/packages/core-ui/dist.package.json) before building the package. `dist.package.json` is injected into the `dist` folder as `package.json` after a build completes.
+Update your [`dist.package.json`](https://github.com/paritytech/polkadot-cloud/blob/main/packages/core-ui/dist.package.json) before building the package. `dist.package.json` is injected into the `dist` folder as `package.json` after a build completes.
 
 ```
 yarn build
@@ -57,7 +57,7 @@ export const WrappedApp: React.FC = () => {
 
 #### 3. Import core components.
 
-Any [core component](https://github.com/paritytech/polkadot-dashboard-ui/tree/main/packages/core-ui/lib) can now be imported and used within the app.
+Any [core component](https://github.com/paritytech/polkadot-cloud/tree/main/packages/core-ui/lib) can now be imported and used within the app.
 
 ## Package Testing in Local Development
 
@@ -69,21 +69,14 @@ The following walkthrough uses the [Polkadot staking dashboard](https://github.c
 
 ### The Package Setup
 
-#### 1. Checkout the `package-dev` branch.
 
-```
-git checkout -b package-dev
-```
-
-This branch should be identical to `main`, with the exception of the [`dist.package.json`](https://github.com/paritytech/polkadot-dashboard-ui/blob/main/packages/core-ui/dist.package.json) package `name` property having `-dev` appended.
-
-#### 2. Build the package.
+#### 1. Build the package:
 
 ```
 yarn build
 ```
 
-#### 3. Enter `dist` and link the package as a global namespace.
+#### 2. Enter `dist` and link the package as a global namespace:
 
 ```
 cd dist && yarn link
@@ -93,18 +86,10 @@ The package is now globally accessible to other projects in your development env
 
 ### The App Setup
 
-Polkadot staking dashboard already has a `package-dev` branch set up for local package development. To allow your own app to import and test local packages, follow these steps.
-
-#### 1. Create a `package-dev` branch (or any naming of your choosing) specifically for local package development.
+#### 1. Link the previously linked package to your project.
 
 ```
-git checkout -b package-dev
-```
-
-#### 2. Link the previously linked package to your project.
-
-```
-yarn link @polkadotcloud/core-ui-dev
+yarn link @polkadotcloud/core-ui
 ```
 
 Ensure that your `eslintrc` config allows global imports by turning off the extraneous dependencies rule:
@@ -116,7 +101,7 @@ Rules: {
 }
 ```
 
-#### 3. Ensure global imports are supported.
+#### 2. Ensure global imports are supported.
 
 Polkadot staking dashboard uses [Vite.js](https://vitejs.dev) as its toolchain. Vite by default does not allow package imports from outside the project directory without explicitly allowing them. To allow global imports, simply turn off strict mode in `vite.config.js`
 
@@ -130,36 +115,12 @@ server: {
 
 If you are using a toolchain with similar rules, ensure that they are amended to allow for global imports.
 
-### Importing Local CSS and Components
-
-It is now possible to test components from the local package, and replace currently published components with the development version. Before testing updated local components, replace the published CSS file in your app's entry file with the local version. For Polkadot staking dashboard this is [`src/main.tsx`](https://github.com/paritytech/polkadot-staking-dashboard/blob/4c07fb786f2f82b7f18f1acb1dd4183b7e04bebe/src/main.tsx#L4):
-
-```
-// Replace published import:
-import '@polkadotcloud/core-ui/index.css';
-
-// with local import:
-import '@polkadotcloud/core-ui-dev/index.css';
-```
-
-Now components can be added or replaced with those from your local version:
-
-```
-// Replace published import:
-import { ButtonHelp } from '@polkadotcloud/core-ui';
-
-// with local import:
-import { ButtonHelp } from '@polkadotcloud/core-ui-dev';
-```
-
-Changes can be committed to this `package-dev` branch without impacting your main branch configs, linting rules and existing published component imports.
-
 ### Unlinking
 
-If you wish to rename or deprecate a local development package, it is a good practice to unlink (remove) it by running `yarn unlink [package]` in The App project directory:
+If you wish to switch back to the published package, unlink the local package followed by a yarn install:
 
 ```
-yarn unlink @polkadotcloud/core-ui-dev
+yarn unlink @polkadotcloud/core-ui && yarn install
 ```
 
-Followed by `yarn unlink` in The Package project directory.
+To unlink the locla package entirely, run `yarn unlink` in The Package project directory.

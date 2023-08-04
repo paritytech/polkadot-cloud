@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
 import { ButtonPrimary } from "core-ui/buttons/ButtonPrimary";
@@ -16,13 +16,14 @@ import {
   faUser as faUserReg,
 } from "@fortawesome/free-regular-svg-icons";
 import { CodeDrawer } from "../components/CodeDrawer";
-import { Separator } from "core-ui/core";
-import { ButtonTab } from "core-ui/index";
+import { Separator } from "core-ui/core/Separator";
+import { ButtonTab } from "core-ui/buttons/ButtonTab";
+import { ButtonTertiary } from "core-ui/buttons/ButtonTertiary";
 
 export const Buttons = () => (
   <>
     <h4>Button Primary</h4>
-    <div className="row">
+    <div className="sb-row">
       <ButtonPrimary text="Button" iconLeft={faUser} marginRight />
       <ButtonPrimary
         text="Button"
@@ -49,7 +50,7 @@ export const Buttons = () => (
     </CodeDrawer>
     <Separator />
     <h4>Button Primary Invert</h4>
-    <div className="row">
+    <div className="sb-row">
       <ButtonPrimaryInvert text="Button" marginRight />
       <ButtonPrimaryInvert
         text="Button"
@@ -77,8 +78,9 @@ export const Buttons = () => (
       </code>
     </CodeDrawer>
     <Separator />
+
     <h4>Button Secondary</h4>
-    <div className="row">
+    <div className="sb-row">
       <ButtonSecondary text="Button" marginRight />
       <ButtonSecondary text="Button" iconLeft={faUser} marginRight />
       <ButtonSecondary text="Button" iconRight={faUser} marginRight />
@@ -101,8 +103,26 @@ export const Buttons = () => (
       </code>
     </CodeDrawer>
     <Separator />
+
+    <h4>Button Tertiary</h4>
+    <div className="sb-row">
+      <ButtonTertiary text="Button" marginRight />
+      <ButtonTertiary text="Button" iconLeft={faUser} marginRight />
+      <ButtonTertiary text="Button" iconRight={faUser} marginRight />
+      <ButtonTertiary text="Button" disabled />
+    </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<ButtonTertiary text="Button" marginRight />`}</p>
+        <p>{`<ButtonTertiary text="Button" iconLeft={faUser} marginRight />`}</p>
+        <p>{`<ButtonTertiary text="Button" iconRight={faUser} marginRight />`}</p>
+        <p>{`<ButtonTertiary lg text="Button" disabled />`}</p>
+      </code>
+    </CodeDrawer>
+    <Separator />
+
     <h4>Button Mono</h4>
-    <div className="row">
+    <div className="sb-row">
       <ButtonMono text="Button" marginRight />
       <ButtonMono text="Button" iconLeft={faUser} marginRight />
       <ButtonMono text="Button" iconRight={faUser} marginRight />
@@ -126,7 +146,7 @@ export const Buttons = () => (
     </CodeDrawer>
     <Separator />
     <h4>Button Mono Invert</h4>
-    <div className="row">
+    <div className="sb-row">
       <ButtonMonoInvert text="Button" marginRight />
       <ButtonMonoInvert text="Button" iconLeft={faUser} marginRight />
       <ButtonMonoInvert text="Button" iconRight={faUser} marginRight />
@@ -150,7 +170,7 @@ export const Buttons = () => (
     </CodeDrawer>
     <Separator />
     <h4>Button Text</h4>
-    <div className="row">
+    <div className="sb-row">
       <ButtonText text="Button" marginRight />
       <ButtonText text="Button" iconLeft={faUserReg} marginRight />
       <ButtonText text="Button" iconRight={faUserReg} marginRight />
@@ -178,7 +198,7 @@ export const Buttons = () => (
     </CodeDrawer>
     <Separator />
     <h4>Button Submit</h4>
-    <div className="row">
+    <div className="sb-row">
       <ButtonSubmit text="Button" marginRight />
       <ButtonSubmit
         text="Button"
@@ -208,7 +228,7 @@ export const Buttons = () => (
     </CodeDrawer>
     <Separator />
     <h4>Button Submit Invert</h4>
-    <div className="row">
+    <div className="sb-row">
       <ButtonSubmitInvert text="Button" marginRight />
       <ButtonSubmitInvert text="Button" iconLeft={faUserReg} marginRight />
       <ButtonSubmitInvert text="Button" iconRight={faUserReg} marginRight />
@@ -231,7 +251,7 @@ export const Buttons = () => (
     </CodeDrawer>
     <Separator />
     <h4>Button Help</h4>
-    <div className="row">
+    <div className="sb-row">
       <ButtonHelp marginRight />
       <ButtonHelp backgroundSecondary />
     </div>
@@ -243,7 +263,7 @@ export const Buttons = () => (
     </CodeDrawer>
     <Separator />
     <h4>Button Tab</h4>
-    <div className="row">
+    <div className="sb-row">
       <ButtonTab title={"Inactive"} />
       <ButtonTab active title={"Active"} />
       <ButtonTab active title={"Active"} badge={"123"} />

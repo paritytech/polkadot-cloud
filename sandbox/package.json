@@ -8,21 +8,22 @@
     "clear": "rm -rf node_modules",
     "dev": "vite"
   },
-  "peerDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.0",
-    "@fortawesome/react-fontawesome": "^0.4.0",
-    "framer-motion": "^10.10.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
   "devDependencies": {
-    "@vitejs/plugin-react-swc": "^3.3.1",
-    "vite": "^4.3.5",
-    "vite-plugin-checker": "^0.6.0",
+    "@types/react": "^18.2.18",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "vite": "^4.4.8",
+    "vite-plugin-checker": "^0.6.1",
     "vite-plugin-eslint": "^1.8.1",
     "vite-tsconfig-paths": "^4.2.0"
   },
   "dependencies": {
-    "vite": "^4.3.5"
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@polkadot/keyring": "^12.3.2",
+    "@polkadot/util": "^12.3.2",
+    "@polkadotcloud/utils": "^0.2.22",
+    "bignumber.js": "^9.1.1",
+    "framer-motion": "^10.15.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

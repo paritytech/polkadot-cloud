@@ -1,0 +1,21 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: Apache-2.0 */
+
+@use "../styles";
+
+.modal-motion-three-sections {
+  @include styles.modal-motion-sections;
+
+  width: 300%;
+
+  > .section {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 33.33%;
+    min-width: 33.33%;
+    height: auto;
+    overflow: auto;
+    flex-grow: 1;
+  }
+}

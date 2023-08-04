@@ -1,7 +1,8 @@
-/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
 import { IconDefinition, IconProp } from "@fortawesome/fontawesome-svg-core";
+import { MouseEvent } from "react";
 
 // A list of supported theme modes
 export type ThemeMode = "light" | "dark";
@@ -27,8 +28,6 @@ export type ComponentBaseWithClassName = ComponentBase & {
 export interface ButtonCommonProps {
   // whether the button is disabled.
   disabled?: boolean;
-  // onClick handler of button.
-  onClick?: () => void;
   // include a left margin
   marginLeft?: boolean;
   // include a right margin.
@@ -37,6 +36,14 @@ export interface ButtonCommonProps {
   marginX?: boolean;
   // enable flex grow.
   grow?: boolean;
+  // onClick handler of button.
+  onClick?: (e?: MouseEvent<HTMLButtonElement>) => void;
+  // onMouseOver handler of button.
+  onMouseOver?: (e?: MouseEvent<HTMLButtonElement>) => void;
+  // onMouseMove handler of button.
+  onMouseMove?: (e?: MouseEvent<HTMLButtonElement>) => void;
+  // onMouseOut handler of button.
+  onMouseOut?: (e?: MouseEvent<HTMLButtonElement>) => void;
 }
 
 // Icon support for buttons

@@ -1,4 +1,4 @@
-// Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+// Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 const fs = require("fs");
@@ -6,6 +6,9 @@ const { join } = require("path");
 const prettier = require("prettier");
 const { exit } = require("process");
 const packagesDir = join(__dirname, "..", "packages");
+
+// // Scope of packages to be published.
+const scope = "@polkadotcloud";
 
 const argv = require("minimist")(process.argv.slice(2));
 const { p: packageName, m: main } = argv;
@@ -53,22 +56,24 @@ try {
     return keys.includes(k[0]);
   });
 
+  // Replace `name` with scope and package name.
+  filtered[0] = ["name", `${scope}/${json.name.split(/-(.*)/s)[1]}`];
+
   // Merge properties with `hardcoded`.
   const merged = Object.assign({}, Object.fromEntries(filtered), hardcoded);
 
-  // Write `package.json` to the bundle.
-  fs.writeFile(
-    `${pathtoPackage}/dist/package.json`,
-    prettier.format(JSON.stringify(merged), { parser: "json" }),
-    (err) => {
+  // Format merged JSON
+  prettier.format(JSON.stringify(merged), { parser: "json" }).then((data) => {
+    // Write `package.json` to the bundle.
+    fs.writeFile(`${pathtoPackage}/dist/package.json`, data, (err) => {
       if (err) {
         console.error(`❌ ${err.message}`);
       }
       console.debug(
         `✅ package.json has been injected into ${packageName} bundle.`
       );
-    }
-  );
+    });
+  });
 } catch (e) {
   console.error(
     `❌ Could not find package.json in the specified package directory: ${packageName}`
