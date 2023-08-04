@@ -13,7 +13,7 @@ import { Separator } from "core-ui/core/Separator";
 export const Buttons = () => (
   <>
     <h4>Button Primary</h4>
-    <div className="row">
+    <div className="sb-row">
       <Button text="Button" iconLeft={faUser} marginRight />
       <Button type="primary" text="Button" iconLeft={faUser} marginRight />
       <Button
@@ -44,7 +44,7 @@ export const Buttons = () => (
     </CodeDrawer>
     <Separator />
     <h4>Button Primary Invert</h4>
-    <div className="row">
+    <div className="sb-row">
       <Button type="primaryInvert" text="Button" marginRight />
       <Button
         type="primaryInvert"
@@ -81,7 +81,7 @@ export const Buttons = () => (
     <Separator />
 
     <h4>Button Secondary</h4>
-    <div className="row">
+    <div className="sb-row">
       <Button type="secondary" text="Button" marginRight />
       <Button type="secondary" text="Button" iconLeft={faUser} marginRight />
       <Button type="secondary" text="Button" iconRight={faUser} marginRight />
@@ -107,7 +107,7 @@ export const Buttons = () => (
     <Separator />
 
     <h4>Button Tertiary</h4>
-    <div className="row">
+    <div className="sb-row">
       <Button type="tertiary" text="Button" marginRight />
       <Button type="tertiary" text="Button" iconLeft={faUser} marginRight />
       <Button type="tertiary" text="Button" iconRight={faUser} marginRight />
@@ -124,7 +124,7 @@ export const Buttons = () => (
     <Separator />
 
     <h4>Button Mono</h4>
-    <div className="row">
+    <div className="sb-row">
       <Button type="mono" text="Button" marginRight />
       <Button type="mono" text="Button" iconLeft={faUser} marginRight />
       <Button type="mono" text="Button" iconRight={faUser} marginRight />
@@ -149,7 +149,7 @@ export const Buttons = () => (
     </CodeDrawer>
     <Separator />
     <h4>Button Mono Invert</h4>
-    <div className="row">
+    <div className="sb-row">
       <Button type="monoInvert" text="Button" marginRight />
       <Button type="monoInvert" text="Button" iconLeft={faUser} marginRight />
       <Button type="monoInvert" text="Button" iconRight={faUser} marginRight />
@@ -174,7 +174,7 @@ export const Buttons = () => (
     </CodeDrawer>
     <Separator />
     <h4>Button Text</h4>
-    <div className="row">
+    <div className="sb-row">
       <Button type="text" text="Button" marginRight />
       <Button type="text" text="Button" iconLeft={faUserReg} marginRight />
       <Button type="text" text="Button" iconRight={faUserReg} marginRight />
@@ -203,7 +203,7 @@ export const Buttons = () => (
     </CodeDrawer>
     <Separator />
     <h4>Button Submit</h4>
-    <div className="row">
+    <div className="sb-row">
       <Button type="submit" text="Button" marginRight />
       <Button
         type="submit"
@@ -240,7 +240,7 @@ export const Buttons = () => (
     </CodeDrawer>
     <Separator />
     <h4>Button Submit Invert</h4>
-    <div className="row">
+    <div className="sb-row">
       <Button type="submitInvert" text="Button" marginRight />
       <Button
         type="submitInvert"
@@ -274,7 +274,7 @@ export const Buttons = () => (
     </CodeDrawer>
     <Separator />
     <h4>Button Help</h4>
-    <div className="row">
+    <div className="sb-row">
       <Button type="help" marginRight />
       <Button type="help" backgroundSecondary />
     </div>
@@ -286,7 +286,7 @@ export const Buttons = () => (
     </CodeDrawer>
     <Separator />
     <h4>Button Tab</h4>
-    <div className="row">
+    <div className="sb-row">
       <Button type="tab" title={"Inactive"} />
       <Button type="tab" active title={"Active"} />
       <Button type="tab" active title={"Active"} badge={"123"} />

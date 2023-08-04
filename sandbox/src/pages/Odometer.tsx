@@ -12,7 +12,7 @@ export const Odometer = () => {
   return (
     <>
       <h4>React Odometer</h4>
-      <div className="row" style={{ alignItems: "center" }}>
+      <div className="sb-row" style={{ alignItems: "center" }}>
         <Button
           type="primary"
           text="Click Me"
