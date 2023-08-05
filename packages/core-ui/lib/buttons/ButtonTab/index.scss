@@ -9,13 +9,14 @@ SPDX-License-Identifier: Apache-2.0 */
 
   color: var(--text-color-primary);
   transition:
-    opacity var(--transition-duration),
-    font-size var(--transition-duration);
+  opacity var(--transition-duration),
+  font-size var(--transition-duration);
+  border-radius: 0.5rem;
   font-size: 1.15rem;
-  padding: 0.65rem 1rem;
   margin-bottom: 0.5rem;
   margin-right: 0.75rem;
-  border-radius: 0.5rem;
+  padding: 0 1rem;
+  height: 3rem;
 
   &:last-child {
     margin-right: 0;
@@ -30,13 +31,13 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 
   > .badge {
-    @include styles.btn-small;
-
-    border: 1px solid var(--network-color-primary);
+    font-size: var(--button-font-size-small);
+    border: 1px solid var(--border-secondary-color);
     color: var(--network-color-primary);
     font-size: var(--button-font-size-small);
     margin-left: var(--button-spacing-large);
     display: flex;
+    padding: 0.3rem 0.5rem;
     align-items: center;
     justify-content: center;
     border-radius: 0.4rem;
