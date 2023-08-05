@@ -78,6 +78,12 @@ export const SideMenu = ({
         >
           Odometer
         </button>
+        <button
+          className={component === "grid" ? "selected" : undefined}
+          onClick={() => setComponent("grid")}
+        >
+          Grid
+        </button>
       </section>
     </div>
   );
