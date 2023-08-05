@@ -26,23 +26,28 @@ SPDX-License-Identifier: Apache-2.0 */
     opacity: 0.9;
   }
 
-  &.active {
-    background: var(--button-tab-background);
-  }
-
   > .badge {
     font-size: var(--button-font-size-small);
-    border: 1px solid var(--border-secondary-color);
+    border: 1px solid var(--border-primary-color);
     color: var(--network-color-primary);
     font-size: var(--button-font-size-small);
     margin-left: var(--button-spacing-large);
     display: flex;
-    padding: 0.3rem 0.5rem;
+    padding: 0.3rem 0.6rem;
     align-items: center;
     justify-content: center;
     border-radius: 0.4rem;
     overflow: hidden;
     width: fit-content;
     max-width: 3rem;
+  }
+
+  &.active {
+    background: var(--button-tab-background);
+
+    > .badge {
+      border: 1px solid var(--border-secondary-color);
+
+    }
   }
 }
