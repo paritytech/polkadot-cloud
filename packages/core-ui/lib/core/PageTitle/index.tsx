@@ -4,7 +4,7 @@ SPDX-License-Identifier: Apache-2.0 */
 import { useEffect, useRef, useState } from "react";
 import { PageTitleProps } from "../types";
 import { valEmpty } from "../../utils";
-import { ButtonSecondary } from "../../buttons/ButtonSecondary";
+import { Button } from "../../buttons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { PageTitleTabs } from "../PageTitleTabs";
 import "./index.scss";
@@ -52,7 +52,8 @@ export const PageTitle = ({ title, button, tabs = [] }: PageTitleProps) => {
           </div>
           <div className="right">
             {button && (
-              <ButtonSecondary
+              <Button
+                type="secondary"
                 text={button.title}
                 onClick={() => button.onClick()}
                 iconRight={faBars}

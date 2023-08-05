@@ -48,6 +48,9 @@ export { ModalSeparator } from "./modal/ModalSeparator";
 export { ModalWarnings } from "./modal/ModalWarnings";
 
 // Buttons
+export { Button } from "./buttons";
+
+// TODO: Keep for backwards compatibility with the Polkadot Staking Dashboard
 export { ButtonPrimary } from "./buttons/ButtonPrimary";
 export { ButtonPrimaryInvert } from "./buttons/ButtonPrimaryInvert";
 export { ButtonSecondary } from "./buttons/ButtonSecondary";
