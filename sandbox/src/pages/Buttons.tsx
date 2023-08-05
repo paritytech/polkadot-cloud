@@ -288,12 +288,14 @@ export const Buttons = () => (
     <h4>Button Tab</h4>
     <div className="sb-row">
       <Button type="tab" title={"Inactive"} />
+      <Button type="tab" title={"Inactive"} badge={"123"} />
       <Button type="tab" active title={"Active"} />
       <Button type="tab" active title={"Active"} badge={"123"} />
     </div>
     <CodeDrawer>
       <code>
         <p>{`<Button type="tab" title={"Inactive"} />`}</p>
+        <p>{`<Button type="tab" title={"Inactive"} badge={"123"} />`}</p>
         <p>{`<Button type="tab" active title={"Active"} />`}</p>
         <p>{`<Button type="tab" active title={"Active"} badge={"123"} `}</p>
       </code>
