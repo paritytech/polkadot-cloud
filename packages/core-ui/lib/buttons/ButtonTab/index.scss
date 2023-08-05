@@ -32,16 +32,16 @@ SPDX-License-Identifier: Apache-2.0 */
   > .badge {
     @include styles.btn-small;
 
-    background: var(--network-color-secondary);
+    border: 1px solid var(--network-color-primary);
+    color: var(--network-color-primary);
     font-size: var(--button-font-size-small);
     margin-left: var(--button-spacing-large);
-    border-radius: 0.4rem;
-    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 3rem;
-    width: fit-content;
+    border-radius: 0.4rem;
     overflow: hidden;
+    width: fit-content;
+    max-width: 3rem;
   }
 }
