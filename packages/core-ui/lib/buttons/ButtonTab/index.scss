@@ -9,13 +9,14 @@ SPDX-License-Identifier: Apache-2.0 */
 
   color: var(--text-color-primary);
   transition:
-    opacity var(--transition-duration),
-    font-size var(--transition-duration);
+  opacity var(--transition-duration),
+  font-size var(--transition-duration);
+  border-radius: 0.5rem;
   font-size: 1.15rem;
-  padding: 0.65rem 1rem;
   margin-bottom: 0.5rem;
   margin-right: 0.75rem;
-  border-radius: 0.5rem;
+  padding: 0 1rem;
+  height: 3rem;
 
   &:last-child {
     margin-right: 0;
@@ -25,23 +26,28 @@ SPDX-License-Identifier: Apache-2.0 */
     opacity: 0.9;
   }
 
-  &.active {
-    background: var(--button-tab-background);
-  }
-
   > .badge {
-    @include styles.btn-small;
-
-    background: var(--network-color-secondary);
+    font-size: var(--button-font-size-small);
+    border: 1px solid var(--border-primary-color);
+    color: var(--text-color-tertiary);
     font-size: var(--button-font-size-small);
     margin-left: var(--button-spacing-large);
-    border-radius: 0.4rem;
-    color: white;
     display: flex;
+    padding: 0.3rem 0.6rem;
     align-items: center;
     justify-content: center;
-    max-width: 3rem;
-    width: fit-content;
+    border-radius: 0.4rem;
     overflow: hidden;
+    width: fit-content;
+    max-width: 3rem;
+  }
+
+  &.active {
+    background: var(--button-tab-background);
+
+    > .badge {
+      border: 1px solid var(--border-secondary-color);
+
+    }
   }
 }

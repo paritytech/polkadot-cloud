@@ -84,6 +84,12 @@ export const SideMenu = ({
         >
           Statistics
         </button>
+        <button
+          className={component === "grid" ? "selected" : undefined}
+          onClick={() => setComponent("grid")}
+        >
+          Grid
+        </button>
       </section>
     </div>
   );

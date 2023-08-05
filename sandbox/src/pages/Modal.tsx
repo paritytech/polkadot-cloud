@@ -2,7 +2,7 @@
 SPDX-License-Identifier: Apache-2.0 */
 
 import { useState } from "react";
-import { ActionItem, ButtonHelp } from "core-ui/index";
+import { ActionItem, Button } from "core-ui/index";
 import { CodeDrawer } from "../components/CodeDrawer";
 
 export const Modal = () => {
@@ -11,7 +11,7 @@ export const Modal = () => {
   return (
     <>
       <h4>Action Item</h4>
-      <div className="row">
+      <div className="sb-row">
         <ActionItem text="Some Action" />
       </div>
       <CodeDrawer>
@@ -21,7 +21,7 @@ export const Modal = () => {
       </CodeDrawer>
 
       <h4>Action Item with Toggle</h4>
-      <div className="row">
+      <div className="sb-row">
         <ActionItem
           text="Some Action With Toggle"
           toggled={parentToggle}
@@ -29,7 +29,7 @@ export const Modal = () => {
             console.log(val);
             setParentToggle(val);
           }}
-          inlineButton={<ButtonHelp />}
+          inlineButton={<Button type="help" />}
         />
       </div>
       <div style={{ margin: "1rem 0" }}>

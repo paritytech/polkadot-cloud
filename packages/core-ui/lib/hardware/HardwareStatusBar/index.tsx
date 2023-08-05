@@ -1,12 +1,10 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import { ButtonMonoInvert } from "../../buttons/ButtonMonoInvert";
+import { Button } from "../../buttons";
 import { ComponentBase } from "../../types";
 import { motion } from "framer-motion";
-import { ButtonPrimaryInvert } from "../../buttons/ButtonPrimaryInvert";
 import { FunctionComponent, SVGProps } from "react";
-import { ButtonHelp } from "../../buttons/ButtonHelp";
 import "./index.scss";
 
 export type HardwareStatusBarProps = ComponentBase & {
@@ -81,7 +79,8 @@ export const HardwareStatusBar = ({
             <h3>
               {text}
               {help && (
-                <ButtonHelp
+                <Button
+                  type="help"
                   marginLeft
                   onClick={() => {
                     if (typeof handleHelp === "function") {
@@ -96,14 +95,16 @@ export const HardwareStatusBar = ({
         </section>
         <section>
           {inProgress ? (
-            <ButtonMonoInvert
+            <Button
+              type="monoInvert"
               text={tCancel}
               onClick={() =>
                 typeof handleCancel === "function" && handleCancel()
               }
             />
           ) : (
-            <ButtonPrimaryInvert
+            <Button
+              type="primaryInvert"
               text={tDone}
               onClick={() => {
                 if (typeof handleDone === "function") {
