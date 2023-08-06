@@ -1,6 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
+import { AnyObject } from "@polkadotcloud/utils/types";
 import { ComponentBase, ThemeMode } from "../types";
 import React from "react";
 
@@ -9,6 +10,11 @@ export type EntryProps = ComponentBase & {
   mode: ThemeMode;
   // the active chain.
   chain: string;
+};
+
+export type CardProps = ComponentBase & {
+  children: React.ReactNode;
+  animations?: AnyObject;
 };
 
 type GridItemsAlignment =

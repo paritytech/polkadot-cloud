@@ -9,7 +9,7 @@ export const GridPage = () => {
   const separatorStyle = {
     border: "0.1rem dashed var(--border-secondary-color)",
     padding: "0.5rem",
-    "text-align": "center",
+    TextAlign: "center",
   };
   return (
     <>
