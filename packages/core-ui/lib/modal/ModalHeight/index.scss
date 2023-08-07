@@ -8,15 +8,15 @@ SPDX-License-Identifier: Apache-2.0 */
   border-radius: 1.5rem;
   position: relative;
   z-index: 9;
-  
+
   &.large {
     max-width: 800px;
   }
-  
+
   &.xl {
     max-width: 1250px;
   }
-  
+
   &.transition-height {
     transition: height 0.5s cubic-bezier(0.1, 1, 0.2, 1);
   }
