@@ -90,6 +90,12 @@ export const SideMenu = ({
         >
           Grid
         </button>
+        <button
+          className={component === "card" ? "selected" : undefined}
+          onClick={() => setComponent("card")}
+        >
+          Card
+        </button>
       </section>
     </div>
   );

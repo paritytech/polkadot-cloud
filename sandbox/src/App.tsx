@@ -8,6 +8,7 @@ import { Statistics } from "./pages/Statistics";
 import { Odometer } from "./pages/Odometer";
 import { Modal } from "./pages/Modal";
 import { GridPage } from "./pages/GridPage";
+import { CardPage } from "./pages/CardPage";
 
 export const App = () => {
   // store the current theme
@@ -30,6 +31,8 @@ export const App = () => {
         return <Modal />;
       case "grid":
         return <GridPage />;
+      case "card":
+        return <CardPage />;
       default:
         return <Buttons />;
     }
