@@ -47,14 +47,7 @@ export const Pie = ({
             {title}
           </div>
         )}
-        <svg
-          viewBox="0 0 100 100"
-          xmlns="http://www.w3.org/2000/svg"
-          style={{
-            borderRadius: "50%",
-            border: "1px solid var(--network-color-primary)",
-          }}
-        >
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
           <foreignObject
             x="0"
             y="0"
