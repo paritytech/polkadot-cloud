@@ -11,7 +11,7 @@
   "devDependencies": {
     "@types/react": "^18.2.18",
     "@vitejs/plugin-react-swc": "^3.3.2",
-    "vite": "^4.4.8",
+    "vite": "^4.4.9",
     "vite-plugin-checker": "^0.6.1",
     "vite-plugin-eslint": "^1.8.1",
     "vite-tsconfig-paths": "^4.2.0"
