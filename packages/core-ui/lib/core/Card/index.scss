@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 */
 
 @use "../../styles/_variables" as v;
 
-.card-effects {
+.core-card {
   display: flex;
   flex-flow: column wrap;
   z-index: 0;
@@ -19,12 +19,10 @@ SPDX-License-Identifier: Apache-2.0 */
   }
   display: flex;
   border-radius: 0.95rem;
-  margin-right: 1.25rem;
   padding: 0.9rem 0rem;
   flex-flow: row wrap;
 
   @media (max-width: (v.$page-width-medium-threshold - 76px)) {
-    margin-right: 0;
     padding: 0.9rem 0;
   }
 }
