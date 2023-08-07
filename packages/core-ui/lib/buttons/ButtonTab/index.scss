@@ -9,8 +9,8 @@ SPDX-License-Identifier: Apache-2.0 */
 
   color: var(--text-color-primary);
   transition:
-  opacity var(--transition-duration),
-  font-size var(--transition-duration);
+    opacity var(--transition-duration),
+    font-size var(--transition-duration);
   border-radius: 0.5rem;
   font-size: 1.15rem;
   margin-bottom: 0.5rem;
@@ -27,7 +27,6 @@ SPDX-License-Identifier: Apache-2.0 */
   }
 
   > .badge {
-    font-size: var(--button-font-size-small);
     border: 1px solid var(--border-primary-color);
     color: var(--text-color-tertiary);
     font-size: var(--button-font-size-small);
@@ -47,7 +46,6 @@ SPDX-License-Identifier: Apache-2.0 */
 
     > .badge {
       border: 1px solid var(--border-secondary-color);
-
     }
   }
 }
