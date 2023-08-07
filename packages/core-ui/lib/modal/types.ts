@@ -1,6 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
+import { RefObject } from "react";
 import { ComponentBase } from "../types";
 import { AnimationProps } from "framer-motion";
 
@@ -50,8 +51,10 @@ export type ModalSectionProps = ComponentBase & {
 };
 
 export type ModalHeightProps = ComponentBase & {
-  // the maximum width
+  // the maximum width.
   size: string;
+  // container ref.
+  ref: RefObject<HTMLDivElement>;
 };
 
 export type ModalAnimationProps = ComponentBase & AnimationProps;
