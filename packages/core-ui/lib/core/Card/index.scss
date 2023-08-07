@@ -1,0 +1,28 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: Apache-2.0 */
+
+@use "../../styles/_variables" as v;
+
+.core-card {
+  display: flex;
+  flex-flow: column wrap;
+  z-index: 0;
+  flex: 1;
+  flex-basis: 100%;
+  margin-bottom: 1rem;
+
+  background: var(--background-primary);
+  box-shadow: var(--card-shadow-secondary);
+
+  @media (max-width: (v.$page-width-medium-threshold - 26px)) {
+    box-shadow: var(--card-shadow);
+  }
+  display: flex;
+  border-radius: 0.95rem;
+  padding: 0.9rem 0rem;
+  flex-flow: row wrap;
+
+  @media (max-width: (v.$page-width-medium-threshold - 76px)) {
+    padding: 0.9rem 0;
+  }
+}
