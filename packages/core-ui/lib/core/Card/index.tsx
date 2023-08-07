@@ -7,7 +7,7 @@ import { CardProps } from "../types";
 
 export const Card = ({ children, style, animations }: CardProps) => {
   return (
-    <motion.div style={style} {...animations} className="card-effects">
+    <motion.div style={style} {...animations} className="core-card">
       {children}
     </motion.div>
   );
