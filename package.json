@@ -38,9 +38,7 @@
     "typescript": "^5.1.6"
   },
   "workspaces": [
-    "packages/utils",
-    "packages/core-ui",
-    "packages/react-odometer",
+    "packages/*",
     "sandbox"
   ],
   "repository": {
