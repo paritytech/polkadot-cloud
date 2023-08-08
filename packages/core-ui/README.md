@@ -14,8 +14,6 @@ yarn dev
 
 #### Build the package into an optimised Rollup build.
 
-Update your [`dist.package.json`](https://github.com/paritytech/polkadot-cloud/blob/main/packages/core-ui/dist.package.json) before building the package. `dist.package.json` is injected into the `dist` folder as `package.json` after a build completes.
-
 ```
 yarn build
 ```
@@ -68,7 +66,6 @@ So in addition to the sandbox, It is also possible to build the package and test
 The following walkthrough uses the [Polkadot staking dashboard](https://github.com/paritytech/polkadot-staking-dashboard) as **The App** and a local build of the UI library as **The Package** to test.
 
 ### The Package Setup
-
 
 #### 1. Build the package:
 
