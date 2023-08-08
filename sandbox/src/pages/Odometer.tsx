@@ -3,7 +3,7 @@ SPDX-License-Identifier: Apache-2.0 */
 
 import { ReactOdometer } from "packages/react-odometer/lib";
 import { useState } from "react";
-import { Button } from "core-ui/index";
+import { Button } from "packages/core-ui/lib/index";
 import { CodeDrawer } from "../components/CodeDrawer";
 
 export const Odometer = () => {
