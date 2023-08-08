@@ -6,13 +6,7 @@
     "declarationMap": false,
     "incremental": true,
     "noEmitOnError": true,
-    "skipLibCheck": true,
-    "paths": {
-      "core-ui/*": ["./packages/core-ui/lib/*"],
-      "react-odometer/*": ["./packages/react-odometer/lib/*"],
-      "themes/*": ["./packages/themes/*"],
-      "utils/*": ["./packages/utils/lib/*"],
-    },
+    "skipLibCheck": true
   },
   "include": [
     "./packages/**/*", "sandbox",

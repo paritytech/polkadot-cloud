@@ -2,7 +2,7 @@
 SPDX-License-Identifier: Apache-2.0 */
 
 import { useState } from "react";
-import { ActionItem, Button } from "core-ui/index";
+import { ActionItem, Button } from "packages/core-ui/lib/index";
 import { CodeDrawer } from "../components/CodeDrawer";
 
 export const Modal = () => {
