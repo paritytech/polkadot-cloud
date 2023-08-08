@@ -8,8 +8,8 @@ import React from "react";
 export type EntryProps = ComponentBase & {
   // the theme mode.
   mode: "light" | "dark";
-  // the active chain.
-  chain: string;
+  // the active theme.
+  theme: string;
 };
 
 export type CardProps = ComponentBase & {
