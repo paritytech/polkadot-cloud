@@ -3,9 +3,7 @@ SPDX-License-Identifier: Apache-2.0 */
 
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import resolve from "@rollup/plugin-node-resolve";
-import typescript from "rollup-plugin-typescript2";
 import del from "rollup-plugin-delete";
-
 /**
  * @type {import('rollup').RollupOptions}
  */
@@ -16,12 +14,8 @@ export default {
       file: "dist/index.js",
       format: "es",
       sourcemap: false,
+      banner: "#!/usr/bin/env node",
     },
   ],
-  plugins: [
-    del({ targets: "dist/*" }),
-    peerDepsExternal(),
-    resolve(),
-    typescript(),
-  ],
+  plugins: [del({ targets: "dist/*" }), peerDepsExternal(), resolve()],
 };
