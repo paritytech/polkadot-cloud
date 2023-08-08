@@ -1,14 +1,11 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import {
-  ButtonIconProps,
-  ButtonCommonProps,
-  ComponentBaseWithClassName,
-} from "../../types";
+import { ComponentBaseWithClassName } from "../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { onMouseHandlers, valEmpty, valOr } from "../../utils";
 import "./index.scss";
+import { ButtonCommonProps, ButtonIconProps } from "../types";
 
 export type ButtonPrimaryInvertProps = ComponentBaseWithClassName &
   ButtonIconProps &
