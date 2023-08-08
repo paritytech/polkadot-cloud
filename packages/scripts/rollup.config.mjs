@@ -14,7 +14,7 @@ export default {
       file: "dist/index.js",
       format: "es",
       sourcemap: false,
-      banner: "#!/usr/bin/env node",
+      banner: "#!/usr/bin/env node \n",
     },
   ],
   plugins: [del({ targets: "dist/*" }), peerDepsExternal(), resolve()],
