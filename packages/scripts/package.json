@@ -1,0 +1,22 @@
+{
+  "name": "@polkadotcloud/scripts",
+  "license": "Apache-2.0",
+  "version": "0.1.0",
+  "type": "module",
+  "author": "Ross Bulat",
+  "description": "Utility scrips for Polkadot Apps.",
+  "bin": {
+    "dashboard_scripts": "./index.ts"
+  },
+  "keywords": [
+    "Polkadot",
+    "UI"
+  ],
+  "bugs": {
+    "url": "https://github.com/paritytech/polkadot-cloud/issues"
+  },
+  "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
+  "dependencies": {
+    "process": "^0.11.10"
+  }
+}
