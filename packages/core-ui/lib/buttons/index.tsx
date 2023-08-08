@@ -1,10 +1,6 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
-import {
-  ButtonCommonProps,
-  ButtonIconProps,
-  ComponentBaseWithClassName,
-} from "../types";
+import { ComponentBaseWithClassName } from "../types";
 import { ButtonPrimary, ButtonPrimaryProps } from "./ButtonPrimary";
 import {
   ButtonPrimaryInvert,
@@ -23,6 +19,7 @@ import { ButtonSubmit, ButtonSubmitProps } from "./ButtonSubmit";
 import { ButtonHelp, ButtonHelpProps } from "./ButtonHelp";
 import { ButtonTab, ButtonTabProps } from "./ButtonTab";
 import { ButtonOption, ButtonOptionProps } from "./ButtonOption";
+import { ButtonCommonProps, ButtonIconProps } from "./types";
 
 export type ButtonProps = ComponentBaseWithClassName &
   ButtonIconProps &
