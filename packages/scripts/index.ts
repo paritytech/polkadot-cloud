@@ -3,7 +3,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: Apache-2.0 */
 
-import { fs } from "fs";
+import { existsSync } from "fs";
 import { dirname } from "path";
 
 const args = process.argv.slice(2);
