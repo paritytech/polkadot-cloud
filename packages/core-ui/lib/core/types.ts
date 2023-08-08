@@ -2,12 +2,12 @@
 SPDX-License-Identifier: Apache-2.0 */
 
 import { AnyObject } from "@polkadotcloud/utils/types";
-import { ComponentBase, ThemeMode } from "../types";
+import { ComponentBase } from "../types";
 import React from "react";
 
 export type EntryProps = ComponentBase & {
   // the theme mode.
-  mode: ThemeMode;
+  mode: "light" | "dark";
   // the active chain.
   chain: string;
 };
