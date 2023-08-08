@@ -24,6 +24,8 @@ export { Separator } from "./core/Separator";
 export { Side } from "./core/Side";
 export { StatBoxRow } from "./core/StatBoxRow";
 export { Tx } from "./core/Tx";
+export { Grid } from "./core/Grid";
+export { Card } from "./core/Card";
 
 // Modal
 export { ActionItem } from "./modal/ActionItem";
