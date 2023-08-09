@@ -16,13 +16,6 @@ jobs:
         run: echo packages=[$(ls | sed 's,\(.*\),"\1"\,,')] >> "$GITHUB_OUTPUT"
         working-directory: "packages"
 
-  display-packages:
-    runs-on: ubuntu-latest
-    needs: get-packages
-    steps:
-    - name: Display Packages
-      run: echo "Packages ${{ needs.get-packages.outputs.packages }}"
-
   npm-publish:
     runs-on: ubuntu-latest
     needs: get-packages
@@ -71,19 +64,16 @@ jobs:
       # Only runs if new package build is ready to be published.
       - name: Publish Package Build
         if: ${{ (steps.check_if_build.outputs.files_exists == 'true') && (steps.check_new_version_build.outputs.is-new-version == 'true') }}
-        run: echo " BUILD {{ matrix.package }} IS READY TO PUBLISH."
-
-        # run: npm publish
-        # working-directory: "packages/${{ matrix.package }}/dist"
-        # env:
-        #   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish
+        working-directory: "packages/${{ matrix.package }}/dist"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # Publish a package build top-level package folder.
       # Only runs if New package is ready to be published.
       - name: Publish Package
         if: ${{ (steps.check_if_build.outputs.files_exists == 'false') && (steps.check_new_version.outputs.is-new-version == 'true') }}
-        run: echo "PACKAGE {{ matrix.package }} IS READY TO PUBLISH."
-        # run: npm publish
-        # working-directory: "packages/${{ matrix.package }}"
-        # env:
-        #   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish
+        working-directory: "packages/${{ matrix.package }}"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
