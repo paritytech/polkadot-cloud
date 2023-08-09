@@ -5,42 +5,21 @@ on:
     branches: [rb-ci-package-discovery]
 
 jobs:
-  list-files:
+  get-packages:
     runs-on: ubuntu-latest
     outputs:
-      paths: ${{ steps.list-files.outputs.paths }}
+      packages: ${{ steps.get_packages.outputs.packages }}
     steps:
-      - name: List Files
-        id: list-files
-        uses: mirko-felice/list-files-action@v3.0.5
-        with:
-          repo: ${{ github.repository }}
-          ref: ${{ github.ref }}
-          path: "./packages"
-          ext: ""
-  Test:
-    needs: list-files
-    strategy:
-      matrix:
-        paths: ${{ fromJson(needs.list-files.outputs.paths) }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Output results
-        run: |
-          echo ${{ matrix.paths }}
+      - name: "Get Packages"
+        id: get_packages
+        run: echo "packages=$(ls -m)" >> "$GITHUB_OUTPUT"
 
   npm-publish:
     runs-on: ubuntu-latest
+    needs: get-packages
     strategy:
       matrix:
-        package: [
-          community,
-          core-ui,
-          react-odometer,
-          scripts,
-          themes,
-          utils,
-        ]
+        package: ${{ needs.get-packages.outputs.packages }}
     steps:
       - uses: actions/checkout@v3.5.0
       - run: yarn install
