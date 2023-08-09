@@ -3,16 +3,10 @@ import ReactDOM from "react-dom/client";
 import { App } from "./App";
 import "./styles/index.scss";
 
-<<<<<<< Updated upstream
 import "../../packages/themes/lib/theme/polkadot-relay/index.css";
 import "../../packages/themes/lib/theme/kusama-relay/index.css";
 import "../../packages/themes/lib/theme/westend-relay/index.css";
-=======
-import "../../packages/themes/theme/polkadot-relay/index.css";
-import "../../packages/themes/theme/kusama-relay/index.css";
-import "../../packages/themes/theme/westend-relay/index.css";
-import "../../packages/themes/theme/xcm/index.css";
->>>>>>> Stashed changes
+import "../../packages/themes/lib/theme/xcm/index.css";
 
 import "../../packages/core-ui/lib/styles/index.scss";
 
