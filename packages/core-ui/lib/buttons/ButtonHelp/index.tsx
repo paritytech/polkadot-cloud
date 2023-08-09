@@ -1,9 +1,10 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
-SPDX-License-Identifier: Apache-2.0 */
+SPDX-License-Identifier: GPL-3.0-only */
 
 import { InfoSVG } from "../../svg/Info";
-import { ButtonCommonProps, ComponentBaseWithClassName } from "../../types";
+import { ComponentBaseWithClassName } from "../../types";
 import { valEmpty, onMouseHandlers } from "../../utils";
+import { ButtonCommonProps } from "../types";
 import "./index.scss";
 
 export type ButtonHelpProps = ComponentBaseWithClassName &

@@ -1,10 +1,10 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
-SPDX-License-Identifier: Apache-2.0 */
+SPDX-License-Identifier: GPL-3.0-only */
 
 /* Inject styles from core-ui */
-@use "../../packages/core-ui/lib/styles/variables" as v;
-@import "../../packages/themes/theme/default/fonts/index";
-@import "../../packages/themes/theme/default/index";
+@use "../../../packages/core-ui/lib/styles/variables" as v;
+@import "../../../packages/themes/lib/template/default/fonts/index";
+@import "../../../packages/themes/lib/template/default/index";
 
 :root {
   --sandbox-active-color: rgb(211 48 121);
@@ -24,6 +24,10 @@ main {
   /* We need the body not to over come sidebar */
   @media (min-width: (v.$page-width-medium-threshold + 26px)) {
     margin: 0 auto;
+  }
+
+  h4 {
+    margin: 1rem 0;
   }
 }
 

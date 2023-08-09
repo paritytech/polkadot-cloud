@@ -5,97 +5,52 @@ on:
     branches: [main]
 
 jobs:
-  npm-publish:
+  # Dynamically fetches packages to publish from the `packages` folder. Uses `sed` to format the
+  # list with quotes and commas. Wraps command output in angle brackets, resulting in a JSON
+  # formatted string.
+  get-packages:
     runs-on: ubuntu-latest
+    outputs:
+      packages: ${{ steps.get_packages.outputs.packages }}
     steps:
       - uses: actions/checkout@v3.5.0
-      - run: yarn install
+      - name: "Get Packages"
+        id: get_packages
+        run: echo packages=[$(ls | sed 's,\(.*\),"\1"\,,')] >> "$GITHUB_OUTPUT"
+        working-directory: "packages"
+
+  # Uses the above list of packages to check for new versions, and publishes them if they are new.
+  npm-publish:
+    runs-on: ubuntu-latest
+    needs: get-packages
+    strategy:
+      matrix:
+        package: ${{ fromJson(needs.get-packages.outputs.packages) }}
+    steps:
+      - uses: actions/checkout@v3.5.0
+      - run: yarn install && yarn build:mock
       - uses: actions/setup-node@v3
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org
-      - name: Build NPM Packages
+
+      # Check whether a package build is a new version.
+      - name: Check New Version From Build
+        id: check_new_version_build
+        uses: PostHog/check-package-version@v2
+        with:
+          path: "./packages/${{ matrix.package }}/dist"
+
+      # Build the package if new version is available.
+      - name: Build Package
+        if: steps.check_new_version_build.outputs.is-new-version == 'true'
         run: yarn build
-      - name: New 'core-ui' version
-        id: core_ui_version
-        uses: PostHog/check-package-version@v2
-        with:
-          path: "./packages/core-ui/dist"
-      - name: New 'react-odometer' version
-        id: react_odometer_version
-        uses: PostHog/check-package-version@v2
-        with:
-          path: "./packages/react-odometer/dist"
-      - name: New 'utils' version
-        id: utils_version
-        uses: PostHog/check-package-version@v2
-        with:
-          path: "./packages/utils/dist"
-      - name: New 'themes' version
-        id: themes_version
-        uses: PostHog/check-package-version@v2
-        with:
-          path: "./packages/themes"
-      - name: New 'community' version
-        id: community_version
-        uses: PostHog/check-package-version@v2
-        with:
-          path: "./packages/community"
+        working-directory: "packages/${{ matrix.package }}"
 
-      - name: Publish 'core-ui' Dry Run
-        run: npm publish --unsafe-perm --dry-run
-        working-directory: "./packages/core-ui/dist"
-      - name: Publish 'core-ui'
-        if: steps.core_ui_version.outputs.is-new-version == 'true'
-        working-directory: "./packages/core-ui/dist"
+      # Publish a package build from `dist` folder. Only runs if the package is a new version.
+      - name: Publish Package From Build
+        if: steps.check_new_version_build.outputs.is-new-version == 'true'
         run: npm publish
+        working-directory: "packages/${{ matrix.package }}/dist"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Publish 'react-odometer' Dry Run
-        run: npm publish --unsafe-perm --dry-run
-        working-directory: "./packages/react-odometer/dist"
-      - name: Publish 'react-odometer'
-        if: steps.react_odometer_version.outputs.is-new-version == 'true'
-        run: npm publish
-        working-directory: "./packages/react-odometer/dist"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Publish 'utils' Dry Run
-        run: npm publish --unsafe-perm --dry-run
-        working-directory: "./packages/utils/dist"
-      - name: Publish 'utils'
-        if: steps.utils_version.outputs.is-new-version == 'true'
-        run: npm publish
-        working-directory: "./packages/utils/dist"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Publish 'themes' Dry Run
-        run: npm publish --unsafe-perm --dry-run
-        working-directory: "./packages/themes"
-      - name: Publish 'themes'
-        if: steps.themes_version.outputs.is-new-version == 'true'
-        run: npm publish
-        working-directory: "./packages/themes"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Publish 'community' Dry Run
-        run: npm publish --unsafe-perm --dry-run
-        working-directory: "./packages/community"
-      - name: Publish 'community'
-        if: steps.community_version.outputs.is-new-version == 'true'
-        run: npm publish
-        working-directory: "./packages/community"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-  all:
-    # This dummy job depends on all the mandatory checks. It succeeds if and only if all CI checks
-    # are successful.
-    needs: [npm-publish]
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo Success

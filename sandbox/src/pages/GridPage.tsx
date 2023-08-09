@@ -1,9 +1,9 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
-SPDX-License-Identifier: Apache-2.0 */
+SPDX-License-Identifier: GPL-3.0-only */
 
-import { Grid } from "core-ui/core/Grid";
+import { Grid } from "packages/core-ui/lib/core/Grid";
 import { CodeDrawer } from "../components/CodeDrawer";
-import { Separator } from "core-ui/core/Separator";
+import { Separator } from "packages/core-ui/lib/core/Separator";
 
 export const GridPage = () => {
   const separatorStyle = {

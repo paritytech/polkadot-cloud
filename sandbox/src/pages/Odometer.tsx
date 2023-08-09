@@ -1,9 +1,9 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
-SPDX-License-Identifier: Apache-2.0 */
+SPDX-License-Identifier: GPL-3.0-only */
 
 import { ReactOdometer } from "packages/react-odometer/lib";
 import { useState } from "react";
-import { Button } from "core-ui/index";
+import { Button } from "packages/core-ui/lib/buttons/Button";
 import { CodeDrawer } from "../components/CodeDrawer";
 
 export const Odometer = () => {

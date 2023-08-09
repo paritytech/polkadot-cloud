@@ -1,9 +1,12 @@
 {
   "name": "polkadotcloud-utils",
-  "license": "Apache-2.0",
-  "version": "0.2.22",
+  "license": "GPL-3.0-only",
+  "version": "0.2.23",
   "type": "module",
-  "author": "Ross Bulat",
+  "contributors": [
+    "Ross Bulat<ross@parity.io>",
+    "Nikolaos Kontakis<nikos@parity.io>"
+  ],
   "description": "Utilities for Polkadot Dashboards.",
   "keywords": [
     "Polkadot",
@@ -14,26 +17,13 @@
   },
   "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
   "scripts": {
-    "build": "rollup -c && node ../../.scripts/injectPackageJson.cjs -p utils -m index.ts",
+    "build:mock": "node ../../.scripts/generatePackageJson.cjs -p utils -m index.ts",
+    "build": "rollup -c && node ../../.scripts/generatePackageJson.cjs -p utils -m index.ts",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   },
   "peerDependencies": {
     "@polkadot/keyring": "^12.3.2",
     "@polkadot/util": "^11.0.1",
     "bignumber.js": "^9.1.1"
-  },
-  "devDependencies": {
-    "@rollup/plugin-json": "^6.0.0",
-    "@rollup/plugin-node-resolve": "^15.1.0",
-    "rollup": "^2.78.1",
-    "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-delete": "^2.0.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.35.0"
-  },
-  "dependencies": {
-    "rollup-plugin-uglify": "^6.0.4"
   }
 }

@@ -1,9 +1,12 @@
 {
   "name": "polkadotcloud-core-ui",
-  "license": "Apache-2.0",
-  "version": "0.3.79",
+  "license": "GPL-3.0-only",
+  "version": "0.3.85",
   "type": "module",
-  "author": "Ross Bulat",
+  "contributors": [
+    "Ross Bulat<ross@parity.io>",
+    "Nikolaos Kontakis<nikos@parity.io>"
+  ],
   "description": "Core UI Components for Polkadot Apps.",
   "keywords": [
     "Polkadot",
@@ -14,7 +17,10 @@
   },
   "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
   "scripts": {
-    "build": "rollup -c && node ../../.scripts/injectPackageJson.cjs -p core-ui -m index.tsx",
+    "build:mock": "node ../../.scripts/generatePackageJson.cjs -p core-ui -m index.tsx",
+    "prebuild": "node ./.scripts/prebuild.mjs",
+    "build": "rollup -c",
+    "postbuild": "node ./.scripts/postbuild.mjs",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   },
   "peerDependencies": {
@@ -27,25 +33,5 @@
     "framer-motion": "^10.15.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@fortawesome/free-brands-svg-icons": "^6.4.2",
-    "@fortawesome/free-regular-svg-icons": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "@rollup/plugin-json": "^6.0.0",
-    "@rollup/plugin-node-resolve": "^15.1.0",
-    "@types/react": "^18.2.18",
-    "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.27",
-    "rollup": "^3.26.3",
-    "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-delete": "^2.0.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.35.0",
-    "rollup-plugin-uglify": "^6.0.4"
   }
 }

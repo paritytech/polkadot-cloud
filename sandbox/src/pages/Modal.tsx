@@ -1,9 +1,10 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
-SPDX-License-Identifier: Apache-2.0 */
+SPDX-License-Identifier: GPL-3.0-only */
 
 import { useState } from "react";
-import { ActionItem, Button } from "core-ui/index";
+import { Button } from "packages/core-ui/lib/buttons/Button";
 import { CodeDrawer } from "../components/CodeDrawer";
+import { ActionItem } from "packages/core-ui/lib/modal/ActionItem";
 
 export const Modal = () => {
   const [parentToggle, setParentToggle] = useState<boolean>(false);
