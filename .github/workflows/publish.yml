@@ -2,7 +2,7 @@ name: Publish
 
 on:
   push:
-    branches: [rb-build-core-ui-index]
+    branches: [main]
 
 jobs:
   # Dynamically fetches packages to publish from the `packages` folder. Uses `sed` to format the
