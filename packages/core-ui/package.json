@@ -1,7 +1,7 @@
 {
   "name": "polkadotcloud-core-ui",
   "license": "Apache-2.0",
-  "version": "0.3.81",
+  "version": "0.3.83",
   "type": "module",
   "author": "Ross Bulat",
   "description": "Core UI Components for Polkadot Apps.",
@@ -14,7 +14,8 @@
   },
   "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
   "scripts": {
-    "build": "rollup -c && node ../../.scripts/injectPackageJson.cjs -p core-ui -m index.tsx",
+    "build:mock": "node ../../.scripts/generatePackageJson.cjs -p core-ui -m index.tsx",
+    "build": "rollup -c && node ../../.scripts/generatePackageJson.cjs -p core-ui -m index.tsx",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   },
   "peerDependencies": {

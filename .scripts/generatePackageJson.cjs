@@ -33,7 +33,7 @@ const hardcoded = {
   },
 };
 
-// Loop packages to inject `package.json` into bundles.
+// Loop packages to generate `package.json`.
 const pathtoPackage = join(packagesDir, packageName);
 const pathToFile = join(pathtoPackage, "package.json");
 
@@ -64,6 +64,11 @@ try {
 
   // Format merged JSON
   prettier.format(JSON.stringify(merged), { parser: "json" }).then((data) => {
+    // Create `dist` directory if it doesn't exist.
+    if (!fs.existsSync(`${pathtoPackage}/dist`)) {
+      fs.mkdirSync(`${pathtoPackage}/dist`);
+    }
+    
     // Write `package.json` to the bundle.
     fs.writeFile(`${pathtoPackage}/dist/package.json`, data, (err) => {
       if (err) {
