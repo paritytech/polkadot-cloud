@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { Button } from "../../buttons";
+import { Button } from "../../buttons/Button";
 import { ComponentBase } from "../../types";
 import {
   faCheck,
