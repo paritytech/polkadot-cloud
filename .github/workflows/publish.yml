@@ -13,6 +13,7 @@ jobs:
       - name: "Get Packages"
         id: get_packages
         run: echo "packages=$(ls -m)" >> "$GITHUB_OUTPUT"
+        working-directory: "./packages"
 
   display-packages:
     runs-on: ubuntu-latest
