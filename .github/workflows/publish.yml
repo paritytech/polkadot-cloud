@@ -14,12 +14,25 @@ jobs:
         id: get_packages
         run: echo "packages=$(ls -m)" >> "$GITHUB_OUTPUT"
 
-  npm-publish:
+  display-packages:
     runs-on: ubuntu-latest
     needs: get-packages
+    steps:
+    - name: Display Packages
+      run: echo "Packages {{ needs.get-packages.outputs.packages }}"
+
+  npm-publish:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        package: "${{ needs.get-packages.outputs.packages }}"
+        package: [
+          community,
+          core-ui,
+          react-odometer,
+          scripts,
+          themes,
+          utils,
+        ]
     steps:
       - uses: actions/checkout@v3.5.0
       - run: yarn install
