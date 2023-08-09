@@ -1,10 +1,12 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
+import { existsSync } from "fs";
 import fs from "fs/promises";
 import prettier from "prettier";
 
-export const generateLibIndex = async (ignore = [], css = []) => {
+// Generates `lib/index.tsx` based on the contents of the `lib` folder.
+export const generateLibIndex = async ({ ignore, css }) => {
   // Utility function that iterates through a provided directory and returns all
   // folders.
   const getDirFolders = async (dir) => {
@@ -18,34 +20,27 @@ export const generateLibIndex = async (ignore = [], css = []) => {
   };
 
   // Iterate through all files and remove the provided lines from each file.
-  const libFolders = await getDirFolders("./lib");
-
   const components = [];
-  for (let folder of libFolders) {
+  for (let folder of await getDirFolders("./lib")) {
     const dir = `./lib/${folder}`;
-    for (let component of await fs.readdir(dir)) {
-      if ((await fs.stat(dir + "/" + component)).isDirectory()) {
-        components.push({
-          export: component,
-          from: `./${folder}/${component}`,
-        });
-      }
-    }
+    for (let component of await fs.readdir(dir))
+      if ((await fs.stat(`${dir}/${component}`)).isDirectory())
+        if (existsSync(`${dir}/${component}/index.tsx`))
+          components.push({
+            export: component,
+            from: `./${folder}/${component}`,
+          });
   }
 
   const lines = [];
-  // Add CSS imports
-  for (let cssImport of css) {
-    lines.push(`import "${cssImport}";`);
-  }
-  // Add component exports
-  for (let component of components) {
+  for (let cssImport of css) lines.push(`import "${cssImport}";`);
+  for (let component of components)
     lines.push(`export { ${component.export} } from "${component.from}";`);
-  }
 
-  const formatted = await prettier.format(lines.join("\n"), {
-    parser: "typescript",
-  });
-
-  await fs.writeFile("./lib/index.tsx", formatted);
+  await fs.writeFile(
+    "./lib/index.tsx",
+    await prettier.format(lines.join("\n"), {
+      parser: "typescript",
+    })
+  );
 };
