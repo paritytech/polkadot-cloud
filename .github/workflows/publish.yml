@@ -19,7 +19,7 @@ jobs:
     needs: get-packages
     steps:
     - name: Display Packages
-      run: echo "Packages {{ needs.get-packages.outputs.packages }}"
+      run: echo "Packages ${{ needs.get-packages.outputs.packages }}"
 
   npm-publish:
     runs-on: ubuntu-latest
