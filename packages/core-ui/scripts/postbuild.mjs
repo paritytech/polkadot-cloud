@@ -7,7 +7,7 @@ const main = async () => {
   try {
     // Generate package.json and inject.
     exec(
-      "node ../../scripts/generatePackageJson.cjs -p core-ui -m index.tsx",
+      "node ../../.scripts/generatePackageJson.cjs -p core-ui -m index.tsx",
       (error, stdout, stderr) => {
         if (error) {
           console.log(`error: ${error.message}`);
