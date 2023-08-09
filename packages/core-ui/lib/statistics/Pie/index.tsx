@@ -18,7 +18,7 @@ export const Pie = ({
   wrappedTitle = false,
   fixedTitle = false,
   size = 5,
-  perc = 42,
+  perc = 60,
 }: PieProps) => {
   const [showTitle, setShowTitle] = useState<boolean>(false);
 
@@ -59,8 +59,9 @@ export const Pie = ({
               style={{
                 width: "100%",
                 height: "100%",
+                borderRadius: "10rem",
                 background: `conic-gradient(var(--network-color-primary) ${perc}%,
-                var(--button-primary-background) ${perc}%)`,
+                var(--button-secondary-background) ${perc}%)`,
               }}
             />
           </foreignObject>
