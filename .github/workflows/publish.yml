@@ -33,8 +33,9 @@ jobs:
         with:
           files: "./packages/${{ matrix.package }}/dist"
       
-      # Build the package.
+      # Build the package if needed.
       - name: Build
+        if: steps.check_if_build.outputs.files_exists == 'true'
         run: yarn build
         working-directory: "packages/${{ matrix.package }}"
       
