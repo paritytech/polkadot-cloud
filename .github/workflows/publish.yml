@@ -25,6 +25,7 @@ jobs:
 
   npm-publish:
     runs-on: ubuntu-latest
+    needs: get-packages
     strategy:
       matrix:
         package: ${{ needs.get-packages.outputs.packages }}
