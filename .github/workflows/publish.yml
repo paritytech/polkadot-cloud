@@ -45,7 +45,7 @@ jobs:
         working-directory: "packages/${{ matrix.package }}"
       
       # Check whether a package build is a new version.
-      - name: Check New Version Build
+      - name: Check New Version From Build
         if: steps.check_if_build.outputs.files_exists == 'true'
         id: check_new_version_build
         uses: PostHog/check-package-version@v2
@@ -62,7 +62,7 @@ jobs:
       
       # Publish a package build from `dist` folder.
       # Only runs if new package build is ready to be published.
-      - name: Publish Package Build
+      - name: Publish Package From Build
         if: ${{ (steps.check_if_build.outputs.files_exists == 'true') && (steps.check_new_version_build.outputs.is-new-version == 'true') }}
         run: npm publish
         working-directory: "packages/${{ matrix.package }}/dist"
