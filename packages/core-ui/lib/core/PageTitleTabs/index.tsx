@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { Button } from "../../buttons";
+import { ButtonTab } from "../../buttons/ButtonTab";
 import { PageTitleProps, PageTitleTabProps } from "../types";
 import { valEmpty } from "../../utils";
 import "./index.scss";
@@ -16,8 +16,7 @@ export const PageTitleTabs = ({ sticky, tabs = [] }: PageTitleProps) => (
       <div className="inner">
         {tabs.map(
           ({ active, onClick, title, badge }: PageTitleTabProps, i: number) => (
-            <Button
-              type="tab"
+            <ButtonTab
               active={!!active}
               key={`page_tab_${i}`}
               onClick={() => onClick()}

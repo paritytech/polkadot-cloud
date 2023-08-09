@@ -1,30 +1,46 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
-import { ComponentBaseWithClassName } from "../types";
-import { ButtonPrimary, ButtonPrimaryProps } from "./ButtonPrimary";
+import { ComponentBaseWithClassName } from "../../types";
+import { ButtonPrimary, ButtonPrimaryProps } from "../ButtonPrimary";
 import {
   ButtonPrimaryInvert,
   ButtonPrimaryInvertProps,
-} from "./ButtonPrimaryInvert";
-import { ButtonSecondary, ButtonSecondaryProps } from "./ButtonSecondary";
-import { ButtonTertiary, ButtonTertiaryProps } from "./ButtonTertiary";
-import { ButtonMono, ButtonMonoProps } from "./ButtonMono";
-import { ButtonMonoInvert } from "./ButtonMonoInvert";
+} from "../ButtonPrimaryInvert";
+import { ButtonSecondary, ButtonSecondaryProps } from "../ButtonSecondary";
+import { ButtonTertiary, ButtonTertiaryProps } from "../ButtonTertiary";
+import { ButtonMono, ButtonMonoProps } from "../ButtonMono";
+import { ButtonMonoInvert } from "../ButtonMonoInvert";
 import {
   ButtonSubmitInvert,
   ButtonSubmitInvertProps,
-} from "./ButtonSubmitInvert";
-import { ButtonText } from "./ButtonText";
-import { ButtonSubmit, ButtonSubmitProps } from "./ButtonSubmit";
-import { ButtonHelp, ButtonHelpProps } from "./ButtonHelp";
-import { ButtonTab, ButtonTabProps } from "./ButtonTab";
-import { ButtonOption, ButtonOptionProps } from "./ButtonOption";
-import { ButtonCommonProps, ButtonIconProps } from "./types";
+} from "../ButtonSubmitInvert";
+import { ButtonText } from "../ButtonText";
+import { ButtonSubmit, ButtonSubmitProps } from "../ButtonSubmit";
+import { ButtonHelp, ButtonHelpProps } from "../ButtonHelp";
+import { ButtonTab, ButtonTabProps } from "../ButtonTab";
+import { ButtonOption, ButtonOptionProps } from "../ButtonOption";
+import { ButtonCommonProps, ButtonIconProps } from "../types";
+
+type ButtonType =
+  | "help"
+  | "mono"
+  | "monoInvert"
+  | "option"
+  | "primary"
+  | "primaryInvert"
+  | "secondary"
+  | "submit"
+  | "submitInvert"
+  | "tab"
+  | "tertiary"
+  | "text";
 
 export type ButtonProps = ComponentBaseWithClassName &
   ButtonIconProps &
-  ButtonCommonProps &
-  (
+  ButtonCommonProps & {
+    // the type of the button that need to be imported.
+    type?: ButtonType;
+  } & (
     | {
         // use secondary network color.
         colorSecondary?: boolean;
