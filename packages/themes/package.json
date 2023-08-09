@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
   "scripts": {
-    "build:mock": "node ../../scripts/generatePackageJson.cjs -p themes",
-    "build": "cp -R lib dist && node ../../scripts/generatePackageJson.cjs -p themes",
+    "build:mock": "node ../../.scripts/generatePackageJson.cjs -p themes",
+    "build": "cp -R lib dist && node ../../.scripts/generatePackageJson.cjs -p themes",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   }
 }
