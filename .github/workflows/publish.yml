@@ -58,7 +58,7 @@ jobs:
       # Publish a package build from `dist` folder.
       # Only runs if new package build is ready to be published.
       - name: Publish Package Build
-        if: ${{ (steps.check_if_build.outputs.files_exists == true) && (steps.check_new_version_build.outputs.is-new-version == 'true') }}
+        if: ${{ (steps.check_if_build.outputs.files_exists == 'true') && (steps.check_new_version_build.outputs.is-new-version == 'true') }}
         run: echo " BUILD {{ matrix.package }}" IS READY TO PUBLISH."
 
         # run: npm publish
@@ -69,7 +69,7 @@ jobs:
       # Publish a package build top-level package folder.
       # Only runs if New package is ready to be published.
       - name: Publish Package
-        if: ${{ (steps.check_if_build.outputs.files_exists == false) && (steps.check_new_version.outputs.is-new-version == 'true') }}
+        if: ${{ (steps.check_if_build.outputs.files_exists == 'false') && (steps.check_new_version.outputs.is-new-version == 'true') }}
         run: echo "PACKAGE {{ matrix.package }}" IS READY TO PUBLISH."
         # run: npm publish
         # working-directory: "packages/${{ matrix.package }}"
