@@ -6,6 +6,7 @@ import "./styles/index.scss";
 import "../../packages/themes/lib/theme/polkadot-relay/index.css";
 import "../../packages/themes/lib/theme/kusama-relay/index.css";
 import "../../packages/themes/lib/theme/westend-relay/index.css";
+import "../../packages/themes/lib/theme/xcm/index.css";
 
 import "../../packages/core-ui/lib/styles/index.scss";
 
