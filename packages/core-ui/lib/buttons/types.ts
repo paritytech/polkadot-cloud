@@ -4,24 +4,8 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { IconDefinition, IconProp } from "@fortawesome/fontawesome-svg-core";
 import { MouseEvent } from "react";
 
-type ButtonType =
-  | "help"
-  | "mono"
-  | "monoInvert"
-  | "option"
-  | "primary"
-  | "primaryInvert"
-  | "secondary"
-  | "submit"
-  | "submitInvert"
-  | "tab"
-  | "tertiary"
-  | "text";
-
 // Common button props, applied to all buttons
 export interface ButtonCommonProps {
-  // the type of the button that need to be imported
-  type?: ButtonType;
   // whether the button is disabled.
   disabled?: boolean;
   // include a left margin

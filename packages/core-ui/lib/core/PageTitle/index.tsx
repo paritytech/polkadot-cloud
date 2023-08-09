@@ -4,7 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { useEffect, useRef, useState } from "react";
 import { PageTitleProps } from "../types";
 import { valEmpty } from "../../utils";
-import { Button } from "../../buttons";
+import { Button } from "../../buttons/Button";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { PageTitleTabs } from "../PageTitleTabs";
 import "./index.scss";
