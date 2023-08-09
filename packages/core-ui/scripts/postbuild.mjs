@@ -1,6 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
+import fs from "fs";
 import { exec } from "child_process";
 
 const main = async () => {
@@ -20,6 +21,9 @@ const main = async () => {
         console.log(`stdout: ${stdout}`);
       }
     );
+
+    // Rmmove generated content.
+    fs.unlinkSync(`./lib/index.tsx`);
   } catch (e) {
     console.log(e);
   }
