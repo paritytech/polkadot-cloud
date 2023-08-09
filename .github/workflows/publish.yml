@@ -34,49 +34,23 @@ jobs:
           node-version: 18
           registry-url: https://registry.npmjs.org
 
-      # We check if `rollup.config.mjs` exists, which determines if the package is being built or
-      # not. This is used further down to determine which folder to publish the package from.
-      - name: "Check If Build"
-        id: check_if_build
-        uses: andstor/file-existence-action@v2
-        with:
-          files: "./packages/${{ matrix.package }}/rollup.config.mjs"
-
       # Check whether a package build is a new version.
       - name: Check New Version From Build
-        if: steps.check_if_build.outputs.files_exists == 'true'
         id: check_new_version_build
         uses: PostHog/check-package-version@v2
         with:
           path: "./packages/${{ matrix.package }}/dist"
 
-      # Check whether a package is a new version.
-      - name: Check New Version
-        if: steps.check_if_build.outputs.files_exists == 'false'
-        id: check_new_version
-        uses: PostHog/check-package-version@v2
-        with:
-          path: "./packages/${{ matrix.package }}"
-
       # Build the package if new version is available.
-      - name: Build
-        if: ${{ (steps.check_if_build.outputs.files_exists == 'true') && (steps.check_new_version_build.outputs.is-new-version == 'true') }}
+      - name: Build Package
+        if: steps.check_new_version_build.outputs.is-new-version == 'true'
         run: yarn build
         working-directory: "packages/${{ matrix.package }}"
 
-      # Publish a package build from `dist` folder. Only runs if new package is a `dist` build, and
-      # if the package is a new version.
+      # Publish a package build from `dist` folder. Only runs if the package is a new version.
       - name: Publish Package From Build
-        if: ${{ (steps.check_if_build.outputs.files_exists == 'true') && (steps.check_new_version_build.outputs.is-new-version == 'true') }}
+        if: steps.check_new_version_build.outputs.is-new-version == 'true'
         run: npm publish
         working-directory: "packages/${{ matrix.package }}/dist"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      # Publish top-level package folder if new version.
-      - name: Publish Package
-        if: ${{ (steps.check_if_build.outputs.files_exists == 'false') && (steps.check_new_version.outputs.is-new-version == 'true') }}
-        run: npm publish
-        working-directory: "packages/${{ matrix.package }}"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
