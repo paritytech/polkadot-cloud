@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { ValidatorConfig } from "../types";
+import { ValidatorConfig } from "../../types";
 
 // To add a validator operator to this list, refer to the instructions hosted in this package's
 // README file:

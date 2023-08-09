@@ -1,5 +1,5 @@
 {
-  "name": "@polkadotcloud/themes",
+  "name": "polkadotcloud-themes",
   "license": "GPL-3.0-only",
   "version": "0.1.5",
   "type": "module",
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/paritytech/polkadot-cloud/issues"
   },
-  "homepage": "https://github.com/paritytech/polkadot-cloud#readme"
+  "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
+  "scripts": {
+    "build:mock": "node ../../.scripts/generatePackageJson.cjs -p themes",
+    "build": "cp -R lib dist && node ../../.scripts/generatePackageJson.cjs -p themes",
+    "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
+  }
 }

@@ -1,6 +1,6 @@
 {
-  "name": "@polkadotcloud/community",
-"license": "GPL-3.0-only",
+  "name": "polkadotcloud-community",
+  "license": "GPL-3.0-only",
   "version": "0.1.4",
   "type": "module",
   "contributors": [
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/paritytech/polkadot-cloud/issues"
   },
-  "homepage": "https://github.com/paritytech/polkadot-cloud#readme"
+  "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
+  "scripts": {
+    "build:mock": "node ../../.scripts/generatePackageJson.cjs -p community",
+    "build": "cp -R lib dist && node ../../.scripts/generatePackageJson.cjs -p community",
+    "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
+  }
 }

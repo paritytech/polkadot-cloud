@@ -17,21 +17,16 @@ if (!packageName) {
   console.error("❌ Please provide package name with the -p flag");
   exit();
 }
-
-if (!main) {
-  console.error("❌ Please provide a main file with the -m flag");
-  exit();
-}
-
 // Hardcoded properties that will be included in resulting `package.json`.
-const hardcoded = {
+// Ignored if no `main` entry is provided.
+const hardcoded = main ? {
   types: "index.d.ts",
   main,
   module: main,
   typescript: {
     definition: "index.d.ts",
   },
-};
+} : {};
 
 // Loop packages to generate `package.json`.
 const pathtoPackage = join(packagesDir, packageName);
