@@ -6,6 +6,7 @@
   "description": "Polkadot Cloud Assets",
   "private": "true",
   "scripts": {
+    "build:mock": "npm run build:mock --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
     "clear": "npm run --workspaces clear && rm -rf node_modules",
     "lint": "eslint './**' --fix && npx prettier --write . && npx stylelint '**/*.scss' --fix",
