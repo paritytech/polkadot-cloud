@@ -5,7 +5,7 @@ import type { FC } from "react";
 import { useEffect, useRef } from "react";
 import Odometer from "./odometer";
 import type { ReactOdometerProps } from "./types";
-import "../styles/index.scss";
+import "./styles/index.scss";
 
 export const ReactOdometer: FC<ReactOdometerProps> = ({
   duration,
