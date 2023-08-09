@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v3.5.0
       - name: "Get Packages"
         id: get_packages
-        run: echo "packages=[$(for i in *; do echo '"'$i'",'; done)]" >> "$GITHUB_OUTPUT"
+        run: echo "packages=[$(for i in *; do echo '/"'$i'/",'; done)]" >> "$GITHUB_OUTPUT"
         working-directory: "packages"
 
   display-packages:
