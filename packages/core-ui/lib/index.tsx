@@ -1,5 +1,5 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
-SPDX-License-Identifier: Apache-2.0 */
+SPDX-License-Identifier: GPL-3.0-only */
 
 // IMPORTANT: Rollup treats this file as the entry point for the package, the build of which is
 // configured with a separate tsconfig.json file that treats `lib` as the `baseUrl` of the project.
