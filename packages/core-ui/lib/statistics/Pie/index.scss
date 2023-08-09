@@ -1,5 +1,6 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
-SPDX-License-Identifier: Apache-2.0 */
+SPDX-License-Identifier: GPL-3.0-only */
+
 .pie {
   border: 1px solid var(--network-color-primary);
   background-image: conic-gradient(
@@ -10,21 +11,21 @@ SPDX-License-Identifier: Apache-2.0 */
 }
 
 .tooltip {
-  color: var(--network-color-primary);
   background: var(--background-default);
-  opacity: 0;
-  position: relative;
-  z-index: 10;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
+  color: var(--network-color-primary);
   transition: opacity var(--transition-duration);
+  border-radius: 0.5rem;
+  opacity: 0;
+  padding: 0.5rem;
+  position: relative;
   text-align: center;
+  z-index: 10;
 }
 
 .tooltip-wrap {
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .tooltip-show {

@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
-SPDX-License-Identifier: Apache-2.0 */
+SPDX-License-Identifier: GPL-3.0-only */
 
-import { Pie } from "core-ui/statistics/Pie";
+import { Pie } from "packages/core-ui/lib/statistics/Pie";
 import { CodeDrawer } from "../components/CodeDrawer";
 import { useState } from "react";
 
