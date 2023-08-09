@@ -1,9 +1,12 @@
 {
   "name": "@polkadotcloud/community",
-  "license": "Apache-2.0",
+"license": "GPL-3.0-only",
   "version": "0.1.4",
   "type": "module",
-  "author": "Ross Bulat",
+  "contributors": [
+    "Ross Bulat<ross@parity.io>",
+    "Nikolaos Kontakis<nikos@parity.io>"
+  ],
   "description": "Community Data for Polkadot Apps.",
   "keywords": [
     "Polkadot",

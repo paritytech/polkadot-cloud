@@ -1,9 +1,12 @@
 {
-  "name": "polkadotcloud-scripts",
-  "license": "Apache-2.0",
+  "name": "@polkadotcloud/scripts",
+  "license": "GPL-3.0-only",
   "version": "0.1.1",
   "type": "module",
-  "author": "Ross Bulat",
+  "contributors": [
+    "Ross Bulat<ross@parity.io>",
+    "Nikolaos Kontakis<nikos@parity.io>"
+  ],
   "description": "Utility scripts for Polkadot Apps.",
   "keywords": [
     "Polkadot",

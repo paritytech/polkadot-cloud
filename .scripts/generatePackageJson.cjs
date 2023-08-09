@@ -68,7 +68,7 @@ try {
     if (!fs.existsSync(`${pathtoPackage}/dist`)) {
       fs.mkdirSync(`${pathtoPackage}/dist`);
     }
-    
+
     // Write `package.json` to the bundle.
     fs.writeFile(`${pathtoPackage}/dist/package.json`, data, (err) => {
       if (err) {
