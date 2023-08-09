@@ -28,7 +28,7 @@ jobs:
         package: ${{ fromJson(needs.get-packages.outputs.packages) }}
     steps:
       - uses: actions/checkout@v3.5.0
-      - run: yarn install
+      - run: yarn install && yarn build:mock
       - uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -41,12 +41,6 @@ jobs:
         uses: andstor/file-existence-action@v2
         with:
           files: "./packages/${{ matrix.package }}/rollup.config.mjs"
-      
-      # Build the package if needed.
-      - name: Build
-        if: steps.check_if_build.outputs.files_exists == 'true'
-        run: yarn build
-        working-directory: "packages/${{ matrix.package }}"
       
       # Check whether a package build is a new version.
       - name: Check New Version From Build
@@ -64,6 +58,12 @@ jobs:
         with:
           path: "./packages/${{ matrix.package }}"
       
+      # Build the package if new version is available.
+      - name: Build
+        if: ${{ (steps.check_if_build.outputs.files_exists == 'true') && (steps.check_new_version_build.outputs.is-new-version == 'true') }}
+        run: yarn build
+        working-directory: "packages/${{ matrix.package }}"
+
       # Publish a package build from `dist` folder.
       # Only runs if new package build is ready to be published.
       - name: Publish Package From Build

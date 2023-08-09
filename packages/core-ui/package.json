@@ -14,7 +14,8 @@
   },
   "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
   "scripts": {
-    "build": "rollup -c && node ../../.scripts/injectPackageJson.cjs -p core-ui -m index.tsx",
+    "build:mock": "node ../../.scripts/generatePackageJson.cjs -p core-ui -m index.tsx",
+    "build": "rollup -c && node ../../.scripts/generatePackageJson.cjs -p core-ui -m index.tsx",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   },
   "peerDependencies": {
