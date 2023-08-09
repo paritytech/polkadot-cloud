@@ -1,7 +1,7 @@
 {
   "name": "@polkadotcloud/community",
   "license": "Apache-2.0",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "type": "module",
   "author": "Ross Bulat",
   "description": "Community Data for Polkadot Apps.",
