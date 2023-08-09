@@ -1,9 +1,12 @@
 {
   "name": "@polkadotcloud/themes",
-  "license": "Apache-2.0",
+  "license": "GPL-3.0-only",
   "version": "0.1.5",
   "type": "module",
-  "author": "Ross Bulat",
+  "contributors": [
+    "Ross Bulat<ross@parity.io>",
+    "Nikolaos Kontakis<nikos@parity.io>"
+  ],
   "description": "Themes for Polkadot Apps.",
   "keywords": [
     "Polkadot",

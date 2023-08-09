@@ -1,5 +1,5 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
-SPDX-License-Identifier: Apache-2.0 */
+SPDX-License-Identifier: GPL-3.0-only */
 
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import resolve from "@rollup/plugin-node-resolve";

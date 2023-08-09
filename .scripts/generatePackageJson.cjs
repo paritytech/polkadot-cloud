@@ -1,5 +1,5 @@
 // Copyright 2023 @paritytech/polkadot-cloud authors & contributors
-// SPDX-License-Identifier: Apache-2.0
+// SPDX-License-Identifier: GPL-3.0-only
 
 const fs = require("fs");
 const { join } = require("path");
@@ -68,7 +68,7 @@ try {
     if (!fs.existsSync(`${pathtoPackage}/dist`)) {
       fs.mkdirSync(`${pathtoPackage}/dist`);
     }
-    
+
     // Write `package.json` to the bundle.
     fs.writeFile(`${pathtoPackage}/dist/package.json`, data, (err) => {
       if (err) {

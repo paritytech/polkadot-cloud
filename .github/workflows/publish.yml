@@ -41,7 +41,7 @@ jobs:
         uses: andstor/file-existence-action@v2
         with:
           files: "./packages/${{ matrix.package }}/rollup.config.mjs"
-      
+
       # Check whether a package build is a new version.
       - name: Check New Version From Build
         if: steps.check_if_build.outputs.files_exists == 'true'
@@ -57,7 +57,7 @@ jobs:
         uses: PostHog/check-package-version@v2
         with:
           path: "./packages/${{ matrix.package }}"
-      
+
       # Build the package if new version is available.
       - name: Build
         if: ${{ (steps.check_if_build.outputs.files_exists == 'true') && (steps.check_new_version_build.outputs.is-new-version == 'true') }}

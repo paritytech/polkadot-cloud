@@ -1,9 +1,12 @@
 {
   "name": "polkadotcloud-utils",
-  "license": "Apache-2.0",
+  "license": "GPL-3.0-only",
   "version": "0.2.23",
   "type": "module",
-  "author": "Ross Bulat",
+  "contributors": [
+    "Ross Bulat<ross@parity.io>",
+    "Nikolaos Kontakis<nikos@parity.io>"
+  ],
   "description": "Utilities for Polkadot Dashboards.",
   "keywords": [
     "Polkadot",
