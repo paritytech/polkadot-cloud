@@ -2,7 +2,7 @@ name: Publish
 
 on:
   push:
-    branches: [rb-ci-package-discovery]
+    branches: [main]
 
 jobs:
   get-packages:
