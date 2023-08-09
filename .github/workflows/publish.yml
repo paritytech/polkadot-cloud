@@ -2,7 +2,7 @@ name: Publish
 
 on:
   push:
-    branches: [main]
+    branches: [rb-ci-package-discovery]
 
 jobs:
   # Dynamically fetches packages to publish from the `packages` folder. Uses `sed` to format the
