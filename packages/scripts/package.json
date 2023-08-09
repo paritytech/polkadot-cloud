@@ -13,8 +13,8 @@
     "UI"
   ],
   "scripts": {
-    "build:mock": "node ../../.scripts/generatePackageJson.cjs -p scripts -m index.ts",
-    "build": "rollup -c && node ../../.scripts/generatePackageJson.cjs -p scripts -m index.ts",
+    "build:mock": "node ../../scripts/generatePackageJson.cjs -p scripts -m index.ts",
+    "build": "rollup -c && node ../../scripts/generatePackageJson.cjs -p scripts -m index.ts",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   },
   "bugs": {
