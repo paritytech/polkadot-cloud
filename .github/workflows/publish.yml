@@ -25,13 +25,13 @@ jobs:
           node-version: 18
           registry-url: https://registry.npmjs.org
 
-      # We check if the `dist` folder exists, which determines if the package is being built or not.
-      # This is used further down to determine which folder to publish the package from.
+      # We check if `rollup.config.mjs` exists, which determines if the package is being built or
+      # not. This is used further down to determine which folder to publish the package from.
       - name: "Check If Build"
         id: check_if_build
         uses: andstor/file-existence-action@v2
         with:
-          files: "./packages/${{ matrix.package }}/dist"
+          files: "./packages/${{ matrix.package }}/rollup.config.mjs"
       
       # Build the package if needed.
       - name: Build
