@@ -5,6 +5,9 @@ on:
     branches: [main]
 
 jobs:
+  # Dynamically fetches the packages to publish from the `packages` folder. Uses `sed` to format the
+  # list with quotes and commas. Wraps command output in angle brackets, resulting in a JSON
+  # formatted string.
   get-packages:
     runs-on: ubuntu-latest
     outputs:
@@ -16,6 +19,7 @@ jobs:
         run: echo packages=[$(ls | sed 's,\(.*\),"\1"\,,')] >> "$GITHUB_OUTPUT"
         working-directory: "packages"
 
+  # Uses the above list of packages to check for new versions, and publishes them if they are new.
   npm-publish:
     runs-on: ubuntu-latest
     needs: get-packages
