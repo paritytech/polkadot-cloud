@@ -1,8 +1,11 @@
 {
   "name": "@polkadotcloud/sandbox",
   "version": "0.2.14",
-  "license": "Apache-2.0",
-  "author": "Ross Bulat",
+  "license": "GPL-3.0-only",
+  "contributors": [
+    "Ross Bulat<ross@parity.io>",
+    "Nikolaos Kontakis<nikos@parity.io>"
+  ],
   "description": "Core UI Components for Polkadot Dashboards.",
   "scripts": {
     "clear": "rm -rf node_modules",
