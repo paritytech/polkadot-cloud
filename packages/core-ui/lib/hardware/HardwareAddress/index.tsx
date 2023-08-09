@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { Button } from "../../buttons/Button";
+import { ButtonText } from "../../buttons/ButtonText";
 import { ComponentBase } from "../../types";
 import {
   faCheck,
@@ -148,16 +148,14 @@ export const HardwareAddress = ({
       <div className="action">
         {isImported ? (
           <>
-            <Button
-              type="text"
+            <ButtonText
               iconLeft={faTimes}
               text={tRemove}
               onClick={() => openRemoveHandler(address)}
             />
           </>
         ) : (
-          <Button
-            type="text"
+          <ButtonText
             iconLeft={faPlus}
             text={tImport}
             onClick={() => openConfirmHandler(address, index)}
