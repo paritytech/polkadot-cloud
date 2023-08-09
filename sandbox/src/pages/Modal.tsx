@@ -2,8 +2,9 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { useState } from "react";
-import { ActionItem, Button } from "packages/core-ui/lib/index";
+import { Button } from "packages/core-ui/lib/buttons/Button";
 import { CodeDrawer } from "../components/CodeDrawer";
+import { ActionItem } from "packages/core-ui/lib/modal/ActionItem";
 
 export const Modal = () => {
   const [parentToggle, setParentToggle] = useState<boolean>(false);

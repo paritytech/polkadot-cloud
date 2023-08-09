@@ -3,7 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { ReactOdometer } from "packages/react-odometer/lib";
 import { useState } from "react";
-import { Button } from "packages/core-ui/lib/index";
+import { Button } from "packages/core-ui/lib/buttons/Button";
 import { CodeDrawer } from "../components/CodeDrawer";
 
 export const Odometer = () => {
