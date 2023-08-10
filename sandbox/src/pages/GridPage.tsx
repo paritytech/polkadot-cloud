@@ -13,6 +13,7 @@ export const GridPage = () => {
   };
   return (
     <>
+      <h1 className="sb-title">Grid System</h1>
       <h4>
         1 row - 12 columns with all screen size parameters sets (resize screen
         for results)
