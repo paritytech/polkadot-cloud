@@ -61,10 +61,28 @@ export const SideMenu = ({
       <section>
         <h5>Category</h5>
         <button
+          className={component === "grid" ? "selected" : undefined}
+          onClick={() => setComponent("grid")}
+        >
+          Grid
+        </button>
+        <button
           className={component === "buttons" ? "selected" : undefined}
           onClick={() => setComponent("buttons")}
         >
           Buttons
+        </button>
+        <button
+          className={component === "card" ? "selected" : undefined}
+          onClick={() => setComponent("card")}
+        >
+          Card
+        </button>
+        <button
+          className={component === "loader" ? "selected" : undefined}
+          onClick={() => setComponent("loader")}
+        >
+          Loaders
         </button>
         <button
           className={component === "modal" ? "selected" : undefined}
@@ -77,18 +95,6 @@ export const SideMenu = ({
           onClick={() => setComponent("odometer")}
         >
           Odometer
-        </button>
-        <button
-          className={component === "grid" ? "selected" : undefined}
-          onClick={() => setComponent("grid")}
-        >
-          Grid
-        </button>
-        <button
-          className={component === "card" ? "selected" : undefined}
-          onClick={() => setComponent("card")}
-        >
-          Card
         </button>
       </section>
     </div>

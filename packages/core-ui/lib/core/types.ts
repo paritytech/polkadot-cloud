@@ -45,6 +45,11 @@ export type GridProps = ComponentBase & {
   sm?: GridSizes;
 };
 
+export type LoaderProps = {
+  type?: "cube" | "line" | "dot";
+  text?: string;
+};
+
 export type SideProps = ComponentBase & {
   // whether the side menu should be open on smaller screens.
   open: boolean;
