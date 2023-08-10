@@ -11,6 +11,7 @@ export const Odometer = () => {
 
   return (
     <>
+      <h1 className="sb-title">Odometer</h1>
       <h4>React Odometer</h4>
       <div className="sb-row" style={{ alignItems: "center" }}>
         <Button

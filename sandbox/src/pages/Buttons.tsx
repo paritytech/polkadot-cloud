@@ -12,6 +12,7 @@ import { Separator } from "packages/core-ui/lib/core/Separator";
 
 export const Buttons = () => (
   <>
+    <h1 className="sb-title">Buttons</h1>
     <h4>Button Primary</h4>
     <div className="sb-row">
       <Button text="Button" iconLeft={faUser} marginRight />
