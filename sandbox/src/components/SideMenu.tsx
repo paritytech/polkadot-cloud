@@ -79,6 +79,12 @@ export const SideMenu = ({
           Card
         </button>
         <button
+          className={component === "extensions" ? "selected" : undefined}
+          onClick={() => setComponent("extensions")}
+        >
+          Extensions
+        </button>
+        <button
           className={component === "grid" ? "selected" : undefined}
           onClick={() => setComponent("grid")}
         >
