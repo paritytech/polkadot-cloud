@@ -1,5 +1,5 @@
 {
-  "name": "polkadotcloud-scripts",
+  "name": "polkadotcloud-dev-tools",
   "license": "GPL-3.0-only",
   "version": "0.1.1",
   "type": "module",
@@ -7,14 +7,14 @@
     "Ross Bulat<ross@parity.io>",
     "Nikolaos Kontakis<nikos@parity.io>"
   ],
-  "description": "Utility scripts for Polkadot Apps.",
+  "description": "Development tools for Polkadot Apps.",
   "keywords": [
     "Polkadot",
     "UI"
   ],
   "scripts": {
-    "build:mock": "node ../../.scripts/generatePackageJson.cjs -p scripts -m index.ts",
-    "build": "rollup -c && node ../../.scripts/generatePackageJson.cjs -p scripts -m index.ts",
+    "build:mock": "node ../../.scripts/generatePackageJson.cjs -p dev-tools -m index.ts",
+    "build": "rollup -c && node ../../.scripts/generatePackageJson.cjs -p dev-tools -m index.ts",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   },
   "bugs": {
