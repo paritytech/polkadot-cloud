@@ -23,79 +23,95 @@ export const SideMenu = ({
   return (
     <div className="nav">
       <section>
-        <h5>Network</h5>
-        <button
-          className={network === "polkadot" ? "selected" : undefined}
-          onClick={() => setNetwork("polkadot")}
-        >
-          Polkadot
-        </button>
-        <button
-          className={network === "kusama" ? "selected" : undefined}
-          onClick={() => setNetwork("kusama")}
-        >
-          Kusama
-        </button>
-        <button
-          className={network === "westend" ? "selected" : undefined}
-          onClick={() => setNetwork("westend")}
-        >
-          Westend
-        </button>
+        <h3>Theming</h3>
+        <section>
+          <h5>Network</h5>
+          <button
+            className={network === "polkadot" ? "selected" : undefined}
+            onClick={() => setNetwork("polkadot")}
+          >
+            Polkadot
+          </button>
+          <button
+            className={network === "kusama" ? "selected" : undefined}
+            onClick={() => setNetwork("kusama")}
+          >
+            Kusama
+          </button>
+          <button
+            className={network === "westend" ? "selected" : undefined}
+            onClick={() => setNetwork("westend")}
+          >
+            Westend
+          </button>
+        </section>
+        <section>
+          <h5>Theme</h5>
+          <button
+            className={theme === "light" ? "selected" : undefined}
+            onClick={() => setTheme("light")}
+          >
+            Light
+          </button>
+          <button
+            className={theme === "dark" ? "selected" : undefined}
+            onClick={() => setTheme("dark")}
+          >
+            Dark
+          </button>
+        </section>
       </section>
       <section>
-        <h5>Theme</h5>
-        <button
-          className={theme === "light" ? "selected" : undefined}
-          onClick={() => setTheme("light")}
-        >
-          Light
-        </button>
-        <button
-          className={theme === "dark" ? "selected" : undefined}
-          onClick={() => setTheme("dark")}
-        >
-          Dark
-        </button>
-      </section>
-      <section>
-        <h5>Category</h5>
-        <button
-          className={component === "buttons" ? "selected" : undefined}
-          onClick={() => setComponent("buttons")}
-        >
-          Buttons
-        </button>
-        <button
-          className={component === "modal" ? "selected" : undefined}
-          onClick={() => setComponent("modal")}
-        >
-          Modal
-        </button>
-        <button
-          className={component === "card" ? "selected" : undefined}
-          onClick={() => setComponent("card")}
-        >
-          Card
-        </button>
-        <button
-          className={component === "extensions" ? "selected" : undefined}
-          onClick={() => setComponent("extensions")}
-        >
-          Extensions
-        </button>
-        <button
-          className={component === "grid" ? "selected" : undefined}
-          onClick={() => setComponent("grid")}
-        >
-          Grid
-        </button>
-        <button
-          className={component === "odometer" ? "selected" : undefined}
-          onClick={() => setComponent("odometer")}
-        >
-          Odometer
-        </button>
+        <h3>Category</h3>
+        <section>
+          <h5>Layout (core)</h5>
+          <button
+            className={component === "grid" ? "selected" : undefined}
+            onClick={() => setComponent("grid")}
+          >
+            Grid
+          </button>
+
+          <button
+            className={component === "modal" ? "selected" : undefined}
+            onClick={() => setComponent("modal")}
+          >
+            Modal
+          </button>
+          <button
+            className={component === "card" ? "selected" : undefined}
+            onClick={() => setComponent("card")}
+          >
+            Card
+          </button>
+        </section>
+        <section>
+          <h5>Components</h5>
+          <button
+            className={component === "buttons" ? "selected" : undefined}
+            onClick={() => setComponent("buttons")}
+          >
+            Buttons
+          </button>
+          <button
+            className={component === "loader" ? "selected" : undefined}
+            onClick={() => setComponent("loader")}
+          >
+            Loaders
+          </button>
+          <button
+            className={component === "odometer" ? "selected" : undefined}
+            onClick={() => setComponent("odometer")}
+          >
+            Odometer
+          </button>
+          <button
+            className={component === "extensions" ? "selected" : undefined}
+            onClick={() => setComponent("extensions")}
+          >
+            Extensions
+          </button>
+        </section>
       </section>
     </div>
   );

@@ -8,6 +8,7 @@ import { Odometer } from "./pages/Odometer";
 import { Modal } from "./pages/Modal";
 import { GridPage } from "./pages/GridPage";
 import { CardPage } from "./pages/CardPage";
+import { LoadersPage } from "./pages/LoadersPage";
 import { Extensions } from "./pages/Extensions";
 
 export const App = () => {
@@ -32,6 +33,8 @@ export const App = () => {
         return <GridPage />;
       case "card":
         return <CardPage />;
+      case "loader":
+        return <LoadersPage />;
       default:
         return <Buttons />;
     }
