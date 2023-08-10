@@ -73,10 +73,10 @@ export const SideMenu = ({
           Modal
         </button>
         <button
-          className={component === "odometer" ? "selected" : undefined}
-          onClick={() => setComponent("odometer")}
+          className={component === "card" ? "selected" : undefined}
+          onClick={() => setComponent("card")}
         >
-          Odometer
+          Card
         </button>
         <button
           className={component === "grid" ? "selected" : undefined}
@@ -85,10 +85,10 @@ export const SideMenu = ({
           Grid
         </button>
         <button
-          className={component === "card" ? "selected" : undefined}
-          onClick={() => setComponent("card")}
+          className={component === "odometer" ? "selected" : undefined}
+          onClick={() => setComponent("odometer")}
         >
-          Card
+          Odometer
         </button>
       </section>
     </div>
