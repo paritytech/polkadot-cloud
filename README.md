@@ -2,7 +2,7 @@
 
 # Polkadot Cloud
 
-A Monorepo of Polkadot Assets for Front End Dapps.
+A Monorepo and Platform Hosting Assets for Polkadot Dapps.
 
 ## Package Directory
 
