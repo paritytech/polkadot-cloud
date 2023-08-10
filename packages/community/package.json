@@ -1,7 +1,7 @@
 {
   "name": "polkadotcloud-community",
   "license": "GPL-3.0-only",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "type": "module",
   "contributors": [
     "Ross Bulat<ross@parity.io>",
@@ -18,7 +18,7 @@
   "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
   "scripts": {
     "build:mock": "node ../../.scripts/generatePackageJson.cjs -p community",
-    "build": "cp -R lib dist && node ../../.scripts/generatePackageJson.cjs -p community",
+    "build": "rm -r dist && mkdir -p dist && cp -R lib/* dist && node ../../.scripts/generatePackageJson.cjs -p community",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   }
 }
