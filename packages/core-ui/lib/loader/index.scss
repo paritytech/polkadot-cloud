@@ -265,7 +265,7 @@ SPDX-License-Identifier: GPL-3.0-only */
       content: "";
       width: 100%;
       height: 100%;
-      background-color: var(--text-color-tertiary);
+      background-color: var(--network-color-primary);
       border-radius: inherit;
       animation: loading2 3.5s ease both infinite;
     }
@@ -326,9 +326,9 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 // Dots styling
 .dot_loading {
-  // $colors: --background-default, --text-color-invert, --text-color-primary,
-  //   --text-color-secondary, --text-color-tertiary;
-  $colors: #7ef9ff, #89cff0, #4682b4, #0f52ba, #000080;
+  $colors: var(--background-default), var(--text-color-primary),
+    var(--text-color-secondary), var(--text-color-tertiary),
+    var(--network-color-primary);
 
   display: flex;
 

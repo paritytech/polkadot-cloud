@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { LoaderProps } from "../types";
+import { LoaderProps } from "../core/types";
 import "./index.scss";
 
 export const Loader = ({ type, text }: LoaderProps) => {
@@ -30,7 +30,7 @@ export const Loader = ({ type, text }: LoaderProps) => {
           </div>
         </div>
       );
-    case "dot":
+    case "dots":
       return (
         <div className="dot_loading">
           <div className="dot"></div>

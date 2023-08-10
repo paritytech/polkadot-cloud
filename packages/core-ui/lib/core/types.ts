@@ -46,7 +46,7 @@ export type GridProps = ComponentBase & {
 };
 
 export type LoaderProps = {
-  type?: "cube" | "line" | "dot";
+  type?: "cube" | "line" | "dots";
   text?: string;
 };
 
