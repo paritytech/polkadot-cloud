@@ -24,6 +24,8 @@ export const CardPage = () => {
   };
   return (
     <>
+      <h1 className="sb-title">Cards</h1>
+
       <h4>Card by itself - plain</h4>
       <Card>Just a card</Card>
       <CodeDrawer>
