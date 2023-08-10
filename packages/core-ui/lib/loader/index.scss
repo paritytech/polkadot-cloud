@@ -12,8 +12,8 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 // Cube styling
 *,
-*:after,
-*:before {
+*::after,
+*::before {
   box-sizing: border-box;
   transform-style: preserve-3d;
 }
@@ -38,6 +38,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   10% {
     transform: scaleX(1) scaleY(1);
   }
+
   35%,
   100% {
     transform: scaleX(0.5) scaleY(0.5);
@@ -50,7 +51,6 @@ SPDX-License-Identifier: GPL-3.0-only */
   bottom: 0;
   aspect-ratio: 1;
   transform-origin: 50% 50%;
-  background: hsl(210 80% 50% / 0.2);
   transform: rotateX(90deg)
     translate3d(0, 0, calc((var(--size) * (var(--coefficient) * -0.5)) - 1px))
     scale(0.96);
@@ -63,6 +63,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 .loader {
   --depth: var(--size);
   --color: var(--network-color-primary);
+
   width: calc(var(--depth) * var(--coefficient));
   aspect-ratio: 1;
   transform-origin: 50% 50%;
@@ -83,19 +84,24 @@ SPDX-License-Identifier: GPL-3.0-only */
   60% {
     scale: 1 1 1;
   }
+
   10%,
   35% {
     scale: 1.2 0.8 1.2;
   }
+
   25% {
     scale: 0.8 1.2 0.8;
   }
+
   70% {
     scale: 1 1 2;
   }
+
   80% {
     scale: 2 1 2;
   }
+
   90%,
   100% {
     scale: 2 2 2;
@@ -111,6 +117,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   100% {
     opacity: 1;
   }
+
   25% {
     opacity: 0.5;
   }
@@ -121,11 +128,13 @@ SPDX-License-Identifier: GPL-3.0-only */
   10% {
     rotate: 0deg;
   }
+
   30%,
   100% {
     rotate: -360deg;
   }
 }
+
 @keyframes jump {
   0%,
   10%,
@@ -133,6 +142,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   50% {
     translate: 0 0;
   }
+
   25% {
     translate: 0 -150%;
   }
@@ -144,45 +154,56 @@ SPDX-License-Identifier: GPL-3.0-only */
   height: 100%;
   position: relative;
 }
-.cuboid__side {
+
+.cuboid-side {
   background: var(--color);
   position: absolute;
 }
-.cuboid__side:nth-of-type(1) {
+
+.cuboid-side:nth-of-type(1) {
   --b: 1.1;
+
   height: calc(var(--depth, 20) * var(--coefficient));
   width: 100%;
   top: 0;
   transform: translate(0, -50%) rotateX(90deg);
 }
-.cuboid__side:nth-of-type(2) {
+
+.cuboid-side:nth-of-type(2) {
   --b: 0.9;
   --color: var(--text-color-tertiary);
+
   height: 100%;
   width: calc(var(--depth, 20) * var(--coefficient));
   top: 50%;
   right: 0;
   transform: translate(50%, -50%) rotateY(90deg);
 }
-.cuboid__side:nth-of-type(3) {
+
+.cuboid-side:nth-of-type(3) {
   --b: 1;
+
   width: 100%;
   height: calc(var(--depth, 20) * var(--coefficient));
   bottom: 0;
   transform: translate(0%, 50%) rotateX(90deg);
 }
-.cuboid__side:nth-of-type(4) {
+
+.cuboid-side:nth-of-type(4) {
   --b: 1;
   --color: var(--text-color-tertiary);
+
   height: 100%;
   width: calc(var(--depth, 20) * var(--coefficient));
   left: 0;
   top: 50%;
   transform: translate(-50%, -50%) rotateY(90deg);
 }
-.cuboid__side:nth-of-type(5) {
+
+.cuboid-side:nth-of-type(5) {
   --b: 1;
   --color: var(--text-color-secondary);
+
   height: 100%;
   width: 100%;
   transform: translate3d(
@@ -193,8 +214,10 @@ SPDX-License-Identifier: GPL-3.0-only */
   top: 0;
   left: 0;
 }
-.cuboid__side:nth-of-type(6) {
+
+.cuboid-side:nth-of-type(6) {
   --b: 1.2;
+
   height: 100%;
   width: 100%;
   transform: translate3d(
@@ -208,7 +231,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 }
 
 // Line styling
-.line_loading {
+.line-loading {
   width: 80px;
   height: 50px;
   position: relative;
@@ -225,7 +248,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     @keyframes text {
       0% {
         letter-spacing: 1px;
-        transform: translateX(0px);
+        transform: translateX(0);
       }
 
       40% {
@@ -240,15 +263,16 @@ SPDX-License-Identifier: GPL-3.0-only */
 
       90% {
         letter-spacing: 2px;
-        transform: translateX(0px);
+        transform: translateX(0);
       }
 
       100% {
         letter-spacing: 1px;
-        transform: translateX(0px);
+        transform: translateX(0);
       }
     }
   }
+
   span {
     background-color: var(--text-color-primary);
     border-radius: 50px;
@@ -258,9 +282,9 @@ SPDX-License-Identifier: GPL-3.0-only */
     bottom: 0;
     position: absolute;
     transform: translateX(64px);
-    animation: line_loading 3.5s ease both infinite;
+    animation: line-loading 3.5s ease both infinite;
 
-    &:before {
+    &::before {
       position: absolute;
       content: "";
       width: 100%;
@@ -270,15 +294,15 @@ SPDX-License-Identifier: GPL-3.0-only */
       animation: loading2 3.5s ease both infinite;
     }
 
-    @keyframes line_loading {
+    @keyframes line-loading {
       0% {
         width: 16px;
-        transform: translateX(0px);
+        transform: translateX(0);
       }
 
       40% {
         width: 100%;
-        transform: translateX(0px);
+        transform: translateX(0);
       }
 
       80% {
@@ -288,17 +312,18 @@ SPDX-License-Identifier: GPL-3.0-only */
 
       90% {
         width: 100%;
-        transform: translateX(0px);
+        transform: translateX(0);
       }
 
       100% {
         width: 16px;
-        transform: translateX(0px);
+        transform: translateX(0);
       }
     }
+
     @keyframes loading2 {
       0% {
-        transform: translateX(0px);
+        transform: translateX(0);
         width: 16px;
       }
 
@@ -309,15 +334,16 @@ SPDX-License-Identifier: GPL-3.0-only */
 
       80% {
         width: 100%;
-        transform: translateX(0px);
+        transform: translateX(0);
       }
 
       90% {
         width: 80%;
         transform: translateX(15px);
       }
+
       100% {
-        transform: translateX(0px);
+        transform: translateX(0);
         width: 16px;
       }
     }
@@ -325,7 +351,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 }
 
 // Dots styling
-.dot_loading {
+.dots-loading {
   $colors: var(--background-default), var(--text-color-primary),
     var(--text-color-secondary), var(--text-color-tertiary),
     var(--network-color-primary);
@@ -346,12 +372,12 @@ SPDX-License-Identifier: GPL-3.0-only */
       height: 100%;
       background: inherit;
       border-radius: inherit;
-      animation: dot_wave 2s ease-out infinite;
+      animation: dot-wave 2s ease-out infinite;
     }
 
     @for $i from 1 through 5 {
       &:nth-child(#{$i}) {
-        background: nth($colors, $i);
+        background: list.nth($colors, $i);
 
         &::before {
           animation-delay: $i * 0.2s;
@@ -361,7 +387,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   }
 }
 
-@keyframes dot_wave {
+@keyframes dot-wave {
   50%,
   75% {
     transform: scale(2.5);

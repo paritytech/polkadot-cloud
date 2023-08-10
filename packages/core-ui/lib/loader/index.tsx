@@ -16,12 +16,12 @@ export const Loader = ({ type, text }: LoaderProps) => {
                 <div className="scaler">
                   <div className="loader">
                     <div className="cuboid">
-                      <div className="cuboid__side"></div>
-                      <div className="cuboid__side"></div>
-                      <div className="cuboid__side"></div>
-                      <div className="cuboid__side"></div>
-                      <div className="cuboid__side"></div>
-                      <div className="cuboid__side"></div>
+                      <div className="cuboid-side"></div>
+                      <div className="cuboid-side"></div>
+                      <div className="cuboid-side"></div>
+                      <div className="cuboid-side"></div>
+                      <div className="cuboid-side"></div>
+                      <div className="cuboid-side"></div>
                     </div>
                   </div>
                 </div>
@@ -32,7 +32,7 @@ export const Loader = ({ type, text }: LoaderProps) => {
       );
     case "dots":
       return (
-        <div className="dot_loading">
+        <div className="dots-loading">
           <div className="dot"></div>
           <div className="dot"></div>
           <div className="dot"></div>
@@ -43,7 +43,7 @@ export const Loader = ({ type, text }: LoaderProps) => {
     case "line":
     default:
       return (
-        <div className="line_loading">
+        <div className="line-loading">
           <p>{text}</p>
           <span></span>
         </div>
