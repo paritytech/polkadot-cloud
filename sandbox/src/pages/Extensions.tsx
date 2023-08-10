@@ -17,6 +17,7 @@ import { ReactComponent as PolkadotJsSVG } from "packages/community/lib/extensio
 import { ReactComponent as PolkaGateSVG } from "packages/community/lib/extensions/svg/polkagate.svg";
 import { ReactComponent as SubwalletJsSVG } from "packages/community/lib/extensions/svg/subwalletjs.svg";
 import { ReactComponent as TalismanSVG } from "packages/community/lib/extensions/svg/talisman.svg";
+import { CodeDrawer } from "../components/CodeDrawer";
 
 export const Extensions = () => (
   <>
@@ -30,6 +31,11 @@ export const Extensions = () => (
         <EnkryptSVG />
       </div>
     </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<Enkrypt /> <EnkryptSVG />`}</p>
+      </code>
+    </CodeDrawer>
     <Separator />
 
     <h4>Fearless Wallet: TSX / SVG</h4>
@@ -41,6 +47,11 @@ export const Extensions = () => (
         <FearlessWalletSVG />
       </div>
     </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<FearlessWallet /> <FearlessWalletSVG />`}</p>
+      </code>
+    </CodeDrawer>
     <Separator />
 
     <h4>Nova Wallet: TSX / SVG</h4>
@@ -52,6 +63,11 @@ export const Extensions = () => (
         <NovaWalletSVG />
       </div>
     </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<NovaWallet /> <NovaWalletSVG />`}</p>
+      </code>
+    </CodeDrawer>
     <Separator />
 
     <h4>Polkadot JS: TSX / SVG</h4>
@@ -63,6 +79,11 @@ export const Extensions = () => (
         <PolkadotJsSVG />
       </div>
     </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<PolkadotJS /> <PolkadotJsSVG />`}</p>
+      </code>
+    </CodeDrawer>
     <Separator />
 
     <h4>PolkaGate: TSX / SVG</h4>
@@ -74,6 +95,11 @@ export const Extensions = () => (
         <PolkaGateSVG />
       </div>
     </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<PolkaGate /> <PolkaGateSVG />`}</p>
+      </code>
+    </CodeDrawer>
     <Separator />
 
     <h4>SubwalletJS: TSX / SVG</h4>
@@ -85,6 +111,11 @@ export const Extensions = () => (
         <SubwalletJsSVG />
       </div>
     </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<SubwalletJS /> <SubwalletJsSVG />`}</p>
+      </code>
+    </CodeDrawer>
     <Separator />
 
     <h4>Talisman: TSX / SVG</h4>
@@ -95,6 +126,11 @@ export const Extensions = () => (
       <div className="svg-box">
         <TalismanSVG />
       </div>
+      <CodeDrawer>
+        <code>
+          <p>{`<Talisman /> <TalismanSVG />`}</p>
+        </code>
+      </CodeDrawer>
     </div>
   </>
 );
