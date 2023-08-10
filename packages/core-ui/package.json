@@ -1,7 +1,7 @@
 {
   "name": "polkadotcloud-core-ui",
   "license": "GPL-3.0-only",
-  "version": "0.3.86",
+  "version": "0.3.87",
   "type": "module",
   "contributors": [
     "Ross Bulat<ross@parity.io>",

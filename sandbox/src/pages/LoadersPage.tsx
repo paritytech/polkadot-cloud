@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { Loader } from "packages/core-ui/lib/loader";
+import { Loader } from "packages/core-ui/lib/loader/Loader";
 import { CodeDrawer } from "../components/CodeDrawer";
 import { Separator } from "packages/core-ui/lib/core/Separator";
 
