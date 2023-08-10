@@ -105,6 +105,12 @@ export const SideMenu = ({
           >
             Odometer
           </button>
+          <button
+            className={component === "extensions" ? "selected" : undefined}
+            onClick={() => setComponent("extensions")}
+          >
+            Extensions
+          </button>
         </section>
       </section>
     </div>

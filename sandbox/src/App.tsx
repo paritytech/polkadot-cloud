@@ -9,6 +9,7 @@ import { Modal } from "./pages/Modal";
 import { GridPage } from "./pages/GridPage";
 import { CardPage } from "./pages/CardPage";
 import { LoadersPage } from "./pages/LoadersPage";
+import { Extensions } from "./pages/Extensions";
 
 export const App = () => {
   // store the current theme
@@ -26,6 +27,8 @@ export const App = () => {
         return <Odometer />;
       case "modal":
         return <Modal />;
+      case "extensions":
+        return <Extensions />;
       case "grid":
         return <GridPage />;
       case "card":
