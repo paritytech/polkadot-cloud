@@ -20,6 +20,3 @@ README.md
 *.tsconfig.json
 *.tsbuildinfo
 *.woff2
-
-# react-odometer
-odometer.js
