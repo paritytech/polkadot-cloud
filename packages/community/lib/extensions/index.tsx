@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { ExtensionConfig } from "../../types";
+import { ExtensionConfig } from "../types";
 import { Enkrypt } from "./jsx/Enkrypt";
 import { FearlessWallet } from "./jsx/FearlessWallet";
 import { PolkadotJS } from "./jsx/PolkadotJS";

@@ -13,12 +13,10 @@
 *.html
 *.webmanifest
 dist
+build
 LICENSE
 postcss.config.js
 README.md
 *.tsconfig.json
 *.tsbuildinfo
 *.woff2
-
-# react-odometer
-odometer.js

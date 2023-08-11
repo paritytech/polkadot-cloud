@@ -4,9 +4,8 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { useState } from "react";
 import { Buttons } from "./pages/Buttons";
 import { SideMenu } from "./components/SideMenu";
-import { Statistics } from "./pages/Statistics";
-import { Odometer } from "./pages/Odometer";
 import { Modal } from "./pages/Modal";
+import { Statistics } from "./pages/Statistics";
 import { GridPage } from "./pages/GridPage";
 import { CardPage } from "./pages/CardPage";
 import { LoadersPage } from "./pages/LoadersPage";
@@ -14,21 +13,18 @@ import { Extensions } from "./pages/Extensions";
 
 export const App = () => {
   // store the current theme
-  const [theme, setTheme] = useState<string>("light");
+  const [mode, setMode] = useState<string>("light");
 
   // store the current network
-  const [network, setNetwork] = useState<string>("polkadot");
+  const [theme, setTheme] = useState<string>("polkadot-relay");
 
   // store the visible Component
   const [component, setComponent] = useState<string>("buttons");
 
   const getComponent = (key: string) => {
     switch (key) {
-      case "statistics": {
+      case "statistics":
         return <Statistics />;
-      }
-      case "odometer":
-        return <Odometer />;
       case "modal":
         return <Modal />;
       case "extensions":
@@ -45,18 +41,18 @@ export const App = () => {
   };
 
   return (
-    <>
-      <main className={`theme-${network}-relay theme-${theme}`}>
-        <SideMenu
-          theme={theme}
-          setTheme={setTheme}
-          network={network}
-          setNetwork={setNetwork}
-          component={component}
-          setComponent={setComponent}
-        />
+    <div className={`main theme-${theme} theme-${mode}`}>
+      <SideMenu
+        mode={mode}
+        setMode={setMode}
+        theme={theme}
+        setTheme={setTheme}
+        component={component}
+        setComponent={setComponent}
+      />
+      <div className="main">
         <div className="body">{getComponent(component)}</div>
-      </main>
-    </>
+      </div>
+    </div>
   );
 };
