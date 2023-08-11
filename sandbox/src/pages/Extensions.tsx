@@ -126,11 +126,11 @@ export const Extensions = () => (
       <div className="svg-box">
         <TalismanSVG />
       </div>
-      <CodeDrawer>
-        <code>
-          <p>{`<Talisman /> <TalismanSVG />`}</p>
-        </code>
-      </CodeDrawer>
     </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<Talisman /> <TalismanSVG />`}</p>
+      </code>
+    </CodeDrawer>
   </>
 );
