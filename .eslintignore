@@ -13,6 +13,7 @@
 *.html
 *.webmanifest
 dist
+build
 LICENSE
 postcss.config.js
 README.md
