@@ -1,10 +1,10 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { Grid } from "packages/core-ui/lib/core/Grid";
+import { Grid } from "../../../packages/core-ui/lib/core/Grid";
 import { CodeDrawer } from "../components/CodeDrawer";
-import { Separator } from "packages/core-ui/lib/core/Separator";
-import { Card } from "packages/core-ui/lib/core/Card";
+import { Separator } from "../../../packages/core-ui/lib/core/Separator";
+import { Card } from "../../../packages/core-ui/lib/core/Card";
 
 export const CardPage = () => {
   const separatorStyle = {
