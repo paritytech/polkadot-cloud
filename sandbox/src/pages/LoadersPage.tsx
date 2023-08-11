@@ -8,7 +8,9 @@ import { Separator } from "../../../packages/core-ui/lib/core/Separator";
 export const LoadersPage = () => {
   return (
     <>
-      <h1 className="sb-title">Loaders</h1>
+      <div className="sb-head">
+        <h1>Loaders</h1>
+      </div>
       <h4>Line loader (default if no `type` is passed)</h4>
       <div style={{ height: "17rem", padding: "7rem" }}>
         <Loader type="line" text="loading..." />

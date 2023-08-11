@@ -11,7 +11,9 @@ export const Modal = () => {
 
   return (
     <>
-      <h1 className="sb-title">Modal Components</h1>
+      <div className="sb-head">
+        <h1>Modal Components</h1>
+      </div>
       <h4>Action Item</h4>
       <div className="sb-row">
         <ActionItem text="Some Action" />

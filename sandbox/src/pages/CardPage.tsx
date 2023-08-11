@@ -24,7 +24,9 @@ export const CardPage = () => {
   };
   return (
     <>
-      <h1 className="sb-title">Cards</h1>
+      <div className="sb-head">
+        <h1>Cards</h1>
+      </div>
 
       <h4>Card by itself - plain</h4>
       <Card>Just a card</Card>

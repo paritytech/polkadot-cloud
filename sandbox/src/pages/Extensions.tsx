@@ -21,7 +21,9 @@ import { CodeDrawer } from "../components/CodeDrawer";
 
 export const Extensions = () => (
   <>
-    <h1 className="sb-title">Extensions</h1>
+    <div className="sb-head">
+      <h1>Extensions</h1>
+    </div>
     <h4>Enkrypt: TSX / SVG</h4>
     <div className="sb-row">
       <div className="svg-box">
