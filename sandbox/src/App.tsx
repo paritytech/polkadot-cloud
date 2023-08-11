@@ -13,10 +13,10 @@ import { Extensions } from "./pages/Extensions";
 
 export const App = () => {
   // store the current theme
-  const [theme, setTheme] = useState<string>("light");
+  const [mode, setMode] = useState<string>("light");
 
   // store the current network
-  const [network, setNetwork] = useState<string>("polkadot");
+  const [theme, setTheme] = useState<string>("polkadot-relay");
 
   // store the visible Component
   const [component, setComponent] = useState<string>("buttons");
@@ -41,18 +41,18 @@ export const App = () => {
   };
 
   return (
-    <>
-      <main className={`theme-${network}-relay theme-${theme}`}>
-        <SideMenu
-          theme={theme}
-          setTheme={setTheme}
-          network={network}
-          setNetwork={setNetwork}
-          component={component}
-          setComponent={setComponent}
-        />
+    <div className={`main theme-${theme} theme-${mode}`}>
+      <SideMenu
+        mode={mode}
+        setMode={setMode}
+        theme={theme}
+        setTheme={setTheme}
+        component={component}
+        setComponent={setComponent}
+      />
+      <div className="main">
         <div className="body">{getComponent(component)}</div>
-      </main>
-    </>
+      </div>
+    </div>
   );
 };
