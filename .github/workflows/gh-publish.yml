@@ -2,7 +2,7 @@ name: GitHub Pages Publish
 
 on:
   push:
-    branches: [main]
+    branches: [rb-test-include]
 
 jobs:
   gh-deploy:
