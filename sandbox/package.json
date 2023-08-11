@@ -11,8 +11,7 @@
     "clear": "rm -rf node_modules",
     "dev": "vite",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 && prettier --check .",
-    "lint:fix": "eslint . --ext ts,tsx --fix && prettier --write .",
-    "build:pages": "tsc && vite build --base '/polkadot-cloud/'"
+    "lint:fix": "eslint . --ext ts,tsx --fix && prettier --write ."
   },
   "devDependencies": {
     "@types/react-dom": "^18.2.7",

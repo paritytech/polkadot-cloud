@@ -11,6 +11,7 @@
   "scripts": {
     "build:mock": "npm run build:mock --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
+    "build:pages": "cd sandbox && tsc && vite build --base '/polkadot-cloud/'",
     "clear": "npm run --workspaces clear && rm -rf node_modules",
     "lint": "eslint './**' --fix && npx prettier --write . && npx stylelint '**/*.scss' --fix",
     "sandbox": "npm run dev -w sandbox"
