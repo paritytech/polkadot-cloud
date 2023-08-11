@@ -4,7 +4,6 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { useState } from "react";
 import { Buttons } from "./pages/Buttons";
 import { SideMenu } from "./components/SideMenu";
-import { Odometer } from "./pages/Odometer";
 import { Modal } from "./pages/Modal";
 import { GridPage } from "./pages/GridPage";
 import { CardPage } from "./pages/CardPage";
@@ -23,8 +22,6 @@ export const App = () => {
 
   const getComponent = (key: string) => {
     switch (key) {
-      case "odometer":
-        return <Odometer />;
       case "modal":
         return <Modal />;
       case "extensions":

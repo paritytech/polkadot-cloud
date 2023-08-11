@@ -117,12 +117,6 @@ export const SideMenu = ({
             Loaders
           </button>
           <button
-            className={`lg${component === "odometer" ? ` selected` : ``}`}
-            onClick={() => setComponent("odometer")}
-          >
-            Odometer
-          </button>
-          <button
             className={`lg${component === "extensions" ? ` selected` : ``}`}
             onClick={() => setComponent("extensions")}
           >
