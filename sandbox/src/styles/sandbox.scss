@@ -10,16 +10,76 @@ SPDX-License-Identifier: GPL-3.0-only */
   --sandbox-active-color: rgb(211 48 121);
 }
 
-main {
+.main {
   background: var(--background-default);
+  overflow: auto;
+  max-height: 100vh;
+  width: 100%;
+}
+
+.menu {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  max-height: 100vh;
+  width: 10rem;
+  z-index: 2;
+
+  .icon {
+    padding-left: 1.5rem;
+    color: var(--network-color-primary);
+    width: 100%;
+    height: 6rem;
+    margin: 0.75rem 0;
+
+    > svg {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  > section {
+    padding-left: 2rem;
+  }
+
+  section {
+    font-size: 1.05rem;
+    margin-top: 1.25rem;
+
+    h5 {
+      font-family: InterSemiBold, sans-serif;
+      font-weight: 600;
+      font-size: inherit;
+      text-decoration: none;
+      display: block;
+      margin: 0.75rem 0;
+    }
+
+    > button {
+      font-size: inherit;
+      text-decoration: none;
+      display: block;
+      line-height: 2.25rem;
+
+      &.lg {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+      }
+
+      &.selected {
+        color: var(--sandbox-active-color);
+      }
+    }
+  }
 }
 
 .body {
   min-height: 100vh;
   padding: 1rem 1.5rem 3rem 0;
-  width: 100%;
-  max-width: 900px;
   margin: 0 0 0 15rem;
+  max-width: 900px;
+  width: 100%;
 
   /* We need the body not to over come sidebar */
   @media (min-width: (v.$page-width-medium-threshold + 26px)) {
@@ -32,7 +92,8 @@ main {
 }
 
 .sb-title {
-  margin: 3rem 0;
+  font-size: 2.1rem;
+  margin: 5rem 0 2.5rem 0;
 }
 
 .sb-row {
@@ -73,43 +134,5 @@ main {
   > .show {
     max-height: 500px;
     transition: max-height 0.35s ease-in;
-  }
-}
-
-.nav {
-  border-right: 1px solid var(--border-primary-color);
-  background-color: var(--background-primary);
-  width: 10rem;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow: auto;
-  z-index: 1;
-  padding-left: 1.5rem;
-
-  section {
-    font-size: 1.05rem;
-    margin: 1.25rem 0;
-
-    h5 {
-      font-family: InterSemiBold, sans-serif;
-      font-weight: 600;
-      font-size: inherit;
-      text-decoration: none;
-      display: block;
-      margin: 0.75rem 0;
-    }
-
-    > button {
-      font-size: inherit;
-      text-decoration: none;
-      display: block;
-      line-height: 2.25rem;
-
-      &.selected {
-        color: var(--sandbox-active-color);
-      }
-    }
   }
 }
