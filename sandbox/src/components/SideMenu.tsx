@@ -109,6 +109,7 @@ export const SideMenu = ({
           </button>
         </section>
         <section>
+          <h5>Standalone</h5>
           <button
             className={`lg${component === "loader" ? ` selected` : ``}`}
             onClick={() => setComponent("loader")}
