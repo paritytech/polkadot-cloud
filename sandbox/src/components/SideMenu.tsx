@@ -75,8 +75,8 @@ export const SideMenu = ({
         >
           Dark
         </button>
+        <Separator />
       </section>
-      <Separator />
       <section>
         <h3>Core UI</h3>
         <section>
