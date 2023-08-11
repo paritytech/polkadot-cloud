@@ -1,16 +1,19 @@
 // Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
-const fs = require("fs");
-const { join } = require("path");
-const prettier = require("prettier");
-const { exit } = require("process");
+import fs from "fs";
+import { join } from "path";
+import prettier from "prettier";
+import { exit } from "process";
+import minimist from "minimist";
+
 const packagesDir = join(__dirname, "..", "packages");
 
-// // Scope of packages to be published.
+// Scope of packages to be published.
 const scope = "@polkadotcloud";
 
-const argv = require("minimist")(process.argv.slice(2));
+const argv = minimist(process.argv.slice(2));
+
 const { p: packageName, m: main } = argv;
 
 if (!packageName) {
