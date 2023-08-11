@@ -13,6 +13,12 @@ export default defineConfig({
   base: "/",
   server: {
     port: 5174,
+    fs: {
+      strict: false,
+    },
+  },
+  build: {
+    outDir: "build",
   },
   plugins: [
     react(),
