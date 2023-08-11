@@ -1,0 +1,25 @@
+*.css
+*.scss
+*.svg
+*.png
+*.json
+*.log
+*.lock
+*.md
+*.ico
+*.ttf
+*.xml
+*.txt
+*.html
+*.webmanifest
+dist
+build
+LICENSE
+postcss.config.js
+README.md
+*.tsconfig.json
+*.tsbuildinfo
+*.woff2
+
+# react-odometer
+odometer.js
