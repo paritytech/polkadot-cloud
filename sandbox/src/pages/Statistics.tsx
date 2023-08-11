@@ -13,94 +13,63 @@ export const Statistics = () => {
   const [percentage, setPercentage] = useState<number | undefined>(42);
   return (
     <>
-      <h4>Pie Chart - Default</h4>
-      <div className="row">
-        <Pie title="Example" size={10} perc={42} />
+      <h4>Pie Chart - (Adjusting to wrapped component`s size)</h4>
+      <div className="row" style={{ width: "100px" }}>
+        <Pie perc={42} />
       </div>
       <CodeDrawer>
         <code>
-          <p>{`<Pie title="Example" size={10} perc={42} />`}</p>
+          <p>{`<div style={{ width: "100px" }}>`}</p>
+          <p>{`<Pie perc={42} />`}</p>
+          <p>{`</div>`}</p>
         </code>
       </CodeDrawer>
 
-      <h4>Pie Chart - Fixed Title</h4>
+      <h4>Pie Chart - different size with surrounding blocks</h4>
       <div className="row">
-        <Pie title="Example" size={10} perc={42} fixedTitle />
+        <div
+          style={{
+            width: "150px",
+            display: "block",
+            margin: "0 10rem",
+            float: "left",
+            border: "1px solid #000",
+          }}
+        ></div>
+        <div style={{ width: "180px", display: "block", float: "left" }}>
+          <Pie perc={92} />
+        </div>
+        <div style={{ width: "100px", display: "block", float: "left" }}>
+          Something else
+        </div>
       </div>
       <CodeDrawer>
         <code>
-          <p>{`<Pie title="Example" size={10} perc={42} />`}</p>
+          <p>{`<div className="row">`}</p>
+          <p>{`<div style={{ width: "150px", display: "block", margin: "0 10rem", float: "left", border: "1px solid #000", }}></div>`}</p>
+          <p>{`<div style={{ width: "180px", display: "block", float: "left" }}>`}</p>
+          <p>{`<Pie perc={92} /></div>`}</p>
+          <p>{`<div style={{ width: "100px", display: "block", float: "left" }}>Something else</div>`}</p>
+          <p>{`</div>`}</p>
         </code>
       </CodeDrawer>
 
-      <h4>Pie Chart - Title position (top, right, bottom, left)</h4>
+      <h4>Pie Chart - interactive percentage</h4>
       <div className="row" style={{ alignItems: "center" }}>
-        <Pie
-          title="Example"
-          size={10}
-          perc={percentage}
-          fixedTitle={showTitle ? true : false}
-          titlePosition={titlePos}
-        />
+        <div style={{ width: "50%", float: "left" }}>
+          <Pie perc={percentage} />
+        </div>
         {/* ShowCase properties React-style */}
         <div
           style={{
+            width: "25%",
+            float: "left",
             marginLeft: "10rem",
             padding: "1rem",
             border: "1px solid var(--border-primary-color)",
             backgroundColor: "var(--background-primary)",
           }}
         >
-          <div style={{ margin: "1rem 0" }}>
-            <input
-              type="radio"
-              checked={showTitle}
-              onChange={() => setShowTitle(true)}
-            />
-            <label style={{ color: "var(--network-color-primary)" }}>
-              Always-On Title
-            </label>
-            <input
-              type="radio"
-              checked={!showTitle}
-              onChange={() => setShowTitle(false)}
-            />
-            <label style={{ color: "var(--network-color-primary)" }}>
-              Auto-Hiding Title
-            </label>
-          </div>
-          <div style={{ margin: "1rem 0" }}>
-            <input
-              type="radio"
-              checked={titlePos === "top"}
-              onChange={() => setTitlePos("top")}
-            />
-            <label style={{ color: "var(--network-color-primary)" }}>Top</label>
-            <input
-              type="radio"
-              checked={titlePos === "right"}
-              onChange={() => setTitlePos("right")}
-            />
-            <label style={{ color: "var(--network-color-primary)" }}>
-              Right
-            </label>
-            <input
-              type="radio"
-              checked={titlePos === "bottom"}
-              onChange={() => setTitlePos("bottom")}
-            />
-            <label style={{ color: "var(--network-color-primary)" }}>
-              Bottom
-            </label>
-            <input
-              type="radio"
-              checked={titlePos === "left"}
-              onChange={() => setTitlePos("left")}
-            />
-            <label style={{ color: "var(--network-color-primary)" }}>
-              Left
-            </label>
-          </div>
           <div>
             <label style={{ color: "var(--network-color-primary)" }}>
               Chart percentage
@@ -111,7 +80,7 @@ export const Statistics = () => {
               min={0}
               checked={titlePos === "left"}
               defaultValue={percentage}
-              value={percentage}
+              value={`${percentage}%`}
               onChange={(e) => {
                 const val = parseInt(e.target.value);
                 if (isNaN(val)) {
@@ -126,11 +95,7 @@ export const Statistics = () => {
       </div>
       <CodeDrawer>
         <code>
-          <p>{`<Pie title="Example" size={10} perc={${percentage}} ${
-            showTitle ? "fixedTitle " : ""
-          }
-          titlePosition="${titlePos}"
-          />`}</p>
+          <p>{`<Pie perc={${percentage}} />`}</p>
         </code>
       </CodeDrawer>
     </>
