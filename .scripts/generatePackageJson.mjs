@@ -6,7 +6,11 @@ import { join } from "path";
 import prettier from "prettier";
 import { exit } from "process";
 import minimist from "minimist";
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const packagesDir = join(__dirname, "..", "packages");
 
 // Scope of packages to be published.
