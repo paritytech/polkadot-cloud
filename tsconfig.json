@@ -6,7 +6,10 @@
     "declarationMap": false,
     "incremental": true,
     "noEmitOnError": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "packages": ["./packages"],
+    }
   },
   "include": [
     "./packages/**/*", "sandbox",
