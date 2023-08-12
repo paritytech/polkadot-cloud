@@ -3,7 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { decodeAddress, encodeAddress } from "@polkadot/keyring";
 import { hexToU8a, isHex, u8aToString, u8aUnwrapBytes } from "@polkadot/util";
-import BigNumber from "bignumber.js";
+import { BigNumber } from "bignumber.js";
 import type { MutableRefObject, RefObject } from "react";
 import { AnyJson, AnyObject } from "./types";
 

@@ -2,12 +2,11 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 import fs from "fs";
-import { join } from "path";
-import prettier from "prettier";
+import { join, dirname } from "path";
+import { format } from "prettier";
 import { exit } from "process";
 import minimist from "minimist";
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -67,7 +66,7 @@ try {
   const merged = Object.assign({}, Object.fromEntries(filtered), hardcoded);
 
   // Format merged JSON
-  prettier.format(JSON.stringify(merged), { parser: "json" }).then((data) => {
+  format(JSON.stringify(merged), { parser: "json" }).then((data) => {
     // Create `dist` directory if it doesn't exist.
     if (!fs.existsSync(`${pathtoPackage}/dist`)) {
       fs.mkdirSync(`${pathtoPackage}/dist`);

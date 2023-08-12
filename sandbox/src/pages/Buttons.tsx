@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { Button } from "../../../packages/core-ui/lib/buttons/Button";
+import { Button } from "@packages/core-ui/lib/buttons/Button";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import {
   faArrowAltCircleUp,
@@ -10,7 +10,7 @@ import {
 import { faNpm } from "@fortawesome/free-brands-svg-icons";
 
 import { CodeDrawer } from "../components/CodeDrawer";
-import { Separator } from "../../../packages/core-ui/lib/core/Separator";
+import { Separator } from "@packages/core-ui/lib/core/Separator";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Buttons = () => (

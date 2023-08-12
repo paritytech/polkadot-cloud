@@ -1,28 +1,26 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-:root {
+.loader-cube-stage {
   --size: 120;
   --coefficient: 1px;
   --timeline: 2.6s;
   --delay: 0.65s;
   --rotation-y: -24;
   --rotation-x: 28;
-}
 
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-  transform-style: preserve-3d;
-}
-
-.stage {
   transform-origin: 50% 50%;
   animation: scale var(--timeline) var(--delay) infinite linear;
   display: grid;
   place-items: center;
   font-family: "Google Sans", sans-serif, system-ui;
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+  }
 }
 
 .scene {

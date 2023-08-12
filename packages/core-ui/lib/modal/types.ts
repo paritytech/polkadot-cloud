@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { RefObject } from "react";
+import { ReactNode, RefObject } from "react";
 import { ComponentBase } from "../types";
 import { AnimationProps } from "framer-motion";
 
@@ -20,7 +20,7 @@ export type ActionItemProps = ComponentBase & {
   // whether the item should be inactive.
   inactive?: boolean;
   // optional inline button.
-  inlineButton?: React.ReactNode;
+  inlineButton?: ReactNode;
 };
 
 export type ModalPaddingProps = ComponentBase & {

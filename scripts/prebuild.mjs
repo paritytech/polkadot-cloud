@@ -62,5 +62,5 @@ try {
     console.log(`✅ Pre-build integrity checks complete.`);
   });
 } catch (e) {
-  console.error(`❌ Could not complete integrity checks: ${packageName}`);
+  console.error(`❌ Could not complete integrity checks.`);
 }

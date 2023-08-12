@@ -6,6 +6,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import react from "@vitejs/plugin-react-swc";
 import checker from "vite-plugin-checker";
 import svgr from "vite-plugin-svgr";
+import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -27,4 +28,12 @@ export default defineConfig({
       typescript: true,
     }),
   ],
+  resolve: {
+    alias: [
+      {
+        find: "@packages",
+        replacement: path.resolve(__dirname, "../packages"),
+      },
+    ],
+  },
 });

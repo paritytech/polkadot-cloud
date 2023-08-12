@@ -3,7 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { AnyObject } from "@polkadotcloud/utils/types";
 import { ComponentBase } from "../types";
-import React from "react";
+import { ReactElement, ReactNode } from "react";
 
 export type EntryProps = ComponentBase & {
   // the theme mode.
@@ -13,7 +13,7 @@ export type EntryProps = ComponentBase & {
 };
 
 export type CardProps = ComponentBase & {
-  children: React.ReactNode;
+  children: ReactNode;
   animations?: AnyObject;
 };
 
@@ -115,5 +115,5 @@ export type TxProps = {
   // warning messgae.
   dangerMessage: string;
   // signing component.
-  SignerComponent: React.ReactElement;
+  SignerComponent: ReactElement;
 };
