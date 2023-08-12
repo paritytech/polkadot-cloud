@@ -27,6 +27,14 @@ jobs:
       - run: yarn
       - run: yarn build
       - run: yarn lint
+  structure-integrity-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Workspace Structure Integrity Checks 
+        uses: actions/setup-node@v3
+      - run: yarn prebuild
+      - run: yarn postbuild
 
   all:
     # This job ensures that all jobs above (now we have just build) are successful.
