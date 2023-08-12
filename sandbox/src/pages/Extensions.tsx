@@ -1,22 +1,22 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { Enkrypt } from "../../../packages/community/lib/extensions/jsx/Enkrypt";
-import { FearlessWallet } from "../../../packages/community/lib/extensions/jsx/FearlessWallet";
-import { NovaWallet } from "../../../packages/community/lib/extensions/jsx/NovaWallet";
-import { PolkadotJS } from "../../../packages/community/lib/extensions/jsx/PolkadotJS";
-import { PolkaGate } from "../../../packages/community/lib/extensions/jsx/PolkaGate";
-import { SubwalletJS } from "../../../packages/community/lib/extensions/jsx/SubwalletJS";
-import { Talisman } from "../../../packages/community/lib/extensions/jsx/Talisman";
-import { Separator } from "../../../packages/core-ui/lib/core/Separator";
+import { Enkrypt } from "@packages/community/lib/extensions/jsx/Enkrypt";
+import { FearlessWallet } from "@packages/community/lib/extensions/jsx/FearlessWallet";
+import { NovaWallet } from "@packages/community/lib/extensions/jsx/NovaWallet";
+import { PolkadotJS } from "@packages/community/lib/extensions/jsx/PolkadotJS";
+import { PolkaGate } from "@packages/community/lib/extensions/jsx/PolkaGate";
+import { SubwalletJS } from "@packages/community/lib/extensions/jsx/SubwalletJS";
+import { Talisman } from "@packages/community/lib/extensions/jsx/Talisman";
+import { Separator } from "@packages/core-ui/lib/core/Separator";
 
-import { ReactComponent as EnkryptSVG } from "../../../packages/community/lib/extensions/svg/enkrypt.svg";
-import { ReactComponent as FearlessWalletSVG } from "../../../packages/community/lib/extensions/svg/fearlesswallet.svg";
-import { ReactComponent as NovaWalletSVG } from "../../../packages/community/lib/extensions/svg/novawallet.svg";
-import { ReactComponent as PolkadotJsSVG } from "../../../packages/community/lib/extensions/svg/polkadotjs.svg";
-import { ReactComponent as PolkaGateSVG } from "../../../packages/community/lib/extensions/svg/polkagate.svg";
-import { ReactComponent as SubwalletJsSVG } from "../../../packages/community/lib/extensions/svg/subwalletjs.svg";
-import { ReactComponent as TalismanSVG } from "../../../packages/community/lib/extensions/svg/talisman.svg";
+import { ReactComponent as EnkryptSVG } from "@packages/community/lib/extensions/svg/enkrypt.svg";
+import { ReactComponent as FearlessWalletSVG } from "@packages/community/lib/extensions/svg/fearlesswallet.svg";
+import { ReactComponent as NovaWalletSVG } from "@packages/community/lib/extensions/svg/novawallet.svg";
+import { ReactComponent as PolkadotJsSVG } from "@packages/community/lib/extensions/svg/polkadotjs.svg";
+import { ReactComponent as PolkaGateSVG } from "@packages/community/lib/extensions/svg/polkagate.svg";
+import { ReactComponent as SubwalletJsSVG } from "@packages/community/lib/extensions/svg/subwalletjs.svg";
+import { ReactComponent as TalismanSVG } from "@packages/community/lib/extensions/svg/talisman.svg";
 import { CodeDrawer } from "../components/CodeDrawer";
 
 export const Extensions = () => (

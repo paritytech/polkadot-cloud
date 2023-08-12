@@ -4,7 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { Dispatch, SetStateAction } from "react";
 import { ReactComponent as IconSVG } from "../svg/icon.svg";
 import { useGlitch } from "react-powerglitch";
-import { Separator } from "../../../packages/core-ui/lib/core/Separator";
+import { Separator } from "@packages/core-ui/lib/core/Separator";
 
 interface SideMenuProps {
   mode: string;

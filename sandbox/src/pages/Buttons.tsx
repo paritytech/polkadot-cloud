@@ -10,7 +10,7 @@ import {
 import { faNpm } from "@fortawesome/free-brands-svg-icons";
 
 import { CodeDrawer } from "../components/CodeDrawer";
-import { Separator } from "../../../packages/core-ui/lib/core/Separator";
+import { Separator } from "@packages/core-ui/lib/core/Separator";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Buttons = () => (
