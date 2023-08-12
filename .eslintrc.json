@@ -40,6 +40,7 @@
     }
   },
   "rules": {
+    "import/no-named-as-default": "off",
     "import/no-unresolved": "error",
     "unused-imports/no-unused-imports": "error",
     "import/extensions": [
