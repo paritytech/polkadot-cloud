@@ -47,9 +47,8 @@ export const App = () => {
         component={component}
         setComponent={setComponent}
       />
-      <div className="main">
-        <div className="body">{getComponent(component)}</div>
-      </div>
+
+      <div className="body">{getComponent(component)}</div>
     </div>
   );
 };
