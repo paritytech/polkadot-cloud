@@ -5,7 +5,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 @use "../../../packages/core-ui/lib/styles/variables" as v;
 
 :root {
-  --sandbox-active-color: rgb(211 48 121);
+  --app-active-color: rgb(211 48 121);
 }
 
 .main {
@@ -65,7 +65,7 @@ SPDX-License-Identifier: GPL-3.0-only */
       }
 
       &.selected {
-        color: var(--sandbox-active-color);
+        color: var(--app-active-color);
       }
     }
   }

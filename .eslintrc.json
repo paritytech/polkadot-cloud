@@ -24,7 +24,7 @@
         "project": [
           "tsconfig.json",
           "packages/*/tsconfig.json",
-          "sandbox/tsconfig.json"
+          "app/tsconfig.json"
         ]
       }
     }
