@@ -2,12 +2,11 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 import fs from "fs";
-import { join } from "path";
+import { join, dirname } from "path";
 import prettier from "prettier";
 import { exit } from "process";
 import minimist from "minimist";
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

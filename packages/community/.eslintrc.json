@@ -1,17 +1,10 @@
 {
-  "env": {
-    "browser": true
-  },
   "settings": {
     "react": {
       "version": "detect"
     }
   },
-  "extends": [
-    "../../.eslintrc.json",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
+  "extends": ["../../.eslintrc.json", "plugin:react/recommended"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
