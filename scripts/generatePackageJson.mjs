@@ -3,7 +3,7 @@
 
 import fs from "fs";
 import { join, dirname } from "path";
-import prettier from "prettier";
+import { format } from "prettier";
 import { exit } from "process";
 import minimist from "minimist";
 import { fileURLToPath } from "url";
@@ -66,7 +66,7 @@ try {
   const merged = Object.assign({}, Object.fromEntries(filtered), hardcoded);
 
   // Format merged JSON
-  prettier.format(JSON.stringify(merged), { parser: "json" }).then((data) => {
+  format(JSON.stringify(merged), { parser: "json" }).then((data) => {
     // Create `dist` directory if it doesn't exist.
     if (!fs.existsSync(`${pathtoPackage}/dist`)) {
       fs.mkdirSync(`${pathtoPackage}/dist`);

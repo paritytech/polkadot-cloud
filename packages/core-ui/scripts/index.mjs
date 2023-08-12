@@ -3,7 +3,7 @@
 
 import { existsSync } from "fs";
 import fs from "fs/promises";
-import prettier from "prettier";
+import { format } from "prettier";
 
 // Generates `lib/index.tsx` based on the contents of the `lib` folder.
 export const generateLibIndex = async ({ ignore, css }) => {
@@ -39,7 +39,7 @@ export const generateLibIndex = async ({ ignore, css }) => {
 
   await fs.writeFile(
     "./lib/index.tsx",
-    await prettier.format(lines.join("\n"), {
+    await format(lines.join("\n"), {
       parser: "typescript",
     })
   );
