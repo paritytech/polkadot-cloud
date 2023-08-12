@@ -29,8 +29,11 @@ export default defineConfig({
     }),
   ],
   resolve: {
-    alias: {
-      "@packages/*": path.resolve(__dirname, "../packages/*"),
-    },
+    alias: [
+      {
+        find: "@packages",
+        replacement: path.resolve(__dirname, "../packages"),
+      },
+    ],
   },
 });
