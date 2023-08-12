@@ -17,7 +17,7 @@ export const Buttons = () => (
   <>
     <div className="sb-head">
       <h1>Buttons</h1>
-      <h2>A collection of plug-and-play button components.</h2>
+      <h2>A small collection of plug-and-play button components.</h2>
       <h3>
         <FontAwesomeIcon icon={faNpm} />
         <a
