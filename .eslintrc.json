@@ -5,34 +5,43 @@
     "browser": true,
     "node": true
   },
+  "extends": [
+    "plugin:import/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "import", "unused-imports"],
   "settings": {
+    "import/extensions": [".ts", ".tsx"],
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/internal-regex": "^@",
     "import/resolver": {
       "typescript": {
+        "alwaysTryTypes": true,
         "project": [
-          "./tsconfig.json",
+          "tsconfig.json",
           "packages/*/tsconfig.json",
           "sandbox/tsconfig.json"
         ]
       }
     }
   },
+  "files": ["*.tsx", "*.ts"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
+    "project": "tsconfig.json",
+    "sourceType": "module",
+    "ecmaVersion": "latest",
     "ecmaFeatures": {
       "jsx": true,
       "arrowFunctions": true
-    },
-    "ecmaVersion": "latest",
-    "sourceType": "module"
+    }
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:import/recommended",
-    "plugin:prettier/recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "plugins": ["unused-imports", "@typescript-eslint"],
   "rules": {
+    "import/no-unresolved": "error",
     "unused-imports/no-unused-imports": "error",
     "import/extensions": [
       "error",

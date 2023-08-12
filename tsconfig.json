@@ -8,7 +8,7 @@
     "noEmitOnError": true,
     "skipLibCheck": true,
     "paths": {
-      "packages": ["./packages"],
+      "@packages/*": ["./packages/*"],
     }
   },
   "include": [

@@ -1,13 +1,5 @@
 {
   "extends": ["../../.eslintrc.json"],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "arrowFunctions": true
-    },
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
   "plugins": ["@typescript-eslint", "prefer-arrow-functions"],
   "rules": {
     "import/extensions": [
