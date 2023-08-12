@@ -10,8 +10,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 .main {
   background: var(--background-default);
-  overflow: auto;
-  max-height: 100vh;
+  min-height: 100vh;
   width: 100%;
 }
 
