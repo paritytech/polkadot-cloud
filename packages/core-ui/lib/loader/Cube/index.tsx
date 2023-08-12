@@ -5,7 +5,7 @@ import "./index.scss";
 
 export const Cube = () => {
   return (
-    <div className="stage">
+    <div className="loader-cube-stage">
       <div className="scene">
         <div className="shadow"></div>
         <div className="jumper">
