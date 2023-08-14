@@ -17,7 +17,7 @@ import "./styles/index.scss";
 import "@packages/react-odometer/lib/styles/index.scss";
 
 // NOTE: ensure this is last.
-import "@packages/core-ui/lib/styles/index.scss";
+import "../../packages/cloud-core/dist/css/styles/index.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>

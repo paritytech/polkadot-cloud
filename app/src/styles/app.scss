@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 /* Inject styles from core-ui */
-@use "../../../packages/core-ui/lib/styles/variables" as v;
+@use "../../../packages/cloud-core/lib/scss/styles/variables" as v;
 
 :root {
   --app-active-color: rgb(211 48 121);

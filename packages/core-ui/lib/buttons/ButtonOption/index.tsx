@@ -5,7 +5,7 @@ import { ComponentBaseWithClassName } from "../../types";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { onMouseHandlers, valEmpty } from "../../utils";
-import "./index.scss";
+import "../../../../cloud-core/dist/css/buttons/ButtonOption/index.css";
 import { ButtonCommonProps } from "../types";
 
 export type ButtonOptionProps = ComponentBaseWithClassName &
