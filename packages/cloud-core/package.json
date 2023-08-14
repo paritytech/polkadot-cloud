@@ -1,17 +1,16 @@
 {
-    "name": "polkadotcloud-css",
+    "name": "polkadotcloud-cloud-core",
     "license": "GPL-3.0-only",
     "version": "0.0.1",
     "contributors": [
       "Ross Bulat<ross@parity.io>",
       "Nikolaos Kontakis<nikos@parity.io>"
     ],
-    "description": "Core Css for Polkadot Apps.",
+    "description": "Core resuable structures (CSS, themes etc.) for Polkadot Apps.",
     "keywords": [
       "Polkadot",
       "UI"
     ],
-    "main": "index.js",
     "bugs": {
       "url": "https://github.com/paritytech/polkadot-cloud/issues"
     },
@@ -19,9 +18,8 @@
 
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "build": "gulp"
+      "build": "gulp && node ../../scripts/generatePackageJson.mjs -p cloud-core"
     },
-    "author": "",
     "devDependencies": {
       "gulp": "^4.0.2",
       "gulp-sass": "^5.0.0",

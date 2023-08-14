@@ -11,19 +11,19 @@ const {
 const sass = require("gulp-sass")(require("sass"));
 
 function buildTemplate() {
-  return src("template/**/*.css")
+  return src("lib/template/**/*.css")
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(dest("dist/template"));
 }
 
 function buildTheme() {
-  return src("theme/**/*.css")
+  return src("lib/theme/**/*.css")
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(dest("dist/theme"));
 }
 
 function buildComponents() {
-  return src("scss/**/*.scss")
+  return src("lib/scss/**/*.scss")
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(dest("dist/css"));
 }

@@ -7,7 +7,6 @@ const main = async () => {
   // Generate `lib/index.tsx`.
   await generateLibIndex({
     ignore: ["styles", "svg", "utils"],
-    css: ["./styles/index.scss"],
   });
 };
 
