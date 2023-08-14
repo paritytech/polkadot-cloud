@@ -3,7 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { valEmpty, valOr } from "../../utils";
 import { RowSectionProps } from "../types";
-import "./index.scss";
+import "../../../../cloud-core/dist/css/core/RowSection/index.css";
 
 /**
  * @name RowSection

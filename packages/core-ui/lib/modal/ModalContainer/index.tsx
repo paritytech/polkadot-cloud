@@ -3,7 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { ModalAnimationProps } from "../types";
 import { motion } from "framer-motion";
-import "./index.scss";
+import "../../../../cloud-core/dist/css/modal/ModalContainer/index.css";
 
 /**
  * @name ModalContainer

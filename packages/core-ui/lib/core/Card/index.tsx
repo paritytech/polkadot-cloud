@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { motion } from "framer-motion";
-import "./index.scss";
+import "../../../../cloud-core/dist/css/core/Card/index.css";
 import { CardProps } from "../types";
 
 export const Card = ({ children, style, animations }: CardProps) => {
