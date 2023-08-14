@@ -43,13 +43,13 @@ jobs:
 
       # Build the package if new version is available.
       - name: Build Package
-        if: steps.check_new_version_build.outputs.is-new-version == 'true'
+        # if: steps.check_new_version_build.outputs.is-new-version == 'true'
         run: yarn build
         working-directory: "packages/${{ matrix.package }}"
 
       # Publish a package build from `dist` folder. Only runs if the package is a new version.
       - name: Publish Package From Build
-        if: steps.check_new_version_build.outputs.is-new-version == 'true'
+        # if: steps.check_new_version_build.outputs.is-new-version == 'true'
         run: npm publish
         working-directory: "packages/${{ matrix.package }}/dist"
         env:
