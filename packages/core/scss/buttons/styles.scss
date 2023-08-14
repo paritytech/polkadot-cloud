@@ -1,0 +1,91 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
+@mixin btn-layout {
+  font-family: InterSemiBold, sans-serif;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.grow {
+    flex: 1 1 0%;
+  }
+}
+
+@mixin btn-spacing {
+  &.m-left {
+    margin-left: var(--button-spacing-large);
+  }
+
+  &.m-right {
+    margin-right: var(--button-spacing-large);
+  }
+
+  &.m-x {
+    margin: 0 var(--button-spacing-large);
+  }
+}
+
+@mixin btn-icons {
+  > .icon-left {
+    margin-left: var(--button-spacing-small);
+    margin-right: var(--button-spacing-large);
+  }
+
+  > .icon-right {
+    margin-left: var(--button-spacing-large);
+    margin-right: var(--button-spacing-small);
+  }
+}
+
+@mixin btn-small {
+  padding: var(--button-padding-small);
+  font-size: var(--button-font-size-small);
+}
+
+@mixin btn-large {
+  padding: var(--button-padding-large);
+  font-size: var(--button-font-size-large);
+}
+
+@mixin btn-submit {
+  padding: var(--button-padding-large);
+  font-size: var(--button-font-size-small);
+}
+
+@mixin btn-disabled {
+  transition:
+    opacity var(--transition-duration),
+    color var(--transition-duration);
+
+  &:disabled {
+    opacity: var(--opacity-disabled);
+    cursor: default;
+  }
+}
+
+@mixin btn-pulse {
+  &.pulse {
+    box-shadow: 0 0 30px 0 var(--network-color-pending);
+    transform: scale(1);
+    animation: pulse 2s infinite;
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 var(--network-color-pending);
+      }
+
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgb(0 0 0 / 0%);
+      }
+
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgb(0 0 0 / 0%);
+      }
+    }
+  }
+}

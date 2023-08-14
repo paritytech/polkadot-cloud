@@ -1,0 +1,24 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
+@use "../styles";
+
+.modal-canvas {
+  @include styles.modal-position;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  position: fixed;
+  z-index: 10;
+
+  /* click anywhere behind modal content to close */
+  .close {
+    @include styles.modal-position;
+
+    z-index: 8;
+    cursor: default;
+  }
+}

@@ -1,0 +1,51 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
+@use "../styles";
+
+.btn-tab {
+  @include styles.btn-layout;
+  @include styles.btn-disabled;
+
+  color: var(--text-color-primary);
+  transition:
+    opacity var(--transition-duration),
+    font-size var(--transition-duration);
+  border-radius: 0.5rem;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  margin-right: 0.75rem;
+  padding: 0 1rem;
+  height: 3rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  > .badge {
+    border: 1px solid var(--border-primary-color);
+    color: var(--text-color-tertiary);
+    font-size: var(--button-font-size-small);
+    margin-left: var(--button-spacing-large);
+    display: flex;
+    padding: 0.3rem 0.6rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    width: fit-content;
+    max-width: 3rem;
+  }
+
+  &.active {
+    background: var(--button-tab-background);
+
+    > .badge {
+      border: 1px solid var(--border-secondary-color);
+    }
+  }
+}
