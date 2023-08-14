@@ -2,7 +2,12 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-const { src, dest, series, watch } = require("gulp");
+const {
+  src,
+  dest,
+  series,
+  //, watch
+} = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 
 function buildTemplate() {
