@@ -35,11 +35,11 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       # Check whether a package build is a new version.
-      - name: Check New Version From Build
-        id: check_new_version_build
-        uses: PostHog/check-package-version@v2
-        with:
-          path: "./packages/${{ matrix.package }}/dist"
+      # - name: Check New Version From Build
+      #   id: check_new_version_build
+      #   uses: PostHog/check-package-version@v2
+      #   with:
+      #     path: "./packages/${{ matrix.package }}/dist"
 
       # Build the package if new version is available.
       - name: Build Package
