@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
@@ -22,10 +23,12 @@ function buildComponents() {
     .pipe(dest("dist/css"));
 }
 
-function watchTask() {
-  watch(["scss/**/*.scss"], buildComponents);
-  watch(["theme/**/*.css"], buildTheme);
-  watch(["template/**/*.css"], buildTemplate);
-}
+// TODO: create a watchTask for dev experience
+
+// function watchTask() {
+//   watch(["scss/**/*.scss"], buildComponents);
+//   watch(["theme/**/*.css"], buildTheme);
+//   watch(["template/**/*.css"], buildTemplate);
+// }
 
 exports.default = series(buildTemplate, buildTheme, buildComponents);
