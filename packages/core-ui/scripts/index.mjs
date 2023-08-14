@@ -6,7 +6,7 @@ import fs from "fs/promises";
 import { format } from "prettier";
 
 // Generates `lib/index.tsx` based on the contents of the `lib` folder.
-export const generateLibIndex = async ({ ignore, css }) => {
+export const generateLibIndex = async ({ ignore }) => {
   // Utility function that iterates through a provided directory and returns all
   // folders.
   const getDirFolders = async (dir) => {
@@ -33,7 +33,6 @@ export const generateLibIndex = async ({ ignore, css }) => {
   }
 
   const lines = [];
-  for (let cssImport of css) lines.push(`import "${cssImport}";`);
   for (let component of components)
     lines.push(`export { ${component.export} } from "${component.from}";`);
 
