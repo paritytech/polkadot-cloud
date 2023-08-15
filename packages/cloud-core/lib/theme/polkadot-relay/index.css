@@ -1,0 +1,15 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
+.theme-polkadot-relay {
+  --network-color-primary-light: rgb(211 48 121);
+  --network-color-primary-dark: rgb(211 48 121);
+  --network-color-secondary-light: #552bbf;
+  --network-color-secondary-dark: #6d39ee;
+  --network-color-stroke-light: rgb(211 48 121);
+  --network-color-stroke-dark: rgb(211 48 121);
+  --network-color-transparent-light: rgb(211 48 121 / 5%);
+  --network-color-transparent-dark: rgb(211 48 121 / 5%);
+  --network-color-pending-light: rgb(211 48 121 / 50%);
+  --network-color-pending-dark: rgb(211 48 121 / 50%);
+}

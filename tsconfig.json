@@ -12,7 +12,7 @@
     }
   },
   "include": [
-    "./packages/**/*", "sandbox", "scripts"
+    "./packages/**/*", "app", "scripts"
   ],
   "exclude": [
     "**/*/node_modules",

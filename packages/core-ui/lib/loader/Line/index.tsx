@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { LoaderProps } from "../../core/types";
-import "./index.scss";
+import "../../../../cloud-core/dist/css/loader/Line/index.css";
 
 export const Line = ({ text }: LoaderProps) => {
   return (

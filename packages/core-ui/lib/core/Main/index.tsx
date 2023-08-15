@@ -3,7 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { ComponentBase } from "../../types";
 import { RefObject, forwardRef } from "react";
-import "./index.scss";
+import "../../../../cloud-core/dist/css/core/Main/index.css";
 
 /**
  * @name Main

@@ -12,7 +12,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormEvent, ReactNode, useState } from "react";
 import { clipAddress, unescape } from "@polkadotcloud/utils";
-import "./index.scss";
+import "../../../../cloud-core/dist/css/hardware/HardwareAddress/index.css";
 
 export type HardwareAddressProps = ComponentBase & {
   // the address to import.

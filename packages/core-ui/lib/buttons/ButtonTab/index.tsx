@@ -4,7 +4,7 @@
 import { ComponentBaseWithClassName } from "../../types";
 import { onMouseHandlers, valEmpty } from "../../utils";
 import { ButtonCommonProps } from "../types";
-import "./index.scss";
+import "../../../../cloud-core/dist/css/buttons/ButtonTab/index.css";
 
 export type ButtonTabProps = ComponentBaseWithClassName &
   ButtonCommonProps & {

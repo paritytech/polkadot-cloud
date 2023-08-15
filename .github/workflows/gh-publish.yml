@@ -14,9 +14,10 @@ jobs:
           node-version: 18
           registry-url: https://registry.npmjs.org
       - run: yarn install
+      - run: yarn build
       - name: Build
         run: yarn build:pages
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: "sandbox/build"
+          folder: "app/build"

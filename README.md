@@ -2,7 +2,7 @@
 
 # Polkadot Cloud
 
-A Monorepo and platform hosting assets for Polkadot dapps.
+A library and automated platform for developing and publishing assets for Polkadot apps.
 
 ## Package Directory
 
