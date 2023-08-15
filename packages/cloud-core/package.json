@@ -18,15 +18,13 @@
 
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "build": "gulp && node ../../scripts/generatePackageJson.mjs -p cloud-core"
+      "build": "gulp && rm -fr dist && mkdir -p dist && cp -R lib/* dist && node ../../scripts/generatePackageJson.mjs -p cloud-core"
     },
     "devDependencies": {
       "gulp": "^4.0.2",
+      "gulp-purgecss": "^4.0.3",
       "gulp-sass": "^5.0.0",
       "sass": "^1.35.2"
-    },
-    "dependencies": {
-      "gulp-purgecss": "^4.0.3"
     }
   }
   
