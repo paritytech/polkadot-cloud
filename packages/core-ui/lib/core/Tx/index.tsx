@@ -5,7 +5,7 @@ import { faPenToSquare, faWarning } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { valEmpty } from "../../utils";
 import { TxProps } from "../types";
-import "../../../../cloud-core/dist/css/core/Tx/index.css";
+import "@polkadotcloud/cloud-core/css/core/Tx/index.css";
 
 /**
  * @name Tx

@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import resolve from "@rollup/plugin-node-resolve";
+import resolve, { nodeResolve } from "@rollup/plugin-node-resolve";
 import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
 import del from "rollup-plugin-delete";
@@ -26,6 +26,7 @@ export default {
     del({ targets: "dist/*" }),
     peerDepsExternal(),
     resolve(),
+    nodeResolve(),
     postcss({
       config: {
         path: "postcss.config.mjs",

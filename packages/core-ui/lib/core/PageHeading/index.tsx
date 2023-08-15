@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { ComponentBase } from "../../types";
-import "../../../../cloud-core/dist/css/core/PageHeading/index.css";
+import "@polkadotcloud/cloud-core/css/core/PageHeading/index.css";
 
 /**
  * @name PageHeading

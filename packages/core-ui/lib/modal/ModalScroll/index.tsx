@@ -3,7 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { ModalAnimationProps } from "../types";
 import { motion } from "framer-motion";
-import "../../../../cloud-core/dist/css/modal/ModalScroll/index.css";
+import "@polkadotcloud/cloud-core/css/modal/ModalScroll/index.css";
 
 /**
  * @name ModalScroll
