@@ -6,14 +6,18 @@
     "declarationMap": false,
     "incremental": true,
     "noEmitOnError": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@packages/*": ["./packages/*"],
+    }
   },
   "include": [
-    "./packages/**/*", "sandbox",
+    "./packages/**/*", "app", "scripts"
   ],
   "exclude": [
     "**/*/node_modules",
     "**/*/dist",
-    "**/*.test.tsx"
+    "**/*.test.tsx",
+    "vite.config.js",
   ],
 }

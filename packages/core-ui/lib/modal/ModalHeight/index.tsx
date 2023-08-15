@@ -4,7 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { RefObject, forwardRef } from "react";
 import { valEmpty } from "../../utils";
 import { ModalHeightProps } from "../types";
-import "./index.scss";
+import "@polkadotcloud/cloud-core/css/modal/ModalHeight/index.css";
 
 /**
  * @name ModalHeight

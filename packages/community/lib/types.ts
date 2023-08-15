@@ -1,13 +1,15 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
+import { FC } from "react";
+
 // The supported chains.
 export type SupportedChains = "polkadot" | "kusama" | "westend";
 
 // Structure for an extension configuration.
 export interface ExtensionConfig {
   title: string;
-  Icon: React.FC;
+  Icon: FC;
   website: string;
 }
 

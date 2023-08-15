@@ -1,8 +1,8 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import "./index.scss";
 import { EntryProps } from "../types";
+import "@polkadotcloud/cloud-core/css/core/Entry/index.css";
 
 /**
  * @name Entry

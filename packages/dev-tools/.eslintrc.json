@@ -1,16 +1,5 @@
 {
-  "env": {
-    "browser": true
-  },
-  "extends": ["../../.eslintrc.json", "plugin:@typescript-eslint/recommended"],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "arrowFunctions": true
-    },
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
+  "extends": ["../../.eslintrc.json"],
   "plugins": ["@typescript-eslint", "prefer-arrow-functions"],
   "rules": {
     "import/extensions": [

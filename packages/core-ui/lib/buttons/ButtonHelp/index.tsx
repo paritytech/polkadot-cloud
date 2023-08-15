@@ -5,7 +5,7 @@ import { InfoSVG } from "../../svg/Info";
 import { ComponentBaseWithClassName } from "../../types";
 import { valEmpty, onMouseHandlers } from "../../utils";
 import { ButtonCommonProps } from "../types";
-import "./index.scss";
+import "@polkadotcloud/cloud-core/css/buttons/ButtonHelp/index.css";
 
 export type ButtonHelpProps = ComponentBaseWithClassName &
   ButtonCommonProps & {

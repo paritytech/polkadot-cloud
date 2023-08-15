@@ -3,7 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { valEmpty } from "../../utils";
 import { GridProps } from "../types";
-import "./index.scss";
+import "@polkadotcloud/cloud-core/css/core/Grid/index.css";
 
 export const Grid = ({
   alignItems,

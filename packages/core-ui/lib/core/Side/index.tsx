@@ -2,8 +2,9 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { valEmpty } from "../../utils";
-import "./index.scss";
 import { SideProps } from "../types";
+import "@polkadotcloud/cloud-core/css/core/Side/index.css";
+
 /**
  * @name Side
  * @summary An element that houses the side menu and transitions to a toggle-able fixed overlay

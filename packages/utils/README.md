@@ -2,4 +2,4 @@
 
 # Polkadot Cloud: Utils
 
-Utilities for Polkadot apps.
+Core resuable structures for Polkadot Apps.

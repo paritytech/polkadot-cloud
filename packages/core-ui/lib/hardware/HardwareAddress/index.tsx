@@ -10,9 +10,9 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { FormEvent, ReactNode, useState } from "react";
 import { clipAddress, unescape } from "@polkadotcloud/utils";
-import "./index.scss";
+import "@polkadotcloud/cloud-core/css/hardware/HardwareAddress/index.css";
 
 export type HardwareAddressProps = ComponentBase & {
   // the address to import.
@@ -24,7 +24,7 @@ export type HardwareAddressProps = ComponentBase & {
   // whether to disable editing if address is imported.
   disableEditIfImported?: boolean;
   // identicon of address.
-  Identicon: React.ReactNode;
+  Identicon: ReactNode;
   // handle rename
   renameHandler: (address: string, newName: string) => void;
   // handle whether address already exists.
@@ -82,7 +82,7 @@ export const HardwareAddress = ({
     }
     setEditing(false);
   };
-  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+  const handleChange = (e: FormEvent<HTMLInputElement>) => {
     let val = e.currentTarget.value || "";
     val = unescape(val);
     setEditName(val);

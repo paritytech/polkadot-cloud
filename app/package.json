@@ -1,0 +1,38 @@
+{
+  "name": "@polkadotcloud/app",
+  "version": "0.2.14",
+  "license": "GPL-3.0-only",
+  "contributors": [
+    "Ross Bulat<ross@parity.io>",
+    "Nikolaos Kontakis<nikos@parity.io>"
+  ],
+  "description": "Core UI Components for Polkadot Dashboards.",
+  "scripts": {
+    "clear": "rm -rf node_modules",
+    "predev": "cd ../ && yarn build",
+    "dev": "vite",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 && prettier --check .",
+    "lint:fix": "eslint . --ext ts,tsx --fix && prettier --write ."
+  },
+  "devDependencies": {
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "gh-pages": "^6.0.0",
+    "vite": "^4.4.9",
+    "vite-plugin-checker": "^0.6.1",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-svgr": "^3.2.0",
+    "vite-tsconfig-paths": "^4.2.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@polkadot/keyring": "^12.3.2",
+    "@polkadot/util": "^12.3.2",
+    "@polkadotcloud/utils": "^0.2.23",
+    "bignumber.js": "^9.1.1",
+    "framer-motion": "^10.15.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-powerglitch": "^1.0.0"
+  }
+}

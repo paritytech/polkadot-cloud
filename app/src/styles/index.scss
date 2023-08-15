@@ -1,0 +1,50 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
+@import "./app";
+
+html {
+  font-size: 10px;
+
+  @media (width >= 600px) {
+    font-size: 11.2px;
+  }
+}
+
+h1 {
+  color: var(--text-color-primary);
+  margin: 0 0 0.4rem;
+}
+
+h2 {
+  color: var(--text-color-primary);
+  margin: 1rem 0;
+}
+
+h3 {
+  color: var(--text-color-primary);
+  margin: 1rem 0;
+}
+
+h4 {
+  color: var(--text-color-primary);
+  margin: 1.25rem 0;
+}
+
+h5 {
+  color: var(--text-color-primary);
+  margin: 1.25rem 0;
+}
+
+p {
+  color: var(--text-color-secondary);
+  margin: 0.75rem 0;
+}
+
+a {
+  color: var(--text-color-secondary);
+}
+
+button {
+  color: var(--text-color-secondary);
+}

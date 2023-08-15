@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import "./index.scss";
+import "@polkadotcloud/cloud-core/css/loader/Dots/index.css";
 
 export const Dots = () => {
   return (

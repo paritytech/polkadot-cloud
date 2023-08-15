@@ -3,7 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { valEmpty } from "../../utils";
 import { ModalWarningsProps } from "../types";
-import "./index.scss";
+import "@polkadotcloud/cloud-core/css/modal/ModalWarnings/index.css";
 
 /**
  * @name ModalWarnings

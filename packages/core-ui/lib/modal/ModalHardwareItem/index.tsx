@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { ComponentBase } from "../../types";
-import "./index.scss";
+import "@polkadotcloud/cloud-core/css/modal/ModalHardwareItem/index.css";
 
 /**
  * @name  ModalHardwareItem

@@ -9,11 +9,14 @@
   "description": "Polkadot Cloud Assets",
   "private": "true",
   "scripts": {
+    "build:pages": "cd app && tsc && vite build --base '/polkadot-cloud/'",
     "build:mock": "npm run build:mock --workspaces --if-present",
+    "prebuild": "node scripts/prebuild.mjs",
     "build": "npm run build --workspaces --if-present",
+    "postbuild": "node scripts/postbuild.mjs",
     "clear": "npm run --workspaces clear && rm -rf node_modules",
     "lint": "eslint './**' --fix && npx prettier --write . && npx stylelint '**/*.scss' --fix",
-    "sandbox": "npm run dev -w sandbox"
+    "app": "npm run dev -w app"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
@@ -21,14 +24,14 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@rollup/plugin-commonjs": "^25.0.3",
+    "@rollup/plugin-commonjs": "^25.0.4",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@types/react": "^18.2.20",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
-    "autoprefixer": "^10.4.13",
-    "eslint": "^8.46.0",
+    "autoprefixer": "^10.4.15",
+    "eslint": "^8.47.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.6.0",
@@ -40,7 +43,7 @@
     "eslint-plugin-react": "^7.33.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-unused-imports": "^3.0.0",
-    "framer-motion": "^10.15.1",
+    "framer-motion": "^10.15.2",
     "minimist": "^1.2.8",
     "postcss": "^8.4.27",
     "prettier": "^3.0.1",
@@ -62,7 +65,7 @@
   },
   "workspaces": [
     "packages/*",
-    "sandbox"
+    "app"
   ],
   "repository": {
     "type": "git",
