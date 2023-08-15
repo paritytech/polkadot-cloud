@@ -22,7 +22,7 @@ const matchNameNScripts = (dir, files) => {
   for (let file of files) {
     fs.stat(`${dir}${file}/package.json`, (err) => {
       if (err) {
-        console.error(`❌ package.json file not found`);
+        console.error(`❌ package.json file not found in ${dir}${file}`);
         return;
       }
       const json = JSON.parse(
@@ -35,12 +35,8 @@ const matchNameNScripts = (dir, files) => {
         );
       }
 
-      const scripts = Object.entries(json).filter((p) => {
-        return "scripts".includes(p[0]);
-      });
-
       if (
-        !Object.keys(scripts[0][1]).includes("build:mock" && "build" && "clear")
+        !Object.keys(json?.scripts).includes("build:mock" && "build" && "clear")
       ) {
         console.error(
           `❌ All of the scripts field in package.json are required to have build:mock, build and clear properties`
