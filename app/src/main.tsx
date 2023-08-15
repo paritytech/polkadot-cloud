@@ -17,6 +17,9 @@ import "./styles/index.scss";
 import "@packages/react-odometer/lib/styles/index.scss";
 
 // NOTE: ensure this is last.
+//
+// IMPORTANT: This CSS is being sourced from `cloud-core`'s `dist` folder. The package must be built
+// for the CSS to be available.
 import "../../packages/cloud-core/dist/css/styles/index.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
