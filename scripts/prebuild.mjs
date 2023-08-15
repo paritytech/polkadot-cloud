@@ -20,7 +20,7 @@ const dirFoldersOnly = async (dir, files) => {
 
 const matchNameNScripts = async (dir, files) => {
   for (let file of files) {
-    fs.stat(`${dir}${file}/package.json`, (err, stat) => {
+    fs.stat(`${dir}${file}/package.json`, (err) => {
       if (err) {
         console.error(`❌ package.json directory not found`);
         return;
@@ -28,18 +28,28 @@ const matchNameNScripts = async (dir, files) => {
       const json = JSON.parse(
         fs.readFileSync(`${dir}${file}/package.json`).toString()
       );
+
       const name = Object.entries(json).filter((p) => {
         return "name".includes(p[0]);
       });
+
+      if (name[0][1] != `polkadotcloud-${json.name.split(/-(.*)/s)[1]}`) {
+        console.error(
+          `❌ ${name[0][1]} Package name doesn't meet the naming requirement`
+        );
+      }
+
       const scripts = Object.entries(json).filter((p) => {
         return "scripts".includes(p[0]);
       });
-      // TODO :
-      // if ("build:mock".includes(name)){
-      //   console.log("build:mock".includes(scripts));
-      // }
-      // console.log("build:mock".includes(Object.keys(scripts)));
-      // console.log(Object.values(scripts[0]));
+
+      if (
+        !Object.keys(scripts[0][1]).includes("build:mock" && "build" && "clear")
+      ) {
+        console.error(
+          `❌ ${name[0][1]} Package name doesn't meet the scripts requirement`
+        );
+      }
     });
   }
 };
