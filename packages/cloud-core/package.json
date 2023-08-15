@@ -17,7 +17,7 @@
     "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
 
     "scripts": {
-      "build:mock": "node ../../scripts/generatePackageJson.mjs -p dev-tools -m index.ts",
+      "build:mock": "node ../../scripts/generatePackageJson.mjs -p cloud-core -m index.ts",
       "build": "rm -fr dist && gulp && node ../../scripts/generatePackageJson.mjs -p cloud-core",
       "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
     },
