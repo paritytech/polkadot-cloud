@@ -17,7 +17,7 @@ const matchName = (dir, files) => {
 
       if (json?.name !== `@polkadotcloud/${file}`) {
         console.error(
-          `❌ package.json in ${json?.name}'s name field does not match the naming requirement`
+          `❌ package.json name field does not match the naming requirement`
         );
       }
     });
