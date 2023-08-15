@@ -17,8 +17,9 @@
     "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
 
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "build": "gulp && node ../../scripts/generatePackageJson.mjs -p cloud-core"
+      "build:mock": "node ../../scripts/generatePackageJson.mjs -p dev-tools -m index.ts",
+      "build": "rm -fr dist && gulp && node ../../scripts/generatePackageJson.mjs -p cloud-core",
+      "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
     },
     "devDependencies": {
       "gulp": "^4.0.2",
