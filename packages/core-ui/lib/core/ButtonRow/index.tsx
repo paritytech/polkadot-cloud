@@ -3,7 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { valEmpty } from "../../utils";
 import { RowProps } from "../types";
-import "../../../../cloud-core/dist/css/core/ButtonRow/index.css";
+import "@polkadotcloud/cloud-core/css/core/ButtonRow/index.css";
 
 /**
  * @name ButtonRow
