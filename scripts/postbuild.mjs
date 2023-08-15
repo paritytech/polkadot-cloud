@@ -15,7 +15,7 @@ const matchName = (dir, files) => {
         fs.readFileSync(`${dir}${file}/dist/package.json`).toString()
       );
 
-      if (json?.name != `@polkadotcloud/${json.name.split(/\/(.*)/s)[1]}`) {
+      if (json?.name != `@polkadotcloud/${file}`) {
         console.error(
           `❌ package.json in ${json?.name}'s name field does not match the naming requirement`
         );

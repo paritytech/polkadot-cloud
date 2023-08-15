@@ -29,7 +29,7 @@ const matchNameNScripts = (dir, files) => {
         fs.readFileSync(`${dir}${file}/package.json`).toString()
       );
 
-      if (json?.name != `polkadotcloud-${json.name.split(/-(.*)/s)[1]}`) {
+      if (json?.name != `polkadotcloud-${file}`) {
         console.error(
           `❌ ${json?.name} package name doesn't meet the naming requirement`
         );
