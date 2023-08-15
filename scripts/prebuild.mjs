@@ -47,7 +47,7 @@ const matchNameNScripts = async (dir, files) => {
         !Object.keys(scripts[0][1]).includes("build:mock" && "build" && "clear")
       ) {
         console.error(
-          `❌ ${name[0][1]} Package name doesn't meet the scripts requirement`
+          `❌ All of the scripts field in package.json are required to have build:mock, build and clear properties`
         );
       }
     });
