@@ -9,6 +9,7 @@
   "description": "Core UI Components for Polkadot Dashboards.",
   "scripts": {
     "clear": "rm -rf node_modules",
+    "predev": "cd ../ && yarn build",
     "dev": "vite",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 && prettier --check .",
     "lint:fix": "eslint . --ext ts,tsx --fix && prettier --write ."
