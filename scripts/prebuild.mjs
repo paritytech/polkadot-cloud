@@ -18,24 +18,20 @@ const dirFoldersOnly = async (dir, files) => {
   }
 };
 
-const matchNameNScripts = async (dir, files) => {
+const matchNameNScripts = (dir, files) => {
   for (let file of files) {
     fs.stat(`${dir}${file}/package.json`, (err) => {
       if (err) {
-        console.error(`❌ package.json directory not found`);
+        console.error(`❌ package.json file not found`);
         return;
       }
       const json = JSON.parse(
         fs.readFileSync(`${dir}${file}/package.json`).toString()
       );
 
-      const name = Object.entries(json).filter((p) => {
-        return "name".includes(p[0]);
-      });
-
-      if (name[0][1] != `polkadotcloud-${json.name.split(/-(.*)/s)[1]}`) {
+      if (json?.name != `polkadotcloud-${json.name.split(/-(.*)/s)[1]}`) {
         console.error(
-          `❌ ${name[0][1]} Package name doesn't meet the naming requirement`
+          `❌ ${json?.name} package name doesn't meet the naming requirement`
         );
       }
 
@@ -71,7 +67,7 @@ try {
       "package.json",
       "lib",
     ]);
-    await matchNameNScripts("./packages/", files);
+    matchNameNScripts("./packages/", files);
 
     console.log(`✅ Pre-build integrity checks complete.`);
   });

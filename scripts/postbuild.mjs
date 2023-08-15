@@ -4,24 +4,20 @@
 import fs from "fs";
 import { dirFilesExist } from "./index.mjs";
 
-const matchName = async (dir, files) => {
+const matchName = (dir, files) => {
   for (let file of files) {
     fs.stat(`${dir}${file}/dist/package.json`, (err) => {
       if (err) {
-        console.error(`❌ dist/package.json directory not found`);
+        console.error(`❌ dist/package.json file not found in ${dir}${file}`);
         return;
       }
       const json = JSON.parse(
         fs.readFileSync(`${dir}${file}/dist/package.json`).toString()
       );
 
-      const name = Object.entries(json).filter((p) => {
-        return "name".includes(p[0]);
-      });
-
-      if (name[0][1] != `@polkadotcloud/${json.name.split(/\/(.*)/s)[1]}`) {
+      if (json?.name != `@polkadotcloud/${json.name.split(/\/(.*)/s)[1]}`) {
         console.error(
-          `❌ ${name[0][1]} dist/package name doesn't meet the naming requirement`
+          `❌ package.json in ${json?.name}'s name field does not match the naming requirement`
         );
       }
     });
@@ -39,7 +35,7 @@ try {
     // Check `dist` exist in each package.
     await dirFilesExist("./packages/", files, ["dist"]);
 
-    await matchName("./packages/", files);
+    matchName("./packages/", files);
 
     console.log(`✅ Post-build integrity checks complete.`);
   });
