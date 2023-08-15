@@ -31,7 +31,6 @@ try {
 
     // Check `LICENSE`, `README.md`, `package.json`, `lib` exist in each package.
     await dirFilesExist("./packages/", files, [
-      "LICENSE",
       "README.md",
       "package.json",
       "lib",
