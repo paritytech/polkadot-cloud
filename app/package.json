@@ -6,9 +6,10 @@
     "Ross Bulat<ross@parity.io>",
     "Nikolaos Kontakis<nikos@parity.io>"
   ],
-  "description": "Core UI Components for Polkadot Dashboards.",
+  "description": " A library and automated platform for developing and publishing assets for Polkadot apps.",
   "scripts": {
     "clear": "rm -rf node_modules",
+    "predev": "yarn --cwd='../packages/cloud-core/' build",
     "dev": "vite",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 && prettier --check .",
     "lint:fix": "eslint . --ext ts,tsx --fix && prettier --write ."

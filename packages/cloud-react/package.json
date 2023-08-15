@@ -1,0 +1,40 @@
+{
+  "name": "polkadotcloud-cloud-react",
+  "license": "GPL-3.0-only",
+  "version": "0.1.1",
+  "type": "module",
+  "contributors": [
+    "Ross Bulat<ross@parity.io>",
+    "Nikolaos Kontakis<nikos@parity.io>"
+  ],
+  "description": "Core React Components for Polkadot Apps.",
+  "keywords": [
+    "Polkadot",
+    "UI"
+  ],
+  "bugs": {
+    "url": "https://github.com/paritytech/polkadot-cloud/issues"
+  },
+  "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
+  "scripts": {
+    "build:mock": "node ../../scripts/generatePackageJson.mjs -p cloud-react -m index.tsx",
+    "prebuild": "node ./scripts/prebuild.mjs && yarn --cwd='../cloud-core/' build",
+    "build": "rollup -c",
+    "postbuild": "node ./scripts/postbuild.mjs",
+    "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
+  },
+  "peerDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-regular-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@polkadotcloud/utils": "^0.2.22",
+    "framer-motion": "^10.15.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "@polkadotcloud/cloud-core": "^0.0.3"
+  }
+}

@@ -8,7 +8,7 @@ import { PolkadotJS } from "@packages/community/lib/extensions/jsx/PolkadotJS";
 import { PolkaGate } from "@packages/community/lib/extensions/jsx/PolkaGate";
 import { SubwalletJS } from "@packages/community/lib/extensions/jsx/SubwalletJS";
 import { Talisman } from "@packages/community/lib/extensions/jsx/Talisman";
-import { Separator } from "@packages/core-ui/lib/core/Separator";
+import { Separator } from "@packages/cloud-react/lib/core/Separator";
 
 import { ReactComponent as EnkryptSVG } from "@packages/community/lib/extensions/svg/enkrypt.svg";
 import { ReactComponent as FearlessWalletSVG } from "@packages/community/lib/extensions/svg/fearlesswallet.svg";
