@@ -10,7 +10,7 @@ A library and automated platform for developing and publishing assets for Polkad
 
 A source of truth for Polkadot web extensions and validator entities.
 
-#### [@polkadotcloud/cloud-react](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-react#polkadot-cloud-cloud-react)
+#### [@polkadotcloud/cloud-react](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-react#polkadot-cloud-react)
 
 Core components for Polkadot dashboards.
 
