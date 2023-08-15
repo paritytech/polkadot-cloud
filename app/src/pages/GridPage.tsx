@@ -1,9 +1,9 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { Grid } from "@packages/core-ui/lib/core/Grid";
+import { Grid } from "@packages/cloud-react/lib/core/Grid";
 import { CodeDrawer } from "../components/CodeDrawer";
-import { Separator } from "@packages/core-ui/lib/core/Separator";
+import { Separator } from "@packages/cloud-react/lib/core/Separator";
 
 export const GridPage = () => {
   const separatorStyle = {

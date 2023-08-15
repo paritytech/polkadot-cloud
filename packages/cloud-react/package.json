@@ -1,13 +1,13 @@
 {
-  "name": "polkadotcloud-core-ui",
+  "name": "polkadotcloud-cloud-react",
   "license": "GPL-3.0-only",
-  "version": "0.3.88",
+  "version": "0.1.1",
   "type": "module",
   "contributors": [
     "Ross Bulat<ross@parity.io>",
     "Nikolaos Kontakis<nikos@parity.io>"
   ],
-  "description": "Core UI Components for Polkadot Apps.",
+  "description": "Core React Components for Polkadot Apps.",
   "keywords": [
     "Polkadot",
     "UI"
@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
   "scripts": {
-    "build:mock": "node ../../scripts/generatePackageJson.mjs -p core-ui -m index.tsx",
-    "prebuild": "node ./scripts/prebuild.mjs",
+    "build:mock": "node ../../scripts/generatePackageJson.mjs -p cloud-react -m index.tsx",
+    "prebuild": "node ./scripts/prebuild.mjs && yarn --cwd='../cloud-core/' build",
     "build": "rollup -c",
     "postbuild": "node ./scripts/postbuild.mjs",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
