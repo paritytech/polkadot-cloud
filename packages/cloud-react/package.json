@@ -7,7 +7,7 @@
     "Ross Bulat<ross@parity.io>",
     "Nikolaos Kontakis<nikos@parity.io>"
   ],
-  "description": "Core UI Components for Polkadot Apps.",
+  "description": "Core React Components for Polkadot Apps.",
   "keywords": [
     "Polkadot",
     "UI"
