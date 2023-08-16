@@ -1,31 +1,34 @@
 {
-    "name": "polkadotcloud-cloud-core",
-    "license": "GPL-3.0-only",
-    "version": "0.0.3",
-    "contributors": [
-      "Ross Bulat<ross@parity.io>",
-      "Nikolaos Kontakis<nikos@parity.io>"
-    ],
-    "description": "Core resuable structures for Polkadot Apps.",
-    "keywords": [
-      "Polkadot",
-      "UI"
-    ],
-    "bugs": {
-      "url": "https://github.com/paritytech/polkadot-cloud/issues"
-    },
-    "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
-
-    "scripts": {
-      "build:mock": "node ../../scripts/generatePackageJson.mjs -p cloud-core",
-      "build": "rm -fr dist && gulp && node ../../scripts/generatePackageJson.mjs -p cloud-core",
-      "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
-    },
-    "devDependencies": {
-      "gulp": "^4.0.2",
-      "gulp-purgecss": "^5.0.0",
-      "gulp-sass": "^5.0.0",
-      "sass": "^1.35.2"
-    }
+  "name": "polkadotcloud-cloud-core",
+  "license": "GPL-3.0-only",
+  "version": "0.0.3",
+  "contributors": [
+    "Ross Bulat<ross@parity.io>",
+    "Nikolaos Kontakis<nikos@parity.io>"
+  ],
+  "description": "Core resuable structures for Polkadot Apps.",
+  "keywords": [
+    "Polkadot",
+    "UI"
+  ],
+  "bugs": {
+    "url": "https://github.com/paritytech/polkadot-cloud/issues"
+  },
+  "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
+  "scripts": {
+    "build:mock": "node ../../scripts/generatePackageJson.mjs -p cloud-core",
+    "build": "rm -fr dist && gulp && node ../../scripts/generatePackageJson.mjs -p cloud-core",
+    "watch": "rm -fr dist &&  gulp && gulp --task watch",
+    "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-purgecss": "^5.0.0",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.35.2"
+  },
+  "dependencies": {
+    "gulp-livereload": "^4.0.2",
+    "tiny-lr": "^2.0.0"
   }
-  
+}

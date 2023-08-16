@@ -2,38 +2,43 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-const {
-  src,
-  dest,
-  series,
-  //, watch
-} = require("gulp");
+const { src, dest, series, watch } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
+const lrserver = require("tiny-lr")();
+const refresh = require("gulp-livereload");
+const { argv } = require("yargs");
 
-function buildTemplate() {
+const SASS_OPTIONS = { outputStyle: "compressed" };
+
+const buildTemplate = () => {
   return src("lib/template/**/*.css")
-    .pipe(sass({ outputStyle: "compressed" }))
-    .pipe(dest("dist/template"));
-}
+    .pipe(sass(SASS_OPTIONS))
+    .pipe(dest("dist/template"))
+    .pipe(refresh(lrserver));
+};
 
-function buildTheme() {
+const buildTheme = () => {
   return src("lib/theme/**/*.css")
-    .pipe(sass({ outputStyle: "compressed" }))
-    .pipe(dest("dist/theme"));
-}
+    .pipe(sass(SASS_OPTIONS))
+    .pipe(dest("dist/theme"))
+    .pipe(refresh(lrserver));
+};
 
-function buildComponents() {
+const buildComponents = () => {
   return src("lib/scss/**/*.scss")
-    .pipe(sass({ outputStyle: "compressed" }))
-    .pipe(dest("dist/css"));
+    .pipe(sass(SASS_OPTIONS))
+    .pipe(dest("dist/css"))
+    .pipe(refresh(lrserver));
+};
+
+const watchTask = () => {
+  watch(["lib/scss/**/*.scss"], buildComponents);
+  watch(["lib/theme/**/*.css"], buildTheme);
+  watch(["lib/template/**/*.css"], buildTemplate);
+};
+
+if (argv.task && argv.task === "watch") {
+  exports.default = series(watchTask);
+} else {
+  exports.default = series(buildTemplate, buildTheme, buildComponents);
 }
-
-// TODO: create a watchTask for dev experience
-
-// function watchTask() {
-//   watch(["scss/**/*.scss"], buildComponents);
-//   watch(["theme/**/*.css"], buildTheme);
-//   watch(["template/**/*.css"], buildTemplate);
-// }
-
-exports.default = series(buildTemplate, buildTheme, buildComponents);
