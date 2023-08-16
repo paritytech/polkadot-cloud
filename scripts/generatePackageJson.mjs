@@ -58,15 +58,16 @@ try {
     return keys.includes(k[0]);
   });
 
-  // Replace `name` with scope and package name. If the package folder name starts with `cloud-`,
-  // remove this from the npm published package name.
-  let publishedName = json.name.split(/-(.*)/s)[1];
-  if (publishedName.startsWith("cloud-")) {
-    // remove `cloud-` from the start of publishedName.
-    publishedName = publishedName.slice("cloud-".length);
+  // If the package folder name starts with `cloud-`, remove this from the npm published package
+  // name.
+  let publishName = json.name.split(/-(.*)/s)[1];
+  if (publishName.startsWith("cloud-")) {
+    // remove "cloud-"" from the start of `publishName`.
+    publishName = publishName.slice("cloud-".length);
   }
 
-  filtered[0] = ["name", `${scope}/${publishedName}`];
+  // Replace `name` with scope and package name.
+  filtered[0] = ["name", `${scope}/${publishName}`];
 
   // Merge properties with `hardcoded`.
   const merged = Object.assign({}, Object.fromEntries(filtered), hardcoded);
