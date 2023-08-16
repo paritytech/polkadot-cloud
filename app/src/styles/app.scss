@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-/* Inject styles from cloud-react */
+/* Inject variables from cloud-react.*/
 @use "../../../packages/cloud-core/lib/scss/styles/variables" as v;
 
 :root {
