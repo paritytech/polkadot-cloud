@@ -39,7 +39,6 @@ const hardcoded = main
 // Loop packages to generate `package.json`.
 const pathtoPackage = join(packagesDir, packageName);
 const pathToFile = join(pathtoPackage, "package.json");
-
 try {
   // Read `package.json` of the package.
   const json = JSON.parse(fs.readFileSync(pathToFile).toString());
@@ -59,8 +58,15 @@ try {
     return keys.includes(k[0]);
   });
 
-  // Replace `name` with scope and package name.
-  filtered[0] = ["name", `${scope}/${json.name.split(/-(.*)/s)[1]}`];
+  // Replace `name` with scope and package name. If the package folder name starts with `cloud-`,
+  // remove this from the npm published package name.
+  let publishedName = json.name.split(/-(.*)/s)[1];
+  if (publishedName.startsWith("cloud-")) {
+    // remove `cloud-` from the start of publishedName.
+    publishedName = publishedName.slice("cloud-".length);
+  }
+
+  filtered[0] = ["name", `${scope}/${publishedName}`];
 
   // Merge properties with `hardcoded`.
   const merged = Object.assign({}, Object.fromEntries(filtered), hardcoded);
