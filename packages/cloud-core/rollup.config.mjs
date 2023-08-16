@@ -14,7 +14,7 @@ export default {
   input: "lib/utils/index.ts",
   output: [
     {
-      file: "dist/utils/index.ts",
+      file: "dist/utils/index.js",
       format: "es",
       sourcemap: false,
     },
