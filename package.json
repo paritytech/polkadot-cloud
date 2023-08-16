@@ -45,7 +45,7 @@
     "eslint-plugin-unused-imports": "^3.0.0",
     "framer-motion": "^10.15.2",
     "minimist": "^1.2.8",
-    "postcss": "^8.4.27",
+    "postcss": "^8.4.28",
     "prettier": "^3.0.2",
     "prettier-plugin-organize-imports": "^3.2.3",
     "rollup": "^3.28.0",
