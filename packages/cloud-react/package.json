@@ -1,5 +1,5 @@
 {
-  "name": "polkadotcloud-cloud-react",
+  "name": "polkadot-cloud-cloud-react",
   "license": "GPL-3.0-only",
   "version": "0.1.1",
   "type": "module",
@@ -29,12 +29,14 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@polkadotcloud/utils": "^0.2.22",
+    "@polkadot/keyring": "^12.3.2",
+    "@polkadot/util": "^11.0.1",
+    "bignumber.js": "^9.1.1",
     "framer-motion": "^10.15.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@polkadotcloud/core": "^0.0.3"
+    "@polkadot-cloud/core": "^0.0.4"
   }
 }

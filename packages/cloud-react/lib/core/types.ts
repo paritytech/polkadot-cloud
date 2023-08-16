@@ -1,8 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { AnyObject } from "@polkadotcloud/utils/types";
-import { ComponentBase } from "../types";
+import { AnyJson, ComponentBase } from "../types";
 import { ReactElement, ReactNode } from "react";
 
 export type EntryProps = ComponentBase & {
@@ -14,7 +13,7 @@ export type EntryProps = ComponentBase & {
 
 export type CardProps = ComponentBase & {
   children: ReactNode;
-  animations?: AnyObject;
+  animations?: AnyJson;
 };
 
 type GridItemsAlignment =

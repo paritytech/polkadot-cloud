@@ -60,7 +60,6 @@ export default {
   ],
   external: [
     "@fortawesome/react-fontawesome",
-    "@polkadotcloud/utils",
     "framer-motion",
     "prop-types",
     "react",

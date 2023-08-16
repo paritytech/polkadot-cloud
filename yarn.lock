@@ -540,6 +540,11 @@
     tiny-glob "^0.2.9"
     tslib "^2.4.0"
 
+"@polkadot-cloud/core@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.npmjs.org/@polkadot-cloud/core/-/core-0.0.4.tgz#4540ce3bec0af035637078adb6b1b316e70c725d"
+  integrity sha512-dRNPBkKtZE6bHhJCHcr8c+jb11eFCgZjYp04+v1zsnc3hccCTxxmP/intKrNnIQ4TkLeZijnexi6kYOJW7xvrw==
+
 "@polkadot/keyring@^12.3.2":
   version "12.3.2"
   resolved "https://registry.npmjs.org/@polkadot/keyring/-/keyring-12.3.2.tgz#112a0c28816a1f47edad6260dc94222c29465a54"
@@ -678,16 +683,6 @@
   dependencies:
     "@polkadot/x-global" "12.3.2"
     tslib "^2.5.3"
-
-"@polkadotcloud/core@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.npmjs.org/@polkadotcloud/core/-/core-0.0.3.tgz#c28e18ce132862869e71d529c1912f6c600a8e73"
-  integrity sha512-x2di7ALBuL9+WsK8xT+tnoQtHqPInJE+Pi0BIC6IX9PL0XzUTpY84jiKSgQqiyb6Ewg32IH4ACnsJpIRBEQ0WQ==
-
-"@polkadotcloud/utils@^0.2.23":
-  version "0.2.23"
-  resolved "https://registry.yarnpkg.com/@polkadotcloud/utils/-/utils-0.2.23.tgz#8d4bfd81213b18a2ac66986da9169140a24a256e"
-  integrity sha512-J+YJwfNIqdU6mO9rN1ZFUvm1mBp7OIdybotePUZ4kRL/vxMKTPk3usNVzVv45PctRuNtve70MQdEmsbEiigafw==
 
 "@rollup/plugin-commonjs@^25.0.4":
   version "25.0.4"

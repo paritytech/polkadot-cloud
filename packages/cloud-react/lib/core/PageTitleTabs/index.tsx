@@ -4,7 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { ButtonTab } from "../../buttons/ButtonTab";
 import { PageTitleProps, PageTitleTabProps } from "../types";
 import { valEmpty } from "../../utils";
-import "@polkadotcloud/core/css/core/PageTitleTabs/index.css";
+import "@polkadot-cloud/core/css/core/PageTitleTabs/index.css";
 
 /**
  * @name PageTitleTabs

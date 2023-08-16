@@ -3,7 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { motion } from "framer-motion";
 import { ModalAnimationProps } from "../types";
-import "@polkadotcloud/core/css/modal/ModalMotionThreeSection/index.css";
+import "@polkadot-cloud/core/css/modal/ModalMotionThreeSection/index.css";
 
 /**
  * @name ModalMotionThreeSection

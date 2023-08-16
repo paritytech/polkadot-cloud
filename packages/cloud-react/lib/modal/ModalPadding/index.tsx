@@ -4,7 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { RefObject, forwardRef } from "react";
 import { ModalPaddingProps } from "../types";
 import { valEmpty } from "../../utils";
-import "@polkadotcloud/core/css/modal/ModalPadding/index.css";
+import "@polkadot-cloud/core/css/modal/ModalPadding/index.css";
 
 /**
  * @name ModalPadding

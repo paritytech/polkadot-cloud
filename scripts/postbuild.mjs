@@ -20,7 +20,7 @@ const matchName = (dir, files) => {
         ? file.slice("cloud-".length)
         : file;
 
-      if (json?.name !== `@polkadotcloud/${nameFromFile}`) {
+      if (json?.name !== `@polkadot-cloud/${nameFromFile}`) {
         console.error(
           `❌ package.json name field does not match the naming requirement`
         );

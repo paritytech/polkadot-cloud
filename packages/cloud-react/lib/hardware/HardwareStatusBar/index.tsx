@@ -7,7 +7,7 @@ import { ButtonPrimaryInvert } from "../../buttons/ButtonPrimaryInvert";
 import { ComponentBase } from "../../types";
 import { motion } from "framer-motion";
 import { FunctionComponent, SVGProps } from "react";
-import "@polkadotcloud/core/css/hardware/HardwareStatusBar/index.css";
+import "@polkadot-cloud/core/css/hardware/HardwareStatusBar/index.css";
 
 export type HardwareStatusBarProps = ComponentBase & {
   // whether to animate in the status bar.

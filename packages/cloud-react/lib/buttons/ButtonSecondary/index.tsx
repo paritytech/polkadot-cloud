@@ -4,7 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { ComponentBaseWithClassName } from "../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { onMouseHandlers, valEmpty, valOr } from "../../utils";
-import "@polkadotcloud/core/css/buttons/ButtonSecondary/index.css";
+import "@polkadot-cloud/core/css/buttons/ButtonSecondary/index.css";
 import { ButtonCommonProps, ButtonIconProps } from "../types";
 
 export type ButtonSecondaryProps = ComponentBaseWithClassName &
