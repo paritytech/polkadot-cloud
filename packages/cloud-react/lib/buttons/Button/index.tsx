@@ -1,6 +1,5 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
-import { ComponentBaseWithClassName } from "../../types";
 import { ButtonPrimary, ButtonPrimaryProps } from "../ButtonPrimary";
 import {
   ButtonPrimaryInvert,
@@ -19,53 +18,7 @@ import { ButtonSubmit, ButtonSubmitProps } from "../ButtonSubmit";
 import { ButtonHelp, ButtonHelpProps } from "../ButtonHelp";
 import { ButtonTab, ButtonTabProps } from "../ButtonTab";
 import { ButtonOption, ButtonOptionProps } from "../ButtonOption";
-import { ButtonCommonProps, ButtonIconProps } from "../types";
-
-type ButtonType =
-  | "help"
-  | "mono"
-  | "monoInvert"
-  | "option"
-  | "primary"
-  | "primaryInvert"
-  | "secondary"
-  | "submit"
-  | "submitInvert"
-  | "tab"
-  | "tertiary"
-  | "text";
-
-export type ButtonProps = ComponentBaseWithClassName &
-  ButtonIconProps &
-  ButtonCommonProps & {
-    // the type of the button that need to be imported.
-    type?: ButtonType;
-  } & (
-    | {
-        // use secondary network color.
-        colorSecondary?: boolean;
-        // large button, small otherwise.
-        lg?: boolean;
-        // pulsing effect.
-        pulse?: boolean;
-        // button content including icon and html styling.
-        content?: boolean;
-        // button text.
-        text: string;
-      }
-    | {
-        // whether to use secondary background
-        backgroundSecondary?: boolean;
-      }
-    | {
-        // whether the button is clicked
-        active?: boolean;
-        // the title of the button
-        title: string;
-        // a badge value can represent the main content of the tab page
-        badge?: string | number;
-      }
-  );
+import { ButtonProps } from "../types";
 
 export const Button = (props: ButtonProps) => {
   const { type } = props;

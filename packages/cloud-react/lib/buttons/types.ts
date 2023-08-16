@@ -3,6 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { IconDefinition, IconProp } from "@fortawesome/fontawesome-svg-core";
 import { MouseEvent } from "react";
+import { ComponentBaseWithClassName } from "../types";
 
 // Common button props, applied to all buttons
 export interface ButtonCommonProps {
@@ -35,3 +36,49 @@ export interface ButtonIconProps {
   // transform icon size.
   iconTransform?: string;
 }
+
+export type ButtonType =
+  | "help"
+  | "mono"
+  | "monoInvert"
+  | "option"
+  | "primary"
+  | "primaryInvert"
+  | "secondary"
+  | "submit"
+  | "submitInvert"
+  | "tab"
+  | "tertiary"
+  | "text";
+
+export type ButtonProps = ComponentBaseWithClassName &
+  ButtonIconProps &
+  ButtonCommonProps & {
+    // the type of the button that need to be imported.
+    type?: ButtonType;
+  } & (
+    | {
+        // use secondary network color.
+        colorSecondary?: boolean;
+        // large button, small otherwise.
+        lg?: boolean;
+        // pulsing effect.
+        pulse?: boolean;
+        // button content including icon and html styling.
+        content?: boolean;
+        // button text.
+        text: string;
+      }
+    | {
+        // whether to use secondary background
+        backgroundSecondary?: boolean;
+      }
+    | {
+        // whether the button is clicked
+        active?: boolean;
+        // the title of the button
+        title: string;
+        // a badge value can represent the main content of the tab page
+        badge?: string | number;
+      }
+  );
