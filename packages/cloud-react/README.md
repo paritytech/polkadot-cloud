@@ -2,7 +2,7 @@
 
 # Polkadot Cloud: React
 
-Core reusalbe structures (e.g. scss, utils etc) for Polkadot components. Using SCSS, Typescripy etc. Built using Gulp, publishable to NPM.
+Core React components. Using SCSS, Typescript etc. Built using Rollup, publishable to NPM.
 
 ## Managing the Package
 
@@ -23,13 +23,3 @@ yarn build
 ```
 cd dist && npm publish --access public
 ```
-
-## Using the Package
-
-#### Import the CSS file in your app index.
-
-```
-import '@polkadotcloud/core-cloud/.../<component>/index.css';
-```
-
-Structure of SCSS directories and files should be the same as per components
