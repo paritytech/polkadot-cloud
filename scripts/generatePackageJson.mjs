@@ -58,7 +58,7 @@ try {
     return keys.includes(k[0]);
   });
 
-  // If the package folder name starts with `cloud-`, remove this from the npm published package
+  // If the package folder name starts with `cloud-` remove this from the npm published package
   // name.
   let publishName = json.name.split(/-(.*)/s)[1];
   if (publishName.startsWith("cloud-")) {
