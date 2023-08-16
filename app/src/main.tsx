@@ -4,13 +4,13 @@ import { App } from "./App";
 
 // NOTE: order here is important. lib/styles/index.scss relies on fonts.
 
-import "@packages/themes/lib/template/default/fonts/index.css";
-import "@packages/themes/lib/template/default/index.css";
+import "@packages/cloud-core/lib/template/default/fonts/index.css";
+import "@packages/cloud-core/lib/template/default/index.css";
 
-import "@packages/themes/lib/theme/polkadot-relay/index.css";
-import "@packages/themes/lib/theme/kusama-relay/index.css";
-import "@packages/themes/lib/theme/westend-relay/index.css";
-import "@packages/themes/lib/theme/xcm/index.css";
+import "@packages/cloud-core/lib/theme/polkadot-relay/index.css";
+import "@packages/cloud-core/lib/theme/kusama-relay/index.css";
+import "@packages/cloud-core/lib/theme/westend-relay/index.css";
+import "@packages/cloud-core/lib/theme/xcm/index.css";
 
 import "./styles/index.scss";
 
