@@ -3,7 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { ModalAnimationProps } from "../types";
 import { motion } from "framer-motion";
-import "@polkadotcloud/core/css/modal/ModalOverlay/index.css";
+import "@polkadot-cloud/core/css/modal/ModalOverlay/index.css";
 
 export type ModalOverlayProps = ModalAnimationProps & {
   // the amount of blur to apply to the backdrop.

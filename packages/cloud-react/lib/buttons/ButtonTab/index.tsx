@@ -4,7 +4,7 @@
 import { ComponentBaseWithClassName } from "../../types";
 import { onMouseHandlers, valEmpty } from "../../utils";
 import { ButtonCommonProps } from "../types";
-import "@polkadotcloud/core/css/buttons/ButtonTab/index.css";
+import "@polkadot-cloud/core/css/buttons/ButtonTab/index.css";
 
 export type ButtonTabProps = ComponentBaseWithClassName &
   ButtonCommonProps & {

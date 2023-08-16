@@ -3,7 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { ModalAnimationProps } from "../types";
 import { motion } from "framer-motion";
-import "@polkadotcloud/core/css/modal/ModalCanvas/index.css";
+import "@polkadot-cloud/core/css/modal/ModalCanvas/index.css";
 
 /**
  * @name ModalCanvas

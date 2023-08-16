@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { EntryProps } from "../types";
-import "@polkadotcloud/core/css/core/Entry/index.css";
+import "@polkadot-cloud/core/css/core/Entry/index.css";
 
 /**
  * @name Entry

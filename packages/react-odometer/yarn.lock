@@ -2,33 +2,3 @@
 # yarn lockfile v1
 
 
-debug@^4.1.1:
-  version "4.3.4"
-  resolved "https://registry.npmjs.org/debug/-/debug-4.3.4.tgz#1319f6579357f2338d3337d2cdd4914bb5dcc865"
-  integrity sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==
-  dependencies:
-    ms "2.1.2"
-
-globrex@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.npmjs.org/globrex/-/globrex-0.1.2.tgz#dd5d9ec826232730cd6793a5e33a9302985e6098"
-  integrity sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==
-
-ms@2.1.2:
-  version "2.1.2"
-  resolved "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
-  integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
-
-tsconfck@^2.0.1:
-  version "2.1.1"
-  resolved "https://registry.npmjs.org/tsconfck/-/tsconfck-2.1.1.tgz#9b51603d2712d1f4740fa14748ca886a2e1893e5"
-  integrity sha512-ZPCkJBKASZBmBUNqGHmRhdhM8pJYDdOXp4nRgj/O0JwUwsMq50lCDRQP/M5GBNAA0elPrq4gAeu4dkaVCuKWww==
-
-vite-tsconfig-paths@^4.0.7:
-  version "4.0.7"
-  resolved "https://registry.npmjs.org/vite-tsconfig-paths/-/vite-tsconfig-paths-4.0.7.tgz#e109036d4890029e9539291e08a84ac01ef8dec4"
-  integrity sha512-MwIYaby6kcbQGZqMH+gAK6h0UYQGOkjsuAgw4q6bP/5vWkn8VKvnmLuCQHA2+IzHAJHnE8OFTO4lnJLFMf9+7Q==
-  dependencies:
-    debug "^4.1.1"
-    globrex "^0.1.2"
-    tsconfck "^2.0.1"

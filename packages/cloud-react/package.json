@@ -1,5 +1,5 @@
 {
-  "name": "polkadotcloud-cloud-react",
+  "name": "polkadot-cloud-cloud-react",
   "license": "GPL-3.0-only",
   "version": "0.1.1",
   "type": "module",
@@ -35,6 +35,6 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@polkadotcloud/core": "^0.0.3"
+    "@polkadot-cloud/core": "^0.0.4"
   }
 }

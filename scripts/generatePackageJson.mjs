@@ -13,7 +13,7 @@ const __dirname = dirname(__filename);
 const packagesDir = join(__dirname, "..", "packages");
 
 // Scope of packages to be published.
-const scope = "@polkadotcloud";
+const scope = "polkadot-cloud";
 
 const argv = minimist(process.argv.slice(2));
 
@@ -60,14 +60,14 @@ try {
 
   // If the package folder name starts with `cloud-` remove this from the npm published package
   // name.
-  let publishName = json.name.split(/-(.*)/s)[1];
+  let publishName = json.name.split(`${scope}-`)[1];
   if (publishName.startsWith("cloud-")) {
     // remove "cloud-"" from the start of `publishName`.
     publishName = publishName.slice("cloud-".length);
   }
 
   // Replace `name` with scope and package name.
-  filtered[0] = ["name", `${scope}/${publishName}`];
+  filtered[0] = ["name", `@${scope}/${publishName}`];
 
   // Merge properties with `hardcoded`.
   const merged = Object.assign({}, Object.fromEntries(filtered), hardcoded);

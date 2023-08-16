@@ -5,7 +5,7 @@ import { ComponentBaseWithClassName } from "../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { onMouseHandlers, valEmpty, valOr } from "../../utils";
 import { motion } from "framer-motion";
-import "@polkadotcloud/core/css/buttons/ButtonMonoInvert/index.css";
+import "@polkadot-cloud/core/css/buttons/ButtonMonoInvert/index.css";
 import { ButtonCommonProps, ButtonIconProps } from "../types";
 
 export type ButtonMonoProps = ComponentBaseWithClassName &

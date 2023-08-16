@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { ComponentBase } from "../../types";
-import "@polkadotcloud/core/css/core/Body/index.css";
+import "@polkadot-cloud/core/css/core/Body/index.css";
 
 /**
  * @name Body
