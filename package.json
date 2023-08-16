@@ -68,8 +68,8 @@
     "packages/cloud-react",
     "packages/community",
     "packages/dev-tools",
-    "packages/scripts",
-    "app"
+    "app",
+    "scripts"
   ],
   "repository": {
     "type": "git",
