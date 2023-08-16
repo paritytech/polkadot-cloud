@@ -35,10 +35,13 @@ const matchScripts = (dir, files) => {
         );
       }
 
+      const scripts = Object.keys(json?.scripts || {});
       if (
-        Object.keys(json?.scripts).indexOf("build:mock") === "-1" ||
-        Object.keys(json?.scripts).indexOf("build") === "-1" ||
-        Object.keys(json?.scripts).indexOf("clear") === "-1"
+        [
+          scripts.indexOf("build:mock"),
+          scripts.indexOf("build"),
+          scripts.indexOf("clear"),
+        ].includes("-1")
       ) {
         console.error(
           `❌ All of the scripts field in package.json are required to have build:mock, build and clear properties`
