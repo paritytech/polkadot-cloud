@@ -684,11 +684,6 @@
     "@polkadot/x-global" "12.3.2"
     tslib "^2.5.3"
 
-"@polkadotcloud/utils@^0.2.23":
-  version "0.2.23"
-  resolved "https://registry.yarnpkg.com/@polkadotcloud/utils/-/utils-0.2.23.tgz#8d4bfd81213b18a2ac66986da9169140a24a256e"
-  integrity sha512-J+YJwfNIqdU6mO9rN1ZFUvm1mBp7OIdybotePUZ4kRL/vxMKTPk3usNVzVv45PctRuNtve70MQdEmsbEiigafw==
-
 "@rollup/plugin-commonjs@^25.0.4":
   version "25.0.4"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-commonjs/-/plugin-commonjs-25.0.4.tgz#a7547a0c4ec3fa79818eb313e1de0023e548f4e6"

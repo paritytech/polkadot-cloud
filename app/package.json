@@ -28,7 +28,6 @@
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@polkadot/keyring": "^12.3.2",
     "@polkadot/util": "^12.3.2",
-    "@polkadotcloud/utils": "^0.2.23",
     "bignumber.js": "^9.1.1",
     "framer-motion": "^10.15.2",
     "react": "^18.2.0",

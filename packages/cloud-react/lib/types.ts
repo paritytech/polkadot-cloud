@@ -16,3 +16,6 @@ export type ComponentBaseWithClassName = ComponentBase & {
   // passing a className string.
   className?: string;
 };
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type AnyJson = any;
