@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { AnyJson } from "../../lib/types";
+import { AnyJson } from "../types";
 import { MouseEvent } from "react";
 
 /* Returns ` t` if truthy, or an empty string otherwise. */
