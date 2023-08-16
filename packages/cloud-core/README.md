@@ -2,8 +2,7 @@
 
 # Polkadot Cloud: Core
 
-Utilities for Polkadot apps.
-
-# Polkadot Cloud: Utils
-
-Core resuable structures for Polkadot Apps.
+- Plug-and-Play themes for Polkadot apps and chains.
+- Component css/scss
+- Template css/fonts
+- Utilities
