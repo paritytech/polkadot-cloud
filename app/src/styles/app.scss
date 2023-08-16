@@ -1,8 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-/* Inject styles from cloud-react */
-@use "../../../packages/cloud-core/lib/scss/styles/variables" as v;
+@use "variables" as v;
 
 :root {
   --app-active-color: rgb(211 48 121);
@@ -79,7 +78,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   width: 100%;
 
   /* We need the body not to over come sidebar */
-  @media (min-width: (v.$page-width-medium-threshold + 26px)) {
+  @media (min-width: (v.$page-width-threshold + 26px)) {
     margin: 0 auto;
   }
 

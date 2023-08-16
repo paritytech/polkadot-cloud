@@ -679,10 +679,10 @@
     "@polkadot/x-global" "12.3.2"
     tslib "^2.5.3"
 
-"@polkadotcloud/cloud-core@^0.0.3":
+"@polkadotcloud/core@^0.0.3":
   version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@polkadotcloud/cloud-core/-/cloud-core-0.0.3.tgz#23cfb973d24416f27b828140910774809d407639"
-  integrity sha512-XBTELAcP4WzH10P037xdY/DJZryrTFUYeFsmHb5tunAIBrTn2gE/FlqhAyrhLXkgMIha/BI63v4yey5fiKcaAA==
+  resolved "https://registry.npmjs.org/@polkadotcloud/core/-/core-0.0.3.tgz#c28e18ce132862869e71d529c1912f6c600a8e73"
+  integrity sha512-x2di7ALBuL9+WsK8xT+tnoQtHqPInJE+Pi0BIC6IX9PL0XzUTpY84jiKSgQqiyb6Ewg32IH4ACnsJpIRBEQ0WQ==
 
 "@polkadotcloud/utils@^0.2.23":
   version "0.2.23"

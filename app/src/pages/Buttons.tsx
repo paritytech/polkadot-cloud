@@ -21,11 +21,11 @@ export const Buttons = () => (
       <h3>
         <FontAwesomeIcon icon={faNpm} />
         <a
-          href="https://www.npmjs.com/package/@polkadotcloud/cloud-react"
+          href="https://www.npmjs.com/package/@polkadotcloud/react"
           target="_blank"
           rel="noreferrer"
         >
-          @polkadotcloud/cloud-react
+          @polkadotcloud/react
         </a>
       </h3>
     </div>

@@ -4,7 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { RefObject, forwardRef } from "react";
 import { ModalFixedTitleProps } from "../types";
 import { valEmpty } from "../../utils";
-import "@polkadotcloud/cloud-core/css/modal/ModalFixedTitle/index.css";
+import "@polkadotcloud/core/css/modal/ModalFixedTitle/index.css";
 
 /**
  * @name ModalFixedTitle

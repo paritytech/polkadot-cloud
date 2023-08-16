@@ -5,7 +5,7 @@ import { faCheck, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ActionItemProps } from "../types";
 import { useEffect, useState } from "react";
-import "@polkadotcloud/cloud-core/css/modal/ActionItem/index.css";
+import "@polkadotcloud/core/css/modal/ActionItem/index.css";
 
 /**
  * @name ActionItem
