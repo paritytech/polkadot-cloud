@@ -10,7 +10,7 @@ A library and automated platform for developing and publishing assets for Polkad
 
 Core components for Polkadot dashboards.
 
-#### [@polkadotcloud/cloud-core](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-core)
+#### [@polkadotcloud/core](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-core)
 
 Contains:
 - Plug-and-Play Themes for Polkadot apps and chains.

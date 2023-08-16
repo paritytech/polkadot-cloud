@@ -3,7 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { valEmpty } from "../../utils";
 import { SideProps } from "../types";
-import "@polkadotcloud/cloud-core/css/core/Side/index.css";
+import "@polkadotcloud/core/css/core/Side/index.css";
 
 /**
  * @name Side

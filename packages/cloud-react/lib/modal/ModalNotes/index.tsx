@@ -3,7 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { valEmpty } from "../../utils";
 import { ModalNotesProps } from "../types";
-import "@polkadotcloud/cloud-core/css/modal/ModalNotes/index.css";
+import "@polkadotcloud/core/css/modal/ModalNotes/index.css";
 
 /**
  * @name ModalNotes

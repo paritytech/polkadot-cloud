@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { ComponentBase } from "../../types";
-import "@polkadotcloud/cloud-core/css/core/Page/index.css";
+import "@polkadotcloud/core/css/core/Page/index.css";
 
 /**
  * @name Page

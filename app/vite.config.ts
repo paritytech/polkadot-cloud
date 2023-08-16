@@ -31,6 +31,15 @@ export default defineConfig({
   resolve: {
     alias: [
       {
+        find: "@polkadotcloud/core",
+        replacement: path.resolve(
+          __dirname,
+          "../packages",
+          "cloud-core",
+          "dist"
+        ),
+      },
+      {
         find: "@packages",
         replacement: path.resolve(__dirname, "../packages"),
       },
