@@ -69,7 +69,6 @@
     "packages/community",
     "packages/dev-tools",
     "packages/scripts",
-    "packages/utils",
     "app"
   ],
   "repository": {
