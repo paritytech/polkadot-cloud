@@ -11,16 +11,16 @@ import cleanup from "rollup-plugin-cleanup";
  * @type {import('rollup').RollupOptions}
  */
 export default {
-  input: "lib/index.ts",
+  input: "lib/utils/index.ts",
   output: [
     {
-      file: "dist/index.ts",
+      file: "dist/utils/index.ts",
       format: "es",
       sourcemap: false,
     },
   ],
   plugins: [
-    del({ targets: "dist/*" }),
+    del({ targets: "dist/utils/*" }),
     peerDepsExternal(),
     resolve(),
     typescript(),

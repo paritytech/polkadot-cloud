@@ -64,7 +64,12 @@
     "typescript": "^5.1.6"
   },
   "workspaces": [
-    "packages/*",
+    "packages/cloud-core",
+    "packages/cloud-react",
+    "packages/community",
+    "packages/dev-tools",
+    "packages/scripts",
+    "packages/utils",
     "app"
   ],
   "repository": {
