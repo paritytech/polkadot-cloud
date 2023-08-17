@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormEvent, ReactNode, useState } from "react";
-import { clipAddress, unescape } from "@polkadot-cloud/core/utils";
+import { clipAddress, unescape } from "@polkadot-cloud/utils";
 import "@polkadot-cloud/core/css/hardware/HardwareAddress/index.css";
 
 export type HardwareAddressProps = ComponentBase & {

@@ -545,6 +545,11 @@
   resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-0.0.5.tgz#7c30b7e02a68ee686bef67d7aa7126c9d13beb53"
   integrity sha512-a0kV6G4mzZobHv9MV20EkkfsKELfHygFII8TjjTCotqy++7omYDNdNiXAV/UBg5pVKWQljL2W/Kq0eBtiSd/cg==
 
+"@polkadot-cloud/utils@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/utils/-/utils-0.0.1.tgz#24b0d569c4637e4d539ba3a2c669339144162133"
+  integrity sha512-YWSQ/sPRwVcO1LBJAVS7E7TI+dYpVY/Oe/sDwLThMVaVXzaIx18tBBhoEXXU85a8N0bXJHYVOMIWoCnAem4ZJw==
+
 "@polkadot/keyring@^12.3.2":
   version "12.3.2"
   resolved "https://registry.npmjs.org/@polkadot/keyring/-/keyring-12.3.2.tgz#112a0c28816a1f47edad6260dc94222c29465a54"
@@ -703,10 +708,10 @@
   dependencies:
     "@rollup/pluginutils" "^5.0.1"
 
-"@rollup/plugin-node-resolve@^15.1.0":
-  version "15.1.0"
-  resolved "https://registry.yarnpkg.com/@rollup/plugin-node-resolve/-/plugin-node-resolve-15.1.0.tgz#9ffcd8e8c457080dba89bb9fcb583a6778dc757e"
-  integrity sha512-xeZHCgsiZ9pzYVgAo9580eCGqwh/XCEUM9q6iQfGNocjgkufHAqC3exA+45URvhiYV8sBF9RlBai650eNs7AsA==
+"@rollup/plugin-node-resolve@^15.2.0":
+  version "15.2.0"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-node-resolve/-/plugin-node-resolve-15.2.0.tgz#982053b237f81471aace570472e88a456d211621"
+  integrity sha512-mKur03xNGT8O9ODO6FtT43ITGqHWZbKPdVJHZb+iV9QYcdlhUUB0wgknvA4KCUmC5oHJF6O2W1EgmyOQyVUI4Q==
   dependencies:
     "@rollup/pluginutils" "^5.0.1"
     "@types/resolve" "1.20.2"
@@ -3133,10 +3138,10 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-framer-motion@^10.15.2:
-  version "10.15.2"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-10.15.2.tgz#703e31b78b3ca06ca9fb41e6da89c1c342fc02e8"
-  integrity sha512-z14GYH4WQXnuTgggwf0qyX0vo98PDE+dw21F7aLzUqEcrsmfLovy4jPiA82Cp/X0juWuEHte7rJGOjds9GAQFA==
+framer-motion@^10.16.0:
+  version "10.16.0"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-10.16.0.tgz#c8020d05d98662ba01d294b7d4c2e263073829cf"
+  integrity sha512-R+88Mkr/1dr7XHjacwptfJyrywRzQ1HZX3YSZtN4tFMBq1O8GGCbDEv31Nf/H08o0hUXLC87GkxsR/1bZgwXfw==
   dependencies:
     tslib "^2.4.0"
   optionalDependencies:
