@@ -30,6 +30,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@polkadot/util": "^11.0.1",
+    "@polkadot/util-crypto": "^12.3.2",
     "framer-motion": "^10.15.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
