@@ -11,11 +11,14 @@ A library and automated platform for developing and publishing assets for Polkad
 - Plug-and-Play themes for Polkadot apps and chains.
 - Component css/scss
 - Template css/fonts
-- Utilities
 
 #### [@polkadot-cloud/react](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-react#polkadot-cloud-react)
 
 Core components for Polkadot dashboards.
+
+#### [@polkadotcloud/utils](https://github.com/paritytech/polkadot-cloud/tree/main/packages/utils#polkadot-cloud-utils)
+
+Utilities for Polkadot apps.
 
 #### [@polkadot-cloud/community](https://github.com/paritytech/polkadot-cloud/tree/main/packages/community#polkadot-cloud-community)
 
