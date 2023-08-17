@@ -540,10 +540,10 @@
     tiny-glob "^0.2.9"
     tslib "^2.4.0"
 
-"@polkadot-cloud/core@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.npmjs.org/@polkadot-cloud/core/-/core-0.0.4.tgz#4540ce3bec0af035637078adb6b1b316e70c725d"
-  integrity sha512-dRNPBkKtZE6bHhJCHcr8c+jb11eFCgZjYp04+v1zsnc3hccCTxxmP/intKrNnIQ4TkLeZijnexi6kYOJW7xvrw==
+"@polkadot-cloud/core@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-0.0.5.tgz#7c30b7e02a68ee686bef67d7aa7126c9d13beb53"
+  integrity sha512-a0kV6G4mzZobHv9MV20EkkfsKELfHygFII8TjjTCotqy++7omYDNdNiXAV/UBg5pVKWQljL2W/Kq0eBtiSd/cg==
 
 "@polkadot/keyring@^12.3.2":
   version "12.3.2"
@@ -563,7 +563,7 @@
     "@substrate/ss58-registry" "^1.40.0"
     tslib "^2.5.3"
 
-"@polkadot/util-crypto@12.3.2", "@polkadot/util-crypto@^12.3.2":
+"@polkadot/util-crypto@12.3.2":
   version "12.3.2"
   resolved "https://registry.npmjs.org/@polkadot/util-crypto/-/util-crypto-12.3.2.tgz#42d810886904e06fa6e5db254c15f6ef80f4ab72"
   integrity sha512-pTpx+YxolY0BDT4RcGmgeKbHHD/dI6Ll9xRsqmVdIjpcVVY20uDNTyXs81ZNtfKgyod1y9JQkfNv2Dz9iEpTkQ==
