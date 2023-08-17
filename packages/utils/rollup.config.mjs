@@ -11,10 +11,10 @@ import cleanup from "rollup-plugin-cleanup";
  * @type {import('rollup').RollupOptions}
  */
 export default {
-  input: "lib/utils/index.ts",
+  input: "lib/index.ts",
   output: [
     {
-      file: "dist/utils/index.js",
+      file: "dist/index.js",
       format: "es",
       sourcemap: false,
     },

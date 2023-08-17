@@ -3,8 +3,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "composite": true,
-    "declarationDir": "dist/utils",
-    "rootDir": "./lib/utils",
+    "declarationDir": "dist",
+    "rootDir": "./lib",
     "outDir": "dist",
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -15,5 +15,5 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": false
   },
-  "include": ["./lib/utils/*"],
+  "include": ["./lib/*"],
 }
