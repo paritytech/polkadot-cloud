@@ -13,6 +13,32 @@ SPDX-License-Identifier: GPL-3.0-only */
   width: 100%;
 }
 
+.error-page {
+  margin: 0 auto;
+  padding: 10rem 0;
+  text-align: center;
+
+  div {
+    margin: 1.5rem 0;
+    font-size: 1.5rem;
+  }
+
+  a {
+    font-size: 1.25rem;
+  }
+
+  .icon {
+    width: 20rem;
+    height: 12rem;
+    margin: 0 auto;
+
+    > svg {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+
 .menu {
   position: fixed;
   top: 0;
@@ -53,6 +79,22 @@ SPDX-License-Identifier: GPL-3.0-only */
     }
 
     > button {
+      font-size: inherit;
+      text-decoration: none;
+      display: block;
+      line-height: 2.25rem;
+
+      &.lg {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+      }
+
+      &.selected {
+        color: var(--app-active-color);
+      }
+    }
+
+    > a {
       font-size: inherit;
       text-decoration: none;
       display: block;

@@ -10,6 +10,41 @@ import { CardPage } from "./pages/CardPage";
 import { LoadersPage } from "./pages/LoadersPage";
 import { Extensions } from "./pages/Extensions";
 
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ErrorPage } from "./pages/ErrorPage";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Buttons />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "buttons",
+    element: <Buttons />,
+  },
+  {
+    path: "modal",
+    element: <Modal />,
+  },
+  {
+    path: "extensions",
+    element: <Extensions />,
+  },
+  {
+    path: "grid",
+    element: <GridPage />,
+  },
+  {
+    path: "card",
+    element: <CardPage />,
+  },
+  {
+    path: "loader",
+    element: <LoadersPage />,
+  },
+]);
+
 export const App = () => {
   // store the current theme
   const [mode, setMode] = useState<string>("light");
@@ -19,23 +54,6 @@ export const App = () => {
 
   // store the visible Component
   const [component, setComponent] = useState<string>("buttons");
-
-  const getComponent = (key: string) => {
-    switch (key) {
-      case "modal":
-        return <Modal />;
-      case "extensions":
-        return <Extensions />;
-      case "grid":
-        return <GridPage />;
-      case "card":
-        return <CardPage />;
-      case "loader":
-        return <LoadersPage />;
-      default:
-        return <Buttons />;
-    }
-  };
 
   return (
     <div className={`main theme-${theme} theme-${mode}`}>
@@ -48,7 +66,9 @@ export const App = () => {
         setComponent={setComponent}
       />
 
-      <div className="body">{getComponent(component)}</div>
+      <div className="body">
+        <RouterProvider router={router} />
+      </div>
     </div>
   );
 };

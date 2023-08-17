@@ -81,47 +81,53 @@ export const SideMenu = ({
         <h3>Core UI</h3>
         <section>
           <h5>Layout</h5>
-          <button
+          <a
             className={component === "grid" ? "selected" : undefined}
             onClick={() => setComponent("grid")}
+            href={"/grid"}
           >
             Grid
-          </button>
+          </a>
 
-          <button
+          <a
             className={component === "modal" ? "selected" : undefined}
             onClick={() => setComponent("modal")}
+            href={"/modal"}
           >
             Modal
-          </button>
-          <button
+          </a>
+          <a
             className={component === "card" ? "selected" : undefined}
             onClick={() => setComponent("card")}
+            href={"/card"}
           >
             Card
-          </button>
+          </a>
           <h5>Interaction</h5>
-          <button
+          <a
             className={`${component === "buttons" ? ` selected` : ``}`}
             onClick={() => setComponent("buttons")}
+            href={"/buttons"}
           >
             Buttons
-          </button>
+          </a>
         </section>
         <section>
           <h5>Standalone</h5>
-          <button
+          <a
             className={`lg${component === "loader" ? ` selected` : ``}`}
             onClick={() => setComponent("loader")}
+            href={"/loader"}
           >
             Loaders
-          </button>
-          <button
+          </a>
+          <a
             className={`lg${component === "extensions" ? ` selected` : ``}`}
             onClick={() => setComponent("extensions")}
+            href={"/extensions"}
           >
             Extensions
-          </button>
+          </a>
         </section>
       </section>
     </div>
