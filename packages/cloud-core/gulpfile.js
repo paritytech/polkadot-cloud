@@ -10,6 +10,12 @@ const { argv } = require("yargs");
 
 const SASS_OPTIONS = { outputStyle: "compressed" };
 
+const buildFonts = () => {
+  return src("lib/template/**/*.woff2")
+    .pipe(dest("dist/template"))
+    .pipe(refresh(lrserver));
+};
+
 const buildTemplate = () => {
   return src("lib/template/**/*.css")
     .pipe(sass(SASS_OPTIONS))
@@ -40,5 +46,10 @@ const watchTask = () => {
 if (argv.task && argv.task === "watch") {
   exports.default = series(watchTask);
 } else {
-  exports.default = series(buildTemplate, buildTheme, buildComponents);
+  exports.default = series(
+    buildTemplate,
+    buildTheme,
+    buildComponents,
+    buildFonts
+  );
 }
