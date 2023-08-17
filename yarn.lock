@@ -545,6 +545,11 @@
   resolved "https://registry.npmjs.org/@polkadot-cloud/core/-/core-0.0.4.tgz#4540ce3bec0af035637078adb6b1b316e70c725d"
   integrity sha512-dRNPBkKtZE6bHhJCHcr8c+jb11eFCgZjYp04+v1zsnc3hccCTxxmP/intKrNnIQ4TkLeZijnexi6kYOJW7xvrw==
 
+"@polkadot-cloud/utils@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/utils/-/utils-0.0.1.tgz#24b0d569c4637e4d539ba3a2c669339144162133"
+  integrity sha512-YWSQ/sPRwVcO1LBJAVS7E7TI+dYpVY/Oe/sDwLThMVaVXzaIx18tBBhoEXXU85a8N0bXJHYVOMIWoCnAem4ZJw==
+
 "@polkadot/keyring@^12.3.2":
   version "12.3.2"
   resolved "https://registry.npmjs.org/@polkadot/keyring/-/keyring-12.3.2.tgz#112a0c28816a1f47edad6260dc94222c29465a54"
