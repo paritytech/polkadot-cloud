@@ -6,7 +6,7 @@
     "Ross Bulat<ross@parity.io>",
     "Nikolaos Kontakis<nikos@parity.io>"
   ],
-  "description": "Core resuable structures for Polkadot Apps.",
+  "description": "Core reusable structures for Polkadot Dapps.",
   "keywords": [
     "Polkadot",
     "UI"
