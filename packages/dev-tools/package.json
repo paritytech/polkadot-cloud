@@ -1,7 +1,7 @@
 {
   "name": "polkadot-cloud-dev-tools",
   "license": "GPL-3.0-only",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "contributors": [
     "Ross Bulat<ross@parity.io>",
@@ -13,8 +13,8 @@
     "UI"
   ],
   "scripts": {
-    "build:mock": "node ../../scripts/generatePackageJson.mjs -p dev-tools -m index.ts",
-    "build": "rollup -c && node ../../scripts/generatePackageJson.mjs -p dev-tools -m index.ts",
+    "build:mock": "node ../../scripts/generatePackageJson.mjs -p dev-tools -m index.js",
+    "build": "rollup -c && node ../../scripts/generatePackageJson.mjs -p dev-tools -m index.js",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   },
   "bugs": {
