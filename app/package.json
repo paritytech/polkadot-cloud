@@ -29,7 +29,7 @@
     "@polkadot/keyring": "^12.3.2",
     "@polkadot/util": "^12.3.2",
     "bignumber.js": "^9.1.1",
-    "framer-motion": "^10.15.2",
+    "framer-motion": "^10.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-powerglitch": "^1.0.0"
