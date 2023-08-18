@@ -71,6 +71,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
     > section {
       margin-top: 1.5rem;
+
       > h5 {
         margin-top: 1.25rem;
       }
@@ -153,7 +154,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     font-family: InterSemiBold, sans-serif;
     display: flex;
     align-items: center;
-    margin: 1rem 0 2rem 0;
+    margin: 1rem 0 2rem;
 
     a {
       color: var(--text-color-secondary);
