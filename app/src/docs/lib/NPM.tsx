@@ -5,19 +5,19 @@ import { faNpm } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export interface Props {
-  npmPackage: string;
+  npm: string;
 }
 
-export const NPM = ({ npmPackage }: Props) => {
+export const NPM = ({ npm }: Props) => {
   return (
     <h3>
       <FontAwesomeIcon icon={faNpm} />
       <a
-        href={`https://www.npmjs.com/package/${npmPackage}`}
+        href={`https://www.npmjs.com/package/${npm}`}
         target="_blank"
         rel="noreferrer"
       >
-        {npmPackage}
+        {npm}
       </a>
     </h3>
   );

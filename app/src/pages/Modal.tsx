@@ -5,13 +5,15 @@ import { useState } from "react";
 import { Button } from "@packages/cloud-react/lib/buttons/Button";
 import { CodeDrawer } from "../components/CodeDrawer";
 import { ActionItem } from "@packages/cloud-react/lib/modal/ActionItem";
+import Doc from "../docs/modal.mdx";
 
 export const Modal = () => {
   const [parentToggle, setParentToggle] = useState<boolean>(false);
 
   return (
     <div className="doc">
-      <h1>Modal Components</h1>
+      <Doc npm="@polkadot-cloud/react" />
+
       <h4>Action Item</h4>
       <div className="sb-row">
         <ActionItem text="Some Action" />

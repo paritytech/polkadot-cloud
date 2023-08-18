@@ -4,6 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { Grid } from "@packages/cloud-react/lib/core/Grid";
 import { CodeDrawer } from "../components/CodeDrawer";
 import { Separator } from "@packages/cloud-react/lib/core/Separator";
+import Doc from "../docs/grid.mdx";
 
 export const GridPage = () => {
   const separatorStyle = {
@@ -13,7 +14,8 @@ export const GridPage = () => {
   };
   return (
     <div className="doc">
-      <h1>Grid System</h1>
+      <Doc npm="@polkadot-cloud/react" />
+
       <h4>
         1 row - 12 columns with all screen size parameters sets (resize screen
         for results)

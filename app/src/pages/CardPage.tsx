@@ -5,6 +5,7 @@ import { Grid } from "@packages/cloud-react/lib/core/Grid";
 import { CodeDrawer } from "../components/CodeDrawer";
 import { Separator } from "@packages/cloud-react/lib/core/Separator";
 import { Card } from "@packages/cloud-react/lib/core/Card";
+import Doc from "../docs/cards.mdx";
 
 export const CardPage = () => {
   const separatorStyle = {
@@ -24,7 +25,7 @@ export const CardPage = () => {
   };
   return (
     <div className="doc">
-      <h1>Cards</h1>
+      <Doc npm="@polkadot-cloud/react" />
 
       <h4>Card by itself - plain</h4>
       <Card>Just a card</Card>

@@ -22,7 +22,7 @@ import Doc from "../docs/extensions.mdx";
 
 export const Extensions = () => (
   <div className="doc">
-    <Doc npmPackage="@polkadot-cloud/community" />
+    <Doc npm="@polkadot-cloud/community" />
 
     <h4>Enkrypt: TSX / SVG</h4>
 

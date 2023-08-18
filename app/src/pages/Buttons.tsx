@@ -14,7 +14,7 @@ import Doc from "../docs/buttons.mdx";
 
 export const Buttons = () => (
   <div className="doc">
-    <Doc npmPackage="@polkadot-cloud/react" />
+    <Doc npm="@polkadot-cloud/react" />
 
     <h4>Button Primary</h4>
 
