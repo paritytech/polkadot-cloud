@@ -67,7 +67,14 @@ SPDX-License-Identifier: GPL-3.0-only */
 
   section {
     font-size: 1.05rem;
-    margin-top: 1.25rem;
+    margin-top: 0.75rem;
+
+    > section {
+      margin-top: 1.5rem;
+      > h5 {
+        margin-top: 1.25rem;
+      }
+    }
 
     h5 {
       font-family: InterSemiBold, sans-serif;

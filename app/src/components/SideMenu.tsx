@@ -1,11 +1,12 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { Dispatch, SetStateAction } from "react";
+import { Fragment, Dispatch, SetStateAction } from "react";
 import { ReactComponent as IconSVG } from "../svg/icon.svg";
 import { useGlitch } from "react-powerglitch";
 import { Separator } from "@packages/cloud-react/lib/core/Separator";
 import { Link } from "react-router-dom";
+import { nameFromRoute, routeCategories } from "../config/routes";
 
 interface SideMenuProps {
   mode: string;
@@ -79,57 +80,52 @@ export const SideMenu = ({
         <Separator />
       </section>
       <section>
-        <h3>Core UI</h3>
-        <section>
-          <h5>Layout</h5>
-          <Link
-            className={component === "grid" ? "selected" : undefined}
-            onClick={() => setComponent("grid")}
-            to="grid"
-          >
-            Grid
-          </Link>
+        {routeCategories.map(({ name, ...rest }, i) => {
+          const multi = "paths" in rest;
 
-          <Link
-            className={component === "modal" ? "selected" : undefined}
-            onClick={() => setComponent("modal")}
-            to="/modal"
-          >
-            Modal
-          </Link>
-          <Link
-            className={component === "card" ? "selected" : undefined}
-            onClick={() => setComponent("card")}
-            to="/card"
-          >
-            Card
-          </Link>
-          <h5>Interaction</h5>
-          <Link
-            className={`${component === "buttons" ? ` selected` : ``}`}
-            onClick={() => setComponent("buttons")}
-            to="/buttons"
-          >
-            Buttons
-          </Link>
-        </section>
-        <section>
-          <h5>Standalone</h5>
-          <Link
-            className={`lg${component === "loader" ? ` selected` : ``}`}
-            onClick={() => setComponent("loader")}
-            to="/loader"
-          >
-            Loaders
-          </Link>
-          <Link
-            className={`lg${component === "extensions" ? ` selected` : ``}`}
-            onClick={() => setComponent("extensions")}
-            to="/extensions"
-          >
-            Extensions
-          </Link>
-        </section>
+          if (multi) {
+            return (
+              <Fragment key={`nav_${i}`}>
+                <section>
+                  <h3>{name}</h3>
+
+                  {rest.paths.map(({ text, paths }, j) => (
+                    <Fragment key={`nav_${i}_heading_${j}`}>
+                      <h5>{text}</h5>
+
+                      {paths.map((path, k) => (
+                        <Link
+                          key={`nav_${i}_heading_${j}_path_${k}`}
+                          className={
+                            component === path ? "selected" : undefined
+                          }
+                          onClick={() => setComponent(path)}
+                          to={`/${path}`}
+                        >
+                          {nameFromRoute(path)}
+                        </Link>
+                      ))}
+                    </Fragment>
+                  ))}
+                </section>
+                <Separator />
+              </Fragment>
+            );
+          } else {
+            return (
+              <Fragment key={`nav_${i}`}>
+                <Link
+                  className={`lg${component === rest.path ? ` selected` : ``}`}
+                  onClick={() => setComponent(rest.path)}
+                  to={`/${rest.path}`}
+                >
+                  {name}
+                </Link>
+                <Separator />
+              </Fragment>
+            );
+          }
+        })}
       </section>
     </div>
   );
