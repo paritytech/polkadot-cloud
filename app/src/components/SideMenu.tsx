@@ -5,6 +5,7 @@ import { Dispatch, SetStateAction } from "react";
 import { ReactComponent as IconSVG } from "../svg/icon.svg";
 import { useGlitch } from "react-powerglitch";
 import { Separator } from "@packages/cloud-react/lib/core/Separator";
+import { Link } from "react-router-dom";
 
 interface SideMenuProps {
   mode: string;
@@ -81,53 +82,53 @@ export const SideMenu = ({
         <h3>Core UI</h3>
         <section>
           <h5>Layout</h5>
-          <a
+          <Link
             className={component === "grid" ? "selected" : undefined}
             onClick={() => setComponent("grid")}
-            href={"/grid"}
+            to="grid"
           >
             Grid
-          </a>
+          </Link>
 
-          <a
+          <Link
             className={component === "modal" ? "selected" : undefined}
             onClick={() => setComponent("modal")}
-            href={"/modal"}
+            to="/modal"
           >
             Modal
-          </a>
-          <a
+          </Link>
+          <Link
             className={component === "card" ? "selected" : undefined}
             onClick={() => setComponent("card")}
-            href={"/card"}
+            to="/card"
           >
             Card
-          </a>
+          </Link>
           <h5>Interaction</h5>
-          <a
+          <Link
             className={`${component === "buttons" ? ` selected` : ``}`}
             onClick={() => setComponent("buttons")}
-            href={"/buttons"}
+            to="/buttons"
           >
             Buttons
-          </a>
+          </Link>
         </section>
         <section>
           <h5>Standalone</h5>
-          <a
+          <Link
             className={`lg${component === "loader" ? ` selected` : ``}`}
             onClick={() => setComponent("loader")}
-            href={"/loader"}
+            to="/loader"
           >
             Loaders
-          </a>
-          <a
+          </Link>
+          <Link
             className={`lg${component === "extensions" ? ` selected` : ``}`}
             onClick={() => setComponent("extensions")}
-            href={"/extensions"}
+            to="/extensions"
           >
             Extensions
-          </a>
+          </Link>
         </section>
       </section>
     </div>
