@@ -3,8 +3,9 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { useState } from "react";
 import { SideMenu } from "./components/SideMenu";
-import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { routes } from "./config/routes";
+import { ErrorPage } from "./pages/ErrorPage";
 
 export const Router = () => {
   return (
@@ -12,11 +13,7 @@ export const Router = () => {
       {routes.map((route) => (
         <Route key={`nav_page_${route.path}`} {...route} />
       ))}
-      <Route
-        key="nav_page_other"
-        path="*"
-        element={<Navigate to="/buttons" />}
-      />
+      <Route key="nav_page_other" path="*" element={<ErrorPage />} />
     </Routes>
   );
 };

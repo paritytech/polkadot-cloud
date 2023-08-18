@@ -10,6 +10,10 @@ import { Extensions } from "../pages/Extensions";
 
 export const routes = [
   {
+    path: "/",
+    element: <Buttons />, // Placeholder until we have a landing page.
+  },
+  {
     path: "buttons",
     element: <Buttons />,
   },

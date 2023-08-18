@@ -1,10 +1,7 @@
-import { useRouteError } from "react-router-dom";
 import { useGlitch } from "react-powerglitch";
 import { ReactComponent as IconSVG } from "../svg/icon.svg";
 
 export const ErrorPage = () => {
-  const error = useRouteError();
-
   const glitch = useGlitch({
     timing: {
       duration: 5000,
@@ -19,7 +16,6 @@ export const ErrorPage = () => {
       amplitudeY: 0.2,
     },
   });
-  console.error("Error Page:", error);
 
   return (
     <div className="error-page">
