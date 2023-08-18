@@ -5,6 +5,7 @@ import { Dispatch, SetStateAction } from "react";
 import { ReactComponent as IconSVG } from "../svg/icon.svg";
 import { useGlitch } from "react-powerglitch";
 import { Separator } from "@packages/cloud-react/lib/core/Separator";
+import { Link } from "react-router-dom";
 
 interface SideMenuProps {
   mode: string;
@@ -81,47 +82,53 @@ export const SideMenu = ({
         <h3>Core UI</h3>
         <section>
           <h5>Layout</h5>
-          <button
+          <Link
             className={component === "grid" ? "selected" : undefined}
             onClick={() => setComponent("grid")}
+            to="grid"
           >
             Grid
-          </button>
+          </Link>
 
-          <button
+          <Link
             className={component === "modal" ? "selected" : undefined}
             onClick={() => setComponent("modal")}
+            to="/modal"
           >
             Modal
-          </button>
-          <button
+          </Link>
+          <Link
             className={component === "card" ? "selected" : undefined}
             onClick={() => setComponent("card")}
+            to="/card"
           >
             Card
-          </button>
+          </Link>
           <h5>Interaction</h5>
-          <button
+          <Link
             className={`${component === "buttons" ? ` selected` : ``}`}
             onClick={() => setComponent("buttons")}
+            to="/buttons"
           >
             Buttons
-          </button>
+          </Link>
         </section>
         <section>
           <h5>Standalone</h5>
-          <button
+          <Link
             className={`lg${component === "loader" ? ` selected` : ``}`}
             onClick={() => setComponent("loader")}
+            to="/loader"
           >
             Loaders
-          </button>
-          <button
+          </Link>
+          <Link
             className={`lg${component === "extensions" ? ` selected` : ``}`}
             onClick={() => setComponent("extensions")}
+            to="/extensions"
           >
             Extensions
-          </button>
+          </Link>
         </section>
       </section>
     </div>

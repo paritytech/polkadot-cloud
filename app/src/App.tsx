@@ -2,13 +2,21 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { useState } from "react";
-import { Buttons } from "./pages/Buttons";
 import { SideMenu } from "./components/SideMenu";
-import { Modal } from "./pages/Modal";
-import { GridPage } from "./pages/GridPage";
-import { CardPage } from "./pages/CardPage";
-import { LoadersPage } from "./pages/LoadersPage";
-import { Extensions } from "./pages/Extensions";
+import { HashRouter, Route, Routes } from "react-router-dom";
+import { routes } from "./config/routes";
+import { ErrorPage } from "./pages/ErrorPage";
+
+export const Router = () => {
+  return (
+    <Routes>
+      {routes.map((route) => (
+        <Route key={`nav_page_${route.path}`} {...route} />
+      ))}
+      <Route key="nav_page_other" path="*" element={<ErrorPage />} />
+    </Routes>
+  );
+};
 
 export const App = () => {
   // store the current theme
@@ -20,35 +28,22 @@ export const App = () => {
   // store the visible Component
   const [component, setComponent] = useState<string>("buttons");
 
-  const getComponent = (key: string) => {
-    switch (key) {
-      case "modal":
-        return <Modal />;
-      case "extensions":
-        return <Extensions />;
-      case "grid":
-        return <GridPage />;
-      case "card":
-        return <CardPage />;
-      case "loader":
-        return <LoadersPage />;
-      default:
-        return <Buttons />;
-    }
-  };
-
   return (
     <div className={`main theme-${theme} theme-${mode}`}>
-      <SideMenu
-        mode={mode}
-        setMode={setMode}
-        theme={theme}
-        setTheme={setTheme}
-        component={component}
-        setComponent={setComponent}
-      />
+      <HashRouter basename="/">
+        <SideMenu
+          mode={mode}
+          setMode={setMode}
+          theme={theme}
+          setTheme={setTheme}
+          component={component}
+          setComponent={setComponent}
+        />
 
-      <div className="body">{getComponent(component)}</div>
+        <div className="body">
+          <Router />
+        </div>
+      </HashRouter>
     </div>
   );
 };
