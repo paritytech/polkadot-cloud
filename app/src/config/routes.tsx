@@ -22,7 +22,6 @@ type RouteCategories = ((RouteCategory | RouteCategoryMulti) & {
 interface RouteCategory {
   path: string;
 }
-[];
 
 interface RouteCategoryMulti {
   paths: {
