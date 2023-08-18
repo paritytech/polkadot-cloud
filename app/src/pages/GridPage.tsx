@@ -13,7 +13,7 @@ export const GridPage = () => {
   };
   return (
     <>
-      <div className="sb-head">
+      <div className="doc">
         <h1>Grid System</h1>
       </div>
       <h4>

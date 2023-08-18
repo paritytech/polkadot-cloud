@@ -12,12 +12,12 @@ import { faNpm } from "@fortawesome/free-brands-svg-icons";
 import { CodeDrawer } from "../components/CodeDrawer";
 import { Separator } from "@packages/cloud-react/lib/core/Separator";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import DocButtons from "../docs/buttons.mdx";
 
 export const Buttons = () => (
   <>
-    <div className="sb-head">
-      <h1>Buttons</h1>
-      <h2>A small collection of plug-and-play button components.</h2>
+    <div className="doc">
+      <DocButtons />
       <h3>
         <FontAwesomeIcon icon={faNpm} />
         <a

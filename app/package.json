@@ -7,6 +7,7 @@
     "Nikolaos Kontakis<nikos@parity.io>"
   ],
   "description": " A library and automated platform for developing and publishing assets for Polkadot apps.",
+  "type": "module",
   "scripts": {
     "clear": "rm -rf node_modules",
     "predev": "yarn --cwd='../packages/cloud-core/' build",
@@ -15,6 +16,7 @@
     "lint:fix": "eslint . --ext ts,tsx --fix && prettier --write ."
   },
   "devDependencies": {
+    "@mdx-js/rollup": "^2.3.0",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "gh-pages": "^6.0.0",

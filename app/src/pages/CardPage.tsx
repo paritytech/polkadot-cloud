@@ -24,7 +24,7 @@ export const CardPage = () => {
   };
   return (
     <>
-      <div className="sb-head">
+      <div className="doc">
         <h1>Cards</h1>
       </div>
 

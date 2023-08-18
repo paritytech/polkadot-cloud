@@ -8,7 +8,7 @@ import { Separator } from "@packages/cloud-react/lib/core/Separator";
 export const LoadersPage = () => {
   return (
     <>
-      <div className="sb-head">
+      <div className="doc">
         <h1>Loaders</h1>
       </div>
       <h4>Line loader (default if no `type` is passed)</h4>
