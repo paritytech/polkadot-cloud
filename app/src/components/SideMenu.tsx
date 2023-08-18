@@ -80,12 +80,10 @@ export const SideMenu = ({
         <Separator />
       </section>
       <section>
-        {routeCategories.map(({ name, ...rest }, i) => {
-          const multi = "paths" in rest;
-
-          if (multi) {
-            return (
-              <Fragment key={`nav_${i}`}>
+        {routeCategories.map(({ name, ...rest }, i) => (
+          <Fragment key={`nav_${i}`}>
+            {"paths" in rest ? (
+              <>
                 <section>
                   <h3>{name}</h3>
 
@@ -108,12 +106,9 @@ export const SideMenu = ({
                     </Fragment>
                   ))}
                 </section>
-                <Separator />
-              </Fragment>
-            );
-          } else {
-            return (
-              <Fragment key={`nav_${i}`}>
+              </>
+            ) : (
+              <>
                 <Link
                   className={`lg${component === rest.path ? ` selected` : ``}`}
                   onClick={() => setComponent(rest.path)}
@@ -121,11 +116,11 @@ export const SideMenu = ({
                 >
                   {name}
                 </Link>
-                <Separator />
-              </Fragment>
-            );
-          }
-        })}
+              </>
+            )}
+            <Separator />
+          </Fragment>
+        ))}
       </section>
     </div>
   );
