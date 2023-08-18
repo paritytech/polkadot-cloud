@@ -1032,7 +1032,7 @@
   dependencies:
     "@types/unist" "^2"
 
-"@types/mdx@^2.0.0":
+"@types/mdx@^2.0.0", "@types/mdx@^2.0.6":
   version "2.0.6"
   resolved "https://registry.npmjs.org/@types/mdx/-/mdx-2.0.6.tgz#d03e0cc6f7e6627b296f4ef49049678316e8ee23"
   integrity sha512-sVcwEG10aFU2KcM7cIA0M410UPv/DesOPyG8zMVk0QUDexHA3lYmGucpEpZ2dtWWhi2ip3CG+5g/iH0PwoW4Fw==
