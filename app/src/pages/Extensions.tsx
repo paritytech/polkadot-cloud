@@ -18,11 +18,14 @@ import { ReactComponent as PolkaGateSVG } from "@packages/community/lib/extensio
 import { ReactComponent as SubwalletJsSVG } from "@packages/community/lib/extensions/svg/subwalletjs.svg";
 import { ReactComponent as TalismanSVG } from "@packages/community/lib/extensions/svg/talisman.svg";
 import { CodeDrawer } from "../components/CodeDrawer";
+import Doc from "../docs/extensions.mdx";
 
 export const Extensions = () => (
   <div className="doc">
-    <h1>Extensions</h1>
+    <Doc npmPackage="@polkadot-cloud/community" />
+
     <h4>Enkrypt: TSX / SVG</h4>
+
     <div className="sb-row">
       <div className="svg-box">
         <Enkrypt />

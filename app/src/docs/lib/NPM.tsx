@@ -13,7 +13,7 @@ export const NPM = ({ npmPackage }: Props) => {
     <h3>
       <FontAwesomeIcon icon={faNpm} />
       <a
-        href={`https://www.npmjs.com/npmPackage/${npmPackage}`}
+        href={`https://www.npmjs.com/package/${npmPackage}`}
         target="_blank"
         rel="noreferrer"
       >

@@ -10,11 +10,11 @@ import {
 
 import { CodeDrawer } from "../components/CodeDrawer";
 import { Separator } from "@packages/cloud-react/lib/core/Separator";
-import DocButtons from "../docs/buttons.mdx";
+import Doc from "../docs/buttons.mdx";
 
 export const Buttons = () => (
   <div className="doc">
-    <DocButtons npmPackage="@polkadot-cloud/react" />
+    <Doc npmPackage="@polkadot-cloud/react" />
 
     <h4>Button Primary</h4>
 
