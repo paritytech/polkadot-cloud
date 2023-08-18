@@ -26,7 +26,7 @@ interface RouteCategory {
 
 interface RouteCategoryMulti {
   paths: {
-    text: string;
+    heading: string;
     paths: string[];
   }[];
 }
@@ -78,11 +78,11 @@ export const routeCategories: RouteCategories = [
     name: "Core UI",
     paths: [
       {
-        text: "Layout",
+        heading: "Layout",
         paths: ["grid", "modal", "card"],
       },
       {
-        text: "Interaction",
+        heading: "Interaction",
         paths: ["buttons"],
       },
     ],
