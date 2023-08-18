@@ -5,6 +5,7 @@ import { Grid } from "@packages/cloud-react/lib/core/Grid";
 import { CodeDrawer } from "../components/CodeDrawer";
 import { Separator } from "@packages/cloud-react/lib/core/Separator";
 import { Card } from "@packages/cloud-react/lib/core/Card";
+import Doc from "../docs/cards.mdx";
 
 export const CardPage = () => {
   const separatorStyle = {
@@ -23,10 +24,8 @@ export const CardPage = () => {
     transition: { duration: 0.25, type: "linear", bounce: 0.4 },
   };
   return (
-    <>
-      <div className="sb-head">
-        <h1>Cards</h1>
-      </div>
+    <div className="doc">
+      <Doc npm="@polkadot-cloud/react" />
 
       <h4>Card by itself - plain</h4>
       <Card>Just a card</Card>
@@ -146,6 +145,6 @@ export const CardPage = () => {
         </code>
       </CodeDrawer>
       <Separator />
-    </>
+    </div>
   );
 };

@@ -7,28 +7,14 @@ import {
   faArrowAltCircleUp,
   faUser as faUserReg,
 } from "@fortawesome/free-regular-svg-icons";
-import { faNpm } from "@fortawesome/free-brands-svg-icons";
 
 import { CodeDrawer } from "../components/CodeDrawer";
 import { Separator } from "@packages/cloud-react/lib/core/Separator";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Doc from "../docs/buttons.mdx";
 
 export const Buttons = () => (
-  <>
-    <div className="sb-head">
-      <h1>Buttons</h1>
-      <h2>A small collection of plug-and-play button components.</h2>
-      <h3>
-        <FontAwesomeIcon icon={faNpm} />
-        <a
-          href="https://www.npmjs.com/package/@polkadot-cloud/react"
-          target="_blank"
-          rel="noreferrer"
-        >
-          @polkadot-cloud/react
-        </a>
-      </h3>
-    </div>
+  <div className="doc">
+    <Doc npm="@polkadot-cloud/react" />
 
     <h4>Button Primary</h4>
 
@@ -320,5 +306,5 @@ export const Buttons = () => (
       </code>
     </CodeDrawer>
     <Separator />
-  </>
+  </div>
 );
