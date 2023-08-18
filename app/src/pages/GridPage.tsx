@@ -12,10 +12,8 @@ export const GridPage = () => {
     TextAlign: "center",
   };
   return (
-    <>
-      <div className="doc">
-        <h1>Grid System</h1>
-      </div>
+    <div className="doc">
+      <h1>Grid System</h1>
       <h4>
         1 row - 12 columns with all screen size parameters sets (resize screen
         for results)
@@ -249,6 +247,6 @@ export const GridPage = () => {
         </code>
       </CodeDrawer>
       <Separator />
-    </>
+    </div>
   );
 };

@@ -23,10 +23,8 @@ export const CardPage = () => {
     transition: { duration: 0.25, type: "linear", bounce: 0.4 },
   };
   return (
-    <>
-      <div className="doc">
-        <h1>Cards</h1>
-      </div>
+    <div className="doc">
+      <h1>Cards</h1>
 
       <h4>Card by itself - plain</h4>
       <Card>Just a card</Card>
@@ -146,6 +144,6 @@ export const CardPage = () => {
         </code>
       </CodeDrawer>
       <Separator />
-    </>
+    </div>
   );
 };

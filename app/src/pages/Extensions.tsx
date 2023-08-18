@@ -20,10 +20,8 @@ import { ReactComponent as TalismanSVG } from "@packages/community/lib/extension
 import { CodeDrawer } from "../components/CodeDrawer";
 
 export const Extensions = () => (
-  <>
-    <div className="doc">
-      <h1>Extensions</h1>
-    </div>
+  <div className="doc">
+    <h1>Extensions</h1>
     <h4>Enkrypt: TSX / SVG</h4>
     <div className="sb-row">
       <div className="svg-box">
@@ -134,5 +132,5 @@ export const Extensions = () => (
         <p>{`<Talisman /> <TalismanSVG />`}</p>
       </code>
     </CodeDrawer>
-  </>
+  </div>
 );

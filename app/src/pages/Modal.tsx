@@ -10,10 +10,8 @@ export const Modal = () => {
   const [parentToggle, setParentToggle] = useState<boolean>(false);
 
   return (
-    <>
-      <div className="doc">
-        <h1>Modal Components</h1>
-      </div>
+    <div className="doc">
+      <h1>Modal Components</h1>
       <h4>Action Item</h4>
       <div className="sb-row">
         <ActionItem text="Some Action" />
@@ -50,6 +48,6 @@ export const Modal = () => {
         />`}</p>
         </code>
       </CodeDrawer>
-    </>
+    </div>
   );
 };
