@@ -8,6 +8,7 @@ import { CardPage } from "../pages/CardPage";
 import { LoadersPage } from "../pages/LoadersPage";
 import { Extensions } from "../pages/Extensions";
 import { ReactNode } from "react";
+import { IconPage } from "../pages/IconPage";
 
 type Routes = {
   name: string;
@@ -57,6 +58,11 @@ export const routes: Routes = [
     element: <CardPage />,
   },
   {
+    path: "icons",
+    name: "Icons",
+    element: <IconPage />,
+  },
+  {
     path: "modal",
     name: "Modal",
     element: <Modal />,
@@ -82,7 +88,7 @@ export const routeCategories: RouteCategories = [
       },
       {
         heading: "Interaction",
-        paths: ["buttons"],
+        paths: ["buttons", "icons"],
       },
     ],
   },
