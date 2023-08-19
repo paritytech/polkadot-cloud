@@ -32,10 +32,11 @@ export const SimpleEditor = ({ code }: SimpleEditorProps) => {
       style={{
         background: "var(--background-primary)",
         borderRadius: "0.35rem",
-        fontFamily: '"Fira Mono", monospace',
+        fontFamily: '"Source Code Pro", monospace',
         fontSize: "1.1rem",
         lineHeight: "1.8rem",
         fontWeight: "500",
+        marginBottom: "2.5rem",
       }}
     />
   );
