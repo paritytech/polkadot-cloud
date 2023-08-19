@@ -10,44 +10,12 @@ import {
 
 import { CodeDrawer } from "../components/CodeDrawer";
 import { Separator } from "@packages/cloud-react/lib/core/Separator";
-import Doc from "../docs/buttons.mdx";
+import Doc from "../docs/buttons/index.mdx";
 
 export const Buttons = () => (
   <div className="doc">
     <Doc npm="@polkadot-cloud/react" />
 
-    <h4>Button Primary</h4>
-
-    <div className="sb-row">
-      <Button text="Button" iconLeft={faUser} marginRight />
-      <Button type="primary" text="Button" iconLeft={faUser} marginRight />
-      <Button
-        type="primary"
-        text="Button"
-        iconLeft={faUser}
-        marginRight
-        colorSecondary
-      />
-      <Button
-        type="primary"
-        text="Button"
-        iconLeft={faUser}
-        iconRight={faUser}
-        lg
-        marginRight
-      />
-      <Button type="primary" text="Button" lg disabled />
-    </div>
-    <CodeDrawer>
-      <code>
-        <p>{`<Button text="Button" iconLeft={faUser} marginRight />`}</p>
-        <p>{`<Button type="primary" text="Button" iconLeft={faUser} marginRight />`}</p>
-        <p>{`<Button type="primary" text="Button" iconLeft={faUser} marginRight colorSecondary />`}</p>
-        <p>{`<Button type="primary" text="Button" iconLeft={faUser} iconRight={faUser} lg marginRight />`}</p>
-        <p>{`<Button type="primary" text="Button" lg disabled />`}</p>
-      </code>
-    </CodeDrawer>
-    <Separator />
     <h4>Button Primary Invert</h4>
     <div className="sb-row">
       <Button type="primaryInvert" text="Button" marginRight />
