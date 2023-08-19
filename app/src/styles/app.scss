@@ -142,7 +142,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
   h1 {
     font-family: InterBold, sans-serif;
-    font-size: 2.1rem;
+    font-size: 2.3rem;
   }
 
   h2 {
@@ -151,11 +151,12 @@ SPDX-License-Identifier: GPL-3.0-only */
   }
 
   h3 {
-    color: var(--text-color-secondary);
+    color: var(--text-color-primary);
     font-family: InterSemiBold, sans-serif;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
-    margin: 0 0 1rem 0;;
+    margin: 0 0 1.25rem 0;;
     a {
       color: var(--text-color-secondary);
     }
@@ -169,14 +170,20 @@ SPDX-License-Identifier: GPL-3.0-only */
     }
 
     &.npm {
+      color: var(--text-color-primary);
+      font-size: 1.25rem;
       margin-bottom: 2rem;
     }
   }
   
   .demo {
-    padding: 0.5rem 0;
+    border: 1px solid var(--border-secondary-color);
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    border-bottom: 0;
+    padding: 2rem 1rem;
     display: flex;
-    margin-bottom: 1.25rem;
+    justify-content: center;
   }
 }
 
