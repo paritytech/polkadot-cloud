@@ -38,7 +38,7 @@ export const SimpleEditor = ({ code, language = "tsx" }: SimpleEditorProps) => {
         }}
         highlight={(c) => highlight(c, languages[language], language)}
         padding={"1.25rem"}
-        className={`editor-language-${"dark"}`}
+        className={`editor-${"dark"}`}
         style={{
           border: "1px solid var(--border-secondary-color)",
           background: "#111",
