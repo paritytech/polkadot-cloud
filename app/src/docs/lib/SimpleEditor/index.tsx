@@ -2,12 +2,13 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { languages, highlight } from "prismjs";
-import PrismJSX from "../../languages/jsx.min.mjs";
-import PrismTSX from "../../languages/tsx.min.mjs";
+import PrismJSX from "./languages/jsx.min.mjs";
+import PrismTSX from "./languages/tsx.min.mjs";
 import Editor from "react-simple-code-editor";
 import { useState } from "react";
-// import "./themes/coy.scss";
 import "./themes/tomorrow.scss";
+// If a light theme is preferable on light mode, the following theme can be uncommented, and `Editor`'s `className` prop can be set to `editor-language-light`.
+// import "./themes/coy.scss";
 
 languages.extend("jsx", PrismJSX);
 languages.extend("tsx", PrismTSX);
