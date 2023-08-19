@@ -16,43 +16,6 @@ export const Buttons = () => (
   <div className="doc">
     <Doc npm="@polkadot-cloud/react" />
 
-    <h4>Button Primary Invert</h4>
-    <div className="sb-row">
-      <Button type="primaryInvert" text="Button" marginRight />
-      <Button
-        type="primaryInvert"
-        text="Button"
-        iconLeft={faUserReg}
-        marginRight
-        colorSecondary
-      />
-      <Button
-        type="primaryInvert"
-        text="Button"
-        iconRight={faUserReg}
-        marginRight
-      />
-      <Button
-        type="primaryInvert"
-        lg
-        text="Button"
-        iconLeft={faUserReg}
-        iconRight={faUserReg}
-        marginRight
-      />
-      <Button type="primaryInvert" lg text="Button" disabled />
-    </div>
-    <CodeDrawer>
-      <code>
-        <p>{`<Button type="primaryInvert" text="Button" marginRight />`}</p>
-        <p>{`<Button type="primaryInvert" text="Button" iconLeft={faUserReg} marginRight />`}</p>
-        <p>{`<Button type="primaryInvert" text="Button" iconRight={faUserReg} marginRight />`}</p>
-        <p>{`<Button type="primaryInvert" lg text="Button" iconLeft={faUserReg} iconRight={faUserReg} marginRight />`}</p>
-        <p>{`<Button type="primaryInvert" lg text="Button" disabled />`}</p>
-      </code>
-    </CodeDrawer>
-    <Separator />
-
     <h4>Button Secondary</h4>
     <div className="sb-row">
       <Button type="secondary" text="Button" marginRight />

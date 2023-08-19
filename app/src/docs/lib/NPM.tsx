@@ -10,7 +10,7 @@ export interface Props {
 
 export const NPM = ({ npm }: Props) => {
   return (
-    <h3>
+    <h3 className="npm">
       <FontAwesomeIcon icon={faNpm} />
       <a
         href={`https://www.npmjs.com/package/${npm}`}

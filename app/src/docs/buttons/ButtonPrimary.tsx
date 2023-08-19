@@ -6,16 +6,15 @@ import { Button } from "@packages/cloud-react/lib/buttons/Button";
 import { SimpleEditor } from "../lib/SimpleEditor";
 
 export const ButtonPrimary = () => {
-  const code = `<Button text="Button" iconLeft={faUser} marginRight />
+  const code = `<Button text="Button" marginRight />
 <Button type="primary" text="Button" iconLeft={faUser} marginRight />
 <Button type="primary" text="Button" iconLeft={faUser} marginRight colorSecondary />
-<Button type="primary" text="Button" iconLeft={faUser} iconRight={faUser} lg marginRight />
 <Button type="primary" text="Button" lg disabled />`;
 
   return (
     <>
       <div className="demo">
-        <Button text="Button" iconLeft={faUser} marginRight />
+        <Button text="Button" marginRight />
         <Button type="primary" text="Button" iconLeft={faUser} marginRight />
         <Button
           type="primary"
@@ -23,14 +22,6 @@ export const ButtonPrimary = () => {
           iconLeft={faUser}
           marginRight
           colorSecondary
-        />
-        <Button
-          type="primary"
-          text="Button"
-          iconLeft={faUser}
-          iconRight={faUser}
-          lg
-          marginRight
         />
         <Button type="primary" text="Button" lg disabled />
       </div>
