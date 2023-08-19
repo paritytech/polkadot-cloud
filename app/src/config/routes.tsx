@@ -70,12 +70,16 @@ export const routes: Routes = [
 
 export const routeCategories: RouteCategories = [
   {
+    path: "buttons",
+    name: "Buttons",
+  },
+  {
     name: "Extensions",
     path: "extensions",
   },
   {
-    path: "buttons",
-    name: "Buttons",
+    name: "Loaders",
+    path: "loader",
   },
   {
     name: "Layout",
@@ -84,10 +88,6 @@ export const routeCategories: RouteCategories = [
         paths: ["grid", "modal", "card"],
       },
     ],
-  },
-  {
-    name: "Loaders",
-    path: "loader",
   },
 ];
 
