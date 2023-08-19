@@ -4,6 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import resolve from "@rollup/plugin-node-resolve";
 import del from "rollup-plugin-delete";
+import copy from "rollup-plugin-copy";
 /**
  * @type {import('rollup').RollupOptions}
  */
@@ -17,5 +18,17 @@ export default {
       banner: "#!/usr/bin/env node \n",
     },
   ],
-  plugins: [del({ targets: "dist/*" }), peerDepsExternal(), resolve()],
+  plugins: [
+    del({ targets: "dist/*" }),
+    peerDepsExternal(),
+    resolve(),
+    copy({
+      targets: [
+        {
+          src: ["LICENSE", "README.md"],
+          dest: "dist",
+        },
+      ],
+    }),
+  ],
 };

@@ -10,6 +10,10 @@ const { argv } = require("yargs");
 
 const SASS_OPTIONS = { outputStyle: "compressed" };
 
+const licenseAndReadme = () => {
+  return src(["LICENSE", "README.md"]).pipe(dest("dist"));
+};
+
 const buildFonts = () => {
   return src("lib/template/**/*.woff2")
     .pipe(dest("dist/template"))
@@ -50,6 +54,7 @@ if (argv.task && argv.task === "watch") {
     buildTemplate,
     buildTheme,
     buildComponents,
-    buildFonts
+    buildFonts,
+    licenseAndReadme
   );
 }
