@@ -8,6 +8,7 @@ import Editor from "react-simple-code-editor";
 import { useState } from "react";
 import "./themes/coy.scss";
 import "./themes/tomorrow.scss";
+import { useTheme } from "app/src/contexts/Theme";
 
 languages.extend("jsx", PrismJSX);
 languages.extend("tsx", PrismTSX);
@@ -16,44 +17,26 @@ interface SimpleEditorProps {
   code?: string;
 }
 export const SimpleEditor = ({ code }: SimpleEditorProps) => {
+  const { mode } = useTheme();
   const [value] = useState<string>(code || "");
 
-  // NOTE: Temporary theme switching.
-  // TODO: Move `mode` from `App.tsx` to a context & use that instead of this local theme.
-  const [mode] = useState<"light" | "dark">("light");
-
   return (
-    <>
-      {/* <button
-        type="button"
-        onClick={() => {
-          if (mode === "light") {
-            setMode("dark");
-          } else {
-            setMode("light");
-          }
-        }}
-      >
-        Toggle Theme
-      </button> */}
-
-      <Editor
-        value={value}
-        onValueChange={() => {
-          /* Editor currently disabled */
-        }}
-        highlight={(c) => highlight(c, languages.tsx, "tsx")}
-        padding={"1rem"}
-        className={`editor-language-${mode}`}
-        style={{
-          background: "var(--background-primary)",
-          borderRadius: "0.35rem",
-          fontFamily: '"Fira Mono", monospace',
-          fontSize: "1.1rem",
-          lineHeight: "1.8rem",
-          fontWeight: "500",
-        }}
-      />
-    </>
+    <Editor
+      value={value}
+      onValueChange={() => {
+        /* Editor currently disabled */
+      }}
+      highlight={(c) => highlight(c, languages.tsx, "tsx")}
+      padding={"1rem"}
+      className={`editor-language-${mode}`}
+      style={{
+        background: "var(--background-primary)",
+        borderRadius: "0.35rem",
+        fontFamily: '"Fira Mono", monospace',
+        fontSize: "1.1rem",
+        lineHeight: "1.8rem",
+        fontWeight: "500",
+      }}
+    />
   );
 };
