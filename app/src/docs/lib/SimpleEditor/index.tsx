@@ -6,11 +6,11 @@ import PrismJSX from "./languages/jsx.min.mjs";
 import PrismTSX from "./languages/tsx.min.mjs";
 import Editor from "react-simple-code-editor";
 import { useState } from "react";
-import "./themes/tomorrow.scss";
+import "./themes/dark.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 // If a light theme is preferable on light mode, the following theme can be uncommented, and `Editor`'s `className` prop can be set to `editor-language-light`.
-// import "./themes/coy.scss";
+// import "./themes/light.scss";
 
 languages.extend("jsx", PrismJSX);
 languages.extend("tsx", PrismTSX);
