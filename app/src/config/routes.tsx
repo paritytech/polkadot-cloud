@@ -16,7 +16,7 @@ type Routes = {
 }[];
 
 type RouteCategories = ((RouteCategory | RouteCategoryMulti) & {
-  name: string;
+  name?: string;
 })[];
 
 interface RouteCategory {
@@ -71,14 +71,11 @@ export const routes: Routes = [
 export const routeCategories: RouteCategories = [
   {
     path: "buttons",
-    name: "Buttons",
   },
   {
-    name: "Extensions",
     path: "extensions",
   },
   {
-    name: "Loaders",
     path: "loader",
   },
   {

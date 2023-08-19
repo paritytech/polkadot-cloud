@@ -106,7 +106,7 @@ export const SideMenu = () => {
                   }`}
                   to={`/${rest.path}`}
                 >
-                  {name}
+                  {nameFromRoute(rest.path)}
                 </Link>
               </>
             )}
