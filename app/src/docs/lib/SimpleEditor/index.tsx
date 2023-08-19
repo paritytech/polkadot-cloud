@@ -2,8 +2,6 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { languages, highlight } from "prismjs";
-// import "prismjs/themes/prism-tomorrow.min.css";
-// eslint-disable-next-line
 import PrismJSX from "../../languages/jsx.min.mjs";
 import PrismTSX from "../../languages/tsx.min.mjs";
 import Editor from "react-simple-code-editor";
