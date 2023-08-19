@@ -29,7 +29,7 @@ export const SimpleEditor = ({ code, language = "tsx" }: SimpleEditorProps) => {
         type="button"
         onClick={() => navigator.clipboard.writeText(value)}
       >
-        <FontAwesomeIcon icon={faCopy} transform="shrink-2" />
+        <FontAwesomeIcon icon={faCopy} />
       </button>
       <Editor
         value={value}
