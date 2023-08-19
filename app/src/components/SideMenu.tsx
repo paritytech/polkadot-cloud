@@ -101,7 +101,9 @@ export const SideMenu = () => {
             ) : (
               <>
                 <Link
-                  className={`lg${pathname === rest.path ? ` selected` : ``}`}
+                  className={`lg${
+                    pathname === `/${rest.path}` ? ` selected` : ``
+                  }`}
                   to={`/${rest.path}`}
                 >
                   {name}
