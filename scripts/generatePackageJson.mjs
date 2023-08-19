@@ -48,7 +48,10 @@ try {
     "name",
     "license",
     "version",
-    "author",
+    "keywords",
+    "bugs",
+    "homepage",
+    "contributors",
     "description",
     "peerDependencies",
   ];

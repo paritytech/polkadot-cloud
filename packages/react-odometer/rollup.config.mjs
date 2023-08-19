@@ -44,6 +44,10 @@ export default {
           src: "styles/fonts/**/*",
           dest: "dist/fonts",
         },
+        {
+          src: ["LICENSE", "README.md"],
+          dest: "dist",
+        },
       ],
     }),
     cleanup({
