@@ -45,7 +45,7 @@ export const SideMenu = () => {
         {themes.map(([name, key]) => (
           <button
             key={`theme_${key}`}
-            className={theme === key ? "selected" : undefined}
+            className={`link${theme === key ? " selected" : ``}`}
             onClick={() => setTheme(key)}
           >
             {name}
@@ -54,13 +54,13 @@ export const SideMenu = () => {
 
         <h5>Mode</h5>
         <button
-          className={mode === "light" ? "selected" : undefined}
+          className={`link${mode === "light" ? " selected" : ``}`}
           onClick={() => toggleMode("light")}
         >
           Light
         </button>
         <button
-          className={mode === "dark" ? "selected" : undefined}
+          className={`link${mode === "dark" ? " selected" : ``}`}
           onClick={() => toggleMode("dark")}
         >
           Dark
@@ -86,9 +86,9 @@ export const SideMenu = () => {
                       {paths.map((path, k) => (
                         <Link
                           key={`nav_${i}_heading_${j}_path_${k}`}
-                          className={
-                            pathname === `/${path}` ? "selected" : undefined
-                          }
+                          className={`link${
+                            pathname === `/${path}` ? " selected" : ``
+                          }`}
                           to={`/${path}`}
                         >
                           {nameFromRoute(path)}
@@ -101,7 +101,7 @@ export const SideMenu = () => {
             ) : (
               <>
                 <Link
-                  className={`lg${
+                  className={`link lg${
                     pathname === `/${rest.path}` ? ` selected` : ``
                   }`}
                   to={`/${rest.path}`}
