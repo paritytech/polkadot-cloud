@@ -3,6 +3,14 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 @use "variables" as v;
 
+@font-face {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/SourceCodePro.woff2") format("woff2");
+}
+
+
 :root {
   --app-active-color: rgb(211 48 121);
 }
