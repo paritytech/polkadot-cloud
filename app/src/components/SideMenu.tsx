@@ -77,12 +77,18 @@ export const SideMenu = () => {
 
                   {rest.paths.map(({ heading, paths }, j) => (
                     <Fragment key={`nav_${i}_heading_${j}`}>
-                      <h5>{heading}</h5>
+                      {heading ? (
+                        <h5>{heading}</h5>
+                      ) : (
+                        <div className="no-heading" />
+                      )}
 
                       {paths.map((path, k) => (
                         <Link
                           key={`nav_${i}_heading_${j}_path_${k}`}
-                          className={pathname === path ? "selected" : undefined}
+                          className={
+                            pathname === `/${path}` ? "selected" : undefined
+                          }
                           to={`/${path}`}
                         >
                           {nameFromRoute(path)}
