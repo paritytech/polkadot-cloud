@@ -6,7 +6,7 @@ import { Modal } from "../pages/Modal";
 import { GridPage } from "../pages/GridPage";
 import { CardPage } from "../pages/CardPage";
 import { LoadersPage } from "../pages/LoadersPage";
-import { Extensions } from "../pages/Extensions";
+import { Extensions } from "../docs/Extensions";
 import { ReactNode } from "react";
 
 type Routes = {
