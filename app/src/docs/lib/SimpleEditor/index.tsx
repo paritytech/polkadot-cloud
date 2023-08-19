@@ -15,8 +15,9 @@ languages.extend("tsx", PrismTSX);
 
 interface SimpleEditorProps {
   code?: string;
+  language?: string;
 }
-export const SimpleEditor = ({ code }: SimpleEditorProps) => {
+export const SimpleEditor = ({ code, language = "tsx" }: SimpleEditorProps) => {
   const [value] = useState<string>(code || "");
 
   return (
@@ -25,7 +26,7 @@ export const SimpleEditor = ({ code }: SimpleEditorProps) => {
       onValueChange={() => {
         /* Editor currently disabled */
       }}
-      highlight={(c) => highlight(c, languages.tsx, "tsx")}
+      highlight={(c) => highlight(c, languages[language], language)}
       padding={"1.25rem"}
       className={`editor-language-${"dark"}`}
       style={{
