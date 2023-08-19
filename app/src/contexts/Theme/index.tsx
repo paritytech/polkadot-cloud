@@ -29,12 +29,15 @@ export const ThemesProvider = ({ children }: { children: ReactNode }) => {
   const [mode, setMode] = useState<Mode>(initial);
   const modeRef = useRef(mode);
 
+  // Store the current network theme.
+  const [theme, setTheme] = useState<string>("polkadot-relay");
+
   // Automatically change theme on system change.
   window
     .matchMedia("(prefers-color-scheme: dark)")
     .addEventListener("change", (event) => {
       const newMode = event.matches ? "dark" : "light";
-      localStorage.setItem("theme", newMode);
+      localStorage.setItem("mode", newMode);
       setStateWithRef(newMode, setMode, modeRef);
     });
 
@@ -43,7 +46,7 @@ export const ThemesProvider = ({ children }: { children: ReactNode }) => {
     const newMode =
       maybeTheme || (modeRef.current === "dark" ? "light" : "dark");
 
-    localStorage.setItem("theme", newMode);
+    localStorage.setItem("mode", newMode);
     setStateWithRef(newMode, setMode, modeRef);
   };
 
@@ -52,6 +55,8 @@ export const ThemesProvider = ({ children }: { children: ReactNode }) => {
       value={{
         toggleMode,
         mode: modeRef.current,
+        theme,
+        setTheme,
       }}
     >
       {children}

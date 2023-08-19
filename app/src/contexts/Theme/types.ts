@@ -4,6 +4,8 @@
 export type Mode = "light" | "dark";
 
 export interface ThemeContextInterface {
-  toggleMode: (str?: Mode) => void;
+  toggleMode: (mode: Mode) => void;
+  setTheme: (theme: string) => void;
   mode: Mode;
+  theme: string;
 }
