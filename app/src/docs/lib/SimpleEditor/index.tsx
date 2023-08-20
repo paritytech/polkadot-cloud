@@ -10,7 +10,8 @@ import "./themes/dark.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 // If a light theme is preferable on light mode, the following theme can be uncommented, and `Editor`'s `className` prop can be set to `editor-language-light`.
-// import "./themes/light.scss";
+import "./themes/light.scss";
+import { useTheme } from "app/src/contexts/Theme";
 
 languages.extend("jsx", PrismJSX);
 languages.extend("tsx", PrismTSX);
@@ -21,10 +22,11 @@ interface SimpleEditorProps {
 }
 export const SimpleEditor = ({ code, language = "tsx" }: SimpleEditorProps) => {
   const [value] = useState<string>(code);
+  const { mode } = useTheme();
 
   const editorStyle = {
     border: "1px solid var(--border-secondary-color)",
-    background: "#111",
+    background: mode === "dark" ? "#111" : "#f5f5f5",
     borderBottomLeftRadius: "0.75rem",
     borderBottomRightRadius: "0.75rem",
     fontFamily: '"Source Code Pro", monospace',
@@ -50,7 +52,7 @@ export const SimpleEditor = ({ code, language = "tsx" }: SimpleEditorProps) => {
         }}
         highlight={(c) => highlight(c, languages[language], language)}
         padding={"1.25rem"}
-        className={`editor-${"dark"}`}
+        className={`editor-${mode}`}
         style={editorStyle}
       />
     </div>
