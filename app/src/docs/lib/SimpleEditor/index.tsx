@@ -16,11 +16,23 @@ languages.extend("jsx", PrismJSX);
 languages.extend("tsx", PrismTSX);
 
 interface SimpleEditorProps {
-  code?: string;
+  code: string;
   language?: string;
 }
 export const SimpleEditor = ({ code, language = "tsx" }: SimpleEditorProps) => {
-  const [value] = useState<string>(code || "");
+  const [value] = useState<string>(code);
+
+  const editorStyle = {
+    border: "1px solid var(--border-secondary-color)",
+    background: "#111",
+    borderBottomLeftRadius: "0.75rem",
+    borderBottomRightRadius: "0.75rem",
+    fontFamily: '"Source Code Pro", monospace',
+    fontSize: "1.1rem",
+    lineHeight: "1.6rem",
+    fontWeight: "500",
+    marginBottom: "2.5rem",
+  };
 
   return (
     <div className="editor">
@@ -39,17 +51,7 @@ export const SimpleEditor = ({ code, language = "tsx" }: SimpleEditorProps) => {
         highlight={(c) => highlight(c, languages[language], language)}
         padding={"1.25rem"}
         className={`editor-${"dark"}`}
-        style={{
-          border: "1px solid var(--border-secondary-color)",
-          background: "#111",
-          borderBottomLeftRadius: "0.75rem",
-          borderBottomRightRadius: "0.75rem",
-          fontFamily: '"Source Code Pro", monospace',
-          fontSize: "1.1rem",
-          lineHeight: "1.6rem",
-          fontWeight: "500",
-          marginBottom: "2.5rem",
-        }}
+        style={editorStyle}
       />
     </div>
   );
