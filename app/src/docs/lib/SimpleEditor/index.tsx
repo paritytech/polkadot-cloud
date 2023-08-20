@@ -26,7 +26,7 @@ export const SimpleEditor = ({ code, language = "tsx" }: SimpleEditorProps) => {
 
   const editorStyle = {
     border: "1px solid var(--border-secondary-color)",
-    background: mode === "dark" ? "#111" : "#eee",
+    background: mode === "dark" ? "#111" : "#f5f5f5",
     borderBottomLeftRadius: "0.75rem",
     borderBottomRightRadius: "0.75rem",
     fontFamily: '"Source Code Pro", monospace',
