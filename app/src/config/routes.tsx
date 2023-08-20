@@ -63,7 +63,7 @@ export const routes: Routes = [
   },
   {
     path: "loader",
-    name: "Loader",
+    name: "Loaders",
     element: <LoadersPage />,
   },
 ];
