@@ -241,7 +241,8 @@ SPDX-License-Identifier: GPL-3.0-only */
     z-index: 2;
 
     > svg {
-      color: #ccc;
+      color: var(--text-color-secondary);
+      opacity: 0.7;
     }
   }
 }
