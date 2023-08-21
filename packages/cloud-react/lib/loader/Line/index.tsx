@@ -7,7 +7,7 @@ import "@polkadot-cloud/core/css/loader/Line/index.css";
 export const Line = ({ text }: LoaderProps) => {
   return (
     <div className="line-loading">
-      <p>{text}</p>
+      {text && <p>{text}</p>}
       <span></span>
     </div>
   );
