@@ -59,7 +59,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 .loader {
   --depth: var(--size);
-  --color: var(--network-color-primary);
+  --color: var(--accent-color-primary);
 
   width: calc(var(--depth) * var(--coefficient));
   aspect-ratio: 1;

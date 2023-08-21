@@ -5,7 +5,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 .dots-loading {
   $colors: var(--background-default), var(--text-color-primary),
     var(--text-color-secondary), var(--text-color-tertiary),
-    var(--network-color-primary);
+    var(--accent-color-primary);
 
   display: flex;
 
