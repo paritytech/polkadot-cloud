@@ -2,11 +2,13 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { Buttons } from "../docs/Buttons";
+import { Loaders } from "../docs/Loaders";
+import { Extensions } from "../docs/Extensions";
 import { Grid } from "../docs/Grid";
+
+// TODO: transfer pages to docs
 import { Modal } from "../pages/Modal";
 import { CardPage } from "../pages/CardPage";
-import { LoadersPage } from "../pages/LoadersPage";
-import { Extensions } from "../docs/Extensions";
 import { ReactNode } from "react";
 
 type Routes = {
@@ -64,7 +66,7 @@ export const routes: Routes = [
   {
     path: "loader",
     name: "Loaders",
-    element: <LoadersPage />,
+    element: <Loaders />,
   },
 ];
 
