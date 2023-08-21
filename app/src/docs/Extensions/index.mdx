@@ -1,0 +1,21 @@
+import { NPM } from "../lib/NPM";
+import { ExtensionsSvg } from "./ExtensionsSvg";
+import { ExtensionsJsx } from "./ExtensionsJsx";
+
+# Web3 Extension Assets
+
+## Icons of popular Web3 wallet extensions, in SVG and TSX formats.
+
+<NPM npm={props.npm} />
+
+### SVG Icons
+
+#### As some of the extension icons are not perfectly square, it is recommended to bound their width and heights with `max-width` and `max-height` properties.
+
+<ExtensionsSvg />
+
+### JSX Icons
+
+#### The icons are also available as React components. Some frameworks require the assets to be locally available to lazily load them.
+
+<ExtensionsJsx />

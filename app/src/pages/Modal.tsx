@@ -5,15 +5,15 @@ import { useState } from "react";
 import { Button } from "@packages/cloud-react/lib/buttons/Button";
 import { CodeDrawer } from "../components/CodeDrawer";
 import { ActionItem } from "@packages/cloud-react/lib/modal/ActionItem";
+import Doc from "../docs/modal.mdx";
 
 export const Modal = () => {
   const [parentToggle, setParentToggle] = useState<boolean>(false);
 
   return (
-    <>
-      <div className="sb-head">
-        <h1>Modal Components</h1>
-      </div>
+    <div className="doc">
+      <Doc npm="@polkadot-cloud/react" />
+
       <h4>Action Item</h4>
       <div className="sb-row">
         <ActionItem text="Some Action" />
@@ -50,6 +50,6 @@ export const Modal = () => {
         />`}</p>
         </code>
       </CodeDrawer>
-    </>
+    </div>
   );
 };

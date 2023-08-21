@@ -1,12 +1,12 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { Buttons } from "../pages/Buttons";
+import { Buttons } from "../docs/Buttons";
 import { Modal } from "../pages/Modal";
 import { GridPage } from "../pages/GridPage";
 import { CardPage } from "../pages/CardPage";
 import { LoadersPage } from "../pages/LoadersPage";
-import { Extensions } from "../pages/Extensions";
+import { Extensions } from "../docs/Extensions";
 import { ReactNode } from "react";
 import { IconPage } from "../pages/IconPage";
 
@@ -17,7 +17,7 @@ type Routes = {
 }[];
 
 type RouteCategories = ((RouteCategory | RouteCategoryMulti) & {
-  name: string;
+  name?: string;
 })[];
 
 interface RouteCategory {
@@ -26,7 +26,7 @@ interface RouteCategory {
 
 interface RouteCategoryMulti {
   paths: {
-    heading: string;
+    heading?: string;
     paths: string[];
   }[];
 }
@@ -69,32 +69,29 @@ export const routes: Routes = [
   },
   {
     path: "loader",
-    name: "Loader",
+    name: "Loaders",
     element: <LoadersPage />,
   },
 ];
 
 export const routeCategories: RouteCategories = [
   {
-    name: "Extensions",
+    path: "buttons",
+  },
+  { path: "icons" },
+  {
     path: "extensions",
   },
   {
-    name: "Core UI",
-    paths: [
-      {
-        heading: "Layout",
-        paths: ["grid", "modal", "card"],
-      },
-      {
-        heading: "Interaction",
-        paths: ["buttons", "icons"],
-      },
-    ],
+    path: "loader",
   },
   {
-    name: "Loaders",
-    path: "loader",
+    name: "Layout",
+    paths: [
+      {
+        paths: ["grid", "modal", "card"],
+      },
+    ],
   },
 ];
 

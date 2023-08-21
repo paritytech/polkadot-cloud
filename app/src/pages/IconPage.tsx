@@ -26,69 +26,75 @@ export const IconPage = () => (
     </div>
 
     <div className="sb-row">
-      <div style={{ display: "flex" }}>
-        <div style={{ height: "100px" }}>asdasdasd</div>
-        <div style={{ width: "100px" }}>
+      <div className="iconplayground">
+        <div style={{ width: "20rem" }}>
           <Polkicon
-            type="space"
+            copy={false}
+            type="dots"
             account="1ufCEiMzQTudMBHUFpePpnhGvG783Tpz5d7XZ86cQhDNqy8"
           />
         </div>
-        <div style={{ width: "100px" }}>something</div>
-      </div>
-    </div>
-    <CodeDrawer>
-      <code>
-        <p>{`<Polkicon width={300} height={300} />`}</p>
-      </code>
-    </CodeDrawer>
-    <Separator />
-
-    <div className="sb-row">
-      <div style={{ display: "flex" }}>
-        <div style={{ height: "100px" }}>asdasdasd</div>
-        <div style={{ width: "100px" }}>
-          <Polkicon account="1ufCEiMzQTudMBHUFpePpnhGvG783Tpz5d7XZ86cQhDNqy8" />
-        </div>
-        <div style={{ width: "100px" }}>something</div>
-      </div>
-    </div>
-    <CodeDrawer>
-      <code>
-        <p>{`<Polkicon width={300} height={300} />`}</p>
-      </code>
-    </CodeDrawer>
-    <Separator />
-
-    <div className="sb-row">
-      <div style={{ display: "flex" }}>
-        <div style={{ height: "100px" }}>asdasdasd</div>
-        <div style={{ width: "100px" }}>
+        <div style={{ width: "12rem" }}>
           <Polkicon
+            copy={false}
+            type="dots"
+            account="1ufCEiMzQTudMBHUFpePpnhGvG783Tpz5d7XZ86cQhDNqy8"
+          />
+        </div>
+        <div style={{ width: "8rem" }}>
+          <Polkicon
+            copy={false}
+            type="dots"
+            account="1ufCEiMzQTudMBHUFpePpnhGvG783Tpz5d7XZ86cQhDNqy8"
+          />
+        </div>
+        <div style={{ width: "5rem" }}>
+          <Polkicon
+            copy={false}
+            type="dots"
+            account="1ufCEiMzQTudMBHUFpePpnhGvG783Tpz5d7XZ86cQhDNqy8"
+          />
+        </div>
+      </div>
+    </div>
+    <CodeDrawer>
+      <code>
+        <p>{`<Polkicon width={300} height={300} />`}</p>
+      </code>
+    </CodeDrawer>
+    <Separator />
+
+    <div className="sb-row">
+      <div className="iconplayground">
+        <div style={{ width: "20rem" }}>
+          <Polkicon
+            copy={false}
             type="hexagon"
             account="1ufCEiMzQTudMBHUFpePpnhGvG783Tpz5d7XZ86cQhDNqy8"
           />
         </div>
-        <div style={{ width: "100px" }}>something</div>
+        <div style={{ width: "12rem" }}>
+          <Polkicon
+            copy={false}
+            type="hexagon"
+            account="1ufCEiMzQTudMBHUFpePpnhGvG783Tpz5d7XZ86cQhDNqy8"
+          />
+        </div>
+        <div style={{ width: "8rem" }}>
+          <Polkicon
+            copy={false}
+            type="hexagon"
+            account="1ufCEiMzQTudMBHUFpePpnhGvG783Tpz5d7XZ86cQhDNqy8"
+          />
+        </div>
+        <div style={{ width: "5rem" }}>
+          <Polkicon
+            copy={false}
+            type="hexagon"
+            account="1ufCEiMzQTudMBHUFpePpnhGvG783Tpz5d7XZ86cQhDNqy8"
+          />
+        </div>
       </div>
-      {/* <Polkicon
-        copy={false}
-        type="hexagon"
-        account="1ufCEiMzQTudMBHUFpePpnhGvG783Tpz5d7XZ86cQhDNqy8"
-        side={50}
-      />
-      <Polkicon
-        copy={false}
-        type="hexagon"
-        account="1ufCEiMzQTudMBHUFpePpnhGvG783Tpz5d7XZ86cQhDNqy8"
-        side={30}
-      />
-      <Polkicon
-        copy={false}
-        type="hexagon"
-        account="1ufCEiMzQTudMBHUFpePpnhGvG783Tpz5d7XZ86cQhDNqy8"
-        side={10}
-      />*/}
     </div>
     <CodeDrawer>
       <code>

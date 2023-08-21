@@ -3,6 +3,13 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 @use "variables" as v;
 
+@font-face {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/SourceCodePro.woff2") format("woff2");
+}
+
 :root {
   --app-active-color: rgb(211 48 121);
 }
@@ -65,40 +72,46 @@ SPDX-License-Identifier: GPL-3.0-only */
     padding-left: 2rem;
   }
 
+  .link {
+    text-decoration: none;
+    display: block;
+    font-size: 1.1rem;
+    line-height: 2.4rem;
+
+    &.lg {
+      font-size: 1.25rem;
+      line-height: 2.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    &.selected {
+      color: var(--app-active-color);
+    }
+  }
+
   section {
     font-size: 1.05rem;
     margin-top: 0.75rem;
 
     > section {
       margin-top: 1.5rem;
-      > h5 {
-        margin-top: 1.25rem;
+
+      h5 {
+        margin-top: 1.5rem;
       }
     }
 
+    .no-heading {
+      height: 0.5rem;
+    }
+
     h5 {
-      font-family: InterSemiBold, sans-serif;
+      font-family: InterBold, sans-serif;
       font-weight: 600;
       font-size: inherit;
       text-decoration: none;
       display: block;
       margin: 0.75rem 0;
-    }
-
-    > button {
-      font-size: inherit;
-      text-decoration: none;
-      display: block;
-      line-height: 2.25rem;
-
-      &.lg {
-        font-size: 1.25rem;
-        margin-bottom: 0.75rem;
-      }
-
-      &.selected {
-        color: var(--app-active-color);
-      }
     }
 
     > a {
@@ -136,25 +149,26 @@ SPDX-License-Identifier: GPL-3.0-only */
   }
 }
 
-.sb-head {
+.doc {
   margin: 5rem 0 2.5rem;
 
-  > h1 {
+  h1 {
     font-family: InterBold, sans-serif;
-    font-size: 2.1rem;
+    font-size: 2.3rem;
   }
 
-  > h2 {
-    margin-top: 1.35rem;
+  h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
   }
 
-  > h3 {
-    color: var(--text-color-secondary);
+  h3 {
+    color: var(--text-color-primary);
     font-family: InterSemiBold, sans-serif;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
-    margin-top: 1rem;
-    opacity: 0.9;
+    margin: 0 0 1.25rem;
 
     a {
       color: var(--text-color-secondary);
@@ -167,6 +181,28 @@ SPDX-License-Identifier: GPL-3.0-only */
       position: relative;
       top: 0.1rem;
     }
+
+    &.npm {
+      color: var(--text-color-primary);
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  h4 {
+    color: var(--text-color-primary);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .demo {
+    border: 1px solid var(--border-secondary-color);
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    border-bottom: 0;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -175,18 +211,47 @@ SPDX-License-Identifier: GPL-3.0-only */
   margin-bottom: 1.25rem;
 }
 
+.iconplayground {
+  display: flex;
+  align-items: center;
+  div {
+    padding: 0 0.5rem;
+  }
+}
+
 .svg-box {
   color: var(--text-color-primary);
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 4rem;
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 2rem 1rem 0;
+  margin: 0 3rem 0 0;
 
   > svg {
     max-width: 100%;
     max-height: 100%;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.editor {
+  width: 100%;
+  position: relative;
+
+  .copy {
+    position: absolute;
+    right: 1.25rem;
+    top: 1.1rem;
+    z-index: 2;
+
+    > svg {
+      color: var(--text-color-secondary);
+      opacity: 0.7;
+    }
   }
 }
 

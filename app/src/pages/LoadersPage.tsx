@@ -4,13 +4,13 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { Loader } from "@packages/cloud-react/lib/loader/Loader";
 import { CodeDrawer } from "../components/CodeDrawer";
 import { Separator } from "@packages/cloud-react/lib/core/Separator";
+import Doc from "../docs/loaders.mdx";
 
 export const LoadersPage = () => {
   return (
-    <>
-      <div className="sb-head">
-        <h1>Loaders</h1>
-      </div>
+    <div className="doc">
+      <Doc npm="@polkdod-cloud/react" />
+
       <h4>Line loader (default if no `type` is passed)</h4>
       <div style={{ height: "17rem", padding: "7rem" }}>
         <Loader type="line" text="loading..." />
@@ -41,6 +41,6 @@ export const LoadersPage = () => {
         </code>
       </CodeDrawer>
       <Separator />
-    </>
+    </div>
   );
 };

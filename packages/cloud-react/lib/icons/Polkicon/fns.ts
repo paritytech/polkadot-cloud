@@ -1,4 +1,14 @@
-// DOTS function
+// HEXAGON constants
+const { PI } = Math;
+const P2 = (x?: number, y?: number) => ({ x, y });
+const EDGES = 6;
+const RADIUS = 18;
+const TAU = 2 * PI;
+const GRID_Y_SPACE = Math.cos(PI / EDGES) * RADIUS * 2.3;
+const GRID_X_SPACE = RADIUS * 2.3 - Math.sin(PI / EDGES) * RADIUS * 2 * 0.5;
+const GRID_Y_OFFSET = GRID_Y_SPACE * 0.5;
+
+// DOTS
 export const drawDots = (
   ctx: CanvasRenderingContext2D,
   x: number,
@@ -9,8 +19,8 @@ export const drawDots = (
     for (let i = 0; i < 10; i++) {
       ctx.beginPath();
       ctx.arc(
-        (x / 1) * (i + 0.5),
-        (y / 1) * (j + 0.5),
+        (x / 0.95) * (i + 0.5),
+        (y / 0.95) * (j + 0.5),
         !fcount ? x / 0.7 / PI : 25 * Math.sin(fcount * 0.01) ** 2,
         0,
         2 * PI,
@@ -25,17 +35,7 @@ export const drawDots = (
   }
 };
 
-// HEXAGON functions
-const { PI } = Math;
-const P2 = (x?: number, y?: number) => ({ x, y });
-const EDGES = 6;
-const RADIUS = 18;
-const TAU = 2 * PI;
-const EDGE_LEN = Math.sin(PI / EDGES) * RADIUS * 2;
-const GRID_Y_SPACE = Math.cos(PI / EDGES) * RADIUS * 2.3;
-const GRID_X_SPACE = RADIUS * 2.3 - EDGE_LEN * 0.5;
-const GRID_Y_OFFSET = GRID_Y_SPACE * 0.5;
-
+// HEXAGON
 const drawPoly = (
   p: { x: number; y: number },
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -101,34 +101,4 @@ export const generateColor = () => {
 export const setSize = (canvas: HTMLCanvasElement) => {
   canvas.height = innerWidth;
   canvas.width = innerWidth;
-};
-
-export const drawSpace = (context, cursor) => {
-  const particlesArray = [];
-  // in loop specify the amount of particles
-  for (let i = 0; i < 201; i++) {
-    let x = innerWidth / 2;
-    let y = innerHeight / 2;
-    const particleTrailWidth = 4;
-    const rotateSpeed = 0.005;
-    let theta = Math.random() * Math.PI * 2;
-    const t = Math.random() * 500;
-    const rotate = () => {
-      const ls = {
-        x,
-        y,
-      };
-      theta += rotateSpeed;
-      x = cursor.x + Math.cos(theta) * t;
-      y = cursor.y + Math.sin(theta) * t;
-      context.beginPath();
-      context.lineWidth = particleTrailWidth;
-      context.strokeStyle = generateColor();
-      context.moveTo(ls.x, ls.y);
-      context.lineTo(x, y);
-      context.stroke();
-    };
-    particlesArray.push(rotate);
-  }
-  return particlesArray;
 };

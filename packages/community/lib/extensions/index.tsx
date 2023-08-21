@@ -8,6 +8,7 @@ import { PolkadotJS } from "./jsx/PolkadotJS";
 import { PolkaGate } from "./jsx/PolkaGate";
 import { SubwalletJS } from "./jsx/SubwalletJS";
 import { Talisman } from "./jsx/Talisman";
+import { WalletConnect } from "./jsx/WalletConnect";
 
 // To add extensions to this list, refer to the instructions hosted in this package's README file:
 // https://github.com/paritytech/polkadot-cloud/tree/main/packages/community#adding-web-extension-wallets
@@ -48,6 +49,11 @@ export const Extensions: Record<string, ExtensionConfig> = {
     title: "Talisman",
     Icon: Talisman,
     website: "talisman.xyz",
+  },
+  walletconnect: {
+    title: "WalletConnect",
+    Icon: WalletConnect,
+    website: "walletconnect.com",
   },
 };
 

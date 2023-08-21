@@ -1,30 +1,18 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { Fragment, Dispatch, SetStateAction } from "react";
+import { Fragment } from "react";
 import { ReactComponent as IconSVG } from "../svg/icon.svg";
 import { useGlitch } from "react-powerglitch";
 import { Separator } from "@packages/cloud-react/lib/core/Separator";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { nameFromRoute, routeCategories } from "../config/routes";
+import { useTheme } from "../contexts/Theme";
 
-interface SideMenuProps {
-  mode: string;
-  setMode: Dispatch<SetStateAction<string>>;
-  theme: string;
-  setTheme: Dispatch<SetStateAction<string>>;
-  component: string;
-  setComponent: Dispatch<SetStateAction<string>>;
-}
+export const SideMenu = () => {
+  const { pathname } = useLocation();
+  const { mode, toggleMode, theme, setTheme } = useTheme();
 
-export const SideMenu = ({
-  mode,
-  setMode,
-  theme,
-  setTheme,
-  component,
-  setComponent,
-}: SideMenuProps) => {
   const glitch = useGlitch({
     timing: {
       duration: 5000,
@@ -57,7 +45,7 @@ export const SideMenu = ({
         {themes.map(([name, key]) => (
           <button
             key={`theme_${key}`}
-            className={theme === key ? "selected" : undefined}
+            className={`link${theme === key ? " selected" : ``}`}
             onClick={() => setTheme(key)}
           >
             {name}
@@ -66,14 +54,14 @@ export const SideMenu = ({
 
         <h5>Mode</h5>
         <button
-          className={mode === "light" ? "selected" : undefined}
-          onClick={() => setMode("light")}
+          className={`link${mode === "light" ? " selected" : ``}`}
+          onClick={() => toggleMode("light")}
         >
           Light
         </button>
         <button
-          className={mode === "dark" ? "selected" : undefined}
-          onClick={() => setMode("dark")}
+          className={`link${mode === "dark" ? " selected" : ``}`}
+          onClick={() => toggleMode("dark")}
         >
           Dark
         </button>
@@ -89,15 +77,18 @@ export const SideMenu = ({
 
                   {rest.paths.map(({ heading, paths }, j) => (
                     <Fragment key={`nav_${i}_heading_${j}`}>
-                      <h5>{heading}</h5>
+                      {heading ? (
+                        <h5>{heading}</h5>
+                      ) : (
+                        <div className="no-heading" />
+                      )}
 
                       {paths.map((path, k) => (
                         <Link
                           key={`nav_${i}_heading_${j}_path_${k}`}
-                          className={
-                            component === path ? "selected" : undefined
-                          }
-                          onClick={() => setComponent(path)}
+                          className={`link${
+                            pathname === `/${path}` ? " selected" : ``
+                          }`}
                           to={`/${path}`}
                         >
                           {nameFromRoute(path)}
@@ -110,11 +101,12 @@ export const SideMenu = ({
             ) : (
               <>
                 <Link
-                  className={`lg${component === rest.path ? ` selected` : ``}`}
-                  onClick={() => setComponent(rest.path)}
+                  className={`link lg${
+                    pathname === `/${rest.path}` ? ` selected` : ``
+                  }`}
                   to={`/${rest.path}`}
                 >
-                  {name}
+                  {nameFromRoute(rest.path)}
                 </Link>
               </>
             )}
