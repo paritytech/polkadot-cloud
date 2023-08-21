@@ -14,9 +14,9 @@ export const CardWithGridSystem = () => {
 ...
 
 <Card style={{ width: "100%" }} animations={sampleAnimation1}>
-  <Grid column sm={12} md={4}><h3>Left Grid</h3></Grid>
-  <Grid column sm={12} md={4}><h3>Center Grid</h3></Grid>
-  <Grid column sm={12} md={4}><h3>Right Grid</h3></Grid>
+  <Grid column sm={12} md={4}><h5>Left Grid</h5></Grid>
+  <Grid column sm={12} md={4}><h5>Center Grid</h5></Grid>
+  <Grid column sm={12} md={4}><h5>Right Grid</h5></Grid>
 </Card>`;
 
   const sampleAnimation1 = {
@@ -29,13 +29,13 @@ export const CardWithGridSystem = () => {
       <div className="demo">
         <Card animations={sampleAnimation1}>
           <Grid column sm={12} md={4}>
-            <h3>Left Grid</h3>
+            <h5>Left Grid</h5>
           </Grid>
           <Grid column sm={12} md={4}>
-            <h3>Center Grid</h3>
+            <h5>Center Grid</h5>
           </Grid>
           <Grid column sm={12} md={4}>
-            <h3>Right Grid</h3>
+            <h5>Right Grid</h5>
           </Grid>
         </Card>
       </div>

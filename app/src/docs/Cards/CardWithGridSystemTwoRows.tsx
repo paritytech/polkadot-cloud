@@ -15,14 +15,14 @@ export const CardWithGridSystemTwoRows = () => {
 
 <Card animations={sampleAnimation1}>
   <Grid row>
-    <Grid column sm={12} md={4}><h3>Top Left Grid</h3></Grid>
-    <Grid column sm={12} md={4}><h3>Top Center Grid</h3></Grid>
-    <Grid column sm={12} md={4}><h3>Top Right Grid</h3></Grid>
+    <Grid column sm={12} md={4}><h5>Top Left Grid</h5></Grid>
+    <Grid column sm={12} md={4}><h5>Top Center Grid</h5></Grid>
+    <Grid column sm={12} md={4}><h5>Top Right Grid</h5></Grid>
   </Grid>
   <Grid row>
-    <Grid column sm={12} md={4}><h3>Bottom Left Grid</h3></Grid>
-    <Grid column sm={12} md={4}><h3>Bottom Center Grid</h3></Grid>
-    <Grid column sm={12} md={4}><h3>Bottom Right Grid</h3></Grid>
+    <Grid column sm={12} md={4}><h5>Bottom Left Grid</h5></Grid>
+    <Grid column sm={12} md={4}><h5>Bottom Center Grid</h5></Grid>
+    <Grid column sm={12} md={4}><h5>Bottom Right Grid</h5></Grid>
   </Grid>
 </Card>`;
 
@@ -37,24 +37,24 @@ export const CardWithGridSystemTwoRows = () => {
         <Card animations={sampleAnimation1}>
           <Grid row>
             <Grid column sm={12} md={4}>
-              <h3>Top Left Grid</h3>
+              <h5>Top Left Grid</h5>
             </Grid>
             <Grid column sm={12} md={4}>
-              <h3>Top Center Grid</h3>
+              <h5>Top Center Grid</h5>
             </Grid>
             <Grid column sm={12} md={4}>
-              <h3>Top Right Grid</h3>
+              <h5>Top Right Grid</h5>
             </Grid>
           </Grid>
           <Grid row>
             <Grid column sm={12} md={4}>
-              <h3>Bottom Left Grid</h3>
+              <h5>Bottom Left Grid</h5>
             </Grid>
             <Grid column sm={12} md={4}>
-              <h3>Bottom Center Grid</h3>
+              <h5>Bottom Center Grid</h5>
             </Grid>
             <Grid column sm={12} md={4}>
-              <h3>Bottom Right Grid</h3>
+              <h5>Bottom Right Grid</h5>
             </Grid>
           </Grid>
         </Card>

@@ -19,13 +19,13 @@ const sampleAnimation2 = {
 ....
 
 <Grid column sm={12} md={6}>
-  <Card style={{ padding: "10px", textAlign: "center", height: "100%" }} animations={sampleAnimation1}><h3>1/2</h3></Card>
+  <Card style={{ padding: "10px", textAlign: "center", height: "100%" }} animations={sampleAnimation1}><h5>1/2</h5></Card>
 </Grid>
 <Grid column sm={12} md={3}>
-  <Card style={{ padding: "10px", textAlign: "center", height: "100%" }} animations={sampleAnimation2}><h3>1/4</h3></Card>
+  <Card style={{ padding: "10px", textAlign: "center", height: "100%" }} animations={sampleAnimation2}><h5>1/4</h5></Card>
 </Grid>
 <Grid column sm={12} md={3}>
-  <Card style={{ padding: "10px", textAlign: "center", height: "100%" }} animations={sampleAnimation1}><h3>1/4</h3></Card>
+  <Card style={{ padding: "10px", textAlign: "center", height: "100%" }} animations={sampleAnimation1}><h5>1/4</h5></Card>
 </Grid>`;
 
   const separatorStyle = {
@@ -53,7 +53,7 @@ const sampleAnimation2 = {
               style={{ padding: "10px", textAlign: "center", height: "100%" }}
               animations={sampleAnimation1}
             >
-              <h3>1/2</h3>
+              <h5>1/2</h5>
             </Card>
           </Grid>
           <Grid style={separatorStyle} column sm={12} md={3}>
@@ -61,7 +61,7 @@ const sampleAnimation2 = {
               style={{ padding: "10px", textAlign: "center", height: "100%" }}
               animations={sampleAnimation2}
             >
-              <h3>1/4</h3>
+              <h5>1/4</h5>
             </Card>
           </Grid>
           <Grid style={separatorStyle} column sm={12} md={3}>
@@ -69,7 +69,7 @@ const sampleAnimation2 = {
               style={{ padding: "10px", textAlign: "center", height: "100%" }}
               animations={sampleAnimation1}
             >
-              <h3>1/4</h3>
+              <h5>1/4</h5>
             </Card>
           </Grid>
         </Grid>
