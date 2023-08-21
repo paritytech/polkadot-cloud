@@ -30,7 +30,7 @@ SPDX-License-Identifier: GPL-3.0-only */
       transition: color var(--transition-duration);
 
       &:hover {
-        color: var(--network-color-primary);
+        color: var(--accent-color-primary);
       }
 
       > svg {
