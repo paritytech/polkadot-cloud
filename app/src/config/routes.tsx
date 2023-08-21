@@ -4,10 +4,10 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { Buttons } from "../docs/Buttons";
 import { Loaders } from "../docs/Loaders";
 import { Extensions } from "../docs/Extensions";
+import { Grid } from "../docs/Grid";
 
 // TODO: transfer pages to docs
 import { Modal } from "../pages/Modal";
-import { GridPage } from "../pages/GridPage";
 import { CardPage } from "../pages/CardPage";
 import { ReactNode } from "react";
 
@@ -51,7 +51,7 @@ export const routes: Routes = [
   {
     path: "grid",
     name: "Grid",
-    element: <GridPage />,
+    element: <Grid />,
   },
   {
     path: "card",
