@@ -9,12 +9,18 @@ export const LoaderLine = () => {
 {/* or (line is the default loader setting) */}
 <Loader text="loading..." />`;
 
+  const codeOptional = `{/* Optional text field */}
+<Loader type="line" />`;
   return (
     <>
       <div className="demo">
         <Loader type="line" text="loading..." />
       </div>
       <SimpleEditor code={code} />
+      <div className="demo">
+        <Loader type="line" />
+      </div>
+      <SimpleEditor code={codeOptional} />
     </>
   );
 };
