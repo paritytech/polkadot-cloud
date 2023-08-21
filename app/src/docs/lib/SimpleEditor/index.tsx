@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 // If a light theme is preferable on light mode, the following theme can be uncommented, and `Editor`'s `className` prop can be set to `editor-language-light`.
 import "./themes/light.scss";
-import { useTheme } from "app/src/contexts/Theme";
+import { useTheme } from "../../../contexts/Theme";
 
 languages.extend("jsx", PrismJSX);
 languages.extend("tsx", PrismTSX);
