@@ -10,7 +10,9 @@ export const LoaderCube = () => {
   return (
     <>
       <div className="demo">
-        <Loader type="cube" />
+        <div style={{ margin: "5rem" }}>
+          <Loader type="cube" />
+        </div>
       </div>
       <SimpleEditor code={code} />
     </>
