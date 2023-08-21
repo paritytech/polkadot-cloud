@@ -4,9 +4,9 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { SimpleEditor } from "../lib/SimpleEditor";
 import { Grid } from "@packages/cloud-react/lib/core/Grid";
 
-export const Grid_AlignBottomEnd = () => {
-  const code = `<Grid row alignItems="flex-end">
-  <Grid style={{ height: "fit-content" }} column sm={12} md={2}>1/6 and bottom</Grid>
+export const GridAlignTop = () => {
+  const code = `<Grid row justify="center">
+  <Grid column sm={12} md={6}>1/2 and centered</Grid>
 </Grid>`;
 
   const separatorStyle = {
@@ -21,18 +21,18 @@ export const Grid_AlignBottomEnd = () => {
         <Grid
           row
           style={Object.assign({}, separatorStyle, { height: "10rem" })}
-          alignItems="flex-end"
-          justify="flex-end"
+          alignItems="flex-start"
         >
           <Grid
             style={Object.assign({}, separatorStyle, {
               height: "4rem",
+              flex: 1,
             })}
             column
             sm={12}
             md={2}
           >
-            <h3>1/6 and bottom</h3>
+            <h5>1/6 and top</h5>
           </Grid>
         </Grid>
       </div>

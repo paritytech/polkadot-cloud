@@ -4,7 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { SimpleEditor } from "../lib/SimpleEditor";
 import { Grid } from "@packages/cloud-react/lib/core/Grid";
 
-export const Grid_More_Rows_Diff_Sizes = () => {
+export const GridMoreRowsDiffSizes = () => {
   const code = `<Grid row>
   <Grid  column md={4}>4/12</Grid>
   <Grid  column md={4}>4/12</Grid>
@@ -33,38 +33,38 @@ export const Grid_More_Rows_Diff_Sizes = () => {
       <div className="grid-demo">
         <Grid row style={separatorStyle}>
           <Grid style={separatorStyle} column md={4}>
-            <h3>4/12</h3>
+            <h5>4/12</h5>
           </Grid>
           <Grid style={separatorStyle} column md={4}>
-            <h3>4/12</h3>
+            <h5>4/12</h5>
           </Grid>
           <Grid style={separatorStyle} column md={4}>
-            <h3>4/12</h3>
+            <h5>4/12</h5>
           </Grid>
         </Grid>
         <Grid row style={separatorStyle}>
           <Grid style={separatorStyle} column md={3}>
-            <h3>3/12</h3>
+            <h5>3/12</h5>
           </Grid>
           <Grid style={separatorStyle} column md={6}>
-            <h3>6/12</h3>
+            <h5>6/12</h5>
           </Grid>
           <Grid style={separatorStyle} column md={3}>
-            <h3>3/12</h3>
+            <h5>3/12</h5>
           </Grid>
         </Grid>
         <Grid row style={separatorStyle}>
           <Grid style={separatorStyle} column md={5}>
-            <h3>5/12</h3>
+            <h5>5/12</h5>
           </Grid>
           <Grid style={separatorStyle} column md={2}>
-            <h3>2/12</h3>
+            <h5>2/12</h5>
           </Grid>
           <Grid style={separatorStyle} column md={4}>
-            <h3>4/12</h3>
+            <h5>4/12</h5>
           </Grid>
           <Grid style={separatorStyle} column md={1}>
-            <h3>1/12</h3>
+            <h5>1/12</h5>
           </Grid>
         </Grid>
       </div>

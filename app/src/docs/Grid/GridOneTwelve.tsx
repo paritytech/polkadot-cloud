@@ -4,7 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { SimpleEditor } from "../lib/SimpleEditor";
 import { Grid } from "@packages/cloud-react/lib/core/Grid";
 
-export const Grid_One_Twelve = () => {
+export const GridOneTwelve = () => {
   const code = `<Grid row>
   <Grid column sm={12} md={2} lg={1}>1/12</Grid>
   <Grid column sm={12} md={2} lg={1}>2/12</Grid>
@@ -31,40 +31,40 @@ export const Grid_One_Twelve = () => {
       <div className="grid-demo">
         <Grid row style={separatorStyle}>
           <Grid style={separatorStyle} column sm={12} md={2} lg={1}>
-            <h3>1/12</h3>
+            <h5>1/12</h5>
           </Grid>
           <Grid style={separatorStyle} column sm={12} md={2} lg={1}>
-            <h3>1/12</h3>
+            <h5>1/12</h5>
           </Grid>
           <Grid style={separatorStyle} column sm={12} md={2} lg={1}>
-            <h3>1/12</h3>
+            <h5>1/12</h5>
           </Grid>
           <Grid style={separatorStyle} column sm={12} md={2} lg={1}>
-            <h3>1/12</h3>
+            <h5>1/12</h5>
           </Grid>
           <Grid style={separatorStyle} column sm={12} md={2} lg={1}>
-            <h3>1/12</h3>
+            <h5>1/12</h5>
           </Grid>
           <Grid style={separatorStyle} column sm={12} md={2} lg={1}>
-            <h3>1/12</h3>
+            <h5>1/12</h5>
           </Grid>
           <Grid style={separatorStyle} column sm={12} md={2} lg={1}>
-            <h3>1/12</h3>
+            <h5>1/12</h5>
           </Grid>
           <Grid style={separatorStyle} column sm={12} md={2} lg={1}>
-            <h3>1/12</h3>
+            <h5>1/12</h5>
           </Grid>
           <Grid style={separatorStyle} column sm={12} md={2} lg={1}>
-            <h3>1/12</h3>
+            <h5>1/12</h5>
           </Grid>
           <Grid style={separatorStyle} column sm={12} md={2} lg={1}>
-            <h3>1/12</h3>
+            <h5>1/12</h5>
           </Grid>
           <Grid style={separatorStyle} column sm={12} md={2} lg={1}>
-            <h3>1/12</h3>
+            <h5>1/12</h5>
           </Grid>
           <Grid style={separatorStyle} column sm={12} md={2} lg={1}>
-            <h3>1/12</h3>
+            <h5>1/12</h5>
           </Grid>
         </Grid>
       </div>
