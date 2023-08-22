@@ -427,3 +427,11 @@ export const makeCancelable = (promise: Promise<AnyObject>) => {
     },
   };
 };
+
+/**
+ * @name unimplemented
+ * @summary A placeholder function to signal a deliberate unimplementation.
+ */
+export const unimplemented = () => {
+  /* unimplemented. */
+};
