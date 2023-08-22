@@ -5,10 +5,10 @@ import { Buttons } from "../docs/Buttons";
 import { Loaders } from "../docs/Loaders";
 import { Extensions } from "../docs/Extensions";
 import { Grid } from "../docs/Grid";
+import { Card } from "../docs/Cards";
 
 // TODO: transfer pages to docs
 import { Modal } from "../pages/Modal";
-import { CardPage } from "../pages/CardPage";
 import { ReactNode } from "react";
 
 type Routes = {
@@ -56,7 +56,7 @@ export const routes: Routes = [
   {
     path: "card",
     name: "Card",
-    element: <CardPage />,
+    element: <Card />,
   },
   {
     path: "modal",
