@@ -204,6 +204,14 @@ SPDX-License-Identifier: GPL-3.0-only */
     justify-content: center;
   }
 
+  .icon-demo {
+    align-items: center;
+
+    div {
+      margin: 0 2%;
+    }
+  }
+
   .demo {
     border: 1px solid var(--border-secondary-color);
     border-top-left-radius: 0.75rem;
