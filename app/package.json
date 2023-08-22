@@ -33,7 +33,7 @@
     "@polkadot/keyring": "^12.4.1",
     "@polkadot/util": "^12.3.2",
     "bignumber.js": "^9.1.1",
-    "framer-motion": "^10.16.0",
+    "framer-motion": "^10.16.1",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
