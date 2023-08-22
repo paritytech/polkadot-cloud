@@ -5,15 +5,8 @@ import { PolkadotIcon } from "@packages/cloud-react/lib/icons/PolkadotIcon";
 import { SimpleEditor } from "../lib/SimpleEditor";
 
 export const PolkIconCustomColors = () => {
-  const code = `<PolkadotIcon
-  size={150}
-  address={"5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"}
-/>
-<PolkadotIcon
-  light
-  size={150}
-  address={"5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"}
-/>`;
+  const code = `<PolkadotIcon size={150} address={"5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"} colors={["blue", "yellow", "black", "pink", "brown"]} />
+<PolkadotIcon dark size={150} address={"5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"} colors={["blue", "yellow"]} />`;
 
   return (
     <>
