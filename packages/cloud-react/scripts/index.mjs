@@ -42,7 +42,7 @@ export const generateLibIndex = async ({ ignore }) => {
         .join("/")}";`
     );
 
-  // Write the index.tsx file.
+  // Write index.tsx file.
   await fs.writeFile(
     "./lib/index.tsx",
     await format(lines.join("\n"), {
