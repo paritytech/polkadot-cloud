@@ -3,6 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { Buttons } from "../docs/Buttons";
 import { Loaders } from "../docs/Loaders";
+import { Icons } from "../docs/Icons";
 import { Extensions } from "../docs/Extensions";
 import { Grid } from "../docs/Grid";
 import { Card } from "../docs/Cards";
@@ -68,6 +69,11 @@ export const routes: Routes = [
     name: "Loaders",
     element: <Loaders />,
   },
+  {
+    path: "icons",
+    name: "Icons",
+    element: <Icons />,
+  },
 ];
 
 export const routeCategories: RouteCategories = [
@@ -79,6 +85,9 @@ export const routeCategories: RouteCategories = [
   },
   {
     path: "loader",
+  },
+  {
+    path: "icons",
   },
   {
     name: "Layout",
