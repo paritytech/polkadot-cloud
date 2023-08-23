@@ -3,21 +3,20 @@ SPDX-License-Identifier: GPL-3.0-only */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 import gulp from "gulp";
-import lrserver from "tiny-lr";
-import refresh from "gulp-livereload";
 import ts from "gulp-typescript";
 import strip from "gulp-strip-comments";
+import sourcemaps from "gulp-sourcemaps";
+import merge from "merge-stream";
 
 const { src, dest, series } = gulp;
 
 const buildComponents = () => {
-  const tsProject = ts.createProject("tsconfig.json");
+  var tsProject = ts.createProject("tsconfig.json");
+  var tsResult = tsProject.src().pipe(sourcemaps.init()).pipe(tsProject());
 
-  return tsProject
-    .src()
-    .pipe(tsProject())
-    .js.pipe(gulp.dest("dist"))
-    .pipe(refresh(lrserver));
+  return merge(tsResult, tsResult.js)
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest("dist"));
 };
 
 const stripComments = () => {
