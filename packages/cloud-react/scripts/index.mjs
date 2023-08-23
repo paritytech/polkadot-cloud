@@ -11,30 +11,44 @@ export const generateLibIndex = async ({ ignore }) => {
   // folders.
   const getDirFolders = async (dir) => {
     const folders = [];
-    for (let file of await fs.readdir(dir)) {
-      if ((await fs.stat(dir + "/" + file)).isDirectory()) {
-        if (!ignore.includes(file)) folders.push(file);
+    // if directory contains index.tsx file, stop.
+    if (dir !== "./lib" && existsSync(`${dir}/index.tsx`)) {
+      folders.push(dir);
+    } else {
+      // for each folder in this directory, loop again.
+      for (let file of await fs.readdir(dir)) {
+        if ((await fs.stat(dir + "/" + file)).isDirectory()) {
+          if (!ignore.includes(file)) {
+            const subFolders = await getDirFolders(dir + "/" + file);
+            folders.push(...subFolders);
+          }
+        }
       }
     }
+
     return folders;
   };
 
   // Iterate through all files and remove the provided lines from each file.
   const components = [];
-  for (let folder of await getDirFolders("./lib")) {
-    const dir = `./lib/${folder}`;
-    for (let component of await fs.readdir(dir))
-      if ((await fs.stat(`${dir}/${component}`)).isDirectory())
-        if (existsSync(`${dir}/${component}/index.tsx`))
-          components.push({
-            export: component,
-            from: `./${folder}/${component}`,
-          });
+  const allComponents = await getDirFolders("./lib");
+
+  for (let component of allComponents) {
+    components.push({
+      export: component.split("/").pop(),
+      from: component,
+    });
   }
 
   const lines = [];
-  for (let component of components)
-    lines.push(`export { ${component.export} } from "${component.from}";`);
+  for (let component of components) {
+    lines.push(
+      `export { ${component.export} } from "./${component.from
+        .split("/")
+        .slice(2)
+        .join("/")}";`
+    );
+  }
 
   await fs.writeFile(
     "./lib/index.tsx",
