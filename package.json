@@ -46,7 +46,6 @@
     "eslint-plugin-unused-imports": "^3.0.0",
     "framer-motion": "^10.16.1",
     "gulp": "^4.0.2",
-    "gulp-purgecss": "^5.0.0",
     "gulp-sass": "^5.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-strip-comments": "^2.6.0",
