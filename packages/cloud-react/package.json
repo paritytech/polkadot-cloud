@@ -37,6 +37,6 @@
   },
   "dependencies": {
     "@polkadot-cloud/core": "^0.1.1",
-    "@polkadot-cloud/utils": "^0.0.1"
+    "@polkadot-cloud/utils": "^0.0.4"
   }
 }
