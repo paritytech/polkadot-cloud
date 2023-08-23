@@ -19,8 +19,7 @@ export const generateLibIndex = async ({ ignore }) => {
       for (let file of await fs.readdir(dir)) {
         if ((await fs.stat(dir + "/" + file)).isDirectory()) {
           if (!ignore.includes(file)) {
-            const subFolders = await getDirFolders(dir + "/" + file);
-            folders.push(...subFolders);
+            folders.push(...(await getDirFolders(dir + "/" + file)));
           }
         }
       }
@@ -31,9 +30,7 @@ export const generateLibIndex = async ({ ignore }) => {
 
   // Iterate through all files and remove the provided lines from each file.
   const components = [];
-  const allComponents = await getDirFolders("./lib");
-
-  for (let component of allComponents) {
+  for (let component of await getDirFolders("./lib")) {
     components.push({
       export: component.split("/").pop(),
       from: component,
