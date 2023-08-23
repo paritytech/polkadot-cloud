@@ -48,6 +48,8 @@
     "gulp": "^4.0.2",
     "gulp-purgecss": "^5.0.0",
     "gulp-sass": "^5.0.0",
+    "gulp-strip-comments": "^2.6.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
     "minimist": "^1.2.8",
     "postcss": "^8.4.28",
     "prettier": "^3.0.2",

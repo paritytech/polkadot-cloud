@@ -19,7 +19,7 @@
   "scripts": {
     "build:mock": "node ../../scripts/generatePackageJson.mjs -p cloud-react -m index.tsx",
     "prebuild": "node ./scripts/prebuild.mjs && yarn --cwd='../cloud-core/' build",
-    "build": "rollup -c",
+    "build": "rm -fr dist && gulp && node ../../scripts/generatePackageJson.mjs -p cloud-react -m index.tsx",
     "postbuild": "node ./scripts/postbuild.mjs",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   },
