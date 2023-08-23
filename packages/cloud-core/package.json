@@ -21,12 +21,6 @@
     "watch": "rm -fr dist && gulp && gulp --task watch",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   },
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-purgecss": "^5.0.0",
-    "gulp-sass": "^5.0.0",
-    "sass": "^1.66.1"
-  },
   "dependencies": {
     "gulp-livereload": "^4.0.2",
     "tiny-lr": "^2.0.0"
