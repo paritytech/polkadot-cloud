@@ -53,6 +53,7 @@ try {
     "homepage",
     "contributors",
     "description",
+    "dependencies",
     "peerDependencies",
   ];
 
