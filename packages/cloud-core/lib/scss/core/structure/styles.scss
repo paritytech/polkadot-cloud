@@ -1,0 +1,35 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
+@use "../../styles/_variables" as v;
+
+@mixin page-padding {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+
+  @media (min-width: (v.$page-width-small-threshold + 1px)) {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  @media (min-width: (v.$page-width-medium-threshold + 1px)) {
+    padding: 0 5rem 0 2.5rem;
+  }
+}
+
+@mixin row-section-first {
+  &.first {
+    @media (min-width: (v.$page-width-medium-threshold + 1px)) {
+      padding-left: 0.75rem;
+      order: 1;
+    }
+  }
+}
+
+@mixin row-section-last {
+  &.last {
+    @media (min-width: (v.$page-width-medium-threshold + 1px)) {
+      padding-right: 0.75rem;
+    }
+  }
+}
