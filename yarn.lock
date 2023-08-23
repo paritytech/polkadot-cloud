@@ -598,10 +598,10 @@
     tiny-glob "^0.2.9"
     tslib "^2.4.0"
 
-"@polkadot-cloud/core@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-0.1.0.tgz#c835badea3abe02c50b1ffd0863b3b39f3639f3f"
-  integrity sha512-hDrYktmfL9hH6TFTsx4Q08Q2bdzA8JV4XEazTUAZe9WNkMGn1lGOFbP/xHU7F+1JKUx4jNSTY/YOLmlpjiWrAQ==
+"@polkadot-cloud/core@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-0.1.2.tgz#67cff1b96bbf13576bb6d307a55c1825fb435ad7"
+  integrity sha512-L2WpBPp04238aXZX2w44GHz5ozILPLuHibsvTWgswSmZPJuF5SVkEQnCKLXvPjP2o5RlpbiDl0rYUd+F9Qo7HA==
 
 "@polkadot-cloud/utils@^0.0.1":
   version "0.0.1"
@@ -1060,10 +1060,10 @@
   dependencies:
     "@types/unist" "^2"
 
-"@types/mdx@^2.0.0", "@types/mdx@^2.0.6":
-  version "2.0.6"
-  resolved "https://registry.npmjs.org/@types/mdx/-/mdx-2.0.6.tgz#d03e0cc6f7e6627b296f4ef49049678316e8ee23"
-  integrity sha512-sVcwEG10aFU2KcM7cIA0M410UPv/DesOPyG8zMVk0QUDexHA3lYmGucpEpZ2dtWWhi2ip3CG+5g/iH0PwoW4Fw==
+"@types/mdx@^2.0.0", "@types/mdx@^2.0.7":
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/@types/mdx/-/mdx-2.0.7.tgz#c7482e995673e01b83f8e96df83b3843ea76401f"
+  integrity sha512-BG4tyr+4amr3WsSEmHn/fXPqaCba/AYZ7dsaQTiavihQunHSIxk+uAtqsjvicNpyHN6cm+B9RVrUOtW9VzIKHw==
 
 "@types/minimatch@*":
   version "5.1.2"
@@ -1112,10 +1112,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^18.2.20":
-  version "18.2.20"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.20.tgz#1605557a83df5c8a2cc4eeb743b3dfc0eb6aaeb2"
-  integrity sha512-WKNtmsLWJM/3D5mG4U84cysVY31ivmyw85dE84fOCk5Hx78wezB/XEjVPWl2JTZ5FkEeaTJf+VgUAUn3PE7Isw==
+"@types/react@*", "@types/react@^18.2.21":
+  version "18.2.21"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.21.tgz#774c37fd01b522d0b91aed04811b58e4e0514ed9"
+  integrity sha512-neFKG/sBAwGxHgXiIxnbm3/AAVQ/cMRS93hvBpg8xYRbeQSPVABp9U2bRnPf0iI4+Ucdv3plSxKK+3CW2ENJxA==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"

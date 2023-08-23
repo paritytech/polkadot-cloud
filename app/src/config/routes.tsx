@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 
 import { Buttons } from "../docs/Buttons";
 import { Loaders } from "../docs/Loaders";
+import { Icons } from "../docs/Icons";
 import { Extensions } from "../docs/Extensions";
 import { Grid } from "../docs/Grid";
 import { Card } from "../docs/Cards";
@@ -33,22 +34,17 @@ interface RouteCategoryMulti {
   }[];
 }
 
-export const routes: Routes = [
+// recipes
+const recipesRoutes = [
   {
-    path: "/",
-    name: "Home",
-    element: <Buttons />, // Placeholder until we have a landing page.
+    path: "account_card",
+    name: "Account card",
+    element: <AccountCard />,
   },
-  {
-    path: "buttons",
-    name: "Buttons",
-    element: <Buttons />,
-  },
-  {
-    path: "extensions",
-    name: "Extensions",
-    element: <Extensions />,
-  },
+];
+
+// Layout Components
+const componentsLayoutRoutes = [
   {
     path: "grid",
     name: "Grid",
@@ -64,16 +60,42 @@ export const routes: Routes = [
     name: "Modal",
     element: <Modal />,
   },
+];
+
+const componentsRoutes = [
+  {
+    path: "buttons",
+    name: "Buttons",
+    element: <Buttons />,
+  },
+  {
+    path: "extensions",
+    name: "Extensions",
+    element: <Extensions />,
+  },
   {
     path: "loader",
     name: "Loaders",
     element: <Loaders />,
   },
   {
-    path: "account_card",
-    name: "Account card",
-    element: <AccountCard />,
+    path: "icons",
+    name: "Icons",
+    element: <Icons />,
   },
+];
+
+export const routes: Routes = [
+  {
+    path: "/",
+    name: "Home",
+    element: <Buttons />, // Placeholder until we have a landing page.
+  },
+  // Components
+  ...componentsRoutes,
+  ...componentsLayoutRoutes,
+  // Recipes
+  ...recipesRoutes,
 ];
 
 export const routeCategories: RouteCategories = [
