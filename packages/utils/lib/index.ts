@@ -431,7 +431,8 @@ export const makeCancelable = (promise: Promise<AnyObject>) => {
 /**
  * @name unimplemented
  * @summary A placeholder function to signal a deliberate unimplementation.
+ * Consumes an arbitrary number of props.
+ * @returns undefined.
  */
-export const unimplemented = () => {
-  /* unimplemented. */
-};
+// eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
+export const unimplemented = ({ ...props }) => undefined;
