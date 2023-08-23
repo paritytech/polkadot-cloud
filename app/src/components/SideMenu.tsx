@@ -78,7 +78,7 @@ export const SideMenu = () => {
                   {rest.paths.map(({ heading, paths }, j) => (
                     <Fragment key={`nav_${i}_heading_${j}`}>
                       {heading ? (
-                        <h5>{heading}</h5>
+                        <h4>{heading}</h4>
                       ) : (
                         <div className="no-heading" />
                       )}

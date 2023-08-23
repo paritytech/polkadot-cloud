@@ -1,15 +1,16 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
+import { ReactNode } from "react";
 
 import { Buttons } from "../docs/Buttons";
 import { Loaders } from "../docs/Loaders";
 import { Extensions } from "../docs/Extensions";
 import { Grid } from "../docs/Grid";
 import { Card } from "../docs/Cards";
+import { AccountCard } from "../docs/AccountCard";
 
 // TODO: transfer pages to docs
 import { Modal } from "../pages/Modal";
-import { ReactNode } from "react";
 
 type Routes = {
   name: string;
@@ -68,23 +69,40 @@ export const routes: Routes = [
     name: "Loaders",
     element: <Loaders />,
   },
+  {
+    path: "account_card",
+    name: "Account card",
+    element: <AccountCard />,
+  },
 ];
 
 export const routeCategories: RouteCategories = [
   {
-    path: "buttons",
-  },
-  {
-    path: "extensions",
-  },
-  {
-    path: "loader",
-  },
-  {
-    name: "Layout",
+    name: "Components",
     paths: [
       {
+        paths: ["buttons"],
+      },
+      {
+        paths: ["extensions"],
+      },
+      {
+        paths: ["loader"],
+      },
+      {
+        paths: ["icons"],
+      },
+      {
+        heading: "Layout",
         paths: ["grid", "modal", "card"],
+      },
+    ],
+  },
+  {
+    name: "Recipes",
+    paths: [
+      {
+        paths: ["account_card"],
       },
     ],
   },
