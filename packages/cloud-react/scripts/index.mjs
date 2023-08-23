@@ -5,7 +5,7 @@ import { existsSync } from "fs";
 import fs from "fs/promises";
 import { format } from "prettier";
 
-// Generates `lib/index.tsx` based on the contents of the `lib` folder.
+// Generates `dist/index.js` based on the contents of the `lib` folder.
 export const generateLibIndex = async ({ ignore }) => {
   // Utility function that iterates through a provided directory and returns all
   // folders.
@@ -37,7 +37,7 @@ export const generateLibIndex = async ({ ignore }) => {
     lines.push(`export { ${component.export} } from "${component.from}";`);
 
   await fs.writeFile(
-    "./lib/index.tsx",
+    "./dist/index.js",
     await format(lines.join("\n"), {
       parser: "typescript",
     })
