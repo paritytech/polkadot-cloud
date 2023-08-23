@@ -7,7 +7,7 @@ import { exec } from "child_process";
 const main = async () => {
   // Generate package.json and inject.
   exec(
-    "node ../../scripts/generatePackageJson.mjs -p cloud-react -m index.tsx",
+    "node ../../scripts/generatePackageJson.mjs -p cloud-react -m index.js",
     (error, _, stderr) => {
       if (error) {
         console.log(`❌: ${error.message}`);
@@ -17,6 +17,7 @@ const main = async () => {
       }
     }
   );
+
   // Rmmove generated content.
   fs.unlinkSync(`./lib/index.tsx`);
 };

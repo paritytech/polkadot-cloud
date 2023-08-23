@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
+/* eslint-disable @typescript-eslint/no-var-requires */
 
 const { src, dest, series, watch } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
