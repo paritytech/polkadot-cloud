@@ -21,9 +21,7 @@ export const CodeDrawer = ({ children }: CodeDrawerProps) => {
       <div
         className="code"
         style={{
-          borderColor: open
-            ? "var(--border-primary-color)"
-            : "var(--transparent-color)",
+          borderColor: open ? "var(--border-primary-color)" : "transparent",
         }}
       >
         <div className={`${open ? `show` : `hide`}`}>{children}</div>
