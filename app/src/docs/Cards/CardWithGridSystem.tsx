@@ -1,9 +1,9 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { Card } from "@packages/cloud-react/lib/core/Card";
+import { Card } from "@packages/cloud-react/lib/base/structure/Card";
 import { SimpleEditor } from "../lib/SimpleEditor";
-import { Grid } from "@packages/cloud-react/lib/core/Grid";
+import { Grid } from "@packages/cloud-react/lib/base/structure/Grid";
 
 export const CardWithGridSystem = () => {
   const code = `const sampleAnimation1 = {

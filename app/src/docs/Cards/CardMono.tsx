@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { Card } from "@packages/cloud-react/lib/core/Card";
+import { Card } from "@packages/cloud-react/lib/base/structure/Card";
 import { SimpleEditor } from "../lib/SimpleEditor";
 
 export const CardMono = () => {
