@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { SimpleEditor } from "../lib/SimpleEditor";
-import { Grid } from "@packages/cloud-react/lib/core/Grid";
+import { Grid } from "@packages/cloud-react/lib/base/structure/Grid";
 
 export const GridGapsLeftRight = () => {
   const code = `<Grid row justify="center">

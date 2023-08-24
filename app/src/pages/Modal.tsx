@@ -4,7 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { useState } from "react";
 import { Button } from "@packages/cloud-react/lib/buttons/Button";
 import { CodeDrawer } from "../components/CodeDrawer";
-import { ActionItem } from "@packages/cloud-react/lib/modal/ActionItem";
+import { ActionItem } from "@packages/cloud-react/lib/base/modal/ActionItem";
 import Doc from "../docs/modal.mdx";
 
 export const Modal = () => {
