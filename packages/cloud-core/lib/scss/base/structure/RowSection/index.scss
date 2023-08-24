@@ -1,0 +1,58 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
+@use "../../../styles/_variables" as v;
+@use "../styles";
+
+.core-row-primary {
+  @include styles.row-section-first;
+  @include styles.row-section-last;
+
+  order: 0;
+  flex: 1;
+  flex-basis: 100%;
+  max-width: 100%;
+
+  @media (min-width: (v.$page-width-medium-threshold + 1px)) {
+    order: 0;
+    flex: 1;
+    flex-basis: 56%;
+    width: 56%;
+  }
+
+  @media (min-width: (v.$section-full-width-threshold + 400px)) {
+    flex-basis: 62%;
+    width: 62%;
+  }
+
+  &.v-last {
+    order: 1;
+  }
+}
+
+.core-row-secondary {
+  @include styles.row-section-first;
+  @include styles.row-section-last;
+
+  order: 0;
+  flex-basis: 100%;
+  width: 100%;
+  border-radius: 1rem;
+
+  &.v-last {
+    order: 1;
+  }
+
+  @media (min-width: (v.$page-width-medium-threshold + 1px)) {
+    order: 0;
+    flex: 1;
+    flex-basis: 44%;
+    width: 44%;
+    max-width: none;
+  }
+
+  @media (min-width: (v.$section-full-width-threshold + 400px)) {
+    flex-basis: 38%;
+    max-width: 38%;
+  }
+}
