@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@polkadot/keyring": "^12.4.1",
+    "@polkadot/keyring": "^12.4.2",
     "@polkadot/util": "^12.3.2",
     "bignumber.js": "^9.1.1",
     "framer-motion": "^10.16.1",
