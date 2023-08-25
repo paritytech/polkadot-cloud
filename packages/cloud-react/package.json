@@ -36,7 +36,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@polkadot-cloud/core": "^0.1.4",
+    "@polkadot-cloud/core": "^0.1.5",
     "@polkadot-cloud/utils": "^0.0.4"
   }
 }

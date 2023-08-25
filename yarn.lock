@@ -617,13 +617,10 @@
     tiny-glob "^0.2.9"
     tslib "^2.4.0"
 
-"@polkadot-cloud/core@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.npmjs.org/@polkadot-cloud/core/-/core-0.1.4.tgz#852aac2d599c4e6b49d1e2b93310d4709c108b14"
-  integrity sha512-Tgs1h9Qlw0LtNFJ7CDZuQKd9TIYThhQRltQFIVZHxEzo7zgQ/a8uAmGa6S4y8CTLyVq+16HUiDy8sK9/KXBbKQ==
-  dependencies:
-    gulp-livereload "^4.0.2"
-    tiny-lr "^2.0.0"
+"@polkadot-cloud/core@^0.1.5":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-0.1.6.tgz#c82934fdbc1fd5e9759de30f2bb6881cec2a5bf4"
+  integrity sha512-4nftY+1sXXG4qauZhlagafdWsBLewnuk+UtqA8z5AIADr2QmEfsuQMBXIwsAZIaHPvP2/VfjCwLEBKQR3uWAow==
 
 "@polkadot-cloud/utils@^0.0.4":
   version "0.0.4"
