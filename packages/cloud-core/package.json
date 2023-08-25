@@ -20,9 +20,5 @@
     "build": "rm -fr dist && gulp && node ../../scripts/generatePackageJson.mjs -p cloud-core",
     "watch": "rm -fr dist && gulp && gulp --task watch",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
-  },
-  "dependencies": {
-    "gulp-livereload": "^4.0.2",
-    "tiny-lr": "^2.0.0"
   }
 }

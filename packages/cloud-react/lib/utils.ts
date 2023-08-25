@@ -1,8 +1,8 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { AnyJson } from "../types";
 import { MouseEvent } from "react";
+import { AnyJson } from "./types";
 
 /* Returns ` t` if truthy, or an empty string otherwise. */
 export const valEmpty = (t: boolean | string | undefined, v: string) =>
