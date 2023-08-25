@@ -14,7 +14,7 @@ A library and automated platform for developing and publishing assets for Polkad
 
 #### [@polkadot-cloud/react](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-react#polkadot-cloud-react)
 
-Core components for Polkadot dashboards.
+Core components for Polkadot apps.
 
 #### [@polkadotcloud/utils](https://github.com/paritytech/polkadot-cloud/tree/main/packages/utils#polkadot-cloud-utils)
 

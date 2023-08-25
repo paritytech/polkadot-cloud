@@ -1,7 +1,7 @@
 {
   "name": "polkadot-cloud-cloud-core",
   "license": "GPL-3.0-only",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "contributors": [
     "Ross Bulat<ross@parity.io>",
     "Nikolaos Kontakis<nikos@parity.io>"
@@ -20,12 +20,6 @@
     "build": "rm -fr dist && gulp && node ../../scripts/generatePackageJson.mjs -p cloud-core",
     "watch": "rm -fr dist && gulp && gulp --task watch",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
-  },
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-purgecss": "^5.0.0",
-    "gulp-sass": "^5.0.0",
-    "sass": "^1.66.1"
   },
   "dependencies": {
     "gulp-livereload": "^4.0.2",

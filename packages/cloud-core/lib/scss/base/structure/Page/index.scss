@@ -1,0 +1,14 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
+@use "../../../styles/_variables" as v;
+@use "../styles";
+
+.core-page {
+  max-width: v.$page-max-width;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4.5rem;
+  width: 100%;
+  margin: 0 auto;
+}

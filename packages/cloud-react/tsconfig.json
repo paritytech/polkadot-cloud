@@ -13,7 +13,8 @@
     "sourceMap": true,
     "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": false
+    "esModuleInterop": false,
+    "declaration": true
   },
   "include": ["./lib/**/*"],
 }
