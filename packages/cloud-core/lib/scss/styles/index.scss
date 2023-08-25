@@ -70,16 +70,6 @@ a {
   cursor: pointer;
 }
 
-/* Define bare-bones button style. */
-button {
-  font-family: Inter, sans-serif;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-}
-
 /* Define default input style. */
 input {
   font-family: Inter, sans-serif;
@@ -87,7 +77,6 @@ input {
   border: none;
 }
 
-button:focus,
 input:focus,
 select:focus,
 textarea:focus {

@@ -1,6 +1,24 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
+@mixin btn-core {
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
 @mixin btn-layout {
   font-family: InterSemiBold, sans-serif;
   font-weight: 600;
