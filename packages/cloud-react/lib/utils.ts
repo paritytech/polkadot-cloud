@@ -1,8 +1,8 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { AnyJson } from "../types";
-import { MouseEvent } from "react";
+import { MouseEvent, useEffect, useRef } from "react";
+import { AnyJson, AnyFunction } from "./types";
 
 /* Returns ` t` if truthy, or an empty string otherwise. */
 export const valEmpty = (t: boolean | string | undefined, v: string) =>
@@ -33,4 +33,18 @@ export const onMouseHandlers = (props: AnyJson) => {
         ? (e: MouseEvent<HTMLButtonElement>) => onMouseOut(e)
         : undefined,
   };
+};
+
+export const useEffectIgnoreInitial = (fn: AnyFunction, deps: AnyJson[]) => {
+  const isInitial = useRef<boolean>(true);
+
+  useEffect(
+    () => {
+      if (!isInitial.current) {
+        fn();
+      }
+      isInitial.current = false;
+    },
+    deps ? [...deps] : undefined
+  );
 };
