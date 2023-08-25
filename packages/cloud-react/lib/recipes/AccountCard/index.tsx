@@ -21,7 +21,7 @@ interface AccountCardProps {
   extraComponent?: ExtraComponentProps;
 }
 
-const cut = (str: string, amount = 4) => {
+const ellipsisAddress = (str: string, amount = 4) => {
   // having an amount less than 4 is a bit extreme so we default there
   if (amount <= 4) {
     return str.slice(0, 4) + "..." + str.slice(-4);
@@ -69,26 +69,29 @@ export const AccountCard = ({
 
   const structure = [];
 
+  // state icSize (icon's Grid column size)
   const [icSize, setIcSize] = useState<GridSizes | undefined>(icon?.size);
+  // state mainSize (main area's Grid column size)
   const [mainSize, setMainSize] = useState<GridSizes>(12);
+  // state xtraSize (extra component's Grid column size)
   const [xtraSize, setXtraSize] = useState<GridSizes | undefined>(
     extraComponent?.size
   );
 
   // Adjust the columns
   useEffect(() => {
+    // default values for iSize (icon's column size), xSize (extra component's column size) and mSize (main area's column size)
     let iSize: GridSizes = 2;
     let xSize: GridSizes = 2;
     let mSize: GridSizes = 8;
 
+    // Based on the existance of icon/extraComponent and if their sizes are given as params, the following 'if' is calculating the correct sizes
+    // in the 12 column Grid that polakdot-cloud supports at the moment, and sets the states accordingly
     if (icon?.size || extraComponent?.size) {
       iSize = icon?.size || 2;
       xSize = extraComponent?.size || 2;
       mSize = (12 -
         ((icon ? iSize : 0) + (extraComponent ? xSize : 0))) as GridSizes;
-      console.log("iconSize", iSize);
-      console.log("extraComponentSize", xSize);
-      console.log("mSize", mSize);
     }
     setIcSize(iSize);
     setXtraSize(xSize);
@@ -104,7 +107,7 @@ export const AccountCard = ({
   const MainTextComponent = (
     <Grid column sm={mainSize} justify={icon?.justify} alignItems="center">
       <div className={fontClasses?.join(" ")}>
-        {ellipsis ? cut(address, ellipsisAmount) : address}
+        {ellipsis ? ellipsisAddress(address, ellipsisAmount) : address}
       </div>
     </Grid>
   );

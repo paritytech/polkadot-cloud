@@ -9,23 +9,23 @@ import { SimpleEditor } from "../lib/SimpleEditor";
 
 export const AccountCardPageSimple = () => {
   const codeA = `
-import { AccountCard, IconProps, } from "@packages/cloud-react/lib/recipes/AccountCard";
+import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
 const iconProps: IconProps = {}; // or { position = "left" }; <- "left" is the default option
 ...
 return (
-  <AccountCard icon={iconProps} address={"1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73"} />
+  <AccountCard icon={iconProps} address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" />
 );`;
 
   const codeB = `
-import { AccountCard } from "@packages/cloud-react/lib/recipes/AccountCard";
+import { AccountCard } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
 return (
-  <AccountCard address={"1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73"} />
+  <AccountCard address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" />
 );`;
 
   const codeC = `
-import { AccountCard, IconProps, } from "@packages/cloud-react/lib/recipes/AccountCard";
+import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
 const iconProps: IconProps = {
   canCopy: true,
@@ -35,7 +35,7 @@ const iconProps: IconProps = {
 };
 ...
 return (
-  <AccountCard icon={iconPropsC} address={"1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73"} />
+  <AccountCard icon={iconPropsC} address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" />
 );`;
 
   const iconPropsA: IconProps = {
@@ -54,20 +54,18 @@ return (
       <div className="demo">
         <AccountCard
           icon={iconPropsA}
-          address={"1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73"}
+          address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73"
         />
       </div>
       <SimpleEditor code={codeA} />
       <div className="demo">
-        <AccountCard
-          address={"1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73"}
-        />
+        <AccountCard address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" />
       </div>
       <SimpleEditor code={codeB} />
       <div className="demo">
         <AccountCard
           icon={iconPropsC}
-          address={"1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73"}
+          address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73"
         />
       </div>
       <SimpleEditor code={codeC} />

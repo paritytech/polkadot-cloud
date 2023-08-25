@@ -5,10 +5,10 @@ import { PolkadotIcon } from "@packages/cloud-react/lib/icons/PolkadotIcon";
 import { SimpleEditor } from "../lib/SimpleEditor";
 
 export const PolkIconThemes = () => {
-  const code = `<PolkadotIcon size={150} address={"5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"} />
-<PolkadotIcon light size={150} address={"5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"} />
-<PolkadotIcon size={150} address={"5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"} outerColor="transparent" />
-<PolkadotIcon size={150} address={"5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"} outerColor="#E6007A" />`;
+  const code = `<PolkadotIcon size={150} address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY" />
+<PolkadotIcon light size={150} address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY" />
+<PolkadotIcon size={150} address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY" outerColor="transparent" />
+<PolkadotIcon size={150} address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY" outerColor="#E6007A" />`;
 
   return (
     <>
@@ -16,27 +16,27 @@ export const PolkIconThemes = () => {
         <div>
           <PolkadotIcon
             size={150}
-            address={"5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"}
+            address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
           />
         </div>
         <div>
           <PolkadotIcon
             dark
             size={150}
-            address={"5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"}
+            address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
           />
         </div>
         <div>
           <PolkadotIcon
             size={150}
-            address={"5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"}
+            address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
             outerColor="transparent"
           />
         </div>
         <div>
           <PolkadotIcon
             size={150}
-            address={"5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"}
+            address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
             outerColor="#E6007A"
           />
         </div>
