@@ -6,3 +6,6 @@ export type AnyJson = any;
 
 // eslint-disable-next-line
 export type AnyObject = any;
+
+// eslint-disable-next-line
+export type Any = any;
