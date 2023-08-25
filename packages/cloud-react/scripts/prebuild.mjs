@@ -6,7 +6,7 @@ import { generateLibIndex } from "./index.mjs";
 const main = async () => {
   // Generate `lib/index.tsx`.
   await generateLibIndex({
-    ignore: ["styles", "svg", "utils"],
+    ignore: ["styles", "svg", "utils", "hooks"],
   });
 };
 
