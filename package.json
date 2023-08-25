@@ -46,6 +46,7 @@
     "eslint-plugin-unused-imports": "^3.0.0",
     "framer-motion": "^10.16.1",
     "gulp": "^4.0.2",
+    "gulp-livereload": "^4.0.2",
     "gulp-sass": "^5.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-strip-comments": "^2.6.0",
@@ -67,7 +68,9 @@
     "stylelint": "^15.10.3",
     "stylelint-config-standard-scss": "^10.0.0",
     "tslib": "^2.6.2",
+    "tiny-lr": "^2.0.0",
     "typescript": "^5.1.6"
+
   },
   "workspaces": [
     "packages/cloud-core",
