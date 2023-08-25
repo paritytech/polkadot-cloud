@@ -47,58 +47,52 @@ export const Canvas = ({
   useEffect(() => {
     if (externalOverlayStatus === "open" && status === "open") onOut(false);
 
-    if (externalOverlayStatus === "closing") {
+    if (externalOverlayStatus === "closing")
       if (activeOverlayInstance === "canvas") {
         setCanvasStatus("open");
         onIn();
       }
-    }
   }, [externalOverlayStatus]);
 
+  // Control fade in and out on opening and closing states.
   useEffect(() => {
-    // canvas has been opened - fade in.
-    if (status === "open") {
-      onIn();
-    }
-    // canvas closure triggered - fade out.
-    if (status === "closing") {
-      onOut(true);
-    }
+    if (status === "open") onIn();
+    if (status === "closing") onOut(true);
   }, [status]);
-
-  if (status === "closed") {
-    return <></>;
-  }
 
   const ActiveCanvas: FC | null = canvas?.[key] || null;
 
   return (
-    <ModalCanvas
-      initial={{
-        opacity: 0,
-      }}
-      animate={controls}
-      transition={{
-        duration: 0.15,
-      }}
-      variants={{
-        hidden: {
-          opacity: 0,
-        },
-        visible: {
-          opacity: 1,
-        },
-      }}
-    >
-      <ModalScroll>
-        <ModalContent>
-          <ModalCanvasContent>
-            <ErrorBoundary FallbackComponent={Fallback}>
-              {ActiveCanvas && <ActiveCanvas />}
-            </ErrorBoundary>
-          </ModalCanvasContent>
-        </ModalContent>
-      </ModalScroll>
-    </ModalCanvas>
+    <>
+      {status === "closed" ? null : (
+        <ModalCanvas
+          initial={{
+            opacity: 0,
+          }}
+          animate={controls}
+          transition={{
+            duration: 0.15,
+          }}
+          variants={{
+            hidden: {
+              opacity: 0,
+            },
+            visible: {
+              opacity: 1,
+            },
+          }}
+        >
+          <ModalScroll>
+            <ModalContent>
+              <ModalCanvasContent>
+                <ErrorBoundary FallbackComponent={Fallback}>
+                  {ActiveCanvas && <ActiveCanvas />}
+                </ErrorBoundary>
+              </ModalCanvasContent>
+            </ModalContent>
+          </ModalScroll>
+        </ModalCanvas>
+      )}
+    </>
   );
 };

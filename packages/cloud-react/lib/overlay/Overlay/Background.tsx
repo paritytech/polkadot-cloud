@@ -19,52 +19,45 @@ export const Background = ({
   } = useOverlay();
 
   let { openOverlayInstances } = useOverlay();
-  if (externalOverlayStatus === "open") {
-    openOverlayInstances++;
-  }
+  if (externalOverlayStatus === "open") openOverlayInstances++;
 
-  const onIn = async () => {
-    await controls.start("visible");
-  };
-  const onOut = async () => {
-    await controls.start("hidden");
-  };
+  const onIn = async () => await controls.start("visible");
+
+  const onOut = async () => await controls.start("hidden");
 
   useEffect(() => {
     if (openOverlayInstances > 0) onIn();
     if (openOverlayInstances === 0) onOut();
   }, [openOverlayInstances]);
 
-  if (
-    modalStatus === "closed" &&
-    externalOverlayStatus === "closed" &&
-    canvasStatus === "closed"
-  ) {
-    return <></>;
-  }
-
   return (
-    <ModalOverlay
-      blur={
-        canvasStatus === "open" || externalOverlayStatus === "open"
-          ? "14px"
-          : "4px"
-      }
-      initial={{
-        opacity: 0,
-      }}
-      animate={controls}
-      transition={{
-        duration: 0.15,
-      }}
-      variants={{
-        hidden: {
-          opacity: 0,
-        },
-        visible: {
-          opacity: 1,
-        },
-      }}
-    />
+    <>
+      {modalStatus === "closed" &&
+      canvasStatus === "closed" &&
+      externalOverlayStatus === "closed" ? null : (
+        <ModalOverlay
+          blur={
+            canvasStatus === "open" || externalOverlayStatus === "open"
+              ? "14px"
+              : "4px"
+          }
+          initial={{
+            opacity: 0,
+          }}
+          animate={controls}
+          transition={{
+            duration: 0.15,
+          }}
+          variants={{
+            hidden: {
+              opacity: 0,
+            },
+            visible: {
+              opacity: 1,
+            },
+          }}
+        />
+      )}
+    </>
   );
 };

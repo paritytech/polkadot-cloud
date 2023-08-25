@@ -42,17 +42,13 @@ export const Modal = ({
     await controls.start("out");
     setModalStatus("closed");
   };
-  const onIn = async () => {
-    await controls.start("in");
-  };
-  const onOut = async () => {
-    await controls.start("out");
-  };
+  const onIn = async () => await controls.start("in");
+
+  const onOut = async () => await controls.start("out");
 
   const windowResize = () => {
-    if (!options?.disableWindowResize) {
+    if (!options?.disableWindowResize)
       window.addEventListener("resize", handleResize);
-    }
   };
 
   const handleResize = () => {
@@ -107,38 +103,30 @@ export const Modal = ({
     setModalHeightRef(heightRef);
   }, [modalRef?.current, heightRef?.current]);
 
-  if (status === "closed") {
-    return <></>;
-  }
-
-  const variants = {
-    in: {
-      opacity: 1,
-      scale: 1,
-    },
-    out: {
-      opacity: 0,
-      scale: 0.9,
-    },
-  };
-  const transition = {
-    duration: 0.2,
-  };
-  const initial = {
-    opacity: 0,
-    scale: 0.9,
-  };
-
   const ActiveModal: FC | null = modals?.[key] || null;
 
   return (
     <>
-      {status !== "replacing" ? (
+      {status === "closed" ? null : status !== "replacing" ? (
         <ModalContainer
-          initial={initial}
+          initial={{
+            opacity: 0,
+            scale: 0.9,
+          }}
           animate={controls}
-          transition={transition}
-          variants={variants}
+          transition={{
+            duration: 0.2,
+          }}
+          variants={{
+            in: {
+              opacity: 1,
+              scale: 1,
+            },
+            out: {
+              opacity: 0,
+              scale: 0.9,
+            },
+          }}
           style={{ opacity: status === "opening" ? 0 : 1 }}
         >
           <div>
