@@ -107,16 +107,16 @@ export const AccountCard = ({
   structure.push(MainTextComponent);
 
   if (icon) {
-    if (icon?.position === "left") {
-      structure.unshift(IconComponent);
-    } else {
+    if (icon?.position === "right") {
       structure.push(IconComponent);
+    } else {
+      structure.unshift(IconComponent);
     }
   }
 
   if (extraComponent) {
-    if (icon?.position === "left") {
-      structure.push(
+    if (icon?.position === "right") {
+      structure.unshift(
         <Grid
           column
           sm={xtraSize}
@@ -127,7 +127,7 @@ export const AccountCard = ({
         </Grid>
       );
     } else {
-      structure.unshift(
+      structure.push(
         <Grid
           column
           sm={xtraSize}
