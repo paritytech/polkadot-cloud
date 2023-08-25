@@ -11,8 +11,8 @@ import type {
 
 export const defaultModalConfig: ModalConfig = {
   key: "",
+  size: "lg",
   options: {},
-  size: "large",
 };
 
 export const defaultCanvasConfig: CanvasConfig = {
@@ -22,8 +22,8 @@ export const defaultCanvasConfig: CanvasConfig = {
 
 export const defaultOverlayContext: OverlayContextInterface = {
   openOverlayInstances: 0,
-  setOpenOverlayInstances: (direction, instanceType) => unimplemented,
   activeOverlayInstance: null,
+  setOpenOverlayInstances: (direction, instanceType) => unimplemented,
   setActiveOverlayInstance: (instance) => unimplemented,
   canvas: {
     status: "closed",
@@ -36,14 +36,14 @@ export const defaultOverlayContext: OverlayContextInterface = {
     status: "closed",
     config: defaultModalConfig,
     modalHeight: 0,
-    modalResizeCounter: 0,
     modalMaxHeight: 0,
-    setModalResize: () => unimplemented,
-    setModalHeight: () => unimplemented,
-    setModalRef: (ref) => unimplemented,
-    setModalHeightRef: (height) => unimplemented,
-    setModalStatus: (status) => unimplemented,
-    replaceModal: (config) => unimplemented,
+    modalResizeCounter: 0,
     openModal: (config) => unimplemented,
+    replaceModal: (config) => unimplemented,
+    setModalHeight: (height) => unimplemented,
+    setModalResize: () => unimplemented,
+    setModalStatus: (status) => unimplemented,
+    setModalRef: (modalRef) => unimplemented,
+    setModalHeightRef: (heightRef) => unimplemented,
   },
 };

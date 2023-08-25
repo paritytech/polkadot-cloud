@@ -74,7 +74,7 @@ export const OverlayProvider = ({ children }: { children: ReactNode }) => {
     setStateWithRef(newStatus, setModalStatusState, modalStatusRef);
   };
 
-  const openModal = ({ key, size = "large", options = {} }: ModalConfig) => {
+  const openModal = ({ key, size = "lg", options = {} }: ModalConfig) => {
     setModalConfig({ key, size, options });
     setModalStatus("opening");
     if (!options?.replacing) {
@@ -83,7 +83,7 @@ export const OverlayProvider = ({ children }: { children: ReactNode }) => {
   };
 
   // Closes one modal and opens another.
-  const replaceModal = ({ key, size = "large", options = {} }: ModalConfig) => {
+  const replaceModal = ({ key, size = "lg", options = {} }: ModalConfig) => {
     setModalStatus("replacing");
     setTimeout(() => {
       openModal({
@@ -194,15 +194,15 @@ export const OverlayProvider = ({ children }: { children: ReactNode }) => {
           status: modalStatusRef.current,
           config: modalConfigRef.current,
           modalHeight,
-          modalResizeCounter,
           modalMaxHeight,
-          setModalResize,
-          setModalHeight,
-          setModalRef,
-          setModalHeightRef,
-          setModalStatus,
+          modalResizeCounter,
           openModal,
           replaceModal,
+          setModalHeight,
+          setModalResize,
+          setModalStatus,
+          setModalRef,
+          setModalHeightRef,
         },
       }}
     >

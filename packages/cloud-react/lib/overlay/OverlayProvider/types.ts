@@ -8,7 +8,7 @@ export interface OverlayContextInterface {
   openOverlayInstances: number;
   setOpenOverlayInstances: (
     direction: OverlayInstanceDirection,
-    instanceType: "modal" | "canvas"
+    instanceType: OverlayType
   ) => void;
   activeOverlayInstance: ActiveOverlayInstance;
   setActiveOverlayInstance: (instance: ActiveOverlayInstance) => void;
@@ -25,13 +25,13 @@ export interface OverlayContextInterface {
     modalHeight: number;
     modalResizeCounter: number;
     modalMaxHeight: number;
-    setModalResize: () => void;
-    setModalHeight: (v: number) => void;
-    setModalRef: (v: RefObject<HTMLDivElement>) => void;
-    setModalHeightRef: (v: RefObject<HTMLDivElement>) => void;
-    setModalStatus: (status: ModalStatus) => void;
-    replaceModal: (config: ModalConfig) => void;
     openModal: (config: ModalConfig) => void;
+    replaceModal: (config: ModalConfig) => void;
+    setModalHeight: (height: number) => void;
+    setModalResize: () => void;
+    setModalStatus: (status: ModalStatus) => void;
+    setModalRef: (modalRef: RefObject<HTMLDivElement>) => void;
+    setModalHeightRef: (heightRef: RefObject<HTMLDivElement>) => void;
   };
 }
 export interface Fallback {
@@ -53,20 +53,20 @@ export type OverlayInstanceDirection = "inc" | "dec";
 
 export type ActiveOverlayInstance = "modal" | "canvas" | null;
 
-export type OverlayType = "modal" | "canvas" | "prompt";
+export type OverlayType = "modal" | "canvas";
 
 export type CanvasStatus = "open" | "closing" | "closed";
 
 export type ModalStatus =
-  | "closed"
   | "opening"
   | "open"
   | "closing"
+  | "closed"
   | "replacing";
 
 export type ConfigOptions = Record<string, AnyJson>;
 
-export type ModalSize = "small" | "large" | "xl";
+export type ModalSize = "sm" | "lg" | "xl";
 
 export interface ModalConfig {
   key: string;
