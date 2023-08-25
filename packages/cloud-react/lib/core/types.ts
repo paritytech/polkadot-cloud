@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { AnyJson, ComponentBase } from "../types";
+import { AnyJson, ComponentBase, ComponentBaseWithClassName } from "../types";
 import { ReactElement, ReactNode } from "react";
 
 export type EntryProps = ComponentBase & {
@@ -11,7 +11,7 @@ export type EntryProps = ComponentBase & {
   theme: string;
 };
 
-export type CardProps = ComponentBase & {
+export type CardProps = ComponentBaseWithClassName & {
   children: ReactNode;
   animations?: AnyJson;
 };
@@ -23,7 +23,7 @@ type GridItemsAlignment =
   | "stretch"
   | "baseline";
 
-type GridJustify =
+export type GridJustify =
   | "flex-start"
   | "center"
   | "flex-end"
@@ -31,9 +31,9 @@ type GridJustify =
   | "space-around"
   | "space-evenly";
 
-type GridSizes = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+export type GridSizes = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
-export type GridProps = ComponentBase & {
+export type GridProps = ComponentBaseWithClassName & {
   column?: boolean;
   row?: boolean;
   alignItems?: GridItemsAlignment;
