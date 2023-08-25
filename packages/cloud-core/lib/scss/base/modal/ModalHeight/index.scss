@@ -2,14 +2,14 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 .modal-height {
-  width: 100%;
-  max-width: 600px;
-  max-height: 100%;
   border-radius: 1.5rem;
   position: relative;
   z-index: 9;
+  max-height: 100%;
+  width: 100%;
+  max-width: 600px;
 
-  &.large {
+  &.lg {
     max-width: 800px;
   }
 

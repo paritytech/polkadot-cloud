@@ -4,6 +4,8 @@ SPDX-License-Identifier: GPL-3.0-only */
 @use "../styles";
 
 .btn-option {
+  @include styles.btn-core;
+
   background: var(--button-primary-background);
   transition: all var(--transition-duration);
   padding: 1rem;
