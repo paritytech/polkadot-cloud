@@ -22,7 +22,19 @@ interface AccountCardProps {
 }
 
 const cut = (str: string, amount = 4) => {
-  return str.slice(0, amount) + "..." + str.slice(-amount);
+  // having an amount less than 4 is a bit extreme so we default there
+  if (amount <= 4) {
+    return str.slice(0, 4) + "..." + str.slice(-4);
+  }
+  // if the amount requested is in a "logical" amount - meaning that it can display the address
+  // without repeating the same information twice - then go for it;
+  if (amount <= str.length / 2 - 3) {
+    return str.slice(0, amount) + "..." + str.slice(-amount);
+  }
+  // else, the user has been mistaskenly extreme, so just show the maximum possible amount
+  return (
+    str.slice(0, str.length / 2 - 3) + "..." + str.slice(-(str.length / 2 - 3))
+  );
 };
 
 export interface IconProps extends CompParams {
@@ -32,6 +44,7 @@ export interface IconProps extends CompParams {
 
 export interface ExtraComponentProps extends CompParams {
   component?: JSX.Element;
+  position?: "left" | "right";
 }
 
 export interface CompParams {
@@ -40,7 +53,6 @@ export interface CompParams {
 }
 
 export const AccountCard = ({
-  name,
   address,
   fontClass,
   ellipsis = false,
@@ -72,22 +84,15 @@ export const AccountCard = ({
     if (icon?.size || extraComponent?.size) {
       iSize = icon?.size || 2;
       xSize = extraComponent?.size || 2;
-      mSize = (12 - ((iSize || 0) + (xSize || 0))) as GridSizes;
+      mSize = (12 -
+        ((icon ? iSize : 0) + (extraComponent ? xSize : 0))) as GridSizes;
       console.log("iconSize", iSize);
       console.log("extraComponentSize", xSize);
       console.log("mSize", mSize);
     }
-    if (icon && extraComponent) {
-      setIcSize(2);
-      setXtraSize(2);
-      setMainSize(8);
-    } else if (!icon && extraComponent) {
-      setXtraSize(2);
-      setMainSize(10);
-    } else if (icon && !extraComponent) {
-      setIcSize(2);
-      setMainSize(10);
-    }
+    setIcSize(iSize);
+    setXtraSize(xSize);
+    setMainSize(mSize);
   }, [icon, extraComponent]);
 
   const IconComponent = (
@@ -115,34 +120,60 @@ export const AccountCard = ({
   }
 
   if (extraComponent) {
-    if (icon?.position === "right") {
-      structure.unshift(
-        <Grid
-          column
-          sm={xtraSize}
-          justify={extraComponent?.justify}
-          alignItems="center"
-        >
-          {extraComponent.component}
-        </Grid>
-      );
+    if (!icon?.position) {
+      if (extraComponent?.position === "right") {
+        structure.unshift(
+          <Grid
+            column
+            sm={xtraSize}
+            justify={extraComponent?.justify}
+            alignItems="center"
+          >
+            {extraComponent.component}
+          </Grid>
+        );
+      } else {
+        structure.push(
+          <Grid
+            column
+            sm={xtraSize}
+            justify={extraComponent?.justify}
+            alignItems="center"
+          >
+            {extraComponent.component}
+          </Grid>
+        );
+      }
     } else {
-      structure.push(
-        <Grid
-          column
-          sm={xtraSize}
-          justify={extraComponent?.justify}
-          alignItems="center"
-        >
-          {extraComponent.component}
-        </Grid>
-      );
+      if (icon?.position === "right") {
+        structure.unshift(
+          <Grid
+            column
+            sm={xtraSize}
+            justify={extraComponent?.justify}
+            alignItems="center"
+          >
+            {extraComponent.component}
+          </Grid>
+        );
+      } else {
+        structure.push(
+          <Grid
+            column
+            sm={xtraSize}
+            justify={extraComponent?.justify}
+            alignItems="center"
+          >
+            {extraComponent.component}
+          </Grid>
+        );
+      }
     }
   }
 
   return (
     <Grid row alignItems="center">
-      <Card>{structure}</Card>
+      <Card className="theme-border">{structure}</Card>
     </Grid>
   );
 };
