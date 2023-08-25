@@ -18,8 +18,8 @@ export const ModalHeight = forwardRef(
     <div
       ref={ref}
       className={`modal-height${valEmpty(size === "xl", "xl")}${valEmpty(
-        size === "large",
-        "large"
+        size === "lg",
+        "lg"
       )}`}
       style={style}
     >
