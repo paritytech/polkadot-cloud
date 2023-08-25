@@ -3,9 +3,9 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { JSX, useEffect, useState } from "react";
 
-import { Grid } from "../../core/Grid";
-import { Card } from "../../core/Card";
-import { GridJustify, GridSizes } from "../../core/types";
+import { Grid } from "../../base/structure/Grid";
+import { Card } from "../../base/structure/Card";
+import { GridJustify, GridSizes } from "../../base/types";
 import { PolkadotIcon } from "../../icons/PolkadotIcon";
 import { valEmpty } from "../../utils";
 

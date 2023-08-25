@@ -6,7 +6,7 @@ import {
   ExtraComponentProps,
   IconProps,
 } from "@packages/cloud-react/lib/recipes/AccountCard";
-import { Grid } from "@packages/cloud-react/lib/core/Grid";
+import { Grid } from "@packages/cloud-react/lib/base/structure/Grid";
 import { Button } from "@packages/cloud-react/lib/buttons/Button";
 import { SimpleEditor } from "../lib/SimpleEditor";
 
