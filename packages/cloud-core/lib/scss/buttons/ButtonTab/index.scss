@@ -4,6 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 @use "../styles";
 
 .btn-tab {
+  @include styles.btn-core;
   @include styles.btn-layout;
   @include styles.btn-disabled;
 
