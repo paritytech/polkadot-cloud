@@ -38,8 +38,8 @@ export const Background = ({
         <ModalOverlay
           blur={
             canvasStatus === "open" || externalOverlayStatus === "open"
-              ? "14px"
-              : "4px"
+              ? "1.4rem"
+              : "0.4rem"
           }
           initial={{
             opacity: 0,
