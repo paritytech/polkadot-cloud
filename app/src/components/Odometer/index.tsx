@@ -91,8 +91,8 @@ export const Odometer = (props: Props) => {
     ? window.getComputedStyle(odometerCurrent).lineHeight
     : "inherit";
 
-  // Fallback line height to `1rem` if `normal`.
-  lineHeight = lineHeight === "normal" ? "1rem" : lineHeight;
+  // Fallback line height to `1.1rem` if `normal`.
+  lineHeight = lineHeight === "normal" ? "1.1rem" : lineHeight;
 
   return (
     <span className="odometer">

@@ -288,23 +288,13 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 .odometer {
   position: relative;
-  line-height: inherit;
   width: fit-content;
   display: flex;
   align-items: center;
   overflow: hidden;
-  border: 0.25px solid red;
-  margin: 0 !important;
-  padding: 0 !important;
   height: inherit;
   line-height: inherit;
 
-  h1,h2,h3,h4,h5 {
-    margin: 0 !important;
-    padding: 0 !important;
-    height: inherit;
-    line-height: inherit;
-  }
 
   .t-digit {
     opacity: 1;
