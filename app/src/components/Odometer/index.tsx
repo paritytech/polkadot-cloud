@@ -7,22 +7,22 @@ interface Props {
   value: number | string;
 }
 
-type Status = "new" | "transition" | "stable";
+type Status = "new" | "transition" | "inactive";
 
 export const Odometer = (props: Props) => {
   // Store all possible digits.
   const [allDigits] = useState([
-    "9",
-    "8",
-    "7",
-    "6",
-    "5",
-    "4",
-    "3",
-    "2",
-    "1",
-    "0",
     "dot",
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
   ]);
 
   // Store the digits of the current value.
@@ -32,7 +32,7 @@ export const Odometer = (props: Props) => {
   const [prevDigits, setPrevDigits] = useState<string[]>([]);
 
   // Store the status of the odometer (transitioning or stable).
-  const [status, setStatus] = useState<Status>("stable");
+  const [status, setStatus] = useState<Status>("inactive");
 
   // Store whether component has iniiialized.
   const [initialized, setInitialized] = useState<boolean>(false);
@@ -67,7 +67,6 @@ export const Odometer = (props: Props) => {
         .split("")
         .map((v) => (v === "." ? "dot" : v));
 
-      console.log(props.value);
       setDigits(newDigits);
 
       if (!initialized) {
@@ -84,18 +83,16 @@ export const Odometer = (props: Props) => {
   useEffect(() => {
     if (status === "new" && !digitRefs.find((d) => d.current === null)) {
       setStatus("transition");
-      setTimeout(() => setStatus("stable"), 3000);
     }
   }, [status, digitRefs]);
 
-  const height = odometerRef?.current?.offsetHeight || "inherit";
-
   const odometerCurrent: Element = odometerRef?.current;
-  const lineHeight = odometerCurrent
+  let lineHeight = odometerCurrent
     ? window.getComputedStyle(odometerCurrent).lineHeight
     : "inherit";
 
-  console.log(status);
+  // Fallback line height to `1rem` if `normal`.
+  lineHeight = lineHeight === "normal" ? "1rem" : lineHeight;
 
   return (
     <span className="odometer">
@@ -113,66 +110,75 @@ export const Odometer = (props: Props) => {
           // If transitioning, get digits needed to animate.
           let childDigits = null;
           if (status === "transition") {
-            let digitsToAnimate = [];
+            const digitsToAnimate = [];
             const digitIndex = allDigits.indexOf(digits[i]);
             const prevDigitIndex = allDigits.indexOf(prevDigits[i]);
             const difference = Math.abs(digitIndex - prevDigitIndex);
-            const direction =
-              digitIndex > prevDigitIndex
-                ? "up"
-                : digitIndex < prevDigitIndex
-                ? "down"
-                : "none";
-
-            if (direction !== "none") {
-              digitsToAnimate.push(prevDigits[i]);
-
-              // If transitioning between a . or undefined, only animate the current digit.
-              if (
-                ["dot", undefined].includes(prevDigits[i]) ||
-                ["dot", undefined].includes(digits[i])
-              ) {
-                digitsToAnimate = [digits[i]];
-              } else {
-                // If transitioning between two digits, animate all digits in between.
-                if (digitIndex < prevDigitIndex) {
-                  digitsToAnimate = Array.from(
-                    { length: difference },
-                    (_, k) => allDigits[prevDigitIndex - k - 1]
-                  );
-                } else {
-                  digitsToAnimate = Array.from(
-                    { length: difference },
-                    (_, k) => allDigits[k + prevDigitIndex + 1]
-                  );
-                }
-              }
+            let direction;
+            if (digitIndex === prevDigitIndex) {
+              direction = "none";
+            } else {
+              direction = "down";
             }
 
-            childDigits = digitsToAnimate.map((c, j) => {
-              const posKey = direction === "up" ? "bottom" : "top";
+            digitsToAnimate.push(prevDigits[i]);
 
-              return (
-                <span
-                  key={`child_digit_${j}`}
-                  className="digit child"
-                  style={{
-                    position: "absolute",
-                    [posKey]: j === 0 ? "0px" : `${100 * j}%`,
-                    left: "0px",
-                    height: odometerRef.current?.offsetHeight,
-                    lineHeight,
-                  }}
-                >
-                  {c === "dot" ? "." : c}
-                </span>
+            // If transitioning between two digits, animate all digits in between.
+            if (digitIndex < prevDigitIndex) {
+              digitsToAnimate.push(
+                ...Array.from(
+                  { length: difference },
+                  (_, k) => allDigits[prevDigitIndex - k - 1]
+                )
               );
-            });
+            } else {
+              digitsToAnimate.push(
+                ...Array.from(
+                  { length: difference },
+                  (_, k) => allDigits[k + prevDigitIndex + 1]
+                )
+              );
+            }
 
-            // console.log(prevDigits[i], digits[i]);
-            // console.log(digitsToAnimate);
-            // console.log(direction);
-            // console.log("---");
+            const animClass = `slide-${direction}-${difference} `;
+
+            childDigits = (
+              <span
+                className={`digit-group`}
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  animationName: direction === "none" ? undefined : animClass,
+                  animationDuration: direction === "none" ? undefined : "0.75s",
+                  animationFillMode: "forwards",
+                  animationTimingFunction: "cubic-bezier(0.1, 1, 0.2, 1)",
+                }}
+              >
+                {digitsToAnimate.map((c, j) => {
+                  return (
+                    <span
+                      key={`child_digit_${j}`}
+                      className="digit child"
+                      style={{
+                        top: j === 0 ? 0 : `${100 * j}%`,
+                        height: lineHeight,
+                        lineHeight,
+                      }}
+                    >
+                      {c === "dot" ? "." : c}
+                    </span>
+                  );
+                })}
+              </span>
+            );
+
+            console.log(prevDigits[i], digits[i]);
+            console.log(prevDigitIndex, digitIndex);
+            console.log(digitsToAnimate);
+            console.log(direction);
+            console.log(animClass);
+            console.log("---");
           }
 
           return (
@@ -181,7 +187,7 @@ export const Odometer = (props: Props) => {
               ref={digitRefs[i]}
               className={`digit parent`}
               style={{
-                height,
+                height: lineHeight,
                 lineHeight,
                 paddingRight:
                   status === "transition"
@@ -189,10 +195,12 @@ export const Odometer = (props: Props) => {
                     : "0",
               }}
             >
-              {status === "stable" ? (
+              {status === "inactive" ? (
                 <span
-                  className="digit"
+                  className="digit child"
                   style={{
+                    top: 0,
+                    height: lineHeight,
                     lineHeight,
                   }}
                 >
