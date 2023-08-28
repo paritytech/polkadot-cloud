@@ -265,13 +265,13 @@ SPDX-License-Identifier: GPL-3.0-only */
 }
 
 .code {
-  overflow: hidden;
-  height: auto;
   border: 1px solid var(--border-primary-color);
   border-radius: 0.75rem;
+  height: auto;
+  overflow: hidden;
   transition: border-color 0.5s ease-out;
-  padding: 0 0.75rem;
   margin-top: 0.5rem;
+  padding: 0 0.75rem;
 
   > .hide {
     max-height: 0;
@@ -282,5 +282,18 @@ SPDX-License-Identifier: GPL-3.0-only */
   > .show {
     max-height: 500px;
     transition: max-height 0.35s ease-in;
+  }
+}
+
+.odometer {
+  border: 1px solid #aaa;
+  width: fit-content;
+  height: inherit;
+
+  .digit {
+    border: 1px solid green;
+    position: relative;
+    line-height: inherit;
+
   }
 }

@@ -8,7 +8,9 @@ export const Odometer = () => (
     <h1>Odometer</h1>
 
     <div style={{ margin: "2rem 0" }}>
-      <OdometerComponent />
+      <h1>
+        <OdometerComponent value={123.456} />
+      </h1>
     </div>
   </div>
 );
