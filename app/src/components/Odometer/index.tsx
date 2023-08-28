@@ -10,6 +10,21 @@ interface Props {
 type Status = "new" | "transition" | "stable";
 
 export const Odometer = (props: Props) => {
+  // Store all possible digits.
+  const [allDigits] = useState([
+    "9",
+    "8",
+    "7",
+    "6",
+    "5",
+    "4",
+    "3",
+    "2",
+    "1",
+    "0",
+    "dot",
+  ]);
+
   // Store the digits of the current value.
   const [digits, setDigits] = useState<string[]>([]);
 
@@ -22,126 +37,173 @@ export const Odometer = (props: Props) => {
   // Store whether component has iniiialized.
   const [initialized, setInitialized] = useState<boolean>(false);
 
+  // Store ref of the odometer.
+  const [odometerRef] = useState(createRef<HTMLSpanElement>());
+
   // Store refs of each digit
   const [digitRefs, setDigitRefs] = useState<
     MutableRefObject<HTMLSpanElement>[]
   >([]);
 
+  // Store refs of each `all` digit
+  const [allDigitRefs, setAllDigitRefs] = useState<
+    Record<string, MutableRefObject<HTMLDivElement>>
+  >({});
+
+  // Phase 0: populate `allDigitRefs`
+  useEffect(() => {
+    const all = {};
+    Object.values(allDigits).forEach((v) => {
+      all[`d_${v}`] = createRef();
+    });
+    setAllDigitRefs(all);
+  }, []);
+
   // Phase 1: new digits and refs are added to the odometer.
   useEffect(() => {
-    const newDigits = props.value.toString().split("");
-    setDigits(newDigits);
+    if (Object.keys(allDigitRefs)) {
+      const newDigits = props.value
+        .toString()
+        .split("")
+        .map((v) => (v === "." ? "dot" : v));
 
-    if (!initialized) {
-      setInitialized(true);
-    } else {
-      setStatus("new");
-      setPrevDigits(digits);
+      console.log(props.value);
+      setDigits(newDigits);
+
+      if (!initialized) {
+        setInitialized(true);
+      } else {
+        setStatus("new");
+        setPrevDigits(digits);
+      }
+      setDigitRefs(Array(newDigits.length).fill(createRef()));
     }
-    setDigitRefs(Array(newDigits.length).fill(createRef()));
   }, [props.value]);
 
   // Phase 2: set up digit animation.
   useEffect(() => {
     if (status === "new" && !digitRefs.find((d) => d.current === null)) {
       setStatus("transition");
-      setTimeout(() => setStatus("stable"), 10000);
+      setTimeout(() => setStatus("stable"), 3000);
     }
   }, [status, digitRefs]);
 
-  const allDigits = [
-    "9",
-    "8",
-    "7",
-    "6",
-    "5",
-    "4",
-    "3",
-    "2",
-    "1",
-    "0",
-    ".",
-    undefined,
-  ];
+  const height = odometerRef?.current?.offsetHeight || "inherit";
+
+  const odometerCurrent: Element = odometerRef?.current;
+  const lineHeight = odometerCurrent
+    ? window.getComputedStyle(odometerCurrent).lineHeight
+    : "inherit";
+
+  console.log(status);
 
   return (
     <span className="odometer">
-      {digits.map((d, i) => {
-        // If transitioning, get digits needed to animate.
-        let digitHeight: string | number = "inherit";
-        let childDigits = null;
-        if (status === "transition") {
-          digitHeight = digitRefs[i]?.current?.offsetHeight;
+      {allDigits.map((d, i) => (
+        <span
+          key={`template_digit_${i}`}
+          ref={allDigitRefs[`d_${d}`]}
+          className="t-digit"
+        >
+          {d === "dot" ? "." : d}
+        </span>
+      ))}
+      <span className="inner" ref={odometerRef}>
+        {digits.map((d, i) => {
+          // If transitioning, get digits needed to animate.
+          let childDigits = null;
+          if (status === "transition") {
+            let digitsToAnimate = [];
+            const digitIndex = allDigits.indexOf(digits[i]);
+            const prevDigitIndex = allDigits.indexOf(prevDigits[i]);
+            const difference = Math.abs(digitIndex - prevDigitIndex);
+            const direction =
+              digitIndex > prevDigitIndex
+                ? "up"
+                : digitIndex < prevDigitIndex
+                ? "down"
+                : "none";
 
-          let digitsToAnimate = [];
-          const digitIndex = allDigits.indexOf(digits[i]);
-          const prevDigitIndex = allDigits.indexOf(prevDigits[i]);
-          const difference = Math.abs(digitIndex - prevDigitIndex);
-          const direction =
-            digitIndex > prevDigitIndex
-              ? "up"
-              : digitIndex < prevDigitIndex
-              ? "down"
-              : "none";
+            if (direction !== "none") {
+              digitsToAnimate.push(prevDigits[i]);
 
-          if (direction !== "none") {
-            // If transitioning between a . or undefined, only animate the current digit.
-            if (
-              [".", undefined].includes(prevDigits[i]) ||
-              [".", undefined].includes(digits[i])
-            ) {
-              digitsToAnimate = [digits[i]];
-            } else {
-              // If transitioning between two digits, animate all digits in between.
-              if (digitIndex < prevDigitIndex) {
-                digitsToAnimate = Array.from(
-                  { length: difference },
-                  (_, k) => allDigits[prevDigitIndex - k - 1]
-                );
+              // If transitioning between a . or undefined, only animate the current digit.
+              if (
+                ["dot", undefined].includes(prevDigits[i]) ||
+                ["dot", undefined].includes(digits[i])
+              ) {
+                digitsToAnimate = [digits[i]];
               } else {
-                digitsToAnimate = Array.from(
-                  { length: difference },
-                  (_, k) => allDigits[k + prevDigitIndex + 1]
-                );
+                // If transitioning between two digits, animate all digits in between.
+                if (digitIndex < prevDigitIndex) {
+                  digitsToAnimate = Array.from(
+                    { length: difference },
+                    (_, k) => allDigits[prevDigitIndex - k - 1]
+                  );
+                } else {
+                  digitsToAnimate = Array.from(
+                    { length: difference },
+                    (_, k) => allDigits[k + prevDigitIndex + 1]
+                  );
+                }
               }
             }
+
+            childDigits = digitsToAnimate.map((c, j) => {
+              const posKey = direction === "up" ? "bottom" : "top";
+
+              return (
+                <span
+                  key={`child_digit_${j}`}
+                  className="digit child"
+                  style={{
+                    position: "absolute",
+                    [posKey]: j === 0 ? "0px" : `${100 * j}%`,
+                    left: "0px",
+                    height: odometerRef.current?.offsetHeight,
+                    lineHeight,
+                  }}
+                >
+                  {c === "dot" ? "." : c}
+                </span>
+              );
+            });
+
+            // console.log(prevDigits[i], digits[i]);
+            // console.log(digitsToAnimate);
+            // console.log(direction);
+            // console.log("---");
           }
 
-          childDigits = digitsToAnimate.map((c, j) => {
-            const posKey = direction === "up" ? "bottom" : "top";
-            return (
-              <span
-                key={`child_digit_${j}`}
-                className="digit"
-                style={{
-                  position: "absolute",
-                  [posKey]: `${100 * (j + 1)}%`,
-                  left: 0,
-                  height: digitHeight,
-                }}
-              >
-                {c}
-              </span>
-            );
-          });
-
-          console.log(prevDigits[i], digits[i]);
-          console.log(digitsToAnimate);
-          console.log(direction);
-          console.log("---");
-        }
-
-        return (
-          <span
-            key={`digit_${i}`}
-            ref={digitRefs[i]}
-            className={`digit digit_${i}`}
-          >
-            {status === "transition" && childDigits}
-            {status === "stable" ? d : prevDigits[i]}
-          </span>
-        );
-      })}
+          return (
+            <span
+              key={`digit_${i}`}
+              ref={digitRefs[i]}
+              className={`digit parent`}
+              style={{
+                height,
+                lineHeight,
+                paddingRight:
+                  status === "transition"
+                    ? `${allDigitRefs[`d_${d}`]?.current?.offsetWidth}px`
+                    : "0",
+              }}
+            >
+              {status === "stable" ? (
+                <span
+                  className="digit"
+                  style={{
+                    lineHeight,
+                  }}
+                >
+                  {d === "dot" ? "." : d}
+                </span>
+              ) : null}
+              {status === "transition" && childDigits}
+            </span>
+          );
+        })}
+      </span>
     </span>
   );
 };

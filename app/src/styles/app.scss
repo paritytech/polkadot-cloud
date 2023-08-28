@@ -287,18 +287,42 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 .odometer {
   border: 1px solid red;
+  line-height: inherit;
   width: fit-content;
   height: inherit;
-  line-height: inherit;
-  
-  .digit {
-    border: 1px solid green;
-    position: relative;
-    line-height: inherit;
-    z-index: 3;
 
-    > .digit {
-      line-height: inherit;      
+  .t-digit {
+    opacity: 1;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+  }
+
+  > .inner {
+    .digit {
+      position: relative;
+      line-height: inherit;
+      z-index: 3;
+      &.parent {
+        border: 1px solid blue;
+      }
+      &.child {
+        border: 1px solid green;
+        display: flex;
+        align-items: center;
+      }
     }
+  }
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
   }
 }
