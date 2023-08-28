@@ -7,6 +7,7 @@ import { Icons } from "../docs/Icons";
 import { Extensions } from "../docs/Extensions";
 import { Grid } from "../docs/Grid";
 import { Card } from "../docs/Cards";
+import { Odometer } from "../docs/Odometer";
 
 // TODO: transfer pages to docs
 import { Modal } from "../pages/Modal";
@@ -74,6 +75,11 @@ export const routes: Routes = [
     name: "Icons",
     element: <Icons />,
   },
+  {
+    path: "odometer",
+    name: "Odometer",
+    element: <Odometer />,
+  },
 ];
 
 export const routeCategories: RouteCategories = [
@@ -88,6 +94,9 @@ export const routeCategories: RouteCategories = [
   },
   {
     path: "icons",
+  },
+  {
+    path: "odometer",
   },
   {
     name: "Layout",
