@@ -286,14 +286,19 @@ SPDX-License-Identifier: GPL-3.0-only */
 }
 
 .odometer {
-  border: 1px solid #aaa;
+  border: 1px solid red;
   width: fit-content;
   height: inherit;
-
+  line-height: inherit;
+  
   .digit {
     border: 1px solid green;
     position: relative;
     line-height: inherit;
+    z-index: 3;
 
+    > .digit {
+      line-height: inherit;      
+    }
   }
 }
