@@ -18,7 +18,7 @@ export const OdometerH1 = () => {
     <>
       <div className="demo" style={{ flexDirection: "column" }}>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <h1 style={{ margin: 0, width: "100%", display: "flex" }}>
+          <h1 style={{ margin: 0, display: "flex" }}>
             <Odometer value={new BigNumber(val).toFormat()} />
             DOT
           </h1>
