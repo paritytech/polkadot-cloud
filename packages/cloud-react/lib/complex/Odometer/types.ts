@@ -5,6 +5,8 @@ export interface Props {
   value: number | string;
   wholeColor?: string;
   decimalColor?: string;
+  spaceBefore?: string | number;
+  spaceAfter?: string | number;
 }
 
 export type Status = "new" | "transition" | "inactive";
