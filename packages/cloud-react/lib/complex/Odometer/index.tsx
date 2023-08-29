@@ -7,6 +7,8 @@ import { Direction, Props, Status } from "./types";
 
 export const Odometer = ({
   value,
+  spaceBefore = 0,
+  spaceAfter = "0.25rem",
   wholeColor = "var(--text-color-primary)",
   decimalColor = "var(--text-color-tertiary)",
 }: Props) => {
@@ -108,12 +110,13 @@ export const Odometer = ({
         <span
           key={`template_digit_${i}`}
           ref={allDigitRefs[`d_${d}`]}
-          className="t-digit "
+          className="odometer-t-digit "
         >
           {d === "dot" ? "." : d === "comma" ? "," : d}
         </span>
       ))}
-      <span className="inner" ref={odometerRef}>
+      <span className="odometer-inner" ref={odometerRef}>
+        {spaceBefore ? <span style={{ paddingLeft: spaceBefore }} /> : null}
         {digits.map((d, i) => {
           if (d === "dot") foundDecimal = true;
 
@@ -166,7 +169,7 @@ export const Odometer = ({
                 {digitsToAnimate.map((c, j) => (
                   <span
                     key={`child_digit_${j}`}
-                    className="digit child"
+                    className="odometer-digit odometer-child"
                     style={{
                       top: j === 0 ? 0 : `${100 * j}%`,
                       height: lineHeight,
@@ -191,7 +194,7 @@ export const Odometer = ({
             <span
               key={`digit_${i}`}
               ref={digitRefs[i]}
-              className="digit"
+              className="odometer-digit"
               style={{
                 color: foundDecimal ? decimalColor : wholeColor,
                 height: lineHeight,
@@ -204,7 +207,7 @@ export const Odometer = ({
             >
               {status === "inactive" && (
                 <span
-                  className="digit child"
+                  className="odometer-digit odometer-child"
                   style={{
                     top: 0,
                     height: lineHeight,
@@ -218,6 +221,7 @@ export const Odometer = ({
             </span>
           );
         })}
+        {spaceAfter ? <span style={{ paddingRight: spaceAfter }} /> : null}
       </span>
     </span>
   );

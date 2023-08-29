@@ -8,7 +8,7 @@ import BigNumber from "bignumber.js";
 
 export const OdometerH1 = () => {
   const code = `<h1>
-  <OdometerComponent value={1,203.456} />
+  <OdometerComponent value="1,201,903.456" />
 </h1>`;
 
   const [val, setVal] = useState<number>(1201903.456);
@@ -18,8 +18,9 @@ export const OdometerH1 = () => {
     <>
       <div className="demo" style={{ flexDirection: "column" }}>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <h1 style={{ margin: 0 }}>
+          <h1 style={{ margin: 0, display: "flex" }}>
             <Odometer value={new BigNumber(val).toFormat()} />
+            DOT
           </h1>
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
