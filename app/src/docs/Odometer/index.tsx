@@ -30,7 +30,7 @@ export const Odometer = () => {
           </h1>
         </div>
       </div>
-      {/* <div style={{ display: "flex" }}>
+      <div style={{ display: "flex" }}>
         <div>
           <h2 style={{ margin: 0 }}>
             <OdometerComponent value={val} />
@@ -70,7 +70,6 @@ export const Odometer = () => {
           <OdometerComponent value={val} />
         </div>
       </div>
-      */}
     </div>
   );
 };
