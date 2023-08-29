@@ -11,6 +11,7 @@ export const Odometer = ({
   spaceAfter = "0.25rem",
   wholeColor = "var(--text-color-primary)",
   decimalColor = "var(--text-color-tertiary)",
+  zeroDecimals = 0,
 }: Props) => {
   // Store all possible digits.
   const [allDigits] = useState([
@@ -68,6 +69,9 @@ export const Odometer = ({
   // Phase 1: new digits and refs are added to the odometer.
   useEffect(() => {
     if (Object.keys(allDigitRefs)) {
+      value =
+        String(value) === "0" ? Number(value).toFixed(zeroDecimals) : value;
+
       const newDigits = value
         .toString()
         .split("")
