@@ -131,7 +131,7 @@ export const Odometer = ({
             const digitIndex = allDigits.indexOf(digits[i]);
             const prevDigitIndex = allDigits.indexOf(prevDigits[i]);
             const difference = Math.abs(digitIndex - prevDigitIndex);
-            const delay = `${0.02 * (digits.length - i - 1)}s`;
+            const delay = `${0.01 * (digits.length - i - 1)}s`;
             const direction: Direction =
               digitIndex === prevDigitIndex ? "none" : "down";
             const animClass = `slide-${direction}-${difference} `;
