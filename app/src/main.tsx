@@ -14,8 +14,6 @@ import "@packages/cloud-core/dist/theme/xcm/index.css";
 
 import "./styles/index.scss";
 
-import "@packages/react-odometer/lib/styles/index.scss";
-
 // NOTE: ensure this is last.
 //
 // IMPORTANT: This CSS is being sourced from `cloud-core`'s `dist` folder. The package must be built

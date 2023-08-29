@@ -23,7 +23,3 @@ Utilities for Polkadot apps.
 #### [@polkadot-cloud/community](https://github.com/paritytech/polkadot-cloud/tree/main/packages/community#polkadot-cloud-community)
 
 A source of truth for Polkadot web extensions and validator entities.
-
-#### [@polkadot-cloud/react-odometer](https://github.com/paritytech/polkadot-cloud/blob/main/packages/react-odometer#polkadot-cloud-react-odometer)
-
-An odometer effect used for numbers and balances.
