@@ -629,6 +629,20 @@
   resolved "https://registry.npmjs.org/@polkadot-cloud/core/-/core-0.1.6.tgz#c82934fdbc1fd5e9759de30f2bb6881cec2a5bf4"
   integrity sha512-4nftY+1sXXG4qauZhlagafdWsBLewnuk+UtqA8z5AIADr2QmEfsuQMBXIwsAZIaHPvP2/VfjCwLEBKQR3uWAow==
 
+"@polkadot-cloud/core@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.npmjs.org/@polkadot-cloud/core/-/core-0.1.8.tgz#0dc968ec157d83ce9a01565d0392b53418bdfa49"
+  integrity sha512-aMlzcxByw0wezeNlGSDZvmISun1TWuByCGeE0qWAFRHruYky4VJIC/3AEfPayA7UNdWEs/STDB5zssZASsWA4Q==
+
+"@polkadot-cloud/react@^0.1.20":
+  version "0.1.20"
+  resolved "https://registry.npmjs.org/@polkadot-cloud/react/-/react-0.1.20.tgz#0386f58edb11617f074bc754b454ea2bef693ee8"
+  integrity sha512-K2d+YzPGfHF/eZ1TU7264VGKGpqEtg07nYCbmpThXCFnrPkO/oe9UT5ym/7Rpzq4aNSugIJ6YXtUL8UPCCheSQ==
+  dependencies:
+    "@polkadot-cloud/core" "0.1.6"
+    "@polkadot-cloud/utils" "^0.0.4"
+    react-error-boundary "^4.0.11"
+
 "@polkadot-cloud/utils@^0.0.4":
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@polkadot-cloud/utils/-/utils-0.0.4.tgz#660d5ea9dbf6548f0f7ae9d0d4b86e6016d90c23"

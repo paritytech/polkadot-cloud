@@ -323,6 +323,8 @@ SPDX-License-Identifier: GPL-3.0-only */
   }
 }
 
+/* Stylelint does not like inline scss variables to generate these. */
+
 @keyframes slide-up-1 {from { top: 0; } to {  top: 100%; } }
 @keyframes slide-up-2 {from { top: 0; } to {  top: 200%; } }
 @keyframes slide-up-3 {from { top: 0; } to {  top: 300%; } }

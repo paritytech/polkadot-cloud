@@ -2,16 +2,8 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { useEffect, useState, createRef, MutableRefObject } from "react";
-
-interface Props {
-  value: number | string;
-  wholeColor?: string;
-  decimalColor?: string;
-}
-
-type Status = "new" | "transition" | "inactive";
-
-type Direction = "down" | "none";
+import "@polkadot-cloud/core/css/complex/Odometer/index.css";
+import { Direction, Props, Status } from "./types";
 
 export const Odometer = ({
   value,

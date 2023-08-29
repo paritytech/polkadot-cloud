@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { useState } from "react";
-import { Odometer as OdometerComponent } from "../../components/Odometer";
+import { Odometer as OdometerComponent } from "@packages/cloud-react/lib/complex/Odometer";
 
 export const Odometer = () => {
   const [val, setVal] = useState<number>(123.456);
