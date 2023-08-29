@@ -149,7 +149,6 @@ export const Odometer = ({
 
             childDigits = (
               <span
-                className="digit-group"
                 style={{
                   position: "absolute",
                   top: 0,
@@ -190,7 +189,7 @@ export const Odometer = ({
             <span
               key={`digit_${i}`}
               ref={digitRefs[i]}
-              className="digit parent"
+              className="digit"
               style={{
                 color: foundDecimal ? decimalColor : wholeColor,
                 height: lineHeight,
