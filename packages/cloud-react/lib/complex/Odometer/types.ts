@@ -7,6 +7,7 @@ export interface Props {
   decimalColor?: string;
   spaceBefore?: string | number;
   spaceAfter?: string | number;
+  zeroDecimals?: number;
 }
 
 export type Status = "new" | "transition" | "inactive";
