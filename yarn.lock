@@ -624,15 +624,15 @@
     tiny-glob "^0.2.9"
     tslib "^2.4.0"
 
-"@polkadot-cloud/core@0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-0.1.7.tgz#ec46b59efc2067d1fea26b3cccb36ee1b51be14a"
-  integrity sha512-5z4grPh78Z/BZS0hmwJHxEYB+oIUwxNorCaV1TwewyFGvmrLDkeCOVnH/J+mLZAj/v/3UkV+R1nOP4iJubFvnQ==
+"@polkadot-cloud/core@0.1.6":
+  version "0.1.6"
+  resolved "https://registry.npmjs.org/@polkadot-cloud/core/-/core-0.1.6.tgz#c82934fdbc1fd5e9759de30f2bb6881cec2a5bf4"
+  integrity sha512-4nftY+1sXXG4qauZhlagafdWsBLewnuk+UtqA8z5AIADr2QmEfsuQMBXIwsAZIaHPvP2/VfjCwLEBKQR3uWAow==
 
-"@polkadot-cloud/core@^0.1.8":
-  version "0.1.8"
-  resolved "https://registry.npmjs.org/@polkadot-cloud/core/-/core-0.1.8.tgz#0dc968ec157d83ce9a01565d0392b53418bdfa49"
-  integrity sha512-aMlzcxByw0wezeNlGSDZvmISun1TWuByCGeE0qWAFRHruYky4VJIC/3AEfPayA7UNdWEs/STDB5zssZASsWA4Q==
+"@polkadot-cloud/core@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.npmjs.org/@polkadot-cloud/core/-/core-0.1.10.tgz#5b438fd05c8258a37c2a19853ce6338874240843"
+  integrity sha512-xSu9ldyY5/soILHfmzQ0BKE0wJCaliIuTJxGGVHnaiFHIid9+CRkaVAkmh1y3+FUgil9ASV6CcmBSFasvwm7Xw==
 
 "@polkadot-cloud/react@^0.1.20":
   version "0.1.20"

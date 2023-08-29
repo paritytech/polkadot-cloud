@@ -12,6 +12,7 @@ export const Odometer = ({
 }: Props) => {
   // Store all possible digits.
   const [allDigits] = useState([
+    "comma",
     "dot",
     "0",
     "1",
@@ -68,7 +69,8 @@ export const Odometer = ({
       const newDigits = value
         .toString()
         .split("")
-        .map((v) => (v === "." ? "dot" : v));
+        .map((v) => (v === "." ? "dot" : v))
+        .map((v) => (v === "," ? "comma" : v));
 
       setDigits(newDigits);
 
@@ -106,9 +108,9 @@ export const Odometer = ({
         <span
           key={`template_digit_${i}`}
           ref={allDigitRefs[`d_${d}`]}
-          className="t-digit"
+          className="t-digit "
         >
-          {d === "dot" ? "." : d}
+          {d === "dot" ? "." : d === "comma" ? "," : d}
         </span>
       ))}
       <span className="inner" ref={odometerRef}>
@@ -171,7 +173,7 @@ export const Odometer = ({
                       lineHeight,
                     }}
                   >
-                    {c === "dot" ? "." : c}
+                    {c === "dot" ? "." : c === "comma" ? "," : c}
                   </span>
                 ))}
               </span>
@@ -209,7 +211,7 @@ export const Odometer = ({
                     lineHeight,
                   }}
                 >
-                  {d === "dot" ? "." : d}
+                  {d === "dot" ? "." : d === "comma" ? "," : d}
                 </span>
               )}
               {status === "transition" && childDigits}

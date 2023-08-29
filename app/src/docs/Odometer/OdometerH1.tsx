@@ -4,13 +4,14 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { useState } from "react";
 import { SimpleEditor } from "../lib/SimpleEditor";
 import { Odometer } from "@packages/cloud-react/lib/complex/Odometer";
+import BigNumber from "bignumber.js";
 
 export const OdometerH1 = () => {
   const code = `<h1>
-  <OdometerComponent value={123.456} />
+  <OdometerComponent value={1,203.456} />
 </h1>`;
 
-  const [val, setVal] = useState<number>(123.456);
+  const [val, setVal] = useState<number>(1201903.456);
   const updateValue = () => setVal(Number((val + 17491.39).toFixed(4)));
 
   return (
@@ -18,7 +19,7 @@ export const OdometerH1 = () => {
       <div className="demo" style={{ flexDirection: "column" }}>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <h1 style={{ margin: 0 }}>
-            <Odometer value={val} />
+            <Odometer value={new BigNumber(val).toFormat()} />
           </h1>
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>

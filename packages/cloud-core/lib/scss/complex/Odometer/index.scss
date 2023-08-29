@@ -3,33 +3,33 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 .odometer {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   position: relative;
   overflow: hidden;
   height: inherit;
   line-height: inherit;
   width: fit-content;
 
-  .t-digit {
-    opacity: 1;
-    position: absolute;
-    top: -100%;
-    left: -100%;
+  > .t-digit {
+    opacity: 0;
+    position: fixed;
+    top: -999%;
+    left: -999%;
   }
 
   > .inner {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: bottom;
 
     .digit {
       display: inline-block;
       position: relative;
-      vertical-align: middle;
+      vertical-align:bottom;
       z-index: 3;
 
       &.child {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         position: relative;
         left: 0;
       }
@@ -149,6 +149,16 @@ SPDX-License-Identifier: GPL-3.0-only */
   }
 }
 
+@keyframes slide-up-12 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 1200%;
+  }
+}
+
 @keyframes slide-down-1 {
   from {
     top: 0;
@@ -256,5 +266,15 @@ SPDX-License-Identifier: GPL-3.0-only */
 
   to {
     top: -1100%;
+  }
+}
+
+@keyframes slide-down-12 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -1200%;
   }
 }
