@@ -78,7 +78,6 @@
     "packages/cloud-react",
     "packages/community",
     "packages/dev-tools",
-    "packages/react-odometer",
     "app",
     "scripts"
   ],
