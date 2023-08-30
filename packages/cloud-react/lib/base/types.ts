@@ -16,7 +16,7 @@ export type CardProps = ComponentBaseWithClassName & {
   animations?: AnyJson;
 };
 
-type GridItemsAlignment =
+export type GridItemsAlignment =
   | "flex-start"
   | "center"
   | "flex-end"
