@@ -53,7 +53,7 @@
     "gulp-typescript": "^6.0.0-alpha.1",
     "minimist": "^1.2.8",
     "postcss": "^8.4.29",
-    "prettier": "^3.0.2",
+    "prettier": "^3.0.3",
     "prettier-plugin-organize-imports": "^3.2.3",
     "rollup": "^3.28.1",
     "rollup-plugin-cleanup": "^3.2.1",
