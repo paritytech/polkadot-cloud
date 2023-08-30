@@ -14,28 +14,28 @@ import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCa
 const iconProps: IconProps = {}; // or { position = "left" }; <- "left" is the default option
 ...
 return (
-  <AccountCard icon={iconProps} address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" />
+  <AccountCard icon={iconProps} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} />
 );`;
 
   const code_B = `
 import { AccountCard } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
 return (
-  <AccountCard address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" />
+  <AccountCard title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} />
 );`;
 
   const code_C = `
 import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
 const iconPropsComponent: IconProps = {
-  canCopy: true,
+  noCopy: true,
   position: "right",
   size: 3,
   justify: "space-around",
 };
 ...
 return (
-  <AccountCard icon={iconProps_C} address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" />
+  <AccountCard icon={iconProps_C} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} />
 );`;
 
   const iconProps_A: IconProps = {
@@ -43,9 +43,9 @@ return (
   };
 
   const iconProps_C: IconProps = {
-    canCopy: true,
+    noCopy: true,
     position: "right",
-    size: 3,
+    gridSize: 3,
     justify: "space-around",
   };
 
@@ -54,18 +54,20 @@ return (
       <div className="demo">
         <AccountCard
           icon={iconProps_A}
-          address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73"
+          title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }}
         />
       </div>
       <SimpleEditor code={code_A} />
       <div className="demo">
-        <AccountCard address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" />
+        <AccountCard
+          title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }}
+        />
       </div>
       <SimpleEditor code={code_B} />
       <div className="demo">
         <AccountCard
           icon={iconProps_C}
-          address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73"
+          title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }}
         />
       </div>
       <SimpleEditor code={code_C} />

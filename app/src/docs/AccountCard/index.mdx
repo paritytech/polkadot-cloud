@@ -1,19 +1,37 @@
 import { NPM } from "../lib/NPM";
+import { AccountCardPageInfo } from "./AccountCardPageInfo";
 import { AccountCardPageSimple } from "./AccountCardPageSimple";
 import { AccountCardPageAdvanced } from "./AccountCardPageAdvanced";
+import { AccountCardPageStakingSamples } from "./AccountCardPageStakingSamples.tsx";
 
 # Account Card
 
-## A card showing the account information
+## A card showing the account information with different areas for icon or a custom component
 
 <NPM npm={props.npm} />
 
-## Horizontal Account Card
+<AccountCardPageInfo />
 
-### Simple examples with or without icon
+##
+
+# Simple examples with or without icon
+
+##
 
 <AccountCardPageSimple />
 
-### Advanced examples with extra params and component
+##
+
+# Advanced examples with extra params and component
+
+##
 
 <AccountCardPageAdvanced />
+
+##
+
+# Sample that fits to Polkadot Stakind Dashboard
+
+##
+
+<AccountCardPageStakingSamples />
