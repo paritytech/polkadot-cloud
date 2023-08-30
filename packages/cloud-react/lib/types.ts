@@ -10,7 +10,6 @@ export interface ComponentBase {
   children?: ReactNode;
   // passing custom styling.
   style?: CSSProperties;
-  ref?: HTMLDivElement;
 }
 
 export type ComponentBaseWithClassName = ComponentBase & {

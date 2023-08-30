@@ -155,6 +155,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   h1 {
     font-family: InterBold, sans-serif;
     font-size: 2.3rem;
+    line-height: 2.7rem;
   }
 
   h2 {
@@ -265,13 +266,13 @@ SPDX-License-Identifier: GPL-3.0-only */
 }
 
 .code {
-  overflow: hidden;
-  height: auto;
   border: 1px solid var(--border-primary-color);
   border-radius: 0.75rem;
+  height: auto;
+  overflow: hidden;
   transition: border-color 0.5s ease-out;
-  padding: 0 0.75rem;
   margin-top: 0.5rem;
+  padding: 0 0.75rem;
 
   > .hide {
     max-height: 0;

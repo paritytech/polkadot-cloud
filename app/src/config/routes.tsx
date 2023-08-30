@@ -9,6 +9,7 @@ import { Extensions } from "../docs/Extensions";
 import { Grid } from "../docs/Grid";
 import { Card } from "../docs/Cards";
 import { AccountCard } from "../docs/AccountCard";
+import { Odometer } from "../docs/Odometer";
 
 // TODO: transfer pages to docs
 import { Modal } from "../pages/Modal";
@@ -83,6 +84,11 @@ const componentsRoutes = [
     name: "Icons",
     element: <Icons />,
   },
+  {
+    path: "odometer",
+    name: "Odometer",
+    element: <Odometer />,
+  },
 ];
 
 export const routes: Routes = [
@@ -110,6 +116,9 @@ export const routeCategories: RouteCategories = [
       },
       {
         paths: ["loader"],
+      },
+      {
+        paths: ["odometer"],
       },
       {
         paths: ["icons"],

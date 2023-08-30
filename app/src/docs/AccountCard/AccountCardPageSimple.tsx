@@ -8,7 +8,7 @@ import {
 import { SimpleEditor } from "../lib/SimpleEditor";
 
 export const AccountCardPageSimple = () => {
-  const codeA = `
+  const code_A = `
 import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
 const iconProps: IconProps = {}; // or { position = "left" }; <- "left" is the default option
@@ -17,17 +17,17 @@ return (
   <AccountCard icon={iconProps} address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" />
 );`;
 
-  const codeB = `
+  const code_B = `
 import { AccountCard } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
 return (
   <AccountCard address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" />
 );`;
 
-  const codeC = `
+  const code_C = `
 import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
-const iconProps: IconProps = {
+const iconPropsComponent: IconProps = {
   canCopy: true,
   position: "right",
   size: 3,
@@ -35,14 +35,14 @@ const iconProps: IconProps = {
 };
 ...
 return (
-  <AccountCard icon={iconPropsC} address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" />
+  <AccountCard icon={iconProps_C} address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" />
 );`;
 
-  const iconPropsA: IconProps = {
+  const iconProps_A: IconProps = {
     position: "left",
   };
 
-  const iconPropsC: IconProps = {
+  const iconProps_C: IconProps = {
     canCopy: true,
     position: "right",
     size: 3,
@@ -53,22 +53,22 @@ return (
     <>
       <div className="demo">
         <AccountCard
-          icon={iconPropsA}
+          icon={iconProps_A}
           address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73"
         />
       </div>
-      <SimpleEditor code={codeA} />
+      <SimpleEditor code={code_A} />
       <div className="demo">
         <AccountCard address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" />
       </div>
-      <SimpleEditor code={codeB} />
+      <SimpleEditor code={code_B} />
       <div className="demo">
         <AccountCard
-          icon={iconPropsC}
+          icon={iconProps_C}
           address="1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73"
         />
       </div>
-      <SimpleEditor code={codeC} />
+      <SimpleEditor code={code_C} />
     </>
   );
 };

@@ -1,0 +1,280 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
+.odometer {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+  height: inherit;
+  line-height: inherit;
+  width: fit-content;
+
+  > .odometer-t-digit {
+    opacity: 0;
+    position: fixed;
+    top: -999%;
+    left: -999%;
+  }
+
+  > .odometer-inner {
+    display: inline-block;
+    vertical-align: bottom;
+
+    .odometer-digit {
+      display: inline-block;
+      position: relative;
+      vertical-align: bottom;
+      z-index: 3;
+
+      &.odometer-child {
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+        left: 0;
+      }
+    }
+  }
+}
+
+/* Stylelint does not like inline scss variables to generate these. */
+
+@keyframes slide-up-1 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 100%;
+  }
+}
+
+@keyframes slide-up-2 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 200%;
+  }
+}
+
+@keyframes slide-up-3 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 300%;
+  }
+}
+
+@keyframes slide-up-4 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 400%;
+  }
+}
+
+@keyframes slide-up-5 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 500%;
+  }
+}
+
+@keyframes slide-up-6 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 600%;
+  }
+}
+
+@keyframes slide-up-7 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 700%;
+  }
+}
+
+@keyframes slide-up-8 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 800%;
+  }
+}
+
+@keyframes slide-up-9 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 900%;
+  }
+}
+
+@keyframes slide-up-10 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 1000%;
+  }
+}
+
+@keyframes slide-up-11 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 1100%;
+  }
+}
+
+@keyframes slide-up-12 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 1200%;
+  }
+}
+
+@keyframes slide-down-1 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -100%;
+  }
+}
+
+@keyframes slide-down-2 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -200%;
+  }
+}
+
+@keyframes slide-down-3 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -300%;
+  }
+}
+
+@keyframes slide-down-4 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -400%;
+  }
+}
+
+@keyframes slide-down-5 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -500%;
+  }
+}
+
+@keyframes slide-down-6 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -600%;
+  }
+}
+
+@keyframes slide-down-7 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -700%;
+  }
+}
+
+@keyframes slide-down-8 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -800%;
+  }
+}
+
+@keyframes slide-down-9 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -900%;
+  }
+}
+
+@keyframes slide-down-10 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -1000%;
+  }
+}
+
+@keyframes slide-down-11 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -1100%;
+  }
+}
+
+@keyframes slide-down-12 {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -1200%;
+  }
+}
