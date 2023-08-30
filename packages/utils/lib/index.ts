@@ -39,10 +39,10 @@ export const remToUnit = (rem: string) =>
 
 /**
  * @name planckToUnit
- * @summary
+ * @summary convert planck to the token unit.
+ * @description
  * Converts an on chain balance value in BigNumber planck to a decimal value in token unit. (1 token
  * = 10^units planck).
- * @summary convert planck to the token unit.
  */
 export const planckToUnit = (val: BigNumber, units: number) =>
   new BigNumber(
@@ -51,16 +51,30 @@ export const planckToUnit = (val: BigNumber, units: number) =>
 
 /**
  * @name unitToPlanck
- * @summary
+ * @summary Convert the token unit to planck.
+ * @description
  * Converts a balance in token unit to an equivalent value in planck by applying the chain decimals
  * point. (1 token = 10^units planck).
- * @summary Convert the token unit to planck.
  */
 export const unitToPlanck = (val: string, units: number): BigNumber =>
   new BigNumber(!val.length || !val ? "0" : val)
     .multipliedBy(new BigNumber(10).exponentiatedBy(units))
     .integerValue();
 
+/**
+ * @name minDecimalPlaces
+ * @summary Forces a number to have at least the provided decimal places.
+ */
+export const minDecimalPlaces = (val: string, minDecimals: number) => {
+  const whole = new BigNumber(val.split(".")[0] || 0);
+  const decimals = val.split(".")[1] || "";
+  const missingDecimals = new BigNumber(minDecimals).minus(decimals.length);
+  return missingDecimals.isGreaterThan(0)
+    ? `${whole.toString()}.${decimals.toString()}${"0".repeat(
+        missingDecimals.toNumber()
+      )}`
+    : val;
+};
 /**
  * @name rmCommas
  * @summary Removes the commas from a string.
@@ -209,10 +223,10 @@ export const camelize = (str: string) =>
 
 /**
  * @name varToUrlHash
- * @summary
+ * @summary Puts a variable into the URL hash as a param.
+ * @description
  * Since url variables are added to the hash and are not treated as URL params, the params are split
  * and parsed into a `URLSearchParams`.
- * @summary Puts a variable into the URL hash as a param.
  */
 export const varToUrlHash = (
   key: string,
