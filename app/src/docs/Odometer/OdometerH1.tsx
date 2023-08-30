@@ -8,7 +8,7 @@ import BigNumber from "bignumber.js";
 
 export const OdometerH1 = () => {
   const code = `<h1>
-  <OdometerComponent value="1,201,903.456" />
+  <Odometer value="1,201,903.456" />
 </h1>`;
 
   const [val, setVal] = useState<number>(1201903.456);
