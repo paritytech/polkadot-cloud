@@ -1,10 +1,6 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import {
-  AccountCard,
-  IconProps,
-} from "@packages/cloud-react/lib/recipes/AccountCard";
 import { SimpleEditor } from "../lib/SimpleEditor";
 
 export const AccountCardPageInfo = () => {
