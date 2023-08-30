@@ -22,7 +22,7 @@
   },
   "peerDependencies": {
     "@polkadot/keyring": "^12.3.2",
-    "@polkadot/util": "^11.0.1",
+    "@polkadot/util": "^12.4.2",
     "bignumber.js": "^9.1.1"
   }
 }
