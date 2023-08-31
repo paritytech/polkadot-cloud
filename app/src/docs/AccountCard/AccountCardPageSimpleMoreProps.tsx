@@ -7,18 +7,26 @@ import {
 } from "@packages/cloud-react/lib/recipes/AccountCard";
 import { SimpleEditor } from "../lib/SimpleEditor";
 
-export const AccountCardPageSimple = () => {
+export const AccountCardPageSimpleMoreProps = () => {
   const code = `
 import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
-const iconProps: IconProps = {}; // or { position = "left" }; <- "left" is the default option
+const iconPropsComponent: IconProps = {
+  noCopy: true,
+  position: "right",
+  size: 3,
+  justify: "space-around",
+};
 ...
 return (
-  <AccountCard icon={iconProps} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} />
+  <AccountCard icon={iconProps_C} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} />
 );`;
 
   const iconProps: IconProps = {
-    position: "left",
+    noCopy: true,
+    position: "right",
+    gridSize: 3,
+    justify: "space-around",
   };
 
   return (
