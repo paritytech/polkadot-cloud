@@ -5,7 +5,7 @@ import { decodeAddress, encodeAddress } from "@polkadot/keyring";
 import { hexToU8a, isHex, u8aToString, u8aUnwrapBytes } from "@polkadot/util";
 import { BigNumber } from "bignumber.js";
 import type { MutableRefObject, RefObject } from "react";
-import { AnyJson, AnyObject } from "./types";
+import { AnyJson, AnyObject, EvalMessages } from "./types";
 
 /**
  * IMPORTANT: Rollup treats this file as the entry point for the package, the build of which is
@@ -464,6 +464,136 @@ export const ellipsisFn = (
     );
   if (position === "right") return str.slice(0, str.length / 2 - 3) + "...";
   return "..." + str.slice(-(str.length / 2 - 3));
+};
+
+// Private for evalUnits
+const getSiValue = (si: number): BigNumber =>
+  new BigNumber(10).pow(new BigNumber(si));
+
+const si = [
+  { value: getSiValue(24), symbol: "y", isMil: true },
+  { value: getSiValue(21), symbol: "z", isMil: true },
+  { value: getSiValue(18), symbol: "a", isMil: true },
+  { value: getSiValue(15), symbol: "f", isMil: true },
+  { value: getSiValue(12), symbol: "p", isMil: true },
+  { value: getSiValue(9), symbol: "n", isMil: true },
+  { value: getSiValue(6), symbol: "μ", isMil: true },
+  { value: getSiValue(3), symbol: "m", isMil: true },
+  { value: new BigNumber(1), symbol: "" },
+  { value: getSiValue(3), symbol: "k" },
+  { value: getSiValue(6), symbol: "M" },
+  { value: getSiValue(9), symbol: "G" },
+  { value: getSiValue(12), symbol: "T" },
+  { value: getSiValue(15), symbol: "P" },
+  { value: getSiValue(18), symbol: "E" },
+  { value: getSiValue(21), symbol: "Y" },
+  { value: getSiValue(24), symbol: "Z" },
+];
+
+const allowedSymbols = si
+  .map((s) => s.symbol)
+  .join(", ")
+  .replace(", ,", ",");
+const floats = new RegExp("^[+]?[0-9]*[.,]{1}[0-9]*$");
+const ints = new RegExp("^[+]?[0-9]+$");
+const alphaFloats = new RegExp(
+  "^[+]?[0-9]*[.,]{1}[0-9]*[" + allowedSymbols + "]{1}$"
+);
+const alphaInts = new RegExp("^[+]?[0-9]*[" + allowedSymbols + "]{1}$");
+
+/**
+ * A function that identifes integer/float(comma or dot)/expressions (such as 1k)
+ * and converts to actual value (or reports an error).
+ * @param {string} input
+ * @returns {[number | null, string]} an array of 2 items
+ * the first is the actual calculated number (or null if none) while
+ * the second is the message that should appear in case of error
+ */
+export const evalUnits = (
+  input: string,
+  chainDecimals: number
+): [BigNumber | null, string] => {
+  //sanitize input to remove + char if exists
+  input = input && input.replace("+", "");
+  if (
+    !floats.test(input) &&
+    !ints.test(input) &&
+    !alphaInts.test(input) &&
+    !alphaFloats.test(input)
+  ) {
+    return [null, EvalMessages.GIBBERISH];
+  }
+  // find the character from the alphanumerics
+  const symbol = input.replace(/[0-9.,]/g, "");
+  // find the value from the si list
+  const siVal = si.find((s) => s.symbol === symbol);
+  const numberStr = input.replace(symbol, "").replace(",", ".");
+  let numeric: BigNumber = new BigNumber(0);
+
+  if (!siVal) {
+    return [null, EvalMessages.SYMBOL_ERROR];
+  }
+  const decimalsBn = new BigNumber(10).pow(new BigNumber(chainDecimals));
+  const containDecimal = numberStr.includes(".");
+  const [decPart, fracPart] = numberStr.split(".");
+  const fracDecimals = fracPart?.length || 0;
+  const fracExp = new BigNumber(10).pow(new BigNumber(fracDecimals));
+  numeric = containDecimal
+    ? new BigNumber(
+        new BigNumber(decPart)
+          .multipliedBy(fracExp)
+          .plus(new BigNumber(fracPart))
+      )
+    : new BigNumber(new BigNumber(numberStr));
+  numeric = numeric.multipliedBy(decimalsBn);
+  if (containDecimal) {
+    numeric = siVal.isMil
+      ? numeric.dividedBy(siVal.value).dividedBy(fracExp)
+      : numeric.multipliedBy(siVal.value).dividedBy(fracExp);
+  } else {
+    numeric = siVal.isMil
+      ? numeric.dividedBy(siVal.value)
+      : numeric.multipliedBy(siVal.value);
+  }
+  if (numeric.eq(new BigNumber(0))) {
+    return [null, EvalMessages.ZERO];
+  }
+  return [numeric, EvalMessages.SUCCESS];
+};
+
+/**
+ * The transformToBaseUnit function is used to transform a given estimated
+ * fee value from its current representation to its base unit representation,
+ * considering the provided chain decimals. The function is designed to handle
+ * cases where the chain decimals are either greater or less than the length
+ * of the estimated fee.
+ * @param {string} estFee : The estimated fee value that needs to be transformed
+ * to its base unit representation.
+ * @param {number} chainDecimals: The number of decimal places used by the blockchain.
+ */
+export const transformToBaseUnit = (
+  estFee: string,
+  chainDecimals: number
+): string => {
+  const t = estFee.length - chainDecimals;
+  let s = "";
+  // if chainDecimals are more than the estFee length
+  if (t < 0) {
+    // add 0 in front (1 less as we want the 0.)
+    for (let i = 0; i < Math.abs(t) - 1; i++) {
+      s += "0";
+    }
+    s = s + estFee;
+    // remove trailing 0s
+    for (let i = 0; i < s.length; i++) {
+      if (s.slice(s.length - 1) !== "0") break;
+      s = s.substring(0, s.length - 1);
+    }
+    s = "0." + s;
+  } else {
+    s = (parseInt(estFee) / 10 ** chainDecimals).toString();
+  }
+  return parseFloat(s) !== 0 ? s : "0";
 };
 
 /**
