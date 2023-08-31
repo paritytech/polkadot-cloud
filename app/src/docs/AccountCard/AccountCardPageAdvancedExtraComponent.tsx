@@ -66,9 +66,10 @@ return (
       <h4>
         Extra component can be added; Its default position is left; If icon
         position is also left, then the extra component always goes on the
-        further side (same for right); Position, defaults to "left"; (Recipe
-        will automatically calculate the rest of the size of the main area based
-        on: "MainAreaGridSize = 12 - IconGridSize - ExtraComponentGridSize" )
+        further side (same for right); Position, defaults to &quot;left&quot;;
+        (Recipe will automatically calculate the rest of the size of the main
+        area based on: &quot;MainAreaGridSize = 12 - IconGridSize -
+        ExtraComponentGridSize&quot; )
       </h4>
       <div className="demo">
         <AccountCard
