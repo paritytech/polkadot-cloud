@@ -67,10 +67,10 @@
     "sass": "^1.66.1",
     "stylelint": "^15.10.3",
     "stylelint-config-standard-scss": "^10.0.0",
-    "tslib": "^2.6.2",
     "tiny-lr": "^2.0.0",
-    "typescript": "^5.2.2"
-
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.3"
   },
   "workspaces": [
     "packages/cloud-core",
