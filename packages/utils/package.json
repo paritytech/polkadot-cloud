@@ -1,7 +1,7 @@
 {
   "name": "polkadot-cloud-utils",
   "license": "GPL-3.0-only",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "contributors": [
     "Ross Bulat<ross@parity.io>",
     "Nikolaos Kontakis<nikos@parity.io>"
@@ -21,7 +21,7 @@
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   },
   "peerDependencies": {
-    "@polkadot/keyring": "^12.3.2",
+    "@polkadot/keyring": "^12.4.2",
     "@polkadot/util": "^12.4.2",
     "bignumber.js": "^9.1.1"
   }
