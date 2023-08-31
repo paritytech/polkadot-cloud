@@ -7,7 +7,7 @@ import { Odometer } from "@packages/cloud-react/lib/complex/Odometer";
 
 export const OdometerDiv = () => {
   const code = `<div>
-  <OdometerComponent value={123.456} />
+  <Odometer value={123.456} />
 </div>`;
 
   const [val, setVal] = useState<number>(123.456);
