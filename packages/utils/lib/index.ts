@@ -16,20 +16,6 @@ import { AnyJson, AnyObject } from "./types";
  */
 
 /**
- * @name clipAddress
- * @summary Clips an address to the first 6 and last 6 characters.
- */
-export const clipAddress = (val: string) => {
-  if (typeof val !== "string") {
-    return val;
-  }
-  return `${val.substring(0, 6)}...${val.substring(
-    val.length - 6,
-    val.length
-  )}`;
-};
-
-/**
  * @name remToUnit
  * @summary Converts a rem string to a number.
  */
@@ -180,9 +166,9 @@ export const isValidAddress = (address: string) => {
  * @name determinePoolDisplay
  * @summary A pool will be displayed with either its set metadata or its address.
  */
-export const determinePoolDisplay = (adddress: string, batchItem: AnyJson) => {
+export const determinePoolDisplay = (address: string, batchItem: AnyJson) => {
   // default display value
-  const defaultDisplay = clipAddress(adddress);
+  const defaultDisplay = ellipsisFn(address, 6, "center");
 
   // fallback to address on empty metadata string
   let display = batchItem ?? defaultDisplay;
