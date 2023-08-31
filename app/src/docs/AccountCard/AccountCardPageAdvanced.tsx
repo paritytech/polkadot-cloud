@@ -11,8 +11,7 @@ import { Button } from "@packages/cloud-react/lib/buttons/Button";
 import { SimpleEditor } from "../lib/SimpleEditor";
 
 export const AccountCardPageAdvanced = () => {
-  const codeA = `
-import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
+  const codeA = `import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
 const iconProps: IconProps = {
   noCopy: true,
@@ -25,8 +24,7 @@ return (
   <AccountCard icon={iconProps} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} ellipsis />
 );`;
 
-  const codeB = `
-import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
+  const codeB = `import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
 const iconPropsLeft: IconProps = {
   // position defaults to "left"
@@ -46,8 +44,7 @@ return (
   <AccountCard title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} ellipsis ellipsisAmount={500} />
 )`;
 
-  const codeD = `
-import { AccountCard, IconProps, ExtraComponentProps } from "@packages/cloud-react/lib/recipes/AccountCard";
+  const codeD = `import { AccountCard, IconProps, ExtraComponentProps } from "@packages/cloud-react/lib/recipes/AccountCard";
 ...
 
 // Note: space/size of main component is automatically calucated based on the given sizes from the icon and extra component; 
@@ -77,8 +74,7 @@ return (
   <AccountCard icon={iconPropsLeft} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} extraComponent={extraComponentProps} />
 )`;
 
-  const codeE = `
-import { AccountCard, IconProps, ExtraComponentProps } from "@polkadot-cloud/react/recipes/AccountCard";
+  const codeE = `import { AccountCard, IconProps, ExtraComponentProps } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
 
 const iconProps: IconProps = {

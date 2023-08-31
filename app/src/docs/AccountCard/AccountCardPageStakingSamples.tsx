@@ -13,8 +13,7 @@ import { Grid } from "@packages/cloud-react/lib/base/structure/Grid";
 import { HPosition } from "@packages/cloud-react/lib/types";
 
 export const AccountCardPageStakingSamples = () => {
-  const commonCode = `
-const titleProps: TitleProps = {
+  const commonCode = `const titleProps: TitleProps = {
   address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73",
   name: "The name of the account",
   justify: "flex-start",
@@ -48,34 +47,33 @@ const extraComponentProps: ExtraComponentProps = {
 };`;
 
   const code = `<Grid row>
-    <Grid column sm={3}></Grid>
-    <Grid column sm={6}>
-      <AccountCard
-        fontSize="x-small"
-        icon={iconProps}
-        ellipsis={ellipsisProps}
-        title={titleProps}
-        extraComponent={extraComponentProps}
-      />
-    </Grid>
-    <Grid column sm={3}></Grid>
-  </Grid>`;
+  <Grid column sm={3}></Grid>
+  <Grid column sm={6}>
+    <AccountCard
+      fontSize="x-small"
+      icon={iconProps}
+      ellipsis={ellipsisProps}
+      title={titleProps}
+      extraComponent={extraComponentProps}
+    />
+  </Grid>
+  <Grid column sm={3}></Grid>
+</Grid>`;
 
-  const codeNoCard = `
-  <Grid row>
-    <Grid column sm={3}></Grid>
-    <Grid column sm={6}>
-      <AccountCard
-        noCard // the only diff from the code above
-        fontSize="x-small"
-        icon={iconProps}
-        ellipsis={ellipsisProps}
-        title={titleProps}
-        extraComponent={extraComponentProps}
-      />
-    </Grid>
-    <Grid column sm={3}></Grid>
-  </Grid>`;
+  const codeNoCard = `<Grid row>
+  <Grid column sm={3}></Grid>
+  <Grid column sm={6}>
+    <AccountCard
+      noCard // the only diff from the code above
+      fontSize="x-small"
+      icon={iconProps}
+      ellipsis={ellipsisProps}
+      title={titleProps}
+      extraComponent={extraComponentProps}
+    />
+  </Grid>
+  <Grid column sm={3}></Grid>
+</Grid>`;
 
   const titleProps: TitleProps = {
     address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73",
@@ -112,6 +110,7 @@ const extraComponentProps: ExtraComponentProps = {
 
   return (
     <>
+      <h4>Code below is used in both of the following examples</h4>
       <SimpleEditor code={commonCode} />
       <div className="demo">
         <Grid row>
