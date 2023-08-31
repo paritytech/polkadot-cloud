@@ -20,8 +20,8 @@ interface PolkadotIconProps {
 
 // TODO think of a better way for theming
 const chainTheme = {
-  light: "rgb(36 32 36)",
-  dark: "#f1f0f0",
+  light: "#f1f0f0",
+  dark: "rgb(36 32 36)",
 };
 
 export const PolkadotIcon = ({
