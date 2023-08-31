@@ -78,7 +78,7 @@ return (
 )`;
 
   const codeE = `
-import { AccountCard, IconProps, ExtraComponentProps } from "@packages/cloud-react/lib/recipes/AccountCard";
+import { AccountCard, IconProps, ExtraComponentProps } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
 
 const iconProps: IconProps = {
@@ -107,6 +107,26 @@ return (
   <AccountCard icon={iconProps} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} extraComponent={extraComponentProps} />
 )`;
 
+  const codeF = `import { AccountCard, IconProps, ExtraComponentProps } from "@polkadot-cloud/react/recipes/AccountCard";
+...
+
+const iconProps: IconProps = {
+  size: 40,
+  gridSize: 1,
+  justify: "flex-start",
+  dark: false,
+  colors: ["blue", "green"],
+  outerColor: "yellow",
+};
+
+<AccountCard
+  fontSize="medium"
+  icon={iconProps}
+  title={{
+    address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73",
+  }}
+/>`;
+
   const iconPropsLeft: IconProps = {
     position: "left",
     gridSize: 2,
@@ -118,6 +138,15 @@ return (
     position: "right",
     gridSize: 2,
     justify: "space-around",
+  };
+
+  const iconProps2: IconProps = {
+    size: 40,
+    gridSize: 1,
+    justify: "flex-start",
+    dark: false,
+    colors: ["blue", "green"],
+    outerColor: "yellow",
   };
 
   const extraComponentProps: ExtraComponentProps = {
@@ -217,6 +246,17 @@ return (
         />
       </div>
       <SimpleEditor code={codeE} />
+      <h4>Without various random icon colors and shapes</h4>
+      <div className="demo">
+        <AccountCard
+          fontSize="medium"
+          icon={iconProps2}
+          title={{
+            address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73",
+          }}
+        />
+      </div>
+      <SimpleEditor code={codeF} />
     </>
   );
 };
