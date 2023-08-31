@@ -21,7 +21,7 @@ const iconProps: IconProps = {
 };
 ...
 return (
-  <AccountCard icon={iconProps} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} ellipsis />
+  <AccountCard icon={iconProps} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} ellipsis={{ active: true }} />
 );`;
 
   const codeB = `import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
@@ -33,7 +33,7 @@ const iconPropsLeft: IconProps = {
 };
 ...
 return (
-  <AccountCard icon={iconPropsLeft} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} ellipsis ellipsisAmount={2} />
+  <AccountCard icon={iconPropsLeft} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} ellipsis={{ active: true, amount:2 }} />
 )`;
 
   const codeC = `
@@ -41,7 +41,7 @@ import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCa
 ...
 // Extreme ellipsis amount is given thus it shows the maximum possible amount ((address.length/2) - 3);
 return (
-  <AccountCard title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} ellipsis ellipsisAmount={500} />
+  <AccountCard title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} ellipsis={{ active: true, amount:500 }} />
 )`;
 
   const codeD = `import { AccountCard, IconProps, ExtraComponentProps } from "@packages/cloud-react/lib/recipes/AccountCard";
