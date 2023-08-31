@@ -186,7 +186,7 @@ const iconProps: IconProps = {
               title={{
                 address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73",
               }}
-              ellipsis={{ active: true }}
+              ellipsis={{ active: true, position: "center" }}
             />
           </Grid>
           <Grid column sm={4}></Grid>
@@ -202,7 +202,7 @@ const iconProps: IconProps = {
               title={{
                 address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73",
               }}
-              ellipsis={{ active: true, amount: 2 }}
+              ellipsis={{ active: true, amount: 2, position: "center" }}
             />
           </Grid>
           <Grid column sm={4}></Grid>
@@ -216,7 +216,7 @@ const iconProps: IconProps = {
               title={{
                 address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73",
               }}
-              ellipsis={{ active: true, amount: 500 }}
+              ellipsis={{ active: true, amount: 500, position: "center" }}
             />
           </Grid>
         </Grid>

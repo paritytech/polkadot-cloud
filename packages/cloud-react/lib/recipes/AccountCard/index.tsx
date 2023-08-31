@@ -7,8 +7,9 @@ import { Grid } from "../../base/structure/Grid";
 import { Card } from "../../base/structure/Card";
 import { GridJustify, GridSizes, GridItemsAlignment } from "../../base/types";
 import { PolkadotIcon } from "../../icons/PolkadotIcon";
-import { ellipsisFn, valEmpty } from "../../utils";
-import { HPosition, HPositionLR } from "../../types";
+import { valEmpty } from "../../utils";
+import { ellipsisFn } from "@polkadot-cloud/utils";
+import { HPositionLR, HPosition } from "../../types";
 
 import "@polkadot-cloud/core/css/recipes/AccountCard/index.css";
 
@@ -46,7 +47,7 @@ export interface ExtraComponentProps extends CommonParams {
 export interface EllipsisProps {
   active?: boolean;
   amount?: number;
-  position?: HPosition;
+  position?: string;
 }
 
 interface CommonParams {
@@ -133,7 +134,11 @@ export const AccountCard = ({
       <div className={fontClasses?.filter((a) => a.trim() != "")?.join("")}>
         {title?.component ||
           (ellipsis?.active
-            ? ellipsisFn(title?.name || title.address, ellipsis.amount)
+            ? ellipsisFn(
+                title?.name || title.address,
+                ellipsis.amount,
+                (ellipsis?.position as HPosition) || "center"
+              )
             : title?.name || title.address)}
       </div>
     </Grid>

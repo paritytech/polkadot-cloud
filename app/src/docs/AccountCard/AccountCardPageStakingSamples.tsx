@@ -84,7 +84,7 @@ const extraComponentProps: ExtraComponentProps = {
   const ellipsisProps: EllipsisProps = {
     active: true,
     amount: 20,
-    position: "right" as HPosition,
+    position: "center" as HPosition,
   };
 
   const iconProps: IconProps = {

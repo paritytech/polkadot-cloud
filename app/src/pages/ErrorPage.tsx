@@ -1,4 +1,5 @@
 import { useGlitch } from "react-powerglitch";
+import "../styles/app.scss";
 import { ReactComponent as IconSVG } from "../svg/icon.svg";
 
 export const ErrorPage = () => {
@@ -22,10 +23,8 @@ export const ErrorPage = () => {
       <div className="icon" ref={glitch.ref}>
         <IconSVG />
       </div>
-      <div className="oops" style={{ fontSize: "2.5rem", fontWeight: "bold" }}>
-        Oops!
-      </div>
-      <div>You are not supposed to be here.</div>
+      <h2 style={{ fontSize: "2.5rem", fontWeight: "bold" }}>Oops!</h2>
+      <h4>You are not supposed to be here.</h4>
       <a href="/">Go back!</a>
     </div>
   );

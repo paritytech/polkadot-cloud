@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@polkadot-cloud/core": "^0.1.12",
-    "@polkadot-cloud/utils": "^0.0.6",
+    "@polkadot-cloud/utils": "^0.0.9",
     "react-error-boundary": "^4.0.11"
   }
 }
