@@ -9,13 +9,18 @@ export const AccountCardPageAdvancedEllipsisExtreme = () => {
   const code = `
 import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
-// Extreme ellipsis amount is given thus it shows the maximum possible amount ((address.length/2) - 3);
+
 return (
   <AccountCard title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} ellipsis={{ active: true, amount:500, position: "center" }} />
 )`;
 
   return (
     <>
+      <h4>
+        If an extreme ellipsis amount is provided, then the Recipe will reduce
+        it, in order to show the maximum possible amount (calculating with:
+        (address.length/2) - 3);
+      </h4>
       <div className="demo">
         <Grid row>
           <Grid column>

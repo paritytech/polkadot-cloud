@@ -11,7 +11,7 @@ export const AccountCardPageSimpleMoreProps = () => {
   const code = `
 import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
-const iconPropsComponent: IconProps = {
+const iconProps: IconProps = {
   noCopy: true,
   position: "right",
   size: 3,
@@ -19,7 +19,7 @@ const iconPropsComponent: IconProps = {
 };
 ...
 return (
-  <AccountCard icon={iconProps_C} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} />
+  <AccountCard icon={iconProps} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} />
 );`;
 
   const iconProps: IconProps = {
@@ -31,6 +31,11 @@ return (
 
   return (
     <>
+      <h4>
+        Other `iconProps` can be either the `girdSize` (Recipe will
+        automatically calculate the rest of the size of the main area
+        "MainAreaGridSize = 12 - IconGridSize" )
+      </h4>
       <div className="demo">
         <AccountCard
           icon={iconProps}
