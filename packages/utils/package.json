@@ -19,7 +19,8 @@
     "build:mock": "node ../../scripts/generatePackageJson.mjs -p utils",
     "build": "rm -fr dist && rollup -c && node ../../scripts/generatePackageJson.mjs -p utils",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo",
-    "test": "vitest"
+    "test": "vitest run",
+    "test:watch": "vitest watch"
   },
   "peerDependencies": {
     "@polkadot/keyring": "^12.4.2",
