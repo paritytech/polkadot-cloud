@@ -73,7 +73,7 @@ export const HardwareAddress = ({
   const commitEdit = () => {
     let newName = editName;
     if (editName === "") {
-      newName = ellipsisFn(address, 6, "center");
+      newName = ellipsisFn(address, 6);
     }
     if (newName !== name) {
       setName(newName);

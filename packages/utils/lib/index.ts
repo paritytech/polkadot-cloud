@@ -168,7 +168,7 @@ export const isValidAddress = (address: string) => {
  */
 export const determinePoolDisplay = (address: string, batchItem: AnyJson) => {
   // default display value
-  const defaultDisplay = ellipsisFn(address, 6, "center");
+  const defaultDisplay = ellipsisFn(address, 6);
 
   // fallback to address on empty metadata string
   let display = batchItem ?? defaultDisplay;
@@ -439,7 +439,7 @@ export const makeCancelable = (promise: Promise<AnyObject>) => {
 export const ellipsisFn = (
   str: string,
   amount = 4,
-  position: "left" | "right" | "center" = "left"
+  position: "left" | "right" | "center" = "center"
 ) => {
   // having an amount less than 4 is a bit extreme so we default there
   if (amount <= 4) {

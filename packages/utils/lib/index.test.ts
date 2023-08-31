@@ -7,7 +7,7 @@ const address = "234CHvWmTuaVtkJpLS9oxuhFd3HamcEMrfFAPYoFaetEZmY7";
 
 describe("Tests suite - ellipsisFn", () => {
   test("Should return an address with 4 digits and default ellipsis (left) ", () => {
-    const result = ellipsisFn(address);
+    const result = ellipsisFn(address, 4, "left");
     expect(result).toBe("..ZmY7");
   });
 
@@ -17,22 +17,22 @@ describe("Tests suite - ellipsisFn", () => {
   });
 
   test("Should return an address with 4 digits and ellipsis center", () => {
-    const result = ellipsisFn(address, 4, "center");
+    const result = ellipsisFn(address, 4);
     expect(result).toBe("234C...ZmY7");
   });
 
   test("Should return an address with 10 digits and ellipsis center", () => {
-    const result = ellipsisFn(address, 10, "center");
+    const result = ellipsisFn(address, 10);
     expect(result).toBe("234CHvWmTu...oFaetEZmY7");
   });
 
   test("Should return an address with minimum default of 4 digits and ellipsis center when the amount given is too small (2)", () => {
-    const result = ellipsisFn(address, 2, "center");
+    const result = ellipsisFn(address, 2);
     expect(result).toBe("234C...ZmY7");
   });
 
   test("Should return an address with minimum default of 4 digits and ellipsis center when the amount given is too large (string.length / 2 - 3)", () => {
-    const result = ellipsisFn(address, 100, "center");
+    const result = ellipsisFn(address, 100);
     expect(result).toBe("234CHvWmTuaVtkJpLS9ox...amcEMrfFAPYoFaetEZmY7");
   });
 });
