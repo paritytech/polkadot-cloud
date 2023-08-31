@@ -17,10 +17,14 @@ const ellipsisProps: EllipsisProps = {
   position: "right",
 };
 
+// iconProps are very similar to the ones that PolkadotIcon receives for consistency
 const iconProps: IconProps = {
   size: 20,
   gridSize: 1,
   justify: "flex-start",
+  colors: ["blue", "red", "yellow"];
+  outerColor: "transparent";
+  dark: true;
 };
 
 <AccountCard

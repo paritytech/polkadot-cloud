@@ -33,6 +33,9 @@ export interface IconProps extends CommonParams {
   size?: number;
   noCopy?: boolean;
   position?: HPositionLR;
+  colors?: string[];
+  outerColor?: string;
+  dark?: boolean;
 }
 
 export interface ExtraComponentProps extends CommonParams {
@@ -112,6 +115,9 @@ export const AccountCard = ({
         address={title.address}
         size={icon?.size || 30}
         nocopy={icon?.noCopy}
+        colors={icon?.colors}
+        dark={icon?.dark}
+        outerColor={icon?.outerColor}
       />
     </Grid>
   );

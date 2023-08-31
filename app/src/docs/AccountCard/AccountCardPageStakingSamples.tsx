@@ -97,15 +97,14 @@ const extraComponentProps: ExtraComponentProps = {
 
   const extraComponentProps: ExtraComponentProps = {
     component: (
-      <div
+      <h5
         style={{
-          borderRight: "0.1rem solid white",
+          borderRight: "0.1rem solid var(--border-secondary-color)",
           padding: "0 2rem",
-          color: "white",
         }}
       >
         Nominating
-      </div>
+      </h5>
     ),
     gridSize: 4,
     justify: "flex-start",
