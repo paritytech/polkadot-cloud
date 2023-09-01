@@ -453,7 +453,7 @@ export const makeCancelable = (promise: Promise<AnyObject>) => {
 export const ellipsisFn = (
   str: string,
   amount = 6,
-  position: "left" | "right" | "center" = "left"
+  position: "left" | "right" | "center" = "center"
 ) => {
   // having an amount less than 4 is a bit extreme so we default there
   if (amount <= 4) {
