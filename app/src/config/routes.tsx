@@ -13,6 +13,7 @@ import { Odometer } from "../docs/Odometer";
 
 // TODO: transfer pages to docs
 import { Modal } from "../pages/Modal";
+import { Utilities } from "../docs/Utilities";
 
 type Routes = {
   name: string;
@@ -36,7 +37,6 @@ interface RouteCategoryMulti {
 }
 
 // recipes
-// recipes
 const recipesRoutes = [
   // {
   //   path: "account_card",
@@ -46,7 +46,13 @@ const recipesRoutes = [
 ];
 
 // utils
-const utilsRoutes = [];
+const utilsRoutes = [
+  {
+    path: "utilities",
+    name: "Utilities",
+    element: <Utilities />,
+  },
+];
 
 // Layout Components
 const componentsLayoutRoutes = [
@@ -143,14 +149,14 @@ export const routeCategories: RouteCategories = [
   //     },
   //   ],
   // },
-  // {
-  //   name: "Utils",
-  //   paths: [
-  //     {
-  //       paths: [],
-  //     },
-  //   ],
-  // },
+  {
+    name: "Utilities",
+    paths: [
+      {
+        paths: ["utilities"],
+      },
+    ],
+  },
 ];
 
 export const nameFromRoute = (path: string): string | undefined =>
