@@ -452,14 +452,14 @@ export const makeCancelable = (promise: Promise<AnyObject>) => {
  */
 export const ellipsisFn = (
   str: string,
-  amount = 4,
+  amount = 6,
   position: "left" | "right" | "center" = "left"
 ) => {
   // having an amount less than 4 is a bit extreme so we default there
   if (amount <= 4) {
     if (position === "center") return str.slice(0, 4) + "..." + str.slice(-4);
-    if (position === "right") return str.slice(0, 4) + "..";
-    return ".." + str.slice(-4);
+    if (position === "right") return str.slice(0, 4) + "...";
+    return "..." + str.slice(-4);
   }
   // if the amount requested is in a "logical" amount - meaning that it can display the address
   // without repeating the same information twice - then go for it;

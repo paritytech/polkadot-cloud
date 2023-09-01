@@ -8,12 +8,12 @@ const address = "234CHvWmTuaVtkJpLS9oxuhFd3HamcEMrfFAPYoFaetEZmY7";
 describe("Tests suite - ellipsisFn", () => {
   test("Should return an address with 4 digits and default ellipsis (left) ", () => {
     const result = ellipsisFn(address);
-    expect(result).toBe("..ZmY7");
+    expect(result).toBe("...tEZmY7");
   });
 
   test("Should return an address with 4 digits and right ellipsis", () => {
     const result = ellipsisFn(address, 4, "right");
-    expect(result).toBe("234C..");
+    expect(result).toBe("234C...");
   });
 
   test("Should return an address with 4 digits and ellipsis center", () => {
