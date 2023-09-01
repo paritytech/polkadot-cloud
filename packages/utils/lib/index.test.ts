@@ -6,19 +6,19 @@ const defaultChainDecimals = 9;
 const address = "234CHvWmTuaVtkJpLS9oxuhFd3HamcEMrfFAPYoFaetEZmY7";
 
 describe("Tests suite - ellipsisFn", () => {
+  test("Should return an address with 6 digits and ellipsis center (default values)", () => {
+    const result = ellipsisFn(address);
+    expect(result).toBe("234CHv...tEZmY7");
+  });
+
   test("Should return an address with 4 digits and default ellipsis (left) ", () => {
-    const result = ellipsisFn(address, 4, "left");
-    expect(result).toBe("..ZmY7");
+    const result = ellipsisFn(address, 6, "left");
+    expect(result).toBe("...tEZmY7");
   });
 
   test("Should return an address with 4 digits and right ellipsis", () => {
     const result = ellipsisFn(address, 4, "right");
-    expect(result).toBe("234C..");
-  });
-
-  test("Should return an address with 4 digits and ellipsis center", () => {
-    const result = ellipsisFn(address, 4);
-    expect(result).toBe("234C...ZmY7");
+    expect(result).toBe("234C...");
   });
 
   test("Should return an address with 10 digits and ellipsis center", () => {
