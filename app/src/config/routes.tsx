@@ -44,6 +44,9 @@ const recipesRoutes = [
   },
 ];
 
+// utils
+const utilsRoutes = [];
+
 // Layout Components
 const componentsLayoutRoutes = [
   {
@@ -102,6 +105,8 @@ export const routes: Routes = [
   ...componentsLayoutRoutes,
   // Recipes
   ...recipesRoutes,
+  // Utils
+  ...utilsRoutes,
 ];
 
 export const routeCategories: RouteCategories = [
@@ -137,6 +142,14 @@ export const routeCategories: RouteCategories = [
       },
     ],
   },
+  // {
+  //   name: "Utils",
+  //   paths: [
+  //     {
+  //       paths: [],
+  //     },
+  //   ],
+  // },
 ];
 
 export const nameFromRoute = (path: string): string | undefined =>
