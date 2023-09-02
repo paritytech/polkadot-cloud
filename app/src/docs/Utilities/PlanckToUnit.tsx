@@ -9,5 +9,5 @@ const units = 6;
 fn.planckToUnit(inputValue, units); // 10.000000
 `;
 
-  return <SimpleEditor code={code} />;
+  return <SimpleEditor code={code} standalone />;
 };

@@ -8,5 +8,5 @@ export const MinDecimalPlaces = () => {
 const minDecimals = 4;
 fn.minDecimalPlaces(val, minDecimals);// 10.5000`;
 
-  return <SimpleEditor code={code} />;
+  return <SimpleEditor code={code} standalone />;
 };

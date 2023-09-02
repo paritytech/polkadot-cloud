@@ -6,12 +6,11 @@ import PrismJSX from "./languages/jsx.min.mjs";
 import PrismTSX from "./languages/tsx.min.mjs";
 import Editor from "react-simple-code-editor";
 import { useState } from "react";
-import "./themes/dark.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
-// If a light theme is preferable on light mode, the following theme can be uncommented, and `Editor`'s `className` prop can be set to `editor-language-light`.
-import "./themes/light.scss";
 import { useTheme } from "../../../contexts/Theme";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./themes/dark.scss";
+import "./themes/light.scss";
 
 languages.extend("jsx", PrismJSX);
 languages.extend("tsx", PrismTSX);
@@ -19,16 +18,20 @@ languages.extend("tsx", PrismTSX);
 interface SimpleEditorProps {
   code: string;
   language?: string;
+  standalone?: boolean;
 }
-export const SimpleEditor = ({ code, language = "tsx" }: SimpleEditorProps) => {
+export const SimpleEditor = ({
+  code,
+  language = "tsx",
+  standalone = false,
+}: SimpleEditorProps) => {
   const [value] = useState<string>(code);
   const { mode } = useTheme();
 
   const editorStyle = {
     border: "1px solid var(--border-secondary-color)",
     background: mode === "dark" ? "#111" : "#f5f5f5",
-    borderBottomLeftRadius: "0.75rem",
-    borderBottomRightRadius: "0.75rem",
+    borderRadius: standalone ? "0.75rem" : "0 0 0.75rem 0.75rem",
     fontFamily: '"Source Code Pro", monospace',
     fontSize: "1.1rem",
     lineHeight: "1.6rem",
