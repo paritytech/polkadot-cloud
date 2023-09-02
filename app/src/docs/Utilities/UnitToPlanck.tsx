@@ -8,5 +8,5 @@ export const UnitToPlanck = () => {
 const units = 6;
 fn.unitToPlanck(inputValue, units); // 10000000`;
 
-  return <SimpleEditor code={code} />;
+  return <SimpleEditor code={code} standalone />;
 };
