@@ -10,9 +10,7 @@ import { Grid } from "../docs/Grid";
 import { Card } from "../docs/Cards";
 // import { AccountCard } from "../docs/AccountCard";
 import { Odometer } from "../docs/Odometer";
-
-// TODO: transfer pages to docs
-import { Modal } from "../pages/Modal";
+import { Modal } from "../docs/Modal";
 import { Utilities } from "../docs/Utilities";
 
 type Routes = {

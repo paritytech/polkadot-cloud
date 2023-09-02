@@ -1,8 +1,8 @@
 import { useGlitch } from "react-powerglitch";
-import "../styles/app.scss";
-import { ReactComponent as IconSVG } from "../svg/icon.svg";
+import "./styles/app.scss";
+import { ReactComponent as IconSVG } from "./svg/icon.svg";
 
-export const ErrorPage = () => {
+export const Error = () => {
   const glitch = useGlitch({
     timing: {
       duration: 5000,
