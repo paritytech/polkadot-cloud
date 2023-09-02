@@ -24,7 +24,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     .odometer-digit {
       display: inline-block;
       position: relative;
-      vertical-align:bottom;
+      vertical-align: bottom;
       z-index: 3;
 
       &.odometer-child {

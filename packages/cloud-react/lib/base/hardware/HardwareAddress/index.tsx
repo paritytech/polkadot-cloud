@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormEvent, ReactNode, useState } from "react";
-import { clipAddress, unescape } from "@polkadot-cloud/utils";
+import { ellipsisFn, unescape } from "@polkadot-cloud/utils";
 import "@polkadot-cloud/core/css/base/hardware/HardwareAddress/index.css";
 
 export type HardwareAddressProps = ComponentBase & {
@@ -73,7 +73,7 @@ export const HardwareAddress = ({
   const commitEdit = () => {
     let newName = editName;
     if (editName === "") {
-      newName = clipAddress(address);
+      newName = ellipsisFn(address, 6);
     }
     if (newName !== name) {
       setName(newName);
