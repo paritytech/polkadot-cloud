@@ -1170,13 +1170,12 @@ const sampleAnimation2 = {
 `,u.jsx(t.h3,{children:"Action Item with Toggle"}),`
 `,u.jsx(eT,{})]})}function tT(e={}){const{wrapper:t}=e.components||{};return t?u.jsx(t,Object.assign({},e,{children:u.jsx(vp,e)})):vp(e)}var nT=function(){return u.jsx("div",{className:"doc",children:u.jsx(tT,{npm:"@polkadot-cloud/react"})})},rT=function(){var e=`const inputValue = new BigNumber("10000000");
 const units = 6;
-fn.planckToUnit(inputValue, units); // 10.000000
-`;return u.jsx(ee,{code:e,standalone:!0})},iT=function(){var e=`const inputValue = "10";
+fn.planckToUnit(inputValue, units); // 10.000000`;return u.jsx(ee,{code:e,standalone:!0})},iT=function(){var e=`const inputValue = "10";
 const units = 6;
 fn.unitToPlanck(inputValue, units); // 10000000`;return u.jsx(ee,{code:e,standalone:!0})},oT=function(){var e=`const val = "10.5";
 const minDecimals = 4;
 fn.minDecimalPlaces(val, minDecimals);// 10.5000`;return u.jsx(ee,{code:e,standalone:!0})},aT=function(){var e=`const inputValue = "1,000,000";
-  const result = fn.rmCommas(inputValue); // 1000000`;return u.jsx(ee,{code:e,standalone:!0})};function gp(e){const t=Object.assign({h1:"h1",h2:"h2",h4:"h4",strong:"strong",code:"code",hr:"hr"},e.components);return u.jsxs(u.Fragment,{children:[u.jsx(t.h1,{children:"Utilities"}),`
+const result = fn.rmCommas(inputValue); // 1000000`;return u.jsx(ee,{code:e,standalone:!0})};function gp(e){const t=Object.assign({h1:"h1",h2:"h2",h4:"h4",strong:"strong",code:"code",hr:"hr"},e.components);return u.jsxs(u.Fragment,{children:[u.jsx(t.h1,{children:"Utilities"}),`
 `,u.jsx(t.h2,{children:"A collection of reusable utilities"}),`
 `,u.jsx(jn,{npm:e.npm}),`
 `,u.jsxs(t.h4,{children:[u.jsx(t.strong,{children:u.jsx(t.code,{children:"planckToUnit"})})," (convert planck to the token unit)"]}),`
