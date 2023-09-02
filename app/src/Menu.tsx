@@ -2,14 +2,14 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { Fragment } from "react";
-import { ReactComponent as IconSVG } from "../svg/icon.svg";
+import { ReactComponent as IconSVG } from "./svg/icon.svg";
 import { useGlitch } from "react-powerglitch";
 import { Separator } from "@packages/cloud-react/lib/base/structure/Separator";
 import { Link, useLocation } from "react-router-dom";
-import { nameFromRoute, routeCategories } from "../config/routes";
-import { useTheme } from "../contexts/Theme";
+import { nameFromRoute, routeCategories } from "./config/routes";
+import { useTheme } from "./contexts/Theme";
 
-export const SideMenu = () => {
+export const Menu = () => {
   const { pathname } = useLocation();
   const { mode, toggleMode, theme, setTheme } = useTheme();
 
