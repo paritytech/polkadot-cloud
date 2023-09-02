@@ -4,11 +4,11 @@
 import { Route, Routes } from "react-router-dom";
 import { routes } from "./config/routes";
 import { Error } from "./Error";
-import { SideMenu } from "./components/SideMenu";
+import { Menu } from "./Menu";
 
 export const Router = () => (
   <>
-    <SideMenu />
+    <Menu />
     <div className="body">
       <Routes>
         {routes.map((route) => (
