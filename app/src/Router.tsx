@@ -3,7 +3,7 @@
 
 import { Route, Routes } from "react-router-dom";
 import { routes } from "./config/routes";
-import { ErrorPage } from "./pages/ErrorPage";
+import { Error } from "./Error";
 import { SideMenu } from "./components/SideMenu";
 
 export const Router = () => (
@@ -14,7 +14,7 @@ export const Router = () => (
         {routes.map((route) => (
           <Route key={`nav_page_${route.path}`} {...route} />
         ))}
-        <Route key="nav_page_other" path="*" element={<ErrorPage />} />
+        <Route key="nav_page_other" path="*" element={<Error />} />
       </Routes>
     </div>
   </>
