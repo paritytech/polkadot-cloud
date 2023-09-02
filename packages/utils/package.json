@@ -20,7 +20,8 @@
     "build": "rm -fr dist && rollup -c && node ../../scripts/generatePackageJson.mjs -p utils",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo",
     "test": "vitest run",
-    "test:watch": "vitest watch"
+    "test:watch": "vitest watch",
+    "test:coverage": "vitest run --coverage"
   },
   "peerDependencies": {
     "@polkadot/keyring": "^12.4.2",
