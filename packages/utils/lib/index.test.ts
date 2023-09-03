@@ -207,10 +207,21 @@ describe("Test suite - shuffle Function", () => {
   });
 
   test("should shuffle an array of strings", () => {
-    const inputArray = ["apple", "banana", "cherry", "date", "fig"];
+    const inputArray = [
+      "apple",
+      "banana",
+      "cherry",
+      "date",
+      "fig",
+      "1",
+      "25",
+      "13",
+      "47",
+      "05",
+    ];
     const shuffledArray = fn.shuffle([...inputArray]);
-    expect(shuffledArray).not.toEqual(inputArray);
-    expect(shuffledArray).toEqual(expect.arrayContaining(inputArray));
+    expect(shuffledArray).not.toStrictEqual(inputArray);
+    expect(shuffledArray).toStrictEqual(expect.arrayContaining(inputArray));
     expect(shuffledArray.length).toBe(inputArray.length);
   });
 
