@@ -219,11 +219,9 @@ describe("Test suite - shuffle Function", () => {
       "47",
       "05",
     ];
-    console.log("inp", inputArray);
     const shuffledArray = fn.shuffle([...inputArray]);
-    console.log("shuf", shuffledArray);
-    expect(shuffledArray).not.toEqual(inputArray);
-    expect(shuffledArray).toEqual(expect.arrayContaining(inputArray));
+    expect(shuffledArray).not.toStrictEqual(inputArray);
+    expect(shuffledArray).toStrictEqual(expect.arrayContaining(inputArray));
     expect(shuffledArray.length).toBe(inputArray.length);
   });
 
