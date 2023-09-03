@@ -8,7 +8,7 @@ import { Icons } from "../docs/Icons";
 import { Extensions } from "../docs/Extensions";
 import { Grid } from "../docs/Grid";
 import { Card } from "../docs/Cards";
-// import { AccountCard } from "../docs/AccountCard";
+import { AccountCard } from "../docs/AccountCard";
 import { Odometer } from "../docs/Odometer";
 import { Modal } from "../docs/Modal";
 import { Utilities } from "../docs/Utilities";
@@ -36,11 +36,11 @@ interface RouteCategoryMulti {
 
 // recipes
 const recipesRoutes = [
-  // {
-  //   path: "account_card",
-  //   name: "Account card",
-  //   element: <AccountCard />,
-  // },
+  {
+    path: "account_card",
+    name: "Account card",
+    element: <AccountCard />,
+  },
 ];
 
 // utils
@@ -139,14 +139,15 @@ export const routeCategories: RouteCategories = [
       },
     ],
   },
-  // {
-  //   name: "Recipes",
-  //   paths: [
-  //     {
-  //       paths: ["account_card"],
-  //     },
-  //   ],
-  // },
+  {
+    name: "Recipes",
+    paths: [
+      {
+        paths: ["account_card"],
+      },
+    ],
+  },
+ 
   {
     name: "Utilities",
     paths: [

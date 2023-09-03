@@ -185,13 +185,6 @@ export const Odometer = ({
                 ))}
               </span>
             );
-
-            // console.log(prevDigits[i], digits[i]);
-            // console.log(prevDigitIndex, digitIndex);
-            // console.log(digitsToAnimate);
-            // console.log(direction);
-            // console.log(animClass);
-            // console.log("---");
           }
 
           return (
