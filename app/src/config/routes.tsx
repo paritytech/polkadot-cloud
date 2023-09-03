@@ -147,7 +147,7 @@ export const routeCategories: RouteCategories = [
       },
     ],
   },
- 
+
   {
     name: "Utilities",
     paths: [

@@ -60,7 +60,7 @@ const iconProps: IconProps = {
   active?: boolean;
   // How many characters should appear
   amount?: number;
-  // Where ellipsis applies, at the beginning, center or end of the text
+  // Where ellipsis applies, at the beginning, center or end of the text (defaults to "center")
   position?: "left" | "right" | "center"
 }`;
 
@@ -90,7 +90,7 @@ const iconProps: IconProps = {
     <>
       <h4>Intro</h4>
       <p>
-        The `AccountCard` recipe is meant to exist for quick and fast shoing of
+        The `AccountCard` recipe is meant to exist for quick and fast shoiwg of
         account data (address, name, icon etc); It is excellent for lists of
         accounts to be shown. Below can be found the different properties that
         the `AccountCard` component receives as props, in order to depict the
