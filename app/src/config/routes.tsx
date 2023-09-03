@@ -10,9 +10,8 @@ import { Grid } from "../docs/Grid";
 import { Card } from "../docs/Cards";
 import { AccountCard } from "../docs/AccountCard";
 import { Odometer } from "../docs/Odometer";
-
-// TODO: transfer pages to docs
-import { Modal } from "../pages/Modal";
+import { Modal } from "../docs/Modal";
+import { Utilities } from "../docs/Utilities";
 
 type Routes = {
   name: string;
@@ -45,7 +44,13 @@ const recipesRoutes = [
 ];
 
 // utils
-const utilsRoutes = [];
+const utilsRoutes = [
+  {
+    path: "utilities",
+    name: "Utilities",
+    element: <Utilities />,
+  },
+];
 
 // Layout Components
 const componentsLayoutRoutes = [
@@ -142,14 +147,15 @@ export const routeCategories: RouteCategories = [
       },
     ],
   },
-  // {
-  //   name: "Utils",
-  //   paths: [
-  //     {
-  //       paths: [],
-  //     },
-  //   ],
-  // },
+ 
+  {
+    name: "Utilities",
+    paths: [
+      {
+        paths: ["utilities"],
+      },
+    ],
+  },
 ];
 
 export const nameFromRoute = (path: string): string | undefined =>

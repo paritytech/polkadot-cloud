@@ -1,0 +1,44 @@
+import { NPM } from "../lib/NPM";
+
+import { PlanckToUnit } from "./PlanckToUnit";
+import { UnitToPlanck } from "./UnitToPlanck";
+import { MinDecimalPlaces } from "./ΜinDecimalPlaces";
+import { RmCommas } from "./RmCommas";
+
+# Utilities
+
+## A collection of reusable utilities
+
+<NPM npm={props.npm} />
+
+#### **`planckToUnit`** (convert planck to the token unit)
+
+#### Converts an on chain balance value in BigNumber planck to a decimal value in token unit. (1 token = 10^units planck).
+
+<PlanckToUnit />
+
+---
+
+#### **`unitToPlanck`** (convert planck to the token unit)
+
+#### Converts a balance in token unit to an equivalent value in planck by applying the chain decimals ποιντ. (1 token = 10^units planck).
+
+<UnitToPlanck />
+
+---
+
+#### **`minDecimalPlaces`**
+
+#### Forces a number to have at least the provided decimal places.
+
+<MinDecimalPlaces />
+
+---
+
+#### **`rmCommas`**
+
+#### Removes the commas from a string.
+
+<RmCommas />
+
+---

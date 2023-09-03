@@ -16,20 +16,6 @@ import { AnyJson, AnyObject, EvalMessages } from "./types";
  */
 
 /**
- * @name clipAddress
- * @summary Clips an address to the first 6 and last 6 characters.
- */
-export const clipAddress = (val: string) => {
-  if (typeof val !== "string") {
-    return val;
-  }
-  return `${val.substring(0, 6)}...${val.substring(
-    val.length - 6,
-    val.length
-  )}`;
-};
-
-/**
  * @name remToUnit
  * @summary Converts a rem string to a number.
  */
@@ -56,10 +42,12 @@ export const planckToUnit = (val: BigNumber, units: number) =>
  * Converts a balance in token unit to an equivalent value in planck by applying the chain decimals
  * point. (1 token = 10^units planck).
  */
-export const unitToPlanck = (val: string, units: number): BigNumber =>
-  new BigNumber(!val.length || !val ? "0" : val)
+export const unitToPlanck = (val: string, units: number): BigNumber => {
+  const init = new BigNumber(!val.length || !val ? "0" : val);
+  return (!init.isNaN() ? init : new BigNumber(0))
     .multipliedBy(new BigNumber(10).exponentiatedBy(units))
     .integerValue();
+};
 
 /**
  * @name minDecimalPlaces
@@ -118,7 +106,7 @@ export const shuffle = <T>(array: Array<T>) => {
 export const pageFromUri = (pathname: string, fallback: string) => {
   const lastUriItem = pathname.substring(pathname.lastIndexOf("/") + 1);
   const page = lastUriItem.trim() === "" ? fallback : lastUriItem;
-  return page;
+  return page.trim();
 };
 
 /**
@@ -180,9 +168,9 @@ export const isValidAddress = (address: string) => {
  * @name determinePoolDisplay
  * @summary A pool will be displayed with either its set metadata or its address.
  */
-export const determinePoolDisplay = (adddress: string, batchItem: AnyJson) => {
+export const determinePoolDisplay = (address: string, batchItem: AnyJson) => {
   // default display value
-  const defaultDisplay = clipAddress(adddress);
+  const defaultDisplay = ellipsisFn(address, 6);
 
   // fallback to address on empty metadata string
   let display = batchItem ?? defaultDisplay;
@@ -214,12 +202,37 @@ export const extractUrlValue = (key: string, url?: string) => {
  * @name camelize
  * @summary Converts a string of text to camelCase.
  */
-export const camelize = (str: string) =>
-  str
-    .replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) =>
-      index === 0 ? word.toLowerCase() : word.toUpperCase()
-    )
-    .replace(/\s+/g, "");
+export const camelize = (str: string) => {
+  const convertToString = (string: AnyJson) => {
+    if (string) {
+      if (typeof string === "string") return string;
+      return String(string);
+    }
+    return "";
+  };
+
+  const toWords = (inp: string) =>
+    convertToString(inp).match(
+      /[A-Z\xC0-\xD6\xD8-\xDE]?[a-z\xDF-\xF6\xF8-\xFF]+|[A-Z\xC0-\xD6\xD8-\xDE]+(?![a-z\xDF-\xF6\xF8-\xFF])|\d+/g
+    );
+
+  const simpleCamelCase = (inp: string[]) => {
+    let result = "";
+    for (let i = 0; i < inp?.length; i++) {
+      const currString = inp[i];
+      let tmpStr = currString.toLowerCase();
+      if (i != 0) {
+        tmpStr =
+          tmpStr.slice(0, 1).toUpperCase() + tmpStr.slice(1, tmpStr.length);
+      }
+      result += tmpStr;
+    }
+    return result;
+  };
+
+  const w = toWords(str)?.map((a) => a.toLowerCase());
+  return simpleCamelCase(w);
+};
 
 /**
  * @name varToUrlHash
@@ -452,14 +465,14 @@ export const makeCancelable = (promise: Promise<AnyObject>) => {
  */
 export const ellipsisFn = (
   str: string,
-  amount = 4,
-  position: "left" | "right" | "center" = "left"
+  amount = 6,
+  position: "left" | "right" | "center" = "center"
 ) => {
   // having an amount less than 4 is a bit extreme so we default there
   if (amount <= 4) {
     if (position === "center") return str.slice(0, 4) + "..." + str.slice(-4);
-    if (position === "right") return str.slice(0, 4) + "..";
-    return ".." + str.slice(-4);
+    if (position === "right") return str.slice(0, 4) + "...";
+    return "..." + str.slice(-4);
   }
   // if the amount requested is in a "logical" amount - meaning that it can display the address
   // without repeating the same information twice - then go for it;
