@@ -457,7 +457,7 @@ export const makeCancelable = (promise: Promise<AnyObject>) => {
 
 /**
  * @name ellipsisFn
- * @summary Makes a promise cancellable.
+ * @summary Receives an address and creates ellipsis on the given string, based on parameters.
  * @param str  - The string to apply the ellipsis on
  * @param amount  - The amount of characters that the ellipsis will be
  * @param position - where the ellipsis will apply; if center the amount of chracter is the
