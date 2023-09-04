@@ -641,15 +641,15 @@
     tiny-glob "^0.2.9"
     tslib "^2.4.0"
 
-"@polkadot-cloud/core@^0.1.12":
-  version "0.1.12"
-  resolved "https://registry.npmjs.org/@polkadot-cloud/core/-/core-0.1.12.tgz#ecb4a345f7b518249a0a5e1d53dd7eea24316e81"
-  integrity sha512-HRLF0t6ezFxJnu4yPS6eubzW5ZRWWhr6ZbjvKeJ4u6pj7fNcCeZaFYVTIaVzpoDVYFeGNEe/6MQ1ENSY7fyhXg==
+"@polkadot-cloud/core@^0.1.13":
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-0.1.13.tgz#010c363431fdf7e1b9b757b761275836c5b8d351"
+  integrity sha512-MaMWctssdptEUqzAO5XwhjpSF/kTY+2Gn/d6EwnfkuVnnIGlKqPvn5JyIi2qHtqdeVrJTZUo5b/HFshC8kdKDw==
 
-"@polkadot-cloud/utils@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/utils/-/utils-0.0.9.tgz#e0d4b7a15fc42b4f321eb8b0182329b4367c573b"
-  integrity sha512-14EowuGj6jl+zf6qXEikaDKkvFREqj8YXs9Z8vgQpdQ55LgXD47M0D5SSKFIfrOCNFymgAXePYru5U0SfxWoLg==
+"@polkadot-cloud/utils@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/utils/-/utils-0.0.11.tgz#1b5afeffb12f6df8958eb6285a8020c28d06eadf"
+  integrity sha512-h73gDY5IDUIVS3KboPE7F5ks0CwVyqYE+jVpGI1kiV5aUseluSaOqRj3enZNWm2q04m358ZUgVxjZ9g9vSoJeA==
 
 "@polkadot/keyring@^12.4.2":
   version "12.4.2"
@@ -7467,10 +7467,10 @@ rollup-plugin-cleanup@^3.2.1:
     js-cleanup "^1.2.0"
     rollup-pluginutils "^2.8.2"
 
-rollup-plugin-copy@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.npmjs.org/rollup-plugin-copy/-/rollup-plugin-copy-3.4.0.tgz#f1228a3ffb66ffad8606e2f3fb7ff23141ed3286"
-  integrity sha512-rGUmYYsYsceRJRqLVlE9FivJMxJ7X6jDlP79fmFkL8sJs7VVMSVyA2yfyL+PGyO/vJs4A87hwhgVfz61njI+uQ==
+rollup-plugin-copy@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-copy/-/rollup-plugin-copy-3.5.0.tgz#7ffa2a7a8303e143876fa64fb5eed9022d304eeb"
+  integrity sha512-wI8D5dvYovRMx/YYKtUNt3Yxaw4ORC9xo6Gt9t22kveWz1enG9QrhVlagzwrxSC455xD1dHMKhIJkbsQ7d48BA==
   dependencies:
     "@types/fs-extra" "^8.0.1"
     colorette "^1.1.0"
