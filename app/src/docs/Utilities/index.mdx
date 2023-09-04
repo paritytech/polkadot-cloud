@@ -25,6 +25,10 @@ import { UnitToPlanck } from "./UnitToPlanck";
 
 #### Converts a string of text to camelCase.
 
+#### _@param (string)_: string to become camelCase
+
+#### _@returns (string)_: the input string, but camelCased
+
 <Camelize />
 
 #### **`ellipsisFn`**
@@ -38,6 +42,8 @@ import { UnitToPlanck } from "./UnitToPlanck";
 #### _@param (number)_ : The amount of characters that the ellipsis will be
 
 #### _@param ("left" | "right" | "center")_ : where the ellipsis will apply; if center the amount of chracter is the same for beginning and end; if left or right then its only once the amount; defaults to "left"
+
+#### _@returns (string)_: the ellipsis-fied string
 
 <EllipsisFn />
 
@@ -59,6 +65,10 @@ import { UnitToPlanck } from "./UnitToPlanck";
 
 #### Returns whether a BigNumber is greater than zero.
 
+#### _@param (BigNumber)_: the input to check against
+
+#### _@returns (boolean)_: the result of the fn
+
 <GreaterThanZero />
 
 #### **`isNotZero`**
@@ -66,6 +76,10 @@ import { UnitToPlanck } from "./UnitToPlanck";
 ---
 
 #### Returns whether a BigNumber is zero.
+
+#### _@param (BigNumber)_: the input to check against
+
+#### _@returns (boolean)_: the result of the fn
 
 <IsNotZero />
 
@@ -75,6 +89,10 @@ import { UnitToPlanck } from "./UnitToPlanck";
 
 #### Forces a number to have at least the provided decimal places.
 
+#### _@param (string)_: string that we want to update the decimal places
+
+#### _@param (number)_: number of decimals to be adjusted
+
 <MinDecimalPlaces />
 
 #### **`pageFromUri`**
@@ -82,6 +100,12 @@ import { UnitToPlanck } from "./UnitToPlanck";
 ---
 
 #### Use url variables to load the default components upon the first page visit.
+
+#### _@param (string)_: the url that we want to get the page from
+
+#### _@param (string)_: fallback string in case the url is wrong or empty
+
+#### _@returns (string)_: the value of the trimmed url
 
 <PageFromUri />
 
@@ -91,6 +115,12 @@ import { UnitToPlanck } from "./UnitToPlanck";
 
 #### Converts an on chain balance value in BigNumber planck to a decimal value in token unit. (1 token = 10^units planck).
 
+#### _@param (BigNumber)_: The Planck in BigNumber
+
+#### _@param (number)_: the units
+
+#### _@returns (BigNumber)_: the decimal value in token unit
+
 <PlanckToUnit />
 
 #### **`rmCommas`**
@@ -99,6 +129,10 @@ import { UnitToPlanck } from "./UnitToPlanck";
 
 #### Removes the commas from a string
 
+#### _@param (string)_: the url that we want to get the page from
+
+#### _@returns (string)_: the result of the fn
+
 <RmCommas />
 
 #### **`shuffle`**
@@ -106,6 +140,10 @@ import { UnitToPlanck } from "./UnitToPlanck";
 ---
 
 #### Shuffle a set of objects
+
+#### _@param (array[object])_: an array of objects
+
+#### _@returns (array[object])_: the input array of objects but shuffled
 
 <Shuffle />
 
@@ -119,6 +157,8 @@ import { UnitToPlanck } from "./UnitToPlanck";
 
 #### _@param (number)_ : The number of decimal places used by the blockchain.
 
+#### _@returns (string)_: the result of the functions
+
 <TransformToBaseUnit />
 
 #### **`unitToPlanck`**
@@ -126,5 +166,11 @@ import { UnitToPlanck } from "./UnitToPlanck";
 ---
 
 #### Converts a balance in token unit to an equivalent value in planck by applying the chain decimals ποιντ. (1 token = 10^units planck).
+
+#### _@param (strnig)_: token balance
+
+#### _@param (number)_: the units
+
+#### _@returns (BigNumber)_: value in planck with applied the chain decimals
 
 <UnitToPlanck />
