@@ -22,3 +22,7 @@ export type AnyJson = any;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type AnyFunction = any;
+
+export type HPosition = HPositionLR & "center";
+
+export type HPositionLR = "left" | "right";
