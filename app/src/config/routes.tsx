@@ -12,6 +12,7 @@ import { AccountCard } from "../docs/AccountCard";
 import { Odometer } from "../docs/Odometer";
 import { Modal } from "../docs/Modal";
 import { Utilities } from "../docs/Utilities";
+import { Switch } from "../docs/Switch";
 
 type Routes = {
   name: string;
@@ -71,6 +72,15 @@ const componentsLayoutRoutes = [
   },
 ];
 
+// Input Components
+const componentsInputRoutes = [
+  {
+    path: "switch",
+    name: "Switch",
+    element: <Switch />,
+  },
+];
+
 const componentsRoutes = [
   {
     path: "buttons",
@@ -108,6 +118,7 @@ export const routes: Routes = [
   // Components
   ...componentsRoutes,
   ...componentsLayoutRoutes,
+  ...componentsInputRoutes,
   // Recipes
   ...recipesRoutes,
   // Utils
@@ -132,6 +143,10 @@ export const routeCategories: RouteCategories = [
       },
       {
         paths: ["icons"],
+      },
+      {
+        heading: "Inputs",
+        paths: ["switch"],
       },
       {
         heading: "Layout",
