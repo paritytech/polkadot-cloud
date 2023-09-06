@@ -641,10 +641,10 @@
     tiny-glob "^0.2.9"
     tslib "^2.4.0"
 
-"@polkadot-cloud/core@^0.1.13":
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-0.1.13.tgz#010c363431fdf7e1b9b757b761275836c5b8d351"
-  integrity sha512-MaMWctssdptEUqzAO5XwhjpSF/kTY+2Gn/d6EwnfkuVnnIGlKqPvn5JyIi2qHtqdeVrJTZUo5b/HFshC8kdKDw==
+"@polkadot-cloud/core@^0.1.14":
+  version "0.1.14"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-0.1.14.tgz#d6e2590f332d0e37bfabbc202b54dc8cdcaabb91"
+  integrity sha512-4ZIIGuiUinGrgTInbwM9bEIlQUSp2qgMxDdXxW9sS3Q83L3qqls2XjTT+7bP77LlSewT4DnOh5UVHFv7JebwQw==
 
 "@polkadot-cloud/utils@^0.0.11":
   version "0.0.11"
