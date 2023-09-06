@@ -1,0 +1,42 @@
+.base-inputs-switch-checkbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.base-inputs-switch-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 10rem;
+  height: 5rem;
+  background: var(--text-color-secondary);
+  border-radius: 10rem;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.base-inputs-switch-label .base-inputs-switch-button {
+  content: "";
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 10rem;
+  transition: 0.2s;
+  background: var(--accent-color-primary);
+  box-shadow: 0 0 0.25rem 0 rgba(10, 10, 10, 0.29);
+}
+
+.base-inputs-switch-checkbox:checked
+  + .base-inputs-switch-label
+  .base-inputs-switch-button {
+  left: calc(100% - 0.25rem);
+  transform: translateX(-100%);
+}
+
+.base-inputs-switch-label:active .base-inputs-switch-button {
+  width: 6rem;
+}
