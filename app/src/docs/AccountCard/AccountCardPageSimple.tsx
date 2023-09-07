@@ -6,6 +6,7 @@ import {
   IconProps,
 } from "@packages/cloud-react/lib/recipes/AccountCard";
 import { SimpleEditor } from "../lib/SimpleEditor";
+import { Switch } from "@packages/cloud-react/lib/base/inputs/Switch";
 
 export const AccountCardPageSimple = () => {
   const code = `
@@ -14,7 +15,7 @@ import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCa
 const iconProps: IconProps = {}; // or { position = "left" }; <- "left" is the default option
 ...
 return (
-  <AccountCard icon={iconProps} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} />
+  <AccountCard icon={iconProps} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} extraComponent={{ component: <Switch />, position: "right" }} />
 );`;
 
   const iconProps: IconProps = {
@@ -32,6 +33,10 @@ return (
         <AccountCard
           icon={iconProps}
           title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }}
+          extraComponent={{
+            component: <Switch />,
+            position: "right",
+          }}
         />
       </div>
       <SimpleEditor code={code} />
