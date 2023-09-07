@@ -75,12 +75,14 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 .base-inputs-switch-label {
   @include switch-checkbox-default;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 100rem;
   position: relative;
   transition: background-color 0.2s;
+
   &.is-disabled {
     @include disabled;
   }
@@ -104,11 +106,12 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 .base-inputs-switch-label .base-inputs-switch-button {
   @include switch-label-default;
+
   content: "";
   position: absolute;
   border-radius: 100rem;
   transition: 0.3s;
-  box-shadow: 0 0 0.25rem 0 rgba(10, 10, 10, 0.29);
+  box-shadow: 0 0 0.25rem 0 rgb(10 10 10 / 29%);
 
   &.is-disabled {
     @include disabled;
@@ -136,6 +139,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   &.is-enabled {
     width: 1.5rem;
   }
+
   &.is-disabled {
     width: 1.2rem;
   }
