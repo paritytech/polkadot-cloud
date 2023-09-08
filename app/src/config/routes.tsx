@@ -79,9 +79,6 @@ const componentsInputRoutes = [
     name: "Buttons",
     element: <Buttons />,
   },
-];
-
-const componentsRoutes = [
   {
     path: "textfield",
     name: "Textfield",
