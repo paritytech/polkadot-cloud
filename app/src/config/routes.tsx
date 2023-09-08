@@ -75,6 +75,11 @@ const componentsLayoutRoutes = [
 // Input Components
 const componentsInputRoutes = [
   {
+    path: "buttons",
+    name: "Buttons",
+    element: <Buttons />,
+  },
+  {
     path: "switch",
     name: "Switch",
     element: <Switch />,
@@ -82,11 +87,6 @@ const componentsInputRoutes = [
 ];
 
 const componentsRoutes = [
-  {
-    path: "buttons",
-    name: "Buttons",
-    element: <Buttons />,
-  },
   {
     path: "extensions",
     name: "Extensions",
@@ -130,9 +130,6 @@ export const routeCategories: RouteCategories = [
     name: "Components",
     paths: [
       {
-        paths: ["buttons"],
-      },
-      {
         paths: ["extensions"],
       },
       {
@@ -146,7 +143,7 @@ export const routeCategories: RouteCategories = [
       },
       {
         heading: "Inputs",
-        paths: ["switch"],
+        paths: ["buttons", "switch"],
       },
       {
         heading: "Layout",
