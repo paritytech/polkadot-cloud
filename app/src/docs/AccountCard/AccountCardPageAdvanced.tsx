@@ -31,12 +31,6 @@ return (
 
   return (
     <>
-      <h4>
-        Amount of ellipsis can be set; When position, is `center``, then that
-        amount corresponds to the left and to the right part of the text; If it
-        is set to `left` or `right`, then it corresponds to the other side
-        accordingly. (Defaults to `center`)
-      </h4>
       <div className="demo">
         <Grid row>
           <Grid column sm={4}></Grid>

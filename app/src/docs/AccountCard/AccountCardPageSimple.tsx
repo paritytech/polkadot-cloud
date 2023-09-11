@@ -23,11 +23,6 @@ return (
 
   return (
     <>
-      <h4>
-        `iconProps` can be either fully filled or an empty object `{}`, that
-        will make all params default (see above); In both cases a PolkadotIcon
-        will appear
-      </h4>
       <div className="demo">
         <AccountCard
           icon={iconProps}

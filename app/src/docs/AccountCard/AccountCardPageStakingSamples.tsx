@@ -110,7 +110,6 @@ const extraComponentProps: ExtraComponentProps = {
 
   return (
     <>
-      <h4>Code below is used in both of the following examples</h4>
       <SimpleEditor code={commonCode} />
       <div className="demo">
         <Grid row>

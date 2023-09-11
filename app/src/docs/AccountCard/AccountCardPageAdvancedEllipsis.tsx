@@ -29,9 +29,6 @@ return (
 
   return (
     <>
-      <h4>
-        When the amount of ellipsis is too small, the ellipsis will default to 4
-      </h4>
       <div className="demo">
         <Grid row>
           <Grid column sm={4}></Grid>

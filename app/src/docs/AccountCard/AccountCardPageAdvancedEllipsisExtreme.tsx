@@ -16,11 +16,6 @@ return (
 
   return (
     <>
-      <h4>
-        If an extreme ellipsis amount is provided, then the Recipe will reduce
-        it, in order to show the maximum possible amount (calculating with:
-        (address.length/2) - 3);
-      </h4>
       <div className="demo">
         <Grid row>
           <Grid column>

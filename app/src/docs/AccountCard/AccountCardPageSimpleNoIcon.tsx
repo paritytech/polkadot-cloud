@@ -14,10 +14,6 @@ return (
 
   return (
     <>
-      <h4>
-        If `iconProps` is not provided no icon will appear; `Title` with
-        `address` props are the minimum that need to be provided
-      </h4>
       <div className="demo">
         <AccountCard
           title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }}

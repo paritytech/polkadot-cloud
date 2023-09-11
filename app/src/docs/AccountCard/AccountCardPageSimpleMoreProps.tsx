@@ -31,11 +31,6 @@ return (
 
   return (
     <>
-      <h4>
-        Other `iconProps` can be either the `girdSize` (Recipe will
-        automatically calculate the rest of the size of the main area
-        `MainAreaGridSize = 12 - IconGridSize )
-      </h4>
       <div className="demo">
         <AccountCard
           icon={iconProps}

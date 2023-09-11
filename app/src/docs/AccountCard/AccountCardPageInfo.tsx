@@ -88,18 +88,6 @@ const iconProps: IconProps = {
 
   return (
     <>
-      <h4>Intro</h4>
-      <p>
-        The `AccountCard` recipe is meant to exist for quick and fast shoiwg of
-        account data (address, name, icon etc); It is excellent for lists of
-        accounts to be shown. Below can be found the different properties that
-        the `AccountCard` component receives as props, in order to depict the
-        needed example.
-      </p>
-      <p>
-        The `AccountCard` with all possible props look like the following piece
-        of code:
-      </p>
       <SimpleEditor code={accountCard} />
       <h4>Title properties are:</h4>
       <SimpleEditor code={titleProps} />
