@@ -100,16 +100,13 @@ export const OverlayProvider = ({ children }: { children: ReactNode }) => {
   const setModalHeight = (height: number, transition = true) => {
     if (modalStatusRef.current === "closed") return;
 
-    // Ensrue transition class is removed if not transitioning. Otherwise, ensure class exists.
+    // Ensure transition class is removed if not transitioning. Otherwise, ensure class exists.
     if (transition) transitionOn();
     else transitionOff();
 
-    // If transitioning, ensure the class exists.
-    if (transition) transitionOn();
-
     // Limit maximum height to 80% of window height, and set.
     const maxHeight = window.innerHeight * 0.8;
-    height = height > maxHeight ? maxHeight : height;
+    if (height > maxHeight) height = maxHeight;
     setModalHeightState(height);
 
     // If transitioning, remove after enough time to finish transition.

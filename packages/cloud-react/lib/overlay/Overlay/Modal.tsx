@@ -53,9 +53,7 @@ export const Modal = ({
 
   const handleResize = () => {
     if (status !== "open" || options?.disableWindowResize) return;
-    let h = modalRef.current?.clientHeight ?? 0;
-    h = h > modalMaxHeight ? modalMaxHeight : h;
-    setModalHeight(h);
+    setModalHeight(modalRef.current?.clientHeight || 0);
   };
 
   // Control on modal status change.
