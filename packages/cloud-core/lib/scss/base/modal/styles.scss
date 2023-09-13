@@ -1,6 +1,8 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
+@use "../../styles/mixins" as m;
+
 @mixin modal-position {
   position: fixed;
   top: 0;
@@ -10,8 +12,10 @@ SPDX-License-Identifier: GPL-3.0-only */
 }
 
 @mixin modal-motion-sections {
+  @include m.hide-scrollbar;
+
   display: flex;
   height: auto;
-  overflow: auto;
   position: relative;
+  overflow: auto;
 }

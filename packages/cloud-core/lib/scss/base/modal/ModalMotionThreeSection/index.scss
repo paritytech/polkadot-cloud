@@ -1,6 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
+@use "../../../styles/mixins" as m;
 @use "../styles";
 
 .modal-motion-three-sections {
@@ -9,6 +10,8 @@ SPDX-License-Identifier: GPL-3.0-only */
   width: 300%;
 
   > .section {
+    @include m.hide-scrollbar;
+
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
