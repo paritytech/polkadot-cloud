@@ -7,7 +7,7 @@ import "@polkadot-cloud/core/css/base/modal/ModalContent/index.css";
 
 /**
  * @name ModalContent
- * @summary Modal content wrapper for `ModalCanvas` content.
+ * @summary Modal content wrapper for `ModalContainer` and `CanvasContainer`.
  */
 export const ModalContent = ({ children, ...rest }: ModalAnimationProps) => (
   <motion.div className="modal-content" {...rest}>
