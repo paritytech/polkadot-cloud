@@ -4,7 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { RefObject, forwardRef } from "react";
 import "@polkadot-cloud/core/css/base/modal/ModalCard/index.css";
 import { ModalCardProps } from "../types";
-import { valEmpty } from "lib/utils";
+import { valEmpty } from "../../..//utils";
 
 /**
  * @name ModalCard
