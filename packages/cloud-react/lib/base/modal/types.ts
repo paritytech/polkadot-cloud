@@ -30,10 +30,7 @@ export type ModalPaddingProps = ComponentBase & {
   horizontalOnly?: boolean;
 };
 
-export type ModalCardProps = ComponentBaseWithClassName & {
-  // whether the component scrollbar should be hidden
-  hiddenScrollbar?: boolean;
-};
+export type ModalCardProps = ComponentBaseWithClassName;
 
 export type ModalNotesProps = ComponentBase & {
   // whether there is padding vertically.

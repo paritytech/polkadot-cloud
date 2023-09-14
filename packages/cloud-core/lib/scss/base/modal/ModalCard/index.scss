@@ -1,16 +1,10 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-@use "../../../styles/mixins" as m;
-
 .modal-card {
   background: var(--background-modal);
   transition: opacity var(--transition-duration);
   overflow: auto;
-
-  &.hidden-scrollabr {
-    @include m.hide-scrollbar;
-  }
 
   &.dimmed {
     opacity: 0;
