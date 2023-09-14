@@ -85,7 +85,7 @@ export const Modal = ({
   }, [externalOverlayStatus]);
 
   // Resize modal on status or resize change.
-  useEffect(() => handleResize(), [modalResizeCounter]);
+  useEffect(() => handleResize(), [modalResizeCounter, status]);
 
   // Resize modal on window size change.
   useEffect(() => {
