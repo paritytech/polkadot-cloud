@@ -3,6 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { PolkadotIcon } from "@packages/cloud-react/lib/icons/PolkadotIcon";
 import { SimpleEditor } from "../lib/SimpleEditor";
+import { Demo } from "../lib/Demo";
 
 export const PolkIconCustomColors = () => {
   const code = `<PolkadotIcon size={150} address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY" colors={["blue", "yellow", "black", "pink", "brown"]} />
@@ -10,7 +11,7 @@ export const PolkIconCustomColors = () => {
 
   return (
     <>
-      <div className="demo icon-demo">
+      <Demo className="icon-demo">
         <div>
           <PolkadotIcon
             size={150}
@@ -26,7 +27,7 @@ export const PolkIconCustomColors = () => {
             colors={["blue", "yellow"]}
           />
         </div>
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

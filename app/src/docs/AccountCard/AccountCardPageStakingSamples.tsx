@@ -11,6 +11,7 @@ import {
 import { SimpleEditor } from "../lib/SimpleEditor";
 import { Grid } from "@packages/cloud-react/lib/base/structure/Grid";
 import { HPosition } from "@packages/cloud-react/lib/types";
+import { Demo } from "../lib/Demo";
 
 export const AccountCardPageStakingSamples = () => {
   const commonCode = `const titleProps: TitleProps = {
@@ -111,7 +112,7 @@ const extraComponentProps: ExtraComponentProps = {
   return (
     <>
       <SimpleEditor code={commonCode} />
-      <div className="demo">
+      <Demo>
         <Grid row>
           <Grid column sm={3}></Grid>
           <Grid column sm={6}>
@@ -125,10 +126,11 @@ const extraComponentProps: ExtraComponentProps = {
           </Grid>
           <Grid column sm={3}></Grid>
         </Grid>
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
+
       <h4>Without the Card component</h4>
-      <div className="demo">
+      <Demo>
         <Grid row>
           <Grid column sm={3}></Grid>
           <Grid column sm={6}>
@@ -143,7 +145,7 @@ const extraComponentProps: ExtraComponentProps = {
           </Grid>
           <Grid column sm={3}></Grid>
         </Grid>
-      </div>
+      </Demo>
       <SimpleEditor code={codeNoCard} />
     </>
   );

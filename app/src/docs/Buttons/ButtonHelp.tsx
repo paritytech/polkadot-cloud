@@ -3,6 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { Button } from "@packages/cloud-react/lib/buttons/Button";
 import { SimpleEditor } from "../lib/SimpleEditor";
+import { Demo } from "../lib/Demo";
 
 export const ButtonHelp = () => {
   const code = `<Button type="help" marginRight />
@@ -10,10 +11,10 @@ export const ButtonHelp = () => {
 
   return (
     <>
-      <div className="demo">
+      <Demo>
         <Button type="help" marginRight />
         <Button type="help" backgroundSecondary />
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

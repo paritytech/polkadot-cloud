@@ -9,6 +9,7 @@ import { ReactComponent as PolkadotJSSVG } from "@packages/community/lib/extensi
 import { ReactComponent as PolkaGateSVG } from "@packages/community/lib/extensions/svg/polkagate.svg";
 import { ReactComponent as SubwalletJSSVG } from "@packages/community/lib/extensions/svg/subwalletjs.svg";
 import { ReactComponent as TalismanSVG } from "@packages/community/lib/extensions/svg/talisman.svg";
+import { Demo } from "../lib/Demo";
 
 export const ExtensionsSvg = () => {
   const code = `import { ReactComponent as EnkryptSVG } from "@polkadot-cloud/community/extensions/svg/enkrypt.svg";
@@ -33,7 +34,7 @@ const App = () => (
 
   return (
     <>
-      <div className="demo">
+      <Demo>
         <div className="svg-box">
           <EnkryptSVG />
         </div>
@@ -55,7 +56,7 @@ const App = () => (
         <div className="svg-box">
           <TalismanSVG />
         </div>
-      </div>
+      </Demo>
       <SimpleEditor code={code} language="javascript" />
     </>
   );

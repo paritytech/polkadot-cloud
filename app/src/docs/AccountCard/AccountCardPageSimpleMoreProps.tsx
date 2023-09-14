@@ -6,6 +6,7 @@ import {
   IconProps,
 } from "@packages/cloud-react/lib/recipes/AccountCard";
 import { SimpleEditor } from "../lib/SimpleEditor";
+import { Demo } from "../lib/Demo";
 
 export const AccountCardPageSimpleMoreProps = () => {
   const code = `
@@ -31,12 +32,12 @@ return (
 
   return (
     <>
-      <div className="demo">
+      <Demo>
         <AccountCard
           icon={iconProps}
           title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }}
         />
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

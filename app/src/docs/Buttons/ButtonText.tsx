@@ -4,6 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { Button } from "@packages/cloud-react/lib/buttons/Button";
 import { SimpleEditor } from "../lib/SimpleEditor";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { Demo } from "../lib/Demo";
 
 export const ButtonText = () => {
   const code = `<Button type="text" text="Button" marginRight />
@@ -13,12 +14,12 @@ export const ButtonText = () => {
 
   return (
     <>
-      <div className="demo">
+      <Demo>
         <Button type="text" text="Button" marginRight />
         <Button type="text" text="Button" iconLeft={faUser} marginRight />
         <Button type="text" text="Button" iconRight={faUser} marginRight />
         <Button type="text" text="Button" disabled />
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

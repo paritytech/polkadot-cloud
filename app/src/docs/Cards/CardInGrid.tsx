@@ -4,6 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { Card } from "@packages/cloud-react/lib/base/structure/Card";
 import { Grid } from "@packages/cloud-react/lib/base/structure/Grid";
 import { SimpleEditor } from "../lib/SimpleEditor";
+import { Demo } from "../lib/Demo";
 
 export const CardInGrid = () => {
   const code = `const sampleAnimation1 = {
@@ -46,7 +47,7 @@ const sampleAnimation2 = {
 
   return (
     <>
-      <div className="demo">
+      <Demo>
         <Grid row style={separatorStyle}>
           <Grid style={separatorStyle} column sm={12} md={6}>
             <Card
@@ -73,7 +74,7 @@ const sampleAnimation2 = {
             </Card>
           </Grid>
         </Grid>
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

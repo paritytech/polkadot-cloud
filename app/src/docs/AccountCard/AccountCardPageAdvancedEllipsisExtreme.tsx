@@ -4,6 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { AccountCard } from "@packages/cloud-react/lib/recipes/AccountCard";
 import { Grid } from "@packages/cloud-react/lib/base/structure/Grid";
 import { SimpleEditor } from "../lib/SimpleEditor";
+import { Demo } from "../lib/Demo";
 
 export const AccountCardPageAdvancedEllipsisExtreme = () => {
   const code = `
@@ -16,7 +17,7 @@ return (
 
   return (
     <>
-      <div className="demo">
+      <Demo>
         <Grid row>
           <Grid column>
             <AccountCard
@@ -27,7 +28,7 @@ return (
             />
           </Grid>
         </Grid>
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );
