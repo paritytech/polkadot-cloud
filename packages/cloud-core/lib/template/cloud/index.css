@@ -3,8 +3,8 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 /* light theme colors */
 .theme-light {
-  --background-default: #f1f0f0;
-  --background-primary: #f8f7f7;
+  --background-default: #f8f7f7;
+  --background-primary: #f2f1f1;
   --background-invert: #333;
   --background-list-item: rgb(238 238 238 / 100%);
   --background-modal-item: rgb(237 237 237 / 75%);
@@ -76,8 +76,8 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 /* dark theme colors */
 .theme-dark {
-  --background-default: rgb(36 32 36);
-  --background-primary: rgb(45 41 45);
+  --background-default: rgb(45 41 45);
+  --background-primary: rgb(36 32 36);
   --background-invert: #ddd;
   --background-list-item: rgb(38 33 38 / 100%);
   --background-modal-item: rgb(32 26 32 / 50%);
