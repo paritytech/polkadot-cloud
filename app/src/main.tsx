@@ -4,13 +4,9 @@ import { App } from "./App";
 
 // NOTE: order here is important. dist/styles/index.scss relies on fonts.
 
-import "@packages/cloud-core/dist/template/default/fonts/index.css";
-import "@packages/cloud-core/dist/template/default/index.css";
-
-import "@packages/cloud-core/dist/theme/polkadot-relay/index.css";
-import "@packages/cloud-core/dist/theme/kusama-relay/index.css";
-import "@packages/cloud-core/dist/theme/westend-relay/index.css";
-import "@packages/cloud-core/dist/theme/xcm/index.css";
+import "@packages/cloud-core/dist/template/cloud/fonts/index.css";
+import "@packages/cloud-core/dist/template/cloud/index.css";
+import "@packages/cloud-core/dist/theme/cloud/index.css";
 
 import "./styles/index.scss";
 

@@ -3,15 +3,16 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { ActionItem } from "@packages/cloud-react/lib/base/modal/ActionItem";
 import { SimpleEditor } from "../lib/SimpleEditor";
+import { Demo } from "../lib/Demo";
 
 export const ActionItemStatic = () => {
   const code = `<ActionItem text="Some Action" />`;
 
   return (
     <>
-      <div className="demo">
+      <Demo>
         <ActionItem text="Some Action" />
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

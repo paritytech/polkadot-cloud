@@ -9,6 +9,7 @@ import { PolkadotJS } from "@packages/community/lib/extensions/jsx/PolkadotJS";
 import { PolkaGate } from "@packages/community/lib/extensions/jsx/PolkaGate";
 import { SubwalletJS } from "@packages/community/lib/extensions/jsx/SubwalletJS";
 import { Talisman } from "@packages/community/lib/extensions/jsx/Talisman";
+import { Demo } from "../lib/Demo";
 
 export const ExtensionsJsx = () => {
   const code = `import { FearlessWallet } from "@polkadot-cloud/community/extensions/jsx/FearlessWallet";
@@ -32,7 +33,7 @@ const App = () => (
 
   return (
     <>
-      <div className="demo">
+      <Demo>
         <div className="svg-box">
           <Enkrypt />
         </div>
@@ -54,7 +55,7 @@ const App = () => (
         <div className="svg-box">
           <Talisman />
         </div>
-      </div>
+      </Demo>
       <SimpleEditor code={code} language="javascript" />
     </>
   );

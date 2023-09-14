@@ -3,6 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { PolkadotIcon } from "@packages/cloud-react/lib/icons/PolkadotIcon";
 import { SimpleEditor } from "../lib/SimpleEditor";
+import { Demo } from "../lib/Demo";
 
 export const PolkIconSizes = () => {
   const code = `<PolkadotIcon nocopy size={150} address="13Bbi16jczqELAGBH7MaBu31ABreDmw9yFhrEiNEx6wMkNWe" />
@@ -14,7 +15,7 @@ export const PolkIconSizes = () => {
 
   return (
     <>
-      <div className="demo icon-demo">
+      <Demo className="icon-demo">
         <div>
           <PolkadotIcon
             nocopy
@@ -51,7 +52,7 @@ export const PolkIconSizes = () => {
             address="13Bbi16jczqELAGBH7MaBu31ABreDmw9yFhrEiNEx6wMkNWe"
           />
         </div>
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

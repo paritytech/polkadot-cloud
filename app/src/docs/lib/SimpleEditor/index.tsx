@@ -11,15 +11,11 @@ import { useTheme } from "../../../contexts/Theme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./themes/dark.scss";
 import "./themes/light.scss";
+import { SimpleEditorProps } from "./types";
 
 languages.extend("jsx", PrismJSX);
 languages.extend("tsx", PrismTSX);
 
-interface SimpleEditorProps {
-  code: string;
-  language?: string;
-  standalone?: boolean;
-}
 export const SimpleEditor = ({
   code,
   language = "tsx",

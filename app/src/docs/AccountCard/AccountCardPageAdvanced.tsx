@@ -7,6 +7,7 @@ import {
 } from "@packages/cloud-react/lib/recipes/AccountCard";
 import { Grid } from "@packages/cloud-react/lib/base/structure/Grid";
 import { SimpleEditor } from "../lib/SimpleEditor";
+import { Demo } from "../lib/Demo";
 
 export const AccountCardPageAdvanced = () => {
   const code = `import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
@@ -31,7 +32,7 @@ return (
 
   return (
     <>
-      <div className="demo">
+      <Demo>
         <Grid row>
           <Grid column sm={4}></Grid>
           <Grid column sm={4}>
@@ -45,7 +46,7 @@ return (
           </Grid>
           <Grid column sm={4}></Grid>
         </Grid>
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

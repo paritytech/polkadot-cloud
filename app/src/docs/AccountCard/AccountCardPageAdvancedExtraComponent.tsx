@@ -8,6 +8,7 @@ import {
 } from "@packages/cloud-react/lib/recipes/AccountCard";
 import { Button } from "@packages/cloud-react/lib/buttons/Button";
 import { SimpleEditor } from "../lib/SimpleEditor";
+import { Demo } from "../lib/Demo";
 
 export const AccountCardPageAdvancedExtraComponent = () => {
   const code = `import { AccountCard, IconProps, ExtraComponentProps } from "@packages/cloud-react/lib/recipes/AccountCard";
@@ -63,7 +64,7 @@ return (
 
   return (
     <>
-      <div className="demo">
+      <Demo>
         <AccountCard
           icon={iconPropsLeft}
           title={{
@@ -71,7 +72,7 @@ return (
           }}
           extraComponent={extraComponentProps}
         />
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

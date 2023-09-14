@@ -4,6 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "@packages/cloud-react/lib/buttons/Button";
 import { SimpleEditor } from "../lib/SimpleEditor";
+import { Demo } from "../lib/Demo";
 
 export const ButtonMonoInvert = () => {
   const code = `<Button type="monoInvert" text="Button" marginRight />
@@ -13,7 +14,7 @@ export const ButtonMonoInvert = () => {
 
   return (
     <>
-      <div className="demo">
+      <Demo>
         <Button type="monoInvert" text="Button" marginRight />
         <Button type="monoInvert" text="Button" iconLeft={faUser} marginRight />
         <Button
@@ -23,7 +24,7 @@ export const ButtonMonoInvert = () => {
           marginRight
         />
         <Button type="monoInvert" lg text="Button" disabled />
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );
