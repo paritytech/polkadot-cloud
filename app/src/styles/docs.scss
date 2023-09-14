@@ -4,18 +4,18 @@ SPDX-License-Identifier: GPL-3.0-only */
 .doc {
   margin: 5rem 0 2.5rem;
 
-  h1 {
+  > h1 {
     font-family: InterBold, sans-serif;
     font-size: 2.3rem;
     line-height: 2.7rem;
   }
 
-  h2 {
+  > h2 {
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
   }
 
-  h3 {
+  > h3 {
     color: var(--text-color-primary);
     font-family: InterSemiBold, sans-serif;
     font-size: 1.5rem;
@@ -42,7 +42,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     }
   }
 
-  h4 {
+  > h4 {
     color: var(--text-color-primary);
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
