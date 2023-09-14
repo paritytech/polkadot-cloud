@@ -88,15 +88,15 @@ const iconProps: IconProps = {
 
   return (
     <>
-      <SimpleEditor code={accountCard} />
+      <SimpleEditor code={accountCard} standalone />
       <h4>Title properties are:</h4>
-      <SimpleEditor code={titleProps} />
+      <SimpleEditor code={titleProps} standalone />
       <h4>Ellipsis properties are:</h4>
-      <SimpleEditor code={ellipsisProps} />
+      <SimpleEditor code={ellipsisProps} standalone />
       <h4>Icon properties are:</h4>
-      <SimpleEditor code={iconProps} />
+      <SimpleEditor code={iconProps} standalone />
       <h4>Extra Component properties are:</h4>
-      <SimpleEditor code={xCompProps} />
+      <SimpleEditor code={xCompProps} standalone />
     </>
   );
 };

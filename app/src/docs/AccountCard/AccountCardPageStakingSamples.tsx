@@ -111,7 +111,7 @@ const extraComponentProps: ExtraComponentProps = {
 
   return (
     <>
-      <SimpleEditor code={commonCode} />
+      <SimpleEditor code={commonCode} standalone />
       <Demo>
         <Grid row>
           <Grid column sm={3}></Grid>
