@@ -72,7 +72,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   .controls {
     border-left: 1px solid var(--border-secondary-color);
     border-right: 1px solid var(--border-secondary-color);
-    padding: 1.75rem 1rem 0.8rem 1rem;
+    padding: 1.75rem 1rem 0.8rem;
     display: flex;
     justify-content: flex-end;
     width: 100%;
@@ -93,7 +93,6 @@ SPDX-License-Identifier: GPL-3.0-only */
         color: var(--accent-color-primary);
       }
     }
-
   }
 
   .editor {
