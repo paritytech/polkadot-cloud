@@ -3,7 +3,7 @@
 
 import { ModalContainer } from "../../base/modal/ModalContainer";
 import { ModalCard } from "../../base/modal/ModalCard";
-import { ModalHeight } from "../../base/modal/ModalHeight";
+import { ModalScroll } from "../../base/modal/ModalScroll";
 import { useAnimation } from "framer-motion";
 import { FC, useEffect, useRef } from "react";
 import { useOverlay } from "../../hooks";
@@ -128,7 +128,7 @@ export const Modal = ({
           style={{ opacity: status === "opening" ? 0 : 1 }}
         >
           <div>
-            <ModalHeight
+            <ModalScroll
               ref={heightRef}
               size={size}
               style={{
@@ -151,7 +151,7 @@ export const Modal = ({
                   {ActiveModal && <ActiveModal />}
                 </ErrorBoundary>
               </ModalCard>
-            </ModalHeight>
+            </ModalScroll>
             <button
               type="button"
               className="close"

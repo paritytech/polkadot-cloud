@@ -30,10 +30,7 @@ export type ModalPaddingProps = ComponentBase & {
   horizontalOnly?: boolean;
 };
 
-export type ModalCardProps = ComponentBaseWithClassName & {
-  // whether the component should be scrollable
-  scrollable?: boolean;
-};
+export type ModalCardProps = ComponentBaseWithClassName;
 
 export type ModalNotesProps = ComponentBase & {
   // whether there is padding vertically.
@@ -55,7 +52,7 @@ export type ModalSectionProps = ComponentBase & {
   type: "tab" | "carousel";
 };
 
-export type ModalHeightProps = ComponentBase & {
+export type ModalScrollProps = ComponentBase & {
   // the maximum width.
   size: string;
   // container ref.

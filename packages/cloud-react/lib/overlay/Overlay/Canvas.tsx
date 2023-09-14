@@ -1,10 +1,10 @@
 // Copyright 2023 @paritytech/polkadot-staking-dashboard authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
-import { ModalScroll } from "../../base/modal/ModalScroll";
+import { CanvasScroll } from "../../base/modal/CanvasScroll";
 import { ModalContent } from "../../base/modal/ModalContent";
-import { ModalCanvas } from "../../base/modal/ModalCanvas";
-import { ModalCanvasContent } from "../../base/modal/ModalCanvasContent";
+import { CanvasContainer } from "../../base/modal/CanvasContainer";
+import { CanvasContent } from "../../base/modal/CanvasContent";
 import { useAnimation } from "framer-motion";
 import { FC, useEffect } from "react";
 import { useOverlay } from "../../hooks";
@@ -65,7 +65,7 @@ export const Canvas = ({
   return (
     <>
       {status === "closed" ? null : (
-        <ModalCanvas
+        <CanvasContainer
           initial={{
             opacity: 0,
           }}
@@ -82,16 +82,16 @@ export const Canvas = ({
             },
           }}
         >
-          <ModalScroll>
+          <CanvasScroll>
             <ModalContent>
-              <ModalCanvasContent>
+              <CanvasContent>
                 <ErrorBoundary FallbackComponent={Fallback}>
                   {ActiveCanvas && <ActiveCanvas />}
                 </ErrorBoundary>
-              </ModalCanvasContent>
+              </CanvasContent>
             </ModalContent>
-          </ModalScroll>
-        </ModalCanvas>
+          </CanvasScroll>
+        </CanvasContainer>
       )}
     </>
   );

@@ -4,7 +4,6 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { RefObject, forwardRef } from "react";
 import "@polkadot-cloud/core/css/base/modal/ModalCard/index.css";
 import { ModalCardProps } from "../types";
-import { valEmpty } from "../../..//utils";
 
 /**
  * @name ModalCard
@@ -12,14 +11,12 @@ import { valEmpty } from "../../..//utils";
  */
 export const ModalCard = forwardRef(
   (
-    { children, style, className, scrollable }: ModalCardProps,
+    { children, style, className }: ModalCardProps,
     ref?: RefObject<HTMLDivElement>
   ) => (
     <div
       ref={ref}
-      className={`modal-card${valEmpty(scrollable, "scrollable")}${
-        className ? ` ${className}` : ""
-      }`}
+      className={`modal-card${className ? ` ${className}` : ""}`}
       style={style}
     >
       {children}
