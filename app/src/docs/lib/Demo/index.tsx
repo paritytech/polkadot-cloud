@@ -20,16 +20,36 @@ export const Demo = ({
   className?: string;
   style?: CSSProperties;
 }) => {
-  const { theme, mode } = useTheme();
+  const { theme, mode, setTheme } = useTheme();
+
+  const themes = [
+    ["Polkadot", "polkadot-relay"],
+    ["Kusama", "kusama-relay"],
+    ["Westend", "westend-relay"],
+    ["XCM", "xcm"],
+  ];
 
   return (
-    <div
-      className={`demo theme-${theme} theme-${mode}${
-        className ? ` ${className}` : ``
-      }`}
-      style={style ? { ...style } : undefined}
-    >
-      {children}
-    </div>
+    <>
+      <div
+        className={`demo theme-${theme} theme-${mode}${
+          className ? ` ${className}` : ``
+        }`}
+        style={style ? { ...style } : undefined}
+      >
+        {children}
+      </div>
+      <div className="demo-controls">
+        {themes.map(([name, key]) => (
+          <button
+            key={`theme_${key}`}
+            className={`${theme === key ? " active" : ``}`}
+            onClick={() => setTheme(key)}
+          >
+            {name}
+          </button>
+        ))}
+      </div>
+    </>
   );
 };
