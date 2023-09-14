@@ -31,8 +31,8 @@ export type ModalPaddingProps = ComponentBase & {
 };
 
 export type ModalCardProps = ComponentBaseWithClassName & {
-  // whether the component should be scrollable
-  scrollable?: boolean;
+  // whether the component scrollbar should be hidden
+  hiddenScrollbar?: boolean;
 };
 
 export type ModalNotesProps = ComponentBase & {

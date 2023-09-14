@@ -12,12 +12,12 @@ import { valEmpty } from "../../..//utils";
  */
 export const ModalCard = forwardRef(
   (
-    { children, style, className, scrollable }: ModalCardProps,
+    { children, style, className, hiddenScrollbar }: ModalCardProps,
     ref?: RefObject<HTMLDivElement>
   ) => (
     <div
       ref={ref}
-      className={`modal-card${valEmpty(scrollable, "scrollable")}${
+      className={`modal-card${valEmpty(hiddenScrollbar, "hidden-scrollbar")}${
         className ? ` ${className}` : ""
       }`}
       style={style}

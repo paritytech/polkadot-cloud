@@ -10,8 +10,6 @@ SPDX-License-Identifier: GPL-3.0-only */
   width: 300%;
 
   > .section {
-    @include m.hide-scrollbar;
-
     border-radius: 1rem;
     display: flex;
     flex-direction: column;

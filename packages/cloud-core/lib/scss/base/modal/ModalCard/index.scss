@@ -6,12 +6,10 @@ SPDX-License-Identifier: GPL-3.0-only */
 .modal-card {
   background: var(--background-modal);
   transition: opacity var(--transition-duration);
-  overflow: hidden;
+  overflow: auto;
 
-  &.scrollable {
+  &.hidden-scrollabr {
     @include m.hide-scrollbar;
-
-    overflow: auto;
   }
 
   &.dimmed {
