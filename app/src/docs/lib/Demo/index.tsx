@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { CSSProperties, ReactNode } from "react";
-import { useTheme } from "app/src/contexts/Theme";
+import { useTheme } from "../../../contexts/Theme";
 // Import each supported theme here.
 import "@packages/cloud-core/dist/theme/polkadot-relay/index.css";
 import "@packages/cloud-core/dist/theme/kusama-relay/index.css";
