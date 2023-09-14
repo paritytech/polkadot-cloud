@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { ReactNode, RefObject } from "react";
-import { ComponentBase } from "../../types";
+import { ComponentBase, ComponentBaseWithClassName } from "../../types";
 import { AnimationProps } from "framer-motion";
 
 // eslint-disable-next-line
@@ -28,6 +28,11 @@ export type ModalPaddingProps = ComponentBase & {
   verticalOnly?: boolean;
   // whether there is only horizontal padding.
   horizontalOnly?: boolean;
+};
+
+export type ModalCardProps = ComponentBaseWithClassName & {
+  // whether the component should be scrollable
+  scrollable?: boolean;
 };
 
 export type ModalNotesProps = ComponentBase & {
