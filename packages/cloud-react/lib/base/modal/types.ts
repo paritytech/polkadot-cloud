@@ -55,7 +55,7 @@ export type ModalSectionProps = ComponentBase & {
   type: "tab" | "carousel";
 };
 
-export type ModalHeightProps = ComponentBase & {
+export type ModalScrollProps = ComponentBase & {
   // the maximum width.
   size: string;
   // container ref.

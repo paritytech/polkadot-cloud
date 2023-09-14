@@ -3,16 +3,16 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { RefObject, forwardRef } from "react";
 import { valEmpty } from "../../../utils";
-import { ModalHeightProps } from "../types";
-import "@polkadot-cloud/core/css/base/modal/ModalHeight/index.css";
+import { ModalScrollProps } from "../types";
+import "@polkadot-cloud/core/css/base/modal/ModalScroll/index.css";
 
 /**
- * @name ModalHeight
+ * @name ModalScroll
  * @summary Used for modal window height.
  */
-export const ModalHeight = forwardRef(
+export const ModalScroll = forwardRef(
   (
-    { size, children, style }: ModalHeightProps,
+    { size, children, style }: ModalScrollProps,
     ref?: RefObject<HTMLDivElement>
   ) => (
     <div
@@ -27,4 +27,4 @@ export const ModalHeight = forwardRef(
     </div>
   )
 );
-ModalHeight.displayName = "ModalHeight";
+ModalScroll.displayName = "ModalScroll";
