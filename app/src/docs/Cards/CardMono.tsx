@@ -12,7 +12,7 @@ export const CardMono = () => {
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <Card>
           <h5>Just a card</h5>
         </Card>

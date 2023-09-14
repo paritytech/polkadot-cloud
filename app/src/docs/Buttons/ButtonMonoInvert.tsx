@@ -14,7 +14,7 @@ export const ButtonMonoInvert = () => {
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <Button type="monoInvert" text="Button" marginRight />
         <Button type="monoInvert" text="Button" iconLeft={faUser} marginRight />
         <Button

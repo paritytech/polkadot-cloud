@@ -11,7 +11,7 @@ export const ButtonHelp = () => {
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <Button type="help" marginRight />
         <Button type="help" backgroundSecondary />
       </Demo>

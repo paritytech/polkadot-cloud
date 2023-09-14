@@ -11,7 +11,7 @@ export const PolkIconCustomColors = () => {
 
   return (
     <>
-      <Demo className="icon-demo">
+      <Demo showThemes={false} centered>
         <div>
           <PolkadotIcon
             size={150}

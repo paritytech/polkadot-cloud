@@ -47,7 +47,7 @@ const sampleAnimation2 = {
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <Grid row style={separatorStyle}>
           <Grid style={separatorStyle} column sm={12} md={6}>
             <Card

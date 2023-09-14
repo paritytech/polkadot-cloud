@@ -16,7 +16,7 @@ export const OdometerP = () => {
 
   return (
     <>
-      <Demo style={{ flexDirection: "column" }}>
+      <Demo showThemes={false} style={{ flexDirection: "column" }}>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <p style={{ margin: 0 }}>
             <Odometer value={val} />

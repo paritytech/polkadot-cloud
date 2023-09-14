@@ -14,7 +14,7 @@ export const ButtonTertiary = () => {
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <Button type="tertiary" text="Button" marginRight />
         <Button type="tertiary" text="Button" iconLeft={faUser} marginRight />
         <Button type="tertiary" text="Button" iconRight={faUser} marginRight />

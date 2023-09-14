@@ -13,7 +13,7 @@ export const ButtonTab = () => {
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <Button type="tab" title={"Inactive"} />
         <Button type="tab" title={"Inactive"} badge={"123"} />
         <Button type="tab" active title={"Active"} />

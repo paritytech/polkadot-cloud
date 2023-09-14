@@ -40,7 +40,7 @@ const iconProps: IconProps = {
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <AccountCard
           fontSize="medium"
           icon={iconProps}

@@ -27,7 +27,7 @@ export const CardWithGridSystem = () => {
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <Card animations={sampleAnimation1}>
           <Grid column sm={12} md={4}>
             <h5>Left Grid</h5>

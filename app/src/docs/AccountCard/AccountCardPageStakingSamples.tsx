@@ -112,7 +112,7 @@ const extraComponentProps: ExtraComponentProps = {
   return (
     <>
       <SimpleEditor code={commonCode} standalone />
-      <Demo>
+      <Demo showThemes={false}>
         <Grid row>
           <Grid column sm={3}></Grid>
           <Grid column sm={6}>
@@ -130,7 +130,7 @@ const extraComponentProps: ExtraComponentProps = {
       <SimpleEditor code={code} />
 
       <h4>Without the Card component</h4>
-      <Demo>
+      <Demo showThemes={false}>
         <Grid row>
           <Grid column sm={3}></Grid>
           <Grid column sm={6}>

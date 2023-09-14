@@ -30,7 +30,7 @@ return (
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <Grid row>
           <Grid column sm={4}></Grid>
           <Grid column sm={4}>

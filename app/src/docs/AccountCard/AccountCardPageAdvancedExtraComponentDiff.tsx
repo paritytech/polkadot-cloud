@@ -64,7 +64,7 @@ return (
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <AccountCard
           icon={iconProps}
           title={{

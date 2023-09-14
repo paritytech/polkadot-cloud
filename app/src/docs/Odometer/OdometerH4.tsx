@@ -16,7 +16,7 @@ export const OdometerH4 = () => {
 
   return (
     <>
-      <Demo style={{ flexDirection: "column" }}>
+      <Demo showThemes={false} style={{ flexDirection: "column" }}>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <h4 style={{ margin: 0 }}>
             <Odometer value={val} />

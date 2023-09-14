@@ -14,7 +14,7 @@ export const ButtonText = () => {
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <Button type="text" text="Button" marginRight />
         <Button type="text" text="Button" iconLeft={faUser} marginRight />
         <Button type="text" text="Button" iconRight={faUser} marginRight />

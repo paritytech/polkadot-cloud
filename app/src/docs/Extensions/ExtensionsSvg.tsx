@@ -34,7 +34,7 @@ const App = () => (
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <div className="svg-box">
           <EnkryptSVG />
         </div>

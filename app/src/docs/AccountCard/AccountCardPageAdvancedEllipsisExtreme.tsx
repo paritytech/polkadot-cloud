@@ -17,7 +17,7 @@ return (
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <Grid row>
           <Grid column>
             <AccountCard

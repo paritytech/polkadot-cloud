@@ -1,6 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
+import { Demo } from "../lib/Demo";
 import { SimpleEditor } from "../lib/SimpleEditor";
 import { Grid } from "@packages/cloud-react/lib/base/structure/Grid";
 
@@ -17,7 +18,7 @@ export const GridAlignBottomEnd = () => {
 
   return (
     <>
-      <div className="grid-demo">
+      <Demo showThemes={false}>
         <Grid
           row
           style={Object.assign({}, separatorStyle, { height: "10rem" })}
@@ -35,7 +36,7 @@ export const GridAlignBottomEnd = () => {
             <h5>1/6 and bottom</h5>
           </Grid>
         </Grid>
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

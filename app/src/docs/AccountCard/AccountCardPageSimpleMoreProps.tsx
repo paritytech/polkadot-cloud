@@ -32,7 +32,7 @@ return (
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <AccountCard
           icon={iconProps}
           title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }}

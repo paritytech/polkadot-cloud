@@ -10,7 +10,7 @@ export const ActionItemStatic = () => {
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <ActionItem text="Some Action" />
       </Demo>
       <SimpleEditor code={code} />

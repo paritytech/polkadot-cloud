@@ -43,26 +43,16 @@ SPDX-License-Identifier: GPL-3.0-only */
   }
 
   > h4 {
+    font-family: InterSemiBold, sans-serif;
     color: var(--text-color-primary);
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 1.4rem;
   }
 
-  .grid-demo {
-    border: 1px solid var(--border-secondary-color);
-    border-top-left-radius: 0.75rem;
-    border-top-right-radius: 0.75rem;
-    border-bottom: 0;
-    padding: 2rem 1rem;
-    justify-content: center;
-  }
-
-  .icon-demo {
-    align-items: center;
-
-    div {
-      margin: 0 2%;
-    }
+  > p {
+    color: var(--text-color-primary);
+    font-size: 1.15rem;
+    line-height: 1.75rem;
   }
 
   .demo {
@@ -73,9 +63,13 @@ SPDX-License-Identifier: GPL-3.0-only */
     padding: 2rem 1rem;
     display: flex;
     justify-content: center;
+
+    &.centered {
+      align-items: center;
+    }
   }
 
-  .demo-controls {
+  .controls {
     border-left: 1px solid var(--border-secondary-color);
     border-right: 1px solid var(--border-secondary-color);
     padding: 1.75rem 1rem 0.8rem 1rem;

@@ -14,7 +14,7 @@ export const ButtonMono = () => {
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <Button type="mono" text="Button" marginRight />
         <Button type="mono" text="Button" iconLeft={faUser} marginRight />
         <Button type="mono" text="Button" iconRight={faUser} marginRight />

@@ -15,7 +15,7 @@ export const PolkIconSizes = () => {
 
   return (
     <>
-      <Demo className="icon-demo">
+      <Demo showThemes={false} centered>
         <div>
           <PolkadotIcon
             nocopy

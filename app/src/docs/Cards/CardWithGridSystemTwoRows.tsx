@@ -34,7 +34,7 @@ export const CardWithGridSystemTwoRows = () => {
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <Card animations={sampleAnimation1}>
           <Grid row>
             <Grid column sm={12} md={4}>

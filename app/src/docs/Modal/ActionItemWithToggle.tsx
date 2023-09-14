@@ -21,7 +21,7 @@ export const ActionItemWithToggle = () => {
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <ActionItem
           text="Some Action With Toggle"
           toggled={parentToggle}

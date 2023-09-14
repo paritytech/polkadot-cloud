@@ -14,7 +14,7 @@ export const ButtonSecondary = () => {
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <Button type="secondary" text="Button" marginRight />
         <Button type="secondary" text="Button" iconLeft={faUser} marginRight />
         <Button type="secondary" text="Button" iconRight={faUser} marginRight />
