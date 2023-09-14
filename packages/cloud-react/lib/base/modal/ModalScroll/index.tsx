@@ -17,7 +17,7 @@ export const ModalScroll = forwardRef(
   ) => (
     <div
       ref={ref}
-      className={`modal-height${valEmpty(size === "xl", "xl")}${valEmpty(
+      className={`modal-scroll${valEmpty(size === "xl", "xl")}${valEmpty(
         size === "lg",
         "lg"
       )}`}
