@@ -11,7 +11,7 @@ export const LoaderCube = () => {
   return (
     <>
       <Demo>
-        <div style={{ margin: "5rem" }}>
+        <div style={{ margin: "4rem 0 2rem 0" }}>
           <Loader type="cube" />
         </div>
       </Demo>
