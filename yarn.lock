@@ -634,10 +634,10 @@
     picocolors "^1.0.0"
     tslib "^2.6.0"
 
-"@polkadot-cloud/core@0.1.26":
-  version "0.1.26"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-0.1.26.tgz#41fc3e127d880c1b9e774b3e220704079f8436cd"
-  integrity sha512-UTG5K4T9Bm3YLR4zhhKngaTm7ye51NunUJKoO6Bt1YBmQ2jDQ+gwY391fQXFqk+ld4QwewQlx6KdQ6CdmnUaRw==
+"@polkadot-cloud/core@0.1.29":
+  version "0.1.29"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-0.1.29.tgz#7a2923de91fbb3948b7ba7625893f694f6f5ddd3"
+  integrity sha512-HoE9uynHCanz7rt6QlEWoSWePPre6+1MYUqgwUZtEKq2g0cOHWQ8GR8v1dp6r5ZiHTsbrPsPHadEvwmQe6R05A==
 
 "@polkadot-cloud/utils@^0.0.11":
   version "0.0.11"
@@ -7980,6 +7980,7 @@ string-template@~0.2.1:
   integrity sha512-Yptehjogou2xm4UJbxJ4CxgZx12HBfeystp0y3x7s4Dj32ltVVG1Gg8YhKjHZkHicuKpZX/ffilA8505VbUbpw==
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0, string-width@^4.2.3:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
