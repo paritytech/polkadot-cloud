@@ -88,6 +88,13 @@ SPDX-License-Identifier: GPL-3.0-only */
     font-size: inherit;
   }
 
+  code {
+    border: 1px solid var(--border-secondary-color);
+    color: var(--text-color-secondary);
+    border-radius: 0.4rem;
+    padding: 0.15rem 0.4rem;
+  }
+
   .note {
     border: 1px solid var(--border-secondary-color);
     background: var(--background-modal);
