@@ -1,21 +1,88 @@
-import { NPM } from "../lib/NPM";
+import { Header } from "../lib/Header";
 import { ExtensionsSvg } from "./ExtensionsSvg";
 import { ExtensionsJsx } from "./ExtensionsJsx";
+import { ValidatorOperator } from './ValidatorOperator';
 
-# Web3 Extension Assets
+<Header
+  title="Web3 Extension Assets"
+  subtitle="A list of popular Web3 wallet extensions with metadata and icons."
+  npm={props.npm}
+/>
 
-## Icons of popular Web3 wallet extensions, in SVG and TSX formats.
+##
 
-<NPM npm={props.npm} />
+**Note:**
+
+---
+
+**`@polkadot-cloud/community` is used with other Cloud components, such as the upcoming Connect component.**
+
+---
+
+##
+
+## Wallet Extensions
+
+The following Web3 wallets are currently supported:
+
+- <a href="https://enkrypt.com" target="_blank" rel="noreferrer">Enkrypt</a>
+- <a href="https://fearlesswallet.io" target="_blank" rel="noreferrer">Fearless Wallet</a>
+- <a href="https://talisman.xyz" target="_blank" rel="noreferrer">Talisman</a>
+- <a href="https://subwallet.app" target="_blank" rel="noreferrer">Subwallet JS</a>
+- <a href="https://polkagate.xyz" target="_blank" rel="noreferrer">PolkaGate</a>
+- <a href="https://polkadot.js.org/extension" target="_blank" rel="noreferrer"> Polkadot JS</a>
+- <a href="https://novawallet.io" target="_blank" rel="noreferrer">Nova Wallet</a> (if `window?.walletExtension?.isNovaWallet` is present)
+
+The list of supported wallet extensions and their metadata can be found <a href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/community/lib/extensions/index.tsx" target="_blank" rel="noreferrer">here</a>.
+
+##
+
+**Note:**
+
+---
+
+**To open a PR to add additional extensions to this list, refer to the instructions hosted in this package's <a href="https://github.com/paritytech/polkadot-cloud/tree/main/packages/community#adding-web-extension-wallets" target="_blank" rel="noreferrer">README file</a>.**
+
+---
 
 ### SVG Icons
 
-#### As some of the extension icons are not perfectly square, it is recommended to bound their width and heights with `max-width` and `max-height` properties.
+As some of the extension icons are not perfectly square, it is recommended to bound their width and heights with `max-width` and `max-height` properties.
+
+Where the icons contain colors that need to be themed, `currentColor` is used as its fill or stroke (see Subwallet and Talisman icons).
+
+Import SVG assets from `/extensions/svg/`:
 
 <ExtensionsSvg />
 
 ### JSX Icons
 
-#### The icons are also available as React components. Some frameworks require the assets to be locally available to lazily load them.
+Wallet icons are also available as JSX components for frameworks that support it.
+
+Import JSX assets from `extensions/jsx/`:
 
 <ExtensionsJsx />
+
+**Note:**
+
+---
+
+**Some frameworks require components to be locally available to lazily load them.**
+
+---
+
+## Validator Operators
+
+A list of validator operators is available as a `ValidatorCommunity` object, along with each operator's thumbnail icon in SVG format.
+
+The list of validator can be found <a href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/community/lib/validators/index.ts" target="_blank" rel="noreferrer">here</a>.
+
+<ValidatorOperator />
+
+**Note:**
+
+---
+
+**To open a PR to add an additional validator operator to this list, refer to the instructions hosted in this package's <a href="https://github.com/paritytech/polkadot-cloud/tree/main/packages/community#adding-validator-operators" target="_blank" rel="noreferrer">README file</a>.**
+
+---
