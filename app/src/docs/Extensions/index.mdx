@@ -1,7 +1,8 @@
+import { Note } from "../lib/Note";
 import { Header } from "../lib/Header";
 import { ExtensionsSvg } from "./ExtensionsSvg";
 import { ExtensionsJsx } from "./ExtensionsJsx";
-import { ValidatorOperator } from './ValidatorOperator';
+import { ValidatorOperator } from "./ValidatorOperator";
 
 <Header
   title="Web3 Extension Assets"
@@ -11,13 +12,10 @@ import { ValidatorOperator } from './ValidatorOperator';
 
 ##
 
-**Note:**
-
----
-
-**`@polkadot-cloud/community` is used with other Cloud components, such as the upcoming Connect component.**
-
----
+<Note>
+  `@polkadot-cloud/community` is used with other Cloud components, such as the
+  upcoming Connect component.
+</Note>
 
 ##
 
@@ -25,25 +23,43 @@ import { ValidatorOperator } from './ValidatorOperator';
 
 The following Web3 wallets are currently supported:
 
-- <a href="https://enkrypt.com" target="_blank" rel="noreferrer">Enkrypt</a>
-- <a href="https://fearlesswallet.io" target="_blank" rel="noreferrer">Fearless Wallet</a>
-- <a href="https://talisman.xyz" target="_blank" rel="noreferrer">Talisman</a>
-- <a href="https://subwallet.app" target="_blank" rel="noreferrer">Subwallet JS</a>
-- <a href="https://polkagate.xyz" target="_blank" rel="noreferrer">PolkaGate</a>
-- <a href="https://polkadot.js.org/extension" target="_blank" rel="noreferrer"> Polkadot JS</a>
-- <a href="https://novawallet.io" target="_blank" rel="noreferrer">Nova Wallet</a> (if `window?.walletExtension?.isNovaWallet` is present)
+- <a href="https://enkrypt.com" target="_blank" rel="noreferrer">
+    Enkrypt
+  </a>
+- <a href="https://fearlesswallet.io" target="_blank" rel="noreferrer">
+    Fearless Wallet
+  </a>
+- <a href="https://talisman.xyz" target="_blank" rel="noreferrer">
+    Talisman
+  </a>
+- <a href="https://subwallet.app" target="_blank" rel="noreferrer">
+    Subwallet JS
+  </a>
+- <a href="https://polkagate.xyz" target="_blank" rel="noreferrer">
+    PolkaGate
+  </a>
+- <a href="https://polkadot.js.org/extension" target="_blank" rel="noreferrer">
+    {" "}
+    Polkadot JS
+  </a>
+- <a href="https://novawallet.io" target="_blank" rel="noreferrer">
+    Nova Wallet
+  </a> (if `window?.walletExtension?.isNovaWallet` is present)
 
 The list of supported wallet extensions and their metadata can be found <a href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/community/lib/extensions/index.tsx" target="_blank" rel="noreferrer">here</a>.
 
-##
-
-**Note:**
-
----
-
-**To open a PR to add additional extensions to this list, refer to the instructions hosted in this package's <a href="https://github.com/paritytech/polkadot-cloud/tree/main/packages/community#adding-web-extension-wallets" target="_blank" rel="noreferrer">README file</a>.**
-
----
+<Note>
+  To open a PR to add additional extensions to this list, refer to the
+  instructions hosted in this package's{" "}
+  <a
+    href="https://github.com/paritytech/polkadot-cloud/tree/main/packages/community#adding-web-extension-wallets"
+    target="_blank"
+    rel="noreferrer"
+  >
+    README file
+  </a>
+  .
+</Note>
 
 ### SVG Icons
 
@@ -63,13 +79,10 @@ Import JSX assets from `extensions/jsx/`:
 
 <ExtensionsJsx />
 
-**Note:**
-
----
-
-**Some frameworks require components to be locally available to lazily load them.**
-
----
+<Note>
+  Some frameworks require components to be locally available to lazily load
+  them.
+</Note>
 
 ## Validator Operators
 
@@ -79,10 +92,15 @@ The list of validator can be found <a href="https://github.com/paritytech/polkad
 
 <ValidatorOperator />
 
-**Note:**
-
----
-
-**To open a PR to add an additional validator operator to this list, refer to the instructions hosted in this package's <a href="https://github.com/paritytech/polkadot-cloud/tree/main/packages/community#adding-validator-operators" target="_blank" rel="noreferrer">README file</a>.**
-
----
+<Note>
+  To open a PR to add an additional validator operator to this list, refer to
+  the instructions hosted in this package's{" "}
+  <a
+    href="https://github.com/paritytech/polkadot-cloud/tree/main/packages/community#adding-validator-operators"
+    target="_blank"
+    rel="noreferrer"
+  >
+    README file
+  </a>
+  .
+</Note>
