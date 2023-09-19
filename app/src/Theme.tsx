@@ -12,7 +12,7 @@ export const Theme = () => {
   const { mode } = useTheme();
 
   return (
-    <div className={`main theme-cloud theme-${mode}`}>
+    <div className={`main theme-cloud cloud-theme-${mode}`}>
       <Router />
     </div>
   );

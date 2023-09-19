@@ -5,27 +5,30 @@ SPDX-License-Identifier: GPL-3.0-only */
   margin: 5rem 0 2.5rem;
 
   > h1 {
+    color: var(--text-color-primary);
     font-family: InterBold, sans-serif;
-    font-size: 2.3rem;
+    font-size: 2.4rem;
     line-height: 2.7rem;
+
+    &.header {
+      margin-top: 2rem;
+    }
   }
 
   > h2 {
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
+    font-family: InterBold, sans-serif;
+    font-size: 1.8rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
   }
 
   > h3 {
     color: var(--text-color-primary);
-    font-family: InterSemiBold, sans-serif;
-    font-size: 1.5rem;
+    font-family: InterBold, sans-serif;
+    font-size: 1.4rem;
     display: flex;
     align-items: center;
-    margin: 0 0 1.25rem;
-
-    a {
-      color: var(--text-color-secondary);
-    }
+    margin: 2rem 0 1rem;
 
     > svg {
       color: var(--text-color-secondary);
@@ -35,10 +38,20 @@ SPDX-License-Identifier: GPL-3.0-only */
       top: 0.1rem;
     }
 
+    &.header {
+      margin-top: 1.25rem;
+      margin-bottom: 0;
+    }
+
     &.npm {
       color: var(--text-color-primary);
       font-size: 1.25rem;
-      margin-bottom: 2rem;
+      margin-top: 1.5rem;
+      margin-bottom: 2.5rem;
+
+      a {
+        color: var(--text-color-secondary);
+      }
     }
   }
 
@@ -49,10 +62,55 @@ SPDX-License-Identifier: GPL-3.0-only */
     margin-bottom: 1.4rem;
   }
 
-  > p {
+  > p,
+  ul,
+  li,
+  ol {
     color: var(--text-color-primary);
-    font-size: 1.15rem;
-    line-height: 1.75rem;
+    font-size: 1.2rem;
+  }
+
+  > p {
+    font-size: 1.25rem;
+    line-height: 1.9rem;
+  }
+
+  > ul,
+  li,
+  ol {
+    color: var(--text-color-primary);
+    font-size: 1.2rem;
+    line-height: 2.25rem;
+  }
+
+  code {
+    border: 1px solid var(--border-secondary-color);
+    color: var(--text-color-secondary);
+    border-radius: 0.4rem;
+    padding: 0.15rem 0.4rem;
+  }
+
+  a {
+    color: var(--accent-color-primary);
+    font-size: inherit;
+  }
+
+  .note {
+    border: 1px solid var(--border-secondary-color);
+    background: var(--background-modal);
+    border-radius: 0.7rem;
+    padding: 0.5rem 1.5rem;
+    margin: 1.5rem 0;
+    width: 100%;
+
+    * {
+      color: var(--text-color-secondary);
+      font-size: 1.2rem;
+    }
+
+    a {
+      color: var(--accent-color-primary);
+    }  
   }
 
   .demo {
@@ -60,6 +118,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     border-top-left-radius: 0.75rem;
     border-top-right-radius: 0.75rem;
     border-bottom: 0;
+    margin-top: 1.25rem;
     padding: 2rem 1rem;
     display: flex;
     justify-content: center;

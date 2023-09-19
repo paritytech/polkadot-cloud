@@ -92,12 +92,15 @@ const componentsInputRoutes = [
   },
 ];
 
-const componentsRoutes = [
+const assetsRoutes = [
   {
     path: "extensions",
     name: "Extensions",
     element: <Extensions />,
   },
+];
+
+const componentsRoutes = [
   {
     path: "icons",
     name: "PolkIcon",
@@ -121,6 +124,8 @@ export const routes: Routes = [
     name: "Home",
     element: <Buttons />, // Placeholder until we have a landing page
   },
+  // Assets
+  ...assetsRoutes,
   // Components
   ...componentsRoutes,
   ...componentsLayoutRoutes,
@@ -133,11 +138,16 @@ export const routes: Routes = [
 
 export const routeCategories: RouteCategories = [
   {
-    name: "Components",
+    name: "Assets",
     paths: [
       {
         paths: ["extensions"],
       },
+    ],
+  },
+  {
+    name: "Components",
+    paths: [
       {
         paths: ["icons"],
       },

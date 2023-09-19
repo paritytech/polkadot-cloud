@@ -1,4 +1,5 @@
 import { NPM } from "../lib/NPM";
+import { Header } from "../lib/Header";
 import { OdometerH1 } from "./OdometerH1";
 import { OdometerH2 } from "./OdometerH2";
 import { OdometerH3 } from "./OdometerH3";
@@ -7,11 +8,11 @@ import { OdometerH5 } from "./OdometerH5";
 import { OdometerP } from "./OdometerP";
 import { OdometerDiv } from "./OdometerDiv";
 
-# Odometer
-
-## An odometer effect used for numbers and balances.
-
-<NPM npm={props.npm} />
+<Header
+  title="Odometer"
+  subtitle="An odometer effect used for numbers and balances."
+  npm={props.npm}
+/>
 
 #### The Odometer component can be wrapped in headers, paragraphs and div elements, and will inherit font size, style and line height.
 

@@ -1,4 +1,5 @@
 import { NPM } from "../lib/NPM";
+import { Header } from "../lib/Header";
 import { AccountCardPageInfo } from "./AccountCardPageInfo";
 import { AccountCardPageSimple } from "./AccountCardPageSimple";
 import { AccountCardPageSimpleNoIcon } from "./AccountCardPageSimpleNoIcon";
@@ -11,11 +12,11 @@ import { AccountCardPageAdvancedExtraComponentDiff } from "./AccountCardPageAdva
 import { AccountCardPageAdvancedVariousIconChanges } from "./AccountCardPageAdvancedVariousIconChanges";
 import { AccountCardPageStakingSamples } from "./AccountCardPageStakingSamples";
 
-# Account Card
-
-## A card showing the account information with different areas for icon or a custom component
-
-<NPM npm={props.npm} />
+<Header
+  title="Account Card"
+  subtitle="A card showing the account information with different areas for icon or a custom component."
+  npm={props.npm}
+/>
 
 #### Introduction
 
