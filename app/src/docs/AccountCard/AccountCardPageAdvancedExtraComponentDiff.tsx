@@ -15,7 +15,7 @@ export const AccountCardPageAdvancedExtraComponentDiff = () => {
 ...
 
 const iconProps: IconProps = {
-  noCopy: true,
+  copy: false,
   position: "right",
   gridSize: 2,
   justify: "space-around",
@@ -41,7 +41,6 @@ return (
 )`;
 
   const iconProps: IconProps = {
-    noCopy: true,
     position: "right",
     gridSize: 2,
     justify: "space-around",

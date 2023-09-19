@@ -67,7 +67,7 @@ const iconProps: IconProps = {
   const iconProps = `interface IconProps {
   size?: number;
   // Icon will not be clickable/copy-able - defaults to false
-  noCopy?: boolean; 
+  copy?: boolean; 
   position?: HPositionLR;
   // specific size of the 12-column gridding
   gridSize?:  1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;

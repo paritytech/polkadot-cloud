@@ -12,7 +12,7 @@ import {
 interface PolkadotIconProps {
   size?: number | string;
   address: string;
-  clickToCopy?: boolean;
+  copy?: boolean;
   colors?: string[];
   outerColor?: string;
 }
@@ -20,7 +20,7 @@ interface PolkadotIconProps {
 export const PolkadotIcon = ({
   size = "2rem",
   address,
-  clickToCopy = false,
+  copy = false,
   colors: initialColors,
   outerColor,
 }: PolkadotIconProps) => {
@@ -65,8 +65,8 @@ export const PolkadotIcon = ({
   return (
     xy && (
       <div
-        onClick={clickToCopy ? handleClick : undefined}
-        style={clickToCopy ? { cursor: "pointer" } : {}}
+        onClick={copy ? handleClick : undefined}
+        style={copy ? { cursor: "pointer" } : {}}
       >
         <svg
           viewBox="0 0 64 64"
