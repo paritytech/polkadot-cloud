@@ -7,19 +7,12 @@ import { Demo } from "../lib/Demo";
 
 export const PolkIconThemes = () => {
   const code = `<PolkadotIcon size="5rem" address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY" />
-<PolkadotIcon size="5rem" address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY" />
 <PolkadotIcon size="5rem" address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY" outerColor="transparent" />
 <PolkadotIcon size="5rem" address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY" outerColor="#E6007A" />`;
 
   return (
     <>
       <Demo showThemes={false} centered>
-        <div className="svg-box sm">
-          <PolkadotIcon
-            size="5rem"
-            address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
-          />
-        </div>
         <div className="svg-box sm">
           <PolkadotIcon
             size="5rem"
