@@ -2,14 +2,16 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { useTheme } from "../../../contexts/Theme";
+// Import the base cloud-core styles to ensure the theme styles are applied instead of doc styles.
+import "@packages/cloud-core/dist/css/styles/index.css";
+import { valEmpty } from "@packages/cloud-react/lib/utils";
 // Import each supported theme here.
 import "@packages/cloud-core/dist/theme/polkadot-relay/index.css";
 import "@packages/cloud-core/dist/theme/kusama-relay/index.css";
 import "@packages/cloud-core/dist/theme/westend-relay/index.css";
 import "@packages/cloud-core/dist/theme/xcm/index.css";
-// Import the base cloud-core styles to ensure the theme styles are applied instead of doc styles.
-import "@packages/cloud-core/dist/css/styles/index.css";
-import { valEmpty } from "@packages/cloud-react/lib/utils";
+import "@packages/cloud-core/dist/template/default/index.css";
+
 import { DemoProps } from "./types";
 
 export const Demo = ({
