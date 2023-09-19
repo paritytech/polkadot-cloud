@@ -12,6 +12,7 @@ import { AccountCard } from "../docs/AccountCard";
 import { Odometer } from "../docs/Odometer";
 import { Modal } from "../docs/Modal";
 import { Utilities } from "../docs/Utilities";
+import { Textfield } from "../docs/Textfield";
 
 type Routes = {
   name: string;
@@ -78,6 +79,11 @@ const componentsInputRoutes = [
     name: "Buttons",
     element: <Buttons />,
   },
+  {
+    path: "textfield",
+    name: "Textfield",
+    element: <Textfield />,
+  },
 ];
 
 const componentsRoutes = [
@@ -140,7 +146,7 @@ export const routeCategories: RouteCategories = [
       },
       {
         heading: "Inputs",
-        paths: ["buttons"],
+        paths: ["buttons", "textfield"],
       },
       {
         heading: "Layout",
