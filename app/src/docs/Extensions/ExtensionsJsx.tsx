@@ -9,7 +9,7 @@ export const ExtensionsJsx = () => {
   const code = `import { Enkrypt } from "@polkadot-cloud/community/extensions/jsx/Enkrypt";
 
 const App = () => (
-    <Enkrypt />
+  <Enkrypt />
 )`;
 
   return (
