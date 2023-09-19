@@ -115,9 +115,8 @@ export const AccountCard = ({
       <PolkadotIcon
         address={title.address}
         size={icon?.size || 30}
-        nocopy={icon?.noCopy}
+        clickToCopy={!icon?.noCopy}
         colors={icon?.colors}
-        dark={icon?.dark}
         outerColor={icon?.outerColor}
       />
     </Grid>

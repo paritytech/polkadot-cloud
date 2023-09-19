@@ -35,25 +35,25 @@ const App = () => (
   return (
     <>
       <Demo showThemes={false}>
-        <div className="svg-box">
+        <div className="svg-box sm">
           <EnkryptSVG />
         </div>
-        <div className="svg-box">
+        <div className="svg-box sm">
           <FearlessWalletSVG />
         </div>
-        <div className="svg-box">
+        <div className="svg-box sm">
           <NovaWalletSVG />
         </div>
-        <div className="svg-box">
+        <div className="svg-box sm">
           <PolkadotJSSVG />
         </div>
-        <div className="svg-box">
+        <div className="svg-box sm">
           <PolkaGateSVG />
         </div>
-        <div className="svg-box">
+        <div className="svg-box sm">
           <SubwalletJSSVG />
         </div>
-        <div className="svg-box">
+        <div className="svg-box sm">
           <TalismanSVG />
         </div>
       </Demo>
