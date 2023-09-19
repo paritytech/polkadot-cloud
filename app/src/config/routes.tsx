@@ -12,6 +12,7 @@ import { AccountCard } from "../docs/AccountCard";
 import { Odometer } from "../docs/Odometer";
 import { Modal } from "../docs/Modal";
 import { Utilities } from "../docs/Utilities";
+import { Switch } from "../docs/Switch";
 import { Textfield } from "../docs/Textfield";
 
 type Routes = {
@@ -80,6 +81,11 @@ const componentsInputRoutes = [
     element: <Buttons />,
   },
   {
+    path: "switch",
+    name: "Switch",
+    element: <Switch />,
+  },
+  {
     path: "textfield",
     name: "Textfield",
     element: <Textfield />,
@@ -146,7 +152,7 @@ export const routeCategories: RouteCategories = [
       },
       {
         heading: "Inputs",
-        paths: ["buttons", "textfield"],
+        paths: ["buttons", "switch", "textfield"],
       },
       {
         heading: "Layout",
