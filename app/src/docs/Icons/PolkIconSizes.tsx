@@ -6,50 +6,29 @@ import { SimpleEditor } from "../lib/SimpleEditor";
 import { Demo } from "../lib/Demo";
 
 export const PolkIconSizes = () => {
-  const code = `<PolkadotIcon nocopy size={150} address="13Bbi16jczqELAGBH7MaBu31ABreDmw9yFhrEiNEx6wMkNWe" />
-<PolkadotIcon nocopy size={115} address="13Bbi16jczqELAGBH7MaBu31ABreDmw9yFhrEiNEx6wMkNWe" />
-<PolkadotIcon nocopy size={80} address="13Bbi16jczqELAGBH7MaBu31ABreDmw9yFhrEiNEx6wMkNWe" />
-<PolkadotIcon address="13Bbi16jczqELAGBH7MaBu31ABreDmw9yFhrEiNEx6wMkNWe" />
-<PolkadotIcon size={40} address="13Bbi16jczqELAGBH7MaBu31ABreDmw9yFhrEiNEx6wMkNWe" />
-<PolkadotIcon size={20} address="13Bbi16jczqELAGBH7MaBu31ABreDmw9yFhrEiNEx6wMkNWe" />`;
+  const code = `<PolkadotIcon size="10rem" address="13Bbi16jczqELAGBH7MaBu31ABreDmw9yFhrEiNEx6wMkNWe" />
+<PolkadotIcon size="7rem" address="13Bbi16jczqELAGBH7MaBu31ABreDmw9yFhrEiNEx6wMkNWe" />
+<PolkadotIcon size={60} address="13Bbi16jczqELAGBH7MaBu31ABreDmw9yFhrEiNEx6wMkNWe" />`;
 
   return (
     <>
       <Demo showThemes={false} centered>
-        <div>
+        <div className="svg-box">
           <PolkadotIcon
-            nocopy
-            size={150}
+            size="10rem"
             address="13Bbi16jczqELAGBH7MaBu31ABreDmw9yFhrEiNEx6wMkNWe"
           />
         </div>
-        <div>
+        <div className="svg-box">
           <PolkadotIcon
-            nocopy
-            size={115}
+            size="7rem"
             address="EkvDzBYPaageH576B7cwhZrTA9EL9CCM8p7U5eqsp8LJysn"
           />
         </div>
-        <div>
+        <div className="svg-box">
           <PolkadotIcon
-            nocopy
-            size={80}
+            size={60}
             address="234CHvWmTuaVtkJpLS9oxuhFd3HamcEMrfFAPYoFaetEZmY7"
-          />
-        </div>
-        <div>
-          <PolkadotIcon address="EkvDzBYPaageH576B7cwhZrTA9EL9CCM8p7U5eqsp8LJysn" />
-        </div>
-        <div>
-          <PolkadotIcon
-            size={40}
-            address="234CHvWmTuaVtkJpLS9oxuhFd3HamcEMrfFAPYoFaetEZmY7"
-          />
-        </div>
-        <div>
-          <PolkadotIcon
-            size={20}
-            address="13Bbi16jczqELAGBH7MaBu31ABreDmw9yFhrEiNEx6wMkNWe"
           />
         </div>
       </Demo>

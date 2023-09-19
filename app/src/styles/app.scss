@@ -153,12 +153,15 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 .svg-box {
   color: var(--text-color-primary);
-  width: 3.5rem;
-  height: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 3rem 0 0;
+  margin: 0 2.5rem 0 0;
+
+  &.sm {
+    width: 4rem;
+    height: 4rem;
+  }
 
   > svg {
     max-width: 100%;

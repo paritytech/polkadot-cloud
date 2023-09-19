@@ -10,27 +10,19 @@ import {
 } from "./utils";
 
 interface PolkadotIconProps {
-  size?: number;
+  size?: number | string;
   address: string;
-  nocopy?: boolean;
+  clickToCopy?: boolean;
   colors?: string[];
   outerColor?: string;
-  dark?: boolean;
 }
 
-// TODO: Think of a better way for theming.
-const chainTheme = {
-  light: "#f1f0f0",
-  dark: "rgb(36 32 36)",
-};
-
 export const PolkadotIcon = ({
-  size = 60,
+  size = "2rem",
   address,
-  nocopy = false,
+  clickToCopy = false,
   colors: initialColors,
   outerColor,
-  dark,
 }: PolkadotIconProps) => {
   const [colors, setColors] = useState<string[]>([]);
   const [xy, setXy] = useState<[number, number][] | undefined>();
@@ -66,40 +58,37 @@ export const PolkadotIcon = ({
     setColors(initialColors || getColors(address) || defaultColors);
   }, []);
 
-  const copyToClipboard = useCallback(() => {
-    if (nocopy) {
-      return;
-    }
+  const handleClick = useCallback(() => {
     navigator && navigator.clipboard.writeText(address);
   }, [address]);
 
   return (
     xy && (
       <div
-        onClick={copyToClipboard}
-        style={!nocopy ? { cursor: "pointer" } : {}}
+        onClick={clickToCopy ? handleClick : undefined}
+        style={clickToCopy ? { cursor: "pointer" } : {}}
       >
         <svg
-          height={size}
+          viewBox="0 0 64 64"
           id={address}
           name={address}
-          viewBox="0 0 64 64"
           width={size}
+          height={size}
         >
           {[
             outerColor
               ? outerCircle(outerColor)
-              : outerCircle(dark ? chainTheme.dark : chainTheme.light),
+              : outerCircle("var(--background-default"),
           ]
             .concat(
-              xy.map(([cx, cy], index): Circle => {
-                return {
+              xy.map(
+                ([cx, cy], index): Circle => ({
                   cx,
                   cy,
                   fill: colors[index],
                   r: Z,
-                };
-              })
+                })
+              )
             )
             .map(renderCircle)}
         </svg>
