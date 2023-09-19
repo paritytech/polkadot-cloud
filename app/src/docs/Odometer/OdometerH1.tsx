@@ -5,6 +5,7 @@ import { useState } from "react";
 import { SimpleEditor } from "../lib/SimpleEditor";
 import { Odometer } from "@packages/cloud-react/lib/complex/Odometer";
 import BigNumber from "bignumber.js";
+import { Demo } from "../lib/Demo";
 
 export const OdometerH1 = () => {
   const code = `<h1>
@@ -16,7 +17,7 @@ export const OdometerH1 = () => {
 
   return (
     <>
-      <div className="demo" style={{ flexDirection: "column" }}>
+      <Demo showThemes={false} style={{ flexDirection: "column" }}>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <h1 style={{ margin: 0, display: "flex" }}>
             <Odometer value={new BigNumber(val).toFormat()} />
@@ -32,7 +33,7 @@ export const OdometerH1 = () => {
             Trigger Update
           </button>
         </div>
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

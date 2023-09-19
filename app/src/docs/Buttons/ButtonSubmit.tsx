@@ -4,6 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { Button } from "@packages/cloud-react/lib/buttons/Button";
 import { SimpleEditor } from "../lib/SimpleEditor";
 import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons";
+import { Demo } from "../lib/Demo";
 
 export const ButtonSubmit = () => {
   const code = `<Button type="submit" text="Button" marginRight />
@@ -19,7 +20,7 @@ export const ButtonSubmit = () => {
 
   return (
     <>
-      <div className="demo">
+      <Demo>
         <Button type="submit" text="Button" marginRight />
         <Button
           type="submit"
@@ -30,7 +31,7 @@ export const ButtonSubmit = () => {
         />
         <Button type="submit" text="Button" pulse marginRight />
         <Button type="submit" text="Button" disabled />
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

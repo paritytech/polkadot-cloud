@@ -4,6 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { useState } from "react";
 import { SimpleEditor } from "../lib/SimpleEditor";
 import { Odometer } from "@packages/cloud-react/lib/complex/Odometer";
+import { Demo } from "../lib/Demo";
 
 export const OdometerDiv = () => {
   const code = `<div>
@@ -15,7 +16,7 @@ export const OdometerDiv = () => {
 
   return (
     <>
-      <div className="demo" style={{ flexDirection: "column" }}>
+      <Demo showThemes={false} style={{ flexDirection: "column" }}>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <div style={{ margin: 0 }}>
             <Odometer value={val} />
@@ -30,7 +31,7 @@ export const OdometerDiv = () => {
             Trigger Update
           </button>
         </div>
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

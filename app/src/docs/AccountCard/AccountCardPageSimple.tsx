@@ -7,6 +7,7 @@ import {
 } from "@packages/cloud-react/lib/recipes/AccountCard";
 import { SimpleEditor } from "../lib/SimpleEditor";
 import { Switch } from "@packages/cloud-react/lib/base/inputs/Switch";
+import { Demo } from "../lib/Demo";
 
 export const AccountCardPageSimple = () => {
   const code = `
@@ -24,12 +25,7 @@ return (
 
   return (
     <>
-      <h4>
-        `iconProps` can be either fully filled or an empty object `{}`, that
-        will make all params default (see above); In both cases a PolkadotIcon
-        will appear
-      </h4>
-      <div className="demo">
+      <Demo showThemes={false}>
         <AccountCard
           icon={iconProps}
           title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }}
@@ -38,7 +34,7 @@ return (
             position: "right",
           }}
         />
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

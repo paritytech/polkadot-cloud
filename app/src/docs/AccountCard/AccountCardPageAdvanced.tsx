@@ -7,12 +7,13 @@ import {
 } from "@packages/cloud-react/lib/recipes/AccountCard";
 import { Grid } from "@packages/cloud-react/lib/base/structure/Grid";
 import { SimpleEditor } from "../lib/SimpleEditor";
+import { Demo } from "../lib/Demo";
 
 export const AccountCardPageAdvanced = () => {
   const code = `import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
 const iconProps: IconProps = {
-  noCopy: true,
+  copy: false,
   position: "right",
   gridSize: 3,
   justify: "space-around",
@@ -23,7 +24,7 @@ return (
 );`;
 
   const iconProps: IconProps = {
-    noCopy: true,
+    copy: false,
     position: "right",
     gridSize: 3,
     justify: "space-around",
@@ -31,13 +32,7 @@ return (
 
   return (
     <>
-      <h4>
-        Amount of ellipsis can be set; When position, is `center``, then that
-        amount corresponds to the left and to the right part of the text; If it
-        is set to `left` or `right`, then it corresponds to the other side
-        accordingly. (Defaults to `center`)
-      </h4>
-      <div className="demo">
+      <Demo showThemes={false}>
         <Grid row>
           <Grid column sm={4}></Grid>
           <Grid column sm={4}>
@@ -51,7 +46,7 @@ return (
           </Grid>
           <Grid column sm={4}></Grid>
         </Grid>
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

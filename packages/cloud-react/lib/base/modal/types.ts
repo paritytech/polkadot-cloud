@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { ReactNode, RefObject } from "react";
-import { ComponentBase } from "../../types";
+import { ComponentBase, ComponentBaseWithClassName } from "../../types";
 import { AnimationProps } from "framer-motion";
 
 // eslint-disable-next-line
@@ -30,6 +30,8 @@ export type ModalPaddingProps = ComponentBase & {
   horizontalOnly?: boolean;
 };
 
+export type ModalCardProps = ComponentBaseWithClassName;
+
 export type ModalNotesProps = ComponentBase & {
   // whether there is padding vertically.
   withPadding?: boolean;
@@ -50,7 +52,7 @@ export type ModalSectionProps = ComponentBase & {
   type: "tab" | "carousel";
 };
 
-export type ModalHeightProps = ComponentBase & {
+export type ModalScrollProps = ComponentBase & {
   // the maximum width.
   size: string;
   // container ref.

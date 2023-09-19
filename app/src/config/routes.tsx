@@ -13,6 +13,7 @@ import { Odometer } from "../docs/Odometer";
 import { Modal } from "../docs/Modal";
 import { Utilities } from "../docs/Utilities";
 import { Switch } from "../docs/Switch";
+import { Textfield } from "../docs/Textfield";
 
 type Routes = {
   name: string;
@@ -84,6 +85,11 @@ const componentsInputRoutes = [
     name: "Switch",
     element: <Switch />,
   },
+  {
+    path: "textfield",
+    name: "Textfield",
+    element: <Textfield />,
+  },
 ];
 
 const componentsRoutes = [
@@ -93,13 +99,8 @@ const componentsRoutes = [
     element: <Extensions />,
   },
   {
-    path: "loader",
-    name: "Loaders",
-    element: <Loaders />,
-  },
-  {
     path: "icons",
-    name: "Icons",
+    name: "PolkIcon",
     element: <Icons />,
   },
   {
@@ -107,13 +108,18 @@ const componentsRoutes = [
     name: "Odometer",
     element: <Odometer />,
   },
+  {
+    path: "loader",
+    name: "Loaders",
+    element: <Loaders />,
+  },
 ];
 
 export const routes: Routes = [
   {
     path: "/",
     name: "Home",
-    element: <Buttons />, // Placeholder until we have a landing page.
+    element: <Buttons />, // Placeholder until we have a landing page
   },
   // Components
   ...componentsRoutes,
@@ -133,21 +139,24 @@ export const routeCategories: RouteCategories = [
         paths: ["extensions"],
       },
       {
-        paths: ["loader"],
+        paths: ["icons"],
       },
       {
         paths: ["odometer"],
       },
       {
-        paths: ["icons"],
+        paths: ["modal"],
+      },
+      {
+        paths: ["loader"],
       },
       {
         heading: "Inputs",
-        paths: ["buttons", "switch"],
+        paths: ["buttons", "switch", "textfield"],
       },
       {
         heading: "Layout",
-        paths: ["grid", "modal", "card"],
+        paths: ["grid", "card"],
       },
     ],
   },

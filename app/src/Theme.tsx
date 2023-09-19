@@ -9,10 +9,10 @@ import { useTheme } from "./contexts/Theme";
 // App-specific theming is added to `ThemeProvider`.
 // `@polkadot-cloud/react` themes are added to `Entry`.
 export const Theme = () => {
-  const { mode, theme } = useTheme();
+  const { mode } = useTheme();
 
   return (
-    <div className={`main theme-${theme} theme-${mode}`}>
+    <div className={`main theme-cloud theme-${mode}`}>
       <Router />
     </div>
   );

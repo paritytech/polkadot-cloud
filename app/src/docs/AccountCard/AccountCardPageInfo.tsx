@@ -67,7 +67,7 @@ const iconProps: IconProps = {
   const iconProps = `interface IconProps {
   size?: number;
   // Icon will not be clickable/copy-able - defaults to false
-  noCopy?: boolean; 
+  copy?: boolean; 
   position?: HPositionLR;
   // specific size of the 12-column gridding
   gridSize?:  1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
@@ -88,27 +88,15 @@ const iconProps: IconProps = {
 
   return (
     <>
-      <h4>Intro</h4>
-      <p>
-        The `AccountCard` recipe is meant to exist for quick and fast shoiwg of
-        account data (address, name, icon etc); It is excellent for lists of
-        accounts to be shown. Below can be found the different properties that
-        the `AccountCard` component receives as props, in order to depict the
-        needed example.
-      </p>
-      <p>
-        The `AccountCard` with all possible props look like the following piece
-        of code:
-      </p>
-      <SimpleEditor code={accountCard} />
+      <SimpleEditor code={accountCard} standalone />
       <h4>Title properties are:</h4>
-      <SimpleEditor code={titleProps} />
+      <SimpleEditor code={titleProps} standalone />
       <h4>Ellipsis properties are:</h4>
-      <SimpleEditor code={ellipsisProps} />
+      <SimpleEditor code={ellipsisProps} standalone />
       <h4>Icon properties are:</h4>
-      <SimpleEditor code={iconProps} />
+      <SimpleEditor code={iconProps} standalone />
       <h4>Extra Component properties are:</h4>
-      <SimpleEditor code={xCompProps} />
+      <SimpleEditor code={xCompProps} standalone />
     </>
   );
 };

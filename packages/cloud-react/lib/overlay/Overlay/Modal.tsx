@@ -3,7 +3,7 @@
 
 import { ModalContainer } from "../../base/modal/ModalContainer";
 import { ModalCard } from "../../base/modal/ModalCard";
-import { ModalHeight } from "../../base/modal/ModalHeight";
+import { ModalScroll } from "../../base/modal/ModalScroll";
 import { useAnimation } from "framer-motion";
 import { FC, useEffect, useRef } from "react";
 import { useOverlay } from "../../hooks";
@@ -53,9 +53,7 @@ export const Modal = ({
 
   const handleResize = () => {
     if (status !== "open" || options?.disableWindowResize) return;
-    let h = modalRef.current?.clientHeight ?? 0;
-    h = h > modalMaxHeight ? modalMaxHeight : h;
-    setModalHeight(h);
+    setModalHeight(modalRef.current?.clientHeight || 0);
   };
 
   // Control on modal status change.
@@ -87,7 +85,7 @@ export const Modal = ({
   }, [externalOverlayStatus]);
 
   // Resize modal on status or resize change.
-  useEffect(() => handleResize(), [modalResizeCounter]);
+  useEffect(() => handleResize(), [modalResizeCounter, status]);
 
   // Resize modal on window size change.
   useEffect(() => {
@@ -130,7 +128,7 @@ export const Modal = ({
           style={{ opacity: status === "opening" ? 0 : 1 }}
         >
           <div>
-            <ModalHeight
+            <ModalScroll
               ref={heightRef}
               size={size}
               style={{
@@ -153,7 +151,7 @@ export const Modal = ({
                   {ActiveModal && <ActiveModal />}
                 </ErrorBoundary>
               </ModalCard>
-            </ModalHeight>
+            </ModalScroll>
             <button
               type="button"
               className="close"

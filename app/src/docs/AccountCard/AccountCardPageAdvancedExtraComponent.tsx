@@ -8,12 +8,13 @@ import {
 } from "@packages/cloud-react/lib/recipes/AccountCard";
 import { Button } from "@packages/cloud-react/lib/buttons/Button";
 import { SimpleEditor } from "../lib/SimpleEditor";
+import { Demo } from "../lib/Demo";
 
 export const AccountCardPageAdvancedExtraComponent = () => {
   const code = `import { AccountCard, IconProps, ExtraComponentProps } from "@packages/cloud-react/lib/recipes/AccountCard";
 ...
 
-// Note: space/size of main component is automatically calucated based on the given sizes from the icon and extra component; 
+// Note: space/size of main component is automatically calculated based on the given sizes from the icon and extra component; 
 
 const iconPropsLeft: IconProps = {
   // position defaults to "left"
@@ -63,14 +64,7 @@ return (
 
   return (
     <>
-      <h4>
-        Extra component can be added; Its default position is left; If icon
-        position is also left, then the extra component always goes on the
-        further side (same for right); Position, defaults to `left`; (Recipe
-        will automatically calculate the rest of the size of the main area based
-        on: `MainAreaGridSize = 12 - IconGridSize - ExtraComponentGridSize` )
-      </h4>
-      <div className="demo">
+      <Demo showThemes={false}>
         <AccountCard
           icon={iconPropsLeft}
           title={{
@@ -78,7 +72,7 @@ return (
           }}
           extraComponent={extraComponentProps}
         />
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

@@ -6,6 +6,7 @@ import {
   IconProps,
 } from "@packages/cloud-react/lib/recipes/AccountCard";
 import { SimpleEditor } from "../lib/SimpleEditor";
+import { Demo } from "../lib/Demo";
 
 export const AccountCardPageAdvancedVariousIconChanges = () => {
   const codeF = `import { AccountCard, IconProps, ExtraComponentProps } from "@polkadot-cloud/react/recipes/AccountCard";
@@ -39,7 +40,7 @@ const iconProps: IconProps = {
 
   return (
     <>
-      <div className="demo">
+      <Demo showThemes={false}>
         <AccountCard
           fontSize="medium"
           icon={iconProps}
@@ -47,7 +48,7 @@ const iconProps: IconProps = {
             address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73",
           }}
         />
-      </div>
+      </Demo>
       <SimpleEditor code={codeF} />
     </>
   );

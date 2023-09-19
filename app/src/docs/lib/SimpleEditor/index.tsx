@@ -11,15 +11,11 @@ import { useTheme } from "../../../contexts/Theme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./themes/dark.scss";
 import "./themes/light.scss";
+import { SimpleEditorProps } from "./types";
 
 languages.extend("jsx", PrismJSX);
 languages.extend("tsx", PrismTSX);
 
-interface SimpleEditorProps {
-  code: string;
-  language?: string;
-  standalone?: boolean;
-}
 export const SimpleEditor = ({
   code,
   language = "tsx",
@@ -30,7 +26,7 @@ export const SimpleEditor = ({
 
   const editorStyle = {
     border: "1px solid var(--border-secondary-color)",
-    background: mode === "dark" ? "#111" : "#f5f5f5",
+    background: "var(--background-primary)",
     borderRadius: standalone ? "0.75rem" : "0 0 0.75rem 0.75rem",
     fontFamily: '"Source Code Pro", monospace',
     fontSize: "1.1rem",

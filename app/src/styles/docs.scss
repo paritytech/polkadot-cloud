@@ -4,18 +4,18 @@ SPDX-License-Identifier: GPL-3.0-only */
 .doc {
   margin: 5rem 0 2.5rem;
 
-  h1 {
+  > h1 {
     font-family: InterBold, sans-serif;
     font-size: 2.3rem;
     line-height: 2.7rem;
   }
 
-  h2 {
+  > h2 {
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
   }
 
-  h3 {
+  > h3 {
     color: var(--text-color-primary);
     font-family: InterSemiBold, sans-serif;
     font-size: 1.5rem;
@@ -42,27 +42,17 @@ SPDX-License-Identifier: GPL-3.0-only */
     }
   }
 
-  h4 {
+  > h4 {
+    font-family: InterSemiBold, sans-serif;
     color: var(--text-color-primary);
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 1.4rem;
   }
 
-  .grid-demo {
-    border: 1px solid var(--border-secondary-color);
-    border-top-left-radius: 0.75rem;
-    border-top-right-radius: 0.75rem;
-    border-bottom: 0;
-    padding: 2rem 1rem;
-    justify-content: center;
-  }
-
-  .icon-demo {
-    align-items: center;
-
-    div {
-      margin: 0 2%;
-    }
+  > p {
+    color: var(--text-color-primary);
+    font-size: 1.15rem;
+    line-height: 1.75rem;
   }
 
   .demo {
@@ -73,6 +63,36 @@ SPDX-License-Identifier: GPL-3.0-only */
     padding: 2rem 1rem;
     display: flex;
     justify-content: center;
+
+    &.centered {
+      align-items: center;
+    }
+  }
+
+  .controls {
+    border-left: 1px solid var(--border-secondary-color);
+    border-right: 1px solid var(--border-secondary-color);
+    padding: 1.75rem 1rem 0.8rem;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    opacity: 0.75;
+    transition: opacity var(--transition-duration);
+
+    &:hover {
+      opacity: 1;
+    }
+
+    > button {
+      color: var(--text-color-tertiary);
+      font-family: InterSemiBold, sans-serif;
+      font-size: 0.95rem;
+      margin-left: 1.15rem;
+
+      &.active {
+        color: var(--accent-color-primary);
+      }
+    }
   }
 
   .editor {
