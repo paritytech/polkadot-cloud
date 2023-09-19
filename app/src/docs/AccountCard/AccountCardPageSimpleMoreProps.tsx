@@ -13,7 +13,7 @@ export const AccountCardPageSimpleMoreProps = () => {
 import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
 const iconProps: IconProps = {
-  noCopy: true,
+  copy: true,
   position: "right",
   size: 3,
   justify: "space-around",
@@ -24,7 +24,7 @@ return (
 );`;
 
   const iconProps: IconProps = {
-    noCopy: true,
+    copy: true,
     position: "right",
     gridSize: 3,
     justify: "space-around",

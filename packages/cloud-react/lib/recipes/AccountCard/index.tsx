@@ -32,7 +32,7 @@ interface AccountCardProps {
 
 export interface IconProps extends CommonParams {
   size?: number;
-  noCopy?: boolean;
+  copy?: boolean;
   position?: HPositionLR;
   colors?: string[];
   outerColor?: string;
@@ -115,7 +115,7 @@ export const AccountCard = ({
       <PolkadotIcon
         address={title.address}
         size={icon?.size || 30}
-        clickToCopy={!icon?.noCopy}
+        copy={icon?.copy}
         colors={icon?.colors}
         outerColor={icon?.outerColor}
       />
