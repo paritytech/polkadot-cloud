@@ -27,7 +27,10 @@ export const ActionItem = ({
   return (
     <h3
       className={`modal-action-item`}
-      style={{ ...style, opacity: inactive ? "var(--opacity-disabled)" : 1 }}
+      style={{
+        ...style,
+        opacity: inactive ? "var(--opacity-disabled)" : 1,
+      }}
     >
       {toggled === undefined ? (
         <FontAwesomeIcon icon={faChevronRight} transform="shrink-6" />

@@ -11,7 +11,7 @@ import { useTheme } from "./contexts/Theme";
 
 export const Menu = () => {
   const { pathname } = useLocation();
-  const { mode, toggleMode, theme, setTheme } = useTheme();
+  const { mode, toggleMode } = useTheme();
 
   const glitch = useGlitch({
     timing: {
@@ -28,31 +28,12 @@ export const Menu = () => {
     },
   });
 
-  const themes = [
-    ["Polkadot", "polkadot-relay"],
-    ["Kusama", "kusama-relay"],
-    ["Westend", "westend-relay"],
-    ["XCM", "xcm"],
-  ];
-
   return (
     <div className="menu">
       <div className="icon" ref={glitch.ref}>
         <IconSVG />
       </div>
       <section>
-        <h5>Theme</h5>
-        {themes.map(([name, key]) => (
-          <button
-            key={`theme_${key}`}
-            className={`link${theme === key ? " selected" : ``}`}
-            onClick={() => setTheme(key)}
-          >
-            {name}
-          </button>
-        ))}
-
-        <h5>Mode</h5>
         <button
           className={`link${mode === "light" ? " selected" : ``}`}
           onClick={() => toggleMode("light")}

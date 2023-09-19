@@ -4,6 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { AccountCard } from "@packages/cloud-react/lib/recipes/AccountCard";
 import { Grid } from "@packages/cloud-react/lib/base/structure/Grid";
 import { SimpleEditor } from "../lib/SimpleEditor";
+import { Demo } from "../lib/Demo";
 
 export const AccountCardPageAdvancedEllipsisExtreme = () => {
   const code = `
@@ -16,12 +17,7 @@ return (
 
   return (
     <>
-      <h4>
-        If an extreme ellipsis amount is provided, then the Recipe will reduce
-        it, in order to show the maximum possible amount (calculating with:
-        (address.length/2) - 3);
-      </h4>
-      <div className="demo">
+      <Demo showThemes={false}>
         <Grid row>
           <Grid column>
             <AccountCard
@@ -32,7 +28,7 @@ return (
             />
           </Grid>
         </Grid>
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

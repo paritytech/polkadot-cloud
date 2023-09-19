@@ -7,6 +7,7 @@ import {
 } from "@packages/cloud-react/lib/recipes/AccountCard";
 import { Grid } from "@packages/cloud-react/lib/base/structure/Grid";
 import { SimpleEditor } from "../lib/SimpleEditor";
+import { Demo } from "../lib/Demo";
 
 export const AccountCardPageAdvancedEllipsis = () => {
   const codeB = `import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
@@ -29,10 +30,7 @@ return (
 
   return (
     <>
-      <h4>
-        When the amount of ellipsis is too small, the ellipsis will default to 4
-      </h4>
-      <div className="demo">
+      <Demo showThemes={false}>
         <Grid row>
           <Grid column sm={4}></Grid>
           <Grid column sm={4}>
@@ -46,7 +44,7 @@ return (
           </Grid>
           <Grid column sm={4}></Grid>
         </Grid>
-      </div>
+      </Demo>
       <SimpleEditor code={codeB} />
     </>
   );

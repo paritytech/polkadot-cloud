@@ -1,6 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
+import { Demo } from "../lib/Demo";
 import { SimpleEditor } from "../lib/SimpleEditor";
 import { Grid } from "@packages/cloud-react/lib/base/structure/Grid";
 
@@ -28,7 +29,7 @@ export const GridOneTwelve = () => {
 
   return (
     <>
-      <div className="grid-demo">
+      <Demo showThemes={false}>
         <Grid row style={separatorStyle}>
           <Grid style={separatorStyle} column sm={12} md={2} lg={1}>
             <h5>1/12</h5>
@@ -67,7 +68,7 @@ export const GridOneTwelve = () => {
             <h5>1/12</h5>
           </Grid>
         </Grid>
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

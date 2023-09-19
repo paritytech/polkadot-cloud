@@ -3,6 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { AccountCard } from "@packages/cloud-react/lib/recipes/AccountCard";
 import { SimpleEditor } from "../lib/SimpleEditor";
+import { Demo } from "../lib/Demo";
 
 export const AccountCardPageSimpleNoIcon = () => {
   const code = `
@@ -14,15 +15,11 @@ return (
 
   return (
     <>
-      <h4>
-        If `iconProps` is not provided no icon will appear; `Title` with
-        `address` props are the minimum that need to be provided
-      </h4>
-      <div className="demo">
+      <Demo showThemes={false}>
         <AccountCard
           title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }}
         />
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

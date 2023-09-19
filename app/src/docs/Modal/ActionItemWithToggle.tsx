@@ -5,6 +5,7 @@ import { ActionItem } from "@packages/cloud-react/lib/base/modal/ActionItem";
 import { SimpleEditor } from "../lib/SimpleEditor";
 import { useState } from "react";
 import { Button } from "@packages/cloud-react/lib/buttons/Button";
+import { Demo } from "../lib/Demo";
 
 export const ActionItemWithToggle = () => {
   const [parentToggle, setParentToggle] = useState<boolean>(false);
@@ -20,14 +21,14 @@ export const ActionItemWithToggle = () => {
 
   return (
     <>
-      <div className="demo">
+      <Demo showThemes={false}>
         <ActionItem
           text="Some Action With Toggle"
           toggled={parentToggle}
           onToggle={(val: boolean) => setParentToggle(val)}
           inlineButton={<Button type="help" />}
         />
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

@@ -9,6 +9,7 @@ import { ReactComponent as PolkadotJSSVG } from "@packages/community/lib/extensi
 import { ReactComponent as PolkaGateSVG } from "@packages/community/lib/extensions/svg/polkagate.svg";
 import { ReactComponent as SubwalletJSSVG } from "@packages/community/lib/extensions/svg/subwalletjs.svg";
 import { ReactComponent as TalismanSVG } from "@packages/community/lib/extensions/svg/talisman.svg";
+import { Demo } from "../lib/Demo";
 
 export const ExtensionsSvg = () => {
   const code = `import { ReactComponent as EnkryptSVG } from "@polkadot-cloud/community/extensions/svg/enkrypt.svg";
@@ -33,29 +34,29 @@ const App = () => (
 
   return (
     <>
-      <div className="demo">
-        <div className="svg-box">
+      <Demo showThemes={false}>
+        <div className="svg-box sm">
           <EnkryptSVG />
         </div>
-        <div className="svg-box">
+        <div className="svg-box sm">
           <FearlessWalletSVG />
         </div>
-        <div className="svg-box">
+        <div className="svg-box sm">
           <NovaWalletSVG />
         </div>
-        <div className="svg-box">
+        <div className="svg-box sm">
           <PolkadotJSSVG />
         </div>
-        <div className="svg-box">
+        <div className="svg-box sm">
           <PolkaGateSVG />
         </div>
-        <div className="svg-box">
+        <div className="svg-box sm">
           <SubwalletJSSVG />
         </div>
-        <div className="svg-box">
+        <div className="svg-box sm">
           <TalismanSVG />
         </div>
-      </div>
+      </Demo>
       <SimpleEditor code={code} language="javascript" />
     </>
   );

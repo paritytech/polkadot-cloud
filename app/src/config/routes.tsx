@@ -93,13 +93,8 @@ const componentsRoutes = [
     element: <Extensions />,
   },
   {
-    path: "loader",
-    name: "Loaders",
-    element: <Loaders />,
-  },
-  {
     path: "icons",
-    name: "Icons",
+    name: "PolkIcon",
     element: <Icons />,
   },
   {
@@ -107,13 +102,18 @@ const componentsRoutes = [
     name: "Odometer",
     element: <Odometer />,
   },
+  {
+    path: "loader",
+    name: "Loaders",
+    element: <Loaders />,
+  },
 ];
 
 export const routes: Routes = [
   {
     path: "/",
     name: "Home",
-    element: <Buttons />, // Placeholder until we have a landing page.
+    element: <Buttons />, // Placeholder until we have a landing page
   },
   // Components
   ...componentsRoutes,
@@ -133,13 +133,16 @@ export const routeCategories: RouteCategories = [
         paths: ["extensions"],
       },
       {
-        paths: ["loader"],
+        paths: ["icons"],
       },
       {
         paths: ["odometer"],
       },
       {
-        paths: ["icons"],
+        paths: ["modal"],
+      },
+      {
+        paths: ["loader"],
       },
       {
         heading: "Inputs",
@@ -147,7 +150,7 @@ export const routeCategories: RouteCategories = [
       },
       {
         heading: "Layout",
-        paths: ["grid", "modal", "card"],
+        paths: ["grid", "card"],
       },
     ],
   },

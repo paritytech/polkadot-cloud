@@ -2,11 +2,13 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 .modal-carousel {
-  width: 100%;
   display: flex;
   flex-flow: column wrap;
   padding: 0;
   position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .modal-tabs {

@@ -1,16 +1,30 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { ModalAnimationProps } from "../types";
-import { motion } from "framer-motion";
+import { RefObject, forwardRef } from "react";
+import { valEmpty } from "../../../utils";
+import { ModalScrollProps } from "../types";
 import "@polkadot-cloud/core/css/base/modal/ModalScroll/index.css";
 
 /**
  * @name ModalScroll
- * @summary Modal scrollable container. Limits max width of container to an opinionated 800px;
+ * @summary Used for modal window height.
  */
-export const ModalScroll = ({ children, ...rest }: ModalAnimationProps) => (
-  <motion.div className="modal-scroll" {...rest}>
-    {children}
-  </motion.div>
+export const ModalScroll = forwardRef(
+  (
+    { size, children, style }: ModalScrollProps,
+    ref?: RefObject<HTMLDivElement>
+  ) => (
+    <div
+      ref={ref}
+      className={`modal-scroll${valEmpty(size === "xl", "xl")}${valEmpty(
+        size === "lg",
+        "lg"
+      )}`}
+      style={style}
+    >
+      {children}
+    </div>
+  )
 );
+ModalScroll.displayName = "ModalScroll";

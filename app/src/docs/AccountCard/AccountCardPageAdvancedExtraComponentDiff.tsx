@@ -8,13 +8,14 @@ import {
 } from "@packages/cloud-react/lib/recipes/AccountCard";
 import { Button } from "@packages/cloud-react/lib/buttons/Button";
 import { SimpleEditor } from "../lib/SimpleEditor";
+import { Demo } from "../lib/Demo";
 
 export const AccountCardPageAdvancedExtraComponentDiff = () => {
   const code = `import { AccountCard, IconProps, ExtraComponentProps } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
 
 const iconProps: IconProps = {
-  noCopy: true,
+  copy: false,
   position: "right",
   gridSize: 2,
   justify: "space-around",
@@ -40,7 +41,6 @@ return (
 )`;
 
   const iconProps: IconProps = {
-    noCopy: true,
     position: "right",
     gridSize: 2,
     justify: "space-around",
@@ -63,15 +63,7 @@ return (
 
   return (
     <>
-      <h4>
-        Mplah Mplah Mplah Mplah Extra component can be added; Its default
-        position is left; If icon position is also left, then the extra
-        component always goes on the further side (same for right); Position,
-        defaults to `left`; (Recipe will automatically calculate the rest of the
-        size of the main area based on: `MainAreaGridSize = 12 - IconGridSize -
-        ExtraComponentGridSize` )
-      </h4>
-      <div className="demo">
+      <Demo showThemes={false}>
         <AccountCard
           icon={iconProps}
           title={{
@@ -79,7 +71,7 @@ return (
           }}
           extraComponent={extraComponentProps}
         />
-      </div>
+      </Demo>
       <SimpleEditor code={code} />
     </>
   );

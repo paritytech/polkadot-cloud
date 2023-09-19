@@ -2,19 +2,19 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { ComponentBaseWithClassName } from "../../../types";
-import "@polkadot-cloud/core/css/base/modal/ModalCanvasCard/index.css";
+import "@polkadot-cloud/core/css/base/modal/ModalContent/index.css";
 
 /**
- * @name ModalCanvasCard
- * @summary Modal canvas card wrapper.
+ * @name CanvasContent
+ * @summary Modal canvas content wrapper.
  */
-export const ModalCanvasCard = ({
+export const CanvasContent = ({
   children,
   style,
   className,
 }: ComponentBaseWithClassName) => (
   <div
-    className={`modal-canvas-card${className ? ` ${className}` : ""}`}
+    className={`modal-canvas-content${className ? ` ${className}` : ""}`}
     style={style}
   >
     {children}
