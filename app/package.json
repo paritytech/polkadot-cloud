@@ -25,7 +25,7 @@
     "vite": "^4.4.9",
     "vite-plugin-checker": "^0.6.2",
     "vite-plugin-eslint": "^1.8.1",
-    "vite-plugin-svgr": "^3.2.0",
+    "vite-plugin-svgr": "^4.0.0",
     "vite-tsconfig-paths": "^4.2.1"
   },
   "dependencies": {

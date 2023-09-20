@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { Fragment } from "react";
-import { ReactComponent as IconSVG } from "./svg/icon.svg";
+import IconSVG from "./svg/icon.svg?react";
 import { useGlitch } from "react-powerglitch";
 import { Separator } from "@packages/cloud-react/lib/base/structure/Separator";
 import { Link, useLocation } from "react-router-dom";
