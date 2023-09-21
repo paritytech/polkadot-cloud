@@ -12,7 +12,7 @@ export const Footer = () => {
         <IconSVG className="icon" />
         <div>
           <h4>
-            &copy; Copyright &nbsp;
+            &copy; Copyright {new Date().getUTCFullYear()} &nbsp;
             <span>Polkadot Cloud Authors & Contributors.</span>
           </h4>
         </div>{" "}
