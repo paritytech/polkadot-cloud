@@ -6,6 +6,7 @@ import { Buttons } from "../docs/Buttons";
 import { Loaders } from "../docs/Loaders";
 import { Icons } from "../docs/Icons";
 import { Extensions } from "../docs/Extensions";
+import { Validators } from "../docs/Validators";
 import { Grid } from "../docs/Grid";
 import { Card } from "../docs/Cards";
 import { AccountCard } from "../docs/AccountCard";
@@ -98,6 +99,11 @@ const assetsRoutes = [
     name: "Extensions",
     element: <Extensions />,
   },
+  {
+    path: "validators",
+    name: "Validators",
+    element: <Validators />,
+  },
 ];
 
 const componentsRoutes = [
@@ -142,6 +148,9 @@ export const routeCategories: RouteCategories = [
     paths: [
       {
         paths: ["extensions"],
+      },
+      {
+        paths: ["validators"],
       },
     ],
   },

@@ -2,7 +2,6 @@ import { Note } from "../lib/Note";
 import { Header } from "../lib/Header";
 import { ExtensionsSvg } from "./ExtensionsSvg";
 import { ExtensionsJsx } from "./ExtensionsJsx";
-import { ValidatorOperator } from './ValidatorOperator';
 
 <Header
   title="Web3 Extension Assets"
@@ -13,7 +12,7 @@ import { ValidatorOperator } from './ValidatorOperator';
 ##
 
 <Note>
-`@polkadot-cloud/assets` is used with other Cloud components, such as the upcoming Connect component.
+Extension assets from `@polkadot-cloud/assets` are used with other Cloud components, such as the upcoming Connect component.
 </Note>
 
 ##
@@ -56,16 +55,4 @@ Import JSX assets from `/extensions/jsx/`:
 
 <Note>
 Some frameworks require components to be locally available to lazily load them.
-</Note>
-
-## Validator Operators
-
-A list of validator operators is available as a `ValidatorCommunity` object, along with each operator's thumbnail icon in SVG format.
-
-<ValidatorOperator />
-
-The validator operators source code can be found <a href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/assets/lib/validators/index.ts" target="_blank" rel="noreferrer">here</a>.
-
-<Note>
-To open a PR to add an additional validator operator to this list, refer to the instructions hosted in this package's <a href="https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets#adding-validator-operators" target="_blank" rel="noreferrer">README file</a>.
 </Note>
