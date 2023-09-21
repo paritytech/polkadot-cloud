@@ -5,7 +5,7 @@ import { ValidatorConfig } from "../types";
 
 // To add a validator operator to this list, refer to the instructions hosted in this package's
 // README file:
-// https://github.com/paritytech/polkadot-cloud/tree/main/packages/community#adding-validator-operators
+// https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets#adding-validator-operators
 export const ValidatorCommunity: ValidatorConfig[] = [
   {
     name: "🍁 HIGH/STAKE 🥩",
