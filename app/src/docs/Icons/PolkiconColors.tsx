@@ -5,10 +5,9 @@ import { Polkicon } from "@packages/cloud-react/lib/icons/Polkicon";
 import { SimpleEditor } from "../lib/SimpleEditor";
 import { Demo } from "../lib/Demo";
 
-export const PolkiconThemes = () => {
-  const code = `<Polkicon size="5rem" address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY" />
-<Polkicon size="5rem" address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY" outerColor="transparent" />
-<Polkicon size="5rem" address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY" outerColor="#E6007A" />`;
+export const PolkiconColors = () => {
+  const code = `<Polkicon size="5rem" address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY" colors={["blue", "yellow", "black", "pink", "brown"]} />
+<Polkicon dark size="5rem" address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY" colors={["blue", "yellow"]} />`;
 
   return (
     <>
@@ -17,20 +16,14 @@ export const PolkiconThemes = () => {
           <Polkicon
             size="5rem"
             address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
+            colors={["blue", "yellow", "black", "pink", "brown"]}
           />
         </div>
         <div className="svg-box sm">
           <Polkicon
             size="5rem"
             address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
-            outerColor="transparent"
-          />
-        </div>
-        <div className="svg-box sm">
-          <Polkicon
-            size="5rem"
-            address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
-            outerColor="#E6007A"
+            colors={["blue", "yellow"]}
           />
         </div>
       </Demo>
