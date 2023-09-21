@@ -25,6 +25,7 @@ export const Polkicon = ({
   outerColor,
 }: PolkiconProps) => {
   const [colors, setColors] = useState<string[]>([]);
+
   const [xy, setXy] = useState<[number, number][] | undefined>();
 
   useEffect(() => {
