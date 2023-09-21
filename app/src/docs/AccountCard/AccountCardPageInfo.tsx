@@ -17,7 +17,7 @@ const ellipsisProps: EllipsisProps = {
   position: "right",
 };
 
-// iconProps are very similar to the ones that PolkadotIcon receives for consistency
+// iconProps are very similar to the ones that Polkicon receives for consistency
 const iconProps: IconProps = {
   size: 20,
   gridSize: 1,
