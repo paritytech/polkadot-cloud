@@ -78,7 +78,7 @@
     "packages/cloud-core",
     "packages/utils",
     "packages/cloud-react",
-    "packages/community",
+    "packages/assets",
     "packages/dev-tools",
     "app",
     "scripts"

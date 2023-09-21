@@ -5,6 +5,6 @@ import Doc from "./index.mdx";
 
 export const Extensions = () => (
   <div className="doc">
-    <Doc npm="@polkadot-cloud/community" />
+    <Doc npm="@polkadot-cloud/assets" />
   </div>
 );

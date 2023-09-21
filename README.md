@@ -20,6 +20,6 @@ Core components for Polkadot apps.
 
 Utilities for Polkadot apps.
 
-#### [@polkadot-cloud/community](https://github.com/paritytech/polkadot-cloud/tree/main/packages/community#polkadot-cloud-community)
+#### [@polkadot-cloud/assets](https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets#polkadot-cloud-assets)
 
-A source of truth for Polkadot web extensions and validator entities.
+Data sources and static assets for Polkadot apps.

@@ -2,23 +2,23 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { SimpleEditor } from "../lib/SimpleEditor";
-import { ReactComponent as EnkryptSVG } from "@packages/community/lib/extensions/svg/enkrypt.svg";
-import { ReactComponent as FearlessWalletSVG } from "@packages/community/lib/extensions/svg/fearlesswallet.svg";
-import { ReactComponent as NovaWalletSVG } from "@packages/community/lib/extensions/svg/novawallet.svg";
-import { ReactComponent as PolkadotJSSVG } from "@packages/community/lib/extensions/svg/polkadotjs.svg";
-import { ReactComponent as PolkaGateSVG } from "@packages/community/lib/extensions/svg/polkagate.svg";
-import { ReactComponent as SubwalletJSSVG } from "@packages/community/lib/extensions/svg/subwalletjs.svg";
-import { ReactComponent as TalismanSVG } from "@packages/community/lib/extensions/svg/talisman.svg";
+import { ReactComponent as EnkryptSVG } from "@packages/assets/lib/extensions/svg/enkrypt.svg";
+import { ReactComponent as FearlessWalletSVG } from "@packages/assets/lib/extensions/svg/fearlesswallet.svg";
+import { ReactComponent as NovaWalletSVG } from "@packages/assets/lib/extensions/svg/novawallet.svg";
+import { ReactComponent as PolkadotJSSVG } from "@packages/assets/lib/extensions/svg/polkadotjs.svg";
+import { ReactComponent as PolkaGateSVG } from "@packages/assets/lib/extensions/svg/polkagate.svg";
+import { ReactComponent as SubwalletJSSVG } from "@packages/assets/lib/extensions/svg/subwalletjs.svg";
+import { ReactComponent as TalismanSVG } from "@packages/assets/lib/extensions/svg/talisman.svg";
 import { Demo } from "../lib/Demo";
 
 export const ExtensionsSvg = () => {
-  const code = `import { ReactComponent as EnkryptSVG } from "@polkadot-cloud/community/extensions/svg/enkrypt.svg";
-import { ReactComponent as FearlessWalletSVG } from "@polkadot-cloud/community/extensions/svg/fearlesswallet.svg";
-import { ReactComponent as NovaWalletSVG } from "@polkadot-cloud/community/extensions/svg/novawallet.svg";
-import { ReactComponent as PolkadotJSSVG } from "@polkadot-cloud/community/extensions/svg/polkadotjs.svg";
-import { ReactComponent as PolkaGateSVG } from "@polkadot-cloud/community/extensions/svg/polkagate.svg";
-import { ReactComponent as SubwalletJSSVG } from "@polkadot-cloud/community/extensions/svg/subwalletjs.svg";
-import { ReactComponent as TalismanSVG } from "@polkadot-cloud/community/extensions/svg/talisman.svg";
+  const code = `import { ReactComponent as EnkryptSVG } from "@polkadot-cloud/assets/extensions/svg/enkrypt.svg";
+import { ReactComponent as FearlessWalletSVG } from "@polkadot-cloud/assets/extensions/svg/fearlesswallet.svg";
+import { ReactComponent as NovaWalletSVG } from "@polkadot-cloud/assets/extensions/svg/novawallet.svg";
+import { ReactComponent as PolkadotJSSVG } from "@polkadot-cloud/assets/extensions/svg/polkadotjs.svg";
+import { ReactComponent as PolkaGateSVG } from "@polkadot-cloud/assets/extensions/svg/polkagate.svg";
+import { ReactComponent as SubwalletJSSVG } from "@polkadot-cloud/assets/extensions/svg/subwalletjs.svg";
+import { ReactComponent as TalismanSVG } from "@polkadot-cloud/assets/extensions/svg/talisman.svg";
 
 const App = () => (
   <>

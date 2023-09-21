@@ -1,5 +1,5 @@
 {
-  "name": "polkadot-cloud-community",
+  "name": "polkadot-cloud-assets",
   "license": "GPL-3.0-only",
   "version": "0.1.11",
   "type": "module",
@@ -7,7 +7,7 @@
     "Ross Bulat<ross@parity.io>",
     "Nikolaos Kontakis<nikos@parity.io>"
   ],
-  "description": "Community Data for Polkadot Apps.",
+  "description": "Data sources and static assets for Polkadot apps.",
   "keywords": [
     "Polkadot",
     "UI"
@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
   "scripts": {
-    "build:mock": "node ../../scripts/generatePackageJson.mjs -p community",
-    "build": "rm -fr dist && mkdir -p dist && cp -R lib/* dist && cp README.md LICENSE dist && node ../../scripts/generatePackageJson.mjs -p community",
+    "build:mock": "node ../../scripts/generatePackageJson.mjs -p assets",
+    "build": "rm -fr dist && mkdir -p dist && cp -R lib/* dist && cp README.md LICENSE dist && node ../../scripts/generatePackageJson.mjs -p assets",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   }
 }
