@@ -128,7 +128,7 @@ export const routes: Routes = [
   {
     path: "/",
     name: "Home",
-    element: <Buttons />, // Placeholder until we have a landing page
+    element: <Extensions />, // Placeholder until we have a landing page
   },
   // Assets
   ...assetsRoutes,
