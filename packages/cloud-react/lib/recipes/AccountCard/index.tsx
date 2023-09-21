@@ -6,7 +6,7 @@ import { JSX, useEffect, useState } from "react";
 import { Grid } from "../../base/structure/Grid";
 import { Card } from "../../base/structure/Card";
 import { GridJustify, GridSizes, GridItemsAlignment } from "../../base/types";
-import { PolkadotIcon } from "../../icons/PolkadotIcon";
+import { Polkicon } from "../../icons/Polkicon";
 import { valEmpty } from "../../utils";
 import { ellipsisFn } from "@polkadot-cloud/utils";
 import { HPositionLR, HPosition } from "../../types";
@@ -112,7 +112,7 @@ export const AccountCard = ({
 
   const IconComponent = (
     <Grid key={`icon_${icSize}`} column sm={icSize} justify={icon?.justify}>
-      <PolkadotIcon
+      <Polkicon
         address={title.address}
         size={icon?.size || 30}
         copy={icon?.copy}
