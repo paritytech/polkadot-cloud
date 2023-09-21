@@ -7,8 +7,8 @@ A source of truth for Polkadot web extensions and validator entities.
 ## Adding Web Extension Wallets
 
 To add a web extension wallet, submit a PR with the following changes:
-* **Icon**: Add the extension icon as an SVG Component in [this folder](https://github.com/paritytech/polkadot-cloud/tree/main/packages/community/extensions/jsx).
-* **Extension details**: Add the extension details to the `Extensions` JSON object in [this file](https://github.com/paritytech/polkadot-cloud/blob/main/packages/community/extensions/index.tsx).
+* **Icon**: Add the extension icon as an SVG Component in [this folder](https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets/extensions/jsx).
+* **Extension details**: Add the extension details to the `Extensions` JSON object in [this file](https://github.com/paritytech/polkadot-cloud/blob/main/packages/assets/extensions/index.tsx).
 
 ## Adding Validator Operators
 
@@ -16,8 +16,8 @@ Validator operators can add their contact information, icon, and which validator
 
 To add an operator, submit a PR with the following changes:
 
-- **Thumbnail:** Add your operator's thumbnail as an SVG Component in [this folder](https://github.com/paritytech/polkadot-cloud/tree/main/packages/community/validators/thumbnails).
-- **Operator details:** Add your operator details to the `ValidatorCommunity` JSON object in [this file](https://github.com/paritytech/polkadot-cloud/blob/main/packages/community/validators/index.ts).
+- **Thumbnail:** Add your operator's thumbnail as an SVG Component in [this folder](https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets/validators/thumbnails).
+- **Operator details:** Add your operator details to the `ValidatorCommunity` JSON object in [this file](https://github.com/paritytech/polkadot-cloud/blob/main/packages/assets/validators/index.ts).
 
 ### Operator Structure
 

@@ -11,7 +11,7 @@ import { Talisman } from "./jsx/Talisman";
 import { WalletConnect } from "./jsx/WalletConnect";
 
 // To add extensions to this list, refer to the instructions hosted in this package's README file:
-// https://github.com/paritytech/polkadot-cloud/tree/main/packages/community#adding-web-extension-wallets
+// https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets#adding-web-extension-wallets
 export const Extensions: Record<string, ExtensionConfig> = {
   // NOTE: Nova Wallet use the same identifier as Polkadot JS extension. We therefore test if the
   // `walletExtension` property exists to determine if the extension is Nova Wallet or Polkadot
