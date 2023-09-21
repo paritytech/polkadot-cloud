@@ -9,7 +9,7 @@ import {
   ChainName,
 } from "./utils";
 
-interface PolkIconProps {
+interface PolkiconProps {
   size?: number | string;
   address: string;
   copy?: boolean;
@@ -17,13 +17,13 @@ interface PolkIconProps {
   outerColor?: string;
 }
 
-export const PolkIcon = ({
+export const Polkicon = ({
   size = "2rem",
   address,
   copy = false,
   colors: initialColors,
   outerColor,
-}: PolkIconProps) => {
+}: PolkiconProps) => {
   const [colors, setColors] = useState<string[]>([]);
   const [xy, setXy] = useState<[number, number][] | undefined>();
 

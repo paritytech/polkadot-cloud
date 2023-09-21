@@ -109,7 +109,7 @@ const assetsRoutes = [
 const componentsRoutes = [
   {
     path: "icons",
-    name: "PolkIcon",
+    name: "Polkicon",
     element: <Icons />,
   },
   {
