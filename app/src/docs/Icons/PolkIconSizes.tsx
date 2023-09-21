@@ -5,7 +5,7 @@ import { Polkicon } from "@packages/cloud-react/lib/icons/Polkicon";
 import { SimpleEditor } from "../lib/SimpleEditor";
 import { Demo } from "../lib/Demo";
 
-export const PolkIconSizes = () => {
+export const PolkiconSizes = () => {
   const code = `<Polkicon size="10rem" address="13Bbi16jczqELAGBH7MaBu31ABreDmw9yFhrEiNEx6wMkNWe" />
 <Polkicon size="7rem" address="13Bbi16jczqELAGBH7MaBu31ABreDmw9yFhrEiNEx6wMkNWe" />
 <Polkicon size={60} address="13Bbi16jczqELAGBH7MaBu31ABreDmw9yFhrEiNEx6wMkNWe" />`;

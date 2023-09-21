@@ -5,7 +5,7 @@ import { Polkicon } from "@packages/cloud-react/lib/icons/Polkicon";
 import { SimpleEditor } from "../lib/SimpleEditor";
 import { Demo } from "../lib/Demo";
 
-export const PolkIconCustomColors = () => {
+export const PolkiconCustomColors = () => {
   const code = `<Polkicon size="5rem" address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY" colors={["blue", "yellow", "black", "pink", "brown"]} />
 <Polkicon dark size="5rem" address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY" colors={["blue", "yellow"]} />`;
 
