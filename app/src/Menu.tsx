@@ -16,15 +16,15 @@ export const Menu = () => {
         <Fragment key={`nav_${i}`}>
           {"paths" in rest ? (
             <>
-              <section>
-                <h3
-                  style={{
-                    fontWeight: "bold",
-                  }}
-                >
-                  {name}
-                </h3>
+              <h3
+                style={{
+                  fontWeight: "bold",
+                }}
+              >
+                {name}
+              </h3>
 
+              <section>
                 {rest.paths.map(({ heading, paths }, j) => (
                   <Fragment key={`nav_${i}_heading_${j}`}>
                     {heading ? (
