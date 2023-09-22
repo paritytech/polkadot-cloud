@@ -31,47 +31,49 @@ export const Switch = ({
       case "secondary": {
         if (disabled) {
           setBgColor("grey");
-          setBorderColor("#cbcbcb");
-          setButtonColor("#cbcbcb");
+          setBorderColor("#CBCBCB");
+          setButtonColor("#CBCBCB");
           break;
         }
-        setButtonColor("var(--text-color-invert)");
         setBorderColor("var(--border-secondary-color)");
         if (!switchOn) {
+          setButtonColor("var(--accent-color-secondary)");
           setBgColor("var(--background-invert)");
         } else {
+          setButtonColor("#FFFFFF");
           setBgColor("var(--accent-color-secondary)");
         }
         break;
       }
       case "monoInvert": {
+        setBorderColor("#CCCCCC");
         if (disabled) {
           setBgColor("grey");
-          setBorderColor("#ccc");
-          setButtonColor("#ccc");
+          setButtonColor("#CCCCCC");
           break;
         }
-        setButtonColor("var(--text-color-primary)");
-        setBorderColor("var(--background-invert)");
         if (!switchOn) {
-          setBgColor("var(--text-color-tertiary)");
-        } else {
+          setButtonColor("#000000");
           setBgColor("var(--text-color-invert)");
+        } else {
+          setButtonColor("#000000");
+          setBgColor("var(--text-color-tertiary)");
         }
         break;
       }
       case "mono": {
         if (disabled) {
-          setBgColor("#ccc");
-          setBorderColor("#ccc");
+          setBgColor("#CCCCCC");
+          setBorderColor("#CCCCCC");
           setButtonColor("grey");
           break;
         }
-        setButtonColor("var(--text-color-invert)");
         setBorderColor("var(--border-primary-color)");
         if (!switchOn) {
+          setButtonColor("#FFFFFF");
           setBgColor("var(--text-color-tertiary)");
         } else {
+          setButtonColor("#FFFFFF");
           setBgColor("var(--text-color-primary)");
         }
         break;
@@ -80,15 +82,16 @@ export const Switch = ({
       default: {
         if (disabled) {
           setBgColor("grey");
-          setBorderColor("#cbcbcb");
-          setButtonColor("#cbcbcb");
+          setBorderColor("#CBCBCB");
+          setButtonColor("#CBCBCB");
           break;
         }
-        setButtonColor("var(--text-color-invert)");
         setBorderColor("var(--border-primary-color)");
         if (!switchOn) {
+          setButtonColor("var(--accent-color-primary)");
           setBgColor("var(--background-invert)");
         } else {
+          setButtonColor("#FFFFFF");
           setBgColor("var(--accent-color-primary)");
         }
       }
