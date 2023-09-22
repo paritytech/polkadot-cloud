@@ -31,6 +31,10 @@ export const Header = () => {
         <div className="icon" ref={glitch.ref}>
           <IconSVG />
         </div>
+        <div className="title">
+          <h3>Polkadot Cloud Docs</h3>
+          <p>v0.2.14</p>
+        </div>
       </section>
       <section>
         <button
