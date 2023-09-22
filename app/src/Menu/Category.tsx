@@ -5,6 +5,11 @@ import { Fragment, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { RouteCategoryMulti, nameFromRoute } from "../config/routes";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronDown,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 interface Props {
   name: string;
   rest: RouteCategoryMulti;
@@ -19,7 +24,13 @@ export const Category = ({ rest, name, i }: Props) => {
   return (
     <>
       <button onClick={() => setOpen(!open)}>
-        <h3>{name}</h3>
+        <h3>
+          <FontAwesomeIcon
+            icon={open ? faChevronDown : faChevronRight}
+            transform={"shrink-5"}
+          />{" "}
+          {name}
+        </h3>
       </button>
 
       <motion.section
