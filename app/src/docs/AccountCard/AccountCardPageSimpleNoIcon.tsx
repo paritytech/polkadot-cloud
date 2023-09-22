@@ -10,13 +10,14 @@ export const AccountCardPageSimpleNoIcon = () => {
 import { AccountCard } from "@polkadot-cloud/react/recipes/AccountCard";
 ...
 return (
-  <AccountCard title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} />
+  <AccountCard style={{ padding: "1rem" }} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} />
 );`;
 
   return (
     <>
       <Demo showThemes={false}>
         <AccountCard
+          style={{ padding: "1rem" }}
           title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }}
         />
       </Demo>

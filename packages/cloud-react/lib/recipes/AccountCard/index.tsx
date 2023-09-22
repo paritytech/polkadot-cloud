@@ -6,12 +6,16 @@ import { JSX, useEffect, useState } from "react";
 import { Grid } from "../../base/structure/Grid";
 import { Card } from "../../base/structure/Card";
 import { GridJustify, GridSizes, GridItemsAlignment } from "../../base/types";
-import { Polkicon } from "../../icons/Polkicon";
 import { valEmpty } from "../../utils";
 import { ellipsisFn } from "@polkadot-cloud/utils";
-import { HPositionLR, HPosition } from "../../types";
+import {
+  HPositionLR,
+  HPosition,
+  ComponentBaseWithClassName,
+} from "../../types";
 
 import "@polkadot-cloud/core/css/recipes/AccountCard/index.css";
+import { Polkicon } from "../../icons/Polkicon";
 
 interface AccountCardProps {
   title: TitleProps;
@@ -70,7 +74,9 @@ export const AccountCard = ({
   icon,
   extraComponent,
   noCard = false,
-}: AccountCardProps) => {
+  className,
+  style,
+}: AccountCardProps & ComponentBaseWithClassName) => {
   const fontClasses: string[] = [
     valEmpty(fontSize, "account-card-font-size-" + fontSize) ||
       "account-card-font-size-medium",
@@ -111,7 +117,13 @@ export const AccountCard = ({
   }, [icon, extraComponent]);
 
   const IconComponent = (
-    <Grid key={`icon_${icSize}`} column sm={icSize} justify={icon?.justify}>
+    <Grid
+      key={`icon_${icSize}`}
+      column
+      sm={icSize}
+      justify={icon?.justify}
+      style={{ margin: "auto" }}
+    >
       <Polkicon
         address={title.address}
         size={icon?.size || 30}
@@ -185,7 +197,12 @@ export const AccountCard = ({
       {noCard ? (
         structure
       ) : (
-        <Card className="account-card-theme-border">{structure}</Card>
+        <Card 
+      style={style}
+          className={"account-card-theme-border " + className}
+        >
+          {structure}
+        </Card>
       )}
     </Grid>
   );

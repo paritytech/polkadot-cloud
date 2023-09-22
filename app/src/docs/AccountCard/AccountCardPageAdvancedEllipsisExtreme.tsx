@@ -12,7 +12,7 @@ import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCa
 ...
 
 return (
-  <AccountCard title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} ellipsis={{ active: true, amount:500, position: "center" }} />
+  <AccountCard style={{ padding: "1rem" }} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} ellipsis={{ active: true, amount:500, position: "center" }} />
 )`;
 
   return (
@@ -21,6 +21,7 @@ return (
         <Grid row>
           <Grid column>
             <AccountCard
+              style={{ padding: "1rem" }}
               title={{
                 address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73",
               }}

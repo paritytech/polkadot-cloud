@@ -19,7 +19,7 @@ const iconPropsLeft: IconProps = {
 };
 ...
 return (
-  <AccountCard icon={iconPropsLeft} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} ellipsis={{ active: true, amount:2, position: "center" }} />
+  <AccountCard style={{ padding: "1rem" }} icon={iconPropsLeft} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} ellipsis={{ active: true, amount:2, position: "center" }} />
 )`;
 
   const iconPropsLeft: IconProps = {
@@ -35,6 +35,7 @@ return (
           <Grid column sm={4}></Grid>
           <Grid column sm={4}>
             <AccountCard
+              style={{ padding: "1rem" }}
               icon={iconPropsLeft}
               title={{
                 address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73",
