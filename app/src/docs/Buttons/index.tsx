@@ -5,6 +5,6 @@ import Doc from "./index.mdx";
 
 export const Buttons = () => (
   <div className="doc">
-    <Doc npm="@polkadot-cloud/react" />
+    <Doc npm="@polkadot-cloud/react" folder="Buttons" />
   </div>
 );
