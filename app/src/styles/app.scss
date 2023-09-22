@@ -125,6 +125,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 .body {
   min-height: 100vh;
+
   /* CSS3: Leave enough room to show footer where content does not consume 100vh. */
   min-height: calc(100vh - 5.5rem);
   padding: 3.3rem 1.5rem 3rem 0;
@@ -167,7 +168,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 .app-footer {
   border-top: 1px solid var(--border-primary-color);
   flex: 1;
-  padding: 0rem 2rem;
+  padding: 0 2rem;
   min-height: 5.5rem;
   display: flex;
   align-items: center;

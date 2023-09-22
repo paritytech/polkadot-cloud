@@ -6,66 +6,64 @@ SPDX-License-Identifier: GPL-3.0-only */
   top: 0;
   left: 0;
   height: 100vh;
-  padding-top: 5.5rem;
+  padding-top: 6.75rem;
+  padding-left: 2rem;
   max-height: 100vh;
   width: 10rem;
   z-index: 2;
+  font-size: 1.05rem;
 
-  > section {
-    padding-left: 2rem;
-  }
+  h3 {
+    font-family: InterBold, sans-serif;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
 
-  .link {
-    text-decoration: none;
-    display: block;
-    font-size: 1.1rem;
-    line-height: 2.4rem;
-
-    &.lg {
-      font-size: 1.25rem;
-      line-height: 2.25rem;
-      margin-bottom: 0.75rem;
-    }
-
-    &.selected {
-      color: var(--app-active-color);
+    > svg {
+      width: 1.25rem;
+      margin-right: 0.35rem;
     }
   }
 
   section {
-    font-size: 1.05rem;
-    margin-top: 0.75rem;
+    overflow: hidden;
 
-    > section {
-      margin-top: 1.5rem;
-
-      > h3 {
-        margin-bottom: 0.25rem;
-      }
-
-      h5 {
-        margin-top: 1.5rem;
-      }
-    }
-
-    .no-heading {
-      height: 0.5rem;
-    }
-
-    h5 {
-      font-family: InterBold, sans-serif;
-      font-weight: 600;
-      font-size: inherit;
+    .link {
       text-decoration: none;
       display: block;
-      margin: 0.5rem 0;
+      font-size: 1.15rem;
+      line-height: 2.75rem;
+      height: 2.75rem;
+      padding-left: 1.65rem;
+
+      &.lg {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+      }
+
+      &.selected {
+        color: var(--app-active-color);
+      }
     }
 
-    > a {
+    h4 {
+      color: var(--text-color-tertiary);
+      font-family: InterSemiBold, sans-serif;
+      margin: 1rem 0 0.75rem;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+
+      > svg {
+        margin-left: 0.2rem;
+        margin-right: 0.4rem;
+      }
+    }
+
+    a {
       color: var(--text-color-secondary);
-      font-size: inherit;
-      text-decoration: none;
-      display: block;
       line-height: 2.25rem;
 
       &.lg {

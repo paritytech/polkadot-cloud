@@ -22,15 +22,15 @@ type Routes = {
   element: ReactNode;
 }[];
 
-type RouteCategories = ((RouteCategory | RouteCategoryMulti) & {
+type RouteCategories = ((RouteCategoryPath | RouteCategoryMulti) & {
   name?: string;
 })[];
 
-interface RouteCategory {
+interface RouteCategoryPath {
   path: string;
 }
 
-interface RouteCategoryMulti {
+export interface RouteCategoryMulti {
   paths: {
     heading?: string;
     paths: string[];
@@ -50,7 +50,7 @@ const recipesRoutes = [
 const utilsRoutes = [
   {
     path: "utilities",
-    name: "Cloud Utils",
+    name: "Cloud Util",
     element: <Utilities />,
   },
 ];
