@@ -22,6 +22,7 @@ const iconProps: IconProps = {
 };
 
 <AccountCard
+  style={{ padding: "1rem" }}
   fontSize="medium"
   icon={iconProps}
   title={{
@@ -42,6 +43,7 @@ const iconProps: IconProps = {
     <>
       <Demo showThemes={false}>
         <AccountCard
+          style={{ padding: "1rem" }}
           fontSize="medium"
           icon={iconProps}
           title={{

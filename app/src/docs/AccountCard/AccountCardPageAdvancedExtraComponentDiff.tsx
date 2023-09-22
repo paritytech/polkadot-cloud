@@ -37,7 +37,7 @@ const extraComponentProps: ExtraComponentProps = {
 };
 ...
 return (
-  <AccountCard icon={iconProps} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} extraComponent={extraComponentProps} />
+  <AccountCard style={{ padding: "1rem" }} icon={iconProps} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} extraComponent={extraComponentProps} />
 )`;
 
   const iconProps: IconProps = {
@@ -65,6 +65,7 @@ return (
     <>
       <Demo showThemes={false}>
         <AccountCard
+          style={{ padding: "1rem" }}
           icon={iconProps}
           title={{
             address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73",
