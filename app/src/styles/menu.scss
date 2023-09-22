@@ -37,12 +37,12 @@ SPDX-License-Identifier: GPL-3.0-only */
       line-height: 2.75rem;
       height: 2.75rem;
       padding-left: 2rem;
-  
+
       &.lg {
         font-size: 1.25rem;
         margin-bottom: 0.75rem;
       }
-  
+
       &.selected {
         color: var(--app-active-color);
       }
@@ -51,7 +51,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     h4 {
       color: var(--text-color-tertiary);
       font-family: InterSemiBold, sans-serif;
-      margin: 1rem 0 0.75rem 0;
+      margin: 1rem 0 0.75rem;
       font-size: 1.15rem;
       display: flex;
       align-items: center;
