@@ -39,6 +39,10 @@ SPDX-License-Identifier: GPL-3.0-only */
     > section {
       margin-top: 1.5rem;
 
+      > h3 {
+        margin-bottom: 0;
+      }
+
       h5 {
         margin-top: 1.5rem;
       }
@@ -54,7 +58,7 @@ SPDX-License-Identifier: GPL-3.0-only */
       font-size: inherit;
       text-decoration: none;
       display: block;
-      margin: 0.75rem 0;
+      margin: 0.5rem 0;
     }
 
     > a {
