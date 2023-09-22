@@ -2,7 +2,14 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 .doc {
-  margin: 5rem 0 2.5rem;
+  margin: 4rem 0 2.5rem;
+
+  .edit-on-github {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.1rem;
+    width: 100%;
+  }
 
   > h1 {
     color: var(--text-color-primary);
@@ -11,7 +18,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     line-height: 2.7rem;
 
     &.header {
-      margin-top: 2rem;
+      margin-top: 2.5rem;
     }
   }
 
