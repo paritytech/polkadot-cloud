@@ -13,26 +13,10 @@ SPDX-License-Identifier: GPL-3.0-only */
   z-index: 2;
   font-size: 1.05rem;
 
-  .link {
-    text-decoration: none;
-    display: block;
-    font-size: 1.1rem;
-    line-height: 2.4rem;
-
-    &.lg {
-      font-size: 1.25rem;
-      line-height: 2.25rem;
-      margin-bottom: 0.75rem;
-    }
-
-    &.selected {
-      color: var(--app-active-color);
-    }
-  }
-
   h3 {
     font-family: InterBold, sans-serif;
-    margin-bottom: 0.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
     display: flex;
     align-items: center;
     width: 100%;
@@ -45,30 +29,41 @@ SPDX-License-Identifier: GPL-3.0-only */
 
   section {
     overflow: hidden;
-    padding-left: 2rem;
 
-    h5 {
-      margin-top: 1.5rem;
-    }
-
-    .no-heading {
-      height: 0.5rem;
-    }
-
-    h5 {
-      font-family: InterBold, sans-serif;
-      font-weight: 600;
-      font-size: inherit;
+    .link {
       text-decoration: none;
       display: block;
-      margin: 0.5rem 0;
+      font-size: 1.15rem;
+      line-height: 2.75rem;
+      height: 2.75rem;
+      padding-left: 2rem;
+  
+      &.lg {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+      }
+  
+      &.selected {
+        color: var(--app-active-color);
+      }
     }
 
-    > a {
+    h4 {
+      color: var(--text-color-tertiary);
+      font-family: InterSemiBold, sans-serif;
+      margin: 1rem 0 0.75rem 0;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+
+      > svg {
+        margin-left: 0.2rem;
+        margin-right: 0.5rem;
+      }
+    }
+
+    a {
       color: var(--text-color-secondary);
-      font-size: inherit;
-      text-decoration: none;
-      display: block;
       line-height: 2.25rem;
 
       &.lg {

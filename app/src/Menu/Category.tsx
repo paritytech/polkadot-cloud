@@ -10,6 +10,7 @@ import {
   faChevronDown,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+import { faCircle } from "@fortawesome/free-regular-svg-icons";
 interface Props {
   name: string;
   rest: RouteCategoryMulti;
@@ -49,17 +50,11 @@ export const Category = ({ rest, name, i }: Props) => {
         {rest.paths.map(({ heading, paths }, j) => (
           <Fragment key={`nav_${i}_heading_${j}`}>
             {heading ? (
-              <h4
-                style={{
-                  margin: "1.25rem 0 0.75rem 0",
-                  fontWeight: "bold",
-                }}
-              >
+              <h4>
+                <FontAwesomeIcon icon={faCircle} transform="shrink-6" />{" "}
                 {heading}
               </h4>
-            ) : (
-              <div className="no-heading" />
-            )}
+            ) : null}
 
             {paths.map((path, k) => (
               <Link

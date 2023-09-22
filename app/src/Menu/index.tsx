@@ -2,7 +2,6 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { Fragment } from "react";
-import { Separator } from "@packages/cloud-react/lib/base/structure/Separator";
 import { Link, useLocation } from "react-router-dom";
 import { nameFromRoute, routeCategories } from "../config/routes";
 import "../styles/menu.scss";
@@ -31,7 +30,6 @@ export const Menu = () => {
               </Link>
             </>
           )}
-          <Separator />
         </Fragment>
       ))}
     </div>
