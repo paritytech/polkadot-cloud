@@ -50,7 +50,7 @@ const recipesRoutes = [
 const utilsRoutes = [
   {
     path: "utilities",
-    name: "Cloud Util",
+    name: "Cloud Utils",
     element: <Utilities />,
   },
 ];
