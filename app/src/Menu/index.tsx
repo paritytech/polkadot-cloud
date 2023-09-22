@@ -17,15 +17,7 @@ export const Menu = () => {
         <Fragment key={`nav_${i}`}>
           {"paths" in rest ? (
             <>
-              <h3
-                style={{
-                  fontWeight: "bold",
-                }}
-              >
-                {name}
-              </h3>
-
-              <Category rest={rest} i={i} />
+              <Category name={name} rest={rest} i={i} />
             </>
           ) : (
             <>
