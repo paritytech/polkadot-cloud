@@ -1011,7 +1011,7 @@ const App = () => (
 `]}),`
 `,a.jsxs(t.li,{children:[a.jsx("a",{href:"https://novawallet.io",target:"_blank",rel:"noreferrer",children:"Nova Wallet"})," (if ",a.jsx(t.code,{children:"window.walletExtension.isNovaWallet"})," is present)"]}),`
 `]}),`
-`,a.jsxs(t.p,{children:["The wallet extensions source code can be found ",a.jsx("a",{href:"https://github.com/paritytech/polkadot-cloud/blob/main/packages/assets/lib/extensions/index.tsx",target:"_blank",rel:"noreferrer",children:"here"}),"."]}),`
+`,a.jsxs(t.p,{children:["All extension data is stored in an ",a.jsx(t.code,{children:"Extensions"})," object. The source code can be found ",a.jsx("a",{href:"https://github.com/paritytech/polkadot-cloud/blob/main/packages/assets/lib/extensions/index.tsx",target:"_blank",rel:"noreferrer",children:"here"}),"."]}),`
 `,a.jsx($s,{children:a.jsxs(t.p,{children:["To open a PR and add additional extensions to this list, refer to the instructions hosted in this package's ",a.jsx("a",{href:"https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets#adding-web-extension-wallets",target:"_blank",rel:"noreferrer",children:"README file"}),"."]})}),`
 `,a.jsx(t.h3,{children:"SVG Icons"}),`
 `,a.jsxs(t.p,{children:["As some of the extension icons are not perfectly square, it is recommended to bound their width and heights with ",a.jsx(t.code,{children:"max-width"})," and ",a.jsx(t.code,{children:"max-height"})," properties."]}),`
