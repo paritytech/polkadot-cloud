@@ -7,8 +7,6 @@ SPDX-License-Identifier: GPL-3.0-only */
   background: var(--background-primary);
   box-shadow: var(--card-shadow-secondary);
   flex: 1;
-  flex-basis: 100%;
-  margin-bottom: 1rem;
   z-index: 0;
 
   @media (max-width: (v.$page-width-medium-threshold - 26px)) {
@@ -17,10 +15,5 @@ SPDX-License-Identifier: GPL-3.0-only */
 
   display: flex;
   border-radius: 0.95rem;
-  padding: 0.9rem 0;
   flex-flow: row wrap;
-
-  @media (max-width: (v.$page-width-medium-threshold - 76px)) {
-    padding: 0.9rem 0;
-  }
 }
