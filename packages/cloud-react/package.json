@@ -24,7 +24,6 @@
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   },
   "peerDependencies": {
-    "framer-motion": "^10.15.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -38,6 +37,7 @@
     "@polkadot/util-crypto": "^12.4.2",
     "@polkadot-cloud/core": "0.1.31",
     "@polkadot-cloud/utils": "^0.0.11",
+    "framer-motion": "^10.15.0",
     "react-error-boundary": "^4.0.11"
   }
 }
