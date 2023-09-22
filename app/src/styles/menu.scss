@@ -1,0 +1,81 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  padding-top: 5.5rem;
+  max-height: 100vh;
+  width: 10rem;
+  z-index: 2;
+
+  > section {
+    padding-left: 2rem;
+  }
+
+  .link {
+    text-decoration: none;
+    display: block;
+    font-size: 1.1rem;
+    line-height: 2.4rem;
+
+    &.lg {
+      font-size: 1.25rem;
+      line-height: 2.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    &.selected {
+      color: var(--app-active-color);
+    }
+  }
+
+  section {
+    font-size: 1.05rem;
+    margin-top: 0.75rem;
+
+    > section {
+      margin-top: 1.5rem;
+
+      > h3 {
+        margin-bottom: 0;
+      }
+
+      h5 {
+        margin-top: 1.5rem;
+      }
+    }
+
+    .no-heading {
+      height: 0.5rem;
+    }
+
+    h5 {
+      font-family: InterBold, sans-serif;
+      font-weight: 600;
+      font-size: inherit;
+      text-decoration: none;
+      display: block;
+      margin: 0.5rem 0;
+    }
+
+    > a {
+      color: var(--text-color-secondary);
+      font-size: inherit;
+      text-decoration: none;
+      display: block;
+      line-height: 2.25rem;
+
+      &.lg {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+      }
+
+      &.selected {
+        color: var(--app-active-color);
+      }
+    }
+  }
+}
