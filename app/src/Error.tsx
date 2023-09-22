@@ -24,8 +24,8 @@ export const Error = () => {
         <IconSVG />
       </div>
       <h2 style={{ fontSize: "2.5rem", fontWeight: "bold" }}>Oops!</h2>
-      <h4>You are not supposed to be here.</h4>
-      <a href="/">Go back!</a>
+      <h4>Something went wrong! You are not supposed to be here.</h4>
+      <a href="/">Go Back</a>
     </div>
   );
 };
