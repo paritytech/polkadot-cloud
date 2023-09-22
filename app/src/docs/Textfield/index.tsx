@@ -5,6 +5,6 @@ import Doc from "./index.mdx";
 
 export const Textfield = () => (
   <div className="doc">
-    <Doc npm="@polkadot-cloud/react" folder="TextField" />
+    <Doc npm="@polkadot-cloud/react" folder="Textfield" />
   </div>
 );
