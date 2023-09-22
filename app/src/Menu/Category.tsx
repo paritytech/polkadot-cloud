@@ -39,14 +39,11 @@ export const Category = ({ rest, name, i }: Props) => {
         variants={{
           hidden: { height: 0 },
           show: {
-            transition: {
-              staggerChildren: 0.01,
-            },
+            height: "auto",
           },
         }}
         transition={{
-          duration: 0.3,
-          type: "spring",
+          ease: [0.1, 1, 0.1, 1],
         }}
       >
         {rest.paths.map(({ heading, paths }, j) => (
