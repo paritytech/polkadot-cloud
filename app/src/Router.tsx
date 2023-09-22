@@ -6,9 +6,11 @@ import { routes } from "./config/routes";
 import { Error } from "./Error";
 import { Menu } from "./Menu";
 import { Footer } from "./Footer";
+import { Header } from "./Header";
 
 export const Router = () => (
   <>
+    <Header />
     <Menu />
     <div className="body">
       <Routes>

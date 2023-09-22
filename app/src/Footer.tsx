@@ -7,7 +7,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export const Footer = () => {
   return (
-    <div className="footer">
+    <div className="app-footer">
       <section>
         <IconSVG className="icon" />
         <div>

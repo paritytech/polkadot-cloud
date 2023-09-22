@@ -19,6 +19,10 @@ SPDX-License-Identifier: GPL-3.0-only */
   background: var(--background-default);
   min-height: 100vh;
   width: 100%;
+
+  a {
+    color: var(--accent-color-primary);
+  }
 }
 
 .error-page {
@@ -48,87 +52,39 @@ SPDX-License-Identifier: GPL-3.0-only */
   }
 }
 
-.menu {
+.app-header {
+  background: var(--background-default);
+  border-bottom: 1px solid var(--border-primary-color);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 5rem;
   position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  max-height: 100vh;
-  width: 10rem;
-  z-index: 2;
-
-  .icon {
-    padding-left: 1.5rem;
-    color: var(--accent-color-primary);
-    width: 100%;
-    height: 6rem;
-    margin: 0.75rem 0;
-
-    > svg {
-      max-width: 100%;
-      max-height: 100%;
-    }
-  }
+  z-index: 5;
 
   > section {
-    padding-left: 2rem;
-  }
+    display: flex;
 
-  .link {
-    text-decoration: none;
-    display: block;
-    font-size: 1.1rem;
-    line-height: 2.4rem;
-
-    &.lg {
-      font-size: 1.25rem;
-      line-height: 2.25rem;
-      margin-bottom: 0.75rem;
+    &:last-child {
+      flex-grow: 1;
+      justify-content: flex-end;
+      padding-right: 2rem;
     }
-
-    &.selected {
-      color: var(--app-active-color);
-    }
-  }
-
-  section {
-    font-size: 1.05rem;
-    margin-top: 0.75rem;
-
-    > section {
-      margin-top: 1.5rem;
-
-      h5 {
-        margin-top: 1.5rem;
-      }
-    }
-
-    .no-heading {
-      height: 0.5rem;
-    }
-
-    h5 {
-      font-family: InterBold, sans-serif;
-      font-weight: 600;
-      font-size: inherit;
-      text-decoration: none;
-      display: block;
-      margin: 0.75rem 0;
-    }
-
-    > a {
-      font-size: inherit;
-      text-decoration: none;
-      display: block;
-      line-height: 2.25rem;
-
-      &.lg {
-        font-size: 1.25rem;
-        margin-bottom: 0.75rem;
-      }
-
+    > button {
+      margin-right: 1.5rem;
       &.selected {
-        color: var(--app-active-color);
+        color: var(--accent-color-primary);
+      }
+    }
+    .icon {
+      padding-left: 1.5rem;
+      color: var(--accent-color-primary);
+      width: 7rem;
+      max-height: 4.25rem;
+  
+      > svg {
+        max-width: 100%;
+        max-height: 100%;
       }
     }
   }
@@ -136,7 +92,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 .body {
   min-height: 100vh;
-  padding: 1rem 1.5rem 3rem 0;
+  padding: 3.75rem 1.5rem 3rem 0;
   margin: 0 0 0 15rem;
   max-width: 900px;
   width: 100%;
@@ -173,14 +129,15 @@ SPDX-License-Identifier: GPL-3.0-only */
   }
 }
 
-.footer {
+.app-footer {
   border-top: 1px solid var(--border-primary-color);
   flex: 1;
   padding: 1.5rem 2rem;
+  min-height: 4rem;
   display: flex;
   align-items: center;
 
-  @media (width <= 768px) {
+  @media (width <= 800px) {
     flex-direction: column;
   }
 
@@ -221,21 +178,17 @@ SPDX-License-Identifier: GPL-3.0-only */
       }
     }
 
-    a {
-      color: var(--accent-color-primary);
-    }
-
     &:last-child {
       flex-grow: 1;
       display: flex;
       justify-content: flex-end;
 
-      @media (width <= 768px) {
+      @media (width <= 800px) {
         justify-content: center;
       }
     }
 
-    @media (width <= 768px) {
+    @media (width <= 800px) {
       flex-basis: 100%;
       width: 100%;
       padding: 1rem 0;
@@ -255,7 +208,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     }
   }
 
-  @media (width <= 768px) {
+  @media (width <= 800px) {
     padding: 0.5rem 0;
   }
 }
