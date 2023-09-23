@@ -652,32 +652,32 @@ describe("Test suite - makeCancelable Function", () => {
 });
 
 describe("Tests suite - ellipsisFn Function", () => {
-  test("Should return an address with 4 digits and default ellipsis (left) ", () => {
-    const result = fn.ellipsisFn(address, 4, "left");
+  test("Should return an address with 4 digits and default ellipsis (start) ", () => {
+    const result = fn.ellipsisFn(address, 4, "start");
     expect(result).toBe("...ZmY7");
   });
 
-  test("Should return an address with 4 digits and right ellipsis", () => {
-    const result = fn.ellipsisFn(address, 4, "right");
+  test("Should return an address with 4 digits and 'end' ellipsis", () => {
+    const result = fn.ellipsisFn(address, 4, "end");
     expect(result).toBe("234C...");
   });
 
-  test("Should return an address with 4 digits and ellipsis center", () => {
+  test("Should return an address with 4 digits and ellipsis 'center'", () => {
     const result = fn.ellipsisFn(address, 4);
     expect(result).toBe("234C...ZmY7");
   });
 
-  test("Should return an address with 10 digits and ellipsis center", () => {
+  test("Should return an address with 10 digits and ellipsis 'center'", () => {
     const result = fn.ellipsisFn(address, 10);
     expect(result).toBe("234CHvWmTu...oFaetEZmY7");
   });
 
-  test("Should return an address with minimum default of 4 digits and ellipsis center when the amount given is too small (2)", () => {
+  test("Should return an address with minimum default of 4 digits and ellipsis 'center' when the amount given is too small (2)", () => {
     const result = fn.ellipsisFn(address, 2);
     expect(result).toBe("234C...ZmY7");
   });
 
-  test("Should return an address with minimum default of 4 digits and ellipsis center when the amount given is too large (string.length / 2 - 3)", () => {
+  test("Should return an address with minimum default of 4 digits and ellipsis 'center' when the amount given is too large (string.length / 2 - 3)", () => {
     const result = fn.ellipsisFn(address, 100);
     expect(result).toBe("234CHvWmTuaVtkJpLS9ox...amcEMrfFAPYoFaetEZmY7");
   });

@@ -1,13 +1,14 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
+import { ellipsisFn } from "@packages/utils/lib";
 import { SimpleEditor } from "../lib/SimpleEditor";
 
 export const EllipsisFn = () => {
   const code = `const address = "234CHvWmTuaVtkJpLS9oxuhFd3HamcEMrfFAPYoFaetEZmY7";
 
-ellipsisFn(address, 4, "left") // ...ZmY7
-ellipsisFn(address, 4, "right") // 234C...
+ellipsisFn(address, 4, "start") // ...ZmY7
+ellipsisFn(address, 4, "end") // 234C...
 
 // position defaults to "center"
 ellipsisFn(address, 4) // 234C...ZmY7
@@ -23,5 +24,9 @@ ellipsisFn(address, 2) // 234C...ZmY7
 ellipsisFn(address, 100) // 234C...ZmY7
 `;
 
+  let or = "234CHvWmTuaVtkJpLS9oxuhFd3HamcEMrfFAPYoFaetEZmY7";
+  let s = ellipsisFn(or, 20, "start");
+  console.log("or: ", or.length);
+  console.log("ell: ", s, s.length);
   return <SimpleEditor code={code} standalone />;
 };
