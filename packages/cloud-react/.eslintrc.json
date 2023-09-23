@@ -1,0 +1,38 @@
+{
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": ["../../.eslintrc.json", "plugin:react/recommended"],
+  "plugins": ["react", "@typescript-eslint", "prefer-arrow-functions"],
+  "rules": {
+    "react/jsx-filename-extension": [
+      "warn",
+      {
+        "extensions": [".tsx"]
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "no-shadow": "off",
+    "import/no-named-as-default-member": "off",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "prefer-arrow-functions/prefer-arrow-functions": [
+      "warn",
+      {
+        "classPropertiesAllowed": false,
+        "disallowPrototype": false,
+        "returnStyle": "unchanged",
+        "singleReturnOnly": false
+      }
+    ]
+  }
+}

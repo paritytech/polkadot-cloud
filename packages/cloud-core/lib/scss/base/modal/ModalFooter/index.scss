@@ -1,0 +1,20 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  h3 {
+    color: var(--text-color-secondary);
+    opacity: 0.5;
+    position: relative;
+    top: 1.25rem;
+
+    &.active {
+      color: var(--accent-color-primary);
+      opacity: 1;
+    }
+  }
+}

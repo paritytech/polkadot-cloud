@@ -1,0 +1,19 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
+@use "../../../styles/_variables" as v;
+
+.core-card {
+  background: var(--background-primary);
+  box-shadow: var(--card-shadow-secondary);
+  flex: 1;
+  z-index: 0;
+
+  @media (max-width: (v.$page-width-medium-threshold - 26px)) {
+    box-shadow: var(--card-shadow);
+  }
+
+  display: flex;
+  border-radius: 0.95rem;
+  flex-flow: row wrap;
+}

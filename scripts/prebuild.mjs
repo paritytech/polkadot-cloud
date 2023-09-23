@@ -4,6 +4,8 @@
 import fs from "fs";
 import { dirFilesExist } from "./index.mjs";
 
+const scope = "polkadot-cloud";
+
 const dirFoldersOnly = async (dir, files) => {
   for (let file of files) {
     fs.stat(`${dir}${file}`, (err, stat) => {
@@ -13,6 +15,39 @@ const dirFoldersOnly = async (dir, files) => {
       }
       if (!stat.isDirectory()) {
         console.error(`❌ Packages directory must only contain folders.`);
+      }
+    });
+  }
+};
+
+const matchScripts = (dir, files) => {
+  for (let file of files) {
+    fs.stat(`${dir}${file}/package.json`, (err) => {
+      if (err) {
+        console.error(`❌ package.json file not found in ${dir}${file}`);
+        return;
+      }
+      const json = JSON.parse(
+        fs.readFileSync(`${dir}${file}/package.json`).toString()
+      );
+
+      if (json?.name !== `${scope}-${file}`) {
+        console.error(
+          `❌ ${json?.name} package name doesn't meet the naming requirement`
+        );
+      }
+
+      const scripts = Object.keys(json?.scripts || {});
+      if (
+        [
+          scripts.indexOf("build:mock"),
+          scripts.indexOf("build"),
+          scripts.indexOf("clear"),
+        ].includes("-1")
+      ) {
+        console.error(
+          `❌ All of the scripts field in package.json are required to have build:mock, build and clear properties`
+        );
       }
     });
   }
@@ -35,6 +70,7 @@ try {
       "package.json",
       "lib",
     ]);
+    matchScripts("./packages/", files);
 
     console.log(`✅ Pre-build integrity checks complete.`);
   });

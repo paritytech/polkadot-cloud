@@ -1,0 +1,178 @@
+import { Edit } from "../lib/Edit";
+import { Header } from "../lib/Header";
+import { Camelize } from "./Camelize";
+import { EllipsisFn } from "./EllipsisFn";
+import { EvalUnits } from "./EvalUnits";
+import { GreaterThanZero } from "./GreaterThanZero";
+import { IsNotZero } from "./IsNotZero";
+import { MinDecimalPlaces } from "./ΜinDecimalPlaces";
+import { PageFromUri } from "./PageFromUri";
+import { PlanckToUnit } from "./PlanckToUnit";
+import { RmCommas } from "./RmCommas";
+import { Shuffle } from "./Shuffle";
+import { TransformToBaseUnit } from "./TransformToBaseUnit";
+import { UnitToPlanck } from "./UnitToPlanck";
+
+<Edit folder={props.folder} />
+
+<Header
+  title="Cloud Utils"
+  subtitle="A collection of reusable utilities."
+  npm={props.npm}
+/>
+
+#### **`camelize`**
+
+---
+
+#### Converts a string of text to camelCase.
+
+#### _@param (string)_: string to become camelCase
+
+#### _@returns (string)_: the input string, but camelCased
+
+<Camelize />
+
+#### **`ellipsisFn`**
+
+---
+
+#### Receives an address and creates ellipsis on the given string, based on parameters.
+
+#### _@param (string)_ : The string to apply the ellipsis on
+
+#### _@param (number)_ : The amount of characters that the ellipsis will be
+
+#### _@param ("left" | "right" | "center")_ : where the ellipsis will apply; if center the amount of chracter is the same for beginning and end; if left or right then its only once the amount; defaults to "left"
+
+#### _@returns (string)_: the ellipsis-fied string
+
+<EllipsisFn />
+
+#### **`evalUnits`**
+
+---
+
+#### A function that identifes integer/float(comma or dot)/expressions (such as 1k) and converts to actual value (or reports an error).
+
+#### _@param (string)_: The input string
+
+#### _@returns ([number | null, string])_: an array of 2 items; The first is the actual calculated number (or null if none) while the second is the message that should appear in case of error
+
+<EvalUnits />
+
+#### **`greaterThanZero`**
+
+---
+
+#### Returns whether a BigNumber is greater than zero.
+
+#### _@param (BigNumber)_: the input to check against
+
+#### _@returns (boolean)_: the result of the fn
+
+<GreaterThanZero />
+
+#### **`isNotZero`**
+
+---
+
+#### Returns whether a BigNumber is zero.
+
+#### _@param (BigNumber)_: the input to check against
+
+#### _@returns (boolean)_: the result of the fn
+
+<IsNotZero />
+
+#### **`minDecimalPlaces`**
+
+---
+
+#### Forces a number to have at least the provided decimal places.
+
+#### _@param (string)_: string that we want to update the decimal places
+
+#### _@param (number)_: number of decimals to be adjusted
+
+<MinDecimalPlaces />
+
+#### **`pageFromUri`**
+
+---
+
+#### Use url variables to load the default components upon the first page visit.
+
+#### _@param (string)_: the url that we want to get the page from
+
+#### _@param (string)_: fallback string in case the url is wrong or empty
+
+#### _@returns (string)_: the value of the trimmed url
+
+<PageFromUri />
+
+#### **`planckToUnit`**
+
+---
+
+#### Converts an on chain balance value in BigNumber planck to a decimal value in token unit. (1 token = 10^units planck).
+
+#### _@param (BigNumber)_: The Planck in BigNumber
+
+#### _@param (number)_: the units
+
+#### _@returns (BigNumber)_: the decimal value in token unit
+
+<PlanckToUnit />
+
+#### **`rmCommas`**
+
+---
+
+#### Removes the commas from a string
+
+#### _@param (string)_: the url that we want to get the page from
+
+#### _@returns (string)_: the result of the fn
+
+<RmCommas />
+
+#### **`shuffle`**
+
+---
+
+#### Shuffle a set of objects
+
+#### _@param (array[object])_: an array of objects
+
+#### _@returns (array[object])_: the input array of objects but shuffled
+
+<Shuffle />
+
+#### **`transformToBaseUnit`**
+
+---
+
+#### The transformToBaseUnit function is used to transform a given estimated fee value from its current representation to its base unit representation, considering the provided chain decimals. The function is designed to handle cases where the chain decimals are either greater or less than the length of the estimated fee.
+
+#### _@param (string)_ : The estimated fee value that needs to be transformed to its base unit representation.
+
+#### _@param (number)_ : The number of decimal places used by the blockchain.
+
+#### _@returns (string)_: the result of the functions
+
+<TransformToBaseUnit />
+
+#### **`unitToPlanck`**
+
+---
+
+#### Converts a balance in token unit to an equivalent value in planck by applying the chain decimals ποιντ. (1 token = 10^units planck).
+
+#### _@param (strnig)_: token balance
+
+#### _@param (number)_: the units
+
+#### _@returns (BigNumber)_: value in planck with applied the chain decimals
+
+<UnitToPlanck />

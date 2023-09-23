@@ -2,4 +2,6 @@
 
 # Polkadot Cloud: Core
 
-Utilities for Polkadot apps.
+- Plug-and-Play themes for Polkadot apps and chains.
+- Component css/scss
+- Template css/fonts

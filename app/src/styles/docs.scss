@@ -1,0 +1,186 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
+.doc {
+  margin: 4rem 0 2.5rem;
+
+  .edit-on-github {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.1rem;
+    width: 100%;
+  }
+
+  > h1 {
+    color: var(--text-color-primary);
+    font-family: InterBold, sans-serif;
+    font-size: 2.4rem;
+    line-height: 2.7rem;
+
+    &.header {
+      margin-top: 2.5rem;
+    }
+  }
+
+  > h2 {
+    font-family: InterBold, sans-serif;
+    font-size: 1.8rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  > h3 {
+    color: var(--text-color-primary);
+    font-family: InterBold, sans-serif;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    margin: 2rem 0 1rem;
+
+    > svg {
+      color: var(--text-color-secondary);
+      margin-right: 0.6rem;
+      height: 2.25rem;
+      position: relative;
+      top: 0.1rem;
+    }
+
+    &.header {
+      margin-top: 1.15rem;
+      margin-bottom: 0;
+    }
+
+    &.npm {
+      color: var(--text-color-primary);
+      font-size: 1.25rem;
+      margin-top: 1.15rem;
+      margin-bottom: 2.5rem;
+
+      a {
+        color: var(--text-color-secondary);
+      }
+    }
+  }
+
+  > h4 {
+    font-family: InterSemiBold, sans-serif;
+    color: var(--text-color-primary);
+    font-size: 1.3rem;
+    margin-bottom: 1.4rem;
+  }
+
+  > p,
+  ul,
+  li,
+  ol {
+    color: var(--text-color-primary);
+    font-size: 1.2rem;
+  }
+
+  > p {
+    font-size: 1.25rem;
+    line-height: 1.9rem;
+  }
+
+  > ul,
+  li,
+  ol {
+    color: var(--text-color-primary);
+    font-size: 1.2rem;
+    line-height: 2.25rem;
+  }
+
+  code {
+    border: 1px solid var(--border-secondary-color);
+    color: var(--text-color-secondary);
+    border-radius: 0.4rem;
+    padding: 0.15rem 0.4rem;
+  }
+
+  a {
+    color: var(--accent-color-primary);
+    font-size: inherit;
+  }
+
+  .note {
+    border: 1px solid var(--border-secondary-color);
+    background: var(--background-modal);
+    border-radius: 0.7rem;
+    padding: 0.5rem 1.5rem;
+    margin: 1.5rem 0;
+    width: 100%;
+
+    * {
+      color: var(--text-color-secondary);
+      font-size: 1.2rem;
+      line-height: 1.65rem;
+    }
+
+    a {
+      color: var(--accent-color-primary);
+    }
+  }
+
+  .demo {
+    border: 1px solid var(--border-secondary-color);
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    border-bottom: 0;
+    margin-top: 1.25rem;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+
+    &.centered {
+      align-items: center;
+    }
+  }
+
+  .controls {
+    border-left: 1px solid var(--border-secondary-color);
+    border-right: 1px solid var(--border-secondary-color);
+    padding: 1.75rem 1rem 0.8rem;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    opacity: 0.75;
+    transition: opacity var(--transition-duration);
+
+    &:hover {
+      opacity: 1;
+    }
+
+    > button {
+      color: var(--text-color-tertiary);
+      font-family: InterSemiBold, sans-serif;
+      font-size: 0.95rem;
+      margin-left: 1.15rem;
+
+      &.active {
+        color: var(--accent-color-primary);
+      }
+    }
+  }
+
+  .editor {
+    width: 100%;
+    position: relative;
+
+    &.standalone {
+      border-top-left-radius: 0.75rem !important;
+      border-color: red;
+    }
+
+    .copy {
+      position: absolute;
+      right: 1.25rem;
+      top: 1.1rem;
+      z-index: 2;
+
+      > svg {
+        color: var(--text-color-secondary);
+        opacity: 0.7;
+      }
+    }
+  }
+}

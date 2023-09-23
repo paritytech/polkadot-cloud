@@ -2,19 +2,13 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { App } from "./App";
 
-// NOTE: order here is important. lib/styles/index.scss relies on fonts.
+// NOTE: order here is important. dist/styles/index.scss relies on fonts.
 
-import "@packages/themes/lib/template/default/fonts/index.css";
-import "@packages/themes/lib/template/default/index.css";
-
-import "@packages/themes/lib/theme/polkadot-relay/index.css";
-import "@packages/themes/lib/theme/kusama-relay/index.css";
-import "@packages/themes/lib/theme/westend-relay/index.css";
-import "@packages/themes/lib/theme/xcm/index.css";
+import "@packages/cloud-core/dist/template/cloud/fonts/index.css";
+import "@packages/cloud-core/dist/template/cloud/index.css";
+import "@packages/cloud-core/dist/theme/cloud/index.css";
 
 import "./styles/index.scss";
-
-import "@packages/react-odometer/lib/styles/index.scss";
 
 // NOTE: ensure this is last.
 //

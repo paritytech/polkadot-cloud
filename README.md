@@ -6,22 +6,20 @@ A library and automated platform for developing and publishing assets for Polkad
 
 ## Package Directory
 
-#### [@polkadotcloud/community](https://github.com/paritytech/polkadot-cloud/tree/main/packages/community#polkadot-cloud-community)
+#### [@polkadot-cloud/core](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-core)
 
-A source of truth for Polkadot web extensions and validator entities.
+- Plug-and-Play themes for Polkadot apps and chains.
+- Component css/scss
+- Template css/fonts
 
-#### [@polkadotcloud/core-ui](https://github.com/paritytech/polkadot-cloud/tree/main/packages/core-ui#polkadot-cloud-core-ui)
+#### [@polkadot-cloud/react](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-react#polkadot-cloud-react)
 
-Core components for Polkadot dashboards.
-
-#### [@polkadotcloud/react-odometer](https://github.com/paritytech/polkadot-cloud/blob/main/packages/react-odometer#polkadot-cloud-react-odometer)
-
-An odometer effect used for numbers and balances.
-
-#### [@polkadotcloud/themes](https://github.com/paritytech/polkadot-cloud/tree/main/packages/themes#polkadot-cloud-themes)
-
-Plug-and-Play Themes for Polkadot apps and chains.
+Core components for Polkadot apps.
 
 #### [@polkadotcloud/utils](https://github.com/paritytech/polkadot-cloud/tree/main/packages/utils#polkadot-cloud-utils)
 
 Utilities for Polkadot apps.
+
+#### [@polkadot-cloud/assets](https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets#polkadot-cloud-assets)
+
+Data sources and static assets for Polkadot apps.

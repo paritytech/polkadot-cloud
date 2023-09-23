@@ -1,13 +1,12 @@
 {
-  "name": "polkadotcloud-utils",
+  "name": "polkadot-cloud-utils",
   "license": "GPL-3.0-only",
-  "version": "0.2.23",
-  "type": "module",
+  "version": "0.0.13",
   "contributors": [
     "Ross Bulat<ross@parity.io>",
     "Nikolaos Kontakis<nikos@parity.io>"
   ],
-  "description": "Utilities for Polkadot Dashboards.",
+  "description": "Utilities for Polkadot Dapps.",
   "keywords": [
     "Polkadot",
     "UI"
@@ -17,13 +16,16 @@
   },
   "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
   "scripts": {
-    "build:mock": "node ../../scripts/generatePackageJson.mjs -p utils -m index.ts",
-    "build": "rollup -c && node ../../scripts/generatePackageJson.mjs -p utils -m index.ts",
-    "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
+    "build:mock": "node ../../scripts/generatePackageJson.mjs -p utils",
+    "build": "rm -fr dist && rollup -c && node ../../scripts/generatePackageJson.mjs -p utils",
+    "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:coverage": "vitest run --coverage"
   },
-  "peerDependencies": {
-    "@polkadot/keyring": "^12.3.2",
-    "@polkadot/util": "^11.0.1",
-    "bignumber.js": "^9.1.1"
+  "dependencies": {
+    "bignumber.js": "^9.1.1",
+    "@polkadot/keyring": "^12.5.1",
+    "@polkadot/util": "^12.5.1"
   }
 }

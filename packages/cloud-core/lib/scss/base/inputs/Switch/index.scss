@@ -1,0 +1,146 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
+// Mixins for Sizes
+
+// size: default
+@mixin switch-checkbox-default {
+  width: 4rem;
+  height: 2rem;
+}
+
+@mixin switch-label-default {
+  top: 0.1rem;
+  left: 0.2rem;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+// size: small (sm)
+@mixin switch-checkbox-sm {
+  width: 3rem;
+  height: 1.5rem;
+}
+
+@mixin switch-label-sm {
+  top: 0.1rem;
+  left: 0.2rem;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+// size: large (lg)
+@mixin switch-checkbox-lg {
+  width: 4.5rem;
+  height: 2.25rem;
+}
+
+@mixin switch-label-lg {
+  top: 0.12rem;
+  left: 0.1rem;
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+// size: extra large (xl)
+@mixin switch-checkbox-xl {
+  width: 6rem;
+  height: 3rem;
+}
+
+@mixin switch-label-xl {
+  top: 0.2rem;
+  left: 0.3rem;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+// Mixin for disabled
+@mixin disabled {
+  transition:
+    opacity var(--transition-duration),
+    color var(--transition-duration);
+
+  &:disabled {
+    opacity: var(--opacity-disabled);
+    cursor: default;
+  }
+}
+
+.base-inputs-switch-checkbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.base-inputs-switch-label {
+  @include switch-checkbox-default;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 100rem;
+  position: relative;
+  transition: background-color 0.2s;
+
+  &.is-disabled {
+    @include disabled;
+  }
+
+  &.is-enabled {
+    cursor: pointer;
+  }
+
+  &.sm {
+    @include switch-checkbox-sm;
+  }
+
+  &.lg {
+    @include switch-checkbox-lg;
+  }
+
+  &.xl {
+    @include switch-checkbox-xl;
+  }
+}
+
+.base-inputs-switch-label .base-inputs-switch-button {
+  @include switch-label-default;
+
+  content: "";
+  position: absolute;
+  border-radius: 100rem;
+  transition: 0.3s;
+  box-shadow: 0 0 0.25rem 0 rgb(10 10 10 / 29%);
+
+  &.is-disabled {
+    @include disabled;
+  }
+
+  &.sm {
+    @include switch-label-sm;
+  }
+
+  &.lg {
+    @include switch-label-lg;
+  }
+
+  &.xl {
+    @include switch-label-xl;
+  }
+}
+
+.base-inputs-switch-checkbox:checked + .base-inputs-switch-button {
+  left: calc(100% - 0.05rem);
+  transform: translateX(-100%);
+}
+
+.base-inputs-switch-label:active .base-inputs-switch-button {
+  &.is-enabled {
+    width: 1.5rem;
+  }
+
+  &.is-disabled {
+    width: 1.2rem;
+  }
+}

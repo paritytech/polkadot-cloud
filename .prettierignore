@@ -8,3 +8,5 @@
 **/tsconfig.json
 **/tstsconfig.tsbuildinfo
 README.md
+*.mdx
+*CODEOWNERS*

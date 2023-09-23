@@ -1,0 +1,121 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
+.line-loading {
+  width: 80px;
+  height: 50px;
+  position: relative;
+
+  p {
+    top: 0;
+    padding: 0;
+    margin: 0;
+    color: var(--text-color-secondary);
+    animation: text 3.5s ease both infinite;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    @keyframes text {
+      0% {
+        letter-spacing: 1px;
+        transform: translateX(0);
+      }
+
+      40% {
+        letter-spacing: 2px;
+        transform: translateX(26px);
+      }
+
+      80% {
+        letter-spacing: 1px;
+        transform: translateX(32px);
+      }
+
+      90% {
+        letter-spacing: 2px;
+        transform: translateX(0);
+      }
+
+      100% {
+        letter-spacing: 1px;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  span {
+    background-color: var(--text-color-primary);
+    border-radius: 50px;
+    display: block;
+    height: 16px;
+    width: 16px;
+    bottom: 0;
+    position: absolute;
+    transform: translateX(64px);
+    animation: line-loading 3.5s ease both infinite;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: var(--accent-color-primary);
+      border-radius: inherit;
+      animation: loading2 3.5s ease both infinite;
+    }
+
+    @keyframes line-loading {
+      0% {
+        width: 16px;
+        transform: translateX(0);
+      }
+
+      40% {
+        width: 100%;
+        transform: translateX(0);
+      }
+
+      80% {
+        width: 16px;
+        transform: translateX(64px);
+      }
+
+      90% {
+        width: 100%;
+        transform: translateX(0);
+      }
+
+      100% {
+        width: 16px;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes loading2 {
+      0% {
+        transform: translateX(0);
+        width: 16px;
+      }
+
+      40% {
+        transform: translateX(0%);
+        width: 80%;
+      }
+
+      80% {
+        width: 100%;
+        transform: translateX(0);
+      }
+
+      90% {
+        width: 80%;
+        transform: translateX(15px);
+      }
+
+      100% {
+        transform: translateX(0);
+        width: 16px;
+      }
+    }
+  }
+}

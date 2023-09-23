@@ -1,8 +1,15 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-/* Inject styles from core-ui */
-@use "../../../packages/cloud-core/lib/scss/styles/variables" as v;
+@use "variables" as v;
+@use "docs";
+
+@font-face {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/SourceCodePro.woff2") format("woff2");
+}
 
 :root {
   --app-active-color: rgb(211 48 121);
@@ -12,60 +19,105 @@ SPDX-License-Identifier: GPL-3.0-only */
   background: var(--background-default);
   min-height: 100vh;
   width: 100%;
+
+  a {
+    color: var(--accent-color-primary);
+  }
 }
 
-.menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  max-height: 100vh;
-  width: 10rem;
-  z-index: 2;
+.error-page {
+  margin: 0 auto;
+  padding: 6rem 0;
+  text-align: center;
+
+  div {
+    margin: 1.5rem 0;
+    font-size: 1.5rem;
+  }
+
+  a {
+    font-size: 1.25rem;
+  }
 
   .icon {
-    padding-left: 1.5rem;
-    color: var(--network-color-primary);
-    width: 100%;
-    height: 6rem;
-    margin: 0.75rem 0;
+    width: 20rem;
+    height: 12rem;
+    margin: 0 auto;
+    color: var(--accent-color-primary);
 
     > svg {
       max-width: 100%;
       max-height: 100%;
     }
   }
+}
+
+.app-header {
+  background: var(--background-default);
+  border-bottom: 1px solid var(--border-primary-color);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 5.5rem;
+  position: fixed;
+  z-index: 5;
 
   > section {
-    padding-left: 2rem;
-  }
+    display: flex;
+    align-items: center;
 
-  section {
-    font-size: 1.05rem;
-    margin-top: 1.25rem;
-
-    h5 {
-      font-family: InterSemiBold, sans-serif;
-      font-weight: 600;
-      font-size: inherit;
-      text-decoration: none;
-      display: block;
-      margin: 0.75rem 0;
+    &:last-child {
+      flex-grow: 1;
+      justify-content: flex-end;
+      padding-right: 2rem;
     }
 
     > button {
-      font-size: inherit;
-      text-decoration: none;
-      display: block;
-      line-height: 2.25rem;
-
-      &.lg {
-        font-size: 1.25rem;
-        margin-bottom: 0.75rem;
-      }
+      margin-right: 1.5rem;
+      font-size: 1.25rem;
 
       &.selected {
-        color: var(--app-active-color);
+        color: var(--accent-color-primary);
+      }
+    }
+
+    .icon {
+      padding-left: 1.5rem;
+      color: var(--accent-color-primary);
+      width: 6.5rem;
+      max-height: 4.25rem;
+
+      > svg {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+
+    > .title {
+      border-left: 1px solid var(--border-primary-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 3rem;
+      padding-top: 0.2rem;
+      padding-left: 1.25rem;
+      margin-left: 0.25rem;
+
+      > h3,
+      p {
+        margin: 0;
+      }
+
+      h3 {
+        color: var(--text-color-secondary);
+        font-family: InterBold, sans-serif;
+        margin-bottom: 0.05rem;
+      }
+
+      p {
+        color: var(--text-color-tertiary);
+        font-family: InterSemiBold, sans-serif;
+        letter-spacing: 0.075rem;
       }
     }
   }
@@ -73,13 +125,16 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 .body {
   min-height: 100vh;
-  padding: 1rem 1.5rem 3rem 0;
+
+  /* CSS3: Leave enough room to show footer where content does not consume 100vh. */
+  min-height: calc(100vh - 5.5rem);
+  padding: 3.3rem 1.5rem 3rem 0;
   margin: 0 0 0 15rem;
   max-width: 900px;
   width: 100%;
 
   /* We need the body not to over come sidebar */
-  @media (min-width: (v.$page-width-medium-threshold + 26px)) {
+  @media (min-width: (v.$page-width-threshold + 26px)) {
     margin: 0 auto;
   }
 
@@ -88,77 +143,108 @@ SPDX-License-Identifier: GPL-3.0-only */
   }
 }
 
-.sb-head {
-  margin: 5rem 0 2.5rem;
-
-  > h1 {
-    font-family: InterBold, sans-serif;
-    font-size: 2.1rem;
-  }
-
-  > h2 {
-    margin-top: 1.35rem;
-  }
-
-  > h3 {
-    color: var(--text-color-secondary);
-    font-family: InterSemiBold, sans-serif;
-    display: flex;
-    align-items: center;
-    margin-top: 1rem;
-    opacity: 0.9;
-
-    a {
-      color: var(--text-color-secondary);
-    }
-
-    > svg {
-      color: var(--text-color-secondary);
-      margin-right: 0.6rem;
-      height: 2.25rem;
-      position: relative;
-      top: 0.1rem;
-    }
-  }
-}
-
-.sb-row {
-  display: flex;
-  margin: 1.25rem 0;
-}
-
 .svg-box {
   color: var(--text-color-primary);
-  width: 7.5rem;
-  height: 7.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 2rem 1rem 0;
+  margin: 0 2.5rem 0 0;
+
+  &.sm {
+    width: 4rem;
+    height: 4rem;
+  }
 
   > svg {
     max-width: 100%;
     max-height: 100%;
   }
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
-.code {
-  overflow: hidden;
-  height: auto;
-  border: 1px solid var(--border-primary-color);
-  border-radius: 0.75rem;
-  transition: border-color 0.5s ease-out;
-  padding: 0 0.75rem;
-  margin-top: 0.5rem;
+.app-footer {
+  border-top: 1px solid var(--border-primary-color);
+  flex: 1;
+  padding: 0 2rem;
+  min-height: 5.5rem;
+  display: flex;
+  align-items: center;
 
-  > .hide {
-    max-height: 0;
-    transition: max-height 0.25s ease-out;
-    overflow: hidden;
+  @media (width <= 800px) {
+    flex-direction: column;
   }
 
-  > .show {
-    max-height: 500px;
-    transition: max-height 0.35s ease-in;
+  > section {
+    display: flex;
+    align-items: center;
+
+    > div {
+      margin-right: 0.75rem;
+      display: flex;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .icon {
+      fill: var(--accent-color-primary);
+      stroke: var(--background-default);
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-right: 1rem;
+    }
+
+    h4 {
+      color: var(--text-color-tertiary);
+      font-family: InterSemiBold, sans-serif;
+      margin: 0;
+
+      span {
+        color: var(--text-color-secondary);
+      }
+
+      &.license {
+        a {
+          color: var(--text-color-secondary);
+        }
+      }
+    }
+
+    &:last-child {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+
+      @media (width <= 800px) {
+        justify-content: center;
+      }
+    }
+
+    @media (width <= 800px) {
+      flex-basis: 100%;
+      width: 100%;
+      padding: 1rem 0;
+      justify-content: center;
+      flex-direction: column;
+
+      .icon {
+        margin-right: 0;
+      }
+
+      > div {
+        flex-basis: 100%;
+        justify-content: center;
+        width: 100%;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  @media (width <= 800px) {
+    padding: 0.5rem 0;
   }
 }

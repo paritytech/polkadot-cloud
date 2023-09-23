@@ -7,6 +7,7 @@ import react from "@vitejs/plugin-react-swc";
 import checker from "vite-plugin-checker";
 import svgr from "vite-plugin-svgr";
 import path from "path";
+import mdx from "@mdx-js/rollup";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -21,6 +22,7 @@ export default defineConfig({
     outDir: "build",
   },
   plugins: [
+    mdx(),
     react(),
     svgr(),
     tsconfigPaths(),
@@ -30,6 +32,15 @@ export default defineConfig({
   ],
   resolve: {
     alias: [
+      {
+        find: "@polkadot-cloud/core",
+        replacement: path.resolve(
+          __dirname,
+          "../packages",
+          "cloud-core",
+          "dist"
+        ),
+      },
       {
         find: "@packages",
         replacement: path.resolve(__dirname, "../packages"),

@@ -1,0 +1,51 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+@use "sass:list";
+
+.dots-loading {
+  $colors: var(--background-default), var(--text-color-primary),
+    var(--text-color-secondary), var(--text-color-tertiary),
+    var(--accent-color-primary);
+
+  display: flex;
+
+  .dot {
+    position: relative;
+    width: 2em;
+    height: 2em;
+    margin: 0.8em;
+    border-radius: 50%;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      border-radius: inherit;
+      animation: dot-wave 2s ease-out infinite;
+    }
+
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        background: list.nth($colors, $i);
+
+        &::before {
+          animation-delay: $i * 0.2s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes dot-wave {
+  50%,
+  75% {
+    transform: scale(2.5);
+  }
+
+  80%,
+  100% {
+    opacity: 0;
+  }
+}

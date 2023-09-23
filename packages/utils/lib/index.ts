@@ -5,7 +5,7 @@ import { decodeAddress, encodeAddress } from "@polkadot/keyring";
 import { hexToU8a, isHex, u8aToString, u8aUnwrapBytes } from "@polkadot/util";
 import { BigNumber } from "bignumber.js";
 import type { MutableRefObject, RefObject } from "react";
-import { AnyJson, AnyObject } from "./types";
+import { AnyJson, AnyObject, EvalMessages } from "./types";
 
 /**
  * IMPORTANT: Rollup treats this file as the entry point for the package, the build of which is
@@ -14,20 +14,6 @@ import { AnyJson, AnyObject } from "./types";
  *
  * Because of this relative file paths should be used in this directory.
  */
-
-/**
- * @name clipAddress
- * @summary Clips an address to the first 6 and last 6 characters.
- */
-export const clipAddress = (val: string) => {
-  if (typeof val !== "string") {
-    return val;
-  }
-  return `${val.substring(0, 6)}...${val.substring(
-    val.length - 6,
-    val.length
-  )}`;
-};
 
 /**
  * @name remToUnit
@@ -39,10 +25,10 @@ export const remToUnit = (rem: string) =>
 
 /**
  * @name planckToUnit
- * @summary
+ * @summary convert planck to the token unit.
+ * @description
  * Converts an on chain balance value in BigNumber planck to a decimal value in token unit. (1 token
  * = 10^units planck).
- * @summary convert planck to the token unit.
  */
 export const planckToUnit = (val: BigNumber, units: number) =>
   new BigNumber(
@@ -51,16 +37,32 @@ export const planckToUnit = (val: BigNumber, units: number) =>
 
 /**
  * @name unitToPlanck
- * @summary
+ * @summary Convert the token unit to planck.
+ * @description
  * Converts a balance in token unit to an equivalent value in planck by applying the chain decimals
  * point. (1 token = 10^units planck).
- * @summary Convert the token unit to planck.
  */
-export const unitToPlanck = (val: string, units: number): BigNumber =>
-  new BigNumber(!val.length || !val ? "0" : val)
+export const unitToPlanck = (val: string, units: number): BigNumber => {
+  const init = new BigNumber(!val.length || !val ? "0" : val);
+  return (!init.isNaN() ? init : new BigNumber(0))
     .multipliedBy(new BigNumber(10).exponentiatedBy(units))
     .integerValue();
+};
 
+/**
+ * @name minDecimalPlaces
+ * @summary Forces a number to have at least the provided decimal places.
+ */
+export const minDecimalPlaces = (val: string, minDecimals: number) => {
+  const whole = new BigNumber(val.split(".")[0] || 0);
+  const decimals = val.split(".")[1] || "";
+  const missingDecimals = new BigNumber(minDecimals).minus(decimals.length);
+  return missingDecimals.isGreaterThan(0)
+    ? `${whole.toString()}.${decimals.toString()}${"0".repeat(
+        missingDecimals.toNumber()
+      )}`
+    : val;
+};
 /**
  * @name rmCommas
  * @summary Removes the commas from a string.
@@ -104,7 +106,7 @@ export const shuffle = <T>(array: Array<T>) => {
 export const pageFromUri = (pathname: string, fallback: string) => {
   const lastUriItem = pathname.substring(pathname.lastIndexOf("/") + 1);
   const page = lastUriItem.trim() === "" ? fallback : lastUriItem;
-  return page;
+  return page.trim();
 };
 
 /**
@@ -166,9 +168,9 @@ export const isValidAddress = (address: string) => {
  * @name determinePoolDisplay
  * @summary A pool will be displayed with either its set metadata or its address.
  */
-export const determinePoolDisplay = (adddress: string, batchItem: AnyJson) => {
+export const determinePoolDisplay = (address: string, batchItem: AnyJson) => {
   // default display value
-  const defaultDisplay = clipAddress(adddress);
+  const defaultDisplay = ellipsisFn(address, 6);
 
   // fallback to address on empty metadata string
   let display = batchItem ?? defaultDisplay;
@@ -200,19 +202,44 @@ export const extractUrlValue = (key: string, url?: string) => {
  * @name camelize
  * @summary Converts a string of text to camelCase.
  */
-export const camelize = (str: string) =>
-  str
-    .replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) =>
-      index === 0 ? word.toLowerCase() : word.toUpperCase()
-    )
-    .replace(/\s+/g, "");
+export const camelize = (str: string) => {
+  const convertToString = (string: AnyJson) => {
+    if (string) {
+      if (typeof string === "string") return string;
+      return String(string);
+    }
+    return "";
+  };
+
+  const toWords = (inp: string) =>
+    convertToString(inp).match(
+      /[A-Z\xC0-\xD6\xD8-\xDE]?[a-z\xDF-\xF6\xF8-\xFF]+|[A-Z\xC0-\xD6\xD8-\xDE]+(?![a-z\xDF-\xF6\xF8-\xFF])|\d+/g
+    );
+
+  const simpleCamelCase = (inp: string[]) => {
+    let result = "";
+    for (let i = 0; i < inp?.length; i++) {
+      const currString = inp[i];
+      let tmpStr = currString.toLowerCase();
+      if (i != 0) {
+        tmpStr =
+          tmpStr.slice(0, 1).toUpperCase() + tmpStr.slice(1, tmpStr.length);
+      }
+      result += tmpStr;
+    }
+    return result;
+  };
+
+  const w = toWords(str)?.map((a) => a.toLowerCase());
+  return simpleCamelCase(w);
+};
 
 /**
  * @name varToUrlHash
- * @summary
+ * @summary Puts a variable into the URL hash as a param.
+ * @description
  * Since url variables are added to the hash and are not treated as URL params, the params are split
  * and parsed into a `URLSearchParams`.
- * @summary Puts a variable into the URL hash as a param.
  */
 export const varToUrlHash = (
   key: string,
@@ -426,4 +453,182 @@ export const makeCancelable = (promise: Promise<AnyObject>) => {
       hasCanceled = true;
     },
   };
+};
+
+/**
+ * @name ellipsisFn
+ * @summary Receives an address and creates ellipsis on the given string, based on parameters.
+ * @param str  - The string to apply the ellipsis on
+ * @param amount  - The amount of characters that the ellipsis will be
+ * @param position - where the ellipsis will apply; if center the amount of chracter is the
+ * same for beginning and end; if left or right then its only once the amount; defaults to "left"
+ */
+export const ellipsisFn = (
+  str: string,
+  amount = 6,
+  position: "left" | "right" | "center" = "center"
+) => {
+  // having an amount less than 4 is a bit extreme so we default there
+  if (amount <= 4) {
+    if (position === "center") return str.slice(0, 4) + "..." + str.slice(-4);
+    if (position === "right") return str.slice(0, 4) + "...";
+    return "..." + str.slice(-4);
+  }
+  // if the amount requested is in a "logical" amount - meaning that it can display the address
+  // without repeating the same information twice - then go for it;
+  if (amount <= str.length / 2 - 3) {
+    if (position === "center")
+      return str.slice(0, amount) + "..." + str.slice(-amount);
+    if (position === "right") return str.slice(0, amount) + "...";
+    return "..." + str.slice(-amount);
+  }
+  // else, the user has been mistaskenly extreme, so just show the maximum possible amount
+  if (position === "center")
+    return (
+      str.slice(0, str.length / 2 - 3) +
+      "..." +
+      str.slice(-(str.length / 2 - 3))
+    );
+  if (position === "right") return str.slice(0, str.length / 2 - 3) + "...";
+  return "..." + str.slice(-(str.length / 2 - 3));
+};
+
+// Private for evalUnits
+const getSiValue = (si: number): BigNumber =>
+  new BigNumber(10).pow(new BigNumber(si));
+
+const si = [
+  { value: getSiValue(24), symbol: "y", isMil: true },
+  { value: getSiValue(21), symbol: "z", isMil: true },
+  { value: getSiValue(18), symbol: "a", isMil: true },
+  { value: getSiValue(15), symbol: "f", isMil: true },
+  { value: getSiValue(12), symbol: "p", isMil: true },
+  { value: getSiValue(9), symbol: "n", isMil: true },
+  { value: getSiValue(6), symbol: "μ", isMil: true },
+  { value: getSiValue(3), symbol: "m", isMil: true },
+  { value: new BigNumber(1), symbol: "" },
+  { value: getSiValue(3), symbol: "k" },
+  { value: getSiValue(6), symbol: "M" },
+  { value: getSiValue(9), symbol: "G" },
+  { value: getSiValue(12), symbol: "T" },
+  { value: getSiValue(15), symbol: "P" },
+  { value: getSiValue(18), symbol: "E" },
+  { value: getSiValue(21), symbol: "Y" },
+  { value: getSiValue(24), symbol: "Z" },
+];
+
+const allowedSymbols = si
+  .map((s) => s.symbol)
+  .join(", ")
+  .replace(", ,", ",");
+const floats = new RegExp("^[+]?[0-9]*[.,]{1}[0-9]*$");
+const ints = new RegExp("^[+]?[0-9]+$");
+const alphaFloats = new RegExp(
+  "^[+]?[0-9]*[.,]{1}[0-9]*[" + allowedSymbols + "]{1}$"
+);
+const alphaInts = new RegExp("^[+]?[0-9]*[" + allowedSymbols + "]{1}$");
+
+/**
+ * A function that identifes integer/float(comma or dot)/expressions (such as 1k)
+ * and converts to actual value (or reports an error).
+ * @param {string} input
+ * @returns {[number | null, string]} an array of 2 items
+ * the first is the actual calculated number (or null if none) while
+ * the second is the message that should appear in case of error
+ */
+export const evalUnits = (
+  input: string,
+  chainDecimals: number
+): [BigNumber | null, string] => {
+  //sanitize input to remove + char if exists
+  input = input && input.replace("+", "");
+  if (
+    !floats.test(input) &&
+    !ints.test(input) &&
+    !alphaInts.test(input) &&
+    !alphaFloats.test(input)
+  ) {
+    return [null, EvalMessages.GIBBERISH];
+  }
+  // find the character from the alphanumerics
+  const symbol = input.replace(/[0-9.,]/g, "");
+  // find the value from the si list
+  const siVal = si.find((s) => s.symbol === symbol);
+  const numberStr = input.replace(symbol, "").replace(",", ".");
+  let numeric: BigNumber = new BigNumber(0);
+
+  if (!siVal) {
+    return [null, EvalMessages.SYMBOL_ERROR];
+  }
+  const decimalsBn = new BigNumber(10).pow(new BigNumber(chainDecimals));
+  const containDecimal = numberStr.includes(".");
+  const [decPart, fracPart] = numberStr.split(".");
+  const fracDecimals = fracPart?.length || 0;
+  const fracExp = new BigNumber(10).pow(new BigNumber(fracDecimals));
+  numeric = containDecimal
+    ? new BigNumber(
+        new BigNumber(decPart)
+          .multipliedBy(fracExp)
+          .plus(new BigNumber(fracPart))
+      )
+    : new BigNumber(new BigNumber(numberStr));
+  numeric = numeric.multipliedBy(decimalsBn);
+  if (containDecimal) {
+    numeric = siVal.isMil
+      ? numeric.dividedBy(siVal.value).dividedBy(fracExp)
+      : numeric.multipliedBy(siVal.value).dividedBy(fracExp);
+  } else {
+    numeric = siVal.isMil
+      ? numeric.dividedBy(siVal.value)
+      : numeric.multipliedBy(siVal.value);
+  }
+  if (numeric.eq(new BigNumber(0))) {
+    return [null, EvalMessages.ZERO];
+  }
+  return [numeric, EvalMessages.SUCCESS];
+};
+
+/**
+ * The transformToBaseUnit function is used to transform a given estimated
+ * fee value from its current representation to its base unit representation,
+ * considering the provided chain decimals. The function is designed to handle
+ * cases where the chain decimals are either greater or less than the length
+ * of the estimated fee.
+ * @param {string} estFee : The estimated fee value that needs to be transformed
+ * to its base unit representation.
+ * @param {number} chainDecimals: The number of decimal places used by the blockchain.
+ */
+export const transformToBaseUnit = (
+  estFee: string,
+  chainDecimals: number
+): string => {
+  const t = estFee.length - chainDecimals;
+  let s = "";
+  // if chainDecimals are more than the estFee length
+  if (t < 0) {
+    // add 0 in front (1 less as we want the 0.)
+    for (let i = 0; i < Math.abs(t) - 1; i++) {
+      s += "0";
+    }
+    s = s + estFee;
+    // remove trailing 0s
+    for (let i = 0; i < s.length; i++) {
+      if (s.slice(s.length - 1) !== "0") break;
+      s = s.substring(0, s.length - 1);
+    }
+    s = "0." + s;
+  } else {
+    s = (parseInt(estFee) / 10 ** chainDecimals).toString();
+  }
+  return parseFloat(s) !== 0 ? s : "0";
+};
+
+/**
+ * @name unimplemented
+ * @summary A placeholder function to signal a deliberate unimplementation.
+ * Consumes an arbitrary number of props.
+ */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
+export const unimplemented = ({ ...props }) => {
+  /* unimplemented */
 };

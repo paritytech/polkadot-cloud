@@ -72,6 +72,7 @@ a {
 
 /* Define bare-bones button style. */
 button {
+  -webkit-tap-highlight-color: transparent;
   font-family: Inter, sans-serif;
   background: none;
   border: none;

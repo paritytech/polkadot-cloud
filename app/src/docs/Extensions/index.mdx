@@ -1,0 +1,61 @@
+import { Edit } from "../lib/Edit";
+import { Note } from "../lib/Note";
+import { Header } from "../lib/Header";
+import { ExtensionsSvg } from "./ExtensionsSvg";
+import { ExtensionsJsx } from "./ExtensionsJsx";
+
+<Edit folder={props.folder} />
+
+<Header
+  title="Web3 Extension Assets"
+  subtitle="A list of popular Web3 wallet extensions with metadata and icons."
+  npm={props.npm}
+/>
+
+##
+
+<Note>
+Extension assets from `@polkadot-cloud/assets` are used with other Cloud components, such as the upcoming Connect component.
+</Note>
+
+##
+
+## Wallet Extensions
+
+The following Web3 wallets are currently supported:
+
+- <a href="https://enkrypt.com" target="_blank" rel="noreferrer">Enkrypt</a>
+- <a href="https://fearlesswallet.io" target="_blank" rel="noreferrer">Fearless Wallet</a>
+- <a href="https://talisman.xyz" target="_blank" rel="noreferrer">Talisman</a>
+- <a href="https://subwallet.app" target="_blank" rel="noreferrer">Subwallet JS</a>
+- <a href="https://polkagate.xyz" target="_blank" rel="noreferrer">PolkaGate</a>
+- <a href="https://polkadot.js.org/extension" target="_blank" rel="noreferrer"> Polkadot JS</a>
+- <a href="https://novawallet.io" target="_blank" rel="noreferrer">Nova Wallet</a> (if `window.walletExtension.isNovaWallet` is present)
+
+All extension data is stored in an `Extensions` object. The source code can be found <a href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/assets/lib/extensions/index.tsx" target="_blank" rel="noreferrer">here</a>.
+
+<Note>
+To open a PR and add additional extensions to this list, refer to the instructions hosted in this package's <a href="https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets#adding-web-extension-wallets" target="_blank" rel="noreferrer">README file</a>.
+</Note>
+
+### SVG Icons
+
+As some of the extension icons are not perfectly square, it is recommended to bound their width and heights with `max-width` and `max-height` properties.
+
+Where the icons contain colors that need to be themed, `currentColor` is used as its fill or stroke (see Subwallet and Talisman icons).
+
+Import SVG assets from `/extensions/svg/`:
+
+<ExtensionsSvg />
+
+### JSX Icons
+
+Wallet icons are also available as JSX components for frameworks that support it.
+
+Import JSX assets from `/extensions/jsx/`:
+
+<ExtensionsJsx />
+
+<Note>
+Some frameworks require components to be locally available to lazily load them.
+</Note>

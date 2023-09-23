@@ -2,14 +2,30 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 .theme-westend-relay {
-  --network-color-primary-light: #da4e71;
-  --network-color-primary-dark: #da4e71;
-  --network-color-secondary-light: #de6a50;
-  --network-color-secondary-dark: #d7674e;
-  --network-color-stroke-light: #da4e71;
-  --network-color-stroke-dark: #da4e71;
-  --network-color-transparent-light: rgb(218 78 113 / 5%);
-  --network-color-transparent-dark: rgb(218 78 113 / 5%);
-  --network-color-pending-light: rgb(218 78 113 / 50%);
-  --network-color-pending-dark: rgb(218 78 113 / 50%);
+  /* Accent colors */
+  --accent-color-primary-light: #da4e71;
+  --accent-color-primary-dark: #da4e71;
+  --accent-color-secondary-light: #de6a50;
+  --accent-color-secondary-dark: #d7674e;
+  --accent-color-stroke-light: #da4e71;
+  --accent-color-stroke-dark: #da4e71;
+  --accent-color-transparent-light: rgb(218 78 113 / 5%);
+  --accent-color-transparent-dark: rgb(218 78 113 / 5%);
+  --accent-color-pending-light: rgb(218 78 113 / 50%);
+  --accent-color-pending-dark: rgb(218 78 113 / 50%);
+
+  /* Button styling */
+  --button-border-radius-small: 0.75rem;
+  --button-border-radius-large: 1.5rem;
+  --button-padding-small: 0.41rem 1rem;
+  --button-padding-large: 0.53rem 1rem;
+  --button-spacing-small: 0.125rem;
+  --button-spacing-large: 0.625rem;
+  --button-font-size-small: 1rem;
+  --button-font-size-large: 1.15rem;
+
+  /* Miscellaneous styling */
+  --opacity-disabled: 0.3;
+  --title-font-size: 1.75rem;
+  --transition-duration: 0.15s;
 }

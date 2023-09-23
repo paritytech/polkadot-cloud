@@ -1,0 +1,15 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
+@use "../../../styles/mixins" as m;
+
+.canvas-scroll {
+  @include m.hide-scrollbar;
+
+  width: 100%;
+  height: 100%;
+  max-width: 800px;
+  z-index: 9;
+  position: relative;
+  overflow: scroll;
+}

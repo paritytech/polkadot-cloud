@@ -13,7 +13,7 @@ jobs:
     outputs:
       packages: ${{ steps.get_packages.outputs.packages }}
     steps:
-      - uses: actions/checkout@v3.5.0
+      - uses: actions/checkout@v4
       - name: "Get Packages"
         id: get_packages
         run: echo packages=[$(ls | sed 's,\(.*\),"\1"\,,')] >> "$GITHUB_OUTPUT"
@@ -27,7 +27,7 @@ jobs:
       matrix:
         package: ${{ fromJson(needs.get-packages.outputs.packages) }}
     steps:
-      - uses: actions/checkout@v3.5.0
+      - uses: actions/checkout@v4
       - run: yarn install && yarn build:mock
       - uses: actions/setup-node@v3
         with:

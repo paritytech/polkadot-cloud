@@ -4,6 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 @use "../styles";
 
 .btn-help {
+  @include styles.btn-core;
   @include styles.btn-layout;
   @include styles.btn-spacing;
   @include styles.btn-disabled;
@@ -21,6 +22,6 @@ SPDX-License-Identifier: GPL-3.0-only */
   }
 
   &:hover {
-    fill: var(--network-color-primary);
+    fill: var(--accent-color-primary);
   }
 }

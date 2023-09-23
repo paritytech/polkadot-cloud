@@ -13,7 +13,7 @@ const __dirname = dirname(__filename);
 const packagesDir = join(__dirname, "..", "packages");
 
 // Scope of packages to be published.
-const scope = "@polkadotcloud";
+const scope = "polkadot-cloud";
 
 const argv = minimist(process.argv.slice(2));
 
@@ -39,7 +39,6 @@ const hardcoded = main
 // Loop packages to generate `package.json`.
 const pathtoPackage = join(packagesDir, packageName);
 const pathToFile = join(pathtoPackage, "package.json");
-
 try {
   // Read `package.json` of the package.
   const json = JSON.parse(fs.readFileSync(pathToFile).toString());
@@ -49,8 +48,12 @@ try {
     "name",
     "license",
     "version",
-    "author",
+    "keywords",
+    "bugs",
+    "homepage",
+    "contributors",
     "description",
+    "dependencies",
     "peerDependencies",
   ];
 
@@ -59,8 +62,16 @@ try {
     return keys.includes(k[0]);
   });
 
+  // If the package folder name starts with `cloud-` remove this from the npm published package
+  // name.
+  let publishName = json.name.split(`${scope}-`)[1];
+  if (publishName.startsWith("cloud-")) {
+    // remove "cloud-"" from the start of `publishName`.
+    publishName = publishName.slice("cloud-".length);
+  }
+
   // Replace `name` with scope and package name.
-  filtered[0] = ["name", `${scope}/${json.name.split(/-(.*)/s)[1]}`];
+  filtered[0] = ["name", `@${scope}/${publishName}`];
 
   // Merge properties with `hardcoded`.
   const merged = Object.assign({}, Object.fromEntries(filtered), hardcoded);
