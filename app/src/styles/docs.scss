@@ -19,6 +19,8 @@ SPDX-License-Identifier: GPL-3.0-only */
 
     &.header {
       margin-top: 1.75rem;
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -186,15 +188,21 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 
   .label {
-    margin-top: 2.25rem;
+    margin-left: 1.25rem;
+    position: relative;
+    top: -0.1rem;
 
     > span {
       border: 1px solid var(--border-secondary-color);
       color: var(--text-color-secondary);
-      padding: 0.4rem 0.8rem;
+      padding: 0.35rem 0.8rem;
       border-radius: 0.4rem;
       text-transform: uppercase;
+      font-size: 0.9rem;
 
+      svg {
+        margin-right: 0.5rem;;
+      }
       &.primary {
         color: var(--accent-color-primary);
         border-color: var(--accent-color-primary);

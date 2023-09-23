@@ -1,6 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
+import { faCompassDrafting } from "@fortawesome/free-solid-svg-icons";
 import { Label } from "../Label";
 import { NPM } from "../NPM";
 
@@ -13,17 +14,20 @@ export interface Props {
 export const Header = ({ npm, status, subtitle, title }: Props) => {
   return (
     <>
-      <Label
-        text={status}
-        type={
-          status === "experimental"
-            ? undefined
-            : status === "stable"
-            ? "secondary"
-            : "primary"
-        }
-      />
-      <h1 className="header">{title}</h1>
+      <h1 className="header">
+        {title}{" "}
+        <Label
+          text={status}
+          type={
+            status === "experimental"
+              ? "secondary"
+              : status === "stable"
+              ? "primary"
+              : undefined
+          }
+          icon={status === "experimental" ? faCompassDrafting : undefined}
+        />
+      </h1>
       <h3 className="header">{subtitle}</h3>
       <NPM npm={npm} />
     </>
