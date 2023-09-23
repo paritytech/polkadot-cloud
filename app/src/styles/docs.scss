@@ -186,7 +186,6 @@ SPDX-License-Identifier: GPL-3.0-only */
     }
   }
 
-
   .label {
     margin-left: 1.25rem;
     position: relative;
@@ -201,12 +200,14 @@ SPDX-License-Identifier: GPL-3.0-only */
       font-size: 0.9rem;
 
       svg {
-        margin-right: 0.5rem;;
+        margin-right: 0.5rem;
       }
+
       &.primary {
         color: var(--accent-color-primary);
         border-color: var(--accent-color-primary);
       }
+
       &.secondary {
         color: var(--accent-color-secondary);
         border-color: var(--accent-color-secondary);

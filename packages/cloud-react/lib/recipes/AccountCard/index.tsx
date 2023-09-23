@@ -17,17 +17,19 @@ import {
 import "@polkadot-cloud/core/css/recipes/AccountCard/index.css";
 import { Polkicon } from "../../icons/Polkicon";
 
+type FontType =
+  | "xx-small"
+  | "x-small"
+  | "small"
+  | "medium"
+  | "large"
+  | "larger"
+  | "x-large"
+  | "xx-large";
+
 interface AccountCardProps {
   title: TitleProps;
-  fontSize?:
-    | "xx-small"
-    | "x-small"
-    | "small"
-    | "medium"
-    | "large"
-    | "larger"
-    | "x-large"
-    | "xx-large";
+  fontSize?: FontType | string;
   ellipsis?: EllipsisProps;
   icon?: IconProps;
   extraComponent?: ExtraComponentProps;
@@ -67,6 +69,19 @@ export interface TitleProps {
   name?: string;
 }
 
+const isOfFontType = (input: string): input is FontType => {
+  return [
+    "xx-small",
+    "x-small",
+    "small",
+    "medium",
+    "large",
+    "larger",
+    "x-large",
+    "xx-large",
+  ].includes(input);
+};
+
 export const AccountCard = ({
   title,
   fontSize,
@@ -78,8 +93,10 @@ export const AccountCard = ({
   style,
 }: AccountCardProps & ComponentBaseWithClassName) => {
   const fontClasses: string[] = [
-    valEmpty(fontSize, "account-card-font-size-" + fontSize) ||
-      "account-card-font-size-medium",
+    isOfFontType(fontSize)
+      ? valEmpty(fontSize, "account-card-font-size-" + fontSize) ||
+        "account-card-font-size-medium"
+      : "",
     valEmpty(ellipsis.active, "ellipsis"),
     " account-card-main-text",
   ];
@@ -142,7 +159,10 @@ export const AccountCard = ({
       justify={title?.justify}
       alignItems={title?.align || "center"}
     >
-      <div className={fontClasses?.filter((a) => a.trim() != "")?.join("")}>
+      <div
+        style={!isOfFontType(fontSize) ? { fontSize } : {}}
+        className={fontClasses?.filter((a) => a.trim() != "")?.join("")}
+      >
         {title?.component ||
           (ellipsis?.active
             ? ellipsisFn(
