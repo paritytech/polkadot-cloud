@@ -634,15 +634,19 @@
     picocolors "^1.0.0"
     tslib "^2.6.0"
 
-"@polkadot-cloud/core@0.1.33":
-  version "0.1.33"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-0.1.33.tgz#c4dd37fce2035a6c8ecf322bb7ef8c3eca1feca1"
-  integrity sha512-LjeUy4nF2xKGHe2NVh8Ic/9ES2NJWNQCcwbYJ8Q8bbQoGHNiscNAVoDyDXO0vHdvQCwAV7RV0gn5xxgIQytsoQ==
+"@polkadot-cloud/core@0.1.35":
+  version "0.1.35"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-0.1.35.tgz#3bb4c5f34c33903ea6a3894e619f8f45c7b8f3f0"
+  integrity sha512-LsRlOQD3vNOvnCO9GaTQX0iISmiGEL4mlUJRkyh9lPWhPYBw3dwnEFCRMJS4lEE8bz/5CTX+D96GgR2RMz75Bw==
 
-"@polkadot-cloud/utils@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/utils/-/utils-0.0.11.tgz#1b5afeffb12f6df8958eb6285a8020c28d06eadf"
-  integrity sha512-h73gDY5IDUIVS3KboPE7F5ks0CwVyqYE+jVpGI1kiV5aUseluSaOqRj3enZNWm2q04m358ZUgVxjZ9g9vSoJeA==
+"@polkadot-cloud/utils@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/utils/-/utils-0.0.14.tgz#25b6d956858a50179f7229536d16fe5f28560275"
+  integrity sha512-NpaByVGmcnj2EssifMS2jnX7rZjgJh+Q7J5Wy60oX4c7HYcsxLcVfdTbPkkV4xCDDe0blcIVxwUlOT+ajPEzVw==
+  dependencies:
+    "@polkadot/keyring" "^12.5.1"
+    "@polkadot/util" "^12.5.1"
+    bignumber.js "^9.1.1"
 
 "@polkadot/keyring@^12.5.1":
   version "12.5.1"
