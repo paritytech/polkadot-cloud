@@ -170,38 +170,33 @@ export const routeCategories: RouteCategories = [
         paths: ["odometer"],
       },
       {
-        paths: ["modal"],
-      },
-      {
-        paths: ["loader"],
-      },
-      {
-        paths: ["charts"],
-      },
-      {
         heading: "Inputs",
-        paths: ["buttons", "switch", "textfield"],
-      },
-      {
-        heading: "Layout",
-        paths: ["grid", "card"],
+        paths: ["buttons"],
       },
     ],
   },
-  {
-    name: "Recipes",
-    paths: [
-      {
-        paths: ["account_card"],
-      },
-    ],
-  },
-
   {
     name: "Utilities",
     paths: [
       {
         paths: ["utilities"],
+      },
+    ],
+  },
+  {
+    name: "Experimental",
+    paths: [
+      {
+        heading: "Components",
+        paths: ["charts", "loader", "modal", "switch", "textfield"],
+      },
+      {
+        heading: "Layout",
+        paths: ["card", "grid"],
+      },
+      {
+        heading: "Recipes",
+        paths: ["account_card"],
       },
     ],
   },
