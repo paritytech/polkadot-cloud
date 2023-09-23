@@ -634,17 +634,17 @@
     picocolors "^1.0.0"
     tslib "^2.6.0"
 
-"@polkadot-cloud/core@0.1.31":
-  version "0.1.31"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-0.1.31.tgz#7f6602da46a4ab0416b94748c4e5d49c6844bd50"
-  integrity sha512-XqM+yVRZUhVPUYaJBtMslGRwfKCXSLzA809mxaE88Xm7WkA1eArwqEQRUoMkfs9w4ptZcRli7O+vLcDGsJVhYw==
+"@polkadot-cloud/core@0.1.32":
+  version "0.1.32"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-0.1.32.tgz#a4a7e946a14f760a08b8989ddbf8d8f219365e2f"
+  integrity sha512-UYtajpJjYXvMH4Dc4neRfNAX3BmIwlznSy5WM6sA+94Fy89EiXgElZAtA7xZ+e6azl39lPkiglyza03gSqTwMA==
 
 "@polkadot-cloud/utils@^0.0.11":
   version "0.0.11"
   resolved "https://registry.yarnpkg.com/@polkadot-cloud/utils/-/utils-0.0.11.tgz#1b5afeffb12f6df8958eb6285a8020c28d06eadf"
   integrity sha512-h73gDY5IDUIVS3KboPE7F5ks0CwVyqYE+jVpGI1kiV5aUseluSaOqRj3enZNWm2q04m358ZUgVxjZ9g9vSoJeA==
 
-"@polkadot/keyring@^12.4.2", "@polkadot/keyring@^12.5.1":
+"@polkadot/keyring@^12.5.1":
   version "12.5.1"
   resolved "https://registry.yarnpkg.com/@polkadot/keyring/-/keyring-12.5.1.tgz#2f38504aa915f54bbd265f3793a6be55010eb1f5"
   integrity sha512-u6b+Q7wI6WY/vwmJS9uUHy/5hKZ226nTlVNmxjkj9GvrRsQvUSwS94163yHPJwiZJiIv5xK5m0rwCMyoYu+wjA==
@@ -662,7 +662,7 @@
     "@substrate/ss58-registry" "^1.43.0"
     tslib "^2.6.2"
 
-"@polkadot/util-crypto@12.5.1", "@polkadot/util-crypto@^12.4.2":
+"@polkadot/util-crypto@12.5.1", "@polkadot/util-crypto@^12.5.1":
   version "12.5.1"
   resolved "https://registry.yarnpkg.com/@polkadot/util-crypto/-/util-crypto-12.5.1.tgz#1753b23abfb9d72db950399ef65b0cbe5bef9f2f"
   integrity sha512-Y8ORbMcsM/VOqSG3DgqutRGQ8XXK+X9M3C8oOEI2Tji65ZsXbh9Yh+ryPLM0oBp/9vqOXjkLgZJbbVuQceOw0A==
@@ -678,7 +678,7 @@
     "@scure/base" "^1.1.3"
     tslib "^2.6.2"
 
-"@polkadot/util@12.5.1", "@polkadot/util@^12.4.2":
+"@polkadot/util@12.5.1", "@polkadot/util@^12.5.1":
   version "12.5.1"
   resolved "https://registry.yarnpkg.com/@polkadot/util/-/util-12.5.1.tgz#f4e7415600b013d3b69527aa88904acf085be3f5"
   integrity sha512-fDBZL7D4/baMG09Qowseo884m3QBzErGkRWNBId1UjWR99kyex+cIY9fOSzmuQxo6nLdJlLHw1Nz2caN3+Bq0A==
