@@ -634,10 +634,10 @@
     picocolors "^1.0.0"
     tslib "^2.6.0"
 
-"@polkadot-cloud/core@0.1.32":
-  version "0.1.32"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-0.1.32.tgz#a4a7e946a14f760a08b8989ddbf8d8f219365e2f"
-  integrity sha512-UYtajpJjYXvMH4Dc4neRfNAX3BmIwlznSy5WM6sA+94Fy89EiXgElZAtA7xZ+e6azl39lPkiglyza03gSqTwMA==
+"@polkadot-cloud/core@0.1.33":
+  version "0.1.33"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-0.1.33.tgz#c4dd37fce2035a6c8ecf322bb7ef8c3eca1feca1"
+  integrity sha512-LjeUy4nF2xKGHe2NVh8Ic/9ES2NJWNQCcwbYJ8Q8bbQoGHNiscNAVoDyDXO0vHdvQCwAV7RV0gn5xxgIQytsoQ==
 
 "@polkadot-cloud/utils@^0.0.11":
   version "0.0.11"
