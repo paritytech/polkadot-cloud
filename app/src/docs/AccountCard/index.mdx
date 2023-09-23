@@ -54,7 +54,7 @@ Other `iconProps` can be either the `girdSize` (Recipe will automatically calcul
 
 ##
 
-Amount of ellipsis can be set. When position, is `center`, then that amount corresponds to the left and to the right part of the text; If it is set to `left` or `right`, then it corresponds to the other side accordingly. (Defaults to `center`).
+Amount of ellipsis can be set. When position, is `center`, then that amount corresponds to the `start` and to the `end` part of the text; If it is set to `start` or `end`, then it corresponds to the other side accordingly. (Defaults to `start`).
 
 <AccountCardPageAdvanced />
 
@@ -62,7 +62,7 @@ When the amount of ellipsis is too small, the ellipsis will default to 4.
 
 <AccountCardPageAdvancedEllipsis />
 
-If an extreme ellipsis amount is provided, then the Recipe will reduce it, in order to show the maximum possible amount (calculating with: (address.length/2) - 3).
+If an extreme ellipsis amount is provided, then the Recipe will reduce it, in order to show the maximum possible amount (calculating with: (address.length/2) - 3 for `center`. For rest options is address.length - 3).
 
 <AccountCardPageAdvancedEllipsisExtreme />
 

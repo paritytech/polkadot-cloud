@@ -14,7 +14,7 @@ export const AccountCardPageInfo = () => {
 const ellipsisProps: EllipsisProps = {
   active: true,
   amount: 20,
-  position: "right",
+  position: "end",
 };
 
 // iconProps are very similar to the ones that Polkicon receives for consistency
@@ -30,9 +30,10 @@ const iconProps: IconProps = {
 <AccountCard
   title={titleProps}
   // size of the 'name' or 'address' params of titleProps (see below); 
-  // Possible values one of:  "xx-small", "x-small", "small", "medium",  "large", 
-  // "larger", "x-large", "xx-large"
-  fontSize="x-small"
+  // Easy input values are:  "xx-small", "x-small", "small", "medium",  "large", 
+  // "larger", "x-large", "xx-large". In addition in case needed  one can add custom 
+  // fontsize like: "1.5rem", "22px" etc.
+  fontSize="x-small" // or e.g. fontsize="1.7rem"
   // Properties of the ellispis 'effect' of either 'address' or 'name' of title props (see below);
   ellipsis={ellipsisProps}
   // icon properties (see below);
@@ -60,8 +61,8 @@ const iconProps: IconProps = {
   active?: boolean;
   // How many characters should appear
   amount?: number;
-  // Where ellipsis applies, at the beginning, center or end of the text (defaults to "center")
-  position?: "left" | "right" | "center"
+  // Where ellipsis applies, at the start, center or end of the text (defaults to "center")
+  position?: "start" | "center" | "end"
 }`;
 
   const iconProps = `interface IconProps {
