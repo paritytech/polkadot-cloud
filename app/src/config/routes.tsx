@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 
 import { Buttons } from "../docs/Buttons";
 import { Loaders } from "../docs/Loaders";
+import { Charts } from "../docs/Charts";
 import { Icons } from "../docs/Icons";
 import { Extensions } from "../docs/Extensions";
 import { Validators } from "../docs/Validators";
@@ -122,6 +123,11 @@ const componentsRoutes = [
     name: "Loaders",
     element: <Loaders />,
   },
+  {
+    path: "charts",
+    name: "Charts",
+    element: <Charts />,
+  },
 ];
 
 export const routes: Routes = [
@@ -168,6 +174,9 @@ export const routeCategories: RouteCategories = [
       },
       {
         paths: ["loader"],
+      },
+      {
+        paths: ["charts"],
       },
       {
         heading: "Inputs",

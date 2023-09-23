@@ -1,6 +1,6 @@
-/* @license Copyright 2023 @paritytech/polkadot-dashboard-ui authors & contributors
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
-import "./index.scss";
+import "@polkadot-cloud/core/css/base/structure/Pie/index.css";
 
 export type PieProps = {
   perc?: number;
@@ -27,7 +27,7 @@ export const Pie = ({ perc = 60 }: PieProps) => {
               width: "100%",
               height: "100%",
               borderRadius: "10rem",
-              background: `conic-gradient(var(--network-color-primary) ${perc}%,
+              background: `conic-gradient(var(--accent-color-primary) ${perc}%,
                 var(--button-secondary-background) ${perc}%)`,
             }}
           />
