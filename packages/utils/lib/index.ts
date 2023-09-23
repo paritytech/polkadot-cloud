@@ -481,7 +481,7 @@ export const ellipsisFn = (
   if (position === "center") {
     return amount >= (str.length - 2) / 2
       ? str.slice(0, half - 3) + "..." + str.slice(-(half - 3))
-      : str.slice(0, amount / 2) + "..." + str.slice(-amount);
+      : str.slice(0, amount) + "..." + str.slice(-amount);
   }
   // else, the user has been mistaskenly extreme, so just show the maximum possible amount
   if (amount >= str.length) {
