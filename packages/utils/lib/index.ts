@@ -460,37 +460,37 @@ export const makeCancelable = (promise: Promise<AnyObject>) => {
  * @summary Receives an address and creates ellipsis on the given string, based on parameters.
  * @param str  - The string to apply the ellipsis on
  * @param amount  - The amount of characters that the ellipsis will be
- * @param position - where the ellipsis will apply; if center the amount of chracter is the
- * same for beginning and end; if left or right then its only once the amount; defaults to "left"
+ * @param position - where the ellipsis will apply; if center the amount of character is the
+ * same for beginning and end; if "start" or "end" then its only once the amount; defaults to "start"
  */
 export const ellipsisFn = (
   str: string,
   amount = 6,
-  position: "left" | "right" | "center" = "center"
+  position: "start" | "end" | "center" = "center"
 ) => {
+  const half = str.length / 2;
+
   // having an amount less than 4 is a bit extreme so we default there
   if (amount <= 4) {
     if (position === "center") return str.slice(0, 4) + "..." + str.slice(-4);
-    if (position === "right") return str.slice(0, 4) + "...";
+    if (position === "end") return str.slice(0, 4) + "...";
     return "..." + str.slice(-4);
   }
   // if the amount requested is in a "logical" amount - meaning that it can display the address
   // without repeating the same information twice - then go for it;
-  if (amount <= str.length / 2 - 3) {
-    if (position === "center")
-      return str.slice(0, amount) + "..." + str.slice(-amount);
-    if (position === "right") return str.slice(0, amount) + "...";
-    return "..." + str.slice(-amount);
+  if (position === "center") {
+    return amount >= (str.length - 2) / 2
+      ? str.slice(0, half - 3) + "..." + str.slice(-(half - 3))
+      : str.slice(0, amount) + "..." + str.slice(-amount);
   }
   // else, the user has been mistaskenly extreme, so just show the maximum possible amount
-  if (position === "center")
-    return (
-      str.slice(0, str.length / 2 - 3) +
-      "..." +
-      str.slice(-(str.length / 2 - 3))
-    );
-  if (position === "right") return str.slice(0, str.length / 2 - 3) + "...";
-  return "..." + str.slice(-(str.length / 2 - 3));
+  if (amount >= str.length) {
+    if (position === "end") return str.slice(0, str.length - 3) + "...";
+    return "..." + str.slice(-(str.length - 3));
+  } else {
+    if (position === "end") return str.slice(0, amount - 3) + "...";
+    return "..." + str.slice(-(amount - 3));
+  }
 };
 
 // Private for evalUnits
