@@ -197,8 +197,8 @@ export const AccountCard = ({
       {noCard ? (
         structure
       ) : (
-        <Card 
-      style={style}
+        <Card
+          style={style}
           className={"account-card-theme-border " + className}
         >
           {structure}
