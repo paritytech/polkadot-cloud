@@ -16,17 +16,13 @@ export const Header = ({ npm, status, subtitle, title }: Props) => {
     <>
       <h1 className="header">
         {title}{" "}
-        <Label
-          text={status}
-          type={
-            status === "experimental"
-              ? "secondary"
-              : status === "stable"
-              ? "primary"
-              : undefined
-          }
-          icon={status === "experimental" ? faCompassDrafting : undefined}
-        />
+        {status !== "stable" && (
+          <Label
+            text={status}
+            type={status === "experimental" ? "secondary" : undefined}
+            icon={status === "experimental" ? faCompassDrafting : undefined}
+          />
+        )}
       </h1>
       <h3 className="header">{subtitle}</h3>
       <NPM npm={npm} />
