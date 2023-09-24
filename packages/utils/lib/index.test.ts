@@ -199,7 +199,7 @@ describe("Tests suite - isNotZero Function", () => {
 
 describe("Test suite - shuffle Function", () => {
   test("should shuffle an array of numbers", () => {
-    const inputArray = [1, 2, 3, 4, 5];
+    const inputArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     const shuffledArray = fn.shuffle([...inputArray]);
     expect(shuffledArray).not.toEqual(inputArray);
     expect(shuffledArray).toEqual(expect.arrayContaining(inputArray));
