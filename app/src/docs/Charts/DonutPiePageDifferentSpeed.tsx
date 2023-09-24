@@ -29,7 +29,7 @@ export const DonutPiePageDifferentSpeed = () => {
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <div style={{ margin: "0 1rem" }}>
           <Chart diameter={100} items={colors} speed={0.1} />
         </div>

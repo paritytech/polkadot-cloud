@@ -1,12 +1,7 @@
 import { Edit } from "../lib/Edit";
+import { Note } from "../lib/Note";
 import { Header } from "../lib/Header";
 import { OdometerH1 } from "./OdometerH1";
-import { OdometerH2 } from "./OdometerH2";
-import { OdometerH3 } from "./OdometerH3";
-import { OdometerH4 } from "./OdometerH4";
-import { OdometerH5 } from "./OdometerH5";
-import { OdometerP } from "./OdometerP";
-import { OdometerDiv } from "./OdometerDiv";
 
 <Edit folder={props.folder} />
 
@@ -17,32 +12,16 @@ import { OdometerDiv } from "./OdometerDiv";
   status="stable"
 />
 
-#### The Odometer component can be wrapped in headers, paragraphs and div elements, and will inherit font size, style and line height.
+<a href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/cloud-react/lib/complex/Odometer/index.tsx" target="_blank" rel="noreferrer">`Odeometer`</a> is a component that can be used to display numbers and balances. It has a smooth animation when the value changes, and adopts a 2-tone design for whole and decimal figures.
 
-## Odometer H1
+Comma formatted numbers and decimals are supported.
+
+### Odometer Example
 
 <OdometerH1 />
 
-## Odometer H2
+Odometer is wrapped in a span element, but it is recommended to embed it within a header or paragraph tag so it inherits font size, line height and text styling.
 
-<OdometerH2 />
-
-## Odometer H3
-
-<OdometerH3 />
-
-## Odometer H4
-
-<OdometerH4 />
-
-## Odometer H5
-
-<OdometerH5 />
-
-## Odometer p
-
-<OdometerP />
-
-## Odometer div
-
-<OdometerDiv />
+<Note>
+  Odometer has been tested with header tags 1-5, paragraphs and divs.
+</Note>
