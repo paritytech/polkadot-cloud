@@ -98,12 +98,12 @@ const componentsInputRoutes = [
 const assetsRoutes = [
   {
     path: "extensions",
-    name: "Extensions",
+    name: "Web3 Extensions",
     element: <Extensions />,
   },
   {
     path: "validators",
-    name: "Validators",
+    name: "Validator Operators",
     element: <Validators />,
   },
 ];
@@ -156,7 +156,7 @@ export const routes: Routes = [
 
 export const routeCategories: RouteCategories = [
   {
-    name: "Assets",
+    name: "Data & Assets",
     paths: [
       {
         paths: ["extensions"],
