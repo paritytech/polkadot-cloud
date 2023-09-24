@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 import { Buttons } from "../docs/Buttons";
 import { Loaders } from "../docs/Loaders";
 import { Charts } from "../docs/Charts";
-import { Icons } from "../docs/Icons";
+import { Polkicon } from "../docs/Polkicon";
 import { Extensions } from "../docs/Extensions";
 import { Validators } from "../docs/Validators";
 import { Grid } from "../docs/Grid";
@@ -110,9 +110,9 @@ const assetsRoutes = [
 
 const componentsRoutes = [
   {
-    path: "icons",
+    path: "polkicon",
     name: "Polkicon",
-    element: <Icons />,
+    element: <Polkicon />,
   },
   {
     path: "odometer",
@@ -170,7 +170,7 @@ export const routeCategories: RouteCategories = [
     name: "Components",
     paths: [
       {
-        paths: ["icons"],
+        paths: ["polkicon"],
       },
       {
         paths: ["odometer"],
