@@ -12,7 +12,7 @@ export const Router = () => (
   <>
     <Header />
     <Menu />
-    <div className="body">
+    <div className="main-area">
       <Routes>
         {routes.map((route) => (
           <Route key={`nav_page_${route.path}`} {...route} />
