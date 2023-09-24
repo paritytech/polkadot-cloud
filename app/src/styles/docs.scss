@@ -28,7 +28,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     font-family: InterBold, sans-serif;
     font-size: 1.8rem;
     margin-top: 2.5rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.4rem;
   }
 
   > h3 {
@@ -37,7 +37,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     font-size: 1.4rem;
     display: flex;
     align-items: center;
-    margin: 2rem 0 1rem;
+    margin: 2rem 0 1.5rem;
 
     > svg {
       color: var(--text-color-secondary);
@@ -77,11 +77,12 @@ SPDX-License-Identifier: GPL-3.0-only */
   ol {
     color: var(--text-color-primary);
     font-size: 1.2rem;
+    line-height: 2rem;
   }
 
   > p {
     font-size: 1.25rem;
-    line-height: 1.9rem;
+    line-height: 2rem;
   }
 
   > ul,
@@ -96,10 +97,18 @@ SPDX-License-Identifier: GPL-3.0-only */
     border: 1px solid var(--border-secondary-color);
     color: var(--text-color-secondary);
     border-radius: 0.4rem;
-    padding: 0.15rem 0.4rem;
+    padding: 0.05rem 0.4rem;
   }
 
-  a {
+  /* Spaces are not being between code blocks in headers. Manually add space here. */
+  > h1, h2, h3, h4, h5 {
+    code {
+      margin: 0 0.6rem;
+    }
+  }
+
+  /* Ensure accent color is also applied for links in code blocks. */
+  a, a code {
     color: var(--accent-color-primary);
     font-size: inherit;
   }
@@ -113,9 +122,9 @@ SPDX-License-Identifier: GPL-3.0-only */
     width: 100%;
 
     * {
-      color: var(--text-color-secondary);
+      color: var(--text-color-tertiary);
       font-size: 1.2rem;
-      line-height: 1.65rem;
+      line-height: 2rem;
     }
 
     a {
