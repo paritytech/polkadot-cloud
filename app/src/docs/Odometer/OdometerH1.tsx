@@ -9,11 +9,11 @@ import { Demo } from "../lib/Demo";
 
 export const OdometerH1 = () => {
   const code = `<h1>
-  <Odometer value="1,201,903.456" />
+  <Odometer value="1,2019,03.456789" />
 </h1>`;
 
-  const [val, setVal] = useState<number>(1201903.456);
-  const updateValue = () => setVal(Number((val + 17491.39).toFixed(4)));
+  const [val, setVal] = useState<number>(1201903.456789);
+  const updateValue = () => setVal(Number((val + 17491.390013).toFixed(4)));
 
   return (
     <>
@@ -21,7 +21,6 @@ export const OdometerH1 = () => {
         <div style={{ display: "flex", justifyContent: "center" }}>
           <h1 style={{ margin: 0, display: "flex" }}>
             <Odometer value={new BigNumber(val).toFormat()} />
-            DOT
           </h1>
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
