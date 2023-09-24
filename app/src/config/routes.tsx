@@ -10,6 +10,7 @@ import { Extensions } from "../docs/Extensions";
 import { Validators } from "../docs/Validators";
 import { Grid } from "../docs/Grid";
 import { Card } from "../docs/Cards";
+import { Overlay } from "../docs/Overlay";
 import { AccountCard } from "../docs/AccountCard";
 import { Odometer } from "../docs/Odometer";
 import { Modal } from "../docs/Modal";
@@ -119,6 +120,11 @@ const componentsRoutes = [
     element: <Odometer />,
   },
   {
+    path: "overlay",
+    name: "Overlay",
+    element: <Overlay />,
+  },
+  {
     path: "loader",
     name: "Loaders",
     element: <Loaders />,
@@ -168,6 +174,9 @@ export const routeCategories: RouteCategories = [
       },
       {
         paths: ["odometer"],
+      },
+      {
+        paths: ["overlay"],
       },
       {
         heading: "Inputs",
