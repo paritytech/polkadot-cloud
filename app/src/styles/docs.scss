@@ -101,14 +101,19 @@ SPDX-License-Identifier: GPL-3.0-only */
   }
 
   /* Spaces are not being between code blocks in headers. Manually add space here. */
-  > h1, h2, h3, h4, h5 {
+  > h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     code {
       margin: 0 0.6rem;
     }
   }
 
   /* Ensure accent color is also applied for links in code blocks. */
-  a, a code {
+  a,
+  a code {
     color: var(--accent-color-primary);
     font-size: inherit;
   }

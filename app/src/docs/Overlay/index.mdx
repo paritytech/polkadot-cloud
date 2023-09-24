@@ -15,10 +15,10 @@ import { OverlayConfig } from "./OverlayConfig";
   status="stable"
 />
 
-An <a href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/cloud-react/lib/overlay/OverlayProvider/index.tsx" target="_blank" rel="noreferrer">`OverlayProvider`</a> context and <a href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/cloud-react/lib/overlay/Overlay/index.tsx" target="_blank" rel="noreferrer">`Overlay`</a> UI component are provided for apps to use to manage the state of modals and overlaying content out of the box.
+An <a href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/cloud-react/lib/overlay/OverlayProvider/index.tsx" target="_blank" rel="noreferrer">`OverlayProvider`</a> context and <a href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/cloud-react/lib/overlay/Overlay/index.tsx" target="_blank" rel="noreferrer">`Overlay`</a> UI component are provided for apps to manage the state of modals and overlaying content out of the box.
 
 <Note>
-  `OverlayProvider` is a headless component. Apps can host thier own desired UI for modals and overlaying content, and use the provided `useOverlay` hook to make the UI functional. This will be explained in more detail further down.
+  `OverlayProvider` is a headless component, and usage of `Overlay` is not compulsary. Apps can host thier own custom UI for modals and overlaying content, and use the provided `OverlayProvider` and `useOverlay` hook to make the UI functional.
 </Note>
 
 <Note>
@@ -27,7 +27,7 @@ An <a href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/clou
 
 ## Basic Integration: Modals
 
-Integrating modal functionality in your app is as simple as wrapping your app with the `OverlayProvider` component, and injecting your provided modal UI into the `Overlay` component.
+Integrating modal functionality into React apps is as simple as wrapping your component tree with the `OverlayProvider` component, and injecting your provided modal UI into the `Overlay` component.
 
 ### 1. Wrap your app with OverlayProvider
 
