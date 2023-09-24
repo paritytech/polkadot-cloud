@@ -19,8 +19,9 @@ interface Props {
 
 export const Category = ({ rest, name, i }: Props) => {
   const { pathname } = useLocation();
+  const initial = name !== "Experimental";
 
-  const [open, setOpen] = useState<boolean>(true);
+  const [open, setOpen] = useState<boolean>(initial);
 
   return (
     <>
@@ -35,7 +36,7 @@ export const Category = ({ rest, name, i }: Props) => {
       </button>
 
       <motion.section
-        initial="show"
+        initial={initial ? "show" : "hidden"}
         animate={open ? "show" : "hidden"}
         variants={{
           hidden: { height: 0 },
