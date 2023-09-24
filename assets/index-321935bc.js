@@ -1018,10 +1018,10 @@ SPDX-License-Identifier: GPL-3.0-only */var mP=function(){return s.jsx("svg",{xm
 `,s.jsx(lt,{title:"Polkicon",subtitle:"A light-weight and customisable Polkadot Icon.",npm:e.npm,status:"stable"}),`
 `,s.jsxs(t.p,{children:[s.jsx("a",{href:"https://github.com/paritytech/polkadot-cloud/blob/main/packages/cloud-react/lib/icons/Polkicon/index.tsx",target:"_blank",rel:"noreferrer",children:s.jsx(t.code,{children:"Polkicon"})})," is a light-weight component that renders the Polkadot icon, with various display options built in. By default, the ",s.jsx(t.code,{children:"address"})," prop dictates which color palette the Polkicon will display."]}),`
 `,s.jsxs(rn,{children:[s.jsxs(t.p,{children:["Polkicon currently supports the patterns of Polkadot, Kusama and Westend networks, with SS58 prefixes 0, 2, and 42 respectively. Patterns are dictated by the SS58 prefix of the address provided to the ",s.jsx(t.code,{children:"Polkicon"})," component."]}),s.jsxs(t.p,{children:["To add support to other networks, contributors are welcome to ",s.jsx("a",{href:"https://github.com/paritytech/polkadot-cloud/pulls",target:"_blank",rel:"noreferrer",children:"Submit a Pull Request"}),"."]})]}),`
-`,s.jsx(t.h3,{children:"Customising Size"}),`
+`,s.jsx(t.h3,{children:"Size"}),`
 `,s.jsxs(t.p,{children:["Sizes can be provided as a ",s.jsx(t.code,{children:"string"})," (in rem) or a ",s.jsx(t.code,{children:"number"})," (in pixels). The default size is ",s.jsx(t.code,{children:"2rem"}),"."]}),`
 `,s.jsx(wk,{}),`
-`,s.jsx(t.h3,{children:"Customising Outer Color"}),`
+`,s.jsx(t.h3,{children:"Outer Color"}),`
 `,s.jsxs(t.p,{children:["The background color of ",s.jsx(t.code,{children:"Polkicon"})," can be set with the ",s.jsx(t.code,{children:"outerColor"})," prop. This is the color of the outermost circle of the icon. The default ",s.jsx(t.code,{children:"outerColor"})," value is the ",s.jsx(t.code,{children:"--background-default"})," variable, used throughout the Polkadot Cloud library of UI components."]}),`
 `,s.jsxs(t.p,{children:["The default value can be overridden with a custom color, or be set to ",s.jsx(t.code,{children:"transparent"}),"."]}),`
 `,s.jsx(jk,{}),`
