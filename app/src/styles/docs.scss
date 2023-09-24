@@ -138,6 +138,10 @@ SPDX-License-Identifier: GPL-3.0-only */
   }
 
   .demo {
+    @media (width <= 800px) {
+      justify-content: flex-start;
+    }
+    overflow: scroll;
     border: 1px solid var(--border-secondary-color);
     border-top-left-radius: 0.75rem;
     border-top-right-radius: 0.75rem;

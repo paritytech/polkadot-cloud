@@ -123,7 +123,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   }
 }
 
-.body {
+.main-area {
   min-height: 100vh;
 
   /* CSS3: Leave enough room to show footer where content does not consume 100vh. */
@@ -131,12 +131,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   padding: 3.3rem 1.5rem 3rem 0;
   margin: 0 0 0 15rem;
   max-width: 900px;
-  width: 100%;
-
-  /* We need the body not to over come sidebar */
-  @media (min-width: (v.$page-width-threshold + 26px)) {
-    margin: 0 auto;
-  }
+  width: calc(100% - 15rem);
 
   h4 {
     margin: 1rem 0;
