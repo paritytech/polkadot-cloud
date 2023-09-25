@@ -54,7 +54,7 @@ export const Pie = ({
 
   const segments = useMemo(() => {
     // eslint-disable-next-line @typescript-eslint/no-shadow
-    const sum = items.reduce((sum, item) => sum + item.value, 0);
+    const sum = items.reduce((sum, item) => sum + item.value, 0.1);
     let start = 0;
     return items.map((item) => {
       const delta = (item.value / sum) * visiblePart;
@@ -65,19 +65,19 @@ export const Pie = ({
   }, [items, innerRadius, rad, visiblePart]);
 
   return (
-    <div style={{ padding: "0.1rem" }}>
-      <svg width={diameter} height={diameter}>
-        <g transform={`translate(${rad},${rad})`}>
-          {segments.map((segment) => (
+    <svg width={diameter} height={diameter} style={{ overflow: "initial" }}>
+      <g transform={`translate(${rad},${rad})`}>
+        {segments.map((segment) => {
+          return (
             <path
               key={segment.color}
               stroke={segment.color}
               fill={segment.color}
               d={segment.path}
             />
-          ))}
-        </g>
-      </svg>
-    </div>
+          );
+        })}
+      </g>
+    </svg>
   );
 };
