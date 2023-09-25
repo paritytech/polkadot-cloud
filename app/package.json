@@ -6,6 +6,7 @@
     "Ross Bulat<ross@parity.io>",
     "Nikolaos Kontakis<nikos@parity.io>"
   ],
+  "homepage": "https://paritytech.github.io/polkadot-cloud/",
   "description": " A library and automated platform for developing and publishing assets for Polkadot apps.",
   "type": "module",
   "scripts": {
