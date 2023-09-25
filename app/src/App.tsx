@@ -5,9 +5,8 @@ import { HashRouter } from "react-router-dom";
 import { Providers } from "./Providers";
 
 export const App = () => {
-  const BaseUri = import.meta.env.VITE_BASE_URI || "/";
   return (
-    <HashRouter basename={BaseUri}>
+    <HashRouter basename="/">
       <Providers />
     </HashRouter>
   );
