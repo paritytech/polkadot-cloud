@@ -2,6 +2,8 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 .doc {
+  --doc-para-line-height: 2.1rem;
+
   margin: 4rem 0 2.5rem;
 
   .edit-on-github {
@@ -27,8 +29,8 @@ SPDX-License-Identifier: GPL-3.0-only */
   > h2 {
     font-family: InterBold, sans-serif;
     font-size: 1.8rem;
-    margin-top: 2.5rem;
-    margin-bottom: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 1.25rem;
   }
 
   > h3 {
@@ -37,7 +39,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     font-size: 1.4rem;
     display: flex;
     align-items: center;
-    margin: 2rem 0 1.5rem;
+    margin: 2rem 0 0 0;
 
     > svg {
       color: var(--text-color-secondary);
@@ -73,6 +75,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
   ul {
     margin-top: 0;
+    margin-bottom: 2rem;
   }
 
   > p,
@@ -81,12 +84,13 @@ SPDX-License-Identifier: GPL-3.0-only */
   ol {
     color: var(--text-color-primary);
     font-size: 1.2rem;
-    line-height: 2rem;
+    line-height: var(--doc-para-line-height);
   }
 
   > p {
     font-size: 1.25rem;
-    line-height: 2rem;
+    line-height: var(--doc-para-line-height);
+    margin: 1rem 0;
   }
 
   > ul,
@@ -94,7 +98,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   ol {
     color: var(--text-color-primary);
     font-size: 1.2rem;
-    line-height: 2.25rem;
+    line-height: 1.95;
   }
 
   code {
@@ -125,27 +129,27 @@ SPDX-License-Identifier: GPL-3.0-only */
   .note {
     border: 1px solid var(--accent-color-pending);
     background: var(--accent-color-transparent);
-    border-radius: 0.7rem;
+    border-radius: 0.5rem;
     display: flex;
-    padding: 0.5rem 0;
-    margin: 1.5rem 0;
+    padding: 0.75rem 0.75rem;
+    margin: 1rem 0;
     width: 100%;
 
     > section {
+
       &:first-child {
         flex: 0;
         display: flex;
-        align-items: center;
-        font-size: 1rem;
-        padding-left: 1.1rem;
+        align-items: flex-start;
+        padding-top: 0.9rem;
+        padding-left: 0.75rem;
+        padding-right: 1.25rem;
 
         .icon {
-          width: 2.4rem;
-          height: 2.4rem;
+          width: 1.75rem;
+          height: 1.75rem;
         }
         svg {
-          padding-right: 0.85rem;
-
           .primary {
             fill: var(--accent-color-secondary);
           }
@@ -153,16 +157,16 @@ SPDX-License-Identifier: GPL-3.0-only */
       }
 
       &:last-child {
-        padding-right: 0.5rem;
+        padding-right: 1rem;
 
         * {
           color: var(--accent-color-secondary);
           font-size: 1.2rem;
-          line-height: 2rem;
+          line-height: var(--doc-para-line-height);
         }
 
         a {
-          color: var(--accent-color-secondary);
+          font-family: InterBold;
         }
       }
     }
@@ -175,8 +179,8 @@ SPDX-License-Identifier: GPL-3.0-only */
 
     overflow: auto;
     border: 1px solid var(--border-secondary-color);
-    border-top-left-radius: 0.75rem;
-    border-top-right-radius: 0.75rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
     border-bottom: 0;
     margin-top: 1.25rem;
     padding: 2rem 1rem;
@@ -219,7 +223,8 @@ SPDX-License-Identifier: GPL-3.0-only */
     position: relative;
 
     &.standalone {
-      border-top-left-radius: 0.75rem !important;
+      border-top-left-radius: 0.5rem !important;
+      border-top-right-radius: 0.5rem !important;
       border-color: red;
     }
 
