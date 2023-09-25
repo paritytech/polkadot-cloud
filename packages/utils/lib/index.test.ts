@@ -681,6 +681,16 @@ describe("Tests suite - ellipsisFn Function", () => {
     const result = fn.ellipsisFn(address, 100);
     expect(result).toBe("234CHvWmTuaVtkJpLS9ox...amcEMrfFAPYoFaetEZmY7");
   });
+
+  test("Should return a string with given amount of digits (here 8), starting with ellipsis when the amount is more than the default(4) and less than the length of the string", () => {
+    const result = fn.ellipsisFn("Some random value", 8, "start");
+    expect(result).toBe("...dom value");
+  });
+
+  test("Should return a string with given amount of digits (here 8), starting with ellipsis when the amount is more than the default(4) and less than the length of the string", () => {
+    const result = fn.ellipsisFn("Some random value", 8, "end");
+    expect(result).toBe("Some ran...");
+  });
 });
 
 describe("Tests suite - evalUnits Function", () => {
