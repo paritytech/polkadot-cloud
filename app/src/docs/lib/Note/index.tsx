@@ -10,7 +10,6 @@ export const Note = ({ children }: { children: ReactNode }) => {
     <div className="note">
       <section>
         <div className="icon">
-          {" "}
           <InfoSVG />
         </div>
       </section>
