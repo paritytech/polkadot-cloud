@@ -60,7 +60,7 @@ export const Category = ({ rest, name, i }: Props) => {
             {paths.map((path, k) => (
               <Link
                 key={`nav_${i}_heading_${j}_path_${k}`}
-                className={`link${pathname === `${path}` ? " selected" : ``}`}
+                className={`link${pathname === `/${path}` ? " selected" : ``}`}
                 to={`${path}`}
               >
                 {nameFromRoute(path)}

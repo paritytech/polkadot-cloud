@@ -22,7 +22,7 @@ export const Menu = () => {
             <>
               <Link
                 className={`link lg${
-                  pathname === `${rest.path}` ? ` selected` : ``
+                  pathname === `/${rest.path}` ? ` selected` : ``
                 }`}
                 to={`${rest.path}`}
               >
