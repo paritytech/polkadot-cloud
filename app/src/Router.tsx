@@ -12,7 +12,7 @@ import { useEffect } from "react";
 export const Router = () => {
   const { pathname } = useLocation();
 
-  const BaseUri = import.meta.env.VITE_BASE_URI;
+  const BaseUri = import.meta.env.VITE_BASE_URI || "/";
 
   useEffect(() => {
     window.scrollTo(0, 0);

@@ -9,7 +9,7 @@ import { Category } from "./Category";
 
 export const Menu = () => {
   const { pathname } = useLocation();
-  const BaseUri = import.meta.env.VITE_BASE_URI;
+  const BaseUri = import.meta.env.VITE_BASE_URI || "/";
 
   return (
     <div className="menu">

@@ -11,7 +11,7 @@
   "scripts": {
     "clear": "rm -rf node_modules",
     "predev": "yarn --cwd='../packages/cloud-core/' build",
-    "dev": "VITE_BASE_URI=/ vite --base=/ & yarn --cwd='../packages/cloud-core/' watch",
+    "dev": "VITE_BASE_URI='/' vite --base='/' & yarn --cwd='../packages/cloud-core/' watch",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 && prettier --check .",
     "lint:fix": "eslint . --ext ts,tsx --fix && prettier --write ."
   },

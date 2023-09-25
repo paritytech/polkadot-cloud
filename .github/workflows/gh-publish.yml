@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
 
+env:
+  VITE_BASE_URI: /polkadot-cloud/
+
 jobs:
   gh-deploy:
     runs-on: ubuntu-latest

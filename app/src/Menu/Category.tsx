@@ -23,7 +23,7 @@ export const Category = ({ rest, name, i }: Props) => {
 
   const [open, setOpen] = useState<boolean>(initial);
 
-  const BaseUri = import.meta.env.VITE_BASE_URI;
+  const BaseUri = import.meta.env.VITE_BASE_URI || "/";
 
   return (
     <>
