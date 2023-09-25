@@ -1049,11 +1049,9 @@ const App = () => (
 
 const App = () => (
   <Enkrypt />
-)`;return s.jsxs(s.Fragment,{children:[s.jsx(_,{showThemes:!1,children:s.jsx("div",{className:"svg-box sm",children:s.jsx(Ik,{})})}),s.jsx(I,{code:e,language:"javascript"})]})};function m1(e){const t=Object.assign({h2:"h2",p:"p",code:"code",ul:"ul",li:"li"},e.components);return s.jsxs(s.Fragment,{children:[s.jsx(lt,{folder:e.folder}),`
+)`;return s.jsxs(s.Fragment,{children:[s.jsx(_,{showThemes:!1,children:s.jsx("div",{className:"svg-box sm",children:s.jsx(Ik,{})})}),s.jsx(I,{code:e,language:"javascript"})]})};function m1(e){const t=Object.assign({p:"p",code:"code",ul:"ul",li:"li"},e.components);return s.jsxs(s.Fragment,{children:[s.jsx(lt,{folder:e.folder}),`
 `,s.jsx(ct,{title:"Web3 Extensions",subtitle:"A list of popular Web3 wallet extensions with metadata and icons.",npm:e.npm,status:"stable"}),`
-`,s.jsx(t.h2,{}),`
 `,s.jsx(on,{children:s.jsxs(t.p,{children:[s.jsx(t.code,{children:"@polkadot-cloud/assets"})," is used with other Cloud components, such as the upcoming Connect component."]})}),`
-`,s.jsx(t.h2,{}),`
 `,s.jsx(Ef,{id:"wallet-extensions",children:"Wallet Extensions"}),`
 `,s.jsxs(t.p,{children:["All extension data is stored in an  ",s.jsx("a",{href:"https://github.com/paritytech/polkadot-cloud/blob/main/packages/assets/lib/extensions/index.tsx",target:"_blank",rel:"noreferrer",children:s.jsx(t.code,{children:"Extensions"})}),` object.
 The following Web3 wallets are currently supported:`]}),`
