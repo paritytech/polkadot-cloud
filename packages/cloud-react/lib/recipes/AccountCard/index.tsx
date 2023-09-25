@@ -166,7 +166,15 @@ export const AccountCard = ({
         style={Object.assign(
           {},
           title?.style || {},
-          !isOfFontType(fontSize) ? { fontSize } : {}
+          !isOfFontType(fontSize) ? { fontSize } : {},
+          // Auto-ellipsis when component becomes too small and ellipsis is not active
+          !ellipsis?.active
+            ? {
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+              }
+            : {}
         )}
         className={`${title?.className} ${fontClasses
           ?.filter((a) => a.trim() != "")
