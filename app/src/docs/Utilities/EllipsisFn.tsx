@@ -6,12 +6,12 @@ import { SimpleEditor } from "../lib/SimpleEditor";
 export const EllipsisFn = () => {
   const code = `const address = "234CHvWmTuaVtkJpLS9oxuhFd3HamcEMrfFAPYoFaetEZmY7";
 
-// How many characters to show after Ellipsis (placed on the start)
+// How many characters to show after Ellipsis (placed at the start)
 ellipsisFn(address, 4, "start") // ...ZmY7
 // How many characters to show before Ellipsis (placed on the end)
 ellipsisFn(address, 4, "end") // 234C...
 
-// How many characters to show after Ellipsis (placed on the start)
+// How many characters to show after Ellipsis (placed at the start)
 ellipsisFn("Some random value", 8, "start");// ...dom value
 // How many characters to show before Ellipsis (placed on the end)
 ellipsisFn("Some random value", 8, "end") // Some ran...
