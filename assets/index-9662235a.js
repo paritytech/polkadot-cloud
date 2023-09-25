@@ -1055,7 +1055,8 @@ const App = () => (
 `,s.jsx(rn,{children:s.jsxs(t.p,{children:[s.jsx(t.code,{children:"@polkadot-cloud/assets"})," is used with other Cloud components, such as the upcoming Connect component."]})}),`
 `,s.jsx(t.h2,{}),`
 `,s.jsx(t.h2,{children:"Wallet Extensions"}),`
-`,s.jsx(t.p,{children:"The following Web3 wallets are currently supported:"}),`
+`,s.jsxs(t.p,{children:["All extension data is stored in an  ",s.jsx("a",{href:"https://github.com/paritytech/polkadot-cloud/blob/main/packages/assets/lib/extensions/index.tsx",target:"_blank",rel:"noreferrer",children:s.jsx(t.code,{children:"Extensions"})}),` object.
+The following Web3 wallets are currently supported:`]}),`
 `,s.jsxs(t.ul,{children:[`
 `,s.jsxs(t.li,{children:[`
 `,s.jsx("a",{href:"https://enkrypt.com",target:"_blank",rel:"noreferrer",children:"Enkrypt"}),`
@@ -1077,7 +1078,6 @@ const App = () => (
 `]}),`
 `,s.jsxs(t.li,{children:[s.jsx("a",{href:"https://novawallet.io",target:"_blank",rel:"noreferrer",children:"Nova Wallet"})," (if ",s.jsx(t.code,{children:"window.walletExtension.isNovaWallet"})," is present)"]}),`
 `]}),`
-`,s.jsxs(t.p,{children:["All extension data is stored in an ",s.jsx(t.code,{children:"Extensions"})," object. The source code can be found ",s.jsx("a",{href:"https://github.com/paritytech/polkadot-cloud/blob/main/packages/assets/lib/extensions/index.tsx",target:"_blank",rel:"noreferrer",children:"here"}),"."]}),`
 `,s.jsx(rn,{children:s.jsxs(t.p,{children:["To open a PR and add additional extensions to this list, refer to the instructions hosted in this package's ",s.jsx("a",{href:"https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets#adding-web-extension-wallets",target:"_blank",rel:"noreferrer",children:"README file"}),"."]})}),`
 `,s.jsx(t.h3,{children:"SVG Icons"}),`
 `,s.jsxs(t.p,{children:["As some of the extension icons are not perfectly square, it is recommended to bound their width and heights with ",s.jsx(t.code,{children:"max-width"})," and ",s.jsx(t.code,{children:"max-height"})," properties."]}),`
