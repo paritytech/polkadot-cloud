@@ -36,7 +36,7 @@ interface AccountCardProps {
   noCard?: boolean;
 }
 
-export interface IconProps extends CommonParams {
+export interface IconProps extends CommonParams, ComponentBaseWithClassName {
   size?: number;
   copy?: boolean;
   position?: HPositionLR;
@@ -45,7 +45,9 @@ export interface IconProps extends CommonParams {
   dark?: boolean;
 }
 
-export interface ExtraComponentProps extends CommonParams {
+export interface ExtraComponentProps
+  extends CommonParams,
+    ComponentBaseWithClassName {
   component?: JSX.Element;
   position?: HPositionLR;
 }
@@ -61,7 +63,7 @@ interface CommonParams {
   justify?: GridJustify;
 }
 
-export interface TitleProps {
+export interface TitleProps extends ComponentBaseWithClassName {
   address: string;
   align?: GridItemsAlignment;
   justify?: GridJustify;
@@ -139,7 +141,8 @@ export const AccountCard = ({
       column
       sm={icSize}
       justify={icon?.justify}
-      style={{ margin: "auto" }}
+      style={Object.assign({}, { margin: "auto" }, icon?.style)}
+      className={icon?.className}
     >
       <Polkicon
         address={title.address}
@@ -160,8 +163,14 @@ export const AccountCard = ({
       alignItems={title?.align || "center"}
     >
       <div
-        style={!isOfFontType(fontSize) ? { fontSize } : {}}
-        className={fontClasses?.filter((a) => a.trim() != "")?.join("")}
+        style={Object.assign(
+          {},
+          title?.style || {},
+          !isOfFontType(fontSize) ? { fontSize } : {}
+        )}
+        className={`${title?.className} ${fontClasses
+          ?.filter((a) => a.trim() != "")
+          ?.join("")}`}
       >
         {title?.component ||
           (ellipsis?.active
@@ -186,29 +195,24 @@ export const AccountCard = ({
   }
 
   if (extraComponent) {
+    const Comp = (
+      <Grid
+        key={`x_${xtraSize}`}
+        column
+        sm={xtraSize}
+        justify={extraComponent?.justify}
+        alignItems="center"
+        className={extraComponent?.className}
+        style={extraComponent?.style}
+      >
+        {extraComponent.component}
+      </Grid>
+    );
+
     if (extraComponent?.position === "right") {
-      structure.push(
-        <Grid
-          column
-          sm={xtraSize}
-          justify={extraComponent?.justify}
-          alignItems="center"
-        >
-          {extraComponent.component}
-        </Grid>
-      );
+      structure.push(Comp);
     } else {
-      structure.unshift(
-        <Grid
-          key={`x_${xtraSize}`}
-          column
-          sm={xtraSize}
-          justify={extraComponent?.justify}
-          alignItems="center"
-        >
-          {extraComponent.component}
-        </Grid>
-      );
+      structure.unshift(Comp);
     }
   }
 
