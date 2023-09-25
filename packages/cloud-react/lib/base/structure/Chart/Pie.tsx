@@ -65,17 +65,19 @@ export const Pie = ({
   }, [items, innerRadius, rad, visiblePart]);
 
   return (
-    <svg width={diameter} height={diameter}>
-      <g transform={`translate(${rad},${rad})`}>
-        {segments.map((segment) => (
-          <path
-            key={segment.color}
-            stroke={segment.color}
-            fill={segment.color}
-            d={segment.path}
-          />
-        ))}
-      </g>
-    </svg>
+    <div style={{ padding: "0.1rem" }}>
+      <svg width={diameter} height={diameter}>
+        <g transform={`translate(${rad},${rad})`}>
+          {segments.map((segment) => (
+            <path
+              key={segment.color}
+              stroke={segment.color}
+              fill={segment.color}
+              d={segment.path}
+            />
+          ))}
+        </g>
+      </svg>
+    </div>
   );
 };
