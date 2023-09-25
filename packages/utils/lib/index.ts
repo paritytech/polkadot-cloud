@@ -488,8 +488,8 @@ export const ellipsisFn = (
     if (position === "end") return str.slice(0, str.length - 3) + "...";
     return "..." + str.slice(-(str.length - 3));
   } else {
-    if (position === "end") return str.slice(0, amount - 3) + "...";
-    return "..." + str.slice(-(amount - 3));
+    if (position === "end") return str.slice(0, amount) + "...";
+    return "..." + str.slice(amount);
   }
 };
 
