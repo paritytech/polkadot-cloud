@@ -12,16 +12,9 @@ import { useEffect } from "react";
 export const Router = () => {
   const { pathname } = useLocation();
 
-  const BaseUri = import.meta.env.VITE_BASE_URI || "/";
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-
-  const routesWithBase = routes.map((route) => ({
-    ...route,
-    path: `${BaseUri}${route.path}`,
-  }));
 
   return (
     <>
@@ -29,7 +22,7 @@ export const Router = () => {
       <Menu />
       <div className="main-area">
         <Routes>
-          {routesWithBase.map((route) => (
+          {routes.map((route) => (
             <Route key={`nav_page_${route.path}`} {...route} />
           ))}
           <Route key="nav_page_other" path="*" element={<Error />} />

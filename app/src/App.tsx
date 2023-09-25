@@ -5,8 +5,10 @@ import { BrowserRouter } from "react-router-dom";
 import { Providers } from "./Providers";
 
 export const App = () => {
+  const BaseUri = import.meta.env.VITE_BASE_URI || "/";
+
   return (
-    <BrowserRouter basename="/">
+    <BrowserRouter basename={BaseUri}>
       <Providers />
     </BrowserRouter>
   );

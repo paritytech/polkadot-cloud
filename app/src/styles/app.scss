@@ -134,7 +134,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   width: calc(100% - 15rem);
 
   /* We need the body not to over come sidebar */
-  @media (min-width: 1200px) {
+  @media (width >= 1200px) {
     margin: 0 auto;
   }
 

@@ -23,8 +23,6 @@ export const Category = ({ rest, name, i }: Props) => {
 
   const [open, setOpen] = useState<boolean>(initial);
 
-  const BaseUri = import.meta.env.VITE_BASE_URI || "/";
-
   return (
     <>
       <button onClick={() => setOpen(!open)}>
@@ -62,10 +60,8 @@ export const Category = ({ rest, name, i }: Props) => {
             {paths.map((path, k) => (
               <Link
                 key={`nav_${i}_heading_${j}_path_${k}`}
-                className={`link${
-                  pathname === `${BaseUri}${path}` ? " selected" : ``
-                }`}
-                to={`${BaseUri}${path}`}
+                className={`link${pathname === `${path}` ? " selected" : ``}`}
+                to={`${path}`}
               >
                 {nameFromRoute(path)}
               </Link>
