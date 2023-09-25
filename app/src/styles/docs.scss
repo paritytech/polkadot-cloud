@@ -119,21 +119,47 @@ SPDX-License-Identifier: GPL-3.0-only */
   }
 
   .note {
-    border: 1px solid var(--border-secondary-color);
-    background: var(--background-modal);
+    border: 1px solid var(--accent-color-pending);
+    background: var(--accent-color-transparent);
     border-radius: 0.7rem;
-    padding: 0.5rem 1.5rem;
+    display: flex;
+    padding: 0.5rem 0;
     margin: 1.5rem 0;
     width: 100%;
 
-    * {
-      color: var(--text-color-tertiary);
-      font-size: 1.2rem;
-      line-height: 2rem;
-    }
+    > section {
+      &:first-child {
+        display: flex;
+        align-items: center;
+        padding-left: 1.25rem;
+        font-size: 1rem;
 
-    a {
-      color: var(--accent-color-primary);
+        span {
+          width: 2.65rem;
+          height: 2.65rem;
+        }
+        svg {
+          padding-right: 1rem;
+
+          .primary {
+            fill: var(--accent-color-secondary);
+          }
+        }
+      }
+
+      &:last-child {
+        padding-right: 0.5rem;
+
+        * {
+          color: var(--accent-color-secondary);
+          font-size: 1.2rem;
+          line-height: 1.9rem;
+        }
+
+        a {
+          color: var(--accent-color-secondary);
+        }
+      }
     }
   }
 
@@ -141,6 +167,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     @media (width <= 930px) {
       justify-content: flex-start;
     }
+
     overflow: auto;
     border: 1px solid var(--border-secondary-color);
     border-top-left-radius: 0.75rem;

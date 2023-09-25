@@ -5,14 +5,14 @@ SPDX-License-Identifier: GPL-3.0-only */
   /* Accent colors */
   --accent-color-primary-light: rgb(211 48 121);
   --accent-color-primary-dark: rgb(211 48 121);
-  --accent-color-secondary-light: #552bbf;
-  --accent-color-secondary-dark: #6d39ee;
+  --accent-color-secondary-light: #572bbf;
+  --accent-color-secondary-dark: #8965be;
   --accent-color-stroke-light: rgb(211 48 121);
   --accent-color-stroke-dark: rgb(211 48 121);
-  --accent-color-transparent-light: rgb(211 48 121 / 5%);
-  --accent-color-transparent-dark: rgb(211 48 121 / 5%);
-  --accent-color-pending-light: rgb(211 48 121 / 50%);
-  --accent-color-pending-dark: rgb(211 48 121 / 50%);
+  --accent-color-transparent-light: rgba(140, 48, 211, 0.04);
+  --accent-color-transparent-dark: rgba(140, 48, 211, 0.05);
+  --accent-color-pending-light: rgba(119, 48, 211, 0.276);
+  --accent-color-pending-dark: rgba(140, 81, 203, 0.466);
 
   /* Button styling */
   --button-border-radius-small: 0.75rem;
