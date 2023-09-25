@@ -1,9 +1,8 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { faLink } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ReactNode } from "react";
+import AnchorSVG from "../../../svg/anchor.svg?react";
 
 interface Props {
   children: ReactNode;
@@ -70,8 +69,8 @@ const Anchor = ({ id }: { id: string }) => (
   <>
     <span className="anchor" id={id} />
     {id && (
-      <a href={`#${id}`}>
-        <FontAwesomeIcon icon={faLink} className="anc" transform="shrink-4" />
+      <a href={`#${id}`} className="anc">
+        <AnchorSVG />
       </a>
     )}
   </>
