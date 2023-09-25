@@ -29,6 +29,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   > h2 {
     font-family: InterBold, sans-serif;
     font-size: 1.8rem;
+    line-height: 1.95rem;
     margin-top: 2rem;
     margin-bottom: 1.25rem;
   }
@@ -37,9 +38,10 @@ SPDX-License-Identifier: GPL-3.0-only */
     color: var(--text-color-primary);
     font-family: InterBold, sans-serif;
     font-size: 1.4rem;
+    line-height: 1.6rem;
     display: flex;
     align-items: center;
-    margin: 2rem 0 0 0;
+    margin: 2rem 0 0;
 
     > svg {
       color: var(--text-color-secondary);
@@ -114,8 +116,30 @@ SPDX-License-Identifier: GPL-3.0-only */
   h3,
   h4,
   h5 {
+    display: flex;
+    align-items: center;
+
     code {
       margin: 0 0.6rem;
+    }
+
+    .anc {
+      align-items: center;
+      display: none;
+
+      > svg {
+        color: var(--text-color-tertiary);
+        font-size: 0.9em;
+        width: 1em;
+        max-height: 1.1em;
+      }
+    }
+
+    &:hover {
+      .anc {
+        margin-left: 0.5rem;
+        display: flex;
+      }
     }
   }
 
@@ -126,17 +150,21 @@ SPDX-License-Identifier: GPL-3.0-only */
     font-size: inherit;
   }
 
+  .anchor {
+    position: relative;
+    top: -7.75rem;
+  }
+
   .note {
     border: 1px solid var(--accent-color-pending);
     background: var(--accent-color-transparent);
     border-radius: 0.5rem;
     display: flex;
-    padding: 0.75rem 0.75rem;
-    margin: 1rem 0;
+    padding: 0.75rem;
+    margin: 1.25rem 0;
     width: 100%;
 
     > section {
-
       &:first-child {
         flex: 0;
         display: flex;
@@ -149,6 +177,7 @@ SPDX-License-Identifier: GPL-3.0-only */
           width: 1.75rem;
           height: 1.75rem;
         }
+
         svg {
           .primary {
             fill: var(--accent-color-secondary);
@@ -166,7 +195,7 @@ SPDX-License-Identifier: GPL-3.0-only */
         }
 
         a {
-          font-family: InterBold;
+          font-family: InterBold, sans-serif;
         }
       }
     }

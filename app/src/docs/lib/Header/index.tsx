@@ -4,6 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { faCompassDrafting } from "@fortawesome/free-solid-svg-icons";
 import { Label } from "../Label";
 import { NPM } from "../NPM";
+import { H1 } from "../Headers";
 
 export interface Props {
   title: string;
@@ -14,7 +15,7 @@ export interface Props {
 export const Header = ({ npm, status, subtitle, title }: Props) => {
   return (
     <>
-      <h1 className="header">
+      <H1 className="header">
         {title}{" "}
         {status !== "stable" && (
           <Label
@@ -23,7 +24,7 @@ export const Header = ({ npm, status, subtitle, title }: Props) => {
             icon={status === "experimental" ? faCompassDrafting : undefined}
           />
         )}
-      </h1>
+      </H1>
       <h3 className="header">{subtitle}</h3>
       <NPM npm={npm} />
     </>

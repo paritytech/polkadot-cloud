@@ -2,6 +2,7 @@ import { Note } from "../lib/Note";
 import { Edit } from "../lib/Edit";
 import { Header } from "../lib/Header";
 import { ValidatorOperator } from './ValidatorOperator';
+import { H2 } from "../lib/Headers";
 
 <Edit folder={props.folder} />
 
@@ -12,7 +13,7 @@ import { ValidatorOperator } from './ValidatorOperator';
   status="stable"
 />
 
-## Validator Community
+<H2 id="validator-community">Validator Community</H2>
 
 A list of validator operators are available as a <a href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/assets/lib/validators/index.ts" target="_blank" rel="noreferrer">`ValidatorCommunity`</a> object, along with each operator's thumbnail icon in SVG format.
 
