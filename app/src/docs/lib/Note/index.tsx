@@ -9,10 +9,10 @@ export const Note = ({ children }: { children: ReactNode }) => {
   return (
     <div className="note">
       <section>
-        <span>
+        <div className="icon">
           {" "}
           <InfoSVG />
-        </span>
+        </div>
       </section>
       <section>{children}</section>
     </div>
