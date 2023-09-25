@@ -41,7 +41,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     line-height: 1.6rem;
     display: flex;
     align-items: center;
-    margin: 2rem 0 0 0;
+    margin: 2rem 0 0;
 
     > svg {
       color: var(--text-color-secondary);
@@ -122,18 +122,19 @@ SPDX-License-Identifier: GPL-3.0-only */
     code {
       margin: 0 0.6rem;
     }
+
     .anc {
-      display: flex;
       align-items: center;
       display: none;
-      
+
       > svg {
-      color: var(--text-color-tertiary);
-      font-size: 0.9em;
-      width: 1em;
-      max-height: 1.1em;
+        color: var(--text-color-tertiary);
+        font-size: 0.9em;
+        width: 1em;
+        max-height: 1.1em;
       }
     }
+
     &:hover {
       .anc {
         margin-left: 0.5rem;
@@ -159,12 +160,11 @@ SPDX-License-Identifier: GPL-3.0-only */
     background: var(--accent-color-transparent);
     border-radius: 0.5rem;
     display: flex;
-    padding: 0.75rem 0.75rem;
+    padding: 0.75rem;
     margin: 1rem 0;
     width: 100%;
 
     > section {
-
       &:first-child {
         flex: 0;
         display: flex;
@@ -177,6 +177,7 @@ SPDX-License-Identifier: GPL-3.0-only */
           width: 1.75rem;
           height: 1.75rem;
         }
+
         svg {
           .primary {
             fill: var(--accent-color-secondary);
