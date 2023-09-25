@@ -15,7 +15,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   --accent-color-pending: var(--accent-color-pending-light);
   --text-color-primary: #3f3f3f;
   --text-color-secondary: #555;
-  --text-color-tertiary: #888;
+  --text-color-tertiary: #777;
 }
 
 /* dark theme colors */
