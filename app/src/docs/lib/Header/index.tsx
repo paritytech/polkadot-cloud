@@ -15,7 +15,7 @@ export interface Props {
 export const Header = ({ npm, status, subtitle, title }: Props) => {
   return (
     <>
-      <H1 className="header" id="top">
+      <H1 className="header">
         {title}{" "}
         {status !== "stable" && (
           <Label
