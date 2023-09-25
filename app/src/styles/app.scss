@@ -128,13 +128,13 @@ SPDX-License-Identifier: GPL-3.0-only */
 
   /* CSS3: Leave enough room to show footer where content does not consume 100vh. */
   min-height: calc(100vh - 5.5rem);
-  padding: 3.3rem 1.5rem 3rem 0;
+  padding: 3.3rem 1.5rem 3rem 3.5rem;
   margin: 0 0 0 15rem;
   max-width: 900px;
   width: calc(100% - 15rem);
 
   /* We need the body not to over come sidebar */
-  @media (min-width: (v.$page-width-threshold + 26px)) {
+  @media (min-width: 1200px) {
     margin: 0 auto;
   }
 
