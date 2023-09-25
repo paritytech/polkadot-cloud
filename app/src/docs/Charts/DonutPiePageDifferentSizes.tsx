@@ -28,7 +28,7 @@ export const DonutPiePageDifferentSizes = () => {
 
   return (
     <>
-      <Demo>
+      <Demo showThemes={false}>
         <div style={{ margin: "0 1rem" }}>
           <Chart diameter={200} items={colors} />
         </div>

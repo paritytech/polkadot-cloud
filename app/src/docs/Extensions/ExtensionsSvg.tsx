@@ -12,13 +12,13 @@ import TalismanSVG from "@packages/assets/lib/extensions/svg/talisman.svg?react"
 import { Demo } from "../lib/Demo";
 
 export const ExtensionsSvg = () => {
-  const code = `import { EnkryptSVG } from "@polkadot-cloud/assets/extensions/svg/enkrypt.svg";
-import { FearlessWalletSVG } from "@polkadot-cloud/assets/extensions/svg/fearlesswallet.svg";
-import { NovaWalletSVG } from "@polkadot-cloud/assets/extensions/svg/novawallet.svg";
-import { PolkadotJSSVG } from "@polkadot-cloud/assets/extensions/svg/polkadotjs.svg";
-import { PolkaGateSVG } from "@polkadot-cloud/assets/extensions/svg/polkagate.svg";
-import { SubwalletJSSVG } from "@polkadot-cloud/assets/extensions/svg/subwalletjs.svg";
-import { TalismanSVG } from "@polkadot-cloud/assets/extensions/svg/talisman.svg";
+  const code = `import EnkryptSVG from "@polkadot-cloud/assets/extensions/svg/enkrypt.svg?react";
+import FearlessWalletSVG from "@polkadot-cloud/assets/extensions/svg/fearlesswallet.svg?react";
+import NovaWalletSVG from "@polkadot-cloud/assets/extensions/svg/novawallet.svg?react";
+import PolkadotJSSVG from "@polkadot-cloud/assets/extensions/svg/polkadotjs.svg?react";
+import PolkaGateSVG from "@polkadot-cloud/assets/extensions/svg/polkagate.svg?react";
+import SubwalletJSSVG from "@polkadot-cloud/assets/extensions/svg/subwalletjs.svg?react";
+import TalismanSVG from "@polkadot-cloud/assets/extensions/svg/talisman.svg?react";
 
 const App = () => (
   <>
