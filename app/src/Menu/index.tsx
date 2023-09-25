@@ -25,7 +25,7 @@ export const Menu = () => {
                 className={`link lg${
                   pathname === `${BaseUri}${rest.path}` ? ` selected` : ``
                 }`}
-                to={`/${rest.path}`}
+                to={`${BaseUri}${rest.path}`}
               >
                 {nameFromRoute(rest.path)}
               </Link>
