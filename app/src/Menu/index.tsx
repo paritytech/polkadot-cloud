@@ -9,6 +9,7 @@ import { Category } from "./Category";
 
 export const Menu = () => {
   const { pathname } = useLocation();
+  const BaseUri = import.meta.env.VITE_BASE_URI;
 
   return (
     <div className="menu">
@@ -22,7 +23,7 @@ export const Menu = () => {
             <>
               <Link
                 className={`link lg${
-                  pathname === `/${rest.path}` ? ` selected` : ``
+                  pathname === `${BaseUri}${rest.path}` ? ` selected` : ``
                 }`}
                 to={`/${rest.path}`}
               >

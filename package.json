@@ -9,7 +9,7 @@
   "description": "Polkadot Cloud Assets",
   "private": "true",
   "scripts": {
-    "build:pages": "cd app && tsc && vite build --base '/polkadot-cloud/'",
+    "build:pages": "VITE_BASE_URI=/polkadot-cloud/ cd app && tsc && vite build --base '/polkadot-cloud/'",
     "build:mock": "npm run build:mock --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
     "prebuild": "node scripts/prebuild.mjs",
