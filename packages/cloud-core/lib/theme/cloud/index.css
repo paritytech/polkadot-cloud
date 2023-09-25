@@ -5,11 +5,11 @@ SPDX-License-Identifier: GPL-3.0-only */
   /* Accent colors */
   --accent-color-primary-light: rgb(211 48 121);
   --accent-color-primary-dark: rgb(211 48 121);
-  --accent-color-secondary-light: #4f2aa5;
-  --accent-color-secondary-dark: #8163ad;
+  --accent-color-secondary-light: #4d3091;
+  --accent-color-secondary-dark: #8e73b6;
   --accent-color-stroke-light: rgb(211 48 121);
   --accent-color-stroke-dark: rgb(211 48 121);
-  --accent-color-transparent-light: rgba(140, 48, 211, 0.032);
+  --accent-color-transparent-light: rgba(140, 48, 211, 0.022);
   --accent-color-transparent-dark: rgba(140, 48, 211, 0.05);
   --accent-color-pending-light: rgba(119, 48, 211, 0.276);
   --accent-color-pending-dark: rgba(140, 81, 203, 0.466);
