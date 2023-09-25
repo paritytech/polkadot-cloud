@@ -21,6 +21,7 @@ import { Textfield } from "../docs/Textfield";
 type Routes = {
   name: string;
   path: string;
+  default?: boolean;
   element: ReactNode;
 }[];
 
@@ -100,6 +101,7 @@ const assetsRoutes = [
     path: "extensions",
     name: "Web3 Extensions",
     element: <Extensions />,
+    default: true,
   },
   {
     path: "validators",
@@ -213,3 +215,6 @@ export const routeCategories: RouteCategories = [
 
 export const nameFromRoute = (path: string): string | undefined =>
   routes?.find((r) => r.path === path)?.name;
+
+export const isDefaultRoute = (path: string): boolean =>
+  !!routes?.find((r) => r.default === true && r.path === path);
