@@ -14,7 +14,8 @@ import { Overlay } from "../docs/Overlay";
 import { AccountCard } from "../docs/AccountCard";
 import { Odometer } from "../docs/Odometer";
 import { Modal } from "../docs/Modal";
-import { Utilities } from "../docs/Utilities";
+import { UtilitiesBase } from "../docs/UtilitiesBase";
+import { UtilitiesUnit } from "../docs/UtilitiesUnit";
 import { Switch } from "../docs/Switch";
 import { Textfield } from "../docs/Textfield";
 
@@ -52,9 +53,14 @@ const recipesRoutes = [
 // utils
 const utilsRoutes = [
   {
-    path: "utilities",
-    name: "Cloud Utils",
-    element: <Utilities />,
+    path: "base_utilities",
+    name: "Basic Utilities",
+    element: <UtilitiesBase />,
+  },
+  {
+    path: "unit_utilities",
+    name: "Unit Utilities",
+    element: <UtilitiesUnit />,
   },
 ];
 
@@ -190,7 +196,7 @@ export const routeCategories: RouteCategories = [
     name: "Utilities",
     paths: [
       {
-        paths: ["utilities"],
+        paths: ["base_utilities", "unit_utilities"],
       },
     ],
   },
