@@ -14,8 +14,8 @@ export const PieSimple = () => {
 />
 <Chart diameter={100}
   items={[
-    { value: 0, color: "var(--accent-color-primary)" },
-    { value: 200, color: "var(--background-default)" },
+    { value: 200, color: "var(--accent-color-primary)" },
+    { value: 0, color: "var(--background-default)" },
   ]}
 />`;
 
@@ -35,8 +35,8 @@ export const PieSimple = () => {
           <Chart
             diameter={100}
             items={[
-              { value: 0, color: "var(--accent-color-primary)" },
-              { value: 200, color: "var(--background-default)" },
+              { value: 200, color: "var(--accent-color-primary)" },
+              { value: 0, color: "var(--background-default)" },
             ]}
           />
         </div>
