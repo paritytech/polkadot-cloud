@@ -54,9 +54,15 @@ export const Pie = ({
 
   const segments = useMemo(() => {
     // eslint-disable-next-line @typescript-eslint/no-shadow
-    const sum = items.reduce((sum, item) => sum + item.value, 0.1);
+    const sum = items.reduce((sum, item) => sum + item.value, 0);
     let start = 0;
     return items.map((item) => {
+      const p = sum * (1 / 1000);
+      if (item.value === 0) {
+        item.value = p;
+      } else if (item.value === sum) {
+        item.value = sum - p;
+      }
       const delta = (item.value / sum) * visiblePart;
       const path = getArcPath(start, start + delta, innerRadius, rad);
       start += delta;
