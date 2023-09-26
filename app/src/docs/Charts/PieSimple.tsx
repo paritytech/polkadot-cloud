@@ -6,14 +6,18 @@ import { SimpleEditor } from "../lib/SimpleEditor";
 import { Demo } from "../lib/Demo";
 
 export const PieSimple = () => {
-  const code = `<Chart
-  diameter={100}
+  const code = `<Chart diameter={100}
   items={[
     { value: 60, color: "red" },
     { value: 200, color: "var(--background-default)" },
   ]}
 />
-</div>`;
+<Chart diameter={100}
+  items={[
+    { value: 0, color: "var(--accent-color-primary)" },
+    { value: 200, color: "var(--background-default)" },
+  ]}
+/>`;
 
   return (
     <>
@@ -23,6 +27,15 @@ export const PieSimple = () => {
             diameter={100}
             items={[
               { value: 60, color: "var(--accent-color-primary)" },
+              { value: 200, color: "var(--background-default)" },
+            ]}
+          />
+        </div>
+        <div className="row">
+          <Chart
+            diameter={100}
+            items={[
+              { value: 0, color: "var(--accent-color-primary)" },
               { value: 200, color: "var(--background-default)" },
             ]}
           />
