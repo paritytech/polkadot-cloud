@@ -54,7 +54,7 @@ const recipesRoutes = [
 const utilsRoutes = [
   {
     path: "base_utilities",
-    name: "Basic Utilities",
+    name: "Base Utilities",
     element: <UtilitiesBase />,
   },
   {
