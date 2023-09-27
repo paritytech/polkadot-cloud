@@ -6,7 +6,7 @@ export type PieProps = {
   diameter: number;
   items: { value: number; color: string }[];
   innerRadius?: number;
-  duration?: number;
+  speed?: number;
 };
 
 const PROGRESS_TIMEOUT = 5;
@@ -38,7 +38,7 @@ export const Pie = ({
   diameter,
   items,
   innerRadius = 0,
-  duration = 1,
+  speed = 1,
 }: PieProps) => {
   const [visiblePart, setVisiblePart] = useState(0);
   const [rad] = useState(diameter / 2);
@@ -46,7 +46,7 @@ export const Pie = ({
   useEffect(() => {
     if (visiblePart < 1) {
       setTimeout(
-        () => setVisiblePart(visiblePart + duration / 100),
+        () => setVisiblePart(visiblePart + speed / 100),
         PROGRESS_TIMEOUT
       );
     }
