@@ -56,11 +56,10 @@ export const Pie = ({
     // eslint-disable-next-line @typescript-eslint/no-shadow
     const sum = items.reduce((sum, item) => sum + item.value, 0);
     let start = 0;
-    return items.map((item) => {
+    const filtered_items = items.filter((item) => item.value !== 0);
+    return filtered_items.map((item) => {
       const p = sum * (1 / 1000);
-      if (item.value === 0) {
-        item.value = p;
-      } else if (item.value === sum) {
+      if (item.value === sum) {
         item.value = sum - p;
       }
       const delta = (item.value / sum) * visiblePart;
