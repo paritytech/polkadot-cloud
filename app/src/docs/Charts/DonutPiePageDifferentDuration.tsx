@@ -12,7 +12,7 @@ const colors = [
   { value: 150, color: "purple" },
 ];
 
-export const DonutPiePageDifferentSpeed = () => {
+export const DonutPiePageDifferentDuration = () => {
   const code = `const colors = [
   { value: 60, color: "red" },
   { value: 200, color: "green" },
@@ -20,33 +20,43 @@ export const DonutPiePageDifferentSpeed = () => {
   { value: 150, color: "purple" },
 ];
 
-<Chart diameter={100} items={colors} speed={0.1} /> 
-<Chart diameter={100} items={colors} innerRadius={20} speed={0.5} />
-<Chart diameter={100} items={colors} innerRadius={30} speed={1} /> // Default one
-<Chart diameter={100} items={colors} innerRadius={15} speed={3} />
-<Chart diameter={100} items={colors} innerRadius={15} speed={10} />
-<Chart diameter={100} items={colors} innerRadius={5} speed={100} />`;
+<Chart diameter={100} items={colors} duration={0.1} /> 
+<Chart diameter={100} items={colors} innerRadius={20} duration={0.5} />
+<Chart diameter={100} items={colors} innerRadius={30} duration={1} /> // Default one
+<Chart diameter={100} items={colors} innerRadius={15} duration={3} />
+<Chart diameter={100} items={colors} innerRadius={15} duration={10} />
+<Chart diameter={100} items={colors} innerRadius={5} duration={100} />`;
 
   return (
     <>
       <Demo showThemes={false}>
         <div style={{ margin: "0 1rem" }}>
-          <Chart diameter={100} items={colors} speed={0.1} />
+          <Chart diameter={100} items={colors} duration={0.1} />
         </div>
         <div style={{ margin: "0 1rem" }}>
-          <Chart diameter={100} items={colors} innerRadius={20} speed={0.5} />
+          <Chart
+            diameter={100}
+            items={colors}
+            innerRadius={20}
+            duration={0.5}
+          />
         </div>
         <div style={{ margin: "0 1rem" }}>
-          <Chart diameter={100} items={colors} innerRadius={49} speed={1} />
+          <Chart diameter={100} items={colors} innerRadius={49} duration={1} />
         </div>
         <div style={{ margin: "0 1rem" }}>
-          <Chart diameter={100} items={colors} innerRadius={30} speed={3} />
+          <Chart diameter={100} items={colors} innerRadius={30} duration={3} />
         </div>
         <div style={{ margin: "0 1rem" }}>
-          <Chart diameter={100} items={colors} innerRadius={15} speed={10} />
+          <Chart diameter={100} items={colors} innerRadius={15} duration={10} />
         </div>
         <div style={{ margin: "0 1rem" }}>
-          <Chart diameter={100} items={colors} innerRadius={40} speed={100} />
+          <Chart
+            diameter={100}
+            items={colors}
+            innerRadius={40}
+            duration={100}
+          />
         </div>
       </Demo>
       <SimpleEditor code={code} />
