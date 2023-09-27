@@ -1131,10 +1131,10 @@
   dependencies:
     "@types/unist" "^2"
 
-"@types/mdx@^2.0.0", "@types/mdx@^2.0.7":
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/@types/mdx/-/mdx-2.0.7.tgz#c7482e995673e01b83f8e96df83b3843ea76401f"
-  integrity sha512-BG4tyr+4amr3WsSEmHn/fXPqaCba/AYZ7dsaQTiavihQunHSIxk+uAtqsjvicNpyHN6cm+B9RVrUOtW9VzIKHw==
+"@types/mdx@^2.0.0", "@types/mdx@^2.0.8":
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/@types/mdx/-/mdx-2.0.8.tgz#585229ff7057ab30c5e4a23fe126858881d818e5"
+  integrity sha512-r7/zWe+f9x+zjXqGxf821qz++ld8tp6Z4jUS6qmPZUXH6tfh4riXOhAqb12tWGWAevCFtMt1goLWkQMqIJKpsA==
 
 "@types/minimatch@*":
   version "5.1.2"
