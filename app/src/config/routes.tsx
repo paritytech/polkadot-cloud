@@ -187,6 +187,9 @@ export const routeCategories: RouteCategories = [
         paths: ["overlay"],
       },
       {
+        paths: ["charts"],
+      },
+      {
         heading: "Inputs",
         paths: ["buttons"],
       },
