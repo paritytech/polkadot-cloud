@@ -55,6 +55,17 @@ export const Pie = ({
   const segments = useMemo(() => {
     // eslint-disable-next-line @typescript-eslint/no-shadow
     const sum = items.reduce((sum, item) => sum + item.value, 0);
+
+    if (sum === 0) {
+      // Hardcoded "inactive" radius - "dead state" - where all values sum to 0;
+      return [
+        {
+          color: "var(--background-default)",
+          path: `M 0 0 L 0 -${rad} A ${rad} ${rad} 1 1 1 -0.1 -${rad} L 0 0 A 0 0 1 1 0 0 0 Z`,
+        },
+      ];
+    }
+
     let start = 0;
     const filtered_items = items.filter((item) => item.value !== 0);
     return filtered_items.map((item) => {
