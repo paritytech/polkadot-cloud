@@ -208,7 +208,7 @@ export const routeCategories: RouteCategories = [
     paths: [
       {
         heading: "Components",
-        paths: ["charts", "loader", "modal", "switch", "textfield"],
+        paths: ["loader", "modal", "switch", "textfield"],
       },
       {
         heading: "Layout",
