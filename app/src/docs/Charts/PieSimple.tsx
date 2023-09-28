@@ -24,6 +24,14 @@ export const PieSimple = () => {
     { value: 0, color: "var(--accent-color-primary)" },
     { value: 200, color: "var(--background-default)" },
   ]}
+/>
+// "Dead Pie" example - when all values provided sums to 0;
+<Chart
+  diameter={100}
+  items={[
+    { value: 0, color: "var(--accent-color-primary)" },
+    { value: 0, color: "var(--background-default)" },
+  ]}
 />`;
 
   return (
@@ -53,6 +61,15 @@ export const PieSimple = () => {
             items={[
               { value: 0, color: "var(--accent-color-primary)" },
               { value: 200, color: "var(--background-default)" },
+            ]}
+          />
+        </div>
+        <div className="row">
+          <Chart
+            diameter={100}
+            items={[
+              { value: 0, color: "var(--accent-color-primary)" },
+              { value: 0, color: "var(--background-default)" },
             ]}
           />
         </div>

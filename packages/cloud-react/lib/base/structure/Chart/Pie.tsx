@@ -60,7 +60,7 @@ export const Pie = ({
       // Hardcoded "inactive" radius - "dead state" - where all values sum to 0;
       return [
         {
-          color: "#ccc",
+          color: "var(--background-default)",
           path: `M 0 0 L 0 -${rad} A ${rad} ${rad} 1 1 1 -0.1 -${rad} L 0 0 A 0 0 1 1 0 0 0 Z`,
         },
       ];
