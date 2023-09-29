@@ -5,10 +5,8 @@
 import type { ExtensionsContextInterface } from "./types";
 
 export const defaultExtensionsContext: ExtensionsContextInterface = {
+  checkingInjectedWeb3: false,
   extensions: [],
   extensionsStatus: {},
-  extensionsFetched: false,
-  checkingInjectedWeb3: false,
   setExtensionStatus: (id, status) => {},
-  setExtensionsFetched: (fetched) => {},
 };

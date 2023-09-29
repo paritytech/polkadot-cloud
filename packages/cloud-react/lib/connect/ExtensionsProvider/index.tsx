@@ -34,9 +34,6 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
   );
   const extensionsRef = useRef(extensions);
 
-  // Store whether extensions have been fetched.
-  const [extensionsFetched, setExtensionsFetched] = useState(false);
-
   // Store each extension's status in state.
   const [extensionsStatus, setExtensionsStatus] = useState<ExtensionsStatus>(
     {}
@@ -119,9 +116,7 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
         extensions: extensionsRef.current || [],
         extensionsStatus: extensionsStatusRef.current,
         checkingInjectedWeb3: checkingInjectedWeb3Ref.current,
-        extensionsFetched,
         setExtensionStatus,
-        setExtensionsFetched,
       }}
     >
       {children}

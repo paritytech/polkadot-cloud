@@ -48,12 +48,10 @@ export interface ExtensionMetadata {
 
 // Extensions context interface.
 export interface ExtensionsContextInterface {
+  checkingInjectedWeb3: boolean;
   extensions: ExtensionInjected[];
   extensionsStatus: ExtensionsStatus;
-  extensionsFetched: boolean;
-  checkingInjectedWeb3: boolean;
   setExtensionStatus: (id: string, status: string) => void;
-  setExtensionsFetched: (fetched: boolean) => void;
 }
 
 export type ExtensionsStatus = Record<string, string>;
