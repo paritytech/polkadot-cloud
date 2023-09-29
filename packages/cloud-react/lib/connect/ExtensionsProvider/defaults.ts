@@ -11,5 +11,4 @@ export const defaultExtensionsContext: ExtensionsContextInterface = {
   checkingInjectedWeb3: false,
   setExtensionStatus: (id, status) => {},
   setExtensionsFetched: (fetched) => {},
-  setExtensions: (extensions) => {},
 };

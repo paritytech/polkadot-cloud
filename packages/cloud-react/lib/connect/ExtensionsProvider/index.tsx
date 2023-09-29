@@ -122,7 +122,6 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
         extensionsFetched,
         setExtensionStatus,
         setExtensionsFetched,
-        setExtensions,
       }}
     >
       {children}

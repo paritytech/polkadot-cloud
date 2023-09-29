@@ -54,7 +54,6 @@ export interface ExtensionsContextInterface {
   checkingInjectedWeb3: boolean;
   setExtensionStatus: (id: string, status: string) => void;
   setExtensionsFetched: (fetched: boolean) => void;
-  setExtensions: (s: ExtensionInjected[]) => void;
 }
 
 export type ExtensionsStatus = Record<string, string>;
