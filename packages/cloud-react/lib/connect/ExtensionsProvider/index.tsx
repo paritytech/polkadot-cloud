@@ -6,6 +6,7 @@ import { ExtensionsArray } from "@polkadot-cloud/assets/extensions";
 import { ReactNode, useEffect, useRef, useState, createContext } from "react";
 import type {
   ExtensionInjected,
+  ExtensionStatus,
   ExtensionsContextInterface,
   ExtensionsStatus,
 } from "./types";
@@ -83,7 +84,7 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
   });
 
   // Setter for an extension status.
-  const setExtensionStatus = (id: string, status: string) => {
+  const setExtensionStatus = (id: string, status: ExtensionStatus) => {
     setStateWithRef(
       Object.assign(extensionsStatusRef.current || {}, {
         [id]: status,

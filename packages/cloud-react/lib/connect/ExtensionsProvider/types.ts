@@ -51,7 +51,9 @@ export interface ExtensionsContextInterface {
   checkingInjectedWeb3: boolean;
   extensions: ExtensionInjected[];
   extensionsStatus: ExtensionsStatus;
-  setExtensionStatus: (id: string, status: string) => void;
+  setExtensionStatus: (id: string, status: ExtensionStatus) => void;
 }
 
-export type ExtensionsStatus = Record<string, string>;
+export type ExtensionsStatus = Record<string, ExtensionStatus>;
+
+export type ExtensionStatus = "not_found" | "not_authenticated" | "connected";
