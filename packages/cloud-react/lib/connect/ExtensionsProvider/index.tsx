@@ -12,6 +12,10 @@ import type {
 import { defaultExtensionsContext } from "./defaults";
 import { AnyJson } from "../../types";
 
+export const ExtensionsContext = createContext<ExtensionsContextInterface>(
+  defaultExtensionsContext
+);
+
 export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
   // Store whether initial `injectedWeb3` checking is underway.
   //
@@ -45,7 +49,7 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
 
   // Listen for window.injectedWeb3 with an interval.
   let injectedWeb3Interval: ReturnType<typeof setInterval>;
-  let injectCounter = 0;
+  const injectCounter = 0;
 
   // Handle completed interval check for `injectedWeb3`.
   //
@@ -62,12 +66,15 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
   // after 500 * 10 milliseconds.
   const checkEveryMs = 500;
   const totalChecks = 10;
+
+  // To trigger interval on soft page refreshes, no empty dependency array is provided to this
+  // `useEffect`.
   useEffect(() => {
     if (!intervalInitialisedRef.current) {
       intervalInitialisedRef.current = true;
 
       injectedWeb3Interval = setInterval(() => {
-        if (++injectCounter === totalChecks) handleClearInterval(false);
+        if (injectCounter + 1 === totalChecks) handleClearInterval(false);
         else {
           // if injected is present
           const injectedWeb3 = (window as AnyJson)?.injectedWeb3 || null;
@@ -122,7 +129,3 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
     </ExtensionsContext.Provider>
   );
 };
-
-export const ExtensionsContext = createContext<ExtensionsContextInterface>(
-  defaultExtensionsContext
-);
