@@ -5,6 +5,6 @@ import Doc from "./index.mdx";
 
 export const Polkicon = () => (
   <div className="doc">
-    <Doc npm="@polkadot-cloud/react" folder="Icons" />
+    <Doc npm="@polkadot-cloud/react" folder="Polkicon" />
   </div>
 );
