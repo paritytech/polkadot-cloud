@@ -1,11 +1,6 @@
 {
-  "extends": [
-    "../.eslintrc.json",
-    "plugin:react/recommended",
-    "plugin:mdx/recommended"
-  ],
+  "extends": ["../.eslintrc.json", "plugin:react/recommended"],
   "settings": {
-    "mdx/code-blocks": true,
     "react": {
       "version": "detect"
     }
@@ -15,7 +10,7 @@
     "react/jsx-filename-extension": [
       "warn",
       {
-        "extensions": [".tsx", ".mdx"]
+        "extensions": [".tsx"]
       }
     ],
     "import/extensions": [
@@ -41,7 +36,6 @@
   },
   "overrides": [
     {
-      "files": ["*.mdx"],
       "rules": {
         "no-undef": "off"
       }

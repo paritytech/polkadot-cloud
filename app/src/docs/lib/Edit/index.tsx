@@ -8,7 +8,7 @@ export const Edit = ({ folder }: { folder: string }) => {
   return (
     <div className="edit-on-github">
       <a
-        href={`https://github.com/paritytech/polkadot-cloud/edit/main/app/src/docs/${folder}/index.mdx`}
+        href={`https://github.com/paritytech/polkadot-cloud/edit/main/app/src/docs/${folder}/main.tsx`}
         target="_blank"
         rel="noreferrer"
       >
