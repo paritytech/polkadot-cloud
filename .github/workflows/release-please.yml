@@ -12,7 +12,7 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         with:
           # Commit to start releases from. This can be removed after the first release PR is merged.
-          last-release-sha: 722bd8394b7c16db960e12a40745e21a34027f07
+          last-release-sha: d7c5aa387aa1ec4fda8e9992925c1331bd5fad79
           release-type: node
           package-name: polkadot-cloud
 
@@ -21,37 +21,39 @@ jobs:
   # Dynamically fetches packages to publish from the `packages` folder. Uses `sed` to format the
   # list with quotes and commas. Wraps command output in angle brackets, resulting in a JSON
   # formatted string.
-  # get-packages:
-  #   runs-on: ubuntu-latest
-  #   outputs:
-  #     packages: ${{ steps.get_packages.outputs.packages }}
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - name: "Get Packages"
-  #       id: get_packages
-  #       run: echo packages=[$(ls | sed 's,\(.*\),"\1"\,,')] >> "$GITHUB_OUTPUT"
-  #       working-directory: "packages"
+  get-packages:
+    runs-on: ubuntu-latest
+    outputs:
+      packages: ${{ steps.get_packages.outputs.packages }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: "Get Packages"
+        id: get_packages
+        run: echo packages=[$(ls | sed 's,\(.*\),"\1"\,,')] >> "$GITHUB_OUTPUT"
+        working-directory: "packages"
 
   # Note: Experimental and may not work as expected, and or be changed in future revisions.
   # Uses the above list of packages to prepare per-package releases.
-  # release-please-packages:
-  #   runs-on: ubuntu-latest
-  #   needs: get-packages
-  #   strategy:
-  #     matrix:
-  #       package: ${{ fromJson(needs.get-packages.outputs.packages) }}
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: actions/setup-node@v3
-  #       with:
-  #         node-version: 18
-  #         registry-url: https://registry.npmjs.org
+  release-please-packages:
+    runs-on: ubuntu-latest
+    needs: get-packages
+    strategy:
+      matrix:
+        package: ${{ fromJson(needs.get-packages.outputs.packages) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org
 
-  #     - name: Release Please
-  #       uses: google-github-actions/release-please-action@v3
-  #       with:
-  #         release-type: node
-  #         package-name: ${{ matrix.package }}
-  #         monorepo-tags: true
-  #         command: github-release # Refer to https://github.com/marketplace/actions/release-please-action#configuration for configuring this field
-  #         path: packages/${{ matrix.package }}
+      - name: Release Please
+        uses: google-github-actions/release-please-action@v3
+        with:
+          # Commit to start releases from. This can be removed after the first release PR is merged.
+          last-release-sha: d7c5aa387aa1ec4fda8e9992925c1331bd5fad79
+          release-type: node
+          package-name: ${{ matrix.package }}
+          monorepo-tags: true
+          command: github-release # Refer to https://github.com/marketplace/actions/release-please-action#configuration for configuring this field
+          path: packages/${{ matrix.package }}
