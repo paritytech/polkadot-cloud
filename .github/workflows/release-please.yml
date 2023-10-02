@@ -18,7 +18,7 @@ jobs:
         id: get_packages
         run: echo packages=[$(ls | sed 's,\(.*\),"\1"\,,')] >> "$GITHUB_OUTPUT"
         working-directory: "packages"
-  
+
   # Prepare entire repository release.
   release-please-mono:
     runs-on: ubuntu-latest
@@ -27,7 +27,7 @@ jobs:
         with:
           release-type: node
           package-name: polkadot-cloud
-      
+
   # Uses the above list of packages to prepare per-package releases.
   # This is experimental and may not work as expected, and or be changed in future revisions.
   release-please-packages:
@@ -42,7 +42,7 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org
-    
+
       - name: Release Please
         uses: google-github-actions/release-please-action@v3
         with:
