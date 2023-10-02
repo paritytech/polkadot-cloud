@@ -20,7 +20,7 @@ jobs:
         working-directory: "packages"
 
   # Prepare entire repository release.
-  release-please-mono:
+  release-please-repo:
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v3
