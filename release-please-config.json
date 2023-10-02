@@ -5,6 +5,7 @@
     "packages/assets": {},
     "packages/cloud-core": {},
     "packages/cloud-react": {},
-    "packages/utils": {}
+    "packages/utils": {},
+    "scripts": {}
   }
 }

@@ -4,8 +4,6 @@
 import fs from "fs";
 import { dirFilesExist } from "./index.mjs";
 
-const scope = "polkadot-cloud";
-
 const dirFoldersOnly = async (dir, files) => {
   for (let file of files) {
     fs.stat(`${dir}${file}`, (err, stat) => {
@@ -30,12 +28,6 @@ const matchScripts = (dir, files) => {
       const json = JSON.parse(
         fs.readFileSync(`${dir}${file}/package.json`).toString()
       );
-
-      if (json?.name !== `${scope}-${file}`) {
-        console.error(
-          `❌ ${json?.name} package name doesn't meet the naming requirement`
-        );
-      }
 
       const scripts = Object.keys(json?.scripts || {});
       if (

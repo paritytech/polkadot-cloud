@@ -1,12 +1,12 @@
 {
-  "name": "polkadot-cloud-assets",
+  "name": "polkadot-cloud",
   "version": "0.2.14",
   "license": "GPL-3.0-only",
   "contributors": [
     "Ross Bulat<ross@parity.io>",
     "Nikolaos Kontakis<nikos@parity.io>"
   ],
-  "description": "Polkadot Cloud Assets",
+  "description": "Polkadot Cloud",
   "private": "true",
   "scripts": {
     "build:pages": "cd app && tsc && vite build --base='/polkadot-cloud/'",
@@ -79,7 +79,6 @@
     "packages/utils",
     "packages/cloud-react",
     "packages/assets",
-    "packages/dev-tools",
     "app",
     "scripts"
   ],
