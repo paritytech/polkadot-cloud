@@ -5,20 +5,6 @@ on:
     branches: [main]
 
 jobs:
-  # Dynamically fetches packages to publish from the `packages` folder. Uses `sed` to format the
-  # list with quotes and commas. Wraps command output in angle brackets, resulting in a JSON
-  # formatted string.
-  get-packages:
-    runs-on: ubuntu-latest
-    outputs:
-      packages: ${{ steps.get_packages.outputs.packages }}
-    steps:
-      - uses: actions/checkout@v4
-      - name: "Get Packages"
-        id: get_packages
-        run: echo packages=[$(ls | sed 's,\(.*\),"\1"\,,')] >> "$GITHUB_OUTPUT"
-        working-directory: "packages"
-
   # Prepare entire repository release.
   release-please-repo:
     runs-on: ubuntu-latest
@@ -29,6 +15,21 @@ jobs:
           package-name: polkadot-cloud
 
   # Note: Currently disabled due to API limits.
+
+  # Dynamically fetches packages to publish from the `packages` folder. Uses `sed` to format the
+  # list with quotes and commas. Wraps command output in angle brackets, resulting in a JSON
+  # formatted string.
+  # get-packages:
+  #   runs-on: ubuntu-latest
+  #   outputs:
+  #     packages: ${{ steps.get_packages.outputs.packages }}
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: "Get Packages"
+  #       id: get_packages
+  #       run: echo packages=[$(ls | sed 's,\(.*\),"\1"\,,')] >> "$GITHUB_OUTPUT"
+  #       working-directory: "packages"
+
   # Note: Experimental and may not work as expected, and or be changed in future revisions.
   # Uses the above list of packages to prepare per-package releases.
   # release-please-packages:
