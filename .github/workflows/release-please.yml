@@ -2,7 +2,7 @@ name: Release Automation
 
 on:
   push:
-    branches: [main]
+    branches: [rb-release-please]
 
 jobs:
   # Dynamically fetches packages to publish from the `packages` folder. Uses `sed` to format the
