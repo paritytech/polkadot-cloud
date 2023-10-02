@@ -2,7 +2,7 @@
 
 # Polkadot Cloud: React
 
-Core React components. Using SCSS, Typescript etc. Built using Rollup, publishable to NPM.
+Core React components. Using SCSS, Typescript etc. Built using Rollup, and publishable to NPM.
 
 ## Managing the Package
 

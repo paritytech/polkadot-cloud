@@ -2,7 +2,7 @@
 
 # Polkadot Cloud: Assets
 
-Data sources and static assets for Polkadot apps.
+Data and static assets for Polkadot apps.
 
 ## Adding Web Extension Wallets
 
