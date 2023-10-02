@@ -1,0 +1,18 @@
+name: Release Automation
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release-please-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          # Commit to start releases from. This can be removed after the first release PR is merged.
+          last-release-sha: d7c5aa387aa1ec4fda8e9992925c1331bd5fad79
+          command: manifest
+          monorepo-tags: true
+          release-type: node
+          package-name: polkadot-cloud

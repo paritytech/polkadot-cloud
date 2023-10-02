@@ -1,0 +1,11 @@
+{
+  "bootstrap-sha": "d7c5aa387aa1ec4fda8e9992925c1331bd5fad79",
+  "packages": {
+    "app": {},
+    "packages/assets": {},
+    "packages/cloud-core": {},
+    "packages/cloud-react": {},
+    "packages/utils": {},
+    "scripts": {}
+  }
+}

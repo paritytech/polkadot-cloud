@@ -1,12 +1,12 @@
 {
-  "name": "polkadot-cloud-assets",
+  "name": "polkadot-cloud",
   "version": "0.2.14",
   "license": "GPL-3.0-only",
   "contributors": [
     "Ross Bulat<ross@parity.io>",
     "Nikolaos Kontakis<nikos@parity.io>"
   ],
-  "description": "Polkadot Cloud Assets",
+  "description": "Polkadot Cloud",
   "private": "true",
   "scripts": {
     "build:pages": "cd app && tsc && vite build --base='/polkadot-cloud/'",
@@ -28,10 +28,10 @@
     "@rollup/plugin-commonjs": "^25.0.4",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.2.1",
-    "@types/react": "^18.2.23",
+    "@types/react": "^18.2.24",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
-    "@vitest/coverage-v8": "^0.34.5",
+    "@vitest/coverage-v8": "^0.34.6",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.50.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -53,7 +53,7 @@
     "gulp-strip-comments": "^2.6.0",
     "gulp-typescript": "^6.0.0-alpha.1",
     "minimist": "^1.2.8",
-    "postcss": "^8.4.30",
+    "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "prettier-plugin-organize-imports": "^3.2.3",
     "rollup": "^3.29.4",
@@ -71,14 +71,13 @@
     "tiny-lr": "^2.0.0",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
-    "vitest": "^0.34.5"
+    "vitest": "^0.34.6"
   },
   "workspaces": [
     "packages/cloud-core",
     "packages/utils",
     "packages/cloud-react",
     "packages/assets",
-    "packages/dev-tools",
     "app",
     "scripts"
   ],
