@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: google-github-actions/release-please-action@v3
         with:
-          bootstrap-sha: 722bd8394b7c16db960e12a40745e21a34027f07
+          last-release-sha: 722bd8394b7c16db960e12a40745e21a34027f07
           release-type: node
           package-name: polkadot-cloud
 
