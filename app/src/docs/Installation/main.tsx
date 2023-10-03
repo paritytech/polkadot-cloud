@@ -19,7 +19,7 @@ export const Doc = ({ folder }: DocProps) => {
       />
       <h2>Basic Installation</h2>
       <p>
-        If your project requires Polkadot Cloud CSS themes, assets, or
+        If your project requires Polkadot Cloud CSS variables, assets, or
         utilities, install the following dependencies:
       </p>
       <InstallBasic />
