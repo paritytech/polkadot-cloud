@@ -171,7 +171,7 @@ export const routes: Routes = [
 
 export const routeCategories: RouteCategories = [
   {
-    name: "Getting started",
+    name: "Getting Started",
     paths: [
       {
         paths: ["overview"],
