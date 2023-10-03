@@ -18,6 +18,7 @@ import { UtilitiesBase } from "../docs/UtilitiesBase";
 import { UtilitiesUnit } from "../docs/UtilitiesUnit";
 import { Switch } from "../docs/Switch";
 import { Textfield } from "../docs/Textfield";
+import { Overview } from "../docs/Overview";
 
 type Routes = {
   name: string;
@@ -40,6 +41,15 @@ export interface RouteCategoryMulti {
     paths: string[];
   }[];
 }
+
+// Overview
+const introRoutes = [
+  {
+    path: "overview",
+    name: "Overview",
+    element: <Overview />,
+  },
+];
 
 // recipes
 const recipesRoutes = [
@@ -150,19 +160,24 @@ export const routes: Routes = [
     name: "Home",
     element: <Extensions />, // Placeholder until we have a landing page
   },
-  // Assets
+  ...introRoutes,
   ...assetsRoutes,
-  // Components
   ...componentsRoutes,
   ...componentsLayoutRoutes,
   ...componentsInputRoutes,
-  // Recipes
   ...recipesRoutes,
-  // Utils
   ...utilsRoutes,
 ];
 
 export const routeCategories: RouteCategories = [
+  {
+    name: "Getting started",
+    paths: [
+      {
+        paths: ["overview"],
+      },
+    ],
+  },
   {
     name: "Data & Assets",
     paths: [

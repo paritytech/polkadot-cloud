@@ -9,15 +9,15 @@ import { H1 } from "../Headers";
 export interface Props {
   title: string;
   subtitle: string;
-  npm: string;
-  status: "stable" | "experimental";
+  npm?: string;
+  status?: "stable" | "experimental";
 }
 export const Header = ({ npm, status, subtitle, title }: Props) => {
   return (
     <>
       <H1 className="header">
         {title}{" "}
-        {status !== "stable" && (
+        {status && status !== "stable" && (
           <Label
             text={status}
             type={status === "experimental" ? "secondary" : undefined}
@@ -26,7 +26,7 @@ export const Header = ({ npm, status, subtitle, title }: Props) => {
         )}
       </H1>
       <h3 className="header">{subtitle}</h3>
-      <NPM npm={npm} />
+      {npm && <NPM npm={npm} />}
     </>
   );
 };
