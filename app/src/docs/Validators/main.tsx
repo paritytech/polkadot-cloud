@@ -26,9 +26,9 @@ export const Doc = ({ folder, npm }: DocProps) => {
           target="_blank"
           rel="noreferrer"
         >
-          `ValidatorCommunity`
+          <code>ValidatorCommunity</code>
         </a>{" "}
-        object, along with each operator`s thumbnail icon in SVG format.
+        object, along with each operator's thumbnail icon in SVG format.
       </p>
 
       <p>Validators for Polkadot and Kusama are currently supported.</p>
@@ -38,7 +38,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
       <Note>
         <p>
           To open a PR to add an additional validator operator to this list,
-          refer to the instructions hosted in this package`s{" "}
+          refer to the instructions hosted in this package's{" "}
           <a
             href="https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets#adding-validator-operators"
             target="_blank"

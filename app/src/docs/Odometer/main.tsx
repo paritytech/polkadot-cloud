@@ -21,7 +21,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
           target="_blank"
           rel="noreferrer"
         >
-          `Odeometer`
+          <code>Odeometer</code>
         </a>{" "}
         is a component that can be used to display numbers and balances. It has
         a smooth animation when the value changes, and adopts a 2-tone design

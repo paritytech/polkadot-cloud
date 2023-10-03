@@ -20,8 +20,8 @@ export const Doc = ({ folder, npm }: DocProps) => {
 
       <Note>
         <p>
-          `@polkadot-cloud/assets` is used with other Cloud components, such as
-          the upcoming Connect component.
+          <code>@polkadot-cloud/assets</code> is used with other Cloud
+          components, such as the upcoming Connect component.
         </p>
       </Note>
 
@@ -34,7 +34,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
           target="_blank"
           rel="noreferrer"
         >
-          `Extensions`
+          <code>Extensions</code>
         </a>{" "}
         object. The following Web3 wallets are currently supported:
       </p>
@@ -79,14 +79,14 @@ export const Doc = ({ folder, npm }: DocProps) => {
           <a href="https://novawallet.io" target="_blank" rel="noreferrer">
             Nova Wallet
           </a>{" "}
-          (if `window.walletExtension.isNovaWallet` is present)
+          (if <code>window.walletExtension.isNovaWallet</code> is present)
         </li>
       </ul>
 
       <Note>
         <p>
           To open a PR and add additional extensions to this list, refer to the
-          instructions hosted in this package`s{" "}
+          instructions hosted in this package's{" "}
           <a
             href="https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets#adding-web-extension-wallets"
             target="_blank"
@@ -102,13 +102,16 @@ export const Doc = ({ folder, npm }: DocProps) => {
 
       <p>
         As some of the extension icons are not perfectly square, it is
-        recommended to bound their width and heights with `max-width` and
-        `max-height` properties. Where the icons contain colors that need to be
-        themed, `currentColor` is used as its fill or stroke (see Subwallet and
-        Talisman icons).
+        recommended to bound their width and heights with{" "}
+        <code>max&#8209;width</code> and <code>max&#8209;height</code>{" "}
+        properties. Where the icons contain colors that need to be themed,{" "}
+        <code>currentColor</code> is used as its fill or stroke (see Subwallet
+        and Talisman icons).
       </p>
 
-      <p>Import SVG assets from `/extensions/svg/`:</p>
+      <p>
+        Import SVG assets from <code>/extensions/svg/</code>:
+      </p>
 
       <ExtensionsSvg />
 
@@ -126,7 +129,9 @@ export const Doc = ({ folder, npm }: DocProps) => {
         support it.
       </p>
 
-      <p>Import JSX assets from `/extensions/jsx/`:</p>
+      <p>
+        Import JSX assets from <code>/extensions/jsx/</code>:
+      </p>
 
       <ExtensionsJsx />
 
