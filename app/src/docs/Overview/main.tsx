@@ -16,7 +16,7 @@ export const Doc = ({ folder }: DocProps) => {
       <h2>Introduction</h2>
       <p>
         Polkadot Cloud hosts a library of assets, ranging from data sources,
-        graphical elements, and fully functional components for app developers
+        graphical elements, to fully functional components, for app developers
         to plug and play into their codebases.
       </p>
       <p>The library is published into 4 NPM packages:</p>
@@ -66,10 +66,12 @@ export const Doc = ({ folder }: DocProps) => {
 
       <Note>
         <p>
-          Polkadot Cloud is Javascript framework agonostic. The{" "}
-          <code>@polkadot-cloud/react</code> package hosts all library
-          components for ReactJS, but other frameworks can be supported rather
-          trivially.
+          Polkadot Cloud is Javascript framework agonostic.{" "}
+          <code>@polkadot-cloud/react</code> hosts all library components for{" "}
+          <a href="https://reactjs.org" target="_blank" rel="noreferrer">
+            ReactJS
+          </a>
+          , but other frameworks can be supported rather trivially.
         </p>
       </Note>
       <Note>
