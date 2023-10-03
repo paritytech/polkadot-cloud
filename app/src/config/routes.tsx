@@ -48,6 +48,7 @@ const introRoutes = [
     path: "overview",
     name: "Overview",
     element: <Overview />,
+    default: true,
   },
 ];
 
@@ -117,7 +118,6 @@ const assetsRoutes = [
     path: "extensions",
     name: "Web3 Extensions",
     element: <Extensions />,
-    default: true,
   },
   {
     path: "validators",
@@ -158,7 +158,7 @@ export const routes: Routes = [
   {
     path: "/",
     name: "Home",
-    element: <Extensions />, // Placeholder until we have a landing page
+    element: <Overview />, // Until we have a landing page
   },
   ...introRoutes,
   ...assetsRoutes,
