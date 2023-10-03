@@ -2,10 +2,10 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { useState } from "react";
-import { SimpleEditor } from "../../lib/SimpleEditor";
+import { SimpleEditor } from "@docs/SimpleEditor";
 import { Odometer } from "@packages/cloud-react/lib/complex/Odometer";
 import BigNumber from "bignumber.js";
-import { Demo } from "../../lib/Demo";
+import { Demo } from "@docs/Demo";
 
 export const OdometerH1 = () => {
   const code = `<h1>

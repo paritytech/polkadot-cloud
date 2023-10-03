@@ -1,7 +1,7 @@
-import { Edit } from "../../lib/Edit";
-import { Header } from "../../lib/Header";
-import { Note } from "../../lib/Note";
-import { DocProps } from "../../lib/types";
+import { Edit } from "@docs/Edit";
+import { Header } from "@docs/Header";
+import { Note } from "@docs/Note";
+import { DocProps } from "@docs/types";
 
 export const Doc = ({ folder }: DocProps) => {
   return (

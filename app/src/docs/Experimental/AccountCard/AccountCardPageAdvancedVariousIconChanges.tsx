@@ -5,8 +5,8 @@ import {
   AccountCard,
   IconProps,
 } from "@packages/cloud-react/lib/recipes/AccountCard";
-import { SimpleEditor } from "../../lib/SimpleEditor";
-import { Demo } from "../../lib/Demo";
+import { SimpleEditor } from "@docs/SimpleEditor";
+import { Demo } from "@docs/Demo";
 
 export const AccountCardPageAdvancedVariousIconChanges = () => {
   const codeF = `import { AccountCard, IconProps, ExtraComponentProps } from "@polkadot-cloud/react/recipes/AccountCard";

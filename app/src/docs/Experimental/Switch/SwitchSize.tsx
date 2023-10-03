@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { Switch } from "@packages/cloud-react/lib/base/inputs/Switch";
-import { SimpleEditor } from "../../lib/SimpleEditor";
+import { SimpleEditor } from "@docs/SimpleEditor";
 
 export const SwitchSize = () => {
   const code = `<Switch isOn={true} />

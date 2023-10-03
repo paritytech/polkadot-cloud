@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { Textfield } from "@packages/cloud-react/lib/textfield/Textfield";
-import { SimpleEditor } from "../../lib/SimpleEditor";
+import { SimpleEditor } from "@docs/SimpleEditor";
 import { useState } from "react";
 
 import { faUser, faCopy } from "@fortawesome/free-solid-svg-icons";

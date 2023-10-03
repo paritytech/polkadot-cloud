@@ -1,9 +1,9 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { SimpleEditor } from "../../lib/SimpleEditor";
+import { SimpleEditor } from "@docs/SimpleEditor";
 import { Enkrypt } from "@packages/assets/lib/extensions/jsx/Enkrypt";
-import { Demo } from "../../lib/Demo";
+import { Demo } from "@docs/Demo";
 
 export const ExtensionsJsx = () => {
   const code = `import { Enkrypt } from "@polkadot-cloud/assets/extensions/jsx/Enkrypt";

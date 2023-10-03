@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { SimpleEditor } from "../../lib/SimpleEditor";
+import { SimpleEditor } from "@docs/SimpleEditor";
 
 export const PlanckToUnit = () => {
   const code = `const inputValue = new BigNumber("10000000");

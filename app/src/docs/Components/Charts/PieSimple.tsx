@@ -2,8 +2,8 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { Chart } from "@packages/cloud-react/lib/base/structure/Chart";
-import { SimpleEditor } from "../../lib/SimpleEditor";
-import { Demo } from "../../lib/Demo";
+import { SimpleEditor } from "@docs/SimpleEditor";
+import { Demo } from "@docs/Demo";
 
 export const PieSimple = () => {
   const code = `<Chart diameter={100}

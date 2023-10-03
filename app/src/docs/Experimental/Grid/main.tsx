@@ -1,5 +1,5 @@
-import { Edit } from "../../lib/Edit";
-import { Header } from "../../lib/Header";
+import { Edit } from "@docs/Edit";
+import { Header } from "@docs/Header";
 import { GridOneTwelve } from "./GridOneTwelve";
 import { GridOneThree } from "./GridOneThree";
 import { GridMoreRowsDiffSizes } from "./GridMoreRowsDiffSizes";
@@ -7,7 +7,7 @@ import { GridGapsLeftRight } from "./GridGapsLeftRight";
 import { GridAlignTop } from "./GridAlignTop";
 import { GridAlignBottomEnd } from "./GridAlignBottomEnd";
 
-import { DocProps } from "../../lib/types";
+import { DocProps } from "@docs/types";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (

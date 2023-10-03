@@ -1,5 +1,5 @@
-import { Edit } from "../../lib/Edit";
-import { Header } from "../../lib/Header";
+import { Edit } from "@docs/Edit";
+import { Header } from "@docs/Header";
 import { ButtonPrimary } from "./ButtonPrimary";
 import { ButtonPrimaryInvert } from "./ButtonPrimaryInvert";
 import { ButtonSecondary } from "./ButtonSecondary";
@@ -11,8 +11,8 @@ import { ButtonSubmit } from "./ButtonSubmit";
 import { ButtonSubmitInvert } from "./ButtonSubmitInvert";
 import { ButtonHelp } from "./ButtonHelp";
 import { ButtonTab } from "./ButtonTab";
-import { H3 } from "../../lib/Headers";
-import { DocProps } from "../../lib/types";
+import { H3 } from "@docs/Headers";
+import { DocProps } from "@docs/types";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (

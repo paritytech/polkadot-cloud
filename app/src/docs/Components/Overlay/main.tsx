@@ -1,11 +1,11 @@
-import { Edit } from "../../lib/Edit";
-import { Note } from "../../lib/Note";
-import { Header } from "../../lib/Header";
+import { Edit } from "@docs/Edit";
+import { Note } from "@docs/Note";
+import { Header } from "@docs/Header";
 import { OverlayProvider } from "./OverlayProvider";
 import { OverlayBasic } from "./OverlayBasic";
 import { OpenOverlay } from "./OpenOverlay";
-import { H2, H3, H4 } from "../../lib/Headers";
-import { DocProps } from "../../lib/types";
+import { H2, H3, H4 } from "@docs/Headers";
+import { DocProps } from "@docs/types";
 import { OverlayConfig } from "./OverlayConfig";
 
 export const Doc = ({ folder, npm }: DocProps) => {

@@ -1,10 +1,10 @@
-import { Edit } from "../../lib/Edit";
-import { Header } from "../../lib/Header";
+import { Edit } from "@docs/Edit";
+import { Header } from "@docs/Header";
 import { CardMono } from "./CardMono";
 import { CardInGrid } from "./CardInGrid";
 import { CardWithGridSystem } from "./CardWithGridSystem";
 import { CardWithGridSystemTwoRows } from "./CardWithGridSystemTwoRows";
-import { DocProps } from "../../lib/types";
+import { DocProps } from "@docs/types";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (

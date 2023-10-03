@@ -6,8 +6,8 @@ import {
   IconProps,
 } from "@packages/cloud-react/lib/recipes/AccountCard";
 import { Grid } from "@packages/cloud-react/lib/base/structure/Grid";
-import { SimpleEditor } from "../../lib/SimpleEditor";
-import { Demo } from "../../lib/Demo";
+import { SimpleEditor } from "@docs/SimpleEditor";
+import { Demo } from "@docs/Demo";
 
 export const AccountCardPageAdvancedEllipsis = () => {
   const codeB = `import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";

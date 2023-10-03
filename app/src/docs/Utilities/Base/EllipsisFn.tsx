@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { SimpleEditor } from "../../lib/SimpleEditor";
+import { SimpleEditor } from "@docs/SimpleEditor";
 
 export const EllipsisFn = () => {
   const code = `const address = "234CHvWmTuaVtkJpLS9oxuhFd3HamcEMrfFAPYoFaetEZmY7";

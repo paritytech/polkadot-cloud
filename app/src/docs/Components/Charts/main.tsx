@@ -1,11 +1,11 @@
-import { Edit } from "../../lib/Edit";
-import { Header } from "../../lib/Header";
+import { Edit } from "@docs/Edit";
+import { Header } from "@docs/Header";
 import { PieSimple } from "./PieSimple";
 import { DonutPiePageDifferentStyles } from "./DonutPiePageDifferentStyles";
 import { DonutPiePageDifferentSizes } from "./DonutPiePageDifferentSizes";
 import { DonutPiePageDifferentSpeed } from "./DonutPiePageDifferentSpeed";
 
-import { DocProps } from "../../lib/types";
+import { DocProps } from "@docs/types";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (

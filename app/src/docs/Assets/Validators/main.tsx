@@ -1,9 +1,9 @@
-import { Note } from "../../lib/Note";
-import { Edit } from "../../lib/Edit";
-import { Header } from "../../lib/Header";
+import { Note } from "@docs/Note";
+import { Edit } from "@docs/Edit";
+import { Header } from "@docs/Header";
 import { ValidatorOperator } from "./ValidatorOperator";
-import { H2 } from "../../lib/Headers";
-import { DocProps } from "../../lib/types";
+import { H2 } from "@docs/Headers";
+import { DocProps } from "@docs/types";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (

@@ -1,5 +1,5 @@
-import { Header } from "../../lib/Header";
-import { Edit } from "../../lib/Edit";
+import { Header } from "@docs/Header";
+import { Edit } from "@docs/Edit";
 
 import { AccountCardPageInfo } from "./AccountCardPageInfo";
 import { AccountCardPageSimple } from "./AccountCardPageSimple";
@@ -13,7 +13,7 @@ import { AccountCardPageAdvancedExtraComponentDiff } from "./AccountCardPageAdva
 import { AccountCardPageAdvancedVariousIconChanges } from "./AccountCardPageAdvancedVariousIconChanges";
 import { AccountCardPageStakingSamples } from "./AccountCardPageStakingSamples";
 
-import { DocProps } from "../../lib/types";
+import { DocProps } from "@docs/types";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (

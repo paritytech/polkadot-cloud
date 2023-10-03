@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { Edit } from "../../lib/Edit";
-import { Header } from "../../lib/Header";
-import { DocProps } from "../../lib/types";
+import { Edit } from "@docs/Edit";
+import { Header } from "@docs/Header";
+import { DocProps } from "@docs/types";
 import { CSSThemes } from "./CSSThemes";
 import { InstallReact } from "./InstallReact";
 import { InstallReactCore } from "./InstallReactCore";
 import { InstallBasic } from "./InstallBasic";
-import { Note } from "../../lib/Note";
+import { Note } from "@docs/Note";
 
 export const Doc = ({ folder }: DocProps) => {
   return (

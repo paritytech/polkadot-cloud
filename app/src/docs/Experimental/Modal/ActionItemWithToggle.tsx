@@ -2,10 +2,10 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { ActionItem } from "@packages/cloud-react/lib/base/modal/ActionItem";
-import { SimpleEditor } from "../../lib/SimpleEditor";
+import { SimpleEditor } from "@docs/SimpleEditor";
 import { useState } from "react";
 import { Button } from "@packages/cloud-react/lib/buttons/Button";
-import { Demo } from "../../lib/Demo";
+import { Demo } from "@docs/Demo";
 
 export const ActionItemWithToggle = () => {
   const [parentToggle, setParentToggle] = useState<boolean>(false);

@@ -1,11 +1,11 @@
-import { Edit } from "../../lib/Edit";
-import { Header } from "../../lib/Header";
-import { Note } from "../../lib/Note";
+import { Edit } from "@docs/Edit";
+import { Header } from "@docs/Header";
+import { Note } from "@docs/Note";
 import { PolkiconSize } from "./PolkiconSize";
 import { PolkiconTheme } from "./PolkiconTheme";
 import { PolkiconColors } from "./PolkiconColors";
-import { H3 } from "../../lib/Headers";
-import { DocProps } from "../../lib/types";
+import { H3 } from "@docs/Headers";
+import { DocProps } from "@docs/types";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (

@@ -2,9 +2,9 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { Card } from "@packages/cloud-react/lib/base/structure/Card";
-import { SimpleEditor } from "../../lib/SimpleEditor";
+import { SimpleEditor } from "@docs/SimpleEditor";
 import { Grid } from "@packages/cloud-react/lib/base/structure/Grid";
-import { Demo } from "../../lib/Demo";
+import { Demo } from "@docs/Demo";
 
 export const CardWithGridSystem = () => {
   const code = `const sampleAnimation1 = {

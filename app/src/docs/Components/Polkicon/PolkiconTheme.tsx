@@ -2,8 +2,8 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { Polkicon } from "@packages/cloud-react/lib/icons/Polkicon";
-import { SimpleEditor } from "../../lib/SimpleEditor";
-import { Demo } from "../../lib/Demo";
+import { SimpleEditor } from "@docs/SimpleEditor";
+import { Demo } from "@docs/Demo";
 
 export const PolkiconTheme = () => {
   const code = `<Polkicon size="5rem" address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY" />

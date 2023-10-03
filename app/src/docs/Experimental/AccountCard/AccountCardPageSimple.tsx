@@ -5,9 +5,9 @@ import {
   AccountCard,
   IconProps,
 } from "@packages/cloud-react/lib/recipes/AccountCard";
-import { SimpleEditor } from "../../lib/SimpleEditor";
+import { SimpleEditor } from "@docs/SimpleEditor";
 import { Switch } from "@packages/cloud-react/lib/base/inputs/Switch";
-import { Demo } from "../../lib/Demo";
+import { Demo } from "@docs/Demo";
 
 export const AccountCardPageSimple = () => {
   const code = `

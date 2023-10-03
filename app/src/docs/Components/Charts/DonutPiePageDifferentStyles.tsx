@@ -1,8 +1,8 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { SimpleEditor } from "../../lib/SimpleEditor";
-import { Demo } from "../../lib/Demo";
+import { SimpleEditor } from "@docs/SimpleEditor";
+import { Demo } from "@docs/Demo";
 import { Chart } from "@packages/cloud-react/lib/base/structure/Chart";
 
 export const DonutPiePageDifferentStyles = () => {

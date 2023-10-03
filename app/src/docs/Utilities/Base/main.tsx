@@ -1,5 +1,5 @@
-import { Edit } from "../../lib/Edit";
-import { Header } from "../../lib/Header";
+import { Edit } from "@docs/Edit";
+import { Header } from "@docs/Header";
 import { Camelize } from "./Camelize";
 import { EllipsisFn } from "./EllipsisFn";
 import { GreaterThanZero } from "./GreaterThanZero";
@@ -8,7 +8,7 @@ import { MinDecimalPlaces } from "./ΜinDecimalPlaces";
 import { PageFromUri } from "./PageFromUri";
 import { RmCommas } from "./RmCommas";
 import { Shuffle } from "./Shuffle";
-import { DocProps } from "../../lib/types";
+import { DocProps } from "@docs/types";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (

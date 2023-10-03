@@ -3,8 +3,8 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "@packages/cloud-react/lib/buttons/Button";
-import { SimpleEditor } from "../../lib/SimpleEditor";
-import { Demo } from "../../lib/Demo";
+import { SimpleEditor } from "@docs/SimpleEditor";
+import { Demo } from "@docs/Demo";
 
 export const ButtonPrimary = () => {
   const code = `<Button text="Button" marginRight />

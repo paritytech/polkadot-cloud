@@ -2,8 +2,8 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { AccountCard } from "@packages/cloud-react/lib/recipes/AccountCard";
-import { SimpleEditor } from "../../lib/SimpleEditor";
-import { Demo } from "../../lib/Demo";
+import { SimpleEditor } from "@docs/SimpleEditor";
+import { Demo } from "@docs/Demo";
 
 export const AccountCardPageSimpleNoIcon = () => {
   const code = `

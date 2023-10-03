@@ -1,9 +1,9 @@
-import { Edit } from "../../lib/Edit";
-import { Note } from "../../lib/Note";
-import { Header } from "../../lib/Header";
+import { Edit } from "@docs/Edit";
+import { Note } from "@docs/Note";
+import { Header } from "@docs/Header";
 import { OdometerH1 } from "./OdometerH1";
-import { H3 } from "../../lib/Headers";
-import { DocProps } from "../../lib/types";
+import { H3 } from "@docs/Headers";
+import { DocProps } from "@docs/types";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (

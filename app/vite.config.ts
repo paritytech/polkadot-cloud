@@ -42,6 +42,10 @@ export default defineConfig({
         find: "@packages",
         replacement: path.resolve(__dirname, "../packages"),
       },
+      {
+        find: "@docs",
+        replacement: path.resolve(__dirname, "src", "docs", "lib"),
+      },
     ],
   },
 });

@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { SimpleEditor } from "../../lib/SimpleEditor";
+import { SimpleEditor } from "@docs/SimpleEditor";
 import EnkryptSVG from "@packages/assets/lib/extensions/svg/enkrypt.svg?react";
 import FearlessWalletSVG from "@packages/assets/lib/extensions/svg/fearlesswallet.svg?react";
 import NovaWalletSVG from "@packages/assets/lib/extensions/svg/novawallet.svg?react";
@@ -9,7 +9,7 @@ import PolkadotJSSVG from "@packages/assets/lib/extensions/svg/polkadotjs.svg?re
 import PolkaGateSVG from "@packages/assets/lib/extensions/svg/polkagate.svg?react";
 import SubwalletJSSVG from "@packages/assets/lib/extensions/svg/subwalletjs.svg?react";
 import TalismanSVG from "@packages/assets/lib/extensions/svg/talisman.svg?react";
-import { Demo } from "../../lib/Demo";
+import { Demo } from "@docs/Demo";
 
 export const ExtensionsSvg = () => {
   const code = `import EnkryptSVG from "@polkadot-cloud/assets/extensions/svg/enkrypt.svg?react";

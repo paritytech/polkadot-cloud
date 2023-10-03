@@ -1,10 +1,10 @@
-import { Edit } from "../../lib/Edit";
-import { Header } from "../../lib/Header";
+import { Edit } from "@docs/Edit";
+import { Header } from "@docs/Header";
 import { LoaderCube } from "./LoaderCube";
 import { LoaderLine } from "./LoaderLine";
 import { LoaderDots } from "./LoaderDots";
 
-import { DocProps } from "../../lib/types";
+import { DocProps } from "@docs/types";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (
