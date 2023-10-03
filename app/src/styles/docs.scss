@@ -30,8 +30,8 @@ SPDX-License-Identifier: GPL-3.0-only */
     font-family: InterBold, sans-serif;
     font-size: 1.8rem;
     line-height: 1.95rem;
-    margin-top: 2rem;
-    margin-bottom: 1.25rem;
+    margin-top: 2.75rem;
+    margin-bottom: 1.1rem;
   }
 
   > h3 {
@@ -52,6 +52,8 @@ SPDX-License-Identifier: GPL-3.0-only */
     }
 
     &.header {
+      color: var(--text-color-secondary);
+    font-family: InterSemiBold, sans-serif;
       margin-top: 1.15rem;
       margin-bottom: 0;
     }
@@ -144,9 +146,12 @@ SPDX-License-Identifier: GPL-3.0-only */
   }
 
   /* Ensure accent color is also applied for links in code blocks. */
-  a,
+  a {
+    font-family: Inter, sans-serif;
+    font-size: inherit;
+  }
   a code {
-    color: var(--accent-color-primary);
+    color: var(--accent-color-secondary);
     font-size: inherit;
   }
 
@@ -255,6 +260,8 @@ SPDX-License-Identifier: GPL-3.0-only */
       border-top-left-radius: 0.5rem !important;
       border-top-right-radius: 0.5rem !important;
       border-color: red;
+      margin-top: 1.25rem;
+
     }
 
     .copy {
