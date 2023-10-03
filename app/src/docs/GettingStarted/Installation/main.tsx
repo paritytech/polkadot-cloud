@@ -86,21 +86,6 @@ export const Doc = ({ folder }: DocProps) => {
           their documentation.
         </p>
       </Note>
-
-      <Note>
-        <p>
-          If you don't see a theme or template that suits your needs, you can
-          create your own and{" "}
-          <a
-            href="https://github.com/paritytech/polkadot-cloud/pulls"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Submit a Pull Request
-          </a>
-          . We'd love to see a large variety of themes for parachain projects!
-        </p>
-      </Note>
     </>
   );
 };
