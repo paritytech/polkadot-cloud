@@ -67,8 +67,8 @@ export const Doc = ({ folder }: DocProps) => {
       <Note>
         <p>
           Polkadot Cloud is Javascript framework agonostic. The{" "}
-          <code>@polkadot-cloud/react</code> package hosts all the library
-          components for React JS, but other frameworks can be supported rather
+          <code>@polkadot-cloud/react</code> package hosts all library
+          components for ReactJS, but other frameworks can be supported rather
           trivially.
         </p>
       </Note>
