@@ -22,6 +22,8 @@ export const Doc = ({ folder }: DocProps) => {
         code. Apps can either define the CSS variables themselves, or use
         pre-packged themes from Polkadot Cloud.
       </p>
+
+      <h3>2-Dimensional Theming</h3>
       <p>
         Polkadot Cloud uses a 2-dimensional theme setup, meaning there are 2
         separate files for defining CSS variables that comprise a theme:
