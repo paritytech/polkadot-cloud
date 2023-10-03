@@ -26,8 +26,8 @@ export const Doc = ({ folder }: DocProps) => {
       <p>These packages provide static (non-functional) assets and data:</p>
       <ul>
         <li>
-          The <code>core</code> package will give your project the library of
-          Polkadot themes and templates.
+          The <code>core</code> package will give your project theme templates
+          that comprise of CSS variables.
         </li>
         <li>
           The <code>assets</code> package will give your project access to the
