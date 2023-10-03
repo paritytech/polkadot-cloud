@@ -15,22 +15,22 @@ const licenseAndReadme = () => {
 };
 
 const buildFonts = () => {
-  return src("lib/template/**/*.woff2")
-    .pipe(dest("dist/template"))
+  return src("lib/theme/**/*.woff2")
+    .pipe(dest("dist/theme"))
     .pipe(refresh(lrserver));
 };
 
-const buildTemplate = () => {
-  return src("lib/template/**/*.css")
-    .pipe(sass(SASS_OPTIONS))
-    .pipe(dest("dist/template"))
-    .pipe(refresh(lrserver));
-};
-
-const buildTheme = () => {
+const buildThemes = () => {
   return src("lib/theme/**/*.css")
     .pipe(sass(SASS_OPTIONS))
     .pipe(dest("dist/theme"))
+    .pipe(refresh(lrserver));
+};
+
+const buildAccents = () => {
+  return src("lib/accent/*.css")
+    .pipe(sass(SASS_OPTIONS))
+    .pipe(dest("dist/accent"))
     .pipe(refresh(lrserver));
 };
 
@@ -43,16 +43,16 @@ const buildComponents = () => {
 
 const watchTask = () => {
   watch(["lib/scss/**/*.scss"], buildComponents);
-  watch(["lib/theme/**/*.css"], buildTheme);
-  watch(["lib/template/**/*.css"], buildTemplate);
+  watch(["lib/accent/*.css"], buildAccents);
+  watch(["lib/theme/**/*.css"], buildThemes);
 };
 
 if (argv.task && argv.task === "watch") {
   exports.default = series(watchTask);
 } else {
   exports.default = series(
-    buildTemplate,
-    buildTheme,
+    buildThemes,
+    buildAccents,
     buildComponents,
     buildFonts,
     licenseAndReadme
