@@ -2,24 +2,24 @@
 SPDX-License-Identifier: GPL-3.0-only */
 import { ReactNode } from "react";
 
-import { Buttons } from "../docs/Buttons";
-import { Loaders } from "../docs/Loaders";
-import { Charts } from "../docs/Charts";
-import { Polkicon } from "../docs/Polkicon";
-import { Extensions } from "../docs/Extensions";
-import { Validators } from "../docs/Validators";
-import { Grid } from "../docs/Grid";
-import { Card } from "../docs/Cards";
-import { Overlay } from "../docs/Overlay";
-import { AccountCard } from "../docs/AccountCard";
-import { Odometer } from "../docs/Odometer";
-import { Modal } from "../docs/Modal";
-import { UtilitiesBase } from "../docs/UtilitiesBase";
-import { UtilitiesUnit } from "../docs/UtilitiesUnit";
-import { Switch } from "../docs/Switch";
-import { Textfield } from "../docs/Textfield";
-import { Overview } from "../docs/Overview";
-import { Installation } from "../docs/Installation";
+import { Buttons } from "../docs/Components/Buttons";
+import { Loaders } from "../docs/Experimental/Loaders";
+import { Charts } from "../docs/Components/Charts";
+import { Polkicon } from "../docs/Components/Polkicon";
+import { Extensions } from "../docs/Assets/Extensions";
+import { Validators } from "../docs/Assets/Validators";
+import { Grid } from "../docs/Experimental/Grid";
+import { Card } from "../docs/Experimental/Cards";
+import { Overlay } from "../docs/Components/Overlay";
+import { AccountCard } from "../docs/Experimental/AccountCard";
+import { Odometer } from "../docs/Components/Odometer";
+import { Modal } from "../docs/Experimental/Modal";
+import { UtilitiesBase } from "../docs/Utilities/Base";
+import { UtilitiesUnit } from "../docs/Utilities/Unit";
+import { Switch } from "../docs/Experimental/Switch";
+import { Textfield } from "../docs/Experimental/Textfield";
+import { Overview } from "../docs/GettingStarted/Overview";
+import { Installation } from "../docs/GettingStarted/Installation";
 
 type Routes = {
   name: string;
