@@ -20,6 +20,7 @@ import { Switch } from "../docs/Experimental/Switch";
 import { Textfield } from "../docs/Experimental/Textfield";
 import { Overview } from "../docs/GettingStarted/Overview";
 import { Installation } from "../docs/GettingStarted/Installation";
+import { UsingThemes } from "../docs/GettingStarted/UsingThemes";
 
 type Routes = {
   name: string;
@@ -55,6 +56,11 @@ const gettingStartedRoutes = [
     path: "installation",
     name: "Installation",
     element: <Installation />,
+  },
+  {
+    path: "using_themes",
+    name: "Using Themes",
+    element: <UsingThemes />,
   },
 ];
 
@@ -184,6 +190,9 @@ export const routeCategories: RouteCategories = [
       },
       {
         paths: ["installation"],
+      },
+      {
+        paths: ["using_themes"],
       },
     ],
   },
