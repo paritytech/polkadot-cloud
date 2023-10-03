@@ -9,7 +9,7 @@ export const Doc = ({ folder }: DocProps) => {
       <Edit folder={folder} />
       <Header
         title="Welcome to Polkadot Cloud"
-        subtitle="A library and automated platform for developing and publishing assets for Polkadot apps"
+        subtitle="Polkadot Cloud is a library and automated platform for developing and publishing assets for Polkadot apps"
         npm={undefined}
       />
 
