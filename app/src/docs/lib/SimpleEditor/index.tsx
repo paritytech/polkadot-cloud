@@ -27,12 +27,12 @@ export const SimpleEditor = ({
   const editorStyle = {
     border: "1px solid var(--border-secondary-color)",
     background: "var(--background-primary)",
-    borderRadius: standalone ? "0.75rem" : "0 0 0.75rem 0.75rem",
+    borderRadius: standalone ? "0.5rem" : "0 0 0.5rem 0.5rem",
     fontFamily: '"Source Code Pro", monospace',
     fontSize: "1.1rem",
     lineHeight: "1.6rem",
     fontWeight: "500",
-    marginBottom: "2.5rem",
+    marginBottom: "2rem",
   };
 
   return (
