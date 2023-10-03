@@ -6,11 +6,11 @@ import { useTheme } from "../../../contexts/Theme";
 import "@packages/cloud-core/dist/css/styles/index.css";
 import { valEmpty } from "@packages/cloud-react/lib/utils";
 // Import each supported theme here.
-import "@packages/cloud-core/dist/theme/polkadot-relay/index.css";
-import "@packages/cloud-core/dist/theme/kusama-relay/index.css";
-import "@packages/cloud-core/dist/theme/westend-relay/index.css";
-import "@packages/cloud-core/dist/theme/xcm/index.css";
-import "@packages/cloud-core/dist/template/default/index.css";
+import "@packages/cloud-core/dist/accent/polkadot-relay.css";
+import "@packages/cloud-core/dist/accent/kusama-relay.css";
+import "@packages/cloud-core/dist/accent/westend-relay.css";
+import "@packages/cloud-core/dist/accent/xcm.css";
+import "@packages/cloud-core/dist/theme/default/index.css";
 
 import { DemoProps } from "./types";
 
