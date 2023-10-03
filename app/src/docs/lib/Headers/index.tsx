@@ -67,7 +67,7 @@ export const H5 = ({ children, className, id }: Props) => {
 const Anchor = ({ id }: { id: string }) => (
   <>
     <span className="anchor" id={id} />
-    {/* Anchors are currently disabled due to mdx limitations. *}
+    {/* Anchors are currently disabled. *}
     {/* {id && (
       <a href={`#${id}`} className="anc">
         <AnchorSVG />

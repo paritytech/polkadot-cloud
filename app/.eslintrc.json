@@ -1,21 +1,17 @@
 {
-  "extends": [
-    "../.eslintrc.json",
-    "plugin:react/recommended",
-    "plugin:mdx/recommended"
-  ],
+  "extends": ["../.eslintrc.json", "plugin:react/recommended"],
   "settings": {
-    "mdx/code-blocks": true,
     "react": {
       "version": "detect"
     }
   },
   "plugins": ["react", "@typescript-eslint", "prefer-arrow-functions"],
   "rules": {
+    "react/no-unescaped-entities": 0,
     "react/jsx-filename-extension": [
       "warn",
       {
-        "extensions": [".tsx", ".mdx"]
+        "extensions": [".tsx"]
       }
     ],
     "import/extensions": [
@@ -38,13 +34,5 @@
         "singleReturnOnly": false
       }
     ]
-  },
-  "overrides": [
-    {
-      "files": ["*.mdx"],
-      "rules": {
-        "no-undef": "off"
-      }
-    }
-  ]
+  }
 }

@@ -16,8 +16,6 @@
     "lint:fix": "eslint . --ext ts,tsx --fix && prettier --write ."
   },
   "devDependencies": {
-    "@mdx-js/rollup": "^2.3.0",
-    "@types/mdx": "^2.0.8",
     "@types/prismjs": "^1.26.1",
     "@types/react-dom": "^18.2.8",
     "@vitejs/plugin-react-swc": "^3.4.0",
