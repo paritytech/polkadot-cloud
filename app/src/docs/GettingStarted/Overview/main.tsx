@@ -19,7 +19,7 @@ export const Doc = ({ folder }: DocProps) => {
         graphical elements, to fully functional components, for app developers
         to plug and play into their codebases.
       </p>
-      <p>The library is published into 4 NPM packages:</p>
+      <p>The library consists of 4 NPM packages:</p>
       <ul>
         <li>
           <a
