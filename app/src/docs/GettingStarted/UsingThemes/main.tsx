@@ -50,7 +50,8 @@ export const Doc = ({ folder }: DocProps) => {
       </p>
       <p>
         Theme files use accent CSS variables to provide the correct accent
-        colors in light or dark mode.
+        colors in light or dark mode. Themes also provide their preferred fonts
+        if developers wish to use them.
         <br />
         <a
           href="https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-core/lib/theme"
@@ -62,7 +63,7 @@ export const Doc = ({ folder }: DocProps) => {
         .
       </p>
 
-      <h3>How accents are applied to themes</h3>
+      <h3>How accent variables are applied to themes</h3>
 
       <p>
         As an intuitive example, an <code>accent</code> file defines the
