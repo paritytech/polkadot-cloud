@@ -9,7 +9,13 @@ export const CSSThemes = () => {
 import "@polkadot-cloud/core/template/cloud/index.css";
 import "@polkadot-cloud/core/theme/polkadot-relay/index.css";
 
-...`;
+...
+
+const App = () => (
+  <div className='theme-polkadot-relay theme-light'>
+     ...
+  </div>
+)`;
 
   return <SimpleEditor code={code} standalone />;
 };
