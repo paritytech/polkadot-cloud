@@ -6,8 +6,8 @@ import { SimpleEditor } from "../lib/SimpleEditor";
 export const CSSThemes = () => {
   const code = `// Top of app hierarchy. E.g. index.tsx, main.tsx.
 
-import "@packages/cloud-core/dist/template/cloud/index.css";
-import "@packages/cloud-core/dist/theme/polkadot-relay/index.css";
+import "@polkadot-cloud/core/template/cloud/index.css";
+import "@polkadot-cloud/core/theme/polkadot-relay/index.css";
 
 ...
 `;
