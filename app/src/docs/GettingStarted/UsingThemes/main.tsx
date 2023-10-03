@@ -85,6 +85,11 @@ export const Doc = ({ folder }: DocProps) => {
 
       <ThemeColorExample />
 
+      <p>
+        <code>--accent-color-primary</code> can now be applied to UI components
+        and provide the correct accent color.
+      </p>
+
       <Note>
         <p>
           <code>accent</code> files also host CSS variables for button styling
