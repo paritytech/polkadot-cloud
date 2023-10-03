@@ -8,7 +8,7 @@ export const Doc = ({ folder }: DocProps) => {
       <Edit folder={folder} />
       <Header
         title="Themes and CSS Variables"
-        subtitle="Polkadot Cloud UI components use CSS Variables for custom theming."
+        subtitle="Polkadot Cloud UI components use CSS Variables for custom styling."
         npm={undefined}
       />
 
