@@ -71,7 +71,7 @@ export const Doc = ({ folder }: DocProps) => {
       <CSSThemes />
 
       <p>
-        That's it! You're now ready to start using Polkadot Cloud components.
+        That's it! You're now ready to start using Polkadot Cloud UI components.
       </p>
 
       <Note>
