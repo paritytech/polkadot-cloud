@@ -38,33 +38,38 @@ export const Doc = ({ folder }: DocProps) => {
           configuration.
         </li>
       </ul>
-      <p>
-        Accent files have been used to allow unique styling for Polkadot,
-        Kusama, and a few other identities.
-        <br />
-        <a
-          href="https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-core/lib/accent"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          See the full accent list here
-        </a>
-        .
-      </p>
-      <p>
-        Theme files use accent CSS variables to provide the correct accent
-        colors in light or dark mode. Themes also provide their preferred fonts
-        if developers wish to use them.
-        <br />
-        <a
-          href="https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-core/lib/theme"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          See the full themes list here
-        </a>
-        .
-      </p>
+      <Note>
+        <p>
+          Accent files have been used to allow unique styling for Polkadot,
+          Kusama, and a few other identities.
+          <br />
+          <a
+            href="https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-core/lib/accent"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            See the full accent list here
+          </a>
+          .
+        </p>
+      </Note>
+
+      <Note>
+        <p>
+          Theme files use accent CSS variables to provide the correct accent
+          colors in <code>light</code> or <code>dark</code> mode. Themes also
+          bundle their preferred fonts if developers wish to use them.
+          <br />
+          <a
+            href="https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-core/lib/theme"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            See the full themes list here
+          </a>
+          .
+        </p>
+      </Note>
 
       <h3>How accent variables are applied to themes</h3>
 
