@@ -62,8 +62,8 @@ export const Doc = ({ folder }: DocProps) => {
       </p>
       <InstallReactCore />
       <p>
-        Next, import the <code>default</code> template and{" "}
-        <code>polkadot-relay</code> theme at the top of your component
+        Next, import the <code>default</code> theme and{" "}
+        <code>polkadot-relay</code> accent colors to the top of your component
         hierarchy, and wrap your components with the corresponding classes.
         Every component under these classes will have access to the imported CSS
         variables.
