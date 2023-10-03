@@ -9,8 +9,7 @@ export const CSSThemes = () => {
 import "@polkadot-cloud/core/template/cloud/index.css";
 import "@polkadot-cloud/core/theme/polkadot-relay/index.css";
 
-...
-`;
+...`;
 
   return <SimpleEditor code={code} standalone />;
 };
