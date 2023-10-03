@@ -7,6 +7,7 @@
   },
   "plugins": ["react", "@typescript-eslint", "prefer-arrow-functions"],
   "rules": {
+    "react/no-unescaped-entities": 0,
     "react/jsx-filename-extension": [
       "warn",
       {
@@ -33,12 +34,5 @@
         "singleReturnOnly": false
       }
     ]
-  },
-  "overrides": [
-    {
-      "rules": {
-        "no-undef": "off"
-      }
-    }
-  ]
+  }
 }
