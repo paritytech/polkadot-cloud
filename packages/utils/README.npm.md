@@ -23,11 +23,11 @@
 - Base utilities: Collection of reusable utilities for manipulating string / number / arrays etc.
 - Unit utilities: A collection of reusable utilities for manipulating chain units.
 
-### Docs
+## Docs
 
 - [Polkadot Cloud Docs: Base Utilities](https://paritytech.github.io/polkadot-cloud/#/base_utilities)
 - [Polkadot Cloud Docs: Unit Utilities](https://paritytech.github.io/polkadot-cloud/#/unit_utilities)
 
-### License
+## License
 
 [GPL-3.0-only](https://spdx.org/licenses/GPL-3.0-only.html)

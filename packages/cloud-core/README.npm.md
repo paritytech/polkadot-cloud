@@ -24,10 +24,10 @@
 - Fonts are provided with theme templates.
 - Hosts a library of styles for UI components that are implemented with [`@polkadot-cloud/react`](https://www.npmjs.com/package/@polkadot-cloud/core).
 
-### Docs
+## Docs
 
 - [Polkadot Cloud Docs: Using Themes](https://paritytech.github.io/polkadot-cloud/#/using_themes): How to use core themes in your Polkadot dapp.
 
-### License
+## License
 
 [GPL-3.0-only](https://spdx.org/licenses/GPL-3.0-only.html)
