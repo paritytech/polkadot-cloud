@@ -73,6 +73,15 @@ export const Doc = ({ folder, npm }: DocProps) => {
         will be applied to the icon in the order they were provided.
       </p>
       <PolkiconColors />
+
+      <h2>CSS Variables Used</h2>
+
+      <ul>
+        <li>
+          <code>--background-default</code>: Default Polkicon background color
+          when <code>outerColor</code> is not defined.
+        </li>
+      </ul>
     </>
   );
 };

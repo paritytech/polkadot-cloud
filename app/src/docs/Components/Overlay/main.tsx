@@ -118,7 +118,29 @@ export const Doc = ({ folder, npm }: DocProps) => {
         <code>options</code> property. This data can be accessed inside modal
         components with <code>useOverlay</code>:
       </p>
+
       <OverlayConfig />
+
+      <h2>CSS Variables Used</h2>
+      <ul>
+        <li>
+          <code>--modal-background-color</code>: Overlay color of screen when
+          modal is open.
+        </li>
+        <li>
+          <code>--text-color-primary</code>: Default color of modal.
+        </li>
+        <li>
+          <code>--background-modal</code>: Modal card background.
+        </li>
+        <li>
+          <code>--transition-duration</code>: Duration of modal transitions.
+        </li>
+        <li>
+          <code>--accent-color-primary</code>: Default text color of modal links
+          and butons.
+        </li>
+      </ul>
     </>
   );
 };
