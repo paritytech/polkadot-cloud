@@ -1,7 +1,7 @@
 {
   "app": "0.2.15",
   "packages/assets": "0.1.15",
-  "packages/cloud-core": "1.0.4",
-  "packages/cloud-react": "0.1.67",
+  "packages/cloud-core": "1.0.5",
+  "packages/cloud-react": "0.1.68",
   "packages/utils": "0.0.19"
 }

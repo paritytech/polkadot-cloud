@@ -26,7 +26,7 @@
 
 ## Docs
 
-- [Polkadot Cloud Docs: Installation) ](https://paritytech.github.io/polkadot-cloud/#/polkicon): Install and start using `@polkadot‑cloud/react`.
+- [Polkadot Cloud Docs: Installation](https://paritytech.github.io/polkadot-cloud/#/polkicon): Install and start using `@polkadot‑cloud/react`.
 
 - [Polkadot Cloud Docs: Components (Polkicon)](https://paritytech.github.io/polkadot-cloud/#/polkicon): Browse Cloud React Components.
 

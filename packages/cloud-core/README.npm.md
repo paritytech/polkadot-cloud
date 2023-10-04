@@ -22,7 +22,7 @@
 
 - Plug and play 2-dimensional themes, comprising of CSS variables, for Polkadot dapps.
 - Fonts are provided with theme templates.
-- Hosts a library of styles for UI components that are implemented with [`@polkadot-cloud/react`](https://www.npmjs.com/package/@polkadot-cloud/core).
+- Hosts a library of styles for UI components that are implemented with [`@polkadot-cloud/react`](https://www.npmjs.com/package/@polkadot-cloud/react).
 
 ## Docs
 
