@@ -6,9 +6,10 @@
     "Ross Bulat<ross@parity.io>",
     "Nikolaos Kontakis<nikos@parity.io>"
   ],
-  "description": "Core reusable structures for Polkadot Dapps.",
+  "description": "Core reusable styles for Polkadot Dapps.",
   "keywords": [
     "Polkadot",
+    "CSS",
     "UI"
   ],
   "bugs": {
