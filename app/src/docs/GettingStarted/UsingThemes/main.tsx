@@ -20,7 +20,7 @@ export const Doc = ({ folder }: DocProps) => {
         Polkadot Cloud UI components use CSS variables so apps can customise
         their look and feel without having to delve into the component source
         code. Apps can either define the CSS variables themselves, or use
-        pre-packged themes from Polkadot Cloud.
+        pre-packaged themes from Polkadot Cloud.
       </p>
 
       <h3>2-Dimensional Theming</h3>
