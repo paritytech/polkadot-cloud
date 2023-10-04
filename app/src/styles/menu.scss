@@ -3,34 +3,37 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 .menu {
   position: fixed;
-  @media(width < 1150px) {
-    position: relative;
-  }
 
-  &.open {
-    background: var(--background-default);
-    border: 1px solid var(--border-primary-color);
-    width: 16.5rem;
-    z-index: 10;
+  @media (width < 1150px) {
+    position: relative;
   }
 
   top: 0;
   left: 0;
-  height: 100vh;
+  height: auto;
+  max-height: calc(100vh - 4rem);
   padding-top: 6.75rem;
   padding-bottom: 2rem;
   padding-left: 2rem;
-  max-height: 100vh;
   width: 15rem;
   z-index: 2;
   font-size: 1.05rem;
   overflow: scroll;
 
+  &.open {
+    background: var(--background-default);
+    border: 1px solid var(--border-primary-color);
+    width: 16.5rem;
+    min-height: 100vh;
+    z-index: 10;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
   &::-webkit-scrollbar {
     display: none;
   }
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 
   h3 {
     font-family: InterBold, sans-serif;

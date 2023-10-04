@@ -136,7 +136,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   > div {
     margin: 0 auto;
     max-width: 900px;
-    padding: 3.3rem 0 3rem 0;
+    padding: 3.3rem 0 3rem;
 
     @media (width >= 1150px) {
       position: relative;
@@ -278,16 +278,17 @@ SPDX-License-Identifier: GPL-3.0-only */
 }
 
 .toggle-menu {
-  @media(width >= 1150px) {
+  @media (width >= 1150px) {
     display: none;
   }
+
   background: var(--background-primary);
   border: 1px solid var(--border-primary-color);
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
   position: fixed;
-  top : 6.75rem;
+  top: 6.75rem;
   left: 2rem;
   z-index: 10;
 }
