@@ -11,6 +11,9 @@ export const Footer = () => {
       <section>
         <IconSVG className="icon" />
         <div>
+          <div className="beta">Beta</div>
+        </div>
+        <div>
           <h4>
             &copy; Copyright {new Date().getUTCFullYear()} &nbsp;
             <span>Polkadot Cloud Authors & Contributors.</span>

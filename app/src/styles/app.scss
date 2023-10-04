@@ -112,6 +112,13 @@ SPDX-License-Identifier: GPL-3.0-only */
         color: var(--text-color-secondary);
         font-family: InterBold, sans-serif;
         margin-bottom: 0.05rem;
+        display: flex;
+        align-items: center;
+
+        > .beta {
+          margin-left: 0.6rem;
+        }
+
       }
 
       p {
@@ -234,6 +241,10 @@ SPDX-License-Identifier: GPL-3.0-only */
       .icon {
         margin-right: 0;
       }
+      .beta {
+        margin-left: 0.7rem;
+        margin-bottom: 0.5rem;
+      }
 
       > div {
         flex-basis: 100%;
@@ -247,4 +258,17 @@ SPDX-License-Identifier: GPL-3.0-only */
   @media (width <= 800px) {
     padding: 0.5rem 0;
   }
+}
+
+.beta {
+  background: var(--background-default);
+  color: var(--accent-color-secondary);
+  border: 1px solid var(--accent-color-pending);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 0.9rem;
+  padding: 0.4rem 0.6rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
 }
