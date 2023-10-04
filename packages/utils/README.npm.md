@@ -27,3 +27,7 @@
 
 - [Polkadot Cloud Docs: Base Utilities](https://paritytech.github.io/polkadot-cloud/#/base_utilities)
 - [Polkadot Cloud Docs: Unit Utilities](https://paritytech.github.io/polkadot-cloud/#/unit_utilities)
+
+## License
+
+[GPL-3.0-only](https://spdx.org/licenses/GPL-3.0-only.html)

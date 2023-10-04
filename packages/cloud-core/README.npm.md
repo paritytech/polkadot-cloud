@@ -27,3 +27,7 @@
 ## Docs
 
 - [Polkadot Cloud Docs: Using Themes](https://paritytech.github.io/polkadot-cloud/#/using_themes): How to use core themes in your Polkadot dapp.
+
+## License
+
+[GPL-3.0-only](https://spdx.org/licenses/GPL-3.0-only.html)
