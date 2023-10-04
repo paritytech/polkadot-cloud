@@ -17,10 +17,12 @@
 <hr>
 
 # Polkadot Cloud: Assets
+
 ### Ecosystem data sources and static assets.
 
 - A list of popular web3 extension wallets with metadata and their SVG icons.
-Supported wallets:
+  Supported wallets:
+
   - Enkrypt
   - Fearless Wallet
   - Talisman

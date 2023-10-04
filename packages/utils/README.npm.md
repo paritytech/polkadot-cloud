@@ -17,6 +17,7 @@
 <hr>
 
 # Polkadot Cloud: Utils
+
 ### Common utility functions to aid in Polkadot dapp development.
 
 - Base utilities: Collection of reusable utilities for manipulating string / number / arrays etc.

@@ -17,6 +17,7 @@
 <hr>
 
 # Polkadot Cloud: Core
+
 ### Core styles and themes for Polkadot dapps.
 
 - Plug and play 2-dimensional themes, comprising of CSS variables, for Polkadot dapps.
