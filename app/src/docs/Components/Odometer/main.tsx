@@ -40,6 +40,19 @@ export const Doc = ({ folder, npm }: DocProps) => {
           Odometer has been tested with header tags 1-5, paragraphs and divs.
         </p>
       </Note>
+
+      <h2>CSS Variables Used</h2>
+
+      <ul>
+        <li>
+          <code>--text-color-primary</code>: Whole unit text color of an
+          Odometer value.
+        </li>
+        <li>
+          <code>--text-color-tertiary</code>: Decimal unit text color of an
+          Odometer value.
+        </li>
+      </ul>
     </>
   );
 };
