@@ -24,7 +24,7 @@ const stripComments = () => {
 };
 
 const licenseAndReadme = () => {
-  return src(["LICENSE", "README.md"]).pipe(dest("dist"));
+  return src(["LICENSE", "README.npm.md"]).pipe(dest("dist"));
 };
 
 export default series(buildComponents, stripComments, licenseAndReadme);

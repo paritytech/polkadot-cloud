@@ -11,7 +11,7 @@ const { argv } = require("yargs");
 const SASS_OPTIONS = { outputStyle: "compressed" };
 
 const licenseAndReadme = () => {
-  return src(["LICENSE", "README.md"]).pipe(dest("dist"));
+  return src(["LICENSE", "README.npm.md"]).pipe(dest("dist"));
 };
 
 const buildFonts = () => {

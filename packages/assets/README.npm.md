@@ -37,8 +37,7 @@ Supported wallets:
   - Website
   - Validator list (per-network).
 
-
 ## Docs
 
-- [Polkadot Cloud Docs: Web3 Extensions ](https://paritytech.github.io/polkadot-cloud/#/extensions): How to use web3 extension wallet data.
-- [Polkadot Cloud Docs: Validator Operators ](https://paritytech.github.io/polkadot-cloud/#/validators): Using validator operator data.
+- [Polkadot Cloud Docs: Web3 Extensions](https://paritytech.github.io/polkadot-cloud/#/extensions): How to use web3 extension wallet data.
+- [Polkadot Cloud Docs: Validator Operators](https://paritytech.github.io/polkadot-cloud/#/validators): Using validator operator data.

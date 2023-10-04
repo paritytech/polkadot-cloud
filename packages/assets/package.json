@@ -18,7 +18,7 @@
   "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
   "scripts": {
     "build:mock": "node ../../scripts/generatePackageJson.mjs -p assets",
-    "build": "rm -fr dist && mkdir -p dist && cp -R lib/* dist && cp README.md LICENSE dist && node ../../scripts/generatePackageJson.mjs -p assets",
+    "build": "rm -fr dist && mkdir -p dist && cp -R lib/* dist && cp LICENSE dist && cp README.npm.md dist && mv dist/README.npm.md dist/README.md && node ../../scripts/generatePackageJson.mjs -p assets",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   }
 }
