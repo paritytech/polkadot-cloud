@@ -10,6 +10,10 @@
   "description": "Data sources and static assets for Polkadot apps.",
   "keywords": [
     "Polkadot",
+    "Validators",
+    "Extensions",
+    "Web3",
+    "Components",
     "UI"
   ],
   "bugs": {
