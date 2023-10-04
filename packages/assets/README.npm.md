@@ -16,7 +16,7 @@
 
 <hr>
 
-# Polkadot Cloud: Assets
+# Polkadot Cloud: [Assets](https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets)
 
 ### Ecosystem data sources and static assets.
 
@@ -43,3 +43,7 @@
 
 - [Polkadot Cloud Docs: Web3 Extensions](https://paritytech.github.io/polkadot-cloud/#/extensions): How to use web3 extension wallet data.
 - [Polkadot Cloud Docs: Validator Operators](https://paritytech.github.io/polkadot-cloud/#/validators): Using validator operator data.
+
+## License
+
+[GPL-3.0-only](https://spdx.org/licenses/GPL-3.0-only.html)
