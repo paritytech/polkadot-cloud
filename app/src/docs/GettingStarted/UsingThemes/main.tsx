@@ -85,7 +85,7 @@ export const Doc = ({ folder }: DocProps) => {
         From here, the <code>theme</code> file will provide a single CSS
         variable of <code>&#8209;&#8209;accent&#8209;color&#8209;primary</code>,
         depending on whether <code>theme&#8209;light</code> or{" "}
-        <code>theme&#8209;dark</code> is being applied.
+        <code>theme&#8209;dark</code> is being applied:
       </p>
 
       <ThemeColorExample />
