@@ -16,9 +16,9 @@
 
 <hr>
 
-# Polkadot Cloud: [Assets](https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets)
+# Polkadot Cloud: Assets
 
-### Ecosystem data sources and static assets.
+**Ecosystem data sources and static assets.**
 
 - A list of popular web3 extension wallets with metadata and their SVG icons.
   Supported wallets:
@@ -39,11 +39,11 @@
   - Website
   - Validator list (per-network).
 
-## Docs
+### Docs
 
 - [Polkadot Cloud Docs: Web3 Extensions](https://paritytech.github.io/polkadot-cloud/#/extensions): How to use web3 extension wallet data.
 - [Polkadot Cloud Docs: Validator Operators](https://paritytech.github.io/polkadot-cloud/#/validators): Using validator operator data.
 
-## License
+### License
 
 [GPL-3.0-only](https://spdx.org/licenses/GPL-3.0-only.html)
