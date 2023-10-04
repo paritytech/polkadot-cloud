@@ -99,7 +99,7 @@ export const Doc = ({ folder }: DocProps) => {
         <p>
           <code>accent</code> files also host CSS variables for button styling
           and other miscellaneous styles. They are designed to be expanded as
-          more requirements become apparent.
+          more requirements become apparent from the community.
         </p>
       </Note>
 
