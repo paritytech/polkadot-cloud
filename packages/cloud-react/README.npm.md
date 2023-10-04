@@ -16,7 +16,7 @@
 
 <hr>
 
-# Polkadot Cloud: React
+# Polkadot Cloud: [React](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-react)
 
 ### Functional React components for Polkadot dapps.
 

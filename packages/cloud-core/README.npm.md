@@ -16,7 +16,7 @@
 
 <hr>
 
-# Polkadot Cloud: Core
+# Polkadot Cloud: [Core](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-core)
 
 ### Core styles and themes for Polkadot dapps.
 

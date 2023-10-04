@@ -16,7 +16,7 @@
 
 <hr>
 
-# Polkadot Cloud: Assets
+# Polkadot Cloud: [Assets](https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets)
 
 ### Ecosystem data sources and static assets.
 

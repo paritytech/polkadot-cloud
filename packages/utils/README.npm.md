@@ -16,7 +16,7 @@
 
 <hr>
 
-# Polkadot Cloud: Utils
+# Polkadot Cloud: [Utils](https://github.com/paritytech/polkadot-cloud/tree/main/packages/utils)
 
 ### Common utility functions to aid in Polkadot dapp development.
 
