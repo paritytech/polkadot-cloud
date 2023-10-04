@@ -17,7 +17,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
 
       <Header
         title="Base Utilities"
-        subtitle="A collection of reusable utilities for manipulating string/number/arrays etc."
+        subtitle="A collection of reusable utilities for manipulating string / number / arrays etc."
         npm={npm}
         status="stable"
       />

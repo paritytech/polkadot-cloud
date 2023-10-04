@@ -28,7 +28,7 @@ export default {
     copy({
       targets: [
         {
-          src: ["LICENSE", "README.md"],
+          src: ["LICENSE", "README.npm.md"],
           dest: "dist",
         },
       ],

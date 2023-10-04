@@ -56,9 +56,10 @@ try {
     // Ensure packages directory only contains folders.
     await dirFoldersOnly("./packages/", files);
 
-    // Check `LICENSE`, `README.md`, `package.json`, `lib` exist in each package.
+    // Check `LICENSE`, `README.md`, `README.npm.md`, `package.json`, `lib` exist in each package.
     await dirFilesExist("./packages/", files, [
       "README.md",
+      "README.npm.md",
       "package.json",
       "lib",
     ]);

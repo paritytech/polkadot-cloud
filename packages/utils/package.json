@@ -1,7 +1,7 @@
 {
   "name": "polkadot-cloud-utils",
   "license": "GPL-3.0-only",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "contributors": [
     "Ross Bulat<ross@parity.io>",
     "Nikolaos Kontakis<nikos@parity.io>"
@@ -17,7 +17,7 @@
   "homepage": "https://github.com/paritytech/polkadot-cloud#readme",
   "scripts": {
     "build:mock": "node ../../scripts/generatePackageJson.mjs -p utils",
-    "build": "rm -fr dist && rollup -c && node ../../scripts/generatePackageJson.mjs -p utils",
+    "build": "rm -fr dist && rollup -c  && mv dist/README.npm.md dist/README.md && node ../../scripts/generatePackageJson.mjs -p utils",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo",
     "test": "vitest run",
     "test:watch": "vitest watch",
