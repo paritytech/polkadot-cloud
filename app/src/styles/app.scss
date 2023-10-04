@@ -60,7 +60,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   width: 100%;
   height: 5.5rem;
   position: fixed;
-  z-index: 5;
+  z-index: 10;
 
   > section {
     display: flex;
@@ -130,22 +130,26 @@ SPDX-License-Identifier: GPL-3.0-only */
 }
 
 .main-area {
-  min-height: 100vh;
-
   /* CSS3: Leave enough room to show footer where content does not consume 100vh. */
   min-height: calc(100vh - 5.5rem);
-  padding: 3.3rem 1.5rem 3rem 3.4rem;
-  margin: 0 0 0 15rem;
-  max-width: 900px;
-  width: calc(100% - 15rem);
 
-  /* We need the body not to over come sidebar */
-  @media (width >= 1200px) {
+  > div {
     margin: 0 auto;
-  }
+    max-width: 900px;
+    padding: 3.3rem 0 3rem 0;
 
-  h4 {
-    margin: 1rem 0;
+    @media (width >= 1150px) {
+      position: relative;
+      left: -5%;
+    }
+
+    @media (width < 1150px) {
+      padding: 3.3rem;
+    }
+
+    h4 {
+      margin: 1rem 0;
+    }
   }
 }
 
@@ -271,4 +275,19 @@ SPDX-License-Identifier: GPL-3.0-only */
   text-transform: uppercase;
   display: flex;
   align-items: center;
+}
+
+.toggle-menu {
+  @media(width >= 1150px) {
+    display: none;
+  }
+  background: var(--background-primary);
+  border: 1px solid var(--border-primary-color);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  position: fixed;
+  top : 6.75rem;
+  left: 2rem;
+  z-index: 10;
 }

@@ -2,15 +2,22 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 import { Route, Routes, useLocation } from "react-router-dom";
+import { Side } from "@packages/cloud-react/lib/base/structure/Side";
+import { Body } from "@packages/cloud-react/lib/base/structure/Body";
+import { Main } from "@packages/cloud-react/lib/base/structure/Main";
 import { routes } from "./config/routes";
 import { Error } from "./Error";
 import { Menu } from "./Menu";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { useEffect } from "react";
+import { useUi } from "./contexts/UI";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export const Router = () => {
   const { pathname } = useLocation();
+  const { sideMenuOpen } = useUi();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -18,17 +25,51 @@ export const Router = () => {
 
   return (
     <>
-      <Header />
-      <Menu />
-      <div className="main-area">
-        <Routes>
-          {routes.map((route) => (
-            <Route key={`nav_page_${route.path}`} {...route} />
-          ))}
-          <Route key="nav_page_other" path="*" element={<Error />} />
-        </Routes>
-      </div>
+      <Body>
+        {/* App header */}
+        <Header />
+
+        {/*Fixed menu toggle on smaller screens */}
+        <ToggleMenu />
+
+        {/* Left side menu */}
+        <Side open={sideMenuOpen} minimised={false}>
+          <Menu />
+        </Side>
+
+        <Main>
+          <div className="main-area">
+            <div>
+              <Routes>
+                {routes.map((route) => (
+                  <Route key={`nav_page_${route.path}`} {...route} />
+                ))}
+                <Route key="nav_page_other" path="*" element={<Error />} />
+              </Routes>
+            </div>
+          </div>
+        </Main>
+      </Body>
+      {/* App footer */}
       <Footer />
     </>
+  );
+};
+
+const ToggleMenu = () => {
+  const { setSideMenu, sideMenuOpen } = useUi();
+
+  if (sideMenuOpen) {
+    return <></>;
+  }
+
+  return (
+    <button
+      className="toggle-menu"
+      type="button"
+      onClick={() => setSideMenu(!sideMenuOpen)}
+    >
+      <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>{" "}
+    </button>
   );
 };
