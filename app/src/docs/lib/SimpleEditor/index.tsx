@@ -50,9 +50,10 @@ export const SimpleEditor = ({
           /* Editor currently disabled */
         }}
         highlight={(c) => highlight(c, languages[language], language)}
-        padding={"1.25rem"}
         className={`editor-${mode}`}
         style={editorStyle}
+        padding="1.25rem"
+        disabled
       />
     </div>
   );
