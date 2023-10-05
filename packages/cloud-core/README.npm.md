@@ -11,7 +11,7 @@
 </p>
 
 <div align="center">
-<a href="https://paritytech.github.io/polkadot-cloud/#/overview">📖 Documentation</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/paritytech/polkadot-cloud"">GitHub</a>
+<a href="https://polkadot.cloud/#/overview">📖 Documentation</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/paritytech/polkadot-cloud"">GitHub</a>
 </div>
 
 <hr>
@@ -26,7 +26,7 @@
 
 ## Docs
 
-- [Polkadot Cloud Docs: Using Themes](https://paritytech.github.io/polkadot-cloud/#/using_themes): How to use core themes in your Polkadot dapp.
+- [Polkadot Cloud Docs: Using Themes](https://polkadot.cloud/#/using_themes): How to use core themes in your Polkadot dapp.
 
 ## License
 

@@ -1,6 +1,6 @@
 # Contribution Guide
 
-This section aims to familiarise developers to Polkadot Cloud [[GitHub](https://github.com/paritytech/polkadot-cloud), [Demo](https://paritytech.github.io/polkadot-cloud)] for the purpose of contributing to the project.
+This section aims to familiarise developers with Polkadot Cloud for the purpose of contributing to the project.
 
 Reach out to ross@parity.io or nikos@parity.io for clarification of any content within this document.
 

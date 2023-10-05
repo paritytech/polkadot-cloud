@@ -11,7 +11,7 @@
 </p>
 
 <div align="center">
-<a href="https://paritytech.github.io/polkadot-cloud/#/overview">📖 Documentation</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/paritytech/polkadot-cloud"">GitHub</a>
+<a href="https://polkadot.cloud/#/overview">📖 Documentation</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/paritytech/polkadot-cloud"">GitHub</a>
 </div>
 
 <hr>
@@ -41,8 +41,8 @@
 
 ## Docs
 
-- [Polkadot Cloud Docs: Web3 Extensions](https://paritytech.github.io/polkadot-cloud/#/extensions): How to use web3 extension wallet data.
-- [Polkadot Cloud Docs: Validator Operators](https://paritytech.github.io/polkadot-cloud/#/validators): Using validator operator data.
+- [Polkadot Cloud Docs: Web3 Extensions](https://polkadot.cloud/#/extensions): How to use web3 extension wallet data.
+- [Polkadot Cloud Docs: Validator Operators](https://polkadot.cloud/#/validators): Using validator operator data.
 
 ## License
 
