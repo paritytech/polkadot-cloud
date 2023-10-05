@@ -13,7 +13,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
       <Edit folder={folder} />
       <Header
         title="Charts"
-        subtitle="Pure CSS Charts."
+        subtitle="Lightweight charts for simple statistics."
         npm={npm}
         status="stable"
       />
