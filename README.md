@@ -4,7 +4,7 @@
 
 <b>Polkadot Cloud</b> is a library and platform for developing and publishing assets for Polkadot dapps.
 
-## Package Directory
+## Directory
 
 ### `@polkadot-cloud/core` &nbsp;[[source](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-core) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/core)]
 
