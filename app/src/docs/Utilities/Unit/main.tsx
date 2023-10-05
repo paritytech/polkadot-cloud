@@ -17,65 +17,67 @@ export const Doc = ({ folder, npm }: DocProps) => {
         status="stable"
       />
 
-      <h4 className="special_title">planckToUnit</h4>
-
-      <hr />
-
-      <h4>
+      <h3>planckToUnit</h3>
+      <p>
         Converts an on chain balance value in BigNumber planck to a decimal
         value in token unit. (1 token = 10^units planck).
-      </h4>
+      </p>
 
-      <h4>@param (BigNumber): The Planck in BigNumber</h4>
-
-      <h4>@param (number): the units</h4>
-
-      <h4>@returns (BigNumber): the decimal value in token unit</h4>
+      <div className="params">
+        <p>
+          <span>@param (BigNumber)</span>: The Planck in BigNumber
+        </p>
+        <p>
+          <span>@param (number)</span>: the units
+        </p>
+        <p>
+          <span>@returns (BigNumber)</span>: the decimal value in token unit
+        </p>
+      </div>
 
       <PlanckToUnit />
 
-      <h4 className="special_title">transformToBaseUnit</h4>
-
-      <hr />
-
-      <h4>
+      <h3>transformToBaseUnit</h3>
+      <p>
         The transformToBaseUnit function is used to transform a given estimated
         fee value from its current representation to its base unit
         representation, considering the provided chain decimals. The function is
         designed to handle cases where the chain decimals are either greater or
         less than the length of the estimated fee.
-      </h4>
-
-      <h4>
-        @param (string)_ : The estimated fee value that needs to be transformed
-        to its base unit representation.
-      </h4>
-
-      <h4>
-        @param (number)_ : The number of decimal places used by the blockchain.
-      </h4>
-
-      <h4>@returns (string): the result of the functions</h4>
+      </p>
+      <div className="params">
+        <p>
+          <span>@param (string)_</span>: The estimated fee value that needs to
+          be transformed to its base unit representation.
+        </p>
+        <p>
+          <span>@param (number)_</span>: The number of decimal places used by
+          the blockchain.
+        </p>
+        <p>
+          <span>@returns (string)</span>: the result of the functions
+        </p>
+      </div>
 
       <TransformToBaseUnit />
 
-      <h4 className="special_title">unitToPlanck</h4>
-
-      <hr />
-
-      <h4>
+      <h3>unitToPlanck</h3>
+      <p>
         Converts a balance in token unit to an equivalent value in planck by
         applying the chain decimals ποιντ. (1 token = 10^units planck).
-      </h4>
-
-      <h4>@param (strnig): token balance</h4>
-
-      <h4>@param (number): the units</h4>
-
-      <h4>
-        @returns (BigNumber): value in planck with applied the chain decimals
-      </h4>
-
+      </p>
+      <div className="params">
+        <p>
+          <span>@param (strnig)</span>: token balance
+        </p>
+        <p>
+          <span>@param (number)</span>: the units
+        </p>
+        <p>
+          <span>@returns (BigNumber)</span>: value in planck with applied the
+          chain decimals
+        </p>
+      </div>
       <UnitToPlanck />
     </>
   );
