@@ -10,6 +10,7 @@
   "private": "true",
   "scripts": {
     "build:pages": "cd app && tsc && vite build --base='/polkadot-cloud/'",
+    "build:production": "cd app && tsc && vite build --base='/'",
     "build:mock": "npm run build:mock --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
     "prebuild": "node scripts/prebuild.mjs",
