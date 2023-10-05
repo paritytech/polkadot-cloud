@@ -22,101 +22,129 @@ export const Doc = ({ folder, npm }: DocProps) => {
         status="stable"
       />
 
-      <h4 className="special_title">camelize</h4>
-
-      <hr />
-
-      <h4>Converts a string of text to camelCase.</h4>
-      <h4>@param (string): string to become camelCase</h4>
-      <h4>@returns (string): the input string, but camelCased</h4>
-
+      <h3>camelize</h3>
+      <p>Converts a string of text to camelCase.</p>
+      <div className="params">
+        <p>
+          <span>@param (string)</span>: string to become camelCase.
+        </p>
+        <p>
+          <span>@returns (string)</span>: the input string, but camelCased.
+        </p>
+      </div>
       <Camelize />
 
-      <h4 className="special_title">ellipsisFn</h4>
-
-      <hr />
-
-      <h4>
+      <h3>ellipsisFn</h3>
+      <p>
         Receives an address and creates ellipsis on the given string, based on
         parameters.
-      </h4>
-
-      <h4>@param (string)_ : The string to apply the ellipsis on</h4>
-      <h4>
-        @param (number)_ : The amount of characters that the ellipsis will be
-      </h4>
-      <h4>
-        @param ("start" | "center" | "end")_ : where the ellipsis will apply; if
-        "center" the amount of character is the same for beginning and end; if
-        "start" or "end" then its only once the amount; defaults to "start"
-      </h4>
-      <h4>@returns (string): the ellipsis-fied string</h4>
+      </p>
+      <div className="params">
+        <p>
+          <span>@param (string)_</span>: The string to apply the ellipsis. on
+        </p>
+        <p>
+          <span>@param (number)_</span>: The amount of characters that the
+          ellipsis will be.
+        </p>
+        <p>
+          <span>@param ("start" | "center" | "end")_</span>: where the ellipsis
+          will apply; if "center" the amount of character is the same for
+          beginning and end; if "start" or "end" then its only once the amount;
+          defaults to "start".
+        </p>
+        <p>
+          <span>@returns (string)</span>: the ellipsis-fied string.
+        </p>
+      </div>
 
       <EllipsisFn />
 
-      <h4 className="special_title">greaterThanZero</h4>
-
-      <hr />
-
-      <h4>Returns whether a BigNumber is greater than zero.</h4>
-      <h4>@param (BigNumber): the input to check against</h4>
-      <h4>@returns (boolean): the result of the fn</h4>
+      <h3>greaterThanZero</h3>
+      <p>Returns whether a BigNumber is greater than zero.</p>
+      <div className="params">
+        <p>
+          <span>@param (BigNumber)</span>: the input to check against.
+        </p>
+        <p>
+          <span>@returns (boolean)</span>: the result of the fn.
+        </p>
+      </div>
 
       <GreaterThanZero />
 
-      <h4 className="special_title">isNotZero</h4>
+      <h3>isNotZero</h3>
+      <p>Returns whether a BigNumber is zero.</p>
 
-      <hr />
-
-      <h4>Returns whether a BigNumber is zero.</h4>
-      <h4>@param (BigNumber): the input to check against</h4>
-      <h4>@returns (boolean): the result of the fn</h4>
+      <div className="params">
+        <p>
+          <span>@param (BigNumber)</span>: the input to check against.
+        </p>
+        <p>
+          <span>@returns (boolean)</span>: the result of the fn.
+        </p>
+      </div>
       <IsNotZero />
 
-      <h4 className="special_title">minDecimalPlaces</h4>
-
-      <hr />
-
-      <h4>Forces a number to have at least the provided decimal places.</h4>
-      <h4>@param (string): string that we want to update the decimal places</h4>
-      <h4>@param (number): number of decimals to be adjusted</h4>
+      <h3>minDecimalPlaces</h3>
+      <p>Forces a number to have at least the provided decimal places.</p>
+      <div className="params">
+        <p>
+          <span>@param (string)</span>: string that we want to update the
+          decimal places.
+        </p>
+        <p>
+          <span>@param (number)</span>: number of decimals to be adjusted.
+        </p>
+      </div>
 
       <MinDecimalPlaces />
 
-      <h4 className="special_title">pageFromUri</h4>
-
-      <hr />
-
-      <h4>
+      <h3>pageFromUri</h3>
+      <p>
         Use url variables to load the default components upon the first page
         visit.
-      </h4>
-      <h4>@param (string): the url that we want to get the page from</h4>
-      <h4>
-        @param (string): fallback string in case the url is wrong or empty
-      </h4>
-      <h4>@returns (string): the value of the trimmed url</h4>
+      </p>
+      <div className="params">
+        <p>
+          <span>@param (string)</span>: the url that we want to get the page
+          from.
+        </p>
+        <p>
+          <span>@param (string)</span>: fallback string in case the url is wrong
+          or empty.
+        </p>
+        <p>
+          <span>@returns (string)</span>: the value of the trimmed url.
+        </p>
+      </div>
 
       <PageFromUri />
 
-      <h4 className="special_title">rmCommas</h4>
-
-      <hr />
-
-      <h4>Removes the commas from a string</h4>
-      <h4>@param (string): the url that we want to get the page from</h4>
-      <h4>@returns (string): the result of the fn</h4>
-
+      <h3>rmCommas</h3>
+      <p>Removes the commas from a string.</p>
+      <div className="params">
+        <p>
+          <span>@param (string)</span>: the url that we want to get the page
+          from.
+        </p>
+        <p>
+          <span>@returns (string)</span>: the result of the fn.
+        </p>
+      </div>
       <RmCommas />
 
-      <h4 className="special_title">shuffle</h4>
-
-      <hr />
-
-      <h4>Shuffle a set of objects</h4>
-      <h4>@param (array[object]): an array of objects</h4>
-      <h4>@returns (array[object]): the input array of objects but shuffled</h4>
-
+      <h3>shuffle</h3>
+      <p>Shuffle a set of objects.</p>
+      <div className="params">
+        <p>
+          <span>@param (array[object])</span>: an array of objects.
+        </p>
+        <p>
+          <span>@returns (array[object])</span>: the input array of objects but
+          shuffled.
+        </p>
+      </div>
       <Shuffle />
     </>
   );
