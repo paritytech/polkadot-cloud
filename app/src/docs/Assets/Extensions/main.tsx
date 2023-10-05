@@ -5,6 +5,7 @@ import { ExtensionsSvg } from "./ExtensionsSvg";
 import { ExtensionsJsx } from "./ExtensionsJsx";
 import { H2, H3 } from "@docs/Headers";
 import { DocProps } from "@docs/types";
+import { ImportSimple } from "./ImportSimple";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (
@@ -21,16 +22,14 @@ export const Doc = ({ folder, npm }: DocProps) => {
       <H2 id="wallet-extensions">Wallet Extensions</H2>
 
       <p>
-        Extension data is stored in an{" "}
-        <a
-          href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/assets/lib/extensions/index.tsx"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <code>Extensions</code>
-        </a>{" "}
-        object. The following Web3 wallets are currently supported:
+        Web3 wallet extension data can either be imported as key value pairs via
+        the <code>Extensions</code> import, or as an array with{" "}
+        <code>ExtensionsArray</code>:
       </p>
+
+      <ImportSimple />
+
+      <p>The following Web3 wallets are currently supported:</p>
 
       <ul>
         <li>
@@ -72,9 +71,23 @@ export const Doc = ({ folder, npm }: DocProps) => {
           <a href="https://novawallet.io" target="_blank" rel="noreferrer">
             Nova Wallet
           </a>{" "}
-          (if <code>window.walletExtension.isNovaWallet</code> is present)
+          (if <code>window.walletExtension.isNovaWallet</code> is present).
         </li>
       </ul>
+
+      <Note>
+        <p>
+          See the{" "}
+          <a
+            href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/assets/lib/extensions/index.tsx"
+            target="_blank"
+            rel="noreferrer"
+          >
+            source code
+          </a>{" "}
+          for all available extension metadata.
+        </p>
+      </Note>
 
       <Note>
         <p>
