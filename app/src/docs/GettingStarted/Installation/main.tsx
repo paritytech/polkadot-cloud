@@ -14,7 +14,7 @@ export const Doc = ({ folder }: DocProps) => {
       <Edit folder={folder} />
       <Header
         title="Installation"
-        subtitle="Install Polkadot Cloud packages and super charge your Polkadot app."
+        subtitle="Install Polkadot Cloud packages and super charge your Polkadot dapp."
         npm={undefined}
       />
       <h2>Basic Installation</h2>
