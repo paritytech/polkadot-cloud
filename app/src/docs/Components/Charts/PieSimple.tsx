@@ -6,70 +6,53 @@ import { SimpleEditor } from "@docs/SimpleEditor";
 import { Demo } from "@docs/Demo";
 
 export const PieSimple = () => {
-  const code = `<Chart diameter={100}
+  const code = `<Chart diameter={75}
   items={[
     { value: 60, color: "red" },
     { value: 200, color: "var(--background-default)" },
   ]}
 />
-<Chart diameter={100}
+<Chart diameter={75}
   items={[
     { value: 200, color: "var(--accent-color-primary)" },
     { value: 0, color: "var(--background-default)" },
   ]}
 />
 <Chart
-  diameter={100}
+  diameter={75}
   items={[
     { value: 0, color: "var(--accent-color-primary)" },
     { value: 200, color: "var(--background-default)" },
-  ]}
-/>
-// "Dead Pie" example - when all values provided sums to 0;
-<Chart
-  diameter={100}
-  items={[
-    { value: 0, color: "var(--accent-color-primary)" },
-    { value: 0, color: "var(--background-default)" },
   ]}
 />`;
 
   return (
     <>
       <Demo>
-        <div className="row">
+        <div className="svg-box wide">
           <Chart
-            diameter={100}
+            diameter={75}
             items={[
               { value: 60, color: "var(--accent-color-primary)" },
               { value: 200, color: "var(--background-default)" },
             ]}
           />
         </div>
-        <div className="row">
+        <div className="svg-box wide">
           <Chart
-            diameter={100}
+            diameter={75}
             items={[
               { value: 200, color: "var(--accent-color-primary)" },
               { value: 0, color: "var(--background-default)" },
             ]}
           />
         </div>
-        <div className="row">
+        <div className="svg-box wide">
           <Chart
-            diameter={100}
+            diameter={75}
             items={[
               { value: 0, color: "var(--accent-color-primary)" },
               { value: 200, color: "var(--background-default)" },
-            ]}
-          />
-        </div>
-        <div className="row">
-          <Chart
-            diameter={100}
-            items={[
-              { value: 0, color: "var(--accent-color-primary)" },
-              { value: 0, color: "var(--background-default)" },
             ]}
           />
         </div>

@@ -165,6 +165,10 @@ SPDX-License-Identifier: GPL-3.0-only */
     height: 4rem;
   }
 
+  &.wide {
+    margin: 0 4rem 0 0;
+  }
+
   > svg {
     max-width: 100%;
     max-height: 100%;
