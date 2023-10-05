@@ -10,5 +10,5 @@ import { Extensions } from "@polkadot-cloud/assets/extensions";
 // Or import extensions as array.
 import { ExtensionsArray } from "@polkadot-cloud/assets/extensions";`;
 
-  return <SimpleEditor code={code} language="javascript" />;
+  return <SimpleEditor code={code} language="javascript" standalone />;
 };
