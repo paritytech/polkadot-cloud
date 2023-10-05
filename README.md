@@ -18,13 +18,13 @@ Functional React components for Polkadot dapps.
 
 - [Polkicon](https://paritytech.github.io/polkadot-cloud/#/polkicon): A light-weight and customisable Polkadot Icon.
 
-- [Odometer](https://paritytech.github.io/polkadot-cloud/#/polkicon): An odometer effect used for numbers and balances.
+- [Odometer](https://paritytech.github.io/polkadot-cloud/#/odometer): An odometer effect used for numbers and balances.
 
-- [Overlay](https://paritytech.github.io/polkadot-cloud/#/polkicon): Overlay Provider and UI component for modals and overlaying content.
+- [Overlay](https://paritytech.github.io/polkadot-cloud/#/overlay): Overlay Provider and UI component for modals and overlaying content.
 
-- [Charts](https://paritytech.github.io/polkadot-cloud/#/polkicon): light-weight charts for displaying simple statistics.
+- [Charts](https://paritytech.github.io/polkadot-cloud/#/charts): light-weight charts for displaying simple statistics.
 
-- [Buttons](https://paritytech.github.io/polkadot-cloud/#/polkicon): A small collection of plug-and-play button components.
+- [Buttons](https://paritytech.github.io/polkadot-cloud/#/buttons): A small collection of plug-and-play button components.
 
 ### @polkadot-cloud/assets &nbsp;[[source](https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/assets)]
 
