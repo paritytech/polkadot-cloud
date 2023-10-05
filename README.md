@@ -39,7 +39,7 @@ Data sources and static assets for Polkadot dapps.
 
 Common utility functions to aid in Polkadot dapp development.
 
-- [Base Utilities](https://paritytech.github.io/polkadot-cloud/#/base_utilities): A collection of reusable utilities for manipulating string / number / arrays etc.
+- [Base](https://paritytech.github.io/polkadot-cloud/#/base_utilities): A collection of reusable utilities for manipulating string / number / arrays etc.
 
-- [Base Utilities](https://paritytech.github.io/polkadot-cloud/#/unit_utilities): A collection of reusable utilities for manipulating chain units.
+- [Unit](https://paritytech.github.io/polkadot-cloud/#/unit_utilities): A collection of reusable utilities for manipulating chain units.
 
