@@ -1,8 +1,10 @@
-[![Polkadot Cloud - Assets](https://img.shields.io/badge/Polkadot&nbsp;Cloud-Assets-E6007A?logo=polkadot&logoColor=E6007A)]([https://github.com/paritytech/polkadot-cloud]) ![ci](https://github.com/paritytech/polkadot-cloud/actions/workflows/main.yml/badge.svg) [![License](https://img.shields.io/badge/License-GPL_3.0_only-blue.svg)](https://opensource.org/license/gpl-3-0/)
+[![Polkadot - Assets](https://img.shields.io/badge/Polkadot-Assets-E6007A?logo=polkadot&logoColor=E6007A)]([https://github.com/paritytech/polkadot-cloud]) ![ci](https://github.com/paritytech/polkadot-cloud/actions/workflows/main.yml/badge.svg) [![License](https://img.shields.io/badge/License-GPL_3.0_only-blue.svg)](https://opensource.org/license/gpl-3-0/)
+
+<img alt="polkadot-cloud" title="polkadot-cloud" src="https://raw.githubusercontent.com/paritytech/polkadot-cloud/main/app/public/img/cloud.png" width="80" />
 
 # Polkadot Cloud
 
-A library and automated platform for developing and publishing assets for Polkadot dapps.
+<b>Polkadot Cloud</b> is a library and platform for developing and publishing assets for Polkadot dapps.
 
 ## Package Directory
 
