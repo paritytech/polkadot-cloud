@@ -11,8 +11,7 @@ camelize("   multiple   spaces   ") // multipleSpaces
 
 // But:
 camelize(HeLLo WoRLD) // heLLoWoRld 
-// This is due to the fact that Capital letters identify as "beginning of a word")
-`;
+// This is due to the fact that Capital letters identify as "beginning of a word")`;
 
   return <SimpleEditor code={code} standalone />;
 };

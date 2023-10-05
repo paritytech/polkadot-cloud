@@ -8,8 +8,7 @@ export const GreaterThanZero = () => {
 greaterThanZero(new BigNumber("0")) // false
 greaterThanZero(new BigNumber("-5")) // false
 greaterThanZero(new BigNumber("999999999999999999999999999")) // true
-greaterThanZero(new BigNumber("-999999999999999999999999999")) // false
-`;
+greaterThanZero(new BigNumber("-999999999999999999999999999")) // false`;
 
   return <SimpleEditor code={code} standalone />;
 };

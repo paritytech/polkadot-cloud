@@ -3,6 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 .doc {
   --doc-para-line-height: 2.1rem;
+  --para-font-size: 1.25rem;
 
   margin: 4rem 0 2.5rem;
 
@@ -60,7 +61,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
     &.npm {
       color: var(--text-color-primary);
-      font-size: 1.25rem;
+      font-size: var(--para-font-size);
       margin-top: 1.15rem;
       margin-bottom: 2.5rem;
 
@@ -92,7 +93,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   }
 
   > p {
-    font-size: 1.25rem;
+    font-size: var(--para-font-size);
     line-height: var(--doc-para-line-height);
     margin: 1rem 0;
   }
@@ -110,6 +111,12 @@ SPDX-License-Identifier: GPL-3.0-only */
     color: var(--text-color-secondary);
     border-radius: 0.4rem;
     padding: 0.05rem 0.4rem;
+
+    &.text {
+      border: none;
+      border-radius: none;
+      padding: 0;
+    }
   }
 
   /* Spaces are not being between code blocks in headers. Manually add space here. */
@@ -154,6 +161,28 @@ SPDX-License-Identifier: GPL-3.0-only */
   a code {
     color: var(--accent-color-secondary);
     font-size: inherit;
+  }
+
+  .params {
+    border-top: 1px solid var(--border-primary-color);
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+
+    p {
+      color: var(--text-color-tertiary);
+      font-size: 1.15rem;
+      line-height: 1.75rem;
+      padding-bottom: 0.25rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+
+      span {
+        font-family: InterSemiBold, sans-serif;
+      }
+    }
   }
 
   .anchor {
