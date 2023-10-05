@@ -13,13 +13,13 @@ export const Doc = ({ folder, npm }: DocProps) => {
       <Edit folder={folder} />
       <Header
         title="Charts"
-        subtitle="Lightweight charts for simple statistics."
+        subtitle="Light-weight charts for displaying simple statistics."
         npm={npm}
         status="stable"
       />
       <h3>Pie Chart</h3>
       <p>
-        The <code>Chart</code> component is a lightweight, CSS-rendered pie and
+        The <code>Chart</code> component is a light-weight, CSS-rendered pie and
         donut chart designed to display simple statistics. Charts can support
         multiple segments and adjust their size via the <code>diameter</code>{" "}
         prop.

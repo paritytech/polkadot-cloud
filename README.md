@@ -2,24 +2,44 @@
 
 # Polkadot Cloud
 
-A library and automated platform for developing and publishing assets for Polkadot apps.
+A library and automated platform for developing and publishing assets for Polkadot dapps.
 
 ## Package Directory
 
-#### [@polkadot-cloud/core](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-core)
+### @polkadot-cloud/core &nbsp;[[source](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-core) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/core)]
 
-- Plug-and-Play themes for Polkadot apps and chains.
-- Component css/scss
-- Template css/fonts
+Core styles and themes for Polkadot dapps.
 
-#### [@polkadot-cloud/react](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-react#polkadot-cloud-react)
+- [Using Polkadot Cloud Themes](https://paritytech.github.io/polkadot-cloud/#/using_themes)
 
-Core components for Polkadot apps.
+### @polkadot-cloud/react &nbsp;[[source](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-react) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/react)]
 
-#### [@polkadotcloud/utils](https://github.com/paritytech/polkadot-cloud/tree/main/packages/utils#polkadot-cloud-utils)
+Functional React components for Polkadot dapps.
 
-Utilities for Polkadot apps.
+- [Polkicon](https://paritytech.github.io/polkadot-cloud/#/polkicon): A light-weight and customisable Polkadot Icon.
 
-#### [@polkadot-cloud/assets](https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets#polkadot-cloud-assets)
+- [Odometer](https://paritytech.github.io/polkadot-cloud/#/odometer): An odometer effect used for numbers and balances.
 
-Data sources and static assets for Polkadot apps.
+- [Overlay](https://paritytech.github.io/polkadot-cloud/#/overlay): Overlay Provider and UI component for modals and overlaying content.
+
+- [Charts](https://paritytech.github.io/polkadot-cloud/#/charts): light-weight charts for displaying simple statistics.
+
+- [Buttons](https://paritytech.github.io/polkadot-cloud/#/buttons): A small collection of plug-and-play button components.
+
+### @polkadot-cloud/assets &nbsp;[[source](https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/assets)]
+
+Data sources and static assets for Polkadot dapps. 
+
+- [Web3 Wallet Extensions](https://paritytech.github.io/polkadot-cloud/#/extensions): A list of popular Web3 wallet extensions with metadata and icons.
+
+- [Validator Operators](https://paritytech.github.io/polkadot-cloud/#/validators): A list of Polkadot validator operators with metadata and thumbnails.
+
+### @polkadotcloud/utils &nbsp;[[source](https://github.com/paritytech/polkadot-cloud/tree/main/packages/utils) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/utils)]
+
+
+Common utility functions to aid in Polkadot dapp development.
+
+- [Base Utilities](https://paritytech.github.io/polkadot-cloud/#/base_utilities): A collection of reusable utilities for manipulating string / number / arrays etc.
+
+- [Base Utilities](https://paritytech.github.io/polkadot-cloud/#/unit_utilities): A collection of reusable utilities for manipulating chain units.
+
