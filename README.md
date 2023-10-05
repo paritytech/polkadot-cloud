@@ -6,13 +6,13 @@ A library and automated platform for developing and publishing assets for Polkad
 
 ## Package Directory
 
-### @polkadot-cloud/core &nbsp;[[source](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-core) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/core)]
+### `@polkadot-cloud/core` &nbsp;[[source](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-core) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/core)]
 
 Core styles and themes for Polkadot dapps.
 
 - [Using Polkadot Cloud Themes](https://paritytech.github.io/polkadot-cloud/#/using_themes)
 
-### @polkadot-cloud/react &nbsp;[[source](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-react) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/react)]
+### `@polkadot-cloud/react` &nbsp;[[source](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-react) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/react)]
 
 Functional React components for Polkadot dapps.
 
@@ -26,7 +26,7 @@ Functional React components for Polkadot dapps.
 
 - [Buttons](https://paritytech.github.io/polkadot-cloud/#/buttons): A small collection of plug-and-play button components.
 
-### @polkadot-cloud/assets &nbsp;[[source](https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/assets)]
+### `@polkadot-cloud/assets` &nbsp;[[source](https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/assets)]
 
 Data sources and static assets for Polkadot dapps. 
 
@@ -34,7 +34,7 @@ Data sources and static assets for Polkadot dapps.
 
 - [Validator Operators](https://paritytech.github.io/polkadot-cloud/#/validators): A list of Polkadot validator operators with metadata and thumbnails.
 
-### @polkadotcloud/utils &nbsp;[[source](https://github.com/paritytech/polkadot-cloud/tree/main/packages/utils) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/utils)]
+### `@polkadot-cloud/utils` &nbsp;[[source](https://github.com/paritytech/polkadot-cloud/tree/main/packages/utils) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/utils)]
 
 
 Common utility functions to aid in Polkadot dapp development.
