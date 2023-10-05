@@ -9,6 +9,7 @@ import { PageFromUri } from "./PageFromUri";
 import { RmCommas } from "./RmCommas";
 import { Shuffle } from "./Shuffle";
 import { DocProps } from "@docs/types";
+import { UtilsComponent } from "@docs/UtilsComponent";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (
@@ -22,43 +23,26 @@ export const Doc = ({ folder, npm }: DocProps) => {
         status="stable"
       />
 
-      <h3>camelize</h3>
-      <p>Converts a string of text to camelCase.</p>
-      <div className="params">
-        <p>
-          <span>@param (string)</span>: string to become camelCase.
-        </p>
-        <p>
-          <span>@returns (string)</span>: the input string, but camelCased.
-        </p>
-      </div>
-      <Camelize />
+      <UtilsComponent
+        title="camelize"
+        description="Converts a string of text to camelCase."
+        params={[
+          "@param (string): string to become camelCase.",
+          "@returns (string): the input string, but camelCased.",
+        ]}
+        component={<Camelize />}
+      />
 
-      <h3>ellipsisFn</h3>
-      <p>
-        Receives an address and creates ellipsis on the given string, based on
-        parameters.
-      </p>
-      <div className="params">
-        <p>
-          <span>@param (string)_</span>: The string to apply the ellipsis. on
-        </p>
-        <p>
-          <span>@param (number)_</span>: The amount of characters that the
-          ellipsis will be.
-        </p>
-        <p>
-          <span>@param ("start" | "center" | "end")_</span>: where the ellipsis
-          will apply; if "center" the amount of character is the same for
-          beginning and end; if "start" or "end" then its only once the amount;
-          defaults to "start".
-        </p>
-        <p>
-          <span>@returns (string)</span>: the ellipsis-fied string.
-        </p>
-      </div>
-
-      <EllipsisFn />
+      <UtilsComponent
+        title="ellipsisFn"
+        description="Receives an address and creates ellipsis on the given string, based on
+        parameters."
+        params={[
+          "@param (string): The string to apply the ellipsis on.",
+          "@param (number): The amount of characters that the ellipsis will be.",
+        ]}
+        component={<EllipsisFn />}
+      />
 
       <h3>greaterThanZero</h3>
       <p>Returns whether a BigNumber is greater than zero.</p>
