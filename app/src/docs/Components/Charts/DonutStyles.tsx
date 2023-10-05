@@ -5,7 +5,7 @@ import { SimpleEditor } from "@docs/SimpleEditor";
 import { Demo } from "@docs/Demo";
 import { Chart } from "@packages/cloud-react/lib/base/structure/Chart";
 
-export const DonutPiePageDifferentStyles = () => {
+export const DonutStyles = () => {
   const code = `const themeColors = [
   { value: 60, color: "var(--background-default)" },
   { value: 50, color: "var(--background-invert)" },
@@ -14,26 +14,26 @@ export const DonutPiePageDifferentStyles = () => {
   { value: 30, color: "var(--button-secondary-background)" }
 ];
 
-<Chart diameter={100} items={themeColors} />
-<Chart diameter={100} items={themeColors} innerRadius={20} />
-<Chart diameter={100} items={themeColors} innerRadius={30} />
-<Chart diameter={100} items={themeColors} innerRadius={40} />
-<Chart diameter={100} items={themeColors} innerRadius={48} />
-// Or some other colors
-<Chart diameter={100}
+<Chart diameter={75} items={themeColors} />
+<Chart diameter={75} items={themeColors} innerRadius={20} />
+<Chart diameter={75} items={themeColors} innerRadius={30} />
+<Chart diameter={75} items={themeColors} innerRadius={40} />
+
+<Chart diameter={75}
   items={[
     { value: 60, color: "yellow" },
     { value: 200, color: "green" },
     { value: 300, color: "blue" }
-  ]} />
+  ]} 
+/>
 `;
 
   return (
     <>
       <Demo>
-        <div style={{ margin: "0 1rem" }}>
+        <div className="svg-box">
           <Chart
-            diameter={100}
+            diameter={75}
             items={[
               { value: 60, color: "var(--background-default)" },
               { value: 50, color: "var(--background-invert)" },
@@ -43,9 +43,9 @@ export const DonutPiePageDifferentStyles = () => {
             ]}
           />
         </div>
-        <div style={{ margin: "0 1rem" }}>
+        <div className="svg-box">
           <Chart
-            diameter={100}
+            diameter={75}
             items={[
               { value: 60, color: "var(--background-default)" },
               { value: 50, color: "var(--background-invert)" },
@@ -56,9 +56,9 @@ export const DonutPiePageDifferentStyles = () => {
             innerRadius={20}
           />
         </div>
-        <div style={{ margin: "0 1rem" }}>
+        <div className="svg-box">
           <Chart
-            diameter={100}
+            diameter={75}
             items={[
               { value: 60, color: "var(--background-default)" },
               { value: 50, color: "var(--background-invert)" },
@@ -69,9 +69,9 @@ export const DonutPiePageDifferentStyles = () => {
             innerRadius={30}
           />
         </div>
-        <div style={{ margin: "0 1rem" }}>
+        <div className="svg-box">
           <Chart
-            diameter={100}
+            diameter={75}
             items={[
               { value: 60, color: "var(--background-default)" },
               { value: 50, color: "var(--background-invert)" },
@@ -82,26 +82,15 @@ export const DonutPiePageDifferentStyles = () => {
             innerRadius={40}
           />
         </div>
-        <div style={{ margin: "0 1rem" }}>
+        <div className="svg-box">
           <Chart
-            diameter={100}
-            items={[
-              { value: 60, color: "var(--background-default)" },
-              { value: 150, color: "var(--accent-color-primary)" },
-              { value: 200, color: "var(--accent-color-secondary)" },
-            ]}
-            innerRadius={48}
-          />
-        </div>
-        <div style={{ margin: "0 1rem" }}>
-          <Chart
-            diameter={100}
+            diameter={75}
             items={[
               { value: 60, color: "yellow" },
               { value: 200, color: "green" },
               { value: 300, color: "blue" },
             ]}
-            innerRadius={0}
+            innerRadius={5}
           />
         </div>
       </Demo>
