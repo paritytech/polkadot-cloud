@@ -9,7 +9,7 @@ export const Doc = ({ folder }: DocProps) => {
       <Edit folder={folder} />
       <Header
         title="Polkadot Cloud: Overview"
-        subtitle="Polkadot Cloud is a library and platform for developing and publishing assets for Polkadot apps."
+        subtitle="Polkadot Cloud is a library and platform for developing and publishing assets for Polkadot dapps."
         npm={undefined}
       />
 
@@ -29,7 +29,7 @@ export const Doc = ({ folder }: DocProps) => {
           >
             <code>@polkadot-cloud/core</code>
           </a>
-          : Core styles and themes for Polkadot apps.
+          : Core styles and themes for Polkadot dapps.
         </li>
         <li>
           <a
@@ -39,7 +39,7 @@ export const Doc = ({ folder }: DocProps) => {
           >
             <code>@polkadot-cloud/react</code>
           </a>
-          : Functional React components for Polkadot apps.
+          : Functional React components for Polkadot dapps.
         </li>
         <li>
           <a
@@ -60,7 +60,7 @@ export const Doc = ({ folder }: DocProps) => {
           >
             <code>@polkadot-cloud/utils</code>
           </a>
-          : Common utility functions to aid in Polkadot app development.
+          : Common utility functions to aid in Polkadot dapp development.
         </li>
       </ul>
 
