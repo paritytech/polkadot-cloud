@@ -33,6 +33,7 @@ export const SimpleEditor = ({
     lineHeight: "1.6rem",
     fontWeight: "500",
     marginBottom: "2rem",
+    maxWidth: "100%",
   };
 
   return (

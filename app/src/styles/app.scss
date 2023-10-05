@@ -111,19 +111,21 @@ SPDX-License-Identifier: GPL-3.0-only */
       h3 {
         color: var(--text-color-secondary);
         font-family: InterBold, sans-serif;
-        margin-bottom: 0.05rem;
         display: flex;
         align-items: center;
-
-        > .beta {
-          margin-left: 0.6rem;
-        }
+        margin-bottom: 0.1rem;
       }
 
       p {
         color: var(--text-color-tertiary);
         font-family: InterSemiBold, sans-serif;
         letter-spacing: 0.075rem;
+
+        > .beta {
+          color: var(--accent-color-secondary);
+          text-transform: uppercase;
+          margin-left: 0.2rem;
+        }
       }
     }
   }
@@ -132,11 +134,13 @@ SPDX-License-Identifier: GPL-3.0-only */
 .main-area {
   /* CSS3: Leave enough room to show footer where content does not consume 100vh. */
   min-height: calc(100vh - 5.5rem);
+  max-width: 100%;
 
   > div {
     margin: 0 auto;
     max-width: 900px;
     padding: 3.3rem 0 3rem;
+    overflow: hidden;
 
     @media (width >= 1150px) {
       position: relative;
@@ -249,11 +253,6 @@ SPDX-License-Identifier: GPL-3.0-only */
         margin-right: 0;
       }
 
-      .beta {
-        margin-left: 0.7rem;
-        margin-bottom: 0.5rem;
-      }
-
       > div {
         flex-basis: 100%;
         justify-content: center;
@@ -261,24 +260,28 @@ SPDX-License-Identifier: GPL-3.0-only */
         margin-top: 0.5rem;
       }
     }
+
+    .beta {
+      background: var(--background-default);
+      color: var(--accent-color-secondary);
+      border: 1px solid var(--accent-color-pending);
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      line-height: 0.9rem;
+      padding: 0.4rem 0.6rem;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+
+      @media (width <= 800px) {
+        margin-left: 0.75rem;
+      }
+    }
   }
 
   @media (width <= 800px) {
     padding: 0.5rem 0;
   }
-}
-
-.beta {
-  background: var(--background-default);
-  color: var(--accent-color-secondary);
-  border: 1px solid var(--accent-color-pending);
-  border-radius: 0.5rem;
-  font-size: 0.9rem;
-  line-height: 0.9rem;
-  padding: 0.4rem 0.6rem;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
 }
 
 .toggle-menu {

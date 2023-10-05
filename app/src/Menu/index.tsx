@@ -15,9 +15,8 @@ import throttle from "lodash.throttle";
 import { useOutsideAlerter } from "../hooks/useOutsideAlerter";
 
 export const Menu = () => {
-  const { sideMenuOpen } = useUi();
   const { pathname } = useLocation();
-  const { setSideMenu } = useUi();
+  const { sideMenuOpen, setSideMenu } = useUi();
 
   useEffect(() => {
     window.addEventListener("resize", windowThrottle);
@@ -27,9 +26,7 @@ export const Menu = () => {
   }, []);
 
   const throttleCallback = () => {
-    if (window.innerWidth >= 1150) {
-      setSideMenu(false);
-    }
+    if (window.innerWidth >= 1150) setSideMenu(false);
   };
   const windowThrottle = throttle(throttleCallback, 200, {
     trailing: true,
@@ -37,9 +34,7 @@ export const Menu = () => {
   });
 
   const ref = useRef(null);
-  useOutsideAlerter(ref, () => {
-    setSideMenu(false);
-  });
+  useOutsideAlerter(ref, () => setSideMenu(false));
 
   return (
     <div className={`menu${sideMenuOpen ? ` open` : ``}`} ref={ref}>
@@ -59,6 +54,7 @@ export const Menu = () => {
                     : ``
                 }`}
                 to={`${rest.path}`}
+                onClick={() => setSideMenu(false)}
               >
                 {nameFromRoute(rest.path)}
               </Link>

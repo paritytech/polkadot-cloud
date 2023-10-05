@@ -15,6 +15,7 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { faCircle } from "@fortawesome/free-regular-svg-icons";
+import { useUi } from "../contexts/UI";
 interface Props {
   name: string;
   rest: RouteCategoryMulti;
@@ -22,6 +23,7 @@ interface Props {
 }
 
 export const Category = ({ rest, name, i }: Props) => {
+  const { setSideMenu } = useUi();
   const { pathname } = useLocation();
   const initial = name !== "Experimental";
 
@@ -71,6 +73,7 @@ export const Category = ({ rest, name, i }: Props) => {
                     : ``
                 }`}
                 to={`${path}`}
+                onClick={() => setSideMenu(false)}
               >
                 {nameFromRoute(path)}
               </Link>
