@@ -25,13 +25,13 @@ export const Doc = ({ folder, npm }: DocProps) => {
 
       <div className="params">
         <p>
-          <span>@param (BigNumber)</span>: The Planck in BigNumber
+          <span>@param (BigNumber)</span>: The Planck in BigNumber.
         </p>
         <p>
-          <span>@param (number)</span>: the units
+          <span>@param (number)</span>: the units.
         </p>
         <p>
-          <span>@returns (BigNumber)</span>: the decimal value in token unit
+          <span>@returns (BigNumber)</span>: the decimal value in token unit.
         </p>
       </div>
 
@@ -55,7 +55,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
           the blockchain.
         </p>
         <p>
-          <span>@returns (string)</span>: the result of the functions
+          <span>@returns (string)</span>: the result of the functions.
         </p>
       </div>
 
@@ -68,14 +68,14 @@ export const Doc = ({ folder, npm }: DocProps) => {
       </p>
       <div className="params">
         <p>
-          <span>@param (strnig)</span>: token balance
+          <span>@param (strnig)</span>: token balance.
         </p>
         <p>
-          <span>@param (number)</span>: the units
+          <span>@param (number)</span>: the units.
         </p>
         <p>
           <span>@returns (BigNumber)</span>: value in planck with applied the
-          chain decimals
+          chain decimals.
         </p>
       </div>
       <UnitToPlanck />
