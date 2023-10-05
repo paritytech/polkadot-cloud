@@ -18,17 +18,10 @@ export const Doc = ({ folder, npm }: DocProps) => {
         status="stable"
       />
 
-      <Note>
-        <p>
-          <code>@polkadot-cloud/assets</code> is used with other Cloud
-          components, such as the upcoming Connect component.
-        </p>
-      </Note>
-
       <H2 id="wallet-extensions">Wallet Extensions</H2>
 
       <p>
-        All extension data is stored in an{" "}
+        Extension data is stored in an{" "}
         <a
           href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/assets/lib/extensions/index.tsx"
           target="_blank"
