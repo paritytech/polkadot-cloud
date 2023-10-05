@@ -27,8 +27,7 @@ ellipsisFn(address) // 234CHv...tEZmY7
 ellipsisFn(address, 2) // 234C...ZmY7
 
 // (fallbacks to maximum acceptable when too large: string.length / 2 - 3)
-ellipsisFn(address, 100) // 234C...ZmY7
-`;
+ellipsisFn(address, 100) // 234C...ZmY7`;
 
   return <SimpleEditor code={code} standalone />;
 };

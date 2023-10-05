@@ -16,8 +16,7 @@ evalUnits("0.002μ", 9) // 2
 
 // Not so happy paths
 evalUnits("good23", 9) // "Input is not correct. Use numbers, floats or expression (e.g. 1k, 1.3m)"
-evalUnits("1,23.445k") // "Input is not correct. Use numbers, floats or expression (e.g. 1k, 1.3m)"
-`;
+evalUnits("1,23.445k") // "Input is not correct. Use numbers, floats or expression (e.g. 1k, 1.3m)"`;
 
   return <SimpleEditor code={code} standalone />;
 };
