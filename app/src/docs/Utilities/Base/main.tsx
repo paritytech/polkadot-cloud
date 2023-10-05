@@ -44,92 +44,66 @@ export const Doc = ({ folder, npm }: DocProps) => {
         component={<EllipsisFn />}
       />
 
-      <h3>greaterThanZero</h3>
-      <p>Returns whether a BigNumber is greater than zero.</p>
-      <div className="params">
-        <p>
-          <span>@param (BigNumber)</span>: the input to check against.
-        </p>
-        <p>
-          <span>@returns (boolean)</span>: the result of the fn.
-        </p>
-      </div>
+      <UtilsComponent
+        title="greaterThanZero"
+        description="Returns whether a BigNumber is greater than zero."
+        params={[
+          "@param (BigNumber): the input to check against.",
+          "@returns (boolean): the result of the fn.",
+        ]}
+        component={<GreaterThanZero />}
+      />
 
-      <GreaterThanZero />
+      <UtilsComponent
+        title="isNotZero"
+        description="Returns whether a BigNumber is zero."
+        params={[
+          "@param (BigNumber): the input to check against.",
+          "@returns (boolean): the result of the fn.",
+        ]}
+        component={<IsNotZero />}
+      />
 
-      <h3>isNotZero</h3>
-      <p>Returns whether a BigNumber is zero.</p>
+      <UtilsComponent
+        title="minDecimalPlaces"
+        description="Forces a number to have at least the provided decimal places."
+        params={[
+          "@param (string): string that we want to update the decimal places.",
+          "@param (number): number of decimals to be adjusted.",
+        ]}
+        component={<MinDecimalPlaces />}
+      />
 
-      <div className="params">
-        <p>
-          <span>@param (BigNumber)</span>: the input to check against.
-        </p>
-        <p>
-          <span>@returns (boolean)</span>: the result of the fn.
-        </p>
-      </div>
-      <IsNotZero />
+      <UtilsComponent
+        title="pageFromUri"
+        description="Use url variables to load the default components upon the first page visit."
+        params={[
+          "@param (string): the url that we want to get the page from.",
+          "@param (string): fallback string in case the url is wrong or empty.",
+          "@returns (string): the value of the trimmed url.",
+        ]}
+        component={<PageFromUri />}
+      />
 
-      <h3>minDecimalPlaces</h3>
-      <p>Forces a number to have at least the provided decimal places.</p>
-      <div className="params">
-        <p>
-          <span>@param (string)</span>: string that we want to update the
-          decimal places.
-        </p>
-        <p>
-          <span>@param (number)</span>: number of decimals to be adjusted.
-        </p>
-      </div>
+      <UtilsComponent
+        title="rmCommas"
+        description="Removes the commas from a string."
+        params={[
+          "@param (string): the url that we want to get the page from.",
+          "@returns (string): the result of the fn.",
+        ]}
+        component={<RmCommas />}
+      />
 
-      <MinDecimalPlaces />
-
-      <h3>pageFromUri</h3>
-      <p>
-        Use url variables to load the default components upon the first page
-        visit.
-      </p>
-      <div className="params">
-        <p>
-          <span>@param (string)</span>: the url that we want to get the page
-          from.
-        </p>
-        <p>
-          <span>@param (string)</span>: fallback string in case the url is wrong
-          or empty.
-        </p>
-        <p>
-          <span>@returns (string)</span>: the value of the trimmed url.
-        </p>
-      </div>
-
-      <PageFromUri />
-
-      <h3>rmCommas</h3>
-      <p>Removes the commas from a string.</p>
-      <div className="params">
-        <p>
-          <span>@param (string)</span>: the url that we want to get the page
-          from.
-        </p>
-        <p>
-          <span>@returns (string)</span>: the result of the fn.
-        </p>
-      </div>
-      <RmCommas />
-
-      <h3>shuffle</h3>
-      <p>Shuffle a set of objects.</p>
-      <div className="params">
-        <p>
-          <span>@param (array[object])</span>: an array of objects.
-        </p>
-        <p>
-          <span>@returns (array[object])</span>: the input array of objects but
-          shuffled.
-        </p>
-      </div>
-      <Shuffle />
+      <UtilsComponent
+        title="shuffle"
+        description="Shuffle a set of objects."
+        params={[
+          "@param (array[object]): an array of objects.",
+          "@returns (array[object]): the input array of objects but shuffled.",
+        ]}
+        component={<Shuffle />}
+      />
     </>
   );
 };
