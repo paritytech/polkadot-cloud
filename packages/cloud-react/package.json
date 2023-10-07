@@ -1,7 +1,7 @@
 {
   "name": "polkadot-cloud-react",
   "license": "GPL-3.0-only",
-  "version": "0.1.69",
+  "version": "0.1.70",
   "type": "module",
   "contributors": [
     "Ross Bulat<ross@parity.io>",
@@ -37,8 +37,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@polkadot-cloud/assets": "^0.1.16",
-    "@polkadot-cloud/core": "^1.0.6",
-    "@polkadot-cloud/utils": "^0.0.19",
+    "@polkadot-cloud/core": "^1.0.7",
+    "@polkadot-cloud/utils": "^0.0.20",
     "@polkadot/util": "^12.5.1",
     "@polkadot/util-crypto": "^12.5.1",
     "framer-motion": "^10.15.0",
