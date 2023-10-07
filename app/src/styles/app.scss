@@ -114,18 +114,25 @@ SPDX-License-Identifier: GPL-3.0-only */
         display: flex;
         align-items: center;
         margin-bottom: 0.1rem;
+
+        > .beta {
+          background: var(--background-default);
+          color: var(--accent-color-secondary);
+          border: 1px solid var(--accent-color-pending);
+          border-radius: 0.5rem;
+          font-size: 0.9rem;
+          line-height: 0.9rem;
+          padding: 0.4rem 0.6rem;
+          text-transform: uppercase;
+          align-items: center;
+          margin-left: 0.75rem;
+        }
       }
 
       p {
         color: var(--text-color-tertiary);
         font-family: InterSemiBold, sans-serif;
         letter-spacing: 0.075rem;
-
-        > .beta {
-          color: var(--accent-color-secondary);
-          text-transform: uppercase;
-          margin-left: 0.2rem;
-        }
       }
     }
   }
