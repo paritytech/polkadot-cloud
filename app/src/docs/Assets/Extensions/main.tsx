@@ -3,7 +3,7 @@ import { Note } from "@docs/Note";
 import { Header } from "@docs/Header";
 import { ExtensionsSvg } from "./ExtensionsSvg";
 import { ExtensionsJsx } from "./ExtensionsJsx";
-import { H2, H3 } from "@docs/Headers";
+import { H3 } from "@docs/Headers";
 import { DocProps } from "@docs/types";
 import { ImportSimple } from "./ImportSimple";
 
@@ -19,7 +19,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
         status="stable"
       />
 
-      <H2 id="wallet-extensions">Wallet Extensions</H2>
+      <H3 id="wallet-extensions">Wallet Extensions</H3>
 
       <p>
         Web3 wallet extension data can either be imported as key value pairs via
