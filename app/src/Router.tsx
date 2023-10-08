@@ -41,7 +41,11 @@ export const Router = () => {
           <Menu />
         </Side>
 
-        <Main style={{ height: "auto", minHeight: "calc(100vh - 5.5rem)" }}>
+        <Main
+          style={{
+            minHeight: "calc(100vh - 5.5rem)",
+          }}
+        >
           <div className="main-area">
             <div>
               <Routes>

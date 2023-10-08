@@ -35,6 +35,7 @@ export const SimpleEditor = ({
     marginBottom: "2rem",
     maxWidth: "100%",
     overflow: "auto",
+    textWrapping: "wrap",
   };
 
   return (
@@ -53,6 +54,7 @@ export const SimpleEditor = ({
         }}
         highlight={(c) => highlight(c, languages[language], language)}
         className={`editor-${mode}`}
+        textareaClassName="editor-textarea"
         style={editorStyle}
         padding="1.25rem"
         disabled

@@ -134,7 +134,11 @@ SPDX-License-Identifier: GPL-3.0-only */
 .main-area {
   /* CSS3: Leave enough room to show footer where content does not consume 100vh. */
   min-height: calc(100vh - 5.5rem);
-  max-width: 100%;
+
+  @media (width < 1150px) {
+    padding: 3.75rem 2.5rem;
+    width: auto;
+  }
 
   > div {
     margin: 0 auto;
@@ -146,11 +150,6 @@ SPDX-License-Identifier: GPL-3.0-only */
       position: relative;
       left: -5%;
     }
-
-    @media (width < 1150px) {
-      padding: 3.3rem;
-    }
-
     h4 {
       margin: 1rem 0;
     }
@@ -291,11 +290,11 @@ SPDX-License-Identifier: GPL-3.0-only */
 
   background: var(--background-primary);
   border: 1px solid var(--border-primary-color);
-  width: 3rem;
-  height: 3rem;
+  width: 3.25rem;
+  height: 3.25rem;
   border-radius: 50%;
   position: fixed;
-  top: 6.75rem;
+  top: 6.25rem;
   left: 2rem;
   z-index: 10;
 }
