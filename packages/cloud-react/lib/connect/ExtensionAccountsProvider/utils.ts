@@ -61,3 +61,30 @@ export const getLocalExternalAccounts = (network?: string) => {
   }
   return localAccounts;
 };
+
+// Check if an extension exists in local `active_extensions`.
+export const extensionIsLocal = (id: string) => {
+  const localExtensions = localStorageOrDefault<string[]>(
+    `active_extensions`,
+    [],
+    true
+  );
+  let foundExtensionLocally = false;
+  if (Array.isArray(localExtensions)) {
+    foundExtensionLocally = localExtensions.find((l) => l === id) !== undefined;
+  }
+  return foundExtensionLocally;
+};
+
+// Removes extension from local `active_extensions`.
+export const removeFromLocalExtensions = (id: string) => {
+  let localExtensions = localStorageOrDefault<string[]>(
+    `active_extensions`,
+    [],
+    true
+  );
+  if (Array.isArray(localExtensions)) {
+    localExtensions = localExtensions.filter((l: string) => l !== id);
+    localStorage.setItem("active_extensions", JSON.stringify(localExtensions));
+  }
+};

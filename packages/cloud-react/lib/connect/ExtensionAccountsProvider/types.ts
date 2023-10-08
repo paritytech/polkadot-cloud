@@ -20,8 +20,10 @@ export interface ExtensionAccountsContextInterface {
 export interface ExtensionAccountsProviderProps {
   children: ReactNode;
   network: string;
+  ss58: number;
   dappName: string;
   activeAccount: MaybeAddress;
+  setActiveAccount: (a: MaybeAddress) => void;
 }
 
 export interface HandleImportExtension {
