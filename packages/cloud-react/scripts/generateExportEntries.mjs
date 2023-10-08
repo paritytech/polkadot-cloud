@@ -58,6 +58,13 @@ export const generateExportEntries = async ({ ignore }) => {
       isComponent = false;
     }
 
+    // Add hook if folder name starts with `use`.
+    if (name.split("/").pop().startsWith("use")) {
+      hooks.push({
+        export: name.split("/").pop(),
+        from: name,
+      });
+    }
     // Add hooks to `hooks` if present in the folder.
     for (let file of await fs.readdir(name)) {
       if (file.startsWith("use")) {

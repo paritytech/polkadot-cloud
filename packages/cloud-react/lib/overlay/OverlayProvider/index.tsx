@@ -4,7 +4,7 @@
 import type { RefObject } from "react";
 import { useRef, useState, ReactNode, createContext } from "react";
 import { setStateWithRef } from "@polkadot-cloud/utils";
-import { useEffectIgnoreInitial } from "../../hooks";
+import { useEffectIgnoreInitial } from "../../base/hooks/useEffectIgnoreInitial";
 import type {
   ModalConfig,
   CanvasConfig,
