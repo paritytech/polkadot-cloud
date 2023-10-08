@@ -10,7 +10,7 @@ import {
 } from "@packages/cloud-react/lib/recipes/AccountCard";
 import { SimpleEditor } from "@docs/SimpleEditor";
 import { Grid } from "@packages/cloud-react/lib/base/structure/Grid";
-import { HPosition } from "@packages/cloud-react/lib/types";
+import { HPosition } from "@packages/cloud-react/lib/utils/types";
 import { Demo } from "@docs/Demo";
 
 export const AccountCardPageStakingSamples = () => {

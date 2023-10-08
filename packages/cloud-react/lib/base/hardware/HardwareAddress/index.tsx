@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { ButtonText } from "../../../buttons/ButtonText";
-import { ComponentBase } from "../../../types";
+import { ComponentBase } from "../../../utils/types";
 import {
   faCheck,
   faPlus,

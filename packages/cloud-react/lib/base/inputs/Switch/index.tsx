@@ -1,5 +1,5 @@
 import "@polkadot-cloud/core/css/base/inputs/Switch/index.css";
-import { ComponentBaseWithClassName } from "../../../types";
+import { ComponentBaseWithClassName } from "../../../utils/types";
 import { useState, useEffect } from "react";
 import { valEmpty } from "../../../utils";
 

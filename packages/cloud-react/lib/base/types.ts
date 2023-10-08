@@ -1,7 +1,11 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { AnyJson, ComponentBase, ComponentBaseWithClassName } from "../types";
+import {
+  AnyJson,
+  ComponentBase,
+  ComponentBaseWithClassName,
+} from "../utils/types";
 import { ReactElement, ReactNode } from "react";
 
 export type EntryProps = ComponentBase & {

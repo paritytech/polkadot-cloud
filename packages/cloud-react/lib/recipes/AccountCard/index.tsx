@@ -12,7 +12,7 @@ import {
   HPositionLR,
   HPosition,
   ComponentBaseWithClassName,
-} from "../../types";
+} from "../../utils/types";
 
 import "@polkadot-cloud/core/css/recipes/AccountCard/index.css";
 import { Polkicon } from "../../icons/Polkicon";
