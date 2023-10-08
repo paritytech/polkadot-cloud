@@ -5,12 +5,18 @@ import { existsSync } from "fs";
 import fs from "fs/promises";
 import { format } from "prettier";
 
-// Generates `lib/index.tsx` based on the contents of the `lib` folder.
-export const generateLibIndex = async ({ ignore }) => {
+// Generates bundle entry files based on the content of the lib/ folder.
+//
+// - `lib/index.tsx` is generated to house all component exports.
+// - `lib/providers/index.tsx` is generated to house all provider exports.
+// - `lib/hooks/index.tsx` is generated to house all hook exports.
+// - `lib/types/index.tsx` is generated to house all types.
+export const generateExportEntries = async ({ ignore }) => {
   // Iterates through a provided directory and returns all component paths.
   const getDirFolders = async (dir) => {
     const folders = [];
-    // if directory contains index.tsx file, stop.
+
+    // If directory contains index.tsx file, stop.
     if (dir !== "./lib" && existsSync(`${dir}/index.tsx`)) {
       folders.push(dir);
     } else {
