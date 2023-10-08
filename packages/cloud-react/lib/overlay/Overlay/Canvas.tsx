@@ -7,7 +7,7 @@ import { CanvasContainer } from "../../base/modal/CanvasContainer";
 import { CanvasContent } from "../../base/modal/CanvasContent";
 import { useAnimation } from "framer-motion";
 import { FC, useEffect } from "react";
-import { useOverlay } from "../../hooks";
+import { useOverlay } from "../OverlayProvider/useOverlay";
 import type { CanvasProps } from "../OverlayProvider/types";
 import { ErrorBoundary } from "react-error-boundary";
 

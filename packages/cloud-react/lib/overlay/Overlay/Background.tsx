@@ -4,7 +4,7 @@
 import { ModalOverlay } from "../../base/modal/ModalOverlay";
 import { useAnimation } from "framer-motion";
 import { useEffect } from "react";
-import { useOverlay } from "../../hooks";
+import { useOverlay } from "../OverlayProvider/useOverlay";
 import type { CanvasStatus } from "../OverlayProvider/types";
 
 export const Background = ({
