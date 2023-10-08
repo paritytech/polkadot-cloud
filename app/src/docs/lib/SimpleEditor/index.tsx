@@ -34,6 +34,7 @@ export const SimpleEditor = ({
     fontWeight: "500",
     marginBottom: "2rem",
     maxWidth: "100%",
+    overflow: "auto",
   };
 
   return (
