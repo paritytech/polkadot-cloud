@@ -12,13 +12,17 @@ import { format } from "prettier";
 // - `lib/hooks/index.tsx` is generated to house all hook exports.
 // - `lib/types/index.tsx` is generated to house all types.
 export const generateExportEntries = async ({ ignore }) => {
-  // Rmmove stale folders.
-  if (existsSync(`./lib/types.ts`)) await fs.rm("./lib/types.ts");
-  if (existsSync(`./lib/providers`))
-    await fs.rm("./lib/providers", { recursive: true });
-
-  if (existsSync(`./lib/hooks`))
-    await fs.rm("./lib/hooks", { recursive: true });
+  // Rmmove stale folders if they exist.
+  const pathsToRemove = [
+    { path: "./lib/types.ts", options: {} },
+    { path: "./lib/providers", options: { recursive: true } },
+    { path: "./lib/hooks", options: { recursive: true } },
+  ];
+  await Promise.all(
+    pathsToRemove.map(({ path, options }) =>
+      existsSync(path) ? fs.rm(path, options) : Promise.resolve()
+    )
+  );
 
   // Iterates through a provided directory and returns all component paths.
   const getDirFolders = async (dir) => {
@@ -34,7 +38,6 @@ export const generateExportEntries = async ({ ignore }) => {
           if (!ignore.includes(file))
             folders.push(...(await getDirFolders(dir + "/" + file)));
     }
-
     return folders;
   };
 
@@ -42,7 +45,6 @@ export const generateExportEntries = async ({ ignore }) => {
   const components = [];
   const providers = [];
   const hooks = [];
-
   for (let name of await getDirFolders("./lib")) {
     let isComponent = true;
 
@@ -76,55 +78,38 @@ export const generateExportEntries = async ({ ignore }) => {
   }
 
   // Construct entry files.
-  const indexLines = [];
-  const providersLines = [];
-  const hooksLines = [];
-
-  for (let component of components)
-    indexLines.push(
-      `export { ${component.export} } from "./${component.from
-        .split("/")
-        .slice(2)
-        .join("/")}";`
-    );
-
-  for (let provider of providers)
-    providersLines.push(
-      `export { ${provider.export} } from "../${provider.from
-        .split("/")
-        .slice(2)
-        .join("/")}";`
-    );
-
-  for (let hook of hooks)
-    hooksLines.push(
-      `export { ${hook.export} } from "../${hook.from
-        .split("/")
-        .slice(2)
-        .join("/")}";`
-    );
-
-  // Write files
-  await fs.writeFile(
+  await writeFormattedFile(
     "./lib/index.tsx",
-    await format(indexLines.join("\n"), {
-      parser: "typescript",
-    })
+    generateExportLines(components, "./")
   );
 
   await fs.mkdir("./lib/providers");
-  await fs.writeFile(
+  await writeFormattedFile(
     "./lib/providers/index.tsx",
-    await format(providersLines.join("\n"), {
-      parser: "typescript",
-    })
+    generateExportLines(providers, "../")
   );
 
   await fs.mkdir("./lib/hooks");
-  await fs.writeFile(
+  await writeFormattedFile(
     "./lib/hooks/index.tsx",
-    await format(hooksLines.join("\n"), {
-      parser: "typescript",
-    })
+    generateExportLines(hooks, "../")
   );
+};
+
+// Generate export lines for an array of items.
+const generateExportLines = (items, basePath) =>
+  items
+    .map(
+      (item) =>
+        `export { ${item.export} } from "${basePath}${item.from
+          .split("/")
+          .slice(2)
+          .join("/")}";`
+    )
+    .join("\n");
+
+// Write formatted TypeScript code to a file.
+const writeFormattedFile = async (path, lines) => {
+  const content = await format(lines, { parser: "typescript" });
+  await fs.writeFile(path, content);
 };

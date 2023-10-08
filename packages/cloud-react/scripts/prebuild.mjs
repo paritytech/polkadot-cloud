@@ -6,14 +6,10 @@ import { generateTypeExports } from "./generateTypeExports.mjs";
 
 const main = async () => {
   // Generate type exports.
-  const folderPath = "./lib";
-  const outputFilePath = "./lib/types.d.ts";
-  generateTypeExports(folderPath, outputFilePath);
+  generateTypeExports("./lib", "./lib/types/index.ts");
 
   // Generate entry files.
-  await generateExportEntries({
-    ignore: ["styles", "svg", "utils", "hooks"],
-  });
+  await generateExportEntries({ ignore: ["styles", "svg", "utils", "hooks"] });
 };
 
 await main();

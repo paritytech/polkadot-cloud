@@ -1,7 +1,10 @@
-import fs from "fs";
+import fs, { existsSync } from "fs";
 import path from "path";
 
 export const generateTypeExports = (folderPath, outputFilePath) => {
+  // Ensure folder exists folders.
+  if (!existsSync(`./lib/types`)) fs.mkdirSync("./lib/types");
+
   let exportedTypes = [];
 
   const processFile = (filePath) => {
@@ -19,7 +22,7 @@ export const generateTypeExports = (folderPath, outputFilePath) => {
             .replace(/\\/g, "/")
             .replace(".ts", "");
           exportedTypes.push(
-            `export { ${matches[2]} } from "./${relativePath}";`
+            `export { ${matches[2]} } from "../${relativePath}";`
           );
         }
       }
