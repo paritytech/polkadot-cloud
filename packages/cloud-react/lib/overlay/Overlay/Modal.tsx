@@ -6,7 +6,7 @@ import { ModalCard } from "../../base/modal/ModalCard";
 import { ModalScroll } from "../../base/modal/ModalScroll";
 import { useAnimation } from "framer-motion";
 import { FC, useEffect, useRef } from "react";
-import { useOverlay } from "../../hooks";
+import { useOverlay } from "../OverlayProvider/useOverlay";
 import type { ModalProps } from "../OverlayProvider/types";
 import { ErrorBoundary } from "react-error-boundary";
 
