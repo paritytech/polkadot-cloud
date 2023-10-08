@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { ComponentBaseWithClassName } from "../../../types";
+import { ComponentBaseWithClassName } from "../../../utils/types";
 import "@polkadot-cloud/core/css/base/modal/CanvasCard/index.css";
 
 /**

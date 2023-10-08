@@ -4,7 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { ButtonHelp } from "../../../buttons/ButtonHelp";
 import { ButtonMonoInvert } from "../../../buttons/ButtonMonoInvert";
 import { ButtonPrimaryInvert } from "../../../buttons/ButtonPrimaryInvert";
-import { ComponentBase } from "../../../types";
+import { ComponentBase } from "../../../utils/types";
 import { motion } from "framer-motion";
 import { FunctionComponent, SVGProps } from "react";
 import "@polkadot-cloud/core/css/base/hardware/HardwareStatusBar/index.css";

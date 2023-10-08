@@ -1,7 +1,7 @@
 // Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
-import { ComponentBaseWithClassName } from "../../types";
+import { ComponentBaseWithClassName } from "../../utils/types";
 import { onMouseHandlers, valEmpty } from "../../utils";
 import { ButtonCommonProps } from "../types";
 import "@polkadot-cloud/core/css/buttons/ButtonTab/index.css";

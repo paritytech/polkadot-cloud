@@ -3,7 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { IconDefinition, IconProp } from "@fortawesome/fontawesome-svg-core";
 import { MouseEvent } from "react";
-import { ComponentBaseWithClassName } from "../types";
+import { ComponentBaseWithClassName } from "../utils/types";
 
 // Common button props, applied to all buttons
 export interface ButtonCommonProps {

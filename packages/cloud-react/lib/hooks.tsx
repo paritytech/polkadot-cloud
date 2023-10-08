@@ -5,7 +5,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { ExtensionsContext } from "./connect/ExtensionsProvider";
 import { OverlayContext } from "./overlay/OverlayProvider";
-import { AnyJson, AnyFunction } from "./types";
+import { AnyJson, AnyFunction } from "./utils/types";
 import { useContext, useEffect, useRef } from "react";
 
 export const useOverlay = () => useContext(OverlayContext);

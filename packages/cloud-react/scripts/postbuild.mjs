@@ -20,6 +20,9 @@ const main = async () => {
 
   // Rmmove generated content.
   fs.unlinkSync(`./lib/index.tsx`);
+  fs.unlinkSync(`./lib/types.d.ts`);
+  fs.rmSync("./lib/providers", { recursive: true, force: true });
+  fs.rmSync("./lib/hooks", { recursive: true, force: true });
 };
 
 await main();

@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { InfoSVG } from "../../svg/Info";
-import { ComponentBaseWithClassName } from "../../types";
+import { ComponentBaseWithClassName } from "../../utils/types";
 import { valEmpty, onMouseHandlers } from "../../utils";
 import { ButtonCommonProps } from "../types";
 import "@polkadot-cloud/core/css/buttons/ButtonHelp/index.css";

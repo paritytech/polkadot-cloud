@@ -2,7 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { ReactNode, RefObject } from "react";
-import { ComponentBase, ComponentBaseWithClassName } from "../../types";
+import { ComponentBase, ComponentBaseWithClassName } from "../../utils/types";
 import { AnimationProps } from "framer-motion";
 
 // eslint-disable-next-line

@@ -1,7 +1,7 @@
 // Copyright 2023 @paritytech/polkadot-staking-dashboard authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
-import { AnyFunction } from "@packages/cloud-react/lib/types";
+import { AnyFunction } from "@packages/cloud-react/lib/utils/types";
 import { AnyObject } from "@packages/utils/lib/types";
 import { useEffect } from "react";
 
