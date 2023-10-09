@@ -15,7 +15,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
       <Edit folder={folder} />
       <Header
         title="Extensions Provider"
-        subtitle="A React context provider that discovers available web3 exensions."
+        subtitle="Discover available web3 exensions and manage their status."
         npm={npm}
         status="stable"
       />
