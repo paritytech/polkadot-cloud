@@ -4,9 +4,10 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { Edit } from "@docs/Edit";
 import { Header } from "@docs/Header";
 import { DocProps } from "@docs/types";
-import { Example } from "./Example";
+import { ProviderExample } from "./ProviderExample";
 import { Note } from "@docs/Note";
 import { Link } from "react-router-dom";
+import { HookExample } from "./HookExample";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (
@@ -18,6 +19,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
         npm={npm}
         status="stable"
       />
+
       <p>
         <a
           href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/cloud-react/lib/connect/ExtensionsProvider/index.tsx"
@@ -31,7 +33,13 @@ export const Doc = ({ folder, npm }: DocProps) => {
         <code>ExtensionsProvider</code> to give your components access to the
         available web extensions:
       </p>
-      <Example />
+      <ProviderExample />
+
+      <p>
+        With the provider in place, extensions data can be accessed with the{" "}
+        <code>useExtensions</code> hook:
+      </p>
+      <HookExample />
 
       <Note>
         <p>

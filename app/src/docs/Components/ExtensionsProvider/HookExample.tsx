@@ -3,14 +3,13 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { SimpleEditor } from "@docs/SimpleEditor";
 
-export const Example = () => {
-  const code = `import { ExtensionsProvider } from '@polkadot-cloud/react/providers';
+export const HookExample = () => {
+  const code = `import { useExtensions } from '@polkadot-cloud/react/hooks';
 
-const AppWithProvider = () => (
-  <ExtensionsProvider>
-    <App />
-  </ExtensionsProvider>
-);`;
+const App = () => {
+  const { extensions } = useExtensions();
+  ...
+}`;
 
   return <SimpleEditor code={code} standalone />;
 };
