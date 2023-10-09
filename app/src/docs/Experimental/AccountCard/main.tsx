@@ -1,4 +1,6 @@
-import { Header } from "@docs/Header";
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */ import { Header } from "@docs/Header";
+
 import { Edit } from "@docs/Edit";
 
 import { AccountCardPageInfo } from "./AccountCardPageInfo";

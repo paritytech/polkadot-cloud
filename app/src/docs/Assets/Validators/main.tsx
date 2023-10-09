@@ -1,3 +1,6 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
 import { Note } from "@docs/Note";
 import { Edit } from "@docs/Edit";
 import { Header } from "@docs/Header";

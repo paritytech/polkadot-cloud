@@ -135,7 +135,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   /* CSS3: Leave enough room to show footer where content does not consume 100vh. */
   min-height: calc(100vh - 5.5rem);
 
-  @media (width < 1150px) {
+  @media (width < 1200px) {
     padding: 0 2.5rem;
     width: auto;
   }
@@ -146,7 +146,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     padding: 3.3rem 0 3rem;
     overflow: hidden;
 
-    @media (width >= 1150px) {
+    @media (width >= 1200px) {
       position: relative;
       left: -5%;
     }
@@ -284,7 +284,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 }
 
 .toggle-menu {
-  @media (width >= 1150px) {
+  @media (width >= 1200px) {
     display: none;
   }
 
