@@ -5,6 +5,8 @@ import { Edit } from "@docs/Edit";
 import { Header } from "@docs/Header";
 import { DocProps } from "@docs/types";
 import { Example } from "./Example";
+import { Note } from "@docs/Note";
+import { Link } from "react-router-dom";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (
@@ -25,13 +27,19 @@ export const Doc = ({ folder, npm }: DocProps) => {
           <code>ExtensionsProvider</code>
         </a>{" "}
         allows your app to discover the currently installed web3 extensions, and
-        provides a setter to update their status.
-      </p>
-      <p>
-        Wrap your app with <code>ExtensionsProvider</code> to give your
-        components access to the available web extensions:
+        provides a setter to update their status. Wrap your app with{" "}
+        <code>ExtensionsProvider</code> to give your components access to the
+        available web extensions:
       </p>
       <Example />
+
+      <Note>
+        <p>
+          <code>ExtensionsProvider</code> supports all the web3 wallet
+          extensions listed on the <Link to="/extensions">Web3 Extensions</Link>{" "}
+          page.
+        </p>
+      </Note>
 
       <h3>Extension Syncing</h3>
       <p>
@@ -57,7 +65,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
           <li>
             If extensions are available, an array of extension records
             containing the <code>id</code> and <code>enable</code> function of
-            the extension is provided.
+            each extension are returned.
           </li>
           <li>
             If no extensions are avalable, <code>null</code> is returned.
@@ -73,8 +81,8 @@ export const Doc = ({ folder, npm }: DocProps) => {
 
       <h3 className="reference">extensionsStatus</h3>
       <p>
-        A key value record of each extension and their status. Empty by default
-        until <code>setExtensionStatus</code> is called.
+        A key value record of each extension and their status. Empty object by
+        default until <code>setExtensionStatus</code> is called.
       </p>
 
       <h3 className="reference">setExtensionStatus(id, status)</h3>
