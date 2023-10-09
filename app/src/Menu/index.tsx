@@ -41,9 +41,7 @@ export const Menu = () => {
       {routeCategories.map(({ name, ...rest }, i) => (
         <Fragment key={`nav_${i}`}>
           {"paths" in rest ? (
-            <>
-              <Category name={name} rest={rest} i={i} />
-            </>
+            <Category name={name} rest={rest} i={i} />
           ) : (
             <>
               <Link

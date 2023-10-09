@@ -2,12 +2,10 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 .menu {
+  --menu-width: 19rem;
+
+  width: var(--menu-width);
   position: fixed;
-
-  @media (width < 1150px) {
-    position: relative;
-  }
-
   top: 0;
   left: 0;
   height: auto;
@@ -15,15 +13,17 @@ SPDX-License-Identifier: GPL-3.0-only */
   padding-top: 6.75rem;
   padding-bottom: 2rem;
   padding-left: 2rem;
-  width: 15rem;
-  z-index: 2;
   font-size: 1.05rem;
   overflow: scroll;
+  z-index: 2;
+
+  @media (width < 1200px) {
+    position: relative;
+  }
 
   &.open {
     background: var(--background-default);
-    border: 1px solid var(--border-primary-color);
-    width: 16.5rem;
+    width: var(--menu-width);
     min-height: 100vh;
     z-index: 10;
   }
@@ -60,6 +60,10 @@ SPDX-License-Identifier: GPL-3.0-only */
       line-height: 2.75rem;
       height: 2.75rem;
       padding-left: 1.65rem;
+
+      &.group {
+        padding-left: 2.5rem;
+      }
 
       &.lg {
         font-size: 1.25rem;

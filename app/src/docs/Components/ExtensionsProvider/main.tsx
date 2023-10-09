@@ -3,10 +3,6 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { Edit } from "@docs/Edit";
 import { Header } from "@docs/Header";
-import { LoaderCube } from "./LoaderCube";
-import { LoaderLine } from "./LoaderLine";
-import { LoaderDots } from "./LoaderDots";
-
 import { DocProps } from "@docs/types";
 
 export const Doc = ({ folder, npm }: DocProps) => {
@@ -14,17 +10,11 @@ export const Doc = ({ folder, npm }: DocProps) => {
     <>
       <Edit folder={folder} />
       <Header
-        title="Loaders"
-        subtitle="Pure CSS animated loaders."
+        title="Extensions Provider"
+        subtitle="A React context provider that discovers available web3 exensions."
         npm={npm}
-        status="experimental"
+        status="stable"
       />
-      <h3>Line Loader</h3>
-      <LoaderLine />
-      <h3>Dots Loader</h3>
-      <LoaderDots />
-      <h3>Cube Loader</h3>
-      <LoaderCube />
     </>
   );
 };

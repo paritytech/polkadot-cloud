@@ -21,6 +21,7 @@ import { Textfield } from "../docs/Experimental/Textfield";
 import { Overview } from "../docs/GettingStarted/Overview";
 import { Installation } from "../docs/GettingStarted/Installation";
 import { UsingThemes } from "../docs/GettingStarted/UsingThemes";
+import { ExtensionsProvider } from "../docs/Components/ExtensionsProvider";
 
 type Routes = {
   name: string;
@@ -140,6 +141,11 @@ const assetsRoutes = [
 
 const componentsRoutes = [
   {
+    path: "extensions_provider",
+    name: "Extensions Provider",
+    element: <ExtensionsProvider />,
+  },
+  {
     path: "polkicon",
     name: "Polkicon",
     element: <Polkicon />,
@@ -210,6 +216,10 @@ export const routeCategories: RouteCategories = [
   {
     name: "Components",
     paths: [
+      {
+        heading: "Connect",
+        paths: ["extensions_provider"],
+      },
       {
         paths: ["polkicon"],
       },
