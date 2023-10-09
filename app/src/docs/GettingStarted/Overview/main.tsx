@@ -11,7 +11,7 @@ export const Doc = ({ folder }: DocProps) => {
     <>
       <Edit folder={folder} />
       <Header
-        title="Polkadot Cloud"
+        title="Overview"
         subtitle="Polkadot Cloud is a library and platform for developing and publishing assets for Polkadot dapps."
         npm={undefined}
       />

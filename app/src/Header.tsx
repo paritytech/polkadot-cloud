@@ -6,6 +6,7 @@ import IconSVG from "./svg/icon.svg?react";
 import { useGlitch } from "react-powerglitch";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { useTheme } from "./contexts/Theme";
+import pkg from "../../package.json";
 
 export const Header = () => {
   const { mode, toggleMode } = useTheme();
@@ -33,9 +34,7 @@ export const Header = () => {
         </div>
         <div className="title">
           <h3>Polkadot Cloud Docs</h3>
-          <p>
-            v0.2.14 <span className="beta">Beta</span>
-          </p>
+          <p>v{pkg?.version}-beta</p>
         </div>
       </section>
       <section>

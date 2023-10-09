@@ -120,12 +120,6 @@ SPDX-License-Identifier: GPL-3.0-only */
         color: var(--text-color-tertiary);
         font-family: InterSemiBold, sans-serif;
         letter-spacing: 0.075rem;
-
-        > .beta {
-          color: var(--accent-color-secondary);
-          text-transform: uppercase;
-          margin-left: 0.2rem;
-        }
       }
     }
   }
