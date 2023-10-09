@@ -8,6 +8,7 @@ import {
   getColors,
   ChainName,
 } from "./utils";
+import { isValidAddress } from "@polkadot-cloud/utils";
 
 interface PolkiconProps {
   size?: number | string;
@@ -53,10 +54,17 @@ export const Polkicon = ({
       }
     }
     const defaultColors = new Array<string>(circleXy.length).fill("#ddd");
+    const deactiveColors = new Array<string>(circleXy.length).fill(
+      "var(--background-invert)"
+    );
 
     setXy(circleXy);
-    setColors(initialColors || getColors(address) || defaultColors);
-  }, []);
+    setColors(
+      isValidAddress(address)
+        ? initialColors || getColors(address) || defaultColors
+        : deactiveColors
+    );
+  }, [address]);
 
   const handleClick = useCallback(() => {
     navigator && navigator.clipboard.writeText(address);
