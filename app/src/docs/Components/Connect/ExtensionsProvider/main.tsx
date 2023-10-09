@@ -61,14 +61,15 @@ export const Doc = ({ folder, npm }: DocProps) => {
         {" "}
         <code>checkingInjectedWeb3</code> will initially be <code>true</code>,
         and updated to <code>false</code> once <code>window.injectedWeb3</code>{" "}
-        is present.
+        is present, or if <code>injectedWeb3</code> is not found after a 5
+        second timeout.
       </p>
 
       <h2>Values</h2>
 
       <h3 className="reference">extensions</h3>
       <p>
-        An array of available extensions.
+        A list of available extensions, or null.
         <ul>
           <li>
             If extensions are available, an array of extension records
@@ -83,8 +84,8 @@ export const Doc = ({ folder, npm }: DocProps) => {
 
       <h3 className="reference">checkingInjectedWeb3</h3>
       <p>
-        Returns a boolean reflecting whether <code>window.injectedWeb3</code>{" "}
-        has been injected.
+        Returns a boolean reflecting whether <code>window.injectedWeb3</code> is
+        being checked.
       </p>
 
       <h3 className="reference">extensionsStatus</h3>
