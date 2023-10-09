@@ -3,13 +3,13 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { SimpleEditor } from "@docs/SimpleEditor";
 
-export const OverlayProvider = () => {
-  const code = `import { OverlayProvider } from '@polkadot-cloud/react/providers';
+export const Example = () => {
+  const code = `import { ExtensionsProvider } from '@polkadot-cloud/react/providers';
 
 const AppWithProvider = () => (
-  <OverlayProvider>
+  <ExtensionsProvider>
     <App />
-  </OverlayProvider>
+  </ExtensionsProvider>
 );`;
 
   return <SimpleEditor code={code} standalone />;
