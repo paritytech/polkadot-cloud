@@ -75,6 +75,11 @@ export const Doc = ({ folder, npm }: DocProps) => {
         palette. The <code>colors</code> prop accepts an array of colors, which
         will be applied to the icon in the order they were provided.
       </p>
+      <p>
+        If the address provided to the polkadot icon is not a valid one (using
+        the <code>isValidAddress</code> from <code>@polkadot-cloud/utils</code>
+        ), then a generic "deactive" Polkicon wll appear;
+      </p>
       <PolkiconColors />
 
       <h2>CSS Variables Used</h2>
