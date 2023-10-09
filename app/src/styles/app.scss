@@ -146,7 +146,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     padding: 3.3rem 0 3rem;
     overflow: hidden;
 
-    @media (width >= 1200px) {
+    @media (width >= 1150px) {
       position: relative;
       left: -5%;
     }
@@ -284,7 +284,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 }
 
 .toggle-menu {
-  @media (width >= 1200px) {
+  @media (width >= 1150px) {
     display: none;
   }
 

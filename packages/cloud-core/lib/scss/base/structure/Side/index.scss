@@ -20,8 +20,8 @@ SPDX-License-Identifier: GPL-3.0-only */
   max-width: v.$side-menu-maximised-width;
 
   &.minimised {
-    min-width: v.$side-menu-minimised-width;
-    max-width: v.$side-menu-minimised-width;
+    min-width: var(--core-side-width);
+    max-width: var(--core-side-width);
   }
 
   @media (max-width: v.$page-width-medium-threshold) {
@@ -30,7 +30,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     left: 0;
 
     &.hidden {
-      left: (-(v.$side-menu-maximised-width));
+      left: calc(var(--core-side-width) * -1);
     }
   }
 }

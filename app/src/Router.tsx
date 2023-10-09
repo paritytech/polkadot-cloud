@@ -37,11 +37,9 @@ export const Router = () => {
           open={sideMenuOpen}
           minimised={false}
           style={{
-            height: "auto",
             minHeight: "calc(100vh - 5.5rem)",
-            minWidth: "none",
-            maxWidth: "none",
           }}
+          width="20rem"
         >
           <Menu />
         </Side>
@@ -63,6 +61,7 @@ export const Router = () => {
           </div>
         </Main>
       </Body>
+
       {/* App footer */}
       <Footer />
     </>
