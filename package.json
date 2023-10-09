@@ -28,7 +28,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@rollup/plugin-json": "^6.0.1",
     "@rollup/plugin-commonjs": "^25.0.5",
-    "@rollup/plugin-node-resolve": "^15.2.2",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/react": "^18.2.25",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
