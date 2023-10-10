@@ -15,7 +15,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
       <Edit folder={folder} />
       <Header
         title="Extensions Provider"
-        subtitle="A React context provider that discovers available web3 exensions."
+        subtitle="Discover available web3 exensions and manage their status."
         npm={npm}
         status="stable"
       />
@@ -39,6 +39,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
         With the provider in place, extensions data can be accessed with the{" "}
         <code>useExtensions</code> hook:
       </p>
+
       <HookExample />
 
       <Note>
@@ -61,14 +62,15 @@ export const Doc = ({ folder, npm }: DocProps) => {
         {" "}
         <code>checkingInjectedWeb3</code> will initially be <code>true</code>,
         and updated to <code>false</code> once <code>window.injectedWeb3</code>{" "}
-        is present.
+        is present, or if <code>injectedWeb3</code> is not found after a 5
+        second timeout.
       </p>
 
       <h2>Values</h2>
 
-      <h3 className="reference">extensions</h3>
+      <h3 className="reference">extensions: ExtensionInjected[]</h3>
       <p>
-        An array of available extensions.
+        A list of available extensions, or null.
         <ul>
           <li>
             If extensions are available, an array of extension records
@@ -81,19 +83,21 @@ export const Doc = ({ folder, npm }: DocProps) => {
         </ul>
       </p>
 
-      <h3 className="reference">checkingInjectedWeb3</h3>
+      <h3 className="reference">checkingInjectedWeb3: boolean</h3>
       <p>
-        Returns a boolean reflecting whether <code>window.injectedWeb3</code>{" "}
-        has been injected.
+        Returns a boolean reflecting whether <code>window.injectedWeb3</code> is
+        being checked.
       </p>
 
-      <h3 className="reference">extensionsStatus</h3>
+      <h3 className="reference">extensionsStatus: ExtensionsStatus</h3>
       <p>
         A key value record of each extension and their status. Empty object by
         default until <code>setExtensionStatus</code> is called.
       </p>
 
-      <h3 className="reference">setExtensionStatus(id, status)</h3>
+      <h3 className="reference">
+        setExtensionStatus(id: string, status: ExtensionStatus)
+      </h3>
       <p>
         A function that takes an extension id and status, and updates the{" "}
         <code>extensionsStatus</code> record. Accepts values of{" "}

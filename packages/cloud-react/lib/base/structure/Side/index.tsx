@@ -1,6 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
+import { CSSProperties } from "react";
 import { valEmpty } from "../../../utils";
 import { SideProps } from "../../types";
 import "@polkadot-cloud/core/css/base/structure/Side/index.css";
@@ -11,14 +12,24 @@ import "@polkadot-cloud/core/css/base/structure/Side/index.css";
  * on smaller screens.
  * @summary Handles maximised and minimised transitions.
  */
-export const Side = ({ children, style, open, minimised }: SideProps) => (
-  <div
-    className={`core-side${valEmpty(!open, "hidden")}${valEmpty(
-      minimised,
-      "minimised"
-    )}`}
-    style={style}
-  >
-    {children}
-  </div>
-);
+export const Side = ({
+  children,
+  style,
+  open,
+  minimised,
+  width = "20rem",
+}: SideProps) => {
+  const vars = { "--core-side-width": width } as CSSProperties;
+
+  return (
+    <div
+      style={{ ...vars, ...style }}
+      className={`core-side${valEmpty(!open, "hidden")}${valEmpty(
+        minimised,
+        "minimised"
+      )}`}
+    >
+      {children}
+    </div>
+  );
+};

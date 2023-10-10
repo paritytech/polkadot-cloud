@@ -16,8 +16,8 @@ SPDX-License-Identifier: GPL-3.0-only */
   transition: all 0.5s cubic-bezier(0.1, 1, 0.2, 1);
 
   /* maximised by default, or minimised otherwise. */
-  min-width: v.$side-menu-maximised-width;
-  max-width: v.$side-menu-maximised-width;
+  min-width: var(--core-side-width);
+  max-width: var(--core-side-width);
 
   &.minimised {
     min-width: v.$side-menu-minimised-width;
@@ -30,7 +30,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     left: 0;
 
     &.hidden {
-      left: (-(v.$side-menu-maximised-width));
+      left: calc(var(--core-side-width) * -1);
     }
   }
 }
