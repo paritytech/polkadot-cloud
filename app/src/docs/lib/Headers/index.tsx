@@ -2,6 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { ReactNode } from "react";
+import AnchorSVG from "../../../svg/anchor.svg?react";
 
 interface Props {
   children: ReactNode;
@@ -67,11 +68,10 @@ export const H5 = ({ children, className, id }: Props) => {
 const Anchor = ({ id }: { id: string }) => (
   <>
     <span className="anchor" id={id} />
-    {/* Anchors are currently disabled. *}
-    {/* {id && (
+    {id && (
       <a href={`#${id}`} className="anc">
         <AnchorSVG />
       </a>
-    )} */}
+    )}
   </>
 );

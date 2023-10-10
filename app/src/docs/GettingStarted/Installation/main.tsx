@@ -10,6 +10,7 @@ import { InstallReact } from "./InstallReact";
 import { InstallReactCore } from "./InstallReactCore";
 import { InstallBasic } from "./InstallBasic";
 import { Note } from "@docs/Note";
+import { H2, H3 } from "@docs/Headers";
 
 export const Doc = ({ folder }: DocProps) => {
   return (
@@ -20,7 +21,7 @@ export const Doc = ({ folder }: DocProps) => {
         subtitle="Install Polkadot Cloud packages and super charge your Polkadot dapp."
         npm={undefined}
       />
-      <h2>Basic Installation</h2>
+      <H2 id="basic-installation">Basic Installation</H2>
       <p>
         If your project requires Polkadot Cloud CSS variables, assets, or
         utilities, install the following dependencies:
@@ -42,7 +43,7 @@ export const Doc = ({ folder }: DocProps) => {
         </li>
       </ul>
 
-      <h2>Installation for React</h2>
+      <H2 id="installation-for-react">Installation for React</H2>
 
       <p>
         Many of the UI components of <code>@polkadot&#8209;cloud/react</code>{" "}
@@ -58,7 +59,7 @@ export const Doc = ({ folder }: DocProps) => {
         If however you wish to use fully fledged UI components out of the box,
         read on.
       </p>
-      <h3>With CSS Variables</h3>
+      <H3 id="with-css-variables">With CSS Variables</H3>
       <p>
         Firstly, install <code>core</code> and <code>react</code> packages
         together:

@@ -1,5 +1,6 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
+import { H3 } from "@docs/Headers";
 import { Props } from "./types";
 
 export const UtilsComponent = ({
@@ -10,7 +11,7 @@ export const UtilsComponent = ({
 }: Props) => {
   return (
     <>
-      <h3>{title}</h3>
+      <H3 id="title">{title}</H3>
       <p>{description}</p>
       <div className="params">
         {params.map((prm) => {
