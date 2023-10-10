@@ -11,7 +11,7 @@
 </p>
 
 <div align="center">
-<a href="https://polkadot.cloud/#/overview">📖 Documentation</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/paritytech/polkadot-cloud"">GitHub</a>
+<a href="https://polkadot.cloud/overview">📖 Documentation</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/paritytech/polkadot-cloud"">GitHub</a>
 </div>
 
 <hr>
@@ -26,9 +26,9 @@
 
 ## Docs
 
-- [Polkadot Cloud Docs: Installation](https://polkadot.cloud/#/polkicon): Install and start using `@polkadot‑cloud/react`.
+- [Polkadot Cloud Docs: Installation](https://polkadot.cloud/polkicon): Install and start using `@polkadot‑cloud/react`.
 
-- [Polkadot Cloud Docs: Components (Polkicon)](https://polkadot.cloud/#/polkicon): Browse Cloud React Components.
+- [Polkadot Cloud Docs: Components (Polkicon)](https://polkadot.cloud/polkicon): Browse Cloud React Components.
 
 ## License
 

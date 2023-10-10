@@ -11,7 +11,7 @@
 </p>
 
 <div align="center">
-<a href="https://polkadot.cloud/#/overview">📖 Documentation</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/paritytech/polkadot-cloud"">GitHub</a>
+<a href="https://polkadot.cloud/overview">📖 Documentation</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/paritytech/polkadot-cloud"">GitHub</a>
 </div>
 
 <hr>
@@ -25,8 +25,8 @@
 
 ## Docs
 
-- [Polkadot Cloud Docs: Base Utilities](https://polkadot.cloud/#/base_utilities)
-- [Polkadot Cloud Docs: Unit Utilities](https://polkadot.cloud/#/unit_utilities)
+- [Polkadot Cloud Docs: Base Utilities](https://polkadot.cloud/base_utilities)
+- [Polkadot Cloud Docs: Unit Utilities](https://polkadot.cloud/unit_utilities)
 
 ## License
 

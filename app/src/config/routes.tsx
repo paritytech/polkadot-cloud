@@ -142,12 +142,12 @@ const assetsRoutes = [
 
 const componentsRoutes = [
   {
-    path: "extensions_provider",
+    path: "extensions-provider",
     name: "Extensions",
     element: <ExtensionsProvider />,
   },
   {
-    path: "extension_accounts_provider",
+    path: "extension-accounts-provider",
     name: "Extension Accounts",
     element: <ExtensionAccountsProvider />,
   },
@@ -224,7 +224,7 @@ export const routeCategories: RouteCategories = [
     paths: [
       {
         heading: "Connect",
-        paths: ["extensions_provider", "extension_accounts_provider"],
+        paths: ["extensions-provider", "extension-accounts-provider"],
       },
       {
         paths: ["polkicon"],

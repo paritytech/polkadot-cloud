@@ -54,7 +54,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
       <p />
       <ul>
         <li>
-          <Link to="/extensions_provider">
+          <Link to="/extensions-provider">
             <code>ExtensionsProvider</code>
           </Link>
           : Must wrap <code>ExtensionAccountsProvider</code> to provide the
