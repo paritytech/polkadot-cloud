@@ -172,7 +172,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--border-primary-color);
     margin-bottom: 2rem;
     padding: 0;
   }
