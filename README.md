@@ -10,7 +10,7 @@
 
 Core styles and themes for Polkadot dapps.
 
-- [Using Polkadot Cloud Themes](https://polkadot.cloud/using_themes)
+- [Using Polkadot Cloud Themes](https://polkadot.cloud/using-themes)
 
 ### `@polkadot-cloud/react` &nbsp;[[source](https://github.com/paritytech/polkadot-cloud/tree/main/packages/cloud-react) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/react)]
 
@@ -39,7 +39,7 @@ Data sources and static assets for Polkadot dapps.
 
 Common utility functions to aid in Polkadot dapp development.
 
-- [Base](https://polkadot.cloud/base_utilities): A collection of reusable utilities for manipulating string / number / arrays etc.
+- [Base](https://polkadot.cloud/base-utilities): A collection of reusable utilities for manipulating string / number / arrays etc.
 
 - [Unit](https://polkadot.cloud/unit_utilities): A collection of reusable utilities for manipulating chain units.
 

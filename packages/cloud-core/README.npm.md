@@ -26,7 +26,7 @@
 
 ## Docs
 
-- [Polkadot Cloud Docs: Using Themes](https://polkadot.cloud/using_themes): How to use core themes in your Polkadot dapp.
+- [Polkadot Cloud Docs: Using Themes](https://polkadot.cloud/using-themes): How to use core themes in your Polkadot dapp.
 
 ## License
 

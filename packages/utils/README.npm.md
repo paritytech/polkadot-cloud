@@ -25,7 +25,7 @@
 
 ## Docs
 
-- [Polkadot Cloud Docs: Base Utilities](https://polkadot.cloud/base_utilities)
+- [Polkadot Cloud Docs: Base Utilities](https://polkadot.cloud/base-utilities)
 - [Polkadot Cloud Docs: Unit Utilities](https://polkadot.cloud/unit_utilities)
 
 ## License

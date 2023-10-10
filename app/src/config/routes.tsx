@@ -60,7 +60,7 @@ const gettingStartedRoutes = [
     element: <Installation />,
   },
   {
-    path: "using_themes",
+    path: "using-themes",
     name: "Using Themes",
     element: <UsingThemes />,
   },
@@ -69,7 +69,7 @@ const gettingStartedRoutes = [
 // recipes
 const recipesRoutes = [
   {
-    path: "account_card",
+    path: "account-card",
     name: "Account card",
     element: <AccountCard />,
   },
@@ -78,7 +78,7 @@ const recipesRoutes = [
 // utils
 const utilsRoutes = [
   {
-    path: "base_utilities",
+    path: "base-utilities",
     name: "Base Utilities",
     element: <UtilitiesBase />,
   },
@@ -204,7 +204,7 @@ export const routeCategories: RouteCategories = [
         paths: ["installation"],
       },
       {
-        paths: ["using_themes"],
+        paths: ["using-themes"],
       },
     ],
   },
@@ -248,7 +248,7 @@ export const routeCategories: RouteCategories = [
     name: "Utilities",
     paths: [
       {
-        paths: ["base_utilities", "unit_utilities"],
+        paths: ["base-utilities", "unit_utilities"],
       },
     ],
   },
@@ -265,7 +265,7 @@ export const routeCategories: RouteCategories = [
       },
       {
         heading: "Recipes",
-        paths: ["account_card"],
+        paths: ["account-card"],
       },
     ],
   },
