@@ -38,7 +38,7 @@ export const Doc = ({ folder }: DocProps) => {
         </li>
         <li>
           The <code>utils</code> package will install commonly used{" "}
-          <Link to="/base_utilities">utility functions</Link>.
+          <Link to="/base-utilities">utility functions</Link>.
         </li>
       </ul>
 
