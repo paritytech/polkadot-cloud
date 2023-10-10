@@ -6,7 +6,7 @@ import { Providers } from "./Providers";
 
 export const App = () => {
   return (
-    <BrowserRouter basename="/">
+    <BrowserRouter basename="/polkadot-cloud">
       <Providers />
     </BrowserRouter>
   );
