@@ -147,7 +147,7 @@ const componentsRoutes = [
     element: <ExtensionsProvider />,
   },
   {
-    path: "extensions_accounts_provider",
+    path: "extension_accounts_provider",
     name: "Extension Accounts",
     element: <ExtensionAccountsProvider />,
   },
@@ -224,7 +224,7 @@ export const routeCategories: RouteCategories = [
     paths: [
       {
         heading: "Connect",
-        paths: ["extensions_provider", "extensions_accounts_provider"],
+        paths: ["extensions_provider", "extension_accounts_provider"],
       },
       {
         paths: ["polkicon"],
