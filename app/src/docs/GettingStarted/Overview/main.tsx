@@ -3,6 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { Edit } from "@docs/Edit";
 import { Header } from "@docs/Header";
+import { H2 } from "@docs/Headers";
 import { Note } from "@docs/Note";
 import { DocProps } from "@docs/types";
 
@@ -16,7 +17,7 @@ export const Doc = ({ folder }: DocProps) => {
         npm={undefined}
       />
 
-      <h2>Introduction</h2>
+      <H2 id="introduction">Introduction</H2>
       <p>
         Polkadot Cloud hosts a library of assets, ranging from data sources,
         graphical elements, to fully functional components, for app developers
@@ -86,7 +87,7 @@ export const Doc = ({ folder }: DocProps) => {
         </p>
       </Note>
 
-      <h2>Goals</h2>
+      <H2 id="goals">Goals</H2>
 
       <p>
         Polkadot Cloud aims to fill a void in the Polkadot app developer space

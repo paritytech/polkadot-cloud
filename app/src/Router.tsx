@@ -21,15 +21,18 @@ export const Router = () => {
 
   useEffect(() => {
     let scrollHash = false;
-
-    if (hash) {
-      const element = document?.querySelector(hash);
-      if (element) {
-        scrollHash = true;
-        element?.scrollIntoView({
-          behavior: "smooth",
-        });
+    try {
+      if (hash) {
+        const element = document?.querySelector(hash);
+        if (element) {
+          scrollHash = true;
+          element?.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
       }
+    } catch {
+      scrollHash = false;
     }
     if (!scrollHash) window.scrollTo(0, 0);
   }, [pathname, hash]);
