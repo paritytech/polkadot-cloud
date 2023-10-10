@@ -8,6 +8,7 @@ import { ProviderExample } from "./ProviderExample";
 import { Note } from "@docs/Note";
 import { Link } from "react-router-dom";
 import { HookExample } from "./HookExample";
+import { H2, H3 } from "@docs/Headers";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (
@@ -50,7 +51,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
         </p>
       </Note>
 
-      <h3>Extension Syncing</h3>
+      <H3 id="extension-syncing">Extension Syncing</H3>
       <p>
         Web3 extensions are injected into the <code>window.injectedWeb3</code>{" "}
         object, which is an asynchronous process that happens when the window
@@ -66,9 +67,11 @@ export const Doc = ({ folder, npm }: DocProps) => {
         second timeout.
       </p>
 
-      <h2>Values</h2>
+      <H2 id="values">Values</H2>
 
-      <h3 className="reference">extensions: ExtensionInjected[]</h3>
+      <H3 id="extensions" className="reference">
+        extensions: ExtensionInjected[]
+      </H3>
       <p>
         A list of available extensions, or null.
         <ul>
@@ -83,21 +86,25 @@ export const Doc = ({ folder, npm }: DocProps) => {
         </ul>
       </p>
 
-      <h3 className="reference">checkingInjectedWeb3: boolean</h3>
+      <H3 id="checkingInjectedWeb3" className="reference">
+        checkingInjectedWeb3: boolean
+      </H3>
       <p>
         Returns a boolean reflecting whether <code>window.injectedWeb3</code> is
         being checked.
       </p>
 
-      <h3 className="reference">extensionsStatus: ExtensionsStatus</h3>
+      <H3 id="extensionStatus" className="reference">
+        extensionsStatus: ExtensionsStatus
+      </H3>
       <p>
         A key value record of each extension and their status. Empty object by
         default until <code>setExtensionStatus</code> is called.
       </p>
 
-      <h3 className="reference">
+      <H3 id="setExtensionStatus" className="reference">
         setExtensionStatus(id: string, status: ExtensionStatus)
-      </h3>
+      </H3>
       <p>
         A function that takes an extension id and status, and updates the{" "}
         <code>extensionsStatus</code> record. Accepts values of{" "}
