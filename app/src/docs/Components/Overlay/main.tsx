@@ -124,7 +124,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
 
       <OverlayConfig />
 
-      <h2>CSS Variables Used</h2>
+      <H2 id="css-variables-used">CSS Variables Used</H2>
       <ul>
         <li>
           <code>--modal-background-color</code>: Overlay color of screen when

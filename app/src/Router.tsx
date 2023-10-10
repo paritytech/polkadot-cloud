@@ -34,7 +34,6 @@ export const Router = () => {
     } catch {
       scrollHash = false;
     }
-
     if (!scrollHash) window.scrollTo(0, 0);
   }, [pathname, hash]);
 

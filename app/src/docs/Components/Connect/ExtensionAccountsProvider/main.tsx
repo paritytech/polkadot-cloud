@@ -9,6 +9,7 @@ import { ProviderExample } from "./ProviderExample";
 import { ConnectExample } from "./ConnectExample";
 import { Note } from "@docs/Note";
 import { AccountsExample } from "./AccountsExample";
+import { H2, H3 } from "@docs/Headers";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (
@@ -50,7 +51,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
         </p>
       </Note>
 
-      <h3>Requires:</h3>
+      <H3 id="requires">Requires:</H3>
       <p />
       <ul>
         <li>
@@ -63,7 +64,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
       </ul>
       <hr />
 
-      <h3>Providers Setup</h3>
+      <H3 id="providers-setup">Providers Setup</H3>
       <p>
         Wrap your app with <code>ExtensionAccountsProvider</code> and provide
         the required props. Note that <code>ExtensionsProvider</code> is also
@@ -73,7 +74,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
 
       <ProviderExample />
 
-      <h3>Connecting Extensions</h3>
+      <H3 id="connecting-extensions">Connecting Extensions</H3>
 
       <p>
         With the providers in place, you can call{" "}
@@ -89,7 +90,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
         extension is already connected and if it exists.
       </p>
 
-      <h3>Getting Accounts</h3>
+      <H3 id="getting-accounts">Getting Accounts</H3>
 
       <p>
         Once connected to an extension, the subscribed accounts become available
@@ -100,18 +101,24 @@ export const Doc = ({ folder, npm }: DocProps) => {
 
       <AccountsExample />
 
-      <h2>Props</h2>
+      <H2 id="props">Props</H2>
 
-      <h3 className="reference">dappName: string</h3>
+      <H3 id="dappName" className="reference">
+        dappName: string
+      </H3>
       <p>
         A dapp identifier that is provided to the web3 extension(s) being
         connected to.
       </p>
 
-      <h3 className="reference">network: "polkadot" | "kusama" | "westend" </h3>
+      <H3 id="network" className="reference">
+        network: "polkadot" | "kusama" | "westend"{" "}
+      </H3>
       <p>The active network, in lower-case.</p>
 
-      <h3 className="reference">ss58: number</h3>
+      <H3 id="ss58" className="reference">
+        ss58: number
+      </H3>
       <p>The SS58 prefix of the current network.</p>
       <p>
         <i>
@@ -119,7 +126,9 @@ export const Doc = ({ folder, npm }: DocProps) => {
         </i>
       </p>
 
-      <h3 className="reference">activeAccount: string | null</h3>
+      <H3 id="activeAccount" className="reference">
+        activeAccount: string | null
+      </H3>
       <p>
         The current active account on your dapp, if any.{" "}
         <code>ExtensionAccountsProvider</code> will automatically connect to
@@ -127,33 +136,41 @@ export const Doc = ({ folder, npm }: DocProps) => {
         See the next prop for more details.
       </p>
 
-      <h3 className="reference">setActiveAccount(address: string)</h3>
+      <H3 id="setActiveAccount" className="reference">
+        setActiveAccount(address: string)
+      </H3>
       <p>
         Provide a setter function to call if the active account is found when
         subscribing to extension accounts.
       </p>
 
-      <h2>Values</h2>
+      <H2 id="values">Values</H2>
 
-      <h3 className="reference">
+      <H3 id="connectExtensionAccounts" className="reference">
         connectExtensionAccounts(extension: ExtensionInjected):
         Promise&#60;boolean&#62;
-      </h3>
+      </H3>
       <p>
         Call this function to connect to the provided <code>extension</code> and
         subscribe to its accounts.
       </p>
 
-      <h3 className="reference">extensionAccounts: ExtensionAccount[]</h3>
+      <H3 id="extensionAccounts" className="reference">
+        extensionAccounts: ExtensionAccount[]
+      </H3>
       <p>The list of extension accounts that have been subscribed to.</p>
 
-      <h3 className="reference">extensionAccountsSynced: boolean</h3>
+      <H3 id="extensionAccountsSynced" className="reference">
+        extensionAccountsSynced: boolean
+      </H3>
       <p>
         Signals whether extensions are still being connected to and subscribed
         to. A value of <code>true</code> means that the process is complete.
       </p>
 
-      <h3 className="reference">forgetAccounts(accounts: string[])</h3>
+      <H3 id="forgetAccounts" className="reference">
+        forgetAccounts(accounts: string[])
+      </H3>
       <p>
         Call this function to forget an array of accounts that have been
         connected to. This effectively removes them from the provider state, and
