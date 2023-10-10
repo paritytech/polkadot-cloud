@@ -168,6 +168,15 @@ SPDX-License-Identifier: GPL-3.0-only */
     font-size: inherit;
   }
 
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin-bottom: 2rem;
+    padding: 0;
+  }
+
   .params {
     border-top: 1px solid var(--border-primary-color);
     border-radius: 0.5rem;
@@ -194,6 +203,8 @@ SPDX-License-Identifier: GPL-3.0-only */
     position: relative;
     top: -7.75rem;
   }
+
+
 
   .note {
     border: 1px solid var(--accent-color-pending);
