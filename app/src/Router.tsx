@@ -16,12 +16,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export const Router = () => {
-  const { pathname } = useLocation();
   const { sideMenuOpen } = useUi();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    let scrollHash = false;
+
+    if (hash) {
+      const element = document?.querySelector(hash);
+      if (element) {
+        scrollHash = true;
+        element?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    }
+    if (!scrollHash) window.scrollTo(0, 0);
+  }, [pathname, hash]);
 
   return (
     <>
