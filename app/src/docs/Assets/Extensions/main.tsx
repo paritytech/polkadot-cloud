@@ -10,6 +10,7 @@ import { H3, H4 } from "@docs/Headers";
 import { DocProps } from "@docs/types";
 import { ImportSimple } from "./ImportSimple";
 import { External } from "@docs/External";
+import { Bar } from "@docs/Bar";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (
@@ -43,46 +44,60 @@ export const Doc = ({ folder, npm }: DocProps) => {
         objects, hosting browser-based extensions and hardware wallet extensions
         respectively. If you prefer an array of items,{" "}
         <code>ExtensionsArray</code> and <code>Hardwarerray</code> exports are
-        also available:
+        also available.
       </p>
+
+      <p>Each extension record consists of:</p>
+      <ul>
+        <li>
+          The object key, that is also the identifier of the extension (its key
+          in <code>window.injectedWeb3</code>).
+        </li>
+        <li>
+          <code>title</code>: A human-readable title for the extension.
+        </li>
+        <li>
+          <code>website</code>: Official website URL of the extension.
+        </li>
+      </ul>
 
       <ImportSimple />
 
-      <H4 id="supported-browser-extensions">Supported Browser Extensions</H4>
+      <H4 id="supported-browser-extensions">Supported Browser Extensions:</H4>
 
       <ul>
         <li>
-          Enkrypt -{" "}
+          Enkrypt <Bar /> <code>encrypt</code> <Bar />{" "}
           <a href="https://enkrypt.com" target="_blank" rel="noreferrer">
             Website <External />
           </a>
         </li>
         <li>
-          Fearless Wallet -{" "}
+          Fearless Wallet <Bar /> <code>fearless-wallet</code> <Bar />{" "}
           <a href="https://fearlesswallet.io" target="_blank" rel="noreferrer">
             Website <External />
           </a>
         </li>
         <li>
-          Talisman -{" "}
+          Talisman <Bar /> <code>talisman</code> <Bar />{" "}
           <a href="https://talisman.xyz" target="_blank" rel="noreferrer">
             Website <External />
           </a>
         </li>
         <li>
-          Subwallet JS -{" "}
+          Subwallet JS <Bar /> <code>subwallet-js</code> <Bar />{" "}
           <a href="https://subwallet.app" target="_blank" rel="noreferrer">
             Website <External />
           </a>
         </li>
         <li>
-          PolkaGate -{" "}
+          PolkaGate <Bar /> <code>polkagate</code> <Bar />{" "}
           <a href="https://polkagate.xyz" target="_blank" rel="noreferrer">
             Website <External />
           </a>
         </li>
         <li>
-          Polkadot JS -{" "}
+          Polkadot JS <Bar /> <code>polkadot-js</code> <Bar />{" "}
           <a
             href="https://polkadot.js.org/extension"
             target="_blank"
@@ -93,30 +108,30 @@ export const Doc = ({ folder, npm }: DocProps) => {
         </li>
         <li>
           Nova Wallet (if <code>window.walletExtension.isNovaWallet</code> is
-          present) -{" "}
+          present) <Bar />{" "}
           <a href="https://novawallet.io" target="_blank" rel="noreferrer">
             Website <External />
           </a>
         </li>
       </ul>
 
-      <H4 id="supported-hardware-extensions">Supported Hardware Extensions</H4>
+      <H4 id="supported-hardware-extensions">Supported Hardware Extensions:</H4>
 
       <ul>
         <li>
-          Ledger -{" "}
+          Ledger <Bar /> <code>ledger</code> <Bar />{" "}
           <a href="https://ledger.com" target="_blank" rel="noreferrer">
             Website <External />
           </a>
         </li>
         <li>
-          Polkadot Vault -{" "}
+          Polkadot Vault <Bar /> <code>polkadotvault</code> <Bar />{" "}
           <a href="https://signer.parity.com" target="_blank" rel="noreferrer">
             Website <External />
           </a>
         </li>
         <li>
-          Wallet Connect -{" "}
+          Wallet Connect <Bar /> <code>walletconnect</code> <Bar />{" "}
           <a href="https://walletconnect.com" target="_blank" rel="noreferrer">
             Website <External />
           </a>
