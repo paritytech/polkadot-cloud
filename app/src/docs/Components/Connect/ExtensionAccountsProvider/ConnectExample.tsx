@@ -10,7 +10,7 @@ export const ConnectExample = () => {
   } from '@polkadot-cloud/react/hooks';
 
 const ConnectAccounts = () => {
-  const { extensions, extensionsStatus } = useExtensions();
+  const { extensions } = useExtensions();
   const { connectExtensionAccounts } = useExtensionAccounts();
   
   const extension = extensions.find((e) => e.id === 'subwallet-js');
