@@ -100,7 +100,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
 
       <H3 id="extensionStatus">extensionsStatus</H3>
       <div className="params inline">
-        <p>ExtensionsStatus</p>
+        <p>Record&#60;string, ExtensionStatus&#62;</p>
       </div>
       <p>
         A key value record of each extension and their status. Empty object by
