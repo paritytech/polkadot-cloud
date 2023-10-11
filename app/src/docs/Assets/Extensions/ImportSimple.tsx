@@ -8,7 +8,14 @@ export const ImportSimple = () => {
 import { Extensions, ExtensionsArray } from "@polkadot-cloud/assets/extensions";
 
 // Import hardware wallets as object or array.
-import { Hardware, HardwareArray } from "@polkadot-cloud/assets/extensions";`;
+import { Hardware, HardwareArray } from "@polkadot-cloud/assets/extensions";
+
+// Get PolkaGate extension metadata.
+console.log(Extensions['polkagate']);
+>> {
+  title: "PolkaGate",
+  website: "polkagate.xyz",
+}`;
 
   return <SimpleEditor code={code} language="javascript" standalone />;
 };
