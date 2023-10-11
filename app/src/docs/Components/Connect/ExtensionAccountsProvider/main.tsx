@@ -101,24 +101,30 @@ export const Doc = ({ folder, npm }: DocProps) => {
 
       <AccountsExample />
 
+      <hr className="lg" />
+
       <H2 id="props">Props</H2>
 
-      <H3 id="dappName" className="reference">
-        dappName: string
-      </H3>
+      <H3 id="dappName">dappName</H3>
+      <div className="params inline">
+        <p>string</p>
+      </div>
       <p>
         A dapp identifier that is provided to the web3 extension(s) being
         connected to.
       </p>
 
-      <H3 id="network" className="reference">
-        network: "polkadot" | "kusama" | "westend"{" "}
-      </H3>
+      <H3 id="network">network</H3>
+      <div className="params inline">
+        <p>"polkadot" | "kusama" | "westend"</p>
+      </div>
       <p>The active network, in lower-case.</p>
 
-      <H3 id="ss58" className="reference">
-        ss58: number
-      </H3>
+      <H3 id="ss58">ss58</H3>
+      <div className="params inline">
+        <p>number</p>
+      </div>
+
       <p>The SS58 prefix of the current network.</p>
       <p>
         <i>
@@ -126,9 +132,10 @@ export const Doc = ({ folder, npm }: DocProps) => {
         </i>
       </p>
 
-      <H3 id="activeAccount" className="reference">
-        activeAccount: string | null
-      </H3>
+      <H3 id="activeAccount">activeAccount</H3>
+      <div className="params inline">
+        <p>string | null</p>
+      </div>
       <p>
         The current active account on your dapp, if any.{" "}
         <code>ExtensionAccountsProvider</code> will automatically connect to
@@ -136,41 +143,47 @@ export const Doc = ({ folder, npm }: DocProps) => {
         See the next prop for more details.
       </p>
 
-      <H3 id="setActiveAccount" className="reference">
-        setActiveAccount(address: string)
-      </H3>
+      <H3 id="setActiveAccount">setActiveAccount</H3>
+      <div className="params inline">
+        <p>(address: string): void</p>
+      </div>
       <p>
         Provide a setter function to call if the active account is found when
         subscribing to extension accounts.
       </p>
 
+      <hr className="lg" />
+
       <H2 id="values">Values</H2>
 
-      <H3 id="connectExtensionAccounts" className="reference">
-        connectExtensionAccounts(extension: ExtensionInjected):
-        Promise&#60;boolean&#62;
-      </H3>
+      <H3 id="connectExtensionAccounts">connectExtensionAccounts</H3>
+      <div className="params inline">
+        <p>(extension: ExtensionInjected): Promise&#60;boolean&#62;</p>
+      </div>
       <p>
         Call this function to connect to the provided <code>extension</code> and
         subscribe to its accounts.
       </p>
 
-      <H3 id="extensionAccounts" className="reference">
-        extensionAccounts: ExtensionAccount[]
-      </H3>
+      <H3 id="extensionAccounts">extensionAccounts</H3>
+      <div className="params inline">
+        <p>ExtensionAccount[]</p>
+      </div>
       <p>The list of extension accounts that have been subscribed to.</p>
 
-      <H3 id="extensionAccountsSynced" className="reference">
-        extensionAccountsSynced: boolean
-      </H3>
+      <H3 id="extensionAccountsSynced">extensionAccountsSynced</H3>
+      <div className="params inline">
+        <p>boolean</p>
+      </div>
       <p>
         Signals whether extensions are still being connected to and subscribed
         to. A value of <code>true</code> means that the process is complete.
       </p>
 
-      <H3 id="forgetAccounts" className="reference">
-        forgetAccounts(accounts: string[])
-      </H3>
+      <H3 id="forgetAccounts">forgetAccounts</H3>
+      <div className="params inline">
+        <p>(accounts: string[]): void</p>
+      </div>
       <p>
         Call this function to forget an array of accounts that have been
         connected to. This effectively removes them from the provider state, and

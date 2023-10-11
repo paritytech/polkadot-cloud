@@ -133,6 +133,17 @@ SPDX-License-Identifier: GPL-3.0-only */
     display: flex;
     align-items: center;
 
+    > a {
+      color: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      font-family: inherit;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
     code {
       margin: 0 0.6rem;
     }
@@ -169,12 +180,22 @@ SPDX-License-Identifier: GPL-3.0-only */
   }
 
   hr {
+    border-top: 1px solid var(--border-primary-color);
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid var(--border-primary-color);
     margin-bottom: 2rem;
     padding: 0;
+
+    &.md {
+      border-top: 1px solid var(--border-primary-color);
+      margin: 2.5rem 0 2rem;
+    }
+
+    &.lg {
+      border-top: 1px solid var(--border-primary-color);
+      margin: 3.5rem 0 2.75rem;
+    }
   }
 
   .params {
@@ -184,6 +205,18 @@ SPDX-License-Identifier: GPL-3.0-only */
     margin-top: 1rem;
     margin-bottom: 0.5rem;
     width: 100%;
+
+    &.inline {
+      border-bottom: 1px solid var(--border-primary-color);
+      border-top: 0;
+      margin: 0.15rem 0 0;
+      padding-left: 0;
+      padding-right: 0;
+
+      > p:first-child {
+        margin-top: 0;
+      }
+    }
 
     p {
       color: var(--text-color-tertiary);
@@ -204,7 +237,18 @@ SPDX-License-Identifier: GPL-3.0-only */
     top: -7.75rem;
   }
 
+  .ext {
+    width: 0.85rem;
+    height: 0.85rem;
+    margin-left: 0.1rem;
+    position: relative;
+    top: -0.15rem;
+  }
 
+  .bar {
+    color: var(--border-secondary-color);
+    margin: 0 0.3rem;
+  }
 
   .note {
     border: 1px solid var(--accent-color-pending);

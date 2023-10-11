@@ -18,7 +18,7 @@
   "devDependencies": {
     "@types/lodash.throttle": "^4.1.7",
     "@types/prismjs": "^1.26.1",
-    "@types/react-dom": "^18.2.10",
+    "@types/react-dom": "^18.2.12",
     "@vitejs/plugin-react-swc": "^3.4.0",
     "gh-pages": "^6.0.0",
     "vite": "^4.4.11",
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@polkadot-cloud/core": "^1.0.13",
+    "@polkadot-cloud/core": "^1.0.14",
     "@polkadot/keyring": "^12.5.1",
     "@polkadot/util": "^12.5.1",
     "bignumber.js": "^9.1.2",

@@ -67,11 +67,14 @@ export const Doc = ({ folder, npm }: DocProps) => {
         second timeout.
       </p>
 
+      <hr className="lg" />
+
       <H2 id="values">Values</H2>
 
-      <H3 id="extensions" className="reference">
-        extensions: ExtensionInjected[]
-      </H3>
+      <H3 id="extensions">extensions</H3>
+      <div className="params inline">
+        <p>ExtensionInjected[]</p>
+      </div>
       <p>
         A list of available extensions, or null.
         <ul>
@@ -86,25 +89,28 @@ export const Doc = ({ folder, npm }: DocProps) => {
         </ul>
       </p>
 
-      <H3 id="checkingInjectedWeb3" className="reference">
-        checkingInjectedWeb3: boolean
-      </H3>
+      <H3 id="checkingInjectedWeb3">checkingInjectedWeb3</H3>
+      <div className="params inline">
+        <p>boolean</p>
+      </div>
       <p>
         Returns a boolean reflecting whether <code>window.injectedWeb3</code> is
         being checked.
       </p>
 
-      <H3 id="extensionStatus" className="reference">
-        extensionsStatus: ExtensionsStatus
-      </H3>
+      <H3 id="extensionStatus">extensionsStatus</H3>
+      <div className="params inline">
+        <p>ExtensionsStatus</p>
+      </div>
       <p>
         A key value record of each extension and their status. Empty object by
         default until <code>setExtensionStatus</code> is called.
       </p>
 
-      <H3 id="setExtensionStatus" className="reference">
-        setExtensionStatus(id: string, status: ExtensionStatus)
-      </H3>
+      <H3 id="setExtensionStatus">setExtensionStatus</H3>
+      <div className="params inline">
+        <p>(id: string, status: ExtensionStatus): void</p>
+      </div>
       <p>
         A function that takes an extension id and status, and updates the{" "}
         <code>extensionsStatus</code> record. Accepts values of{" "}

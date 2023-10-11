@@ -64,6 +64,8 @@ export const Doc = ({ folder, npm }: DocProps) => {
 
       <ChartSpeed />
 
+      <hr className="md" />
+
       <H2 id="css-variables-used">CSS Variables Used</H2>
 
       <ul>
