@@ -133,6 +133,17 @@ SPDX-License-Identifier: GPL-3.0-only */
     display: flex;
     align-items: center;
 
+    > a {
+      color: inherit;
+      font-size: inherit; 
+      line-height: inherit;
+      font-family: inherit;
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+
     code {
       margin: 0 0.6rem;
     }
