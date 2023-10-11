@@ -46,10 +46,10 @@ export const H3 = ({ children, className, id }: Props) => {
 export const H4 = ({ children, className, id }: Props) => {
   return (
     <>
-      <h3 className={className}>
+      <h4 className={className}>
         {children}
         <Anchor id={id} />
-      </h3>
+      </h4>
     </>
   );
 };
