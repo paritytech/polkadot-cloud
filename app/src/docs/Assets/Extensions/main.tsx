@@ -35,7 +35,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
         </a>{" "}
         and{" "}
         <a
-          href="https://github.com/paritytech/polkadot-cloud/blob/1f7bae05926db53650c25168afd2b7fca2e57bf1/packages/assets/lib/extensions/index.tsx#L67"
+          href="https://github.com/paritytech/polkadot-cloud/blob/c8063cda7968bcc48e04878d445c9085f5927b63/packages/assets/lib/extensions/index.tsx#L52"
           target="_blank"
           rel="noreferrer"
         >
