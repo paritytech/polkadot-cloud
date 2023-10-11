@@ -9,6 +9,7 @@ import { ExtensionsJsx } from "./ExtensionsJsx";
 import { H3 } from "@docs/Headers";
 import { DocProps } from "@docs/types";
 import { ImportSimple } from "./ImportSimple";
+import { External } from "@docs/External";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (
@@ -36,45 +37,51 @@ export const Doc = ({ folder, npm }: DocProps) => {
 
       <ul>
         <li>
+          Enkrypt -{" "}
           <a href="https://enkrypt.com" target="_blank" rel="noreferrer">
-            Enkrypt
+            Website <External />
           </a>
         </li>
         <li>
+          Fearless Wallet -{" "}
           <a href="https://fearlesswallet.io" target="_blank" rel="noreferrer">
-            Fearless Wallet
+            Website <External />
           </a>
         </li>
         <li>
+          Talisman -{" "}
           <a href="https://talisman.xyz" target="_blank" rel="noreferrer">
-            Talisman
+            Website <External />
           </a>
         </li>
         <li>
+          Subwallet JS -{" "}
           <a href="https://subwallet.app" target="_blank" rel="noreferrer">
-            Subwallet JS
+            Website <External />
           </a>
         </li>
         <li>
+          PolkaGate -{" "}
           <a href="https://polkagate.xyz" target="_blank" rel="noreferrer">
-            PolkaGate
+            Website <External />
           </a>
         </li>
         <li>
+          Polkadot JS -{" "}
           <a
             href="https://polkadot.js.org/extension"
             target="_blank"
             rel="noreferrer"
           >
-            {" "}
-            Polkadot JS
+            Website <External />
           </a>
         </li>
         <li>
+          Nova Wallet (if <code>window.walletExtension.isNovaWallet</code> is
+          present). -{" "}
           <a href="https://novawallet.io" target="_blank" rel="noreferrer">
-            Nova Wallet
-          </a>{" "}
-          (if <code>window.walletExtension.isNovaWallet</code> is present).
+            Website <External />
+          </a>
         </li>
       </ul>
 
