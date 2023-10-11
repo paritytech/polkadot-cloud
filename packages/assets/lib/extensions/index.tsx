@@ -8,23 +8,15 @@ import { PolkadotJS } from "./jsx/PolkadotJS";
 import { PolkaGate } from "./jsx/PolkaGate";
 import { SubwalletJS } from "./jsx/SubwalletJS";
 import { Talisman } from "./jsx/Talisman";
+import { Ledger } from "./jsx/Ledger";
+import { PolkadotVault } from "./jsx/PolkadotVault";
 import { WalletConnect } from "./jsx/WalletConnect";
 
-// To add extensions to this list, refer to the instructions hosted in this package's README file:
+// To add items to this list, refer to the instructions hosted in this package's README file:
 // https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets#adding-web-extension-wallets
+
+// List of web3 wallet extensions and their metadata.
 export const Extensions: Record<string, ExtensionConfig> = {
-  // NOTE: Nova Wallet use the same identifier as Polkadot JS extension. We therefore test if the
-  // `walletExtension` property exists to determine if the extension is Nova Wallet or Polkadot
-  // JS.
-  "polkadot-js": {
-    title: window?.walletExtension?.isNovaWallet
-      ? "Nova Wallet"
-      : "Polkadot JS",
-    Icon: window?.walletExtension?.isNovaWallet ? Enkrypt : PolkadotJS,
-    website: window?.walletExtension?.isNovaWallet
-      ? "novawallet.io"
-      : "polkadot.js.org/extension",
-  },
   enkrypt: {
     title: "Enkrypt",
     Icon: Enkrypt,
@@ -50,10 +42,17 @@ export const Extensions: Record<string, ExtensionConfig> = {
     Icon: Talisman,
     website: "talisman.xyz",
   },
-  walletconnect: {
-    title: "WalletConnect",
-    Icon: WalletConnect,
-    website: "walletconnect.com",
+  // NOTE: Nova Wallet use the same identifier as Polkadot JS extension. We therefore test if the
+  // `walletExtension` property exists to determine if the extension is Nova Wallet or Polkadot
+  // JS.
+  "polkadot-js": {
+    title: window?.walletExtension?.isNovaWallet
+      ? "Nova Wallet"
+      : "Polkadot JS",
+    Icon: window?.walletExtension?.isNovaWallet ? Enkrypt : PolkadotJS,
+    website: window?.walletExtension?.isNovaWallet
+      ? "novawallet.io"
+      : "polkadot.js.org/extension",
   },
 };
 
@@ -63,3 +62,27 @@ export const ExtensionsArray = Object.entries(Extensions).map(
     ...value,
   })
 );
+
+// List of hardware based wallets and their metadata.
+export const Hardware: Record<string, ExtensionConfig> = {
+  ledger: {
+    title: "Ledger",
+    Icon: Ledger,
+    website: "ledger.com",
+  },
+  polkadotvault: {
+    title: "Polkadot Vault",
+    Icon: PolkadotVault,
+    website: "signer.parity.io/",
+  },
+  walletconnect: {
+    title: "WalletConnect",
+    Icon: WalletConnect,
+    website: "walletconnect.com",
+  },
+};
+
+export const HardwareArray = Object.entries(Hardware).map(([key, value]) => ({
+  id: key,
+  ...value,
+}));
