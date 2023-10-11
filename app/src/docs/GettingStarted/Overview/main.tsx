@@ -87,6 +87,8 @@ export const Doc = ({ folder }: DocProps) => {
         </p>
       </Note>
 
+      <hr className="md" />
+
       <H2 id="goals">Goals</H2>
 
       <p>

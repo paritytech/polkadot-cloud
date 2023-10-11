@@ -43,6 +43,8 @@ export const Doc = ({ folder }: DocProps) => {
         </li>
       </ul>
 
+      <hr className="md" />
+
       <H2 id="installation-for-react">Installation for React</H2>
 
       <p>

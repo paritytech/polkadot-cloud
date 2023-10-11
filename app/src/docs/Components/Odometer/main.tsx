@@ -44,6 +44,8 @@ export const Doc = ({ folder, npm }: DocProps) => {
         </p>
       </Note>
 
+      <hr className="md" />
+
       <H2 id="css-variables-used">CSS Variables Used</H2>
 
       <ul>
