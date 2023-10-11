@@ -26,7 +26,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
       <p>
         Web3 wallet extension data can be imported from{" "}
         <a
-          href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/assets/lib/extensions/index.tsx"
+          href="https://github.com/paritytech/polkadot-cloud/blob/1f7bae05926db53650c25168afd2b7fca2e57bf1/packages/assets/lib/extensions/index.tsx#L19"
           target="_blank"
           rel="noreferrer"
         >
@@ -34,7 +34,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
         </a>{" "}
         and{" "}
         <a
-          href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/assets/lib/extensions/index.tsx"
+          href="https://github.com/paritytech/polkadot-cloud/blob/1f7bae05926db53650c25168afd2b7fca2e57bf1/packages/assets/lib/extensions/index.tsx#L67"
           target="_blank"
           rel="noreferrer"
         >
