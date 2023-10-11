@@ -101,6 +101,8 @@ export const Doc = ({ folder, npm }: DocProps) => {
 
       <AccountsExample />
 
+      <hr className="lg" />
+
       <H2 id="props">Props</H2>
 
       <H3 id="dappName">dappName</H3>
@@ -149,6 +151,8 @@ export const Doc = ({ folder, npm }: DocProps) => {
         Provide a setter function to call if the active account is found when
         subscribing to extension accounts.
       </p>
+
+      <hr className="lg" />
 
       <H2 id="values">Values</H2>
 

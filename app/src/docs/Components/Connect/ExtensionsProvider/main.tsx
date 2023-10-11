@@ -67,6 +67,8 @@ export const Doc = ({ folder, npm }: DocProps) => {
         second timeout.
       </p>
 
+      <hr className="lg" />
+
       <H2 id="values">Values</H2>
 
       <H3 id="extensions">extensions</H3>

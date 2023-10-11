@@ -153,6 +153,8 @@ export const Doc = ({ folder, npm }: DocProps) => {
         </p>
       </Note>
 
+      <hr className="md" />
+
       <H3 id="svg-icons">SVG Icons</H3>
       <p>
         Raw SVG icons exist for each extension. They are set to{" "}
