@@ -64,6 +64,9 @@ export const Doc = ({ folder, npm }: DocProps) => {
           connection options, to observe the modal behavior.
         </p>
       </Note>
+
+      <hr className="md" />
+
       <H2 id="basic-modal">Basic Modal Integration</H2>
       <p>
         Integrating modal functionality into React apps is as simple as wrapping
@@ -123,6 +126,8 @@ export const Doc = ({ folder, npm }: DocProps) => {
       </p>
 
       <OverlayConfig />
+
+      <hr className="md" />
 
       <H2 id="css-variables-used">CSS Variables Used</H2>
       <ul>

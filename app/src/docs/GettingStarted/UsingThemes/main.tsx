@@ -109,6 +109,8 @@ export const Doc = ({ folder }: DocProps) => {
         </p>
       </Note>
 
+      <hr className="md" />
+
       <H2 id="using-themes">Using Themes</H2>
 
       <p>
