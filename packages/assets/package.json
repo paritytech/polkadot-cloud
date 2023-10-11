@@ -1,7 +1,7 @@
 {
   "name": "polkadot-cloud-assets",
   "license": "GPL-3.0-only",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "type": "module",
   "contributors": [
     "Ross Bulat<ross@parity.io>",
