@@ -6,7 +6,6 @@ import { Edit } from "@docs/Edit";
 import { Header } from "@docs/Header";
 import { ValidatorOperator } from "./ValidatorOperator";
 import { DocProps } from "@docs/types";
-import { H3 } from "@docs/Headers";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (
@@ -19,8 +18,6 @@ export const Doc = ({ folder, npm }: DocProps) => {
         npm={npm}
         status="stable"
       />
-
-      <H3 id="validator-community">Validator Community</H3>
 
       <p>
         A list of validator operators are available as a{" "}

@@ -205,7 +205,13 @@ SPDX-License-Identifier: GPL-3.0-only */
   }
 
 
-
+  .ext {
+    width: 0.85rem;
+    height: 0.85rem;
+    margin-left: 0.1rem;
+    position: relative;
+    top: -0.15rem;
+  }
   .note {
     border: 1px solid var(--accent-color-pending);
     background: var(--accent-color-transparent);
