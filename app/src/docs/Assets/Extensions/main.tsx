@@ -93,7 +93,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
         </li>
         <li>
           Nova Wallet (if <code>window.walletExtension.isNovaWallet</code> is
-          present). -{" "}
+          present) -{" "}
           <a href="https://novawallet.io" target="_blank" rel="noreferrer">
             Website <External />
           </a>
