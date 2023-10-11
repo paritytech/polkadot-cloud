@@ -48,7 +48,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
 
       <ImportSimple />
 
-      <H4 id="supported-browser-extensions">Supported Browser Extensions:</H4>
+      <H4 id="supported-browser-extensions">Supported Browser Extensions</H4>
 
       <ul>
         <li>
@@ -100,7 +100,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
         </li>
       </ul>
 
-      <H4 id="supported-hardware-extensions">Supported Hardware Extensions:</H4>
+      <H4 id="supported-hardware-extensions">Supported Hardware Extensions</H4>
 
       <ul>
         <li>
@@ -163,7 +163,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
       <Note>
         <p>
           SVG import syntax may differ depending on the toolchain / framework
-          being used.
+          being used. The above import syntax is for Vite.
         </p>
       </Note>
 
