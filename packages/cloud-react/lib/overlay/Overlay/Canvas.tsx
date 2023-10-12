@@ -25,7 +25,7 @@ export const Canvas = ({
     canvas: {
       status,
       setCanvasStatus,
-      config: { key },
+      config: { key, size },
     },
   } = useOverlay();
 
@@ -82,7 +82,7 @@ export const Canvas = ({
             },
           }}
         >
-          <CanvasScroll>
+          <CanvasScroll size={size}>
             <ModalContent>
               <CanvasContent>
                 <ErrorBoundary FallbackComponent={Fallback}>
