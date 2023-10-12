@@ -4,7 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { motion } from "framer-motion";
 import "@polkadot-cloud/core/css/base/modal/CanvasScroll/index.css";
 import { CanvasScrollProps } from "../types";
-import { valEmpty } from "lib/utils";
+import { valEmpty } from "../../../utils";
 
 /**
  * @name CanvasScroll
