@@ -117,6 +117,17 @@ export const capitalizeFirstLetter = (string: string) =>
   string.charAt(0).toUpperCase() + string.slice(1);
 
 /**
+ * @name snakeToCamel
+ * @summary converts a string from snake / kebab-case to camel-case.
+ */
+export const snakeToCamel = (str: string) =>
+  str
+    .toLowerCase()
+    .replace(/([-_][a-z])/g, (group) =>
+      group.toUpperCase().replace("-", "").replace("_", "")
+    );
+
+/**
  * @name setStateWithRef
  * @summary Synchronize React state and its reference with the provided value.
  */
