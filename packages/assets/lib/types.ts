@@ -1,6 +1,8 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
+import { CSSProperties, FC } from "react";
+
 // The supported chains.
 export type SupportedChains = "polkadot" | "kusama" | "westend";
 
@@ -24,6 +26,15 @@ export interface ValidatorConfig {
     [K in SupportedChains]: string[];
   }>;
 }
+
+// Icon record structure.
+export type IconRecords = Record<
+  string,
+  FC<{
+    style?: CSSProperties;
+    className?: string;
+  }>
+>;
 
 // Miscellaneous types.
 declare global {
