@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { ExtensionConfig } from "../types";
+import { ExtensionConfig, IconRecords } from "../types";
 import Enkrypt from "./jsx/Enkrypt";
 import FearlessWallet from "./jsx/FearlessWallet";
 import NovaWallet from "./jsx/NovaWallet";
@@ -12,7 +12,6 @@ import Talisman from "./jsx/Talisman";
 import Ledger from "./jsx/Ledger";
 import PolkadotVault from "./jsx/PolkadotVault";
 import WalletConnect from "./jsx/WalletConnect";
-import { FC } from "react";
 
 // To add items to this list, refer to the instructions hosted in this package's README file:
 // https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets#adding-web-extension-wallets
@@ -60,7 +59,7 @@ export const ExtensionsArray = Object.entries(Extensions).map(
 );
 
 // List of extension icons keyed by the extension id.
-export const ExtensionIcons: Record<string, FC> = {
+export const ExtensionIcons: IconRecords = {
   enkrypt: Enkrypt,
   "fearless-wallet": FearlessWallet,
   novawallet: NovaWallet,
@@ -91,7 +90,7 @@ export const HardwareArray = Object.entries(Hardware).map(([key, value]) => ({
   ...value,
 }));
 
-export const HardwareIcons: Record<string, FC> = {
+export const HardwareIcons: IconRecords = {
   ledger: Ledger,
   polkadotvault: PolkadotVault,
   walletconnect: WalletConnect,
