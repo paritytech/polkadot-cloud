@@ -8,7 +8,6 @@ import type {
   ExtensionInjected,
   ExtensionStatus,
   ExtensionsContextInterface,
-  ExtensionsStatus,
 } from "./types";
 import { defaultExtensionsContext } from "./defaults";
 import { AnyJson } from "../../utils/types";
@@ -36,9 +35,9 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
   const extensionsRef = useRef(extensions);
 
   // Store each extension's status in state.
-  const [extensionsStatus, setExtensionsStatus] = useState<ExtensionsStatus>(
-    {}
-  );
+  const [extensionsStatus, setExtensionsStatus] = useState<
+    Record<string, ExtensionStatus>
+  >({});
   const extensionsStatusRef = useRef(extensionsStatus);
 
   // Setter for injected extensions.

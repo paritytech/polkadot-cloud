@@ -4,11 +4,18 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { SimpleEditor } from "@docs/SimpleEditor";
 
 export const ImportSimple = () => {
-  const code = `// Import extensions as object.
-import { Extensions } from "@polkadot-cloud/assets/extensions";
+  const code = `// Import browser extensions as object or array.
+import { Extensions, ExtensionsArray } from "@polkadot-cloud/assets/extensions";
 
-// Or import extensions as array.
-import { ExtensionsArray } from "@polkadot-cloud/assets/extensions";`;
+// Import hardware wallets as object or array.
+import { Hardware, HardwareArray } from "@polkadot-cloud/assets/extensions";
+
+// Get PolkaGate extension metadata.
+console.log(Extensions['polkagate']);
+>> {
+  title: "PolkaGate",
+  website: "polkagate.xyz",
+}`;
 
   return <SimpleEditor code={code} language="javascript" standalone />;
 };

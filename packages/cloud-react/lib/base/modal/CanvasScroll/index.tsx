@@ -1,16 +1,24 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { ModalAnimationProps } from "../types";
 import { motion } from "framer-motion";
 import "@polkadot-cloud/core/css/base/modal/CanvasScroll/index.css";
+import { CanvasScrollProps } from "../types";
+import { valEmpty } from "../../../utils";
 
 /**
  * @name CanvasScroll
- * @summary Modal scrollable container. Limits max width of container to an opinionated 800px;
+ * @summary Canvas scrollable container.
  */
-export const CanvasScroll = ({ children, ...rest }: ModalAnimationProps) => (
-  <motion.div className="canvas-scroll" {...rest}>
+export const CanvasScroll = ({
+  children,
+  size,
+  ...rest
+}: CanvasScrollProps) => (
+  <motion.div
+    className={`canvas-scroll${valEmpty(size === "xl", "xl")}`}
+    {...rest}
+  >
     {children}
   </motion.div>
 );

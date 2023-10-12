@@ -9,6 +9,9 @@ import PolkadotJSSVG from "@packages/assets/lib/extensions/svg/polkadotjs.svg?re
 import PolkaGateSVG from "@packages/assets/lib/extensions/svg/polkagate.svg?react";
 import SubwalletJSSVG from "@packages/assets/lib/extensions/svg/subwalletjs.svg?react";
 import TalismanSVG from "@packages/assets/lib/extensions/svg/talisman.svg?react";
+import LedgerSVG from "@packages/assets/lib/extensions/svg/ledger.svg?react";
+import PolkadotVaultSVG from "@packages/assets/lib/extensions/svg/polkadotvault.svg?react";
+import WalletConnectSVG from "@packages/assets/lib/extensions/svg/walletconnect.svg?react";
 import { Demo } from "@docs/Demo";
 
 export const ExtensionsSvg = () => {
@@ -19,6 +22,9 @@ import PolkadotJSSVG from "@polkadot-cloud/assets/extensions/svg/polkadotjs.svg?
 import PolkaGateSVG from "@polkadot-cloud/assets/extensions/svg/polkagate.svg?react";
 import SubwalletJSSVG from "@polkadot-cloud/assets/extensions/svg/subwalletjs.svg?react";
 import TalismanSVG from "@polkadot-cloud/assets/extensions/svg/talisman.svg?react";
+import LedgerSVG from "@packages/assets/lib/extensions/svg/ledger.svg?react";
+import PolkadotVaultSVG from "@packages/assets/lib/extensions/svg/polkadotvault.svg?react";
+import WalletConnectSVG from "@packages/assets/lib/extensions/svg/walletconnect.svg?react";
 
 const App = () => (
   <>
@@ -29,6 +35,10 @@ const App = () => (
     <PolkaGateSVG />
     <SubwalletJsSVG />
     <TalismanSVG />
+    <LedgerSVG />
+    <PolkadotVaultSVG />
+    <WalletConnectSVG />
+
   </>
 )`;
 
@@ -55,6 +65,15 @@ const App = () => (
         </div>
         <div className="svg-box sm">
           <TalismanSVG />
+        </div>
+        <div className="svg-box sm" style={{ width: "8rem" }}>
+          <LedgerSVG />
+        </div>
+        <div className="svg-box sm">
+          <PolkadotVaultSVG />
+        </div>
+        <div className="svg-box sm">
+          <WalletConnectSVG />
         </div>
       </Demo>
       <SimpleEditor code={code} language="javascript" />

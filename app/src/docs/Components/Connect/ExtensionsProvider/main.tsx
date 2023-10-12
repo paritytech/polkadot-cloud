@@ -8,6 +8,7 @@ import { ProviderExample } from "./ProviderExample";
 import { Note } from "@docs/Note";
 import { Link } from "react-router-dom";
 import { HookExample } from "./HookExample";
+import { H2, H3 } from "@docs/Headers";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (
@@ -50,7 +51,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
         </p>
       </Note>
 
-      <h3>Extension Syncing</h3>
+      <H3 id="extension-syncing">Extension Syncing</H3>
       <p>
         Web3 extensions are injected into the <code>window.injectedWeb3</code>{" "}
         object, which is an asynchronous process that happens when the window
@@ -66,9 +67,14 @@ export const Doc = ({ folder, npm }: DocProps) => {
         second timeout.
       </p>
 
-      <h2>Values</h2>
+      <hr className="lg" />
 
-      <h3 className="reference">extensions: ExtensionInjected[]</h3>
+      <H2 id="values">Values</H2>
+
+      <H3 id="extensions">extensions</H3>
+      <div className="params inline">
+        <p>ExtensionInjected[]</p>
+      </div>
       <p>
         A list of available extensions, or null.
         <ul>
@@ -83,21 +89,28 @@ export const Doc = ({ folder, npm }: DocProps) => {
         </ul>
       </p>
 
-      <h3 className="reference">checkingInjectedWeb3: boolean</h3>
+      <H3 id="checkingInjectedWeb3">checkingInjectedWeb3</H3>
+      <div className="params inline">
+        <p>boolean</p>
+      </div>
       <p>
         Returns a boolean reflecting whether <code>window.injectedWeb3</code> is
         being checked.
       </p>
 
-      <h3 className="reference">extensionsStatus: ExtensionsStatus</h3>
+      <H3 id="extensionStatus">extensionsStatus</H3>
+      <div className="params inline">
+        <p>Record&#60;string, ExtensionStatus&#62;</p>
+      </div>
       <p>
         A key value record of each extension and their status. Empty object by
         default until <code>setExtensionStatus</code> is called.
       </p>
 
-      <h3 className="reference">
-        setExtensionStatus(id: string, status: ExtensionStatus)
-      </h3>
+      <H3 id="setExtensionStatus">setExtensionStatus</H3>
+      <div className="params inline">
+        <p>(id: string, status: ExtensionStatus): void</p>
+      </div>
       <p>
         A function that takes an extension id and status, and updates the{" "}
         <code>extensionsStatus</code> record. Accepts values of{" "}

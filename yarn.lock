@@ -555,20 +555,25 @@
     picocolors "^1.0.0"
     tslib "^2.6.0"
 
-"@polkadot-cloud/assets@^0.1.16":
-  version "0.1.16"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/assets/-/assets-0.1.16.tgz#385b1b0b3a06942620b6e4e788997439f68dcf5c"
-  integrity sha512-5YB7Op38hAxKVnHkJav/s6JPFa2KRpUob8zMMg2OBnC/tAaapFzNxVtE357+uSO0EbY1CHkYuOmmMTN87UwAzg==
+"@polkadot-cloud/assets@^0.1.19":
+  version "0.1.19"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/assets/-/assets-0.1.19.tgz#e8c357761e7f7ab8c1d8fd15b475695dbde02da5"
+  integrity sha512-r8H6XN2+OoeYm2LXFOxb9ksL6+xoT0rSHA92DN4ElGnv5nkTXZaen4A4T4nYDHaqxAjMs0YnGpzKRxpZbDym/Q==
 
-"@polkadot-cloud/core@^1.0.13":
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.0.13.tgz#abe09be674b9f6ab86da7bb0fdc2acc95202c2ee"
-  integrity sha512-IrpRA495Buoleue9tilYnj9MS7y0WnqgSn36Dgy1gk4p0Qf+iWqExj15++EK8vbEGOBh+p3czCDU25/iV0DaOQ==
+"@polkadot-cloud/core@1.0.15":
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.0.15.tgz#5d5ddfca3aa98b6a29472c176e0c141890124d77"
+  integrity sha512-1d4mXGNEe7jjD/apNXRCoab6qAh9sak277h46JTBVsmvPf7Q8w1kuFUmFemGZ7iryzHABYzHa156lrreFOEdIw==
 
-"@polkadot-cloud/utils@^0.0.20":
-  version "0.0.20"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/utils/-/utils-0.0.20.tgz#b9a8038304d8dc24f6b530ec687543aaf268721a"
-  integrity sha512-PA2FRzRkmXdt58XJu1nfVxVJcPYG4JittJFRcnMVQ+V0hY40hkoiJoSRR0S0KWmCfF7DHi4AhoEGmH9oj7JEMA==
+"@polkadot-cloud/core@^1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.0.14.tgz#f20551d6c9c325f4c7191c56552420cf7f751c5c"
+  integrity sha512-tdIAOo463XNdjL7n4goUlW6JkRXrnfpmMF8opaA58NO+tPJuR71B4dFjBI9CxoL7dee0/eGuhv0xp4ujXCJQ3Q==
+
+"@polkadot-cloud/utils@^0.0.21":
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/utils/-/utils-0.0.21.tgz#a4e771280794d341bff0a09e3cf8696a829b65f6"
+  integrity sha512-I727tVtybyUHzt60+x4EzLQ4Aaltg+RZe5pns9UgYd5/7mduCTlKPNMLqx4QGVD8xQuFoUblCgQzD7YitbWx5Q==
   dependencies:
     "@polkadot/keyring" "^12.5.1"
     "@polkadot/util" "^12.5.1"
@@ -1112,17 +1117,17 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.8.tgz#805eae6e8f41bd19e88917d2ea200dc992f405d3"
   integrity sha512-kMpQpfZKSCBqltAJwskgePRaYRFukDkm1oItcAbC3gNELR20XIBcN9VRgg4+m8DKsTfkWeA4m4Imp4DDuWy7FQ==
 
-"@types/react-dom@^18.2.10":
-  version "18.2.11"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.2.11.tgz#4332c315544698a0875dfdb6e320dda59e1b3d58"
-  integrity sha512-zq6Dy0EiCuF9pWFW6I6k6W2LdpUixLE4P6XjXU1QHLfak3GPACQfLwEuHzY5pOYa4hzj1d0GxX/P141aFjZsyg==
+"@types/react-dom@^18.2.13":
+  version "18.2.13"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.2.13.tgz#89cd7f9ec8b28c8b6f0392b9591671fb4a9e96b7"
+  integrity sha512-eJIUv7rPP+EC45uNYp/ThhSpE16k22VJUknt5OLoH9tbXoi8bMhwLf5xRuWMywamNbWzhrSmU7IBJfPup1+3fw==
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^18.2.25":
-  version "18.2.25"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.25.tgz#99fa44154132979e870ff409dc5b6e67f06f0199"
-  integrity sha512-24xqse6+VByVLIr+xWaQ9muX1B4bXJKXBbjszbld/UEDslGLY53+ZucF44HCmLbMPejTzGG9XgR+3m2/Wqu1kw==
+"@types/react@*", "@types/react@^18.2.28":
+  version "18.2.28"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.28.tgz#86877465c0fcf751659a36c769ecedfcfacee332"
+  integrity sha512-ad4aa/RaaJS3hyGz0BGegdnSRXQBkd1CCYDCdNjBPg90UUpLgo+WlJqb9fMYUxtehmzF3PJaTWqRZjko6BRzBg==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -2947,10 +2952,10 @@ eslint-plugin-prefer-arrow@^1.2.3:
   resolved "https://registry.yarnpkg.com/eslint-plugin-prefer-arrow/-/eslint-plugin-prefer-arrow-1.2.3.tgz#e7fbb3fa4cd84ff1015b9c51ad86550e55041041"
   integrity sha512-J9I5PKCOJretVuiZRGvPQxCbllxGAV/viI20JO3LYblAodofBxyMnZAJ+WGeClHgANnSJberTNoFWWjrWKBuXQ==
 
-eslint-plugin-prettier@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-5.0.0.tgz#6887780ed95f7708340ec79acfdf60c35b9be57a"
-  integrity sha512-AgaZCVuYDXHUGxj/ZGu1u8H8CYgDY3iG6w5kUFw4AzMVXzB7VvbKgYR4nATIN+OvUrghMbiDLeimVjVY5ilq3w==
+eslint-plugin-prettier@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-5.0.1.tgz#a3b399f04378f79f066379f544e42d6b73f11515"
+  integrity sha512-m3u5RnR56asrwV/lDC4GHorlW75DsFfmUcjfCYylTUs85dBRnB7VM6xG8eCMJdeDRnppzmxZVf1GEPJvl1JmNg==
   dependencies:
     prettier-linter-helpers "^1.0.0"
     synckit "^0.8.5"
@@ -6708,10 +6713,10 @@ safe-regex@^1.1.0:
   dependencies:
     ret "~0.1.10"
 
-sass@^1.69.0:
-  version "1.69.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.69.0.tgz#5195075371c239ed556280cf2f5944d234f42679"
-  integrity sha512-l3bbFpfTOGgQZCLU/gvm1lbsQ5mC/WnLz3djL2v4WCJBDrWm58PO+jgngcGRNnKUh6wSsdm50YaovTqskZ0xDQ==
+sass@^1.69.2:
+  version "1.69.2"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.69.2.tgz#8aeaeb6c1dcdbeaa26bbfeddece67c9fcd4b1d93"
+  integrity sha512-48lDtG/9OuSQZ9oNmJMUXI2QdCakAWrAGjpX/Fy6j4Og8dEAyE598x5GqCqnHkwV7+I5w8DJpqjm581q5HNh3w==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"

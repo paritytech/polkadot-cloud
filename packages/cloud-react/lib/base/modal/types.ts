@@ -65,3 +65,8 @@ export type ModalConnectItemProps = ComponentBase & {
   // whether the item can be connected to.
   canConnect?: boolean;
 };
+
+export type CanvasScrollProps = ModalAnimationProps & {
+  // the maximum width of the canvas.
+  size?: "lg" | "xl";
+};

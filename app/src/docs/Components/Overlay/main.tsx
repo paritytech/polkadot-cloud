@@ -64,6 +64,9 @@ export const Doc = ({ folder, npm }: DocProps) => {
           connection options, to observe the modal behavior.
         </p>
       </Note>
+
+      <hr className="md" />
+
       <H2 id="basic-modal">Basic Modal Integration</H2>
       <p>
         Integrating modal functionality into React apps is as simple as wrapping
@@ -124,7 +127,9 @@ export const Doc = ({ folder, npm }: DocProps) => {
 
       <OverlayConfig />
 
-      <h2>CSS Variables Used</h2>
+      <hr className="md" />
+
+      <H2 id="css-variables-used">CSS Variables Used</H2>
       <ul>
         <li>
           <code>--modal-background-color</code>: Overlay color of screen when

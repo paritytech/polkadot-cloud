@@ -8,6 +8,7 @@ import { ThemeExample } from "./ThemeExample";
 import { Note } from "@docs/Note";
 import { AccentColorExample } from "./AccentColorExample";
 import { ThemeColorExample } from "./ThemeColorExample";
+import { H2, H3 } from "@docs/Headers";
 
 export const Doc = ({ folder }: DocProps) => {
   return (
@@ -18,7 +19,7 @@ export const Doc = ({ folder }: DocProps) => {
         subtitle="Polkadot Cloud UI components use CSS variables for custom styling."
         npm={undefined}
       />
-      <h2>Introduction</h2>
+      <H2 id="introduction">Introduction</H2>
       <p>
         Polkadot Cloud UI components use CSS variables so apps can customise
         their look and feel without having to delve into the component source
@@ -26,7 +27,7 @@ export const Doc = ({ folder }: DocProps) => {
         pre-packaged themes from Polkadot Cloud.
       </p>
 
-      <h3>2-Dimensional Theming</h3>
+      <H3 id="two-dimensional-theming">2-Dimensional Theming</H3>
       <p>
         Polkadot Cloud uses a 2-dimensional theme setup, meaning there are 2
         separate files for defining CSS variables that comprise a theme:
@@ -74,7 +75,9 @@ export const Doc = ({ folder }: DocProps) => {
         </p>
       </Note>
 
-      <h3>How accent variables are applied to themes</h3>
+      <H3 id="accent-variables-applied-to-themes">
+        How accent variables are applied to themes
+      </H3>
 
       <p>
         As an intuitive example, an <code>accent</code> file defines the
@@ -106,7 +109,9 @@ export const Doc = ({ folder }: DocProps) => {
         </p>
       </Note>
 
-      <h2>Using Themes</h2>
+      <hr className="md" />
+
+      <H2 id="using-themes">Using Themes</H2>
 
       <p>
         To use an accent and theme combo from Polkadot Cloud, simply import them

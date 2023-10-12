@@ -2,6 +2,7 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { ReactNode } from "react";
+import AnchorSVG from "../../../svg/anchor.svg?react";
 
 interface Props {
   children: ReactNode;
@@ -13,7 +14,7 @@ export const H1 = ({ children, className, id }: Props) => {
   return (
     <>
       <h1 className={className}>
-        {children}
+        {id ? <a href={`#${id}`}>{children}</a> : children}
         <Anchor id={id} />
       </h1>
     </>
@@ -24,7 +25,7 @@ export const H2 = ({ children, className, id }: Props) => {
   return (
     <>
       <h2 className={className}>
-        {children}
+        {id ? <a href={`#${id}`}>{children}</a> : children}
         <Anchor id={id} />
       </h2>
     </>
@@ -35,7 +36,7 @@ export const H3 = ({ children, className, id }: Props) => {
   return (
     <>
       <h3 className={className}>
-        {children}
+        {id ? <a href={`#${id}`}>{children}</a> : children}
         <Anchor id={id} />
       </h3>
     </>
@@ -45,10 +46,10 @@ export const H3 = ({ children, className, id }: Props) => {
 export const H4 = ({ children, className, id }: Props) => {
   return (
     <>
-      <h3 className={className}>
-        {children}
+      <h4 className={className}>
+        {id ? <a href={`#${id}`}>{children}</a> : children}
         <Anchor id={id} />
-      </h3>
+      </h4>
     </>
   );
 };
@@ -57,7 +58,7 @@ export const H5 = ({ children, className, id }: Props) => {
   return (
     <>
       <h5 className={className}>
-        {children}
+        {id ? <a href={`#${id}`}>{children}</a> : children}
         <Anchor id={id} />
       </h5>
     </>
@@ -67,11 +68,10 @@ export const H5 = ({ children, className, id }: Props) => {
 const Anchor = ({ id }: { id: string }) => (
   <>
     <span className="anchor" id={id} />
-    {/* Anchors are currently disabled. *}
-    {/* {id && (
+    {id && (
       <a href={`#${id}`} className="anc">
         <AnchorSVG />
       </a>
-    )} */}
+    )}
   </>
 );

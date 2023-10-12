@@ -7,7 +7,7 @@ import { Note } from "@docs/Note";
 import { PolkiconSize } from "./PolkiconSize";
 import { PolkiconTheme } from "./PolkiconTheme";
 import { PolkiconColors } from "./PolkiconColors";
-import { H3 } from "@docs/Headers";
+import { H2, H3 } from "@docs/Headers";
 import { DocProps } from "@docs/types";
 
 export const Doc = ({ folder, npm }: DocProps) => {
@@ -82,7 +82,9 @@ export const Doc = ({ folder, npm }: DocProps) => {
       </p>
       <PolkiconColors />
 
-      <h2>CSS Variables Used</h2>
+      <hr className="md" />
+
+      <H2 id="css-variables-used">CSS Variables Used</H2>
 
       <ul>
         <li>
