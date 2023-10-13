@@ -75,6 +75,8 @@ export const OverlayProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const openModal = ({ key, size = "lg", options = {} }: ModalConfig) => {
+    if (canvasStatus !== "closed") return;
+
     setModalConfig({ key, size, options });
     setModalStatus("opening");
     if (!options?.replacing) {
