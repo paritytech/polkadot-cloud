@@ -69,4 +69,11 @@ export type ModalConnectItemProps = ComponentBase & {
 export type CanvasScrollProps = ModalAnimationProps & {
   // the maximum width of the canvas.
   size?: "lg" | "xl";
+  // allow scrolling.
+  scroll?: boolean;
+};
+
+export type ModalContentProps = ModalAnimationProps & {
+  // include canvas styling.
+  canvas?: boolean;
 };
