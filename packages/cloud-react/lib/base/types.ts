@@ -121,4 +121,6 @@ export type TxProps = {
   dangerMessage: string;
   // signing component.
   SignerComponent: ReactElement;
+  // display for.
+  displayFor: "default" | "canvas";
 };
