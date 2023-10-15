@@ -14,7 +14,11 @@ import type {
   ActiveOverlayInstance,
   OverlayInstanceDirection,
 } from "./types";
-import { defaultModalConfig, defaultOverlayContext } from "./defaults";
+import {
+  defaultCanvasConfig,
+  defaultModalConfig,
+  defaultOverlayContext,
+} from "./defaults";
 
 export const OverlayContext = createContext<OverlayContextInterface>(
   defaultOverlayContext
@@ -136,16 +140,23 @@ export const OverlayProvider = ({ children }: { children: ReactNode }) => {
   // Store config options of the canvas.
   const [canvasConfig, setCanvasConfig] = useState<CanvasConfig>({
     key: "",
+    scroll: true,
     options: {},
   });
 
   // Open the canvas.
-  const openCanvas = ({ key, size = "lg", options }: CanvasConfig) => {
+  const openCanvas = ({
+    key,
+    size = "lg",
+    scroll = true,
+    options,
+  }: CanvasConfig) => {
     setCanvasStatus("open");
     setOpenOverlayInstances("inc", "canvas");
     setCanvasConfig({
       key,
       size,
+      scroll,
       options: options || {},
     });
   };
@@ -166,13 +177,10 @@ export const OverlayProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [modalStatusRef.current, modalRef?.current]);
 
-  // When canvas fade out completes, reset active definiton.
+  // When canvas fade out completes, reset config.
   useEffectIgnoreInitial(() => {
     if (canvasStatus === "closed") {
-      setCanvasConfig({
-        key: "",
-        options: {},
-      });
+      setCanvasConfig(defaultCanvasConfig);
     }
   }, [canvasStatus]);
 

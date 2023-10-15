@@ -76,8 +76,9 @@ export interface ModalConfig {
 
 export interface CanvasConfig {
   key: string;
-  options?: ConfigOptions;
+  scroll?: boolean;
   size?: CanvasSize;
+  options?: ConfigOptions;
 }
 
 export type CanvasSize = "lg" | "xl";

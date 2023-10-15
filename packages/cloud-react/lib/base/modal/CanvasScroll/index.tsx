@@ -13,10 +13,14 @@ import { valEmpty } from "../../../utils";
 export const CanvasScroll = ({
   children,
   size,
+  scroll = true,
   ...rest
 }: CanvasScrollProps) => (
   <motion.div
-    className={`canvas-scroll${valEmpty(size === "xl", "xl")}`}
+    className={`canvas-scroll${valEmpty(size === "xl", "xl")}${valEmpty(
+      scroll,
+      "scroll"
+    )}`}
     {...rest}
   >
     {children}
