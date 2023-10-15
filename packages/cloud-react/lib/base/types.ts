@@ -122,5 +122,5 @@ export type TxProps = {
   // signing component.
   SignerComponent: ReactElement;
   // display for.
-  displayFor: "default" | "canvas";
+  displayFor?: "default" | "canvas";
 };
