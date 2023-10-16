@@ -26,3 +26,5 @@ export type AnyFunction = any;
 export type HPosition = HPositionLR & "center";
 
 export type HPositionLR = "left" | "right";
+
+export type DisplayFor = "default" | "modal" | "canvas";

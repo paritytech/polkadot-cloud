@@ -7,13 +7,15 @@ import { Demo } from "@docs/Demo";
 
 export const ButtonHelp = () => {
   const code = `<Button type="help" marginRight />
-<Button type="help" backgroundSecondary />`;
+<Button type="help" displayFor="modal" marginRight />
+<Button type="help" displayFor="canvas" />`;
 
   return (
     <>
       <Demo showThemes={false}>
         <Button type="help" marginRight />
-        <Button type="help" backgroundSecondary />
+        <Button type="help" displayFor="modal" marginRight />
+        <Button type="help" displayFor="canvas" />
       </Demo>
       <SimpleEditor code={code} />
     </>

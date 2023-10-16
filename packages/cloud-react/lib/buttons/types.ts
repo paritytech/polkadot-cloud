@@ -3,7 +3,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { IconDefinition, IconProp } from "@fortawesome/fontawesome-svg-core";
 import { MouseEvent } from "react";
-import { ComponentBaseWithClassName } from "../utils/types";
+import { ComponentBaseWithClassName, DisplayFor } from "../utils/types";
 
 // Common button props, applied to all buttons
 export interface ButtonCommonProps {
@@ -70,8 +70,8 @@ export type ButtonProps = ComponentBaseWithClassName &
         text: string;
       }
     | {
-        // whether to use secondary background
-        backgroundSecondary?: boolean;
+        // amend style for a particular container type.
+        displayFor?: DisplayFor;
       }
     | {
         // whether the button is clicked
