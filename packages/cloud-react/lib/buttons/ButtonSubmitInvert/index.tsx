@@ -13,6 +13,8 @@ export type ButtonSubmitInvertProps = ComponentBaseWithClassName &
   ButtonCommonProps & {
     // button text.
     text: string;
+    // large button, small otherwise.
+    lg?: boolean;
   };
 
 /**
@@ -31,6 +33,7 @@ export const ButtonSubmitInvert = ({
   className,
   style,
   text,
+  lg,
   onClick,
   onMouseOver,
   onMouseMove,
@@ -39,7 +42,10 @@ export const ButtonSubmitInvert = ({
   <motion.button
     whileHover={{ scale: !disabled ? 1.02 : 1 }}
     whileTap={{ scale: !disabled ? 0.98 : 1 }}
-    className={`btn-submit-invert${valEmpty(grow, "grow")}
+    className={`btn-submit-invert${valOr(lg, "lg", "sm")}${valEmpty(
+      grow,
+      "grow"
+    )}
     ${valEmpty(marginRight, "m-right")}${valEmpty(
       marginLeft,
       "m-left"

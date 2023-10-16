@@ -15,6 +15,8 @@ export type ButtonSubmitProps = ComponentBaseWithClassName &
     colorSecondary?: boolean;
     // button text.
     text: string;
+    // large button, small otherwise.
+    lg?: boolean;
     // pulsing effect.
     pulse?: boolean;
   };
@@ -36,6 +38,7 @@ export const ButtonSubmit = ({
   className,
   style,
   text,
+  lg,
   pulse,
   onClick,
   onMouseOver,
@@ -45,7 +48,7 @@ export const ButtonSubmit = ({
   <motion.button
     whileHover={{ scale: !disabled ? 1.02 : 1 }}
     whileTap={{ scale: !disabled ? 0.98 : 1 }}
-    className={`btn-submit${valEmpty(
+    className={`btn-submit${valOr(lg, "lg", "sm")}${valEmpty(
       colorSecondary,
       "secondary-color"
     )}${valEmpty(grow, "grow")}${valEmpty(marginRight, "m-right")}${valEmpty(
