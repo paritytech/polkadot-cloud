@@ -21,6 +21,11 @@ SPDX-License-Identifier: GPL-3.0-only */
     background: var(--button-primary-background);
   }
 
+  &.background-tertiary {
+    border: 1px solid var(--border-secondary-color);
+    background: none;
+  }
+
   &:hover {
     fill: var(--accent-color-primary);
   }
