@@ -2,15 +2,17 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { InfoSVG } from "../../svg/Info";
-import { ComponentBaseWithClassName, DisplayFor } from "../../utils/types";
+import { ComponentBaseWithClassName } from "../../utils/types";
 import { valEmpty, onMouseHandlers } from "../../utils";
 import { ButtonCommonProps } from "../types";
 import "@polkadot-cloud/core/css/buttons/ButtonHelp/index.css";
 
 export type ButtonHelpProps = ComponentBaseWithClassName &
   ButtonCommonProps & {
-    // display for.
-    displayFor?: DisplayFor;
+    // background style.
+    background?: "primary" | "secondary" | "none";
+    // optional border
+    outline?: boolean;
   };
 
 /**
@@ -22,24 +24,26 @@ export const ButtonHelp = ({
   marginLeft,
   marginRight,
   marginX,
-  displayFor,
   className,
   style,
   onClick,
   onMouseOver,
   onMouseMove,
   onMouseOut,
+  outline = false,
+  background = "primary",
 }: ButtonHelpProps) => (
   <button
     className={`btn-help${valEmpty(
-      displayFor === "modal",
+      background === "secondary",
       "background-secondary"
-    )}${valEmpty(displayFor === "canvas", "background-tertiary")}${valEmpty(
-      marginRight,
-      "m-right"
-    )}${valEmpty(marginLeft, "m-left")}${valEmpty(marginX, "m-x")}${
-      className ? ` ${className}` : ""
-    }`}
+    )}${valEmpty(background === "none", "background-none")}${valEmpty(
+      outline,
+      "outline"
+    )}${valEmpty(marginRight, "m-right")}${valEmpty(
+      marginLeft,
+      "m-left"
+    )}${valEmpty(marginX, "m-x")}${className ? ` ${className}` : ""}`}
     style={style}
     type="button"
     disabled={disabled}

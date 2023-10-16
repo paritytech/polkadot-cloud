@@ -565,10 +565,10 @@
   resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.0.19.tgz#8968b6997562c2c651db16e936e2d13413c87fff"
   integrity sha512-AOzAi/PF1DuhpSHhx9Ip7AcOfpchUr0jGbqYEo+IACkJDGpJIIorr1A2vIm4eLoEdmh4xn2c5mf0v9OysXLTrg==
 
-"@polkadot-cloud/core@^1.0.21":
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.0.21.tgz#2113149eb8d484b2dac6143d1a2a3cdc63445165"
-  integrity sha512-cUZc930gtGKinMPkA0fFC5tPEbWXzEKvS9+aqrc+OYcDpgyXwCg6KgGfg/7boLKPYfv4abutcbWlP/S+BLWGcA==
+"@polkadot-cloud/core@^1.0.22":
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.0.22.tgz#1c7fe1d3b2624389eb17700ee0e60aa93da67b10"
+  integrity sha512-+2h+7Z7kyQpyiKK/TWv+C+DGYHaSYBbRpsBTbKt8qX7Mf0RhUvQfXBih1MwGKFxdFzG3z8jN84yX8qngC291cA==
 
 "@polkadot-cloud/utils@^0.0.22":
   version "0.0.22"
