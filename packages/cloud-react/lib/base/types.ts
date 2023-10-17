@@ -5,6 +5,7 @@ import {
   AnyJson,
   ComponentBase,
   ComponentBaseWithClassName,
+  DisplayFor,
 } from "../utils/types";
 import { ReactElement, ReactNode } from "react";
 
@@ -122,5 +123,5 @@ export type TxProps = {
   // signing component.
   SignerComponent: ReactElement;
   // display for.
-  displayFor?: "default" | "canvas";
+  displayFor?: DisplayFor;
 };
