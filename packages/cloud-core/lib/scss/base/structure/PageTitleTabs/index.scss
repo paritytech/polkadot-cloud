@@ -6,11 +6,11 @@ SPDX-License-Identifier: GPL-3.0-only */
 @use "../styles";
 
 .core-page-title-tabs {
-  max-width: v.$page-max-width;
   border-bottom: 1px solid var(--border-primary-color);
   overflow: hidden;
   height: 3.6rem;
   margin-top: 0.9rem;
+  max-width: 100%;
 
   @media (max-width: v.$page-width-medium-threshold) {
     margin-top: 0.5rem;
