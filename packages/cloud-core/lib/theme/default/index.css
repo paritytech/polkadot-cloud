@@ -64,6 +64,8 @@ SPDX-License-Identifier: GPL-3.0-only */
     rgb(0 0 0 / 4%) 0%,
     rgb(0 0 0 / 1%) 100%
   );
+  --grid-color-primary: #e3e3e3;
+  --grid-color-secondary: #e8e8e8;
   --card-shadow: -1px -2px 12px 1px var(--card-shadow-color-secondary),
     0px 0.5px 1px 0px var(--card-deep-shadow-color),
     0 3.5px 6px -1px var(--card-shadow-color),
@@ -91,7 +93,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   --background-status-overlay: rgb(43 38 43 / 75%);
   --background-menu: rgb(57 52 58);
   --background-input: rgb(72 70 72);
-  --border-primary-color: rgb(60 52 60);
+  --border-primary-color: rgb(58 52 58);
   --border-secondary-color: rgb(95 90 95);
   --button-primary-background: rgb(58 52 58);
   --button-secondary-background: rgb(55 50 55);
@@ -137,6 +139,8 @@ SPDX-License-Identifier: GPL-3.0-only */
     rgb(255 255 255 / 3%) 0%,
     rgb(255 255 255 / 1%) 100%
   );
+  --grid-color-primary: rgb(51 43 51);
+  --grid-color-secondary: rgb(53 45 53);
   --card-shadow: -1px -2px 12px 1px var(--card-shadow-color-secondary),
     0px 0.75px 1px 0px var(--card-deep-shadow-color),
     0 3.5px 6px -1px var(--card-shadow-color),
