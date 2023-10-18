@@ -6244,10 +6244,10 @@ react-is@^18.0.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
-react-powerglitch@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/react-powerglitch/-/react-powerglitch-1.0.1.tgz#506c2e38c85400ca15bc31bfb3a725dc345eb43f"
-  integrity sha512-xRa9R1kSRmOKpjgKOkYTTIQdOcMpZs4dhm7rZxrpawnyo9C4cJCN/b/DvNPFjCicMeohk2sy+URHr/vgmGu4GA==
+react-powerglitch@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-powerglitch/-/react-powerglitch-1.0.2.tgz#ef0cd1c00afecbf08692bbce543e499e06d06c5f"
+  integrity sha512-EOK6pauC2K5x4YaVYAFs+xctL1d/Ryv2v3xMdlSJYe2wPNcSox8m9JY9uMw83sWR92XT/nQCcamFI/u8UrsvTw==
   dependencies:
     powerglitch "^2.3.2"
 
