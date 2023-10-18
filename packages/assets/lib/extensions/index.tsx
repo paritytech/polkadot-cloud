@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { ExtensionConfig } from "../types";
+import { ExtensionConfig, IconRecords } from "../types";
 import Enkrypt from "./jsx/Enkrypt";
 import FearlessWallet from "./jsx/FearlessWallet";
 import NovaWallet from "./jsx/NovaWallet";
@@ -59,7 +59,7 @@ export const ExtensionsArray = Object.entries(Extensions).map(
 );
 
 // List of extension icons keyed by the extension id.
-export const ExtensionIcons = {
+export const ExtensionIcons: IconRecords = {
   enkrypt: Enkrypt,
   "fearless-wallet": FearlessWallet,
   novawallet: NovaWallet,
@@ -90,7 +90,7 @@ export const HardwareArray = Object.entries(Hardware).map(([key, value]) => ({
   ...value,
 }));
 
-export const HardwareIcons = {
+export const HardwareIcons: IconRecords = {
   ledger: Ledger,
   polkadotvault: PolkadotVault,
   walletconnect: WalletConnect,

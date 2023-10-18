@@ -18,6 +18,7 @@ export const defaultModalConfig: ModalConfig = {
 export const defaultCanvasConfig: CanvasConfig = {
   key: "",
   options: {},
+  scroll: true,
 };
 
 export const defaultOverlayContext: OverlayContextInterface = {

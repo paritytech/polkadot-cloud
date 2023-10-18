@@ -70,8 +70,10 @@ export type ButtonProps = ComponentBaseWithClassName &
         text: string;
       }
     | {
-        // whether to use secondary background
-        backgroundSecondary?: boolean;
+        // background style.
+        background?: "primary" | "secondary" | "none";
+        // optional border
+        outline?: boolean;
       }
     | {
         // whether the button is clicked

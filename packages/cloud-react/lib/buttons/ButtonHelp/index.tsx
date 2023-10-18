@@ -9,8 +9,10 @@ import "@polkadot-cloud/core/css/buttons/ButtonHelp/index.css";
 
 export type ButtonHelpProps = ComponentBaseWithClassName &
   ButtonCommonProps & {
-    // whether to use secondary background
-    backgroundSecondary?: boolean;
+    // background style.
+    background?: "primary" | "secondary" | "none";
+    // optional border
+    outline?: boolean;
   };
 
 /**
@@ -22,18 +24,22 @@ export const ButtonHelp = ({
   marginLeft,
   marginRight,
   marginX,
-  backgroundSecondary,
   className,
   style,
   onClick,
   onMouseOver,
   onMouseMove,
   onMouseOut,
+  outline = false,
+  background = "primary",
 }: ButtonHelpProps) => (
   <button
     className={`btn-help${valEmpty(
-      backgroundSecondary,
+      background === "secondary",
       "background-secondary"
+    )}${valEmpty(background === "none", "background-none")}${valEmpty(
+      outline,
+      "outline"
     )}${valEmpty(marginRight, "m-right")}${valEmpty(
       marginLeft,
       "m-left"

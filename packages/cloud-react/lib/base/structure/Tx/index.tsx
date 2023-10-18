@@ -18,9 +18,10 @@ export const Tx = ({
   notEnoughFunds,
   dangerMessage,
   SignerComponent,
+  displayFor = "default",
 }: TxProps) => (
   <div className={`core-tx${valEmpty(margin, "margin")}`}>
-    <div className="inner">
+    <div className={`inner${valEmpty(displayFor === "canvas", "canvas")}`}>
       <p className="sign">
         <span className="badge">
           <FontAwesomeIcon icon={faPenToSquare} className="icon" />

@@ -88,7 +88,7 @@ export const HardwareStatusBar = ({
                       handleHelp(helpKey);
                     }
                   }}
-                  backgroundSecondary
+                  background="secondary"
                 />
               )}
             </h3>

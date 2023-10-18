@@ -19,6 +19,10 @@ SPDX-License-Identifier: GPL-3.0-only */
     flex-direction: column;
     padding: 1rem;
 
+    &.canvas {
+      background: var(--background-canvas-card);
+    }
+
     > section {
       width: 100%;
       display: flex;
