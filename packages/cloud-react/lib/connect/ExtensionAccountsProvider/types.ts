@@ -13,7 +13,7 @@ export interface ExtensionAccountsContextInterface {
     extensionsInjected: ExtensionInjected
   ) => Promise<boolean>;
   forgetAccounts: (a: ExtensionAccount[]) => void;
-  extensionAccountsSynced: boolean;
+  extensionAccountsSynced: Sync;
   extensionAccounts: ImportedAccount[];
 }
 
@@ -22,8 +22,8 @@ export interface ExtensionAccountsProviderProps {
   network: string;
   ss58: number;
   dappName: string;
-  activeAccount: MaybeAddress;
-  setActiveAccount: (a: MaybeAddress) => void;
+  activeAccount?: MaybeAddress;
+  setActiveAccount?: (a: MaybeAddress) => void;
 }
 
 export interface HandleImportExtension {
@@ -32,3 +32,4 @@ export interface HandleImportExtension {
     removedActiveAccount: MaybeAddress;
   };
 }
+export type Sync = "synced" | "unsynced" | "syncing";

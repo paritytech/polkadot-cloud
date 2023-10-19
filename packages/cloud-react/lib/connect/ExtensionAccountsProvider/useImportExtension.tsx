@@ -31,8 +31,11 @@ export const useImportExtension = () => {
     extension: ExtensionInterface,
     newAccounts: ExtensionAccount[],
     forget: (a: ImportedAccount[]) => void,
-    network: {
-      name: string;
+    {
+      network,
+      ss58,
+    }: {
+      network: string;
       ss58: number;
     }
   ): HandleImportExtension => {
@@ -48,7 +51,7 @@ export const useImportExtension = () => {
         extension,
         newAccounts,
         forget,
-        network
+        { network, ss58 }
       );
     }
     return defaultHandleImportExtension;
@@ -63,16 +66,19 @@ export const useImportExtension = () => {
     extension: ExtensionInterface,
     newAccounts: ExtensionAccount[],
     forget: (a: ImportedAccount[]) => void,
-    network: {
-      name: string;
+    {
+      ss58,
+      network,
+    }: {
+      network: string;
       ss58: number;
     }
   ): HandleImportExtension => {
     const keyring = new Keyring();
-    keyring.setSS58Format(network.ss58);
+    keyring.setSS58Format(ss58);
 
     // Remove accounts that do not contain correctly formatted addresses.
-    newAccounts = newAccounts.filter((i) => isValidAddress(i.address));
+    newAccounts = newAccounts.filter(({ address }) => isValidAddress(address));
 
     // Reformat addresses to ensure correct ss58 format
     newAccounts.forEach(async (account) => {
@@ -82,7 +88,7 @@ export const useImportExtension = () => {
     });
 
     // Remove newAccounts from local external accounts if present
-    const inExternal = getInExternalAccounts(newAccounts, network.name);
+    const inExternal = getInExternalAccounts(newAccounts, network);
     forget(inExternal);
 
     // Find any accounts that have been removed from this extension
@@ -92,7 +98,7 @@ export const useImportExtension = () => {
 
     // Check whether active account is present in forgotten accounts
     const activeGoneFromExtension = goneFromExtension.find(
-      (i) => i.address === getActiveAccountLocal(network.name, network.ss58)
+      ({ address }) => address === getActiveAccountLocal(network, ss58)
     );
     // Commit remove forgotten accounts
     forget(goneFromExtension);
@@ -107,10 +113,10 @@ export const useImportExtension = () => {
     );
 
     // Format accounts properties
-    newAccounts = newAccounts.map((a) => ({
-      address: a.address,
+    newAccounts = newAccounts.map(({ address, name }) => ({
+      address: address,
       source: id,
-      name: a.name,
+      name: name,
       signer: extension.signer,
     }));
     return {
@@ -125,15 +131,18 @@ export const useImportExtension = () => {
   //
   // Checks if the local active account is in the extension.
   const getActiveExtensionAccount = (
-    network: {
-      name: string;
+    {
+      network,
+      ss58,
+    }: {
+      network: string;
       ss58: number;
     },
     accounts: ImportedAccount[]
   ) => {
     return (
       accounts.find(
-        (a) => a.address === getActiveAccountLocal(network.name, network.ss58)
+        ({ address }) => address === getActiveAccountLocal(network, ss58)
       ) ?? null
     );
   };

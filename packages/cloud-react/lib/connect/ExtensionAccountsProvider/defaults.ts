@@ -8,7 +8,7 @@ export const defaultExtensionAccountsContext: ExtensionAccountsContextInterface 
   {
     connectExtensionAccounts: () => Promise.resolve(false),
     forgetAccounts: (a) => {},
-    extensionAccountsSynced: false,
+    extensionAccountsSynced: "unsynced",
     extensionAccounts: [],
   };
 
