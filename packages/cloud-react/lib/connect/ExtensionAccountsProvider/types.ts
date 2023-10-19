@@ -22,8 +22,8 @@ export interface ExtensionAccountsProviderProps {
   network: string;
   ss58: number;
   dappName: string;
-  activeAccount: MaybeAddress;
-  setActiveAccount: (a: MaybeAddress) => void;
+  activeAccount?: MaybeAddress;
+  setActiveAccount?: (a: MaybeAddress) => void;
 }
 
 export interface HandleImportExtension {

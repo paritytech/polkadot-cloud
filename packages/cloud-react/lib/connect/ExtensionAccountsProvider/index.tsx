@@ -61,8 +61,13 @@ export const ExtensionAccountsProvider = ({
   // Store unsubscribe handlers for connected extensions.
   const unsubs = useRef<Record<string, AnyFunction>>({});
 
+  // Helper for setting active account. Ignores if not a valid function.
+  const maybeSetActiveAccount = (address: string) => {
+    if (typeof setActiveAccount === "function")
+      setActiveAccount(address ?? null);
+  };
   const connectToAccount = (account: ImportedAccount | null) => {
-    setActiveAccount(account?.address ?? null);
+    maybeSetActiveAccount(account?.address ?? null);
   };
 
   // connectActiveExtensions
@@ -118,7 +123,7 @@ export const ExtensionAccountsProvider = ({
                     );
 
                 // Set active account for network on final extension.
-                if (i === total && activeAccount === null) {
+                if (i === total && !activeAccount) {
                   const activeAccountRemoved =
                     activeWalletAccount?.address !==
                       meta.removedActiveAccount &&
@@ -177,7 +182,7 @@ export const ExtensionAccountsProvider = ({
                 { network, ss58 }
               );
               // Set active account for network if not yet set.
-              if (activeAccount === null) {
+              if (!activeAccount) {
                 const activeExtensionAccount = getActiveExtensionAccount(
                   { network, ss58 },
                   newAccounts
@@ -248,8 +253,12 @@ export const ExtensionAccountsProvider = ({
         extensionAccountsRef
       );
       // If the currently active account is being forgotten, disconnect.
-      if (forget.find((a) => a.address === activeAccount) !== undefined)
-        setActiveAccount(null);
+      if (activeAccount) {
+        if (
+          forget.find(({ address }) => address === activeAccount) !== undefined
+        )
+          maybeSetActiveAccount(null);
+      }
     }
   };
 
