@@ -12,6 +12,7 @@ import {
 import {
   ExtensionAccountsContextInterface,
   ExtensionAccountsProviderProps,
+  Sync,
 } from "./types";
 import { extensionIsLocal, removeFromLocalExtensions } from "./utils";
 import { AnyFunction, AnyJson } from "../../utils/types";
@@ -49,7 +50,7 @@ export const ExtensionAccountsProvider = ({
 
   // Store whether extension accounts have been synced.
   const [extensionAccountsSynced, setExtensionAccountsSynced] =
-    useState<boolean>(false);
+    useState<Sync>("unsynced");
 
   // Store extensions whose account subscriptions have been initialised.
   const [extensionsInitialised, setExtensionsInitialised] = useState<AnyJson[]>(
@@ -103,18 +104,19 @@ export const ExtensionAccountsProvider = ({
                   a,
                   forgetAccounts,
                   {
-                    name: network,
+                    network,
                     ss58,
                   }
                 );
 
                 // Store active wallet account if found in this extension.
-                if (!activeWalletAccount) {
-                  activeWalletAccount = getActiveExtensionAccount(
-                    { name: network, ss58 },
-                    newAccounts
-                  );
-                }
+                if (newAccounts.length)
+                  if (!activeWalletAccount)
+                    activeWalletAccount = getActiveExtensionAccount(
+                      { network, ss58 },
+                      newAccounts
+                    );
+
                 // Set active account for network on final extension.
                 if (i === total && activeAccount === null) {
                   const activeAccountRemoved =
@@ -172,12 +174,12 @@ export const ExtensionAccountsProvider = ({
                 extension,
                 a,
                 forgetAccounts,
-                { name: network, ss58 }
+                { network, ss58 }
               );
               // Set active account for network if not yet set.
               if (activeAccount === null) {
                 const activeExtensionAccount = getActiveExtensionAccount(
-                  { name: network, ss58 },
+                  { network, ss58 },
                   newAccounts
                 );
                 if (
@@ -283,18 +285,14 @@ export const ExtensionAccountsProvider = ({
     });
   };
 
-  // Re-sync extensions accounts on network switch.
-  //
-  // Do this if activeAccount is present. If activeAccount is present, and extensions have for some
-  // reason been removed from local storage, then all pop-ups will be summoned here.
+  // Re-sync extensions accounts on `unsynced`.
   useEffect(() => {
     // wait for injectedWeb3 check to finish before starting account import process.
-    if (!checkingInjectedWeb3) {
+    if (!checkingInjectedWeb3 && extensionAccountsSynced === "unsynced") {
       // unsubscribe from all accounts and reset state
       unsubscribe();
       setStateWithRef([], setExtensionAccounts, extensionAccountsRef);
       setStateWithRef([], setExtensionsInitialised, extensionsInitialisedRef);
-      setExtensionAccountsSynced(false);
       // if extensions have been fetched, get accounts if extensions exist and
       // local extensions exist (previously connected).
       if (extensions.length) {
@@ -305,26 +303,29 @@ export const ExtensionAccountsProvider = ({
           true
         );
         if (extensions.length && localExtensions.length) {
+          setExtensionAccountsSynced("syncing");
           connectActiveExtensions();
-        } else {
-          setExtensionAccountsSynced(true);
-        }
+        } else setExtensionAccountsSynced("synced");
       }
     }
     return () => unsubscribe();
-  }, [extensions?.length, network, checkingInjectedWeb3]);
+  }, [extensions.length, checkingInjectedWeb3, extensionAccountsSynced]);
+
+  // Change syncing to unsynced on `ss58` change.
+  useEffectIgnoreInitial(() => {
+    setExtensionAccountsSynced("unsynced");
+  }, [ss58]);
 
   // Once initialised extensions equal total extensions present in `injectedWeb3`, mark extensions
   // as fetched.
   useEffectIgnoreInitial(() => {
     if (
-      (!checkingInjectedWeb3 &&
-        extensionsInitialisedRef.current.length === extensions?.length) ||
-      0
+      !checkingInjectedWeb3 &&
+      extensionsInitialised.length === extensions?.length
     ) {
-      setExtensionAccountsSynced(true);
+      setExtensionAccountsSynced("synced");
     }
-  }, [checkingInjectedWeb3, extensionsInitialisedRef.current]);
+  }, [checkingInjectedWeb3, extensionsInitialised]);
 
   return (
     <ExtensionAccountsContext.Provider

@@ -13,7 +13,7 @@ export interface ExtensionAccountsContextInterface {
     extensionsInjected: ExtensionInjected
   ) => Promise<boolean>;
   forgetAccounts: (a: ExtensionAccount[]) => void;
-  extensionAccountsSynced: boolean;
+  extensionAccountsSynced: Sync;
   extensionAccounts: ImportedAccount[];
 }
 
@@ -32,3 +32,4 @@ export interface HandleImportExtension {
     removedActiveAccount: MaybeAddress;
   };
 }
+export type Sync = "synced" | "unsynced" | "syncing";
