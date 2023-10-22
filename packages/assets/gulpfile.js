@@ -19,6 +19,10 @@ const buildComponents = () => {
     .pipe(gulp.dest("dist"));
 };
 
+const buildSvg = () => {
+  return src("lib/**/*.svg").pipe(dest("dist/"));
+};
+
 const stripComments = () => {
   return src("dist/**/*.js").pipe(strip()).pipe(gulp.dest("dist"));
 };
@@ -27,4 +31,9 @@ const licenseAndReadme = () => {
   return src(["LICENSE", "README.npm.md"]).pipe(dest("dist"));
 };
 
-export default series(buildComponents, stripComments, licenseAndReadme);
+export default series(
+  buildComponents,
+  buildSvg,
+  stripComments,
+  licenseAndReadme
+);
