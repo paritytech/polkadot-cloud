@@ -5,6 +5,7 @@ import {
   AnyJson,
   ComponentBase,
   ComponentBaseWithClassName,
+  DisplayFor,
 } from "../utils/types";
 import { ReactElement, ReactNode } from "react";
 
@@ -121,4 +122,6 @@ export type TxProps = {
   dangerMessage: string;
   // signing component.
   SignerComponent: ReactElement;
+  // display for.
+  displayFor?: DisplayFor;
 };

@@ -7,7 +7,8 @@ SPDX-License-Identifier: GPL-3.0-only */
   --background-primary: #f8f7f7;
   --background-invert: #333;
   --background-list-item: rgb(238 238 238 / 100%);
-  --background-modal-item: rgb(237 237 237 / 75%);
+  --background-modal-card: rgb(248 248 248 / 90%);
+  --background-canvas-card: rgb(245 245 245 / 90%);
   --background-floating-card: rgb(255 255 255 / 90%);
   --background-app-footer: rgb(244 225 225 / 75%);
   --background-warning: #fdf9eb;
@@ -63,6 +64,8 @@ SPDX-License-Identifier: GPL-3.0-only */
     rgb(0 0 0 / 4%) 0%,
     rgb(0 0 0 / 1%) 100%
   );
+  --grid-color-primary: #e3e3e3;
+  --grid-color-secondary: #e8e8e8;
   --card-shadow: -1px -2px 12px 1px var(--card-shadow-color-secondary),
     0px 0.5px 1px 0px var(--card-deep-shadow-color),
     0 3.5px 6px -1px var(--card-shadow-color),
@@ -80,7 +83,8 @@ SPDX-License-Identifier: GPL-3.0-only */
   --background-primary: rgb(45 41 45);
   --background-invert: #ddd;
   --background-list-item: rgb(38 33 38 / 100%);
-  --background-modal-item: rgb(32 26 32 / 50%);
+  --background-modal-card: rgb(32 26 32 / 50%);
+  --background-canvas-card: rgb(32 26 32 / 50%);
   --background-floating-card: rgb(43 38 43 / 95%);
   --background-app-footer: #262327;
   --background-warning: #33332a;
@@ -135,6 +139,8 @@ SPDX-License-Identifier: GPL-3.0-only */
     rgb(255 255 255 / 3%) 0%,
     rgb(255 255 255 / 1%) 100%
   );
+  --grid-color-primary: rgb(51 43 51);
+  --grid-color-secondary: rgb(53 45 53);
   --card-shadow: -1px -2px 12px 1px var(--card-shadow-color-secondary),
     0px 0.75px 1px 0px var(--card-deep-shadow-color),
     0 3.5px 6px -1px var(--card-shadow-color),

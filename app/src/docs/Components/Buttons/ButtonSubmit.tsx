@@ -8,6 +8,7 @@ import { Demo } from "@docs/Demo";
 
 export const ButtonSubmit = () => {
   const code = `<Button type="submit" text="Button" marginRight />
+<Button type="submit" text="Button" marginRight lg />
 <Button
   type="submit"
   text="Button"
@@ -22,6 +23,7 @@ export const ButtonSubmit = () => {
     <>
       <Demo>
         <Button type="submit" text="Button" marginRight />
+        <Button type="submit" text="Button" marginRight lg />
         <Button
           type="submit"
           text="Button"

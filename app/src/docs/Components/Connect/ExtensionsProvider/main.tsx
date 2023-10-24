@@ -9,8 +9,27 @@ import { Note } from "@docs/Note";
 import { Link } from "react-router-dom";
 import { HookExample } from "./HookExample";
 import { H2, H3 } from "@docs/Headers";
+import { SimpleEditor } from "@docs/SimpleEditor";
 
 export const Doc = ({ folder, npm }: DocProps) => {
+  const code = `import App from "./App";
+  import {
+    ExtensionsProvider,
+    ExtensionAccountsProvider,
+  } from "@polkadot-cloud/react/providers";
+
+  ....
+  
+  ReactDOM.createRoot(document.getElementById("root")!).render(
+    <ExtensionsProvider>
+      <ExtensionAccountsProvider ...>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </ExtensionAccountsProvider>
+    </ExtensionsProvider>
+  );`;
+
   return (
     <>
       <Edit folder={folder} />
@@ -20,7 +39,6 @@ export const Doc = ({ folder, npm }: DocProps) => {
         npm={npm}
         status="stable"
       />
-
       <p>
         <a
           href="https://github.com/paritytech/polkadot-cloud/blob/main/packages/cloud-react/lib/connect/ExtensionsProvider/index.tsx"
@@ -35,14 +53,11 @@ export const Doc = ({ folder, npm }: DocProps) => {
         available web extensions:
       </p>
       <ProviderExample />
-
       <p>
         With the provider in place, extensions data can be accessed with the{" "}
         <code>useExtensions</code> hook:
       </p>
-
       <HookExample />
-
       <Note>
         <p>
           <code>ExtensionsProvider</code> supports all the web3 wallet
@@ -50,7 +65,17 @@ export const Doc = ({ folder, npm }: DocProps) => {
           page.
         </p>
       </Note>
-
+      <H3 id="requires">Warning:</H3>
+      <Note>
+        <p>
+          When <code>React.StrictMode</code> is used, it should be placed{" "}
+          <b>after</b> the <code>ExtensionsProvider</code> and{" "}
+          <code>ExtensionAccountsProvider</code>, or the providers will not
+          work.
+        </p>
+      </Note>
+      <SimpleEditor code={code} standalone />;
+      <hr />
       <H3 id="extension-syncing">Extension Syncing</H3>
       <p>
         Web3 extensions are injected into the <code>window.injectedWeb3</code>{" "}
@@ -66,11 +91,8 @@ export const Doc = ({ folder, npm }: DocProps) => {
         is present, or if <code>injectedWeb3</code> is not found after a 5
         second timeout.
       </p>
-
       <hr className="lg" />
-
       <H2 id="values">Values</H2>
-
       <H3 id="extensions">extensions</H3>
       <div className="params inline">
         <p>ExtensionInjected[]</p>
@@ -88,7 +110,6 @@ export const Doc = ({ folder, npm }: DocProps) => {
           </li>
         </ul>
       </p>
-
       <H3 id="checkingInjectedWeb3">checkingInjectedWeb3</H3>
       <div className="params inline">
         <p>boolean</p>
@@ -97,7 +118,6 @@ export const Doc = ({ folder, npm }: DocProps) => {
         Returns a boolean reflecting whether <code>window.injectedWeb3</code> is
         being checked.
       </p>
-
       <H3 id="extensionStatus">extensionsStatus</H3>
       <div className="params inline">
         <p>Record&#60;string, ExtensionStatus&#62;</p>
@@ -106,7 +126,6 @@ export const Doc = ({ folder, npm }: DocProps) => {
         A key value record of each extension and their status. Empty object by
         default until <code>setExtensionStatus</code> is called.
       </p>
-
       <H3 id="setExtensionStatus">setExtensionStatus</H3>
       <div className="params inline">
         <p>(id: string, status: ExtensionStatus): void</p>

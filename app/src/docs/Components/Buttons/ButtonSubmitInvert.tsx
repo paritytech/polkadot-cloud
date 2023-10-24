@@ -8,6 +8,7 @@ import { Demo } from "@docs/Demo";
 
 export const ButtonSubmitInvert = () => {
   const code = `<Button type="submitInvert" text="Button" marginRight />
+<Button type="submitInvert" text="Button" marginRight lg />
 <Button
   type="submitInvert"
   text="Button"
@@ -26,6 +27,7 @@ export const ButtonSubmitInvert = () => {
     <>
       <Demo>
         <Button type="submitInvert" text="Button" marginRight />
+        <Button type="submitInvert" text="Button" marginRight lg />
         <Button
           type="submitInvert"
           text="Button"
