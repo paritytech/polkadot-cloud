@@ -36,7 +36,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   --modal-background-color: rgb(224 222 222 / 70%);
   --overlay-background-color: rgb(214 212 212 / 70%);
   --shimmer-foreground: #e0e0e0;
-  --shimmer-background: #ccc;
+  --shimmer-background: #bbb;
   --status-success-color: green;
   --status-success-color-transparent: rgb(0 128 0 / 25%);
   --status-warning-color: #a78a3a;
@@ -112,7 +112,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   --accent-color-pending: var(--accent-color-pending-dark);
   --modal-background-color: rgb(22 18 22 / 70%);
   --overlay-background-color: rgb(18 14 18 / 70%);
-  --shimmer-background: rgb(47 42 48);
+  --shimmer-background: rgb(57 52 58);
   --shimmer-foreground: rgb(32 29 33);
   --status-success-color: #74da77;
   --status-success-color-transparent: rgb(0 128 0 / 25%);
