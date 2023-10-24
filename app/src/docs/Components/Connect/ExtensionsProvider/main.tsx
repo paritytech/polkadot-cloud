@@ -68,10 +68,10 @@ export const Doc = ({ folder, npm }: DocProps) => {
       <H3 id="requires">Warning:</H3>
       <Note>
         <p>
-          When <code>React.StrictMode</code> is used inside the Application, it
-          should be placed <b>after</b> the <code>ExtensionsProvider</code> and{" "}
+          When <code>React.StrictMode</code> is used, it should be placed{" "}
+          <b>after</b> the <code>ExtensionsProvider</code> and{" "}
           <code>ExtensionAccountsProvider</code>, or the providers will not
-          work;
+          work.
         </p>
       </Note>
       <SimpleEditor code={code} standalone />;
