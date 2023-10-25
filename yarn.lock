@@ -560,20 +560,15 @@
   resolved "https://registry.yarnpkg.com/@polkadot-cloud/assets/-/assets-0.1.24.tgz#13b3ce04b63bda70a023e1fd71fa2998b739849b"
   integrity sha512-HLpZ7NIYhALceeAHx6gdQKmYKxdrkd2GVphiWvvhoDgPBF586OQu+lv9Prldfi11+mY0EAC0MjGdreelr1Ma8Q==
 
-"@polkadot-cloud/core@^1.0.25":
-  version "1.0.25"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.0.25.tgz#f6bae22872191b7a4de2e2073a3e6c54783d5c3c"
-  integrity sha512-BG1zBm7u6VvZvhzKVoK9uOO3rz9tNIpAtSpgWcPtvERWxw69wviNVvisOnFvrlEpVdpmA1eF/tQlAjtdyssteA==
+"@polkadot-cloud/core@^1.0.29":
+  version "1.0.29"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.0.29.tgz#c6b5a6c739872f5e814e47a193c9c5e829dedbcc"
+  integrity sha512-HhfowiWIcR1dLZu9KtMJMm6N1ySP2bkiq6aPaCepxn/gszn8tfpEZMw2X9EX++G2ZWM1zggQXs/05i6iPNaLeA==
 
-"@polkadot-cloud/core@^1.0.26":
-  version "1.0.26"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.0.26.tgz#7c60cdf20a95b734d3d45d48efddd077112d0f71"
-  integrity sha512-0ZPL6f2WR0ezihBLLtVdCabYuTIz4NR2KFV8q+lsq3D2Qs8NQAytvqds4HBwsxq61oLdFc6lq11hDCe+lwy8gQ==
-
-"@polkadot-cloud/utils@^0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/utils/-/utils-0.0.22.tgz#b50a1f8dd6c49af2886bd653124fda8a4209a3b6"
-  integrity sha512-fx5e2f3KQ6EJCpepujFw5wqP2e6w/2j+k6gBw1lzaNALHDuGcIAh0MCrkg9k9HT/u75H6ANK2Sh6WDq5/7tayA==
+"@polkadot-cloud/utils@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/utils/-/utils-0.0.23.tgz#eb703f74c7f05f763f7624727ba83589131ae1c5"
+  integrity sha512-IWqtn/cBgxletCH+MqBwZhxPxEbFLhfCU6L4RmCSCoes0bC1xUHMtFevPiJuaEkXQTdFvOnosA8BbSI01/GUuA==
   dependencies:
     "@polkadot/keyring" "^12.5.1"
     "@polkadot/util" "^12.5.1"
@@ -2947,10 +2942,10 @@ eslint-plugin-jsx-a11y@^6.6.1:
     object.fromentries "^2.0.6"
     semver "^6.3.0"
 
-eslint-plugin-prefer-arrow-functions@^3.1.4:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-prefer-arrow-functions/-/eslint-plugin-prefer-arrow-functions-3.1.4.tgz#a0761c7a0ba71461f6b2136fdf7f7cec1c82d778"
-  integrity sha512-LSO8VibqBKqzelr+L21mEIfachavCon+1SEumCJ6U8Ze2q0pntyojmomcVwd9RZBjrP+HV6k1Osz0B3Xwdq8WA==
+eslint-plugin-prefer-arrow-functions@^3.2.4:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-prefer-arrow-functions/-/eslint-plugin-prefer-arrow-functions-3.2.4.tgz#7bfbaab9646d1bb7cd7e29a58cfb796548c69508"
+  integrity sha512-HbPmlbO/iYQeVs2fuShNkGVJDfVfgSd84Vzxv+xlh+nIVoSsZvTj6yOqszw4mtG9JbiqMShVWqbVeoVsejE59w==
 
 eslint-plugin-prefer-arrow@^1.2.3:
   version "1.2.3"
