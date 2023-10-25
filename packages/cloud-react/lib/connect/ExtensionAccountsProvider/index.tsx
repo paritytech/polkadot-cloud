@@ -32,11 +32,12 @@ export const ExtensionAccountsProvider = ({
   dappName,
   activeAccount,
   setActiveAccount,
+  onExtensionEnabled,
 }: ExtensionAccountsProviderProps) => {
   const {
     handleImportExtension,
-    connectActiveExtensionAccount,
     getActiveExtensionAccount,
+    connectActiveExtensionAccount,
   } = useImportExtension();
 
   const { checkingInjectedWeb3, setExtensionStatus, extensions } =
@@ -66,6 +67,12 @@ export const ExtensionAccountsProvider = ({
     if (typeof setActiveAccount === "function")
       setActiveAccount(address ?? null);
   };
+
+  // Helper for calling extension enabled callback. Ignores if not a valid function.
+  const maybeOnExtensionEnabled = (id: string) => {
+    if (typeof onExtensionEnabled === "function") onExtensionEnabled(id);
+  };
+
   const connectToAccount = (account: ImportedAccount | null) => {
     maybeSetActiveAccount(account?.address ?? null);
   };
@@ -164,6 +171,9 @@ export const ExtensionAccountsProvider = ({
         `unknown_extension_${extensionsInitialisedRef.current.length + 1}`
       );
     } else {
+      // Call optional `onExtensionEnabled` callback.
+      maybeOnExtensionEnabled(id);
+
       try {
         // Attempt to get extension `enable` property.
         const { enable } = e;
