@@ -18,6 +18,8 @@ Functional React components for Polkadot dapps.
 
 - [Polkicon](https://polkadot.cloud/polkicon): A light-weight and customisable Polkadot Icon.
 
+- [Extensions Provider](https://polkadot.cloud/extensions-provider): Discover available web3 exensions and manage their status.
+
 - [Extension Accounts Provider](https://polkadot.cloud/extension-accounts-provider): Connect to web extensions and subscribe to accounts.
 
 - [Odometer](https://polkadot.cloud/odometer): An odometer effect used for numbers and balances.
