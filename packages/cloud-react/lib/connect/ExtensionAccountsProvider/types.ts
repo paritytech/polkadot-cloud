@@ -24,6 +24,7 @@ export interface ExtensionAccountsProviderProps {
   dappName: string;
   activeAccount?: MaybeAddress;
   setActiveAccount?: (a: MaybeAddress) => void;
+  onExtensionEnabled?: (id: string) => void;
 }
 
 export interface HandleImportExtension {
