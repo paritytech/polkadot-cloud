@@ -73,7 +73,7 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
     }
 
     if (hasInjectedWeb3 || snapAvailable)
-      setExtensions(getInstalledExtensions());
+      setExtensions(getInstalledExtensions(snapAvailable));
 
     setStateWithRef(false, setCheckingInjectedWeb3, checkingInjectedWeb3Ref);
   };
@@ -91,18 +91,26 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
 
   // Getter for the currently installed extensions.
   //
-  // Loops through the supported extensios and checks if they are present in `injectedWeb3`.
-  const getInstalledExtensions = () => {
+  // Loops through the supported extensios and checks if they are present in `injectedWeb3`. Adds
+  // `installed` status to the extension if it is present.
+  const getInstalledExtensions = (snapAvailable: boolean) => {
     const { injectedWeb3 }: AnyJson = window;
     const installed: ExtensionInjected[] = [];
+
+    const newExtensionsStatus = { ...extensionsStatus };
+    if (snapAvailable) newExtensionsStatus["metamask"] = "installed";
+
     ExtensionsArray.forEach((e) => {
       if (injectedWeb3[e.id] !== undefined) {
+        newExtensionsStatus[e.id] = "installed";
         installed.push({
           ...e,
           ...injectedWeb3[e.id],
         });
       }
     });
+
+    setExtensionsStatus(newExtensionsStatus);
     return installed;
   };
 

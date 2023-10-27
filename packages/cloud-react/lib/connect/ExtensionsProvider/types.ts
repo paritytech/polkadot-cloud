@@ -54,4 +54,11 @@ export interface ExtensionsContextInterface {
   setExtensionStatus: (id: string, status: ExtensionStatus) => void;
 }
 
-export type ExtensionStatus = "not_found" | "not_authenticated" | "connected";
+// TODO: Use utlls for snaps to determine if it is available, and update.
+// TODO: Provide `isInstalled` helpers. Default to `not_found` if status has not been populated.
+// TODO: Add array support for extension URLs if a shorthand URL is needed.
+export type ExtensionStatus =
+  | "installed"
+  | "not_found"
+  | "not_authenticated"
+  | "connected";
