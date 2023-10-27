@@ -5,7 +5,10 @@ import { createContext, useEffect, useRef, useState } from "react";
 import { localStorageOrDefault, setStateWithRef } from "@polkadot-cloud/utils";
 import { defaultExtensionAccountsContext } from "./defaults";
 import { ImportedAccount } from "../types";
-import { ExtensionInterface } from "../ExtensionsProvider/types";
+import {
+  ExtensionAccount,
+  ExtensionInterface,
+} from "../ExtensionsProvider/types";
 import {
   ExtensionAccountsContextInterface,
   ExtensionAccountsProviderProps,
@@ -121,46 +124,47 @@ export const ExtensionAccountsProvider = ({
           // Summons extension popup.
           const extension: ExtensionInterface = await enable(dappName);
           if (extension !== undefined) {
-            const unsub = extension.accounts.subscribe((a) => {
-              if (a) {
-                const { newAccounts, meta } = handleImportExtension(
-                  id,
-                  extensionAccountsRef.current,
-                  extension,
-                  a,
-                  forgetAccounts,
-                  {
-                    network,
-                    ss58,
-                  }
-                );
-
-                // Store active wallet account if found in this extension.
-                if (newAccounts.length)
-                  if (!activeWalletAccount)
-                    activeWalletAccount = getActiveExtensionAccount(
-                      { network, ss58 },
-                      newAccounts
-                    );
-
-                // Set active account for network on final extension.
-                if (i === total && !activeAccount) {
-                  const activeAccountRemoved =
-                    activeWalletAccount?.address !==
-                      meta.removedActiveAccount &&
-                    meta.removedActiveAccount !== null;
-                  if (!activeAccountRemoved) {
-                    connectActiveExtensionAccount(
-                      activeWalletAccount,
-                      connectToAccount
-                    );
-                  }
+            // Handler for new accounts.
+            const handleAccounts = (a: ExtensionAccount[]) => {
+              const { newAccounts, meta } = handleImportExtension(
+                id,
+                extensionAccountsRef.current,
+                extension,
+                a,
+                forgetAccounts,
+                {
+                  network,
+                  ss58,
                 }
-                // Concat accounts and store.
-                addExtensionAccount(newAccounts);
-                // Update initialised extensions.
-                updateInitialisedExtensions(id);
+              );
+
+              // Store active wallet account if found in this extension.
+              if (newAccounts.length)
+                if (!activeWalletAccount)
+                  activeWalletAccount = getActiveExtensionAccount(
+                    { network, ss58 },
+                    newAccounts
+                  );
+
+              // Set active account for network on final extension.
+              if (i === total && !activeAccount) {
+                const activeAccountRemoved =
+                  activeWalletAccount?.address !== meta.removedActiveAccount &&
+                  meta.removedActiveAccount !== null;
+                if (!activeAccountRemoved) {
+                  connectActiveExtensionAccount(
+                    activeWalletAccount,
+                    connectToAccount
+                  );
+                }
               }
+              // Concat accounts and store.
+              addExtensionAccount(newAccounts);
+              // Update initialised extensions.
+              updateInitialisedExtensions(id);
+            };
+            const unsub = extension.accounts.subscribe((accounts) => {
+              if (accounts) handleAccounts(accounts);
             });
             addToUnsubscribe(id, unsub);
           }
@@ -203,38 +207,40 @@ export const ExtensionAccountsProvider = ({
         // Summons extension popup.
         const extension: ExtensionInterface = await enable(dappName);
         if (extension !== undefined) {
-          // Subscribe to accounts.
-          const unsub = extension.accounts.subscribe((a) => {
-            if (a) {
-              const { newAccounts, meta } = handleImportExtension(
-                id,
-                extensionAccountsRef.current,
-                extension,
-                a,
-                forgetAccounts,
-                { network, ss58 }
+          // Handler for new accounts.
+          const handleAccounts = (a: ExtensionAccount[]) => {
+            const { newAccounts, meta } = handleImportExtension(
+              id,
+              extensionAccountsRef.current,
+              extension,
+              a,
+              forgetAccounts,
+              { network, ss58 }
+            );
+            // Set active account for network if not yet set.
+            if (!activeAccount) {
+              const activeExtensionAccount = getActiveExtensionAccount(
+                { network, ss58 },
+                newAccounts
               );
-              // Set active account for network if not yet set.
-              if (!activeAccount) {
-                const activeExtensionAccount = getActiveExtensionAccount(
-                  { network, ss58 },
-                  newAccounts
+              if (
+                activeExtensionAccount?.address !== meta.removedActiveAccount &&
+                meta.removedActiveAccount !== null
+              )
+                connectActiveExtensionAccount(
+                  activeExtensionAccount,
+                  connectToAccount
                 );
-                if (
-                  activeExtensionAccount?.address !==
-                    meta.removedActiveAccount &&
-                  meta.removedActiveAccount !== null
-                )
-                  connectActiveExtensionAccount(
-                    activeExtensionAccount,
-                    connectToAccount
-                  );
-              }
-              // Concat accounts and store.
-              addExtensionAccount(newAccounts);
-              // Update initialised extensions.
-              updateInitialisedExtensions(id);
             }
+            // Concat accounts and store.
+            addExtensionAccount(newAccounts);
+            // Update initialised extensions.
+            updateInitialisedExtensions(id);
+          };
+
+          // Subscribe to accounts.
+          const unsub = extension.accounts.subscribe((accounts) => {
+            if (accounts) handleAccounts(accounts);
           });
           addToUnsubscribe(id, unsub);
           return true;
