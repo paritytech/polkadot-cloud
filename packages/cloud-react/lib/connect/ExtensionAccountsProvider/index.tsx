@@ -11,15 +11,13 @@ import {
   ExtensionAccountsProviderProps,
   Sync,
 } from "./types";
-import {
-  extensionIsLocal,
-  initMetamaskPolkadotSnap,
-  removeFromLocalExtensions,
-} from "./utils";
+import { extensionIsLocal, removeFromLocalExtensions } from "./utils";
 import { AnyFunction, AnyJson } from "../../utils/types";
 import { useImportExtension } from "./useImportExtension";
 import { useExtensions } from "../ExtensionsProvider/useExtensions";
 import { useEffectIgnoreInitial } from "../../base/hooks/useEffectIgnoreInitial";
+import { initPolkadotSnap } from "./snap";
+import { SnapNetworks } from "@chainsafe/metamask-polkadot-types";
 
 export const ExtensionAccountsContext =
   createContext<ExtensionAccountsContextInterface>(
@@ -95,8 +93,10 @@ export const ExtensionAccountsProvider = ({
 
     // Connect to Metamask Polkadot Snap and inject into `injectedWeb3` if avaialble.
     if (extensionKeys.find((id) => id === "metamask-polkadot-snap")) {
-      // TODO: add dappname, `networkName` and `addressPrefix` to options.
-      await initMetamaskPolkadotSnap();
+      await initPolkadotSnap({
+        networkName: network as SnapNetworks, // TODO: disable if network not supported.
+        addressPrefix: ss58,
+      });
     }
 
     // iterate filtered extensions, `enable` and add accounts to state.
@@ -187,7 +187,10 @@ export const ExtensionAccountsProvider = ({
       // Connect to Metamask Polkadot Snap if provided.
       if (id === "metamask-polkadot-snap") {
         // TODO: add dappname, `networkName` and `addressPrefix` to options.
-        await initMetamaskPolkadotSnap();
+        await initPolkadotSnap({
+          networkName: network as SnapNetworks, // TODO: disable if network not supported.
+          addressPrefix: ss58,
+        });
       }
 
       // Call optional `onExtensionEnabled` callback.
@@ -196,6 +199,7 @@ export const ExtensionAccountsProvider = ({
       try {
         // Attempt to get extension `enable` property.
         const { enable } = window.injectedWeb3[id];
+
         // Summons extension popup.
         const extension: ExtensionInterface = await enable(dappName);
         if (extension !== undefined) {
