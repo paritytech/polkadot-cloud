@@ -11,6 +11,7 @@ import { DocProps } from "@docs/types";
 import { ImportSimple } from "./ImportSimple";
 import { External } from "@docs/External";
 import { Bar } from "@docs/Bar";
+import { IconsOnly } from "./IconsOnly";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (
@@ -23,6 +24,8 @@ export const Doc = ({ folder, npm }: DocProps) => {
         npm={npm}
         status="stable"
       />
+
+      <IconsOnly />
 
       <p>
         Web3 wallet extension data can be imported from{" "}

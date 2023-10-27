@@ -20,6 +20,7 @@ export const Demo = ({
   centered,
   style,
   showThemes = true,
+  standalone = false,
 }: DemoProps) => {
   const { theme, mode, setTheme } = useTheme();
 
@@ -33,9 +34,10 @@ export const Demo = ({
   return (
     <>
       <div
-        className={`demo theme-${theme} theme-${mode}${
-          className ? ` ${className}` : ``
-        }${valEmpty(centered, "centered")}`}
+        className={`demo theme-${theme} theme-${mode}${valEmpty(
+          standalone,
+          "standalone"
+        )}${className ? ` ${className}` : ``}${valEmpty(centered, "centered")}`}
         style={style ? { ...style } : undefined}
       >
         {children}

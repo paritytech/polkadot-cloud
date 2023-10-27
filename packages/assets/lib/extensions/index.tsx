@@ -4,6 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { ExtensionConfig, IconRecords } from "../types";
 import Enkrypt from "./jsx/Enkrypt";
 import FearlessWallet from "./jsx/FearlessWallet";
+import MetaMask from "./jsx/MetaMask";
 import NovaWallet from "./jsx/NovaWallet";
 import PolkadotJS from "./jsx/PolkadotJS";
 import PolkaGate from "./jsx/PolkaGate";
@@ -25,6 +26,10 @@ export const Extensions: Record<string, ExtensionConfig> = {
   "fearless-wallet": {
     title: "Fearless Wallet",
     website: "fearlesswallet.io",
+  },
+  metamask: {
+    title: "MetaMask Polkadot Snap",
+    website: "snaps.metamask.io/snap/npm/chainsafe/polkadot-snap",
   },
   polkagate: {
     title: "PolkaGate",
@@ -62,6 +67,7 @@ export const ExtensionsArray = Object.entries(Extensions).map(
 export const ExtensionIcons: IconRecords = {
   enkrypt: Enkrypt,
   "fearless-wallet": FearlessWallet,
+  metamask: MetaMask,
   novawallet: NovaWallet,
   "polkadot-js": PolkadotJS,
   polkagate: PolkaGate,

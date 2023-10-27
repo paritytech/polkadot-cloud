@@ -11,6 +11,7 @@ import type {
 } from "./types";
 import { defaultExtensionsContext } from "./defaults";
 import { AnyJson } from "../../utils/types";
+import { enablePolkadotSnap } from "@chainsafe/metamask-polkadot-adapter";
 
 export const ExtensionsContext = createContext<ExtensionsContextInterface>(
   defaultExtensionsContext
@@ -50,37 +51,32 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
 
   // Handle completed interval check for `injectedWeb3`.
   //
-  // If `injectedWeb3` is present, get installed extensions and add to state.
+  // Clear interval and move on to checking for Metamask Polkadot Snap.
   const handleClearInterval = (hasInjectedWeb3: boolean) => {
     clearInterval(injectedWeb3Interval);
-    if (hasInjectedWeb3) {
-      setExtensions(getInstalledExtensions());
-    }
-    setStateWithRef(false, setCheckingInjectedWeb3, checkingInjectedWeb3Ref);
+    // Check if Metamask Polkadot Snap is available.
+    handleSnapInjection(hasInjectedWeb3);
   };
 
-  // Sets an interval to listen to `window` until the `injectedWeb3` property is present. Cancels
-  // after 500 * 10 milliseconds.
-  const checkEveryMs = 500;
-  const totalChecks = 10;
-
-  // To trigger interval on soft page refreshes, no empty dependency array is provided to this
-  // `useEffect`.
-  useEffect(() => {
-    if (!intervalInitialisedRef.current) {
-      intervalInitialisedRef.current = true;
-
-      injectedWeb3Interval = setInterval(() => {
-        if (injectCounter + 1 === totalChecks) handleClearInterval(false);
-        else {
-          // if injected is present
-          const injectedWeb3 = (window as AnyJson)?.injectedWeb3 || null;
-          if (injectedWeb3 !== null) handleClearInterval(true);
-        }
-      }, checkEveryMs);
+  // Handle injecting of `metamask-polkadot-snap` into injectedWeb3 if avaialble, and complete
+  // `injectedWeb3` syncing process.
+  const handleSnapInjection = async (hasInjectedWeb3: boolean) => {
+    let snapAvailable = false;
+    try {
+      // TODO: add `networkName` and `addressPrefix` to options.
+      await enablePolkadotSnap();
+      snapAvailable = true;
+      console.log("polkadot snap is available!");
+    } catch (err) {
+      snapAvailable = false;
+      console.log("polkadot snap not available...");
     }
-    return () => clearInterval(injectedWeb3Interval);
-  });
+
+    if (hasInjectedWeb3 || snapAvailable)
+      setExtensions(getInstalledExtensions());
+
+    setStateWithRef(false, setCheckingInjectedWeb3, checkingInjectedWeb3Ref);
+  };
 
   // Setter for an extension status.
   const setExtensionStatus = (id: string, status: ExtensionStatus) => {
@@ -109,6 +105,30 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
     });
     return installed;
   };
+
+  // Check for `injectedWeb3` and Metamask Snap on mount. To trigger interval on soft page
+  // refreshes, no empty dependency array is provided to this `useEffect`.
+  //
+  // Interval duration.
+  const checkEveryMs = 500;
+  // Total interval iterations.
+  const totalChecks = 10;
+  useEffect(() => {
+    if (!intervalInitialisedRef.current) {
+      intervalInitialisedRef.current = true;
+
+      injectedWeb3Interval = setInterval(() => {
+        if (injectCounter + 1 === totalChecks) handleClearInterval(false);
+        else {
+          // if injected is present
+          const injectedWeb3 = (window as AnyJson)?.injectedWeb3 || null;
+          if (injectedWeb3 !== null) handleClearInterval(true);
+        }
+      }, checkEveryMs);
+    }
+
+    return () => clearInterval(injectedWeb3Interval);
+  });
 
   return (
     <ExtensionsContext.Provider
