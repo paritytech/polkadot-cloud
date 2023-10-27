@@ -5,10 +5,7 @@ import { createContext, useEffect, useRef, useState } from "react";
 import { localStorageOrDefault, setStateWithRef } from "@polkadot-cloud/utils";
 import { defaultExtensionAccountsContext } from "./defaults";
 import { ImportedAccount } from "../types";
-import {
-  ExtensionInjected,
-  ExtensionInterface,
-} from "../ExtensionsProvider/types";
+import { ExtensionInterface } from "../ExtensionsProvider/types";
 import {
   ExtensionAccountsContextInterface,
   ExtensionAccountsProviderProps,
@@ -44,8 +41,12 @@ export const ExtensionAccountsProvider = ({
     connectActiveExtensionAccount,
   } = useImportExtension();
 
-  const { checkingInjectedWeb3, setExtensionStatus, extensions } =
-    useExtensions();
+  const {
+    extensionsStatus,
+    setExtensionStatus,
+    removeExtensionStatus,
+    checkingInjectedWeb3,
+  } = useExtensions();
 
   // Store connected extension accounts.
   const [extensionAccounts, setExtensionAccounts] = useState<ImportedAccount[]>(
@@ -88,23 +89,23 @@ export const ExtensionAccountsProvider = ({
   // all extensions are looped before connecting to it; there is no guarantee it still exists - must
   // explicitly find it.
   const connectActiveExtensions = async () => {
-    // Connect to Metamask Polkadot Snap if avaialble.
-    if (extensions.find((e) => e.id === "metamask-polkadot-snap")) {
+    const extensionKeys = Object.keys(extensionsStatus);
+    // Exit if no installed extensions.
+    if (!extensionKeys.length) return;
+
+    // Connect to Metamask Polkadot Snap and inject into `injectedWeb3` if avaialble.
+    if (extensionKeys.find((id) => id === "metamask-polkadot-snap")) {
       // TODO: add dappname, `networkName` and `addressPrefix` to options.
-      // TODO: ensure snap is in active extensions (refer to extensionsStatus).
-      const e: ExtensionInjected = await initMetamaskPolkadotSnap();
-      if (e) extensions.push(e);
+      await initMetamaskPolkadotSnap();
     }
 
     // iterate filtered extensions, `enable` and add accounts to state.
-    const total = extensions?.length ?? 0;
+    const total = extensionKeys?.length ?? 0;
     let activeWalletAccount: ImportedAccount | null = null;
-    if (!extensions) return;
+
     let i = 0;
-    extensions.forEach(async (e: ExtensionInjected) => {
+    extensionKeys.forEach(async (id: string) => {
       i++;
-      // Ensure the extension carries an `id` property.
-      const id = e?.id ?? undefined;
       // Whether extension is locally stored (previously connected).
       const isLocal = extensionIsLocal(id ?? "0");
       if (!id || !isLocal) {
@@ -115,7 +116,8 @@ export const ExtensionAccountsProvider = ({
       } else {
         try {
           // Attempt to get extension `enable` property.
-          const { enable } = e;
+          const { enable } = window.injectedWeb3[id];
+
           // Summons extension popup.
           const extension: ExtensionInterface = await enable(dappName);
           if (extension !== undefined) {
@@ -174,29 +176,26 @@ export const ExtensionAccountsProvider = ({
   // Similar to the above but only connects to a single extension. This is invoked by the user by
   // clicking on an extension. If activeAccount is not found here, it is simply ignored.
   const connectExtensionAccounts = async (id?: string): Promise<boolean> => {
-    // The extension to be connected to.
-    let e: ExtensionInjected;
+    const extensionKeys = Object.keys(extensionsStatus);
+    const exists = extensionKeys.find((key) => key === id) || undefined;
 
-    // Connect to Metamask Polkadot Snap if provided.
-    if (id === "metamask-polkadot-snap") {
-      // TODO: add dappname, `networkName` and `addressPrefix` to options.
-      e = await initMetamaskPolkadotSnap();
-    } else {
-      // TODO: could refer to injectedWeb3 directly here.
-      e = extensions.find((extension) => extension.id === id) || undefined;
-    }
-
-    if (!e) {
+    if (!exists) {
       updateInitialisedExtensions(
         `unknown_extension_${extensionsInitialisedRef.current.length + 1}`
       );
     } else {
+      // Connect to Metamask Polkadot Snap if provided.
+      if (id === "metamask-polkadot-snap") {
+        // TODO: add dappname, `networkName` and `addressPrefix` to options.
+        await initMetamaskPolkadotSnap();
+      }
+
       // Call optional `onExtensionEnabled` callback.
       maybeOnExtensionEnabled(id);
 
       try {
         // Attempt to get extension `enable` property.
-        const { enable } = e;
+        const { enable } = window.injectedWeb3[id];
         // Summons extension popup.
         const extension: ExtensionInterface = await enable(dappName);
         if (extension !== undefined) {
@@ -251,7 +250,7 @@ export const ExtensionAccountsProvider = ({
       removeFromLocalExtensions(id);
       // extension not found (does not exist)
       if (err.substring(0, 17) === "NotInstalledError") {
-        setExtensionStatus(id, "not_found");
+        removeExtensionStatus(id);
       } else {
         // declare extension as no imported accounts authenticated.
         setExtensionStatus(id, "not_authenticated");
@@ -334,21 +333,21 @@ export const ExtensionAccountsProvider = ({
       setStateWithRef([], setExtensionsInitialised, extensionsInitialisedRef);
       // if extensions have been fetched, get accounts if extensions exist and
       // local extensions exist (previously connected).
-      if (extensions.length) {
+      if (Object.keys(extensionsStatus).length) {
         // get active extensions
         const localExtensions = localStorageOrDefault(
           `active_extensions`,
           [],
           true
         );
-        if (extensions.length && localExtensions.length) {
+        if (Object.keys(extensionsStatus).length && localExtensions.length) {
           setExtensionAccountsSynced("syncing");
           connectActiveExtensions();
         } else setExtensionAccountsSynced("synced");
       }
     }
     return () => unsubscribe();
-  }, [extensions.length, checkingInjectedWeb3, extensionAccountsSynced]);
+  }, [extensionsStatus, checkingInjectedWeb3, extensionAccountsSynced]);
 
   // Change syncing to unsynced on `ss58` change.
   useEffectIgnoreInitial(() => {
@@ -360,7 +359,7 @@ export const ExtensionAccountsProvider = ({
   useEffectIgnoreInitial(() => {
     if (
       !checkingInjectedWeb3 &&
-      extensionsInitialised.length === extensions?.length
+      extensionsInitialised.length === Object.keys(extensionsStatus).length
     ) {
       setExtensionAccountsSynced("synced");
     }

@@ -4,11 +4,7 @@
 import { setStateWithRef } from "@polkadot-cloud/utils";
 import { ExtensionsArray } from "@polkadot-cloud/assets/extensions";
 import { ReactNode, useEffect, useRef, useState, createContext } from "react";
-import type {
-  ExtensionInjected,
-  ExtensionStatus,
-  ExtensionsContextInterface,
-} from "./types";
+import type { ExtensionStatus, ExtensionsContextInterface } from "./types";
 import { defaultExtensionsContext } from "./defaults";
 import { AnyJson } from "../../utils/types";
 import { polkadotSnapAvailable } from "./utils";
@@ -29,21 +25,11 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
   // Store whether injected interval has been initialised.
   const intervalInitialisedRef = useRef<boolean>(false);
 
-  // Store the installed extensions in state.
-  const [extensions, setExtensionsState] = useState<ExtensionInjected[] | null>(
-    null
-  );
-  const extensionsRef = useRef(extensions);
-
   // Store each extension's status in state.
   const [extensionsStatus, setExtensionsStatus] = useState<
     Record<string, ExtensionStatus>
   >({});
   const extensionsStatusRef = useRef(extensionsStatus);
-
-  // Setter for injected extensions.
-  const setExtensions = (e: ExtensionInjected[] | null) =>
-    setStateWithRef(e, setExtensionsState, extensionsRef);
 
   // Listen for window.injectedWeb3 with an interval.
   let injectedWeb3Interval: ReturnType<typeof setInterval>;
@@ -64,7 +50,11 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
     const snapAvailable = await polkadotSnapAvailable();
 
     if (hasInjectedWeb3 || snapAvailable)
-      setExtensions(getInstalledExtensions(snapAvailable));
+      setStateWithRef(
+        getExtensionsStatus(snapAvailable),
+        setExtensionsStatus,
+        extensionsStatusRef
+      );
 
     setStateWithRef(false, setCheckingInjectedWeb3, checkingInjectedWeb3Ref);
   };
@@ -81,13 +71,24 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
+  // Removes an extension from the `extensionsStatus` state.
+  const removeExtensionStatus = (id: string) => {
+    const newExtensionsStatus = { ...extensionsStatusRef.current };
+    delete newExtensionsStatus[id];
+
+    setStateWithRef(
+      newExtensionsStatus,
+      setExtensionsStatus,
+      extensionsStatusRef
+    );
+  };
+
   // Getter for the currently installed extensions.
   //
   // Loops through the supported extensios and checks if they are present in `injectedWeb3`. Adds
   // `installed` status to the extension if it is present.
-  const getInstalledExtensions = (snapAvailable: boolean) => {
+  const getExtensionsStatus = (snapAvailable: boolean) => {
     const { injectedWeb3 }: AnyJson = window;
-    const installed: ExtensionInjected[] = [];
 
     const newExtensionsStatus = { ...extensionsStatus };
     if (snapAvailable)
@@ -96,28 +97,15 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
     ExtensionsArray.forEach((e) => {
       if (injectedWeb3[e.id] !== undefined) {
         newExtensionsStatus[e.id] = "installed";
-        installed.push({
-          ...e,
-          ...injectedWeb3[e.id],
-        });
       }
     });
 
-    setStateWithRef(
-      newExtensionsStatus,
-      setExtensionsStatus,
-      extensionsStatusRef
-    );
-
-    return installed;
+    return newExtensionsStatus;
   };
 
   // Checks if an extension has been installed.
-  const extensionInstalled = (id: string): boolean => {
-    return (
-      extensionsStatus[id] !== "not_found" && extensionsStatus[id] !== undefined
-    );
-  };
+  const extensionInstalled = (id: string): boolean =>
+    extensionsStatus[id] !== undefined;
 
   // Check for `injectedWeb3` and Metamask Snap on mount. To trigger interval on soft page
   // refreshes, no empty dependency array is provided to this `useEffect`.
@@ -146,10 +134,10 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
   return (
     <ExtensionsContext.Provider
       value={{
-        extensions: extensionsRef.current || [],
         extensionsStatus: extensionsStatusRef.current,
         checkingInjectedWeb3: checkingInjectedWeb3Ref.current,
         setExtensionStatus,
+        removeExtensionStatus,
         extensionInstalled,
       }}
     >

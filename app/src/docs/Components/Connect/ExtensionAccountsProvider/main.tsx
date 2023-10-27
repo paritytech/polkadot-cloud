@@ -164,7 +164,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
       <H2 id="values">Values</H2>
       <H3 id="connectExtensionAccounts">connectExtensionAccounts</H3>
       <div className="params inline">
-        <p>(extension: ExtensionInjected): Promise&#60;boolean&#62;</p>
+        <p>(id: string): Promise&#60;boolean&#62;</p>
       </div>
       <p>
         Call this function to connect to the provided <code>extension</code> and

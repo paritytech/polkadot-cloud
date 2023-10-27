@@ -49,14 +49,10 @@ export interface ExtensionMetadata {
 // Extensions context interface.
 export interface ExtensionsContextInterface {
   checkingInjectedWeb3: boolean;
-  extensions: ExtensionInjected[];
   extensionsStatus: Record<string, ExtensionStatus>;
   setExtensionStatus: (id: string, status: ExtensionStatus) => void;
+  removeExtensionStatus: (id: string) => void;
   extensionInstalled: (id: string) => boolean;
 }
 
-export type ExtensionStatus =
-  | "installed"
-  | "not_found"
-  | "not_authenticated"
-  | "connected";
+export type ExtensionStatus = "installed" | "not_authenticated" | "connected";

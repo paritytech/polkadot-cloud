@@ -97,6 +97,4 @@ export const initMetamaskPolkadotSnap = async () => {
   // Issue at: https://github.com/ChainSafe/metamask-snap-polkadot/issues/204
   window.injectedWeb3["metamask-polkadot-snap"] = window.injectedWeb3["Snap"];
   delete window.injectedWeb3["Snap"];
-
-  return window.injectedWeb3["metamask-polkadot-snap"];
 };
