@@ -55,7 +55,6 @@ export interface ExtensionsContextInterface {
   extensionInstalled: (id: string) => boolean;
 }
 
-// TODO: Use utlls for snaps to determine if it is available, and update.
 export type ExtensionStatus =
   | "installed"
   | "not_found"

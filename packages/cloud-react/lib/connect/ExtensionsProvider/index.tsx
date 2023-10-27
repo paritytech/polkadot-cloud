@@ -11,7 +11,7 @@ import type {
 } from "./types";
 import { defaultExtensionsContext } from "./defaults";
 import { AnyJson } from "../../utils/types";
-import { enablePolkadotSnap } from "@chainsafe/metamask-polkadot-adapter";
+import { polkadotSnapAvailable } from "./utils";
 
 export const ExtensionsContext = createContext<ExtensionsContextInterface>(
   defaultExtensionsContext
@@ -61,14 +61,7 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
   // Handle injecting of `metamask-polkadot-snap` into injectedWeb3 if avaialble, and complete
   // `injectedWeb3` syncing process.
   const handleSnapInjection = async (hasInjectedWeb3: boolean) => {
-    let snapAvailable = false;
-    try {
-      // TODO: add dappname, `networkName` and `addressPrefix` to options.
-      await enablePolkadotSnap();
-      snapAvailable = true;
-    } catch (err) {
-      snapAvailable = false;
-    }
+    const snapAvailable = await polkadotSnapAvailable();
 
     if (hasInjectedWeb3 || snapAvailable)
       setExtensions(getInstalledExtensions(snapAvailable));
@@ -121,7 +114,9 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
 
   // Checks if an extension has been installed.
   const extensionInstalled = (id: string): boolean => {
-    return extensionsStatus[id] !== "not_found";
+    return (
+      extensionsStatus[id] !== "not_found" && extensionsStatus[id] !== undefined
+    );
   };
 
   // Check for `injectedWeb3` and Metamask Snap on mount. To trigger interval on soft page
