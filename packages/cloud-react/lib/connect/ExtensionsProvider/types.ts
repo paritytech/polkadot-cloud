@@ -52,10 +52,10 @@ export interface ExtensionsContextInterface {
   extensions: ExtensionInjected[];
   extensionsStatus: Record<string, ExtensionStatus>;
   setExtensionStatus: (id: string, status: ExtensionStatus) => void;
+  extensionInstalled: (id: string) => boolean;
 }
 
 // TODO: Use utlls for snaps to determine if it is available, and update.
-// TODO: Provide `isInstalled` helpers. Default to `not_found` if status has not been populated.
 // TODO: Add array support for extension URLs if a shorthand URL is needed.
 export type ExtensionStatus =
   | "installed"

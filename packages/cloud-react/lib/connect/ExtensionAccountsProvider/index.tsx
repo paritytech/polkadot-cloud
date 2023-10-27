@@ -161,12 +161,11 @@ export const ExtensionAccountsProvider = ({
   //
   // Similar to the above but only connects to a single extension. This is invoked by the user by
   // clicking on an extension. If activeAccount is not found here, it is simply ignored.
-  const connectExtensionAccounts = async (
-    e: ExtensionInjected
-  ): Promise<boolean> => {
+  const connectExtensionAccounts = async (id?: string): Promise<boolean> => {
     // ensure the extension carries an `id` property
-    const id = e?.id ?? undefined;
-    if (!id) {
+    const e = extensions.find((extension) => extension.id === id) || undefined;
+
+    if (!e) {
       updateInitialisedExtensions(
         `unknown_extension_${extensionsInitialisedRef.current.length + 1}`
       );

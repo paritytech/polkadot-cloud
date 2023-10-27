@@ -9,4 +9,5 @@ export const defaultExtensionsContext: ExtensionsContextInterface = {
   extensions: [],
   extensionsStatus: {},
   setExtensionStatus: (id, status) => {},
+  extensionInstalled: (id) => false,
 };

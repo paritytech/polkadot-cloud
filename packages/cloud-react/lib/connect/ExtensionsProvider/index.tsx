@@ -79,9 +79,10 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
   // Setter for an extension status.
   const setExtensionStatus = (id: string, status: ExtensionStatus) => {
     setStateWithRef(
-      Object.assign(extensionsStatusRef.current || {}, {
+      {
+        ...extensionsStatusRef.current,
         [id]: status,
-      }),
+      },
       setExtensionsStatus,
       extensionsStatusRef
     );
@@ -109,8 +110,18 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
       }
     });
 
-    setExtensionsStatus(newExtensionsStatus);
+    setStateWithRef(
+      newExtensionsStatus,
+      setExtensionsStatus,
+      extensionsStatusRef
+    );
+
     return installed;
+  };
+
+  // Checks if an extension has been installed.
+  const extensionInstalled = (id: string): boolean => {
+    return extensionsStatus[id] !== "not_found";
   };
 
   // Check for `injectedWeb3` and Metamask Snap on mount. To trigger interval on soft page
@@ -137,8 +148,6 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
     return () => clearInterval(injectedWeb3Interval);
   });
 
-  console.log(extensionsStatus);
-
   return (
     <ExtensionsContext.Provider
       value={{
@@ -146,6 +155,7 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
         extensionsStatus: extensionsStatusRef.current,
         checkingInjectedWeb3: checkingInjectedWeb3Ref.current,
         setExtensionStatus,
+        extensionInstalled,
       }}
     >
       {children}
