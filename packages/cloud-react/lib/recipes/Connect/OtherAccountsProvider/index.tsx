@@ -5,8 +5,8 @@ import type { ReactNode } from "react";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { useEffectIgnoreInitial } from "../../../base/hooks/useEffectIgnoreInitial";
 
-import { useExtensions } from "../ExtensionsProvider/useExtensions";
-import { useExtensionAccounts } from "../ExtensionAccountsProvider/useExtensionAccounts";
+import { useExtensions } from "../../../connect/ExtensionsProvider/useExtensions";
+import { useExtensionAccounts } from "../../../connect/ExtensionAccountsProvider/useExtensionAccounts";
 
 import {
   getLocalLedgerAccounts,
@@ -16,7 +16,7 @@ import type { AnyFunction, MaybeAddress } from "../../../utils/types";
 import type { NetworkName } from "../Utils";
 import { ellipsisFn, setStateWithRef } from "@polkadot-cloud/utils";
 import Keyring from "@polkadot/keyring";
-import type { ExternalAccount, ImportedAccount } from "../types";
+import type { ExternalAccount, ImportedAccount } from "../../../connect/types";
 import {
   getActiveAccountLocal,
   getLocalExternalAccounts,

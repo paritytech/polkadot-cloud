@@ -10,7 +10,7 @@ import type {
   ExtensionsContextInterface,
 } from "./types";
 import { defaultExtensionsContext } from "./defaults";
-import { AnyJson } from "../../../utils/types";
+import { AnyJson } from "../../utils/types";
 
 export const ExtensionsContext = createContext<ExtensionsContextInterface>(
   defaultExtensionsContext

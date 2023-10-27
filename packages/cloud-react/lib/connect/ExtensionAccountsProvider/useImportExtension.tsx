@@ -11,7 +11,7 @@ import type {
 import { defaultHandleImportExtension } from "./defaults";
 import { ImportedAccount } from "../types";
 import { HandleImportExtension } from "./types";
-import { AnyFunction } from "../../../utils/types";
+import { AnyFunction } from "../../utils/types";
 import {
   addToLocalExtensions,
   getActiveAccountLocal,

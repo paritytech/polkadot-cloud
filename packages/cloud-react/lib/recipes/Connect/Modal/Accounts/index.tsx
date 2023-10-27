@@ -19,7 +19,7 @@ import { ActionItem } from "../../../../base/modal/ActionItem";
 
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
 import { useEffectIgnoreInitial } from "../../../../base/hooks/useEffectIgnoreInitial";
-import { useExtensions } from "../../ExtensionsProvider/useExtensions";
+import { useExtensions } from "../../../../connect/ExtensionsProvider/useExtensions";
 
 // import { usePoolMemberships } from "contexts/Pools/PoolMemberships";
 import { useProxies } from "../../ProxiesProvider";

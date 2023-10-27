@@ -1,7 +1,7 @@
 // Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
-import { AnyJson } from "../../../utils/types";
+import { AnyJson } from "../../utils/types";
 import type { FunctionComponent, SVGProps } from "react";
 
 // Top level required properties the extension must expose via their `injectedWeb3` entry.

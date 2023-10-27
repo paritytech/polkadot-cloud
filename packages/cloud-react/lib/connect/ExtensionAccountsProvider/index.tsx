@@ -15,10 +15,10 @@ import {
   Sync,
 } from "./types";
 import { extensionIsLocal, removeFromLocalExtensions } from "./utils";
-import { AnyFunction, AnyJson } from "../../../utils/types";
+import { AnyFunction, AnyJson } from "../../utils/types";
 import { useImportExtension } from "./useImportExtension";
 import { useExtensions } from "../ExtensionsProvider/useExtensions";
-import { useEffectIgnoreInitial } from "../../../base/hooks/useEffectIgnoreInitial";
+import { useEffectIgnoreInitial } from "../../base/hooks/useEffectIgnoreInitial";
 
 export const ExtensionAccountsContext =
   createContext<ExtensionAccountsContextInterface>(

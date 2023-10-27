@@ -1,7 +1,7 @@
 // Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
-import type { LedgerAccount, VaultAccount } from "../types";
+import type { LedgerAccount, VaultAccount } from "../../../connect/types";
 import type { FunctionComponent, SVGProps } from "react";
 import type { NetworkName } from "../Utils";
 import type { AnyJson, MaybeString } from "../../../utils/types";

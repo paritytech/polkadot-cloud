@@ -13,7 +13,7 @@ import { ModalCustomHeader } from "../../../../base/modal/ModalCustomHeader";
 
 import { ExtensionsArray } from "@polkadot-cloud/assets/extensions";
 import { useEffect, useRef, useState } from "react";
-import { useExtensions } from "../../ExtensionsProvider/useExtensions";
+import { useExtensions } from "../../../../connect/ExtensionsProvider/useExtensions";
 import { useEffectIgnoreInitial } from "../../../../base/hooks/useEffectIgnoreInitial";
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
 

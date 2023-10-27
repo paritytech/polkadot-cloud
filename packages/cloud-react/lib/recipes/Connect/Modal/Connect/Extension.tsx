@@ -5,8 +5,8 @@ import { faExternalLinkAlt, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useState } from "react";
-import { useExtensionAccounts } from "../../ExtensionAccountsProvider/useExtensionAccounts";
-import { useExtensions } from "../../ExtensionsProvider/useExtensions";
+import { useExtensionAccounts } from "../../../../connect/ExtensionAccountsProvider/useExtensionAccounts";
+import { useExtensions } from "../../../../connect/ExtensionsProvider/useExtensions";
 import { useNotifications } from "../../NotificationsProvider/index";
 import { ExtensionIcons } from "@polkadot-cloud/assets/extensions";
 // import { ExtensionInner } from "./Wrappers";

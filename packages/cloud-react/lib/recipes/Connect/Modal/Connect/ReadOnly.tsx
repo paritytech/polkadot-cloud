@@ -14,7 +14,7 @@ import { AccountInput } from "./AccountInput";
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
 import { useImportedAccounts } from "../../ImportedAccountsProvider";
 import { useOtherAccounts } from "../../OtherAccountsProvider";
-import type { ExternalAccount } from "../../types";
+import type { ExternalAccount } from "../../../../connect/types";
 // import {
 //   ActionWithButton,
 //   ManualAccount,

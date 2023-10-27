@@ -7,7 +7,7 @@ import {
   ExtensionInjected,
 } from "../ExtensionsProvider/types";
 import { ImportedAccount } from "../types";
-import { MaybeAddress } from "../../../utils/types";
+import { MaybeAddress } from "../../utils/types";
 
 export interface ExtensionAccountsContextInterface {
   connectExtensionAccounts: (

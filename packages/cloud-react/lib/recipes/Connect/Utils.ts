@@ -3,8 +3,8 @@
 
 import Keyring from "@polkadot/keyring";
 import { localStorageOrDefault } from "@polkadot-cloud/utils";
-import type { ExternalAccount } from "./types";
-import type { ExtensionAccount } from "./ExtensionsProvider/types";
+import type { ExternalAccount } from "../../connect/types";
+import type { ExtensionAccount } from "../../connect/ExtensionsProvider/types";
 
 // TODO: These probably need to move to something more "stable"
 export type NetworkName = "polkadot" | "kusama" | "westend";

@@ -1,9 +1,9 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { ExtensionsProvider } from "@packages/cloud-react/lib/recipes/Connect/ExtensionsProvider";
+import { ExtensionsProvider } from "@packages/cloud-react/lib/connect/ExtensionsProvider";
 import { Doc } from "./main";
-import { ExtensionAccountsProvider } from "@packages/cloud-react/lib/recipes/Connect/ExtensionAccountsProvider";
+import { ExtensionAccountsProvider } from "@packages/cloud-react/lib/connect/ExtensionAccountsProvider";
 
 export const ModalConnect = () => (
   <ExtensionsProvider>
