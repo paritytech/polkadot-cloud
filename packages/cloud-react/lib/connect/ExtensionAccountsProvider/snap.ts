@@ -27,6 +27,7 @@ const transformAccounts = (accounts: string[]): AnyJson[] =>
   accounts.map((address, i) => ({
     address,
     name: `Polkadot Snap #${i}`,
+    source: "metamask-polkadot-snap",
     type: "ethereum",
   }));
 

@@ -16,6 +16,7 @@ export interface ExtensionInterface {
     subscribe: {
       (a: { (b: ExtensionAccount[]): void }): void;
     };
+    get: () => Promise<ExtensionAccount[]>;
   };
   provider: AnyJson;
   metadata: AnyJson;

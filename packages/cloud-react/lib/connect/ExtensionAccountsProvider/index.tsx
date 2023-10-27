@@ -163,10 +163,16 @@ export const ExtensionAccountsProvider = ({
               // Update initialised extensions.
               updateInitialisedExtensions(id);
             };
-            const unsub = extension.accounts.subscribe((accounts) => {
-              if (accounts) handleAccounts(accounts);
-            });
-            addToUnsubscribe(id, unsub);
+            // Handle get-only supported extensions.
+            if (id === "metamask-polkadot-snap") {
+              const accounts = await extension.accounts.get();
+              handleAccounts(accounts);
+            } else {
+              const unsub = extension.accounts.subscribe((accounts) => {
+                if (accounts) handleAccounts(accounts);
+              });
+              addToUnsubscribe(id, unsub);
+            }
           }
         } catch (err) {
           handleExtensionError(id, String(err));
@@ -238,11 +244,17 @@ export const ExtensionAccountsProvider = ({
             updateInitialisedExtensions(id);
           };
 
-          // Subscribe to accounts.
-          const unsub = extension.accounts.subscribe((accounts) => {
-            if (accounts) handleAccounts(accounts);
-          });
-          addToUnsubscribe(id, unsub);
+          // Handle get-only supported extensions.
+          if (id === "metamask-polkadot-snap") {
+            const accounts = await extension.accounts.get();
+            handleAccounts(accounts);
+          } else {
+            // Subscribe to accounts.
+            const unsub = extension.accounts.subscribe((accounts) => {
+              if (accounts) handleAccounts(accounts);
+            });
+            addToUnsubscribe(id, unsub);
+          }
           return true;
         }
       } catch (err) {
