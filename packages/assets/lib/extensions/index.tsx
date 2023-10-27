@@ -29,7 +29,10 @@ export const Extensions: Record<string, ExtensionConfig> = {
   },
   "metamask-polkadot-snap": {
     title: "MetaMask Polkadot Snap",
-    website: "snaps.metamask.io/snap/npm/chainsafe/polkadot-snap",
+    website: [
+      "snaps.metamask.io",
+      "snaps.metamask.io/snap/npm/chainsafe/polkadot-snap",
+    ],
   },
   polkagate: {
     title: "PolkaGate",

@@ -56,7 +56,6 @@ export interface ExtensionsContextInterface {
 }
 
 // TODO: Use utlls for snaps to determine if it is available, and update.
-// TODO: Add array support for extension URLs if a shorthand URL is needed.
 export type ExtensionStatus =
   | "installed"
   | "not_found"

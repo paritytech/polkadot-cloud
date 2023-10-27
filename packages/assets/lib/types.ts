@@ -9,7 +9,7 @@ export type SupportedChains = "polkadot" | "kusama" | "westend";
 // Structure for an extension configuration.
 export interface ExtensionConfig {
   title: string;
-  website: string;
+  website: string | [string, string];
 }
 
 // Structure for a validator entity.
