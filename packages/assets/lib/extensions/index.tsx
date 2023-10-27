@@ -27,7 +27,7 @@ export const Extensions: Record<string, ExtensionConfig> = {
     title: "Fearless Wallet",
     website: "fearlesswallet.io",
   },
-  metamask: {
+  "metamask-polkadot-snap": {
     title: "MetaMask Polkadot Snap",
     website: "snaps.metamask.io/snap/npm/chainsafe/polkadot-snap",
   },
@@ -67,7 +67,7 @@ export const ExtensionsArray = Object.entries(Extensions).map(
 export const ExtensionIcons: IconRecords = {
   enkrypt: Enkrypt,
   "fearless-wallet": FearlessWallet,
-  metamask: MetaMask,
+  "metamask-polkadot-snap": MetaMask,
   novawallet: NovaWallet,
   "polkadot-js": PolkadotJS,
   polkagate: PolkaGate,

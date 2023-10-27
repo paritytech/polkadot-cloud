@@ -63,13 +63,11 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
   const handleSnapInjection = async (hasInjectedWeb3: boolean) => {
     let snapAvailable = false;
     try {
-      // TODO: add `networkName` and `addressPrefix` to options.
+      // TODO: add dappname, `networkName` and `addressPrefix` to options.
       await enablePolkadotSnap();
       snapAvailable = true;
-      console.log("polkadot snap is available!");
     } catch (err) {
       snapAvailable = false;
-      console.log("polkadot snap not available...");
     }
 
     if (hasInjectedWeb3 || snapAvailable)
@@ -98,7 +96,8 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
     const installed: ExtensionInjected[] = [];
 
     const newExtensionsStatus = { ...extensionsStatus };
-    if (snapAvailable) newExtensionsStatus["metamask"] = "installed";
+    if (snapAvailable)
+      newExtensionsStatus["metamask-polkadot-snap"] = "installed";
 
     ExtensionsArray.forEach((e) => {
       if (injectedWeb3[e.id] !== undefined) {
@@ -137,6 +136,8 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
 
     return () => clearInterval(injectedWeb3Interval);
   });
+
+  console.log(extensionsStatus);
 
   return (
     <ExtensionsContext.Provider
