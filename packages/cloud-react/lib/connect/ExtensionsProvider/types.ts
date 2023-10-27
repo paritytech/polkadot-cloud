@@ -53,6 +53,7 @@ export interface ExtensionsContextInterface {
   setExtensionStatus: (id: string, status: ExtensionStatus) => void;
   removeExtensionStatus: (id: string) => void;
   extensionInstalled: (id: string) => boolean;
+  extensionCanConnect: (id: string) => boolean;
 }
 
 export type ExtensionStatus = "installed" | "not_authenticated" | "connected";

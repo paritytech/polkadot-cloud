@@ -107,6 +107,10 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
   const extensionInstalled = (id: string): boolean =>
     extensionsStatus[id] !== undefined;
 
+  // Checks whether an extension can be connected to.
+  const extensionCanConnect = (id: string): boolean =>
+    extensionInstalled(id) && extensionsStatus[id] !== "connected";
+
   // Check for `injectedWeb3` and Metamask Snap on mount. To trigger interval on soft page
   // refreshes, no empty dependency array is provided to this `useEffect`.
   //
@@ -139,6 +143,7 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
         setExtensionStatus,
         removeExtensionStatus,
         extensionInstalled,
+        extensionCanConnect,
       }}
     >
       {children}
