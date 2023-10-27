@@ -19,6 +19,7 @@ import { AnyFunction, AnyJson } from "../../utils/types";
 import { useImportExtension } from "./useImportExtension";
 import { useExtensions } from "../ExtensionsProvider/useExtensions";
 import { useEffectIgnoreInitial } from "../../base/hooks/useEffectIgnoreInitial";
+import { enablePolkadotSnap } from "@chainsafe/metamask-polkadot-adapter";
 
 export const ExtensionAccountsContext =
   createContext<ExtensionAccountsContextInterface>(
@@ -84,12 +85,22 @@ export const ExtensionAccountsProvider = ({
   // all extensions are looped before connecting to it; there is no guarantee it still exists - must
   // explicitly find it.
   const connectActiveExtensions = async () => {
-    // iterate extensions and add accounts to state
-    const total = extensions?.length ?? 0;
+    // Connect to Metamask Polkadot Snap if avaialble.
+    // TODO: add dappname, `networkName` and `addressPrefix` to options.
+    if (extensions.find((e) => e.id === "polkadot-metamask-snap"))
+      await enablePolkadotSnap();
+
+    // Filter non `enable` supported extensions.
+    const filteredExtensions = extensions.filter(
+      (e) => e.id !== "polkadot-metamask-snap"
+    );
+
+    // iterate filtered extensions, `enable` and add accounts to state.
+    const total = filteredExtensions?.length ?? 0;
     let activeWalletAccount: ImportedAccount | null = null;
     if (!extensions) return;
     let i = 0;
-    extensions.forEach(async (e: ExtensionInjected) => {
+    filteredExtensions.forEach(async (e: ExtensionInjected) => {
       i++;
       // Ensure the extension carries an `id` property.
       const id = e?.id ?? undefined;
@@ -162,6 +173,10 @@ export const ExtensionAccountsProvider = ({
   // Similar to the above but only connects to a single extension. This is invoked by the user by
   // clicking on an extension. If activeAccount is not found here, it is simply ignored.
   const connectExtensionAccounts = async (id?: string): Promise<boolean> => {
+    // TODO: connect to Metamask Polkadot Snap if provided `id` is `polkadot-metamask-snap`.
+    // TODO: add dappname, `networkName` and `addressPrefix` to options.
+    // await enablePolkadotSnap();
+
     // ensure the extension carries an `id` property
     const e = extensions.find((extension) => extension.id === id) || undefined;
 
