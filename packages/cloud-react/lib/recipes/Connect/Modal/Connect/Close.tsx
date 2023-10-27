@@ -18,9 +18,6 @@ export const Close = () => {
     >
       <button type="button" onClick={() => setModalStatus("closing")}>
         X
-        {/* TODO: Fix tha X Close 
-        <CrossSVG style={{ width: "1.25rem", height: "1.25rem" }} />
-        */}
       </button>
     </div>
   );

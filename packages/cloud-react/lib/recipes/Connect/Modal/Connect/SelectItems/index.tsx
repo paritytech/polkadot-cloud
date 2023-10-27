@@ -83,7 +83,7 @@ export const SelectItems = ({ layout, children }: SelectItemsProps) => {
   }, []);
 
   return (
-    <div className={layout + " some-div"}>
+    <div className={layout + " select-items"}>
       {children
         ? children.map((child: AnyJson, i: number) => (
             <Fragment key={`select_${i}`}>

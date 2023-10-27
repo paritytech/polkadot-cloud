@@ -9,9 +9,10 @@ import { useExtensionAccounts } from "../../../../connect/ExtensionAccountsProvi
 import { useExtensions } from "../../../../connect/ExtensionsProvider/useExtensions";
 import { useNotifications } from "../../NotificationsProvider/index";
 import { ExtensionIcons } from "@polkadot-cloud/assets/extensions";
-// import { ExtensionInner } from "./Wrappers";
 import type { ExtensionProps } from "./types";
 import { ModalConnectItem } from "../../../../base/modal/ModalConnectItem";
+
+import "./index.scss";
 
 export const Extension = ({ meta, size, flag }: ExtensionProps) => {
   // TODO: Translations const { t } = useTranslation("modals");
@@ -67,7 +68,7 @@ export const Extension = ({ meta, size, flag }: ExtensionProps) => {
 
   return (
     <ModalConnectItem canConnect={!!(extension && status !== "connected")}>
-      <div className="extensionInner">
+      <div className="extension-inner">
         <div>
           <div className="body">
             {!disabled ? (

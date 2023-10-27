@@ -6,6 +6,7 @@ import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { Wrapper } from "./Wrapper";
 import type { SelectItemProps } from "./types";
+import "./index.scss";
 
 export const SelectItem = ({
   title,
@@ -14,18 +15,25 @@ export const SelectItem = ({
   selected,
   onClick,
   layout,
-  // hoverBorder = false,
-  // grow = true,
+  hoverBorder = false,
+  grow = true,
   disabled = false,
   includeToggle = true,
   bodyRef,
   containerRef,
 }: SelectItemProps) => (
   <div
-    className={layout + "some-div-2"}
-    // $grow={grow}
-    // $hoverBorder={hoverBorder}
-    // $selected={selected}
+    className={layout + " select-item"}
+    style={{
+      borderColor: `${
+        hoverBorder
+          ? "var(--accent-color-primary)"
+          : selected
+          ? "var(--accent-color-primary)"
+          : "var(--border-primary-color)"
+      }`,
+      flexGrow: `${grow ? 1 : 0}`,
+    }}
   >
     <div className="inner" ref={containerRef}>
       <button type="button" onClick={() => onClick()} disabled={disabled}>

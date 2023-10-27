@@ -8,7 +8,7 @@ import { ExtensionAccountsProvider } from "@packages/cloud-react/lib/connect/Ext
 export const ModalConnect = () => (
   <ExtensionsProvider>
     <ExtensionAccountsProvider
-      dappName={"Notify me"}
+      dappName={"Something me"}
       network={"polkadot"}
       ss58={0}
       activeAccount={null}

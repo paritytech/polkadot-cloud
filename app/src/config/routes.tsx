@@ -12,7 +12,7 @@ import { Grid } from "../docs/Experimental/Grid";
 import { Card } from "../docs/Experimental/Cards";
 import { Overlay } from "../docs/Components/Overlay";
 import { AccountCard } from "../docs/Experimental/AccountCard";
-import { ModalConnect } from "../docs/Components/Connect/Modal";
+import { ModalConnect } from "../docs/Experimental/Connect/Modal";
 import { Odometer } from "../docs/Components/Odometer";
 import { Modal } from "../docs/Experimental/Modal";
 import { UtilitiesBase } from "../docs/Utilities/Base";
@@ -22,8 +22,8 @@ import { Textfield } from "../docs/Experimental/Textfield";
 import { Overview } from "../docs/GettingStarted/Overview";
 import { Installation } from "../docs/GettingStarted/Installation";
 import { UsingThemes } from "../docs/GettingStarted/UsingThemes";
-import { ExtensionsProvider } from "../docs/Components/Connect/ExtensionsProvider";
-import { ExtensionAccountsProvider } from "../docs/Components/Connect/ExtensionAccountsProvider";
+import { ExtensionsProvider } from "../docs/Experimental/Connect/ExtensionsProvider";
+import { ExtensionAccountsProvider } from "../docs/Experimental/Connect/ExtensionAccountsProvider";
 
 type Routes = {
   name: string;

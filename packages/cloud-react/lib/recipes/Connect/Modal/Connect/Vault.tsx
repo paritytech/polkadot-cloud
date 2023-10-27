@@ -12,7 +12,6 @@ import { ModalConnectItem } from "../../../../base/modal/ModalConnectItem";
 import { ModalHardwareItem } from "../../../../base/modal/ModalHardwareItem";
 
 import { useHelp } from "../../HelpProvider/index";
-// import PolkadotVaultSVG from "@polkadot-cloud/assets/extensions/svg/polkadotvault.svg?react";
 
 export const Vault = (): ReactElement => {
   // const { t } = useTranslation("modals");
@@ -28,10 +27,14 @@ export const Vault = (): ReactElement => {
       <ModalHardwareItem>
         <div className="body">
           <div className="status">
-            <Button onClick={() => openHelp("Polkadot Vault")} />
+            <Button
+              type="help"
+              marginLeft
+              onClick={() => openHelp("Polkadot Vault")}
+            />
           </div>
           <div className="row">
-            PolkadotSVG
+            PolkadotVaultSVG
             {/* TODO: <PolkadotVaultSVG className="logo vault" /> */}
           </div>
           <div className="row margin">

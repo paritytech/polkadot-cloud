@@ -1,4 +1,4 @@
-.some-div {
+.select-items {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -37,11 +37,10 @@
   }
 }
 
-.some-div-2 {
+.select-item {
   padding: 0.6rem;
   width: 100%;
   flex-grow: 1;
-  /* flex-grow: ${(props) => (props.$grow ? 1 : 0)}; */
 
   &.two-col {
     width: 50%;

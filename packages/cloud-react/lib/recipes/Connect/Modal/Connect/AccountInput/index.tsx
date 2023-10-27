@@ -12,6 +12,8 @@ import { useImportedAccounts } from "../../../ImportedAccountsProvider";
 import { formatAccountSs58 } from "../../../Utils";
 import type { AccountInputProps } from "./types";
 
+import "./index.scss";
+
 export const AccountInput = ({
   successCallback,
   resetCallback,

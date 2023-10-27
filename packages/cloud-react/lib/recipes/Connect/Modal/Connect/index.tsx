@@ -17,7 +17,6 @@ import { useExtensions } from "../../../../connect/ExtensionsProvider/useExtensi
 import { useEffectIgnoreInitial } from "../../../../base/hooks/useEffectIgnoreInitial";
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
 
-// import { Close } from "../../../";
 import { SelectItems } from "./SelectItems";
 import type { AnyFunction } from "../../../../utils/types";
 import { Extension } from "./Extension";
@@ -25,11 +24,14 @@ import { Ledger } from "./Ledger";
 import { Proxies } from "./Proxies";
 import { ReadOnly } from "./ReadOnly";
 import { Vault } from "./Vault";
-// import { ExtensionsWrapper } from "./Wrappers";
+
+// Assets
+import CrossSVG from "../../assets/cross.svg?react";
 
 export const Connect = () => {
   const { extensions } = useExtensions();
-  const { replaceModal, setModalHeight, modalMaxHeight } = useOverlay().modal;
+  const { replaceModal, setModalHeight, modalMaxHeight, setModalStatus } =
+    useOverlay().modal;
 
   const installed = ExtensionsArray.filter((a) =>
     extensions.find((b) => b.id === a.id)
@@ -80,7 +82,18 @@ export const Connect = () => {
   return (
     <>
       <ModalSection type="carousel">
-        {/* <Close /> */}
+        <div
+          style={{
+            position: "absolute",
+            right: "1.5rem",
+            top: "1.5rem",
+            zIndex: "2",
+          }}
+        >
+          <button type="button" onClick={() => setModalStatus("closing")}>
+            <CrossSVG style={{ width: "1.25rem", height: "1.25rem" }} />
+          </button>
+        </div>
         <ModalFixedTitle ref={headerRef} withStyle>
           <ModalCustomHeader>
             <div className="first">
@@ -144,7 +157,7 @@ export const Connect = () => {
           <div className="section">
             <ModalPadding horizontalOnly ref={homeRef}>
               <ActionItem text={"hardware"} />
-              <div className="extensionsWrapper">
+              <div className="extensions-wrapper">
                 <SelectItems layout="two-col">
                   {[Vault, Ledger].map((Item: AnyFunction, i: number) => (
                     <Item key={`hardware_item_${i}`} />
@@ -153,13 +166,13 @@ export const Connect = () => {
               </div>
 
               <ActionItem text={"web"} />
-              <div className="extensionsWrapper">
+              <div className="extensions-wrapper">
                 <SelectItems layout="two-col">
                   {installed.concat(other).map((extension, i) => (
                     <Extension
                       key={`extension_item_${i}`}
                       meta={extension}
-                      size={"12"}
+                      size={"1rem"}
                     />
                   ))}
                 </SelectItems>
