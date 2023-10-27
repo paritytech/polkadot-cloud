@@ -14,12 +14,15 @@ import {
   ExtensionAccountsProviderProps,
   Sync,
 } from "./types";
-import { extensionIsLocal, removeFromLocalExtensions } from "./utils";
+import {
+  extensionIsLocal,
+  initMetamaskPolkadotSnap,
+  removeFromLocalExtensions,
+} from "./utils";
 import { AnyFunction, AnyJson } from "../../utils/types";
 import { useImportExtension } from "./useImportExtension";
 import { useExtensions } from "../ExtensionsProvider/useExtensions";
 import { useEffectIgnoreInitial } from "../../base/hooks/useEffectIgnoreInitial";
-import { enablePolkadotSnap } from "@chainsafe/metamask-polkadot-adapter";
 
 export const ExtensionAccountsContext =
   createContext<ExtensionAccountsContextInterface>(
@@ -86,21 +89,19 @@ export const ExtensionAccountsProvider = ({
   // explicitly find it.
   const connectActiveExtensions = async () => {
     // Connect to Metamask Polkadot Snap if avaialble.
-    // TODO: add dappname, `networkName` and `addressPrefix` to options.
-    if (extensions.find((e) => e.id === "polkadot-metamask-snap"))
-      await enablePolkadotSnap();
-
-    // Filter non `enable` supported extensions.
-    const filteredExtensions = extensions.filter(
-      (e) => e.id !== "polkadot-metamask-snap"
-    );
+    if (extensions.find((e) => e.id === "metamask-polkadot-snap")) {
+      // TODO: add dappname, `networkName` and `addressPrefix` to options.
+      // TODO: ensure snap is in active extensions (refer to extensionsStatus).
+      const e: ExtensionInjected = await initMetamaskPolkadotSnap();
+      if (e) extensions.push(e);
+    }
 
     // iterate filtered extensions, `enable` and add accounts to state.
-    const total = filteredExtensions?.length ?? 0;
+    const total = extensions?.length ?? 0;
     let activeWalletAccount: ImportedAccount | null = null;
     if (!extensions) return;
     let i = 0;
-    filteredExtensions.forEach(async (e: ExtensionInjected) => {
+    extensions.forEach(async (e: ExtensionInjected) => {
       i++;
       // Ensure the extension carries an `id` property.
       const id = e?.id ?? undefined;
@@ -173,12 +174,17 @@ export const ExtensionAccountsProvider = ({
   // Similar to the above but only connects to a single extension. This is invoked by the user by
   // clicking on an extension. If activeAccount is not found here, it is simply ignored.
   const connectExtensionAccounts = async (id?: string): Promise<boolean> => {
-    // TODO: connect to Metamask Polkadot Snap if provided `id` is `polkadot-metamask-snap`.
-    // TODO: add dappname, `networkName` and `addressPrefix` to options.
-    // await enablePolkadotSnap();
+    // The extension to be connected to.
+    let e: ExtensionInjected;
 
-    // ensure the extension carries an `id` property
-    const e = extensions.find((extension) => extension.id === id) || undefined;
+    // Connect to Metamask Polkadot Snap if provided.
+    if (id === "metamask-polkadot-snap") {
+      // TODO: add dappname, `networkName` and `addressPrefix` to options.
+      e = await initMetamaskPolkadotSnap();
+    } else {
+      // TODO: could refer to injectedWeb3 directly here.
+      e = extensions.find((extension) => extension.id === id) || undefined;
+    }
 
     if (!e) {
       updateInitialisedExtensions(

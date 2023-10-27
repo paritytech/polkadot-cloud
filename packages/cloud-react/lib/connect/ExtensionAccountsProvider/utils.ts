@@ -5,6 +5,7 @@ import { localStorageOrDefault } from "@polkadot-cloud/utils";
 import Keyring from "@polkadot/keyring";
 import { ExtensionAccount } from "../ExtensionsProvider/types";
 import { ExternalAccount } from "../types";
+import { initPolkadotSnap } from "@chainsafe/metamask-polkadot-adapter";
 
 // Gets local `active_acount` for a network.
 export const getActiveAccountLocal = (network: string, ss58: number) => {
@@ -87,4 +88,15 @@ export const removeFromLocalExtensions = (id: string) => {
     localExtensions = localExtensions.filter((l: string) => l !== id);
     localStorage.setItem("active_extensions", JSON.stringify(localExtensions));
   }
+};
+
+// Init Metamask Snap.
+export const initMetamaskPolkadotSnap = async () => {
+  await initPolkadotSnap();
+  // Overwrite `injectedWeb3` key with correct id and delete stale version.
+  // Issue at: https://github.com/ChainSafe/metamask-snap-polkadot/issues/204
+  window.injectedWeb3["metamask-polkadot-snap"] = window.injectedWeb3["Snap"];
+  delete window.injectedWeb3["Snap"];
+
+  return window.injectedWeb3["metamask-polkadot-snap"];
 };
