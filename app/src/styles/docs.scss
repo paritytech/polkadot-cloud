@@ -298,19 +298,26 @@ SPDX-License-Identifier: GPL-3.0-only */
       justify-content: flex-start;
     }
 
-    overflow: auto;
     border: 1px solid var(--border-secondary-color);
+    border-bottom: 0;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
-    border-bottom: 0;
     margin-top: 1.25rem;
     padding: 2rem 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    overflow: auto;
 
     &.centered {
       align-items: center;
+    }
+
+    &.standalone {
+      border: 1px solid var(--border-secondary-color);
+      border-radius: 0.5rem;
+      padding: 1rem ;
+      margin: 1.25rem 0 2.5rem 0;
     }
   }
 
