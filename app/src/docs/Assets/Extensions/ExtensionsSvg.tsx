@@ -13,7 +13,6 @@ import TalismanSVG from "@packages/assets/lib/extensions/svg/talisman.svg?react"
 import LedgerSVG from "@packages/assets/lib/extensions/svg/ledger.svg?react";
 import PolkadotVaultSVG from "@packages/assets/lib/extensions/svg/polkadotvault.svg?react";
 import WalletConnectSVG from "@packages/assets/lib/extensions/svg/walletconnect.svg?react";
-import MetamaskSVG from "@packages/assets/lib/extensions/svg/metamask.svg?react";
 
 import { Demo } from "@docs/Demo";
 
