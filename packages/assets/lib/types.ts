@@ -7,7 +7,6 @@ import { CSSProperties, FC } from "react";
 export interface ExtensionConfig {
   title: string;
   website: string | [string, string];
-  networksSupported: "*" | string[];
   features: "*" | ExtensionFeature[];
 }
 

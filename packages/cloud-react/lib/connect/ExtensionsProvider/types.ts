@@ -13,7 +13,6 @@ export interface ExtensionsContextInterface {
   removeExtensionStatus: (id: string) => void;
   extensionInstalled: (id: string) => boolean;
   extensionCanConnect: (id: string) => boolean;
-  extensionSupportsNetwork: (id: string, network: string) => boolean;
   extensionHasFeature: (id: string, feature: ExtensionFeature) => boolean;
 }
 
