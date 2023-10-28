@@ -5,12 +5,10 @@ import { SimpleEditor } from "@docs/SimpleEditor";
 
 export const ConnectExample = () => {
   const code = `import {
-    useExtensions,
     useExtensionAccounts,
   } from '@polkadot-cloud/react/hooks';
 
 const ConnectAccounts = () => {
-  const { extensions } = useExtensions();
   const { connectExtensionAccounts } = useExtensionAccounts();
 
   return (
