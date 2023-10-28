@@ -21,7 +21,6 @@ import { useExtensions } from "../ExtensionsProvider/useExtensions";
 import { useEffectIgnoreInitial } from "../../base/hooks/useEffectIgnoreInitial";
 import { initPolkadotSnap } from "./snap";
 import { SnapNetworks } from "@chainsafe/metamask-polkadot-types";
-import { Extensions } from "@polkadot-cloud/assets/extensions";
 
 export const ExtensionAccountsContext =
   createContext<ExtensionAccountsContextInterface>(
@@ -282,15 +281,10 @@ export const ExtensionAccountsProvider = ({
   const handleExtensionAdapters = async (extensionKeys: string[]) => {
     // Connect to Metamask Polkadot Snap and inject into `injectedWeb3` if avaialble.
     if (extensionKeys.find((id) => id === "metamask-polkadot-snap")) {
-      const networksSupported =
-        Extensions["metamask-polkadot-snap"]?.networksSupported || [];
-
-      // Connect to Metamask Polkadot Snap if currently active network is supported.
-      if (networksSupported.includes(network) || networksSupported === "*")
-        await initPolkadotSnap({
-          networkName: network as SnapNetworks,
-          addressPrefix: ss58,
-        });
+      await initPolkadotSnap({
+        networkName: network as SnapNetworks,
+        addressPrefix: ss58,
+      });
     }
   };
 
