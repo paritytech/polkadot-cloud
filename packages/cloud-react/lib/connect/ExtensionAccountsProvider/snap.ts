@@ -26,7 +26,7 @@ interface Web3Window extends InjectedWindow {
 const transformAccounts = (accounts: string[]): AnyJson[] =>
   accounts.map((address, i) => ({
     address,
-    name: `Polkadot Snap #${i}`,
+    name: `Polkadot Snap ${i + 1}`,
     source: "metamask-polkadot-snap",
     type: "ethereum",
   }));
@@ -67,7 +67,7 @@ const injectPolkadotSnap = (win: Web3Window, config: SnapConfig): void => {
         },
       };
     },
-    version: "0",
+    version: "0.1",
   };
 };
 
