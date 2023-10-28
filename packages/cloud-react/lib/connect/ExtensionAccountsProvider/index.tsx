@@ -21,7 +21,7 @@ import { useExtensions } from "../ExtensionsProvider/useExtensions";
 import { useEffectIgnoreInitial } from "../../base/hooks/useEffectIgnoreInitial";
 import { initPolkadotSnap } from "./snap";
 import { SnapNetworks } from "@chainsafe/metamask-polkadot-types";
-import { Extensions } from "@polkadot-cloud/assets";
+import { Extensions } from "@polkadot-cloud/assets/extensions";
 
 export const ExtensionAccountsContext =
   createContext<ExtensionAccountsContextInterface>(
@@ -95,6 +95,8 @@ export const ExtensionAccountsProvider = ({
     // Exit if no installed extensions.
     if (!extensionKeys.length) return;
 
+    // Pre-connect: Inject extensions into `injectedWeb3` if not already injected.
+    //
     // Connect to Metamask Polkadot Snap and inject into `injectedWeb3` if avaialble.
     if (extensionKeys.find((id) => id === "metamask-polkadot-snap")) {
       const networksSupported =
@@ -109,7 +111,7 @@ export const ExtensionAccountsProvider = ({
       }
     }
 
-    // iterate filtered extensions, `enable` and add accounts to state.
+    // Iterate filtered extensions, `enable` and add accounts to state.
     const total = extensionKeys?.length ?? 0;
     let activeWalletAccount: ImportedAccount | null = null;
 
@@ -170,6 +172,7 @@ export const ExtensionAccountsProvider = ({
               // Update initialised extensions.
               updateInitialisedExtensions(id);
             };
+
             // Handle get-only supported extensions.
             if (id === "metamask-polkadot-snap") {
               const accounts = await extension.accounts.get();
