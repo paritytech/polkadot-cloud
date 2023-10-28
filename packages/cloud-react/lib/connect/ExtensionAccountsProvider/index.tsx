@@ -46,9 +46,7 @@ export const ExtensionAccountsProvider = ({
   const {
     extensionsStatus,
     setExtensionStatus,
-    extensionHasFeature,
     removeExtensionStatus,
-    extensionSupportsNetwork,
     checkingInjectedWeb3,
     extensionHasFeature,
   } = useExtensions();
