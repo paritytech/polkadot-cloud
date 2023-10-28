@@ -1,6 +1,7 @@
 // Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
+import { ExtensionFeature } from "@polkadot-cloud/assets/types";
 import { AnyJson } from "../../utils/types";
 import type { FunctionComponent, SVGProps } from "react";
 
@@ -55,6 +56,7 @@ export interface ExtensionsContextInterface {
   removeExtensionStatus: (id: string) => void;
   extensionInstalled: (id: string) => boolean;
   extensionCanConnect: (id: string) => boolean;
+  extensionHasFeature: (id: string, feature: ExtensionFeature) => boolean;
 }
 
 export type ExtensionStatus = "installed" | "not_authenticated" | "connected";

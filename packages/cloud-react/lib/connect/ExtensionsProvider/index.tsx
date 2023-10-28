@@ -2,12 +2,13 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 import { setStateWithRef } from "@polkadot-cloud/utils";
-import { ExtensionsArray } from "@polkadot-cloud/assets/extensions";
+import { Extensions, ExtensionsArray } from "@polkadot-cloud/assets/extensions";
 import { ReactNode, useEffect, useRef, useState, createContext } from "react";
 import type { ExtensionStatus, ExtensionsContextInterface } from "./types";
 import { defaultExtensionsContext } from "./defaults";
 import { AnyJson } from "../../utils/types";
 import { polkadotSnapAvailable } from "./utils";
+import { ExtensionFeature } from "@polkadot-cloud/assets/types";
 
 export const ExtensionsContext = createContext<ExtensionsContextInterface>(
   defaultExtensionsContext
@@ -111,6 +112,16 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
   const extensionCanConnect = (id: string): boolean =>
     extensionInstalled(id) && extensionsStatus[id] !== "connected";
 
+  // Checks whether an extension supports a feature.
+  const extensionHasFeature = (
+    id: string,
+    feature: ExtensionFeature
+  ): boolean => {
+    const features = Extensions[id].features;
+    if (features === "*" || features.includes(feature)) return true;
+    else return false;
+  };
+
   // Check for `injectedWeb3` and Metamask Snap on mount. To trigger interval on soft page
   // refreshes, no empty dependency array is provided to this `useEffect`.
   //
@@ -144,6 +155,7 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
         removeExtensionStatus,
         extensionInstalled,
         extensionCanConnect,
+        extensionHasFeature,
       }}
     >
       {children}
