@@ -105,6 +105,10 @@ export const ExtensionAccountsProvider = ({
     let i = 0;
     extensionKeys.forEach(async (id: string) => {
       i++;
+      const networkSupported = (
+        Extensions[id ?? ""]?.networksSupported || []
+      ).includes(network);
+
       // Whether extension is locally stored (previously connected).
       const isLocal = extensionIsLocal(id ?? "0");
       if (!id || !isLocal) {
@@ -119,7 +123,9 @@ export const ExtensionAccountsProvider = ({
 
           // Summons extension popup.
           const extension: ExtensionInterface = await enable(dappName);
-          if (extension !== undefined) {
+
+          // Continue if `enable` succeeded, and if the current network is supported.
+          if (extension !== undefined && networkSupported) {
             // Handler for new accounts.
             const handleAccounts = (a: ExtensionAccount[]) => {
               const { newAccounts, meta } = handleImportExtension(
@@ -185,6 +191,9 @@ export const ExtensionAccountsProvider = ({
   const connectExtensionAccounts = async (id?: string): Promise<boolean> => {
     const extensionKeys = Object.keys(extensionsStatus);
     const exists = extensionKeys.find((key) => key === id) || undefined;
+    const networkSupported = (
+      Extensions[id ?? ""]?.networksSupported || []
+    ).includes(network);
 
     if (!exists) {
       updateInitialisedExtensions(
@@ -203,7 +212,9 @@ export const ExtensionAccountsProvider = ({
 
         // Summons extension popup.
         const extension: ExtensionInterface = await enable(dappName);
-        if (extension !== undefined) {
+
+        // Continue if `enable` succeeded, and if the current network is supported.
+        if (extension !== undefined && networkSupported) {
           // Handler for new accounts.
           const handleAccounts = (a: ExtensionAccount[]) => {
             const { newAccounts, meta } = handleImportExtension(
