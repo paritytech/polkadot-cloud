@@ -185,7 +185,7 @@ export const ExtensionAccountsProvider = ({
   //
   // Similar to the above but only connects to a single extension. This is invoked by the user by
   // clicking on an extension. If activeAccount is not found here, it is simply ignored.
-  const connectExtensionAccounts = async (id?: string): Promise<boolean> => {
+  const connectExtensionAccounts = async (id: string): Promise<boolean> => {
     const extensionKeys = Object.keys(extensionsStatus);
     const exists = extensionKeys.find((key) => key === id) || undefined;
 

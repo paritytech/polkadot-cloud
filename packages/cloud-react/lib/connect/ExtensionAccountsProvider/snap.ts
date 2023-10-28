@@ -9,7 +9,6 @@ import {
   hasMetaMask,
   isMetamaskSnapsSupported,
 } from "@chainsafe/metamask-polkadot-adapter/src/utils";
-import { AnyJson } from "../../utils/types";
 import { enablePolkadotSnap } from "@chainsafe/metamask-polkadot-adapter";
 import type {
   SignerPayloadJSON,
@@ -18,12 +17,13 @@ import type {
 } from "@polkadot/types/types";
 import type { HexString } from "@polkadot/util/types";
 import { SnapConfig } from "@chainsafe/metamask-polkadot-types";
+import { ExtensionAccount } from "../ExtensionsProvider/types";
 
 interface Web3Window extends InjectedWindow {
   ethereum: unknown;
 }
 
-const transformAccounts = (accounts: string[]): AnyJson[] =>
+const transformAccounts = (accounts: string[]): ExtensionAccount[] =>
   accounts.map((address, i) => ({
     address,
     name: `Polkadot Snap ${i + 1}`,
@@ -71,6 +71,7 @@ const injectPolkadotSnap = (win: Web3Window, config: SnapConfig): void => {
   };
 };
 
+// Initiate Polkadot snap and inject it into `injectedWeb3`. as `metamask-polkadot-snap`.
 export const initPolkadotSnap = (config: SnapConfig): Promise<boolean> =>
   new Promise((resolve): void => {
     const win = window as Window & Web3Window;
