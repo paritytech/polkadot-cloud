@@ -45,6 +45,8 @@ export const ExtensionAccountsProvider = ({
     setExtensionStatus,
     removeExtensionStatus,
     checkingInjectedWeb3,
+    extensionHasFeature,
+    extensionSupportsNetwork,
   } = useExtensions();
 
   // Store connected extension accounts.
@@ -92,9 +94,12 @@ export const ExtensionAccountsProvider = ({
     // Exit if no installed extensions.
     if (!extensionKeys.length) return;
 
+    // Pre-connect: Inject extensions into `injectedWeb3` if not already injected.
+    await handleExtensionAdapters(extensionKeys);
+
+    // Iterate extensions, `enable` and add accounts to state.
     const total = extensionKeys?.length ?? 0;
     let activeWalletAccount: ImportedAccount | null = null;
-
     let i = 0;
     extensionKeys.forEach(async (id: string) => {
       i++;
@@ -112,7 +117,12 @@ export const ExtensionAccountsProvider = ({
 
           // Summons extension popup.
           const extension: ExtensionInterface = await enable(dappName);
-          if (extension !== undefined) {
+
+          // Continue if `enable` succeeded, and if the current network is supported.
+          if (
+            extension !== undefined &&
+            extensionSupportsNetwork(id, network)
+          ) {
             // Handler for new accounts.
             const handleAccounts = (a: ExtensionAccount[]) => {
               const { newAccounts, meta } = handleImportExtension(
@@ -153,10 +163,17 @@ export const ExtensionAccountsProvider = ({
               updateInitialisedExtensions(id);
             };
 
-            const unsub = extension.accounts.subscribe((accounts) => {
-              if (accounts) handleAccounts(accounts);
-            });
-            addToUnsubscribe(id, unsub);
+            // If account subscriptions are not supported, simply get the account(s) from the
+            // extnsion. Otherwise, subscribe to accounts.
+            if (!extensionHasFeature(id, "subscribeAccounts")) {
+              const accounts = await extension.accounts.get();
+              handleAccounts(accounts);
+            } else {
+              const unsub = extension.accounts.subscribe((accounts) => {
+                if (accounts) handleAccounts(accounts);
+              });
+              addToUnsubscribe(id, unsub);
+            }
           }
         } catch (err) {
           handleExtensionError(id, String(err));
@@ -178,8 +195,8 @@ export const ExtensionAccountsProvider = ({
         `unknown_extension_${extensionsInitialisedRef.current.length + 1}`
       );
     } else {
-      // Call optional `onExtensionEnabled` callback.
-      maybeOnExtensionEnabled(id);
+      // Pre-connect: Inject into `injectedWeb3` if the provided extension is not already injected.
+      await handleExtensionAdapters([id]);
 
       try {
         // Attempt to get extension `enable` property.
@@ -187,7 +204,12 @@ export const ExtensionAccountsProvider = ({
 
         // Summons extension popup.
         const extension: ExtensionInterface = await enable(dappName);
-        if (extension !== undefined) {
+
+        // Continue if `enable` succeeded, and if the current network is supported.
+        if (extension !== undefined && extensionSupportsNetwork(id, network)) {
+          // Call optional `onExtensionEnabled` callback.
+          maybeOnExtensionEnabled(id);
+
           // Handler for new accounts.
           const handleAccounts = (a: ExtensionAccount[]) => {
             const { newAccounts, meta } = handleImportExtension(
@@ -219,11 +241,16 @@ export const ExtensionAccountsProvider = ({
             updateInitialisedExtensions(id);
           };
 
-          // Subscribe to accounts.
-          const unsub = extension.accounts.subscribe((accounts) => {
-            if (accounts) handleAccounts(accounts);
-          });
-          addToUnsubscribe(id, unsub);
+          // If account subscriptions are not supported, simply get the account(s) from the extnsion. Otherwise, subscribe to accounts.
+          if (!extensionHasFeature(id, "subscribeAccounts")) {
+            const accounts = await extension.accounts.get();
+            handleAccounts(accounts);
+          } else {
+            const unsub = extension.accounts.subscribe((accounts) => {
+              if (accounts) handleAccounts(accounts);
+            });
+            addToUnsubscribe(id, unsub);
+          }
           return true;
         }
       } catch (err) {
@@ -249,6 +276,12 @@ export const ExtensionAccountsProvider = ({
     }
     // mark extension as initialised
     updateInitialisedExtensions(id);
+  };
+
+  // Handle adaptors for extensions that are not supported by `injectedWeb3`.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
+  const handleExtensionAdapters = async (extensionKeys: string[]) => {
+    // NOTE: implementing in https://github.com/paritytech/polkadot-cloud/pull/751.
   };
 
   // Handle forgetting of an imported extension account.
