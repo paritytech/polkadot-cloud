@@ -76,6 +76,11 @@ export const initPolkadotSnap = (config: SnapConfig): Promise<boolean> =>
     const win = window as Window & Web3Window;
     win.injectedWeb3 = win.injectedWeb3 || {};
 
+    // If already injected, successfully resolve early.
+    if (window.injectedWeb3["metamask-polkadot-snap"] !== undefined)
+      resolve(true);
+
+    // Attempt to inject into `injectedWeb3`.
     if (hasMetaMask())
       isMetamaskSnapsSupported().then((result) => {
         if (result) {
