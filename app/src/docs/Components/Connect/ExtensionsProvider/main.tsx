@@ -119,6 +119,30 @@ export const Doc = ({ folder, npm }: DocProps) => {
         <code>installed</code>, <code>not_authenticated</code> and{" "}
         <code>connected</code>.
       </p>
+      <H3 id="removeExtensionStatus">removeExtensionStatus</H3>
+      <div className="params inline">
+        <p>(id: string): void</p>
+      </div>
+      <p>
+        Removes an extension from the <code>extensionsStatus</code> record. This
+        should be called when the extension is not found / not installed.
+      </p>
+      <H3 id="extensionInstalled">extensionInstalled</H3>
+      <div className="params inline">
+        <p>(id: string): boolean</p>
+      </div>
+      <p>
+        A function that takes an extension id checks whether the extension is
+        installed.
+      </p>
+      <H3 id="extensionCanConnect">extensionCanConnect</H3>
+      <div className="params inline">
+        <p>(id: string): boolean</p>
+      </div>
+      <p>
+        Checks if the provided extension <code>id</code> can be connected to.
+        Returns false if the extension is not installed or is not connected.
+      </p>
     </>
   );
 };
