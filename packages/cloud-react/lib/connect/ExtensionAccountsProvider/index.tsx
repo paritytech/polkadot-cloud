@@ -96,20 +96,7 @@ export const ExtensionAccountsProvider = ({
     if (!extensionKeys.length) return;
 
     // Pre-connect: Inject extensions into `injectedWeb3` if not already injected.
-    //
-    // Connect to Metamask Polkadot Snap and inject into `injectedWeb3` if avaialble.
-    if (extensionKeys.find((id) => id === "metamask-polkadot-snap")) {
-      const networksSupported =
-        Extensions["metamask-polkadot-snap"]?.networksSupported || [];
-
-      // Connect to Metamask Polkadot Snap if currently active network is supported.
-      if (networksSupported.includes(network) || networksSupported === "*") {
-        await initPolkadotSnap({
-          networkName: network as SnapNetworks,
-          addressPrefix: ss58,
-        });
-      }
-    }
+    await handleExtensionAdapters(extensionKeys);
 
     // Iterate filtered extensions, `enable` and add accounts to state.
     const total = extensionKeys?.length ?? 0;
@@ -198,24 +185,14 @@ export const ExtensionAccountsProvider = ({
   const connectExtensionAccounts = async (id?: string): Promise<boolean> => {
     const extensionKeys = Object.keys(extensionsStatus);
     const exists = extensionKeys.find((key) => key === id) || undefined;
-    const networksSupported = Extensions[id]?.networksSupported || [];
 
     if (!exists) {
       updateInitialisedExtensions(
         `unknown_extension_${extensionsInitialisedRef.current.length + 1}`
       );
     } else {
-      // Connect to Metamask Polkadot Snap if provided, and if network is supported.
-      if (
-        (id === "metamask-polkadot-snap" &&
-          networksSupported.includes(network)) ||
-        networksSupported === "*"
-      ) {
-        await initPolkadotSnap({
-          networkName: network as SnapNetworks,
-          addressPrefix: ss58,
-        });
-      }
+      // Pre-connect: Inject into `injectedWeb3` if the provided extension is not already injected.
+      await handleExtensionAdapters([id]);
 
       // Call optional `onExtensionEnabled` callback.
       maybeOnExtensionEnabled(id);
@@ -294,6 +271,22 @@ export const ExtensionAccountsProvider = ({
     }
     // mark extension as initialised
     updateInitialisedExtensions(id);
+  };
+
+  // Handle adaptors for extensions that are not supported by `injectedWeb3`.
+  const handleExtensionAdapters = async (extensionKeys: string[]) => {
+    // Connect to Metamask Polkadot Snap and inject into `injectedWeb3` if avaialble.
+    if (extensionKeys.find((id) => id === "metamask-polkadot-snap")) {
+      const networksSupported =
+        Extensions["metamask-polkadot-snap"]?.networksSupported || [];
+
+      // Connect to Metamask Polkadot Snap if currently active network is supported.
+      if (networksSupported.includes(network) || networksSupported === "*")
+        await initPolkadotSnap({
+          networkName: network as SnapNetworks,
+          addressPrefix: ss58,
+        });
+    }
   };
 
   // Handle forgetting of an imported extension account.
