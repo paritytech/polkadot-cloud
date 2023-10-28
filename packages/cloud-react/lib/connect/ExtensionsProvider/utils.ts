@@ -14,7 +14,6 @@ import { SnapRpcMethodRequest } from "@chainsafe/metamask-polkadot-types";
 declare global {
   interface Window {
     injectedWeb3?: AnyJson;
-    // eslint-disable-next-line
     ethereum: {
       isMetaMask: boolean;
 

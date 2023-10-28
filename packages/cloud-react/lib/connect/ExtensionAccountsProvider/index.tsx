@@ -196,7 +196,6 @@ export const ExtensionAccountsProvider = ({
     } else {
       // Connect to Metamask Polkadot Snap if provided.
       if (id === "metamask-polkadot-snap") {
-        // TODO: add dappname, `networkName` and `addressPrefix` to options.
         await initPolkadotSnap({
           networkName: network as SnapNetworks, // TODO: disable if network not supported.
           addressPrefix: ss58,
