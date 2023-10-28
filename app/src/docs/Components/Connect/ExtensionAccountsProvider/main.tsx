@@ -101,8 +101,8 @@ export const Doc = ({ folder, npm }: DocProps) => {
       <p>
         With the providers in place, you can call{" "}
         <code>connectExtensionAccounts</code> to connect to an extension. The
-        following example attempts to find Subwallet JS, and connects to it via
-        a button if found:
+        following example attempts to find and connect to Subwallet JS upon a
+        button click.
       </p>
       <ConnectExample />
       <p>
