@@ -1,7 +1,7 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { ExtensionConfig, IconRecords } from "../types";
+import { ExtensionConfig, HardwareConfig, IconRecords } from "../types";
 import Enkrypt from "./jsx/Enkrypt";
 import FearlessWallet from "./jsx/FearlessWallet";
 import MetaMask from "./jsx/MetaMask";
@@ -22,10 +22,12 @@ export const Extensions: Record<string, ExtensionConfig> = {
   enkrypt: {
     title: "Enkrypt",
     website: "enkrypt.com",
+    features: "*",
   },
   "fearless-wallet": {
     title: "Fearless Wallet",
     website: "fearlesswallet.io",
+    features: "*",
   },
   "metamask-polkadot-snap": {
     title: "MetaMask Polkadot Snap",
@@ -33,18 +35,22 @@ export const Extensions: Record<string, ExtensionConfig> = {
       "snaps.metamask.io",
       "snaps.metamask.io/snap/npm/chainsafe/polkadot-snap",
     ],
+    features: ["getAccounts", "signer"],
   },
   polkagate: {
     title: "PolkaGate",
     website: "polkagate.xyz",
+    features: "*",
   },
   "subwallet-js": {
     title: "SubWallet",
     website: "subwallet.app",
+    features: "*",
   },
   talisman: {
     title: "Talisman",
     website: "talisman.xyz",
+    features: "*",
   },
   // NOTE: Nova Wallet use the same identifier as Polkadot JS extension. We therefore test if the
   // `walletExtension` property exists to determine if the extension is Nova Wallet or Polkadot
@@ -56,6 +62,7 @@ export const Extensions: Record<string, ExtensionConfig> = {
     website: window?.walletExtension?.isNovaWallet
       ? "novawallet.io"
       : "polkadot.js.org/extension",
+    features: "*",
   },
 };
 
@@ -79,7 +86,7 @@ export const ExtensionIcons: IconRecords = {
 };
 
 // List of hardware based wallets and their metadata.
-export const Hardware: Record<string, ExtensionConfig> = {
+export const Hardware: Record<string, HardwareConfig> = {
   ledger: {
     title: "Ledger",
     website: "ledger.com",

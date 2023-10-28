@@ -2,11 +2,12 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 import { setStateWithRef } from "@polkadot-cloud/utils";
-import { ExtensionsArray } from "@polkadot-cloud/assets/extensions";
+import { Extensions, ExtensionsArray } from "@polkadot-cloud/assets/extensions";
 import { ReactNode, useEffect, useRef, useState, createContext } from "react";
 import type { ExtensionStatus, ExtensionsContextInterface } from "./types";
 import { defaultExtensionsContext } from "./defaults";
 import { AnyJson } from "../../utils/types";
+import { ExtensionFeature } from "@polkadot-cloud/assets/types";
 
 export const ExtensionsContext = createContext<ExtensionsContextInterface>(
   defaultExtensionsContext
@@ -71,14 +72,6 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
-  // Checks if an extension has been installed.
-  const extensionInstalled = (id: string): boolean =>
-    extensionsStatus[id] !== undefined;
-
-  // Checks whether an extension can be connected to.
-  const extensionCanConnect = (id: string): boolean =>
-    extensionInstalled(id) && extensionsStatus[id] !== "connected";
-
   // Getter for the currently installed extensions.
   //
   // Loops through the supported extensios and checks if they are present in `injectedWeb3`. Adds
@@ -92,6 +85,24 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
     });
 
     return newExtensionsStatus;
+  };
+
+  // Checks if an extension has been installed.
+  const extensionInstalled = (id: string): boolean =>
+    extensionsStatus[id] !== undefined;
+
+  // Checks whether an extension can be connected to.
+  const extensionCanConnect = (id: string): boolean =>
+    extensionInstalled(id) && extensionsStatus[id] !== "connected";
+
+  // Checks whether an extension supports a feature.
+  const extensionHasFeature = (
+    id: string,
+    feature: ExtensionFeature
+  ): boolean => {
+    const features = Extensions[id].features;
+    if (features === "*" || features.includes(feature)) return true;
+    else return false;
   };
 
   // Sets an interval to listen to `window` until the `injectedWeb3` property is present. Cancels
@@ -126,6 +137,7 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
         removeExtensionStatus,
         extensionInstalled,
         extensionCanConnect,
+        extensionHasFeature,
       }}
     >
       {children}
