@@ -8,8 +8,11 @@ export interface ExtensionConfig {
   title: string;
   website: string | [string, string];
   networksSupported: "*" | string[];
-  features: "*" | string[];
+  features: "*" | ExtensionFeatures[];
 }
+
+// Supported extension features.
+export type ExtensionFeatures = "getAccounts" | "subscribeAccounts" | "signer";
 
 // Structure for a hardware wallet configuration.
 export interface HardwareConfig {

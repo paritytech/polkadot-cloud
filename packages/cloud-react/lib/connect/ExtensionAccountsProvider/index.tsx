@@ -21,6 +21,7 @@ import { useExtensions } from "../ExtensionsProvider/useExtensions";
 import { useEffectIgnoreInitial } from "../../base/hooks/useEffectIgnoreInitial";
 import { initPolkadotSnap } from "./snap";
 import { SnapNetworks } from "@chainsafe/metamask-polkadot-types";
+import { Extensions } from "@polkadot-cloud/assets";
 
 export const ExtensionAccountsContext =
   createContext<ExtensionAccountsContextInterface>(
@@ -96,10 +97,16 @@ export const ExtensionAccountsProvider = ({
 
     // Connect to Metamask Polkadot Snap and inject into `injectedWeb3` if avaialble.
     if (extensionKeys.find((id) => id === "metamask-polkadot-snap")) {
-      await initPolkadotSnap({
-        networkName: network as SnapNetworks, // TODO: disable if network not supported.
-        addressPrefix: ss58,
-      });
+      const networksSupported =
+        Extensions["metamask-polkadot-snap"]?.networksSupported || [];
+
+      // Connect to Metamask Polkadot Snap if currently active network is supported.
+      if (networksSupported.includes(network) || networksSupported === "*") {
+        await initPolkadotSnap({
+          networkName: network as SnapNetworks,
+          addressPrefix: ss58,
+        });
+      }
     }
 
     // iterate filtered extensions, `enable` and add accounts to state.
@@ -188,16 +195,21 @@ export const ExtensionAccountsProvider = ({
   const connectExtensionAccounts = async (id?: string): Promise<boolean> => {
     const extensionKeys = Object.keys(extensionsStatus);
     const exists = extensionKeys.find((key) => key === id) || undefined;
+    const networksSupported = Extensions[id]?.networksSupported || [];
 
     if (!exists) {
       updateInitialisedExtensions(
         `unknown_extension_${extensionsInitialisedRef.current.length + 1}`
       );
     } else {
-      // Connect to Metamask Polkadot Snap if provided.
-      if (id === "metamask-polkadot-snap") {
+      // Connect to Metamask Polkadot Snap if provided, and if network is supported.
+      if (
+        (id === "metamask-polkadot-snap" &&
+          networksSupported.includes(network)) ||
+        networksSupported === "*"
+      ) {
         await initPolkadotSnap({
-          networkName: network as SnapNetworks, // TODO: disable if network not supported.
+          networkName: network as SnapNetworks,
           addressPrefix: ss58,
         });
       }
