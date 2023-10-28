@@ -12,15 +12,13 @@ export const ConnectExample = () => {
 const ConnectAccounts = () => {
   const { extensions } = useExtensions();
   const { connectExtensionAccounts } = useExtensionAccounts();
-  
-  const extension = extensions.find((e) => e.id === 'subwallet-js');
 
   return (
     <>
       <button
         type="button"
         onClick={() => {
-          if (extension) connectExtensionAccounts(extension);
+          if (extension) connectExtensionAccounts('subwallet-js');
         }}
       >
         Connect to Subwallet JS

@@ -93,23 +93,6 @@ export const Doc = ({ folder, npm }: DocProps) => {
       </p>
       <hr className="lg" />
       <H2 id="values">Values</H2>
-      <H3 id="extensions">extensions</H3>
-      <div className="params inline">
-        <p>ExtensionInjected[]</p>
-      </div>
-      <p>
-        A list of available extensions, or null.
-        <ul>
-          <li>
-            If extensions are available, an array of extension records
-            containing the <code>id</code> and <code>enable</code> function of
-            each extension are returned.
-          </li>
-          <li>
-            If no extensions are avalable, <code>null</code> is returned.
-          </li>
-        </ul>
-      </p>
       <H3 id="checkingInjectedWeb3">checkingInjectedWeb3</H3>
       <div className="params inline">
         <p>boolean</p>
@@ -133,7 +116,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
       <p>
         A function that takes an extension id and status, and updates the{" "}
         <code>extensionsStatus</code> record. Accepts values of{" "}
-        <code>not_found</code>, <code>not_authenticated</code> and{" "}
+        <code>installed</code>, <code>not_authenticated</code> and{" "}
         <code>connected</code>.
       </p>
     </>
