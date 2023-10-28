@@ -112,6 +112,14 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
   const extensionCanConnect = (id: string): boolean =>
     extensionInstalled(id) && extensionsStatus[id] !== "connected";
 
+  // Checks whether an extension supports a network.
+  const extensionSupportsNetwork = (id: string, network: string): boolean => {
+    const networksSupported = Extensions[id].networksSupported;
+    if (networksSupported === "*" || networksSupported.includes(network))
+      return true;
+    else return false;
+  };
+
   // Checks whether an extension supports a feature.
   const extensionHasFeature = (
     id: string,
@@ -155,6 +163,7 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
         removeExtensionStatus,
         extensionInstalled,
         extensionCanConnect,
+        extensionSupportsNetwork,
         extensionHasFeature,
       }}
     >

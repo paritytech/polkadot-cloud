@@ -48,6 +48,7 @@ export const ExtensionAccountsProvider = ({
     setExtensionStatus,
     extensionHasFeature,
     removeExtensionStatus,
+    extensionSupportsNetwork,
     checkingInjectedWeb3,
   } = useExtensions();
 
@@ -106,9 +107,6 @@ export const ExtensionAccountsProvider = ({
     let i = 0;
     extensionKeys.forEach(async (id: string) => {
       i++;
-      const networkSupported = (
-        Extensions[id ?? ""]?.networksSupported || []
-      ).includes(network);
 
       // Whether extension is locally stored (previously connected).
       const isLocal = extensionIsLocal(id ?? "0");
@@ -126,7 +124,10 @@ export const ExtensionAccountsProvider = ({
           const extension: ExtensionInterface = await enable(dappName);
 
           // Continue if `enable` succeeded, and if the current network is supported.
-          if (extension !== undefined && networkSupported) {
+          if (
+            extension !== undefined &&
+            extensionSupportsNetwork(id, network)
+          ) {
             // Handler for new accounts.
             const handleAccounts = (a: ExtensionAccount[]) => {
               const { newAccounts, meta } = handleImportExtension(
@@ -192,9 +193,6 @@ export const ExtensionAccountsProvider = ({
   const connectExtensionAccounts = async (id?: string): Promise<boolean> => {
     const extensionKeys = Object.keys(extensionsStatus);
     const exists = extensionKeys.find((key) => key === id) || undefined;
-    const networkSupported = (
-      Extensions[id ?? ""]?.networksSupported || []
-    ).includes(network);
 
     if (!exists) {
       updateInitialisedExtensions(
@@ -215,7 +213,7 @@ export const ExtensionAccountsProvider = ({
         const extension: ExtensionInterface = await enable(dappName);
 
         // Continue if `enable` succeeded, and if the current network is supported.
-        if (extension !== undefined && networkSupported) {
+        if (extension !== undefined && extensionSupportsNetwork(id, network)) {
           // Handler for new accounts.
           const handleAccounts = (a: ExtensionAccount[]) => {
             const { newAccounts, meta } = handleImportExtension(
