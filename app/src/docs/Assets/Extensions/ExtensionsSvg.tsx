@@ -4,6 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { SimpleEditor } from "@docs/SimpleEditor";
 import EnkryptSVG from "@packages/assets/lib/extensions/svg/enkrypt.svg?react";
 import FearlessWalletSVG from "@packages/assets/lib/extensions/svg/fearlesswallet.svg?react";
+import MetamaskSVG from "@packages/assets/lib/extensions/svg/metamask.svg?react";
 import NovaWalletSVG from "@packages/assets/lib/extensions/svg/novawallet.svg?react";
 import PolkadotJSSVG from "@packages/assets/lib/extensions/svg/polkadotjs.svg?react";
 import PolkaGateSVG from "@packages/assets/lib/extensions/svg/polkagate.svg?react";
@@ -19,6 +20,7 @@ import { Demo } from "@docs/Demo";
 export const ExtensionsSvg = () => {
   const code = `import EnkryptSVG from "@polkadot-cloud/assets/extensions/svg/enkrypt.svg?react";
 import FearlessWalletSVG from "@polkadot-cloud/assets/extensions/svg/fearlesswallet.svg?react";
+import MetaMaskSVG from "@polkadot-cloud/assets/extensions/svg/metamask.svg?react";
 import NovaWalletSVG from "@polkadot-cloud/assets/extensions/svg/novawallet.svg?react";
 import PolkadotJSSVG from "@polkadot-cloud/assets/extensions/svg/polkadotjs.svg?react";
 import PolkaGateSVG from "@polkadot-cloud/assets/extensions/svg/polkagate.svg?react";
@@ -32,6 +34,7 @@ const App = () => (
   <>
     <EnkryptSVG />
     <FearlessWalletSVG />
+    <MetaMaskSVG />
     <NovaWalletSVG />
     <PolkadotJsSVG />
     <PolkaGateSVG />

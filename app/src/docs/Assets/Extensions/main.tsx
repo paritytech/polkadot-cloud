@@ -82,6 +82,17 @@ export const Doc = ({ folder, npm }: DocProps) => {
           </a>
         </li>
         <li>
+          MetaMask Polkadot Snap <Bar /> <code>metamask-polkadot-snap</code>{" "}
+          <Bar />{" "}
+          <a
+            href="https://snaps.metamask.io/snap/npm/chainsafe/polkadot-snap"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Website <External />
+          </a>
+        </li>
+        <li>
           Talisman <Bar /> <code>talisman</code> <Bar />{" "}
           <a href="https://talisman.xyz" target="_blank" rel="noreferrer">
             Website <External />
