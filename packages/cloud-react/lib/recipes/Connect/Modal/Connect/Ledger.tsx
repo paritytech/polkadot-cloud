@@ -12,7 +12,7 @@ import { ModalHardwareItem } from "../../../../base/modal/ModalHardwareItem";
 import { Button } from "../../../../buttons/Button";
 import { inChrome } from "@polkadot-cloud/utils";
 import { useHelp } from "../../HelpProvider/index";
-// TODO: Fix svg: import LedgerLogoSVG from "img/ledgerLogo.svg?react";
+import { Ledger as LedgerIcon } from "@polkadot-cloud/assets/extensions/jsx/Ledger";
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
 import { ReactElement } from "react";
 
@@ -41,8 +41,9 @@ export const Ledger = ({ network = "polkadot" }: LedgerProps): ReactElement => {
             />
           </div>
           <div className="row">
-            LedgerLogo
-            {/* <LedgerLogoSVG className="logo mono" /> */}
+            <div className="logo mono">
+              <LedgerIcon />
+            </div>
           </div>
           <div className="row margin">
             <Button

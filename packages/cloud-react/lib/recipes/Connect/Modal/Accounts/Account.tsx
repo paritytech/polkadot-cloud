@@ -5,11 +5,14 @@ import { faGlasses } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ellipsisFn } from "@polkadot-cloud/utils";
 
-// import { ExtensionIcons } from "@polkadot-cloud/assets/extensions";
+import { ExtensionIcons } from "@polkadot-cloud/assets/extensions";
 // import LedgerSVG from "@polkadot-cloud/assets/extensions/svg/ledger.svg?react";
 // import PolkadotVaultSVG from "@polkadot-cloud/assets/extensions/svg/polkadotvault.svg?react";
 // import { useTransferOptions } from "contexts/TransferOptions";
 // import { AccountWrapper } from "./Wrappers";
+
+import { PolkadotVault } from "@polkadot-cloud/assets/extensions/jsx/PolkadotVault";
+import { Ledger } from "@polkadot-cloud/assets/extensions/jsx/Ledger";
 
 import { Polkicon } from "../../../../icons/Polkicon";
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
@@ -42,6 +45,7 @@ export const AccountButton = ({
   // TODO: FIX A LOT OF THINGS
   // const { units, unit } = useNetwork().networkData;
 
+  // TODO: FIX A LOT OF THINGS
   // const { getTransferOptions } = useTransferOptions();
   // const { freeBalance } = getTransferOptions(address || "");
 
@@ -53,12 +57,12 @@ export const AccountButton = ({
   const connectProxy = delegator ? address || null : "";
 
   // Determine account source icon.
-  // const Icon =
-  //   meta?.source === "ledger"
-  //     ? "LedgerSVG"
-  //     : meta?.source === "vault"
-  //     ? "PolkadotVaultSVG"
-  //     : ExtensionIcons[meta?.source || ""] || undefined;
+  const Icon =
+    meta?.source === "ledger"
+      ? Ledger
+      : meta?.source === "vault"
+      ? PolkadotVault
+      : ExtensionIcons[meta?.source || ""] || undefined;
 
   // Determine if this account is active (active account or proxy).
   const isActive =
@@ -114,11 +118,11 @@ export const AccountButton = ({
             )}
             <div className={label === undefined ? `` : label[0]}>
               {label !== undefined ? <h5>{label[1]}</h5> : null}
-              {/* {Icon !== undefined ? (
+              {Icon !== undefined ? (
                 <span className="icon">
                   <Icon />
                 </span>
-              ) : null} */}
+              ) : null}
 
               {meta?.source === "external" && (
                 <FontAwesomeIcon

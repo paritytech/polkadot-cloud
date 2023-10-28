@@ -75,7 +75,7 @@ export const LedgerHardwareProvider = ({
 }: {
   children: ReactNode;
   network?: string;
-  fbm: FeedbackMessages;
+  fbm?: FeedbackMessages;
 }) => {
   const [ledgerAccounts, setLedgerAccountsState] = useState<LedgerAccount[]>(
     getLocalLedgerAccounts(network)

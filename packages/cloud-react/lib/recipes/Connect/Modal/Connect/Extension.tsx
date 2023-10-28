@@ -16,7 +16,7 @@ import "./index.scss";
 
 export const Extension = ({ meta, size, flag }: ExtensionProps) => {
   // TODO: Translations const { t } = useTranslation("modals");
-  const t = (s: string, p?: string) => s + p;
+  const t = (s: string) => s;
 
   const { addNotification } = useNotifications();
   const { connectExtensionAccounts } = useExtensionAccounts();

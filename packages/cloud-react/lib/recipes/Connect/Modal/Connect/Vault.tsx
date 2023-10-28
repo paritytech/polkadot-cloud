@@ -10,7 +10,7 @@ import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
 import { Button } from "../../../../buttons/Button";
 import { ModalConnectItem } from "../../../../base/modal/ModalConnectItem";
 import { ModalHardwareItem } from "../../../../base/modal/ModalHardwareItem";
-
+import { PolkadotVault } from "@polkadot-cloud/assets/extensions/jsx/PolkadotVault";
 import { useHelp } from "../../HelpProvider/index";
 
 export const Vault = (): ReactElement => {
@@ -34,8 +34,9 @@ export const Vault = (): ReactElement => {
             />
           </div>
           <div className="row">
-            PolkadotVaultSVG
-            {/* TODO: <PolkadotVaultSVG className="logo vault" /> */}
+            <div className="logo vault">
+              <PolkadotVault />
+            </div>
           </div>
           <div className="row margin">
             <Button

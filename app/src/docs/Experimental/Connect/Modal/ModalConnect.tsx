@@ -18,14 +18,13 @@ export const ModalConnect = () => {
       <Demo showThemes={false} centered>
         <div className="svg-box">
           <Button
-            type="text"
+            type="primary"
             text={"Connect"}
             iconTransform="grow-1"
             onClick={() => {
               console.log("click");
               openModal({ key: "Connect" });
             }}
-            style={{ color: "white", fontSize: "1.05rem" }}
           />
         </div>
       </Demo>

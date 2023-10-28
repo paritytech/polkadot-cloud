@@ -25,6 +25,9 @@ import { Proxies } from "./Proxies";
 import { ReadOnly } from "./ReadOnly";
 import { Vault } from "./Vault";
 
+import { Buffer } from "buffer";
+window.Buffer = Buffer;
+
 // Assets
 import CrossSVG from "../../assets/cross.svg?react";
 
