@@ -11,4 +11,5 @@ export const defaultExtensionsContext: ExtensionsContextInterface = {
   removeExtensionStatus: (id) => {},
   extensionInstalled: (id) => false,
   extensionCanConnect: (id) => false,
+  extensionHasFeature: (id, feature) => false,
 };
