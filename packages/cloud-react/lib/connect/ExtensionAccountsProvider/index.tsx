@@ -46,6 +46,7 @@ export const ExtensionAccountsProvider = ({
   const {
     extensionsStatus,
     setExtensionStatus,
+    extensionHasFeature,
     removeExtensionStatus,
     checkingInjectedWeb3,
   } = useExtensions();
@@ -166,8 +167,8 @@ export const ExtensionAccountsProvider = ({
               updateInitialisedExtensions(id);
             };
 
-            // Handle get-only supported extensions.
-            if (id === "metamask-polkadot-snap") {
+            // If account subscriptions are not supported, simply get the account(s) from the extnsion. Otherwise, subscribe to accounts.
+            if (!extensionHasFeature(id, "subscribeAccounts")) {
               const accounts = await extension.accounts.get();
               handleAccounts(accounts);
             } else {
@@ -246,12 +247,11 @@ export const ExtensionAccountsProvider = ({
             updateInitialisedExtensions(id);
           };
 
-          // Handle get-only supported extensions.
-          if (id === "metamask-polkadot-snap") {
+          // If account subscriptions are not supported, simply get the account(s) from the extnsion. Otherwise, subscribe to accounts.
+          if (!extensionHasFeature(id, "subscribeAccounts")) {
             const accounts = await extension.accounts.get();
             handleAccounts(accounts);
           } else {
-            // Subscribe to accounts.
             const unsub = extension.accounts.subscribe((accounts) => {
               if (accounts) handleAccounts(accounts);
             });
