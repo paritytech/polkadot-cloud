@@ -19,6 +19,8 @@ import { AnyFunction, AnyJson } from "../../utils/types";
 import { useImportExtension } from "./useImportExtension";
 import { useExtensions } from "../ExtensionsProvider/useExtensions";
 import { useEffectIgnoreInitial } from "../../base/hooks/useEffectIgnoreInitial";
+import { initPolkadotSnap } from "./snap";
+import { SnapNetworks } from "@chainsafe/metamask-polkadot-types";
 
 export const ExtensionAccountsContext =
   createContext<ExtensionAccountsContextInterface>(
@@ -102,6 +104,7 @@ export const ExtensionAccountsProvider = ({
     let i = 0;
     extensionKeys.forEach(async (id: string) => {
       i++;
+
       // Whether extension is locally stored (previously connected).
       const isLocal = extensionIsLocal(id ?? "0");
       if (!id || !isLocal) {
@@ -275,9 +278,14 @@ export const ExtensionAccountsProvider = ({
   };
 
   // Handle adaptors for extensions that are not supported by `injectedWeb3`.
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
   const handleExtensionAdapters = async (extensionKeys: string[]) => {
-    // NOTE: implementing in https://github.com/paritytech/polkadot-cloud/pull/751.
+    // Connect to Metamask Polkadot Snap and inject into `injectedWeb3` if avaialble.
+    if (extensionKeys.find((id) => id === "metamask-polkadot-snap")) {
+      await initPolkadotSnap({
+        networkName: network as SnapNetworks,
+        addressPrefix: ss58,
+      });
+    }
   };
 
   // Handle forgetting of an imported extension account.
@@ -379,7 +387,7 @@ export const ExtensionAccountsProvider = ({
   useEffectIgnoreInitial(() => {
     if (
       !checkingInjectedWeb3 &&
-      extensionsInitialised.length === Object.keys(extensionsStatus)?.length
+      extensionsInitialised.length === Object.keys(extensionsStatus).length
     ) {
       setExtensionAccountsSynced("synced");
     }

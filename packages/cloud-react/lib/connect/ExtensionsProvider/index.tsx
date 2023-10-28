@@ -7,6 +7,7 @@ import { ReactNode, useEffect, useRef, useState, createContext } from "react";
 import type { ExtensionStatus, ExtensionsContextInterface } from "./types";
 import { defaultExtensionsContext } from "./defaults";
 import { AnyJson } from "../../utils/types";
+import { polkadotSnapAvailable } from "./utils";
 import { ExtensionFeature } from "@polkadot-cloud/assets/types";
 
 export const ExtensionsContext = createContext<ExtensionsContextInterface>(
@@ -36,11 +37,22 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
   const injectCounter = 0;
 
   // Handle completed interval check for `injectedWeb3`.
+  //
+  // Clear interval and move on to checking for Metamask Polkadot Snap.
   const handleClearInterval = (hasInjectedWeb3: boolean) => {
     clearInterval(injectedWeb3Interval);
-    if (hasInjectedWeb3)
+    // Check if Metamask Polkadot Snap is available.
+    handleSnapInjection(hasInjectedWeb3);
+  };
+
+  // Handle injecting of `metamask-polkadot-snap` into injectedWeb3 if avaialble, and complete
+  // `injectedWeb3` syncing process.
+  const handleSnapInjection = async (hasInjectedWeb3: boolean) => {
+    const snapAvailable = await polkadotSnapAvailable();
+
+    if (hasInjectedWeb3 || snapAvailable)
       setStateWithRef(
-        getExtensionsStatus(),
+        getExtensionsStatus(snapAvailable),
         setExtensionsStatus,
         extensionsStatusRef
       );
@@ -76,12 +88,17 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
   //
   // Loops through the supported extensios and checks if they are present in `injectedWeb3`. Adds
   // `installed` status to the extension if it is present.
-  const getExtensionsStatus = () => {
+  const getExtensionsStatus = (snapAvailable: boolean) => {
     const { injectedWeb3 }: AnyJson = window;
+
     const newExtensionsStatus = { ...extensionsStatus };
+    if (snapAvailable)
+      newExtensionsStatus["metamask-polkadot-snap"] = "installed";
+
     ExtensionsArray.forEach((e) => {
-      if (injectedWeb3[e.id] !== undefined)
+      if (injectedWeb3[e.id] !== undefined) {
         newExtensionsStatus[e.id] = "installed";
+      }
     });
 
     return newExtensionsStatus;
@@ -105,8 +122,9 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
     else return false;
   };
 
-  // Sets an interval to listen to `window` until the `injectedWeb3` property is present. Cancels
-  // after 500 * 10 milliseconds.
+  // Check for `injectedWeb3` and Metamask Snap on mount. To trigger interval on soft page
+  // refreshes, no empty dependency array is provided to this `useEffect`.
+  //
   // Interval duration.
   const checkEveryMs = 500;
   // Total interval iterations.
