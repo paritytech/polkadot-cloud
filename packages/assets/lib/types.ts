@@ -7,7 +7,6 @@ import { CSSProperties, FC } from "react";
 export interface ExtensionConfig {
   title: string;
   website: string | [string, string];
-  networksSupported: "*" | string[];
   features: "*" | ExtensionFeature[];
 }
 
@@ -20,7 +19,7 @@ export interface HardwareConfig {
   website: string | [string, string];
 }
 
-// The supported chains for validators
+// The supported chains for validators.
 export type ValidatorSupportedChains = "polkadot" | "kusama" | "westend";
 
 // Structure for a validator entity.
@@ -28,7 +27,6 @@ export interface ValidatorConfig {
   name: string;
   thumbnail: string;
   bio: string;
-  // Optional fields.
   email?: string;
   twitter?: string;
   website?: string;

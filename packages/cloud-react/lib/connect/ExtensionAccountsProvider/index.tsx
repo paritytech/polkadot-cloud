@@ -50,6 +50,7 @@ export const ExtensionAccountsProvider = ({
     removeExtensionStatus,
     extensionSupportsNetwork,
     checkingInjectedWeb3,
+    extensionHasFeature,
   } = useExtensions();
 
   // Store connected extension accounts.
@@ -100,10 +101,9 @@ export const ExtensionAccountsProvider = ({
     // Pre-connect: Inject extensions into `injectedWeb3` if not already injected.
     await handleExtensionAdapters(extensionKeys);
 
-    // Iterate filtered extensions, `enable` and add accounts to state.
+    // Iterate extensions, `enable` and add accounts to state.
     const total = extensionKeys?.length ?? 0;
     let activeWalletAccount: ImportedAccount | null = null;
-
     let i = 0;
     extensionKeys.forEach(async (id: string) => {
       i++;
@@ -124,10 +124,7 @@ export const ExtensionAccountsProvider = ({
           const extension: ExtensionInterface = await enable(dappName);
 
           // Continue if `enable` succeeded, and if the current network is supported.
-          if (
-            extension !== undefined &&
-            extensionSupportsNetwork(id, network)
-          ) {
+          if (extension !== undefined) {
             // Handler for new accounts.
             const handleAccounts = (a: ExtensionAccount[]) => {
               const { newAccounts, meta } = handleImportExtension(
@@ -168,7 +165,8 @@ export const ExtensionAccountsProvider = ({
               updateInitialisedExtensions(id);
             };
 
-            // If account subscriptions are not supported, simply get the account(s) from the extnsion. Otherwise, subscribe to accounts.
+            // If account subscriptions are not supported, simply get the account(s) from the
+            // extnsion. Otherwise, subscribe to accounts.
             if (!extensionHasFeature(id, "subscribeAccounts")) {
               const accounts = await extension.accounts.get();
               handleAccounts(accounts);
@@ -202,9 +200,6 @@ export const ExtensionAccountsProvider = ({
       // Pre-connect: Inject into `injectedWeb3` if the provided extension is not already injected.
       await handleExtensionAdapters([id]);
 
-      // Call optional `onExtensionEnabled` callback.
-      maybeOnExtensionEnabled(id);
-
       try {
         // Attempt to get extension `enable` property.
         const { enable } = window.injectedWeb3[id];
@@ -213,7 +208,10 @@ export const ExtensionAccountsProvider = ({
         const extension: ExtensionInterface = await enable(dappName);
 
         // Continue if `enable` succeeded, and if the current network is supported.
-        if (extension !== undefined && extensionSupportsNetwork(id, network)) {
+        if (extension !== undefined) {
+          // Call optional `onExtensionEnabled` callback.
+          maybeOnExtensionEnabled(id);
+
           // Handler for new accounts.
           const handleAccounts = (a: ExtensionAccount[]) => {
             const { newAccounts, meta } = handleImportExtension(

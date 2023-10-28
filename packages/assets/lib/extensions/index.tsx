@@ -22,13 +22,11 @@ export const Extensions: Record<string, ExtensionConfig> = {
   enkrypt: {
     title: "Enkrypt",
     website: "enkrypt.com",
-    networksSupported: "*",
     features: "*",
   },
   "fearless-wallet": {
     title: "Fearless Wallet",
     website: "fearlesswallet.io",
-    networksSupported: "*",
     features: "*",
   },
   "metamask-polkadot-snap": {
@@ -37,25 +35,21 @@ export const Extensions: Record<string, ExtensionConfig> = {
       "snaps.metamask.io",
       "snaps.metamask.io/snap/npm/chainsafe/polkadot-snap",
     ],
-    networksSupported: ["polkadot", "kusama", "westend"],
     features: ["getAccounts", "signer"],
   },
   polkagate: {
     title: "PolkaGate",
     website: "polkagate.xyz",
-    networksSupported: "*",
     features: "*",
   },
   "subwallet-js": {
     title: "SubWallet",
     website: "subwallet.app",
-    networksSupported: "*",
     features: "*",
   },
   talisman: {
     title: "Talisman",
     website: "talisman.xyz",
-    networksSupported: "*",
     features: "*",
   },
   // NOTE: Nova Wallet use the same identifier as Polkadot JS extension. We therefore test if the
@@ -68,7 +62,6 @@ export const Extensions: Record<string, ExtensionConfig> = {
     website: window?.walletExtension?.isNovaWallet
       ? "novawallet.io"
       : "polkadot.js.org/extension",
-    networksSupported: "*",
     features: "*",
   },
 };
