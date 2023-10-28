@@ -3,14 +3,22 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { CSSProperties, FC } from "react";
 
-// The supported chains.
-export type SupportedChains = "polkadot" | "kusama" | "westend";
-
 // Structure for an extension configuration.
 export interface ExtensionConfig {
   title: string;
   website: string | [string, string];
+  networksSupported: "*" | string[];
+  features: "*" | string[];
 }
+
+// Structure for a hardware wallet configuration.
+export interface HardwareConfig {
+  title: string;
+  website: string | [string, string];
+}
+
+// The supported chains for validators
+export type ValidatorSupportedChains = "polkadot" | "kusama" | "westend";
 
 // Structure for a validator entity.
 export interface ValidatorConfig {
@@ -23,7 +31,7 @@ export interface ValidatorConfig {
   website?: string;
   // Must have at least one active validator on at least one network.
   validators: Partial<{
-    [K in SupportedChains]: string[];
+    [K in ValidatorSupportedChains]: string[];
   }>;
 }
 
