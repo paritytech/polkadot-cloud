@@ -1,4 +1,4 @@
-// Copyright 2023 @paritytech/polkadot-staking-dashboard authors & contributors
+// Copyright 2023 @polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
@@ -30,7 +30,9 @@ export const NoAccounts = ({ children, text, Icon }: Any) => {
         </h1>
       </div>
       <div className="no-accounts-wrapper">
-        <Icon className="icon" />
+        <div className="icon">
+          <Icon />
+        </div>
         <h3>{text}</h3>
         {children}
       </div>

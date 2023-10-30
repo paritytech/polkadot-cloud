@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+/* @license Copyright 2023 @polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { Switch } from "@packages/cloud-react/lib/base/inputs/Switch";
