@@ -6,7 +6,7 @@ import { localStorageOrDefault, setStateWithRef } from "@polkadot-cloud/utils";
 import { defaultExtensionAccountsContext } from "./defaults";
 import { ImportedAccount } from "../types";
 import {
-  ExtensionInjected,
+  ExtensionAccount,
   ExtensionInterface,
 } from "../ExtensionsProvider/types";
 import {
@@ -19,6 +19,8 @@ import { AnyFunction, AnyJson } from "../../utils/types";
 import { useImportExtension } from "./useImportExtension";
 import { useExtensions } from "../ExtensionsProvider/useExtensions";
 import { useEffectIgnoreInitial } from "../../base/hooks/useEffectIgnoreInitial";
+import { initPolkadotSnap } from "./snap";
+import { SnapNetworks } from "@chainsafe/metamask-polkadot-types";
 
 export const ExtensionAccountsContext =
   createContext<ExtensionAccountsContextInterface>(
@@ -40,8 +42,13 @@ export const ExtensionAccountsProvider = ({
     connectActiveExtensionAccount,
   } = useImportExtension();
 
-  const { checkingInjectedWeb3, setExtensionStatus, extensions } =
-    useExtensions();
+  const {
+    extensionsStatus,
+    setExtensionStatus,
+    removeExtensionStatus,
+    checkingInjectedWeb3,
+    extensionHasFeature,
+  } = useExtensions();
 
   // Store connected extension accounts.
   const [extensionAccounts, setExtensionAccounts] = useState<ImportedAccount[]>(
@@ -84,15 +91,20 @@ export const ExtensionAccountsProvider = ({
   // all extensions are looped before connecting to it; there is no guarantee it still exists - must
   // explicitly find it.
   const connectActiveExtensions = async () => {
-    // iterate extensions and add accounts to state
-    const total = extensions?.length ?? 0;
+    const extensionKeys = Object.keys(extensionsStatus);
+    // Exit if no installed extensions.
+    if (!extensionKeys.length) return;
+
+    // Pre-connect: Inject extensions into `injectedWeb3` if not already injected.
+    await handleExtensionAdapters(extensionKeys);
+
+    // Iterate extensions, `enable` and add accounts to state.
+    const total = extensionKeys?.length ?? 0;
     let activeWalletAccount: ImportedAccount | null = null;
-    if (!extensions) return;
     let i = 0;
-    extensions.forEach(async (e: ExtensionInjected) => {
+    extensionKeys.forEach(async (id: string) => {
       i++;
-      // Ensure the extension carries an `id` property.
-      const id = e?.id ?? undefined;
+
       // Whether extension is locally stored (previously connected).
       const isLocal = extensionIsLocal(id ?? "0");
       if (!id || !isLocal) {
@@ -103,52 +115,64 @@ export const ExtensionAccountsProvider = ({
       } else {
         try {
           // Attempt to get extension `enable` property.
-          const { enable } = e;
+          const { enable } = window.injectedWeb3[id];
+
           // Summons extension popup.
           const extension: ExtensionInterface = await enable(dappName);
+
+          // Continue if `enable` succeeded, and if the current network is supported.
           if (extension !== undefined) {
-            const unsub = extension.accounts.subscribe((a) => {
-              if (a) {
-                const { newAccounts, meta } = handleImportExtension(
-                  id,
-                  extensionAccountsRef.current,
-                  extension,
-                  a,
-                  forgetAccounts,
-                  {
-                    network,
-                    ss58,
-                  }
-                );
-
-                // Store active wallet account if found in this extension.
-                if (newAccounts.length)
-                  if (!activeWalletAccount)
-                    activeWalletAccount = getActiveExtensionAccount(
-                      { network, ss58 },
-                      newAccounts
-                    );
-
-                // Set active account for network on final extension.
-                if (i === total && !activeAccount) {
-                  const activeAccountRemoved =
-                    activeWalletAccount?.address !==
-                      meta.removedActiveAccount &&
-                    meta.removedActiveAccount !== null;
-                  if (!activeAccountRemoved) {
-                    connectActiveExtensionAccount(
-                      activeWalletAccount,
-                      connectToAccount
-                    );
-                  }
+            // Handler for new accounts.
+            const handleAccounts = (a: ExtensionAccount[]) => {
+              const { newAccounts, meta } = handleImportExtension(
+                id,
+                extensionAccountsRef.current,
+                extension,
+                a,
+                forgetAccounts,
+                {
+                  network,
+                  ss58,
                 }
-                // Concat accounts and store.
-                addExtensionAccount(newAccounts);
-                // Update initialised extensions.
-                updateInitialisedExtensions(id);
+              );
+
+              // Store active wallet account if found in this extension.
+              if (newAccounts.length)
+                if (!activeWalletAccount)
+                  activeWalletAccount = getActiveExtensionAccount(
+                    { network, ss58 },
+                    newAccounts
+                  );
+
+              // Set active account for network on final extension.
+              if (i === total && !activeAccount) {
+                const activeAccountRemoved =
+                  activeWalletAccount?.address !== meta.removedActiveAccount &&
+                  meta.removedActiveAccount !== null;
+                if (!activeAccountRemoved) {
+                  connectActiveExtensionAccount(
+                    activeWalletAccount,
+                    connectToAccount
+                  );
+                }
               }
-            });
-            addToUnsubscribe(id, unsub);
+              // Concat accounts and store.
+              addExtensionAccount(newAccounts);
+              // Update initialised extensions.
+              updateInitialisedExtensions(id);
+            };
+
+            // If account subscriptions are not supported, simply get the account(s) from the
+            // extnsion. Otherwise, subscribe to accounts.
+            if (!extensionHasFeature(id, "subscribeAccounts")) {
+              const accounts = await extension.accounts.get();
+              handleAccounts(accounts);
+            } else {
+              const unsub = extension.accounts.subscribe((accounts) => {
+                if (accounts) handleAccounts(accounts);
+              });
+              addToUnsubscribe(id, unsub);
+            }
           }
         } catch (err) {
           handleExtensionError(id, String(err));
@@ -161,59 +185,71 @@ export const ExtensionAccountsProvider = ({
   //
   // Similar to the above but only connects to a single extension. This is invoked by the user by
   // clicking on an extension. If activeAccount is not found here, it is simply ignored.
-  const connectExtensionAccounts = async (
-    e: ExtensionInjected
-  ): Promise<boolean> => {
-    // ensure the extension carries an `id` property
-    const id = e?.id ?? undefined;
-    if (!id) {
+  const connectExtensionAccounts = async (id: string): Promise<boolean> => {
+    const extensionKeys = Object.keys(extensionsStatus);
+    const exists = extensionKeys.find((key) => key === id) || undefined;
+
+    if (!exists) {
       updateInitialisedExtensions(
         `unknown_extension_${extensionsInitialisedRef.current.length + 1}`
       );
     } else {
-      // Call optional `onExtensionEnabled` callback.
-      maybeOnExtensionEnabled(id);
+      // Pre-connect: Inject into `injectedWeb3` if the provided extension is not already injected.
+      await handleExtensionAdapters([id]);
 
       try {
         // Attempt to get extension `enable` property.
-        const { enable } = e;
+        const { enable } = window.injectedWeb3[id];
+
         // Summons extension popup.
         const extension: ExtensionInterface = await enable(dappName);
+
+        // Continue if `enable` succeeded, and if the current network is supported.
         if (extension !== undefined) {
-          // Subscribe to accounts.
-          const unsub = extension.accounts.subscribe((a) => {
-            if (a) {
-              const { newAccounts, meta } = handleImportExtension(
-                id,
-                extensionAccountsRef.current,
-                extension,
-                a,
-                forgetAccounts,
-                { network, ss58 }
+          // Call optional `onExtensionEnabled` callback.
+          maybeOnExtensionEnabled(id);
+
+          // Handler for new accounts.
+          const handleAccounts = (a: ExtensionAccount[]) => {
+            const { newAccounts, meta } = handleImportExtension(
+              id,
+              extensionAccountsRef.current,
+              extension,
+              a,
+              forgetAccounts,
+              { network, ss58 }
+            );
+            // Set active account for network if not yet set.
+            if (!activeAccount) {
+              const activeExtensionAccount = getActiveExtensionAccount(
+                { network, ss58 },
+                newAccounts
               );
-              // Set active account for network if not yet set.
-              if (!activeAccount) {
-                const activeExtensionAccount = getActiveExtensionAccount(
-                  { network, ss58 },
-                  newAccounts
+              if (
+                activeExtensionAccount?.address !== meta.removedActiveAccount &&
+                meta.removedActiveAccount !== null
+              )
+                connectActiveExtensionAccount(
+                  activeExtensionAccount,
+                  connectToAccount
                 );
-                if (
-                  activeExtensionAccount?.address !==
-                    meta.removedActiveAccount &&
-                  meta.removedActiveAccount !== null
-                )
-                  connectActiveExtensionAccount(
-                    activeExtensionAccount,
-                    connectToAccount
-                  );
-              }
-              // Concat accounts and store.
-              addExtensionAccount(newAccounts);
-              // Update initialised extensions.
-              updateInitialisedExtensions(id);
             }
-          });
-          addToUnsubscribe(id, unsub);
+            // Concat accounts and store.
+            addExtensionAccount(newAccounts);
+            // Update initialised extensions.
+            updateInitialisedExtensions(id);
+          };
+
+          // If account subscriptions are not supported, simply get the account(s) from the extnsion. Otherwise, subscribe to accounts.
+          if (!extensionHasFeature(id, "subscribeAccounts")) {
+            const accounts = await extension.accounts.get();
+            handleAccounts(accounts);
+          } else {
+            const unsub = extension.accounts.subscribe((accounts) => {
+              if (accounts) handleAccounts(accounts);
+            });
+            addToUnsubscribe(id, unsub);
+          }
           return true;
         }
       } catch (err) {
@@ -231,7 +267,7 @@ export const ExtensionAccountsProvider = ({
       removeFromLocalExtensions(id);
       // extension not found (does not exist)
       if (err.substring(0, 17) === "NotInstalledError") {
-        setExtensionStatus(id, "not_found");
+        removeExtensionStatus(id);
       } else {
         // declare extension as no imported accounts authenticated.
         setExtensionStatus(id, "not_authenticated");
@@ -239,6 +275,17 @@ export const ExtensionAccountsProvider = ({
     }
     // mark extension as initialised
     updateInitialisedExtensions(id);
+  };
+
+  // Handle adaptors for extensions that are not supported by `injectedWeb3`.
+  const handleExtensionAdapters = async (extensionKeys: string[]) => {
+    // Connect to Metamask Polkadot Snap and inject into `injectedWeb3` if avaialble.
+    if (extensionKeys.find((id) => id === "metamask-polkadot-snap")) {
+      await initPolkadotSnap({
+        networkName: network as SnapNetworks,
+        addressPrefix: ss58,
+      });
+    }
   };
 
   // Handle forgetting of an imported extension account.
@@ -314,21 +361,21 @@ export const ExtensionAccountsProvider = ({
       setStateWithRef([], setExtensionsInitialised, extensionsInitialisedRef);
       // if extensions have been fetched, get accounts if extensions exist and
       // local extensions exist (previously connected).
-      if (extensions.length) {
+      if (Object.keys(extensionsStatus).length) {
         // get active extensions
         const localExtensions = localStorageOrDefault(
           `active_extensions`,
           [],
           true
         );
-        if (extensions.length && localExtensions.length) {
+        if (Object.keys(extensionsStatus).length && localExtensions.length) {
           setExtensionAccountsSynced("syncing");
           connectActiveExtensions();
         } else setExtensionAccountsSynced("synced");
       }
     }
     return () => unsubscribe();
-  }, [extensions.length, checkingInjectedWeb3, extensionAccountsSynced]);
+  }, [extensionsStatus, checkingInjectedWeb3, extensionAccountsSynced]);
 
   // Change syncing to unsynced on `ss58` change.
   useEffectIgnoreInitial(() => {
@@ -340,7 +387,7 @@ export const ExtensionAccountsProvider = ({
   useEffectIgnoreInitial(() => {
     if (
       !checkingInjectedWeb3 &&
-      extensionsInitialised.length === extensions?.length
+      extensionsInitialised.length === Object.keys(extensionsStatus).length
     ) {
       setExtensionAccountsSynced("synced");
     }

@@ -2,15 +2,13 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 import { setStateWithRef } from "@polkadot-cloud/utils";
-import { ExtensionsArray } from "@polkadot-cloud/assets/extensions";
+import { Extensions, ExtensionsArray } from "@polkadot-cloud/assets/extensions";
 import { ReactNode, useEffect, useRef, useState, createContext } from "react";
-import type {
-  ExtensionInjected,
-  ExtensionStatus,
-  ExtensionsContextInterface,
-} from "./types";
+import type { ExtensionStatus, ExtensionsContextInterface } from "./types";
 import { defaultExtensionsContext } from "./defaults";
 import { AnyJson } from "../../utils/types";
+import { polkadotSnapAvailable } from "./utils";
+import { ExtensionFeature } from "@polkadot-cloud/assets/types";
 
 export const ExtensionsContext = createContext<ExtensionsContextInterface>(
   defaultExtensionsContext
@@ -28,21 +26,11 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
   // Store whether injected interval has been initialised.
   const intervalInitialisedRef = useRef<boolean>(false);
 
-  // Store the installed extensions in state.
-  const [extensions, setExtensionsState] = useState<ExtensionInjected[] | null>(
-    null
-  );
-  const extensionsRef = useRef(extensions);
-
   // Store each extension's status in state.
   const [extensionsStatus, setExtensionsStatus] = useState<
     Record<string, ExtensionStatus>
   >({});
   const extensionsStatusRef = useRef(extensionsStatus);
-
-  // Setter for injected extensions.
-  const setExtensions = (e: ExtensionInjected[] | null) =>
-    setStateWithRef(e, setExtensionsState, extensionsRef);
 
   // Listen for window.injectedWeb3 with an interval.
   let injectedWeb3Interval: ReturnType<typeof setInterval>;
@@ -50,22 +38,97 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
 
   // Handle completed interval check for `injectedWeb3`.
   //
-  // If `injectedWeb3` is present, get installed extensions and add to state.
+  // Clear interval and move on to checking for Metamask Polkadot Snap.
   const handleClearInterval = (hasInjectedWeb3: boolean) => {
     clearInterval(injectedWeb3Interval);
-    if (hasInjectedWeb3) {
-      setExtensions(getInstalledExtensions());
-    }
+    // Check if Metamask Polkadot Snap is available.
+    handleSnapInjection(hasInjectedWeb3);
+  };
+
+  // Handle injecting of `metamask-polkadot-snap` into injectedWeb3 if avaialble, and complete
+  // `injectedWeb3` syncing process.
+  const handleSnapInjection = async (hasInjectedWeb3: boolean) => {
+    const snapAvailable = await polkadotSnapAvailable();
+
+    if (hasInjectedWeb3 || snapAvailable)
+      setStateWithRef(
+        getExtensionsStatus(snapAvailable),
+        setExtensionsStatus,
+        extensionsStatusRef
+      );
+
     setStateWithRef(false, setCheckingInjectedWeb3, checkingInjectedWeb3Ref);
   };
 
-  // Sets an interval to listen to `window` until the `injectedWeb3` property is present. Cancels
-  // after 500 * 10 milliseconds.
-  const checkEveryMs = 500;
-  const totalChecks = 10;
+  // Setter for an extension status.
+  const setExtensionStatus = (id: string, status: ExtensionStatus) => {
+    setStateWithRef(
+      {
+        ...extensionsStatusRef.current,
+        [id]: status,
+      },
+      setExtensionsStatus,
+      extensionsStatusRef
+    );
+  };
 
-  // To trigger interval on soft page refreshes, no empty dependency array is provided to this
-  // `useEffect`.
+  // Removes an extension from the `extensionsStatus` state.
+  const removeExtensionStatus = (id: string) => {
+    const newExtensionsStatus = { ...extensionsStatusRef.current };
+    delete newExtensionsStatus[id];
+
+    setStateWithRef(
+      newExtensionsStatus,
+      setExtensionsStatus,
+      extensionsStatusRef
+    );
+  };
+
+  // Getter for the currently installed extensions.
+  //
+  // Loops through the supported extensios and checks if they are present in `injectedWeb3`. Adds
+  // `installed` status to the extension if it is present.
+  const getExtensionsStatus = (snapAvailable: boolean) => {
+    const { injectedWeb3 }: AnyJson = window;
+
+    const newExtensionsStatus = { ...extensionsStatus };
+    if (snapAvailable)
+      newExtensionsStatus["metamask-polkadot-snap"] = "installed";
+
+    ExtensionsArray.forEach((e) => {
+      if (injectedWeb3[e.id] !== undefined) {
+        newExtensionsStatus[e.id] = "installed";
+      }
+    });
+
+    return newExtensionsStatus;
+  };
+
+  // Checks if an extension has been installed.
+  const extensionInstalled = (id: string): boolean =>
+    extensionsStatus[id] !== undefined;
+
+  // Checks whether an extension can be connected to.
+  const extensionCanConnect = (id: string): boolean =>
+    extensionInstalled(id) && extensionsStatus[id] !== "connected";
+
+  // Checks whether an extension supports a feature.
+  const extensionHasFeature = (
+    id: string,
+    feature: ExtensionFeature
+  ): boolean => {
+    const features = Extensions[id].features;
+    if (features === "*" || features.includes(feature)) return true;
+    else return false;
+  };
+
+  // Check for `injectedWeb3` and Metamask Snap on mount. To trigger interval on soft page
+  // refreshes, no empty dependency array is provided to this `useEffect`.
+  //
+  // Interval duration.
+  const checkEveryMs = 500;
+  // Total interval iterations.
+  const totalChecks = 10;
   useEffect(() => {
     if (!intervalInitialisedRef.current) {
       intervalInitialisedRef.current = true;
@@ -79,44 +142,20 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
         }
       }, checkEveryMs);
     }
+
     return () => clearInterval(injectedWeb3Interval);
   });
-
-  // Setter for an extension status.
-  const setExtensionStatus = (id: string, status: ExtensionStatus) => {
-    setStateWithRef(
-      Object.assign(extensionsStatusRef.current || {}, {
-        [id]: status,
-      }),
-      setExtensionsStatus,
-      extensionsStatusRef
-    );
-  };
-
-  // Getter for the currently installed extensions.
-  //
-  // Loops through the supported extensios and checks if they are present in `injectedWeb3`.
-  const getInstalledExtensions = () => {
-    const { injectedWeb3 }: AnyJson = window;
-    const installed: ExtensionInjected[] = [];
-    ExtensionsArray.forEach((e) => {
-      if (injectedWeb3[e.id] !== undefined) {
-        installed.push({
-          ...e,
-          ...injectedWeb3[e.id],
-        });
-      }
-    });
-    return installed;
-  };
 
   return (
     <ExtensionsContext.Provider
       value={{
-        extensions: extensionsRef.current || [],
         extensionsStatus: extensionsStatusRef.current,
         checkingInjectedWeb3: checkingInjectedWeb3Ref.current,
         setExtensionStatus,
+        removeExtensionStatus,
+        extensionInstalled,
+        extensionCanConnect,
+        extensionHasFeature,
       }}
     >
       {children}

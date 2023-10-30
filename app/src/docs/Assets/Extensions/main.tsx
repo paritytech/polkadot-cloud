@@ -11,6 +11,7 @@ import { DocProps } from "@docs/types";
 import { ImportSimple } from "./ImportSimple";
 import { External } from "@docs/External";
 import { Bar } from "@docs/Bar";
+import { IconsOnly } from "./IconsOnly";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (
@@ -23,6 +24,8 @@ export const Doc = ({ folder, npm }: DocProps) => {
         npm={npm}
         status="stable"
       />
+
+      <IconsOnly />
 
       <p>
         Web3 wallet extension data can be imported from{" "}
@@ -75,6 +78,17 @@ export const Doc = ({ folder, npm }: DocProps) => {
         <li>
           Fearless Wallet <Bar /> <code>fearless-wallet</code> <Bar />{" "}
           <a href="https://fearlesswallet.io" target="_blank" rel="noreferrer">
+            Website <External />
+          </a>
+        </li>
+        <li>
+          MetaMask Polkadot Snap <Bar /> <code>metamask-polkadot-snap</code>{" "}
+          <Bar />{" "}
+          <a
+            href="https://snaps.metamask.io/snap/npm/chainsafe/polkadot-snap"
+            target="_blank"
+            rel="noreferrer"
+          >
             Website <External />
           </a>
         </li>

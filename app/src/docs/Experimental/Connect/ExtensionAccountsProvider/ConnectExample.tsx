@@ -5,22 +5,18 @@ import { SimpleEditor } from "@docs/SimpleEditor";
 
 export const ConnectExample = () => {
   const code = `import {
-    useExtensions,
     useExtensionAccounts,
   } from '@polkadot-cloud/react/hooks';
 
 const ConnectAccounts = () => {
-  const { extensions } = useExtensions();
   const { connectExtensionAccounts } = useExtensionAccounts();
-  
-  const extension = extensions.find((e) => e.id === 'subwallet-js');
 
   return (
     <>
       <button
         type="button"
         onClick={() => {
-          if (extension) connectExtensionAccounts(extension);
+          if (extension) connectExtensionAccounts('subwallet-js');
         }}
       >
         Connect to Subwallet JS

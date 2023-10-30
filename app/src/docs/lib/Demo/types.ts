@@ -11,4 +11,6 @@ export interface DemoProps {
   centered?: boolean;
   // whether theme toggles are displayed.
   showThemes?: boolean;
+  // standalone mode.
+  standalone?: boolean;
 }
