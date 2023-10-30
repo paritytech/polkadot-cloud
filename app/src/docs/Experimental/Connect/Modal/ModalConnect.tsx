@@ -5,6 +5,7 @@ import { SimpleEditor } from "@docs/SimpleEditor";
 import { Demo } from "@docs/Demo";
 import { useOverlay } from "@packages/cloud-react/lib/overlay/OverlayProvider/useOverlay";
 import { Button } from "@packages/cloud-react/lib/buttons/Button";
+import { Prompt } from "@packages/cloud-react/lib/recipes/Connect/Modal/Prompt";
 import { Overlays } from "./Overlays";
 
 export const ModalConnect = () => {
@@ -14,6 +15,7 @@ export const ModalConnect = () => {
 
   return (
     <>
+      <Prompt />
       <Overlays />
       <Demo showThemes={false} centered>
         <div className="svg-box">

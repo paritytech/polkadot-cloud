@@ -30,8 +30,11 @@ export const Remove = ({ address, getHandler, removeHandler }: RemoveProps) => {
           type="mono"
           text={t("removeAccount")}
           onClick={() => {
+            console.log("123");
             const account = getHandler(address);
+            console.log("account", account);
             if (account) {
+              console.log("address 2", address);
               removeHandler(address);
               forgetOtherAccounts([account]);
               setStatus(0);

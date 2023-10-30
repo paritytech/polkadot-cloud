@@ -13,7 +13,7 @@ export const PromptProvider = ({ children }: { children: ReactNode }) => {
     Prompt: null,
   });
 
-  const setPrompt = (Prompt: Any) => {
+  const setPrompt = (Prompt: ReactNode | null) => {
     setState({
       ...state,
       Prompt,
@@ -28,7 +28,8 @@ export const PromptProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
-  const openPromptWith = (Prompt: Any, size = "small") => {
+  const openPromptWith = (Prompt: ReactNode | null, size = "small") => {
+    console.log("PROMPT", Prompt);
     setState({
       ...state,
       size,

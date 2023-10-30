@@ -12,6 +12,7 @@ import { useActiveAccounts } from "@packages/cloud-react/lib/recipes/Connect/Act
 import { OtherAccountsProvider } from "@packages/cloud-react/lib/recipes/Connect/OtherAccountsProvider";
 import { ImportedAccountsProvider } from "@packages/cloud-react/lib/recipes/Connect/ImportedAccountsProvider";
 import { HelpProvider } from "@packages/cloud-react/lib/recipes/Connect/HelpProvider";
+import { PromptProvider } from "@packages/cloud-react/lib/recipes/Connect/PromptProvider";
 
 export const ModalConnect = () => {
   const { activeAccount, setActiveAccount } = useActiveAccounts();
@@ -32,12 +33,14 @@ export const ModalConnect = () => {
               <OtherAccountsProvider>
                 <ImportedAccountsProvider>
                   <HelpProvider>
-                    <div className="doc">
-                      <Doc
-                        npm="@polkadot-cloud/react"
-                        folder="Recipes/ModalConnect"
-                      />
-                    </div>
+                    <PromptProvider>
+                      <div className="doc">
+                        <Doc
+                          npm="@polkadot-cloud/react"
+                          folder="Recipes/ModalConnect"
+                        />
+                      </div>
+                    </PromptProvider>
                   </HelpProvider>
                 </ImportedAccountsProvider>
               </OtherAccountsProvider>
