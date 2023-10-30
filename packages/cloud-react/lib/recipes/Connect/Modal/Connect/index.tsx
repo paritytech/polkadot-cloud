@@ -28,9 +28,6 @@ import { Vault } from "./Vault";
 import { Buffer } from "buffer";
 window.Buffer = Buffer;
 
-// Assets
-import CrossSVG from "../../assets/cross.svg?react";
-
 export const Connect = () => {
   const { extensions } = useExtensions();
   const { replaceModal, setModalHeight, modalMaxHeight, setModalStatus } =
@@ -93,9 +90,11 @@ export const Connect = () => {
             zIndex: "2",
           }}
         >
-          <button type="button" onClick={() => setModalStatus("closing")}>
-            <CrossSVG style={{ width: "1.25rem", height: "1.25rem" }} />
-          </button>
+          <Button
+            type="text"
+            text={"X"}
+            onClick={() => setModalStatus("closing")}
+          />
         </div>
         <ModalFixedTitle ref={headerRef} withStyle>
           <ModalCustomHeader>

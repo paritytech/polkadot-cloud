@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
+import { Button } from "../../../../buttons/Button";
 
 export const Close = () => {
   const { setModalStatus } = useOverlay().modal;
@@ -16,9 +17,11 @@ export const Close = () => {
         zIndex: "2",
       }}
     >
-      <button type="button" onClick={() => setModalStatus("closing")}>
-        X
-      </button>
+      <Button
+        type="text"
+        text={"X"}
+        onClick={() => setModalStatus("closing")}
+      />
     </div>
   );
 };
