@@ -76,7 +76,9 @@ export const HardwareStatusBar = ({
     >
       <div className="inner">
         <section>
-          <Icon width="24" height="24" className="icon" />
+          <div style={{ width: "3rem", height: "3rem" }} className="icon">
+            <Icon />
+          </div>
           <div className="text">
             <h3>
               {text}

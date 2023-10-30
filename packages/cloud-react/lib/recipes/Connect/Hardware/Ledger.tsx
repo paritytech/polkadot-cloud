@@ -49,6 +49,7 @@ export type FeedbackMessages = {
   successfullyFetchedAddress?: FeedbackMessage;
   signedTransactionSuccessfully?: FeedbackMessage;
   approveTransactionLedger?: FeedbackMessage;
+  unlockLedgerToContinue?: FeedbackMessage;
 };
 
 // Default (fallback) Feedback Messages
@@ -66,6 +67,7 @@ const dfm = {
   successfullyFetchedAddress: ["Successfully fetched address"],
   signedTransactionSuccessfully: ["Signed transaction successfully"],
   approveTransactionLedger: ["Approve transaction ledger"],
+  unlockLedgerToContinue: ["Unlock Ledger to continue"],
 };
 
 export const LedgerHardwareProvider = ({
@@ -517,7 +519,14 @@ export const LedgerHardwareProvider = ({
   };
 
   const feedBackMsg = (key: string): void => {
-    setFeedback(fbm[key][0] || dfm[key][0], fbm[key][1] || dfm[key][1]);
+    console.log("dfm", dfm, key);
+    console.log("dfm[key]", dfm[key]);
+    console.log("dfm[key][0]", dfm[key][0]);
+    console.log("dfm[key][1]", dfm[key][1]);
+    setFeedback(dfm[key][0], dfm[key][1]);
+    // (fbm && Object.keys(fbm).length && fbm[key] && fbm[key][0]) ||
+    //   dfm[key][0],
+    // (fbm && Object.keys(fbm).length && fbm[key][1]) || dfm[key][1]
   };
 
   const setFeedback = (message: MaybeString, helpKey: MaybeString = null) => {

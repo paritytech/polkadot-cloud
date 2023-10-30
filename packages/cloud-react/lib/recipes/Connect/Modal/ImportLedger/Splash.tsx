@@ -71,7 +71,7 @@ export const Splash = ({ handleLedgerLoop }: AnyFunction) => {
       <div className="splash-wrapper">
         <div className="icon">
           <div
-            style={{ transform: "scale(0.6)" }}
+            style={{ transform: "scale(0.6)", width: "6rem", height: "6rem" }}
             // opacity={mode === "dark" ? 0.5 : 0.1}
           >
             <LogoSVG />

@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 import { ReactElement, memo, useCallback, useMemo } from "react";
-import { Reader } from "react-qr-reader";
-import type { ScanProps } from "./types.js";
-import { createImgSize } from "./util.js";
+import QrReader from "react-qr-reader";
+import type { ScanProps } from "./types";
+import { createImgSize } from "./util";
 
 const DEFAULT_DELAY = 150;
 
@@ -34,8 +34,8 @@ const Scan = ({
 
   return (
     <div className={"scan-wrapper " + className} style={containerStyle}>
-      <Reader
-        className="ui--qr-Scan"
+      <QrReader
+        className="ui-qr-scan"
         delay={delay}
         onError={onErrorCallback}
         onScan={onScanCallback}

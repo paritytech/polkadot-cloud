@@ -7,7 +7,7 @@ import { isValidAddress } from "@polkadot-cloud/utils";
 import { useEffect, useState } from "react";
 import { useVaultHardware } from "../../Hardware/Vault";
 import { usePrompt } from "../../PromptProvider";
-import { formatAccountSs58 } from "../../../Connect/Utils";
+import { formatAccountSs58 } from "../../Utils";
 import { useOtherAccounts } from "../../OtherAccountsProvider";
 
 import { QrScanSignature } from "../QRCode/ScanSignature";
@@ -16,10 +16,13 @@ export const Reader = () => {
   // TODO: Fix Translation
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
   const t = (s: string) => s;
-  const ss58 = 0;
+
+  // TODO: Fix the networks
   // const {
   //   networkData: { ss58 },
   // } = useNetwork();
+  const ss58 = 0;
+
   const { addOtherAccounts } = useOtherAccounts();
   const { setStatus: setPromptStatus } = usePrompt();
   const { addVaultAccount, vaultAccountExists, vaultAccounts } =

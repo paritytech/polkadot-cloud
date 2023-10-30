@@ -83,7 +83,6 @@ export const ImportVault = () => {
               text={t("importAccount", { ns: "modals" })}
               disabled={promptStatus !== 0}
               onClick={() => {
-                console.log("123123");
                 openPromptWith(<Reader />, "small");
               }}
             />

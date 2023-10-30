@@ -3,7 +3,7 @@
 
 import { isString, u8aConcat, u8aToU8a } from "@polkadot/util";
 import { decodeAddress } from "@polkadot/util-crypto";
-import { CRYPTO_SR25519, FRAME_SIZE, SUBSTRATE_ID } from "./constants.js";
+import { CRYPTO_SR25519, FRAME_SIZE, SUBSTRATE_ID } from "./constants";
 
 const MULTIPART = new Uint8Array([0]);
 

@@ -6,6 +6,7 @@ import { Header } from "@docs/Header";
 import { DocProps } from "@docs/types";
 import { ModalConnect } from "./ModalConnect";
 import { OverlayProvider } from "@packages/cloud-react/lib/overlay/OverlayProvider";
+import { PromptProvider } from "@packages/cloud-react/lib/providers";
 
 export const Doc = ({ folder, npm }: DocProps) => {
   return (
@@ -19,7 +20,9 @@ export const Doc = ({ folder, npm }: DocProps) => {
       />
 
       <OverlayProvider>
-        <ModalConnect />
+        <PromptProvider>
+          <ModalConnect />
+        </PromptProvider>
       </OverlayProvider>
     </>
   );

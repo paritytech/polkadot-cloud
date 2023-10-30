@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 import { memo, ReactElement, useCallback } from "react";
-import { QrScan } from "./Scan.js";
-import type { ScanSignatureProps } from "./types.js";
+import { QrScan } from "./Scan";
+import type { ScanSignatureProps } from "./types";
 
 const ScanSignature = ({
   className,
