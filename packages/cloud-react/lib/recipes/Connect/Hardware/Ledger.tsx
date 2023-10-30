@@ -1,4 +1,4 @@
-// Copyright 2023 @polkadot-cloud authors & contributors
+// Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
 import {
@@ -73,6 +73,7 @@ const dfm = {
 export const LedgerHardwareProvider = ({
   children,
   network = "polkadot",
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
   fbm,
 }: {
   children: ReactNode;

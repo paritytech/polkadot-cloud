@@ -120,7 +120,7 @@ const Display = ({
 
   return (
     <div className={"display-wrapper " + className} style={containerStyle}>
-      <div className="ui--qr-Display" style={style}>
+      <div className="ui-qr-display" style={style}>
         <img src={image} alt="img" />
       </div>
     </div>

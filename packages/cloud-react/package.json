@@ -45,6 +45,7 @@
     "@polkadot/util": "^12.5.1",
     "@polkadot/util-crypto": "^12.5.1",
     "@zondax/ledger-substrate": "^0.41.3",
+    "buffer": "^6.0.3",
     "framer-motion": "^10.15.0",
     "qrcode-generator": "^1.4.4",
     "react-error-boundary": "^4.0.11",

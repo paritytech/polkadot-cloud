@@ -1,11 +1,10 @@
-/* @license Copyright 2023 @polkadot-cloud authors & contributors
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
-
 .heading-wrapper {
   position: sticky;
   width: 100%;
-  top: 0px;
-  padding: 1.25rem 1.25rem 0.5rem 1.25rem;
+  top: 0;
+  padding: 1.25rem 1.25rem 0.5rem;
   display: flex;
   z-index: 3;
 
@@ -15,28 +14,34 @@ SPDX-License-Identifier: GPL-3.0-only */
     &:first-child {
       display: flex;
       flex-grow: 1;
+
       > h4 {
         font-family: InterSemiBold, sans-serif;
         padding: 0;
         display: flex;
         align-items: center;
+
         > span {
           color: var(--text-color-primary);
           margin-right: 0.5rem;
+
           > svg {
             margin: 0 0.7rem 0 0.2rem;
           }
         }
+
         > svg {
           width: 1.1rem;
           height: 1.1rem;
           margin-right: 0.6rem;
+
           path {
             fill: var(--text-color-primary);
           }
         }
       }
     }
+
     &:last-child {
       display: flex;
       justify-content: flex-end;
@@ -52,7 +57,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   height: auto;
   display: flex;
   flex-direction: column;
-  padding: 0rem 0rem 7rem 0rem;
+  padding: 0 0 7rem;
 
   .items {
     display: flex;
@@ -63,6 +68,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   .more {
     margin-top: 1rem;
     padding: 0 1.5rem;
+
     h4 {
       opacity: var(--opacity-disabled);
       padding: 0;
@@ -82,18 +88,22 @@ SPDX-License-Identifier: GPL-3.0-only */
   p {
     text-align: center;
   }
+
   h3 {
-    margin: 1.25rem 0 0.5rem 0;
+    margin: 1.25rem 0 0.5rem;
   }
+
   h5 {
     margin: 0.25rem 0;
   }
+
   .footer {
     display: flex;
     margin-top: 1rem;
 
     > button {
       margin-right: 1rem;
+
       &:last-child {
         margin-right: 0;
       }
@@ -111,7 +121,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
   .title {
     color: var(--accent-color-primary);
-    font-family: "Unbounded";
+    font-family: Unbounded, sans-serif;
     margin-bottom: 1rem;
   }
 
@@ -119,14 +129,16 @@ SPDX-License-Identifier: GPL-3.0-only */
     margin-bottom: 1rem;
     border-radius: 1rem;
     background: var(--background-menu);
-    padding: 0.45rem 1.5rem 0.75rem 1.5rem;
+    padding: 0.45rem 1.5rem 0.75rem;
 
     span {
       opacity: 0.4;
+
       &.active {
         opacity: 1;
       }
     }
+
     .arrow {
       margin: 0 0.85rem;
     }
@@ -140,11 +152,12 @@ SPDX-License-Identifier: GPL-3.0-only */
     position: relative;
     overflow: hidden;
 
-    &.withBorder {
+    &.with-border {
       padding: 0.95rem;
       border: 3.75px solid var(--accent-color-pending);
     }
   }
+
   .foot {
     display: flex;
     flex-direction: column;
@@ -166,7 +179,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 0 3rem 0;
+  padding: 2rem 0 3rem;
 
   .icon {
     width: 6rem;

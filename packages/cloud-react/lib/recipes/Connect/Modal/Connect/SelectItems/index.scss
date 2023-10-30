@@ -1,3 +1,6 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
 .select-items {
   width: 100%;
   display: flex;
@@ -5,10 +8,11 @@
 
   &.two-col {
     /* Remove outer padding for 2-per-row layout */
-    @media (min-width: 801px) {
+    @media (width >= 801px) {
       > div:nth-child(2n) {
         padding-right: 0;
       }
+
       > div:nth-child(2n + 1) {
         padding-left: 0;
       }
@@ -17,19 +21,22 @@
 
   &.three-col {
     /* Remove outer padding for 2-per-row layout */
-    @media (min-width: 801px) and (max-width: 1301px) {
+    @media (width >= 801px) and (width <= 1301px) {
       > div:nth-child(2n) {
         padding-right: 0;
       }
+
       > div:nth-child(2n + 1) {
         padding-left: 0;
       }
     }
+
     /* Remove outer padding for 3-per-row layout */
-    @media (min-width: 1301px) {
+    @media (width >= 1301px) {
       > div:nth-child(3n) {
         padding-right: 0;
       }
+
       > div:nth-child(3n + 1) {
         padding-left: 0;
       }
@@ -44,20 +51,23 @@
 
   &.two-col {
     width: 50%;
+
     /* flex basis for 3-per-row layout */
-    @media (max-width: 800px) {
+    @media (width <= 800px) {
       width: 100%;
     }
   }
 
   &.three-col {
     width: 33.33%;
+
     /* flex basis for 2-per-row layout */
-    @media (min-width: 800px) and (max-width: 1300px) {
+    @media (width >= 800px) and (width <= 1300px) {
       width: 50%;
     }
+
     /* flex basis for 3-per-row layout */
-    @media (max-width: 800px) {
+    @media (width <= 800px) {
       width: 100%;
     }
   }
@@ -70,6 +80,7 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+
     &:hover {
       border-color: var(--accent-color-primary);
     }
@@ -113,7 +124,7 @@
 
         p {
           padding: 0;
-          margin: 0.4rem 0 0 0;
+          margin: 0.4rem 0 0;
         }
       }
 

@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud authors & contributors
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { SimpleEditor } from "@docs/SimpleEditor";
@@ -24,7 +24,6 @@ export const ModalConnect = () => {
             text={"Connect"}
             iconTransform="grow-1"
             onClick={() => {
-              console.log("click");
               openModal({ key: "Connect" });
             }}
           />

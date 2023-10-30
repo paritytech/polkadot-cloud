@@ -1,4 +1,4 @@
-// Copyright 2023 @polkadot-cloud authors & contributors
+// Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
 import { faGlasses } from "@fortawesome/free-solid-svg-icons";
@@ -9,7 +9,6 @@ import { ExtensionIcons } from "@polkadot-cloud/assets/extensions";
 // import LedgerSVG from "@polkadot-cloud/assets/extensions/svg/ledger.svg?react";
 // import PolkadotVaultSVG from "@polkadot-cloud/assets/extensions/svg/polkadotvault.svg?react";
 // import { useTransferOptions } from "contexts/TransferOptions";
-// import { AccountWrapper } from "./Wrappers";
 
 import { PolkadotVault } from "@polkadot-cloud/assets/extensions/jsx/PolkadotVault";
 import { Ledger } from "@polkadot-cloud/assets/extensions/jsx/Ledger";
@@ -82,8 +81,8 @@ export const AccountButton = ({
   };
 
   return (
-    <div className={`${isActive ? "active" : undefined} accountWrapper`}>
-      <div className={noBorder ? "noBorder" : undefined}>
+    <div className={`${isActive ? "active" : undefined} account-wrapper`}>
+      <div className={noBorder ? "no-border" : undefined}>
         <section className="head">
           <button
             type="button"

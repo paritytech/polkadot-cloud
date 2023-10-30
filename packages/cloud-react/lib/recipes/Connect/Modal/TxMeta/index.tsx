@@ -8,13 +8,13 @@ import { useBonded } from "../Bonded";
 // import { useStaking } from "../Staking";
 // import { useTransferOptions } from "../TransferOptions";
 import type { AnyJson, MaybeAddress } from "../../../../utils/types";
-import { useEffectIgnoreInitial } from "../../../../hooks";
+import { useEffectIgnoreInitial } from "../../../../base/hooks/useEffectIgnoreInitial";
 import { useActiveAccounts } from "../../ActiveAccountsProvider";
 import { useImportedAccounts } from "../../ImportedAccountsProvider";
 import * as defaults from "./defaults";
 import type { TxMetaContextInterface } from "./types";
 
-export const TxMetaProvider = ({ children }: { children: ReactNode }) => {
+export const TxMeta = ({ children }: { children: ReactNode }) => {
   const { getBondedAccount } = useBonded();
   const { activeProxy } = useActiveAccounts();
   // const { getControllerNotImported } = useStaking();
@@ -28,6 +28,7 @@ export const TxMetaProvider = ({ children }: { children: ReactNode }) => {
   const [sender, setSender] = useState<MaybeAddress>(null);
 
   // Store whether the sender does not have enough funds.
+  // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
   const [notEnoughFunds, setNotEnoughFunds] = useState(false);
 
   // Store the payloads of transactions if extrinsics require manual signing (e.g. Ledger). payloads

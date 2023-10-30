@@ -1,4 +1,4 @@
-// Copyright 2023 @polkadot-cloud authors & contributors
+// Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
@@ -28,18 +28,22 @@ import { Vault } from "./Vault";
 import { Buffer } from "buffer";
 window.Buffer = Buffer;
 
+import "./index.scss";
+
 export const Connect = () => {
-  const { extensions } = useExtensions();
+  // TODO: Fix translations
+  const t = (s: string) => s;
+  const { extensionsStatus } = useExtensions();
   const { replaceModal, setModalHeight, modalMaxHeight, setModalStatus } =
     useOverlay().modal;
 
-  const installed = ExtensionsArray.filter((a) =>
-    extensions.find((b) => b.id === a.id)
-  );
+  const web = ExtensionsArray.filter((a) => a.id !== "polkadot-js");
+  const pjs = ExtensionsArray.filter((a) => a.id === "polkadot-js");
 
-  const other = ExtensionsArray.filter(
-    (a) => !installed.find((b) => b.id === a.id)
+  const installed = web.filter((a) =>
+    Object.keys(extensionsStatus).find((key) => key === a.id)
   );
+  const other = web.filter((a) => !installed.find((b) => b.id === a.id));
 
   // toggle read only management
   const [readOnlyOpen, setReadOnlyOpen] = useState(false);
@@ -70,7 +74,7 @@ export const Connect = () => {
   // Resize modal on state change.
   useEffectIgnoreInitial(() => {
     refreshModalHeight();
-  }, [section, readOnlyOpen, newProxyOpen, extensions]);
+  }, [section, readOnlyOpen, newProxyOpen, extensionsStatus]);
 
   useEffect(() => {
     window.addEventListener("resize", refreshModalHeight);
@@ -158,7 +162,7 @@ export const Connect = () => {
         >
           <div className="section">
             <ModalPadding horizontalOnly ref={homeRef}>
-              <ActionItem text={"hardware"} />
+              <ActionItem text={t("hardware")} />
               <div className="extensions-wrapper">
                 <SelectItems layout="two-col">
                   {[Vault, Ledger].map((Item: AnyFunction, i: number) => (
@@ -167,15 +171,20 @@ export const Connect = () => {
                 </SelectItems>
               </div>
 
-              <ActionItem text={"web"} />
+              <ActionItem text={t("web")} />
               <div className="extensions-wrapper">
                 <SelectItems layout="two-col">
                   {installed.concat(other).map((extension, i) => (
-                    <Extension
-                      key={`extension_item_${i}`}
-                      meta={extension}
-                      size={"1rem"}
-                    />
+                    <Extension key={`extension_item_${i}`} meta={extension} />
+                  ))}
+                </SelectItems>
+              </div>
+
+              <ActionItem text={t("developerTools")} />
+              <div className="extensions-wrapper">
+                <SelectItems layout="two-col">
+                  {pjs.map((extension, i) => (
+                    <Extension key={`extension_item_${i}`} meta={extension} />
                   ))}
                 </SelectItems>
               </div>

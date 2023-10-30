@@ -26,7 +26,7 @@ import type { BondedAccount, BondedContextInterface } from "./types";
 
 // TODO: FIX MANY THINGS
 
-export const BondedProvider = ({
+export const Bonded = ({
   children,
   network = "polkadot",
 }: {

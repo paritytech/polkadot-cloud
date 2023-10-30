@@ -1,4 +1,4 @@
-// Copyright 2023 @polkadot-cloud authors & contributors
+// Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
 import { isSupportedProxy } from "../../../ProxiesProvider/proxies";
@@ -25,7 +25,7 @@ export const Delegates = ({ delegates, delegator }: DelegatesProps) => {
   return (
     <>
       {delegatesList.length ? (
-        <div className="DelegatesWrapper">
+        <div className="delegates-wrapper">
           {delegatesList.map(({ delegate, proxyType }, i) => (
             <AccountButton
               key={`_del_${i}`}

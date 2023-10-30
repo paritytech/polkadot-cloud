@@ -1,4 +1,4 @@
-// Copyright 2023 @polkadot-cloud authors & contributors
+// Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
 import { faChevronLeft, faLinkSlash } from "@fortawesome/free-solid-svg-icons";
@@ -45,7 +45,7 @@ export const Accounts = () => {
   // const { balances, ledgers, getLocks } = useBalances();
   // const { bondedAccounts } = useBonded();
   const { getDelegates } = useProxies();
-  const { extensions } = useExtensions();
+  const { extensionsStatus } = useExtensions();
   // const { memberships } = usePoolMemberships();
   const {
     replaceModal,
@@ -139,7 +139,7 @@ export const Accounts = () => {
     activeAccount,
     accounts,
     //bondedAccounts, balances, ledgers,
-    extensions,
+    extensionsStatus,
   ]);
 
   return (
@@ -176,7 +176,7 @@ export const Accounts = () => {
         </div>
       </ModalCustomHeader>
       {!activeAccount && !accounts.length && (
-        <div className="accountWrapper" style={{ marginTop: "1.5rem" }}>
+        <div className="account-wrapper" style={{ marginTop: "1.5rem" }}>
           <div>
             <div>
               <h4 style={{ padding: "0.75rem 1rem" }}>
@@ -190,7 +190,7 @@ export const Accounts = () => {
 
       {nominatingAndPool.length ? (
         <>
-          <div className="accountSeparator" />
+          <div className=".account-separator" />
           <ActionItem text={t("nominatingAndInPool")} />
           {nominatingAndPool.map(({ address, delegates }, i) => (
             <Fragment key={`acc_nominating_and_pool_${i}`}>
@@ -205,7 +205,7 @@ export const Accounts = () => {
 
       {nominating.length ? (
         <>
-          <div className="accountSeparator" />
+          <div className=".account-separator" />
           <ActionItem text={t("nominating")} />
           {nominating.map(({ address, delegates }, i) => (
             <Fragment key={`acc_nominating_${i}`}>
@@ -220,7 +220,7 @@ export const Accounts = () => {
 
       {inPool.length ? (
         <>
-          <div className="accountSeparator" />
+          <div className=".account-separator" />
           <ActionItem text={t("inPool")} />
           {inPool.map(({ address, delegates }, i) => (
             <Fragment key={`acc_in_pool_${i}`}>
@@ -235,7 +235,7 @@ export const Accounts = () => {
 
       {notStaking.length ? (
         <>
-          <div className="accountSeparator" />
+          <div className=".account-separator" />
           <ActionItem text={t("notStaking")} />
           {notStaking.map(({ address, delegates }, i) => (
             <Fragment key={`acc_not_staking_${i}`}>

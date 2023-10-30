@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud authors & contributors
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 @use "../../../styles/mixins" as m;
@@ -9,8 +9,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   width: 100%;
   height: 100%;
   position: relative;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden auto;
   z-index: 9;
   max-width: 800px;
 

@@ -1,4 +1,4 @@
-// Copyright 2023 @polkadot-cloud authors & contributors
+// Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
 import {
@@ -14,11 +14,6 @@ import { useHelp } from "../../HelpProvider";
 import { useProxies } from "../../ProxiesProvider";
 import { AccountInput } from "./AccountInput";
 import { useImportedAccounts } from "../../ImportedAccountsProvider";
-// import {
-//   ActionWithButton,
-//   ManualAccount,
-//   ManualAccountsWrapper,
-// } from "./Wrappers";
 import type { ListWithInputProps } from "./types";
 
 export const Proxies = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
@@ -38,7 +33,7 @@ export const Proxies = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
   );
   return (
     <>
-      <div className="actionWithButton">
+      <div className="action-with-button">
         <div>
           <FontAwesomeIcon icon={faChevronRight} transform="shrink-4" />
           <h3>{t("proxyAccounts")}</h3>
@@ -59,7 +54,7 @@ export const Proxies = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
           />
         </div>
       </div>
-      <div className="manualAccountsWrapper">
+      <div className="manual-accounts-wrapper">
         <div className="content">
           {inputOpen && (
             <>
@@ -80,7 +75,7 @@ export const Proxies = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
                   <Fragment key={`user_delegate_account_${i}}`}>
                     {delegators?.map(({ delegator, proxyType }, j) => (
                       <div
-                        className="manualAccount"
+                        className="manual-account"
                         key={`user_delegate_${i}_delegator_${j}`}
                       >
                         <div>

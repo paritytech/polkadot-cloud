@@ -1,5 +1,5 @@
-// Copyright 2023 @paritytech/polkadot-cloud authors & contributors
-// SPDX-License-Identifier: GPL-3.0-only
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
 
 .prompt-wrapper {
   top: 0;
@@ -17,7 +17,7 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    padding: 2rem 2rem;
+    padding: 2rem;
 
     /* click anywhere behind overlay to close */
     .close {
@@ -60,15 +60,18 @@
   a {
     color: var(--accent-color-primary);
   }
+
   .header {
     width: 100%;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    padding: 1rem 2rem 0 2rem;
+    padding: 1rem 2rem 0;
   }
+
   .body {
-    padding: 0.5rem 1.5rem 1.25rem 1.5rem;
+    padding: 0.5rem 1.5rem 1.25rem;
+
     h4 {
       margin: 1rem 0;
     }
@@ -76,7 +79,7 @@
 }
 
 .title-wrapper {
-  padding: 1.5rem 1rem 0 1rem;
+  padding: 1.5rem 1rem 0;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -102,13 +105,14 @@
       > h2 {
         display: flex;
         align-items: center;
-        font-family: "Unbounded", "sans-serif", sans-serif;
+        font-family: Unbounded, sans-serif;
         font-size: 1.3rem;
 
         > button {
           margin-left: 0.85rem;
         }
       }
+
       > svg {
         margin-right: 0.9rem;
       }

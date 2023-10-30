@@ -1,4 +1,4 @@
-// Copyright 2023 @polkadot-cloud authors & contributors
+// Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
 import {
@@ -15,11 +15,6 @@ import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
 import { useImportedAccounts } from "../../ImportedAccountsProvider";
 import { useOtherAccounts } from "../../OtherAccountsProvider";
 import type { ExternalAccount } from "../../../../connect/types";
-// import {
-//   ActionWithButton,
-//   ManualAccount,
-//   ManualAccountsWrapper,
-// } from "./Wrappers";
 import type { ListWithInputProps } from "./types";
 
 export const ReadOnly = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
@@ -47,7 +42,7 @@ export const ReadOnly = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
   };
   return (
     <>
-      <div className="actionWithButton">
+      <div className="action-with-button">
         <div>
           <FontAwesomeIcon icon={faChevronRight} transform="shrink-4" />
           <h3>{t("readOnlyAccounts")}</h3>
@@ -68,7 +63,7 @@ export const ReadOnly = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
           />
         </div>
       </div>
-      <div className="manualAccountsWrapper">
+      <div className="manual-accounts-wrapper">
         <div className="content">
           {inputOpen && (
             <AccountInput
@@ -84,7 +79,7 @@ export const ReadOnly = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
             <div className="accounts">
               {externalAccounts.map((a, i) => (
                 <div
-                  className="manualAccount"
+                  className="manual-account"
                   key={`user_external_account_${i}`}
                 >
                   <div>

@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud authors & contributors
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 @mixin btn-core {
@@ -72,6 +72,7 @@ SPDX-License-Identifier: GPL-3.0-only */
     padding: var(--button-padding-large);
     font-size: var(--button-font-size-small);
   }
+
   &.lg {
     padding: var(--button-padding-large);
     font-size: var(--button-font-size-large);
