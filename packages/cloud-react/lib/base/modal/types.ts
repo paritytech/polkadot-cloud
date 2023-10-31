@@ -5,9 +5,6 @@ import { ReactNode, RefObject } from "react";
 import { ComponentBase, ComponentBaseWithClassName } from "../../utils/types";
 import { AnimationProps } from "framer-motion";
 
-// eslint-disable-next-line
-export type AnyObject = any;
-
 export type ActionItemProps = ComponentBase & {
   // the title.
   text: string;
