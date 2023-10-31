@@ -43,7 +43,6 @@ export const Heading = ({
             iconLeft={faCircleMinus}
             onClick={() => {
               if (typeof handleReset === "function") {
-                console.log("asdsad");
                 handleReset();
               }
             }}

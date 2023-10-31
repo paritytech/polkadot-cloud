@@ -29,7 +29,6 @@ export const PromptProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const openPromptWith = (Prompt: ReactNode | null, size = "small") => {
-    console.log("PROMPT", Prompt);
     setState({
       ...state,
       size,

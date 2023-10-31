@@ -524,10 +524,7 @@ export const LedgerHardwareProvider = ({
   };
 
   const feedBackMsg = (key: string): void => {
-    console.log("dfm", dfm, key);
-    console.log("dfm[key]", dfm[key]);
-    console.log("dfm[key][0]", dfm[key][0]);
-    console.log("dfm[key][1]", dfm[key][1]);
+    // TODO: Fix feedback messages
     setFeedback(dfm[key][0], dfm[key][1]);
     // (fbm && Object.keys(fbm).length && fbm[key] && fbm[key][0]) ||
     //   dfm[key][0],

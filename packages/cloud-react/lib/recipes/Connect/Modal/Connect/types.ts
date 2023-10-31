@@ -29,3 +29,17 @@ export interface forwardRefProps {
   readOnlyOpen: boolean;
   setReadOnlyOpen: (e: boolean) => void;
 }
+
+export interface DappInfo {
+  dappName: string;
+  network: string;
+  ss58: number;
+  activeAccount: Any;
+  setActiveAccount: Any;
+}
+
+export interface ConnectType {
+  hardwareActive?: boolean;
+  webActive?: boolean;
+  devActive?: boolean;
+}

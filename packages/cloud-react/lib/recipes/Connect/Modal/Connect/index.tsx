@@ -29,10 +29,18 @@ import { Buffer } from "buffer";
 window.Buffer = Buffer;
 
 import "./index.scss";
+import { useConnectConfig } from "../../Providers/ConnectConfigProvider";
 
 export const Connect = () => {
   // TODO: Fix translations
   const t = (s: string) => s;
+
+  const { wallets } = useConnectConfig();
+
+  const hardwareActive = wallets?.hardwareActive;
+  const webActive = wallets?.webActive;
+  const devActive = wallets?.devActive;
+
   const { extensionsStatus } = useExtensions();
   const { replaceModal, setModalHeight, modalMaxHeight, setModalStatus } =
     useOverlay().modal;
@@ -162,32 +170,48 @@ export const Connect = () => {
         >
           <div className="section">
             <ModalPadding horizontalOnly ref={homeRef}>
-              <ActionItem text={t("hardware")} />
-              <div className="extensions-wrapper">
-                <SelectItems layout="two-col">
-                  {[Vault, Ledger].map((Item: AnyFunction, i: number) => (
-                    <Item key={`hardware_item_${i}`} />
-                  ))}
-                </SelectItems>
-              </div>
-
-              <ActionItem text={t("web")} />
-              <div className="extensions-wrapper">
-                <SelectItems layout="two-col">
-                  {installed.concat(other).map((extension, i) => (
-                    <Extension key={`extension_item_${i}`} meta={extension} />
-                  ))}
-                </SelectItems>
-              </div>
-
-              <ActionItem text={t("developerTools")} />
-              <div className="extensions-wrapper">
-                <SelectItems layout="two-col">
-                  {pjs.map((extension, i) => (
-                    <Extension key={`extension_item_${i}`} meta={extension} />
-                  ))}
-                </SelectItems>
-              </div>
+              {hardwareActive ? (
+                <>
+                  <ActionItem text={t("hardware")} />
+                  <div className="extensions-wrapper">
+                    <SelectItems layout="two-col">
+                      {[Vault, Ledger].map((Item: AnyFunction, i: number) => (
+                        <Item key={`hardware_item_${i}`} />
+                      ))}
+                    </SelectItems>
+                  </div>
+                </>
+              ) : null}
+              {webActive ? (
+                <>
+                  <ActionItem text={t("web")} />
+                  <div className="extensions-wrapper">
+                    <SelectItems layout="two-col">
+                      {installed.concat(other).map((extension, i) => (
+                        <Extension
+                          key={`extension_item_${i}`}
+                          meta={extension}
+                        />
+                      ))}
+                    </SelectItems>
+                  </div>
+                </>
+              ) : null}
+              {devActive ? (
+                <>
+                  <ActionItem text={t("developerTools")} />
+                  <div className="extensions-wrapper">
+                    <SelectItems layout="two-col">
+                      {pjs.map((extension, i) => (
+                        <Extension
+                          key={`extension_item_${i}`}
+                          meta={extension}
+                        />
+                      ))}
+                    </SelectItems>
+                  </div>
+                </>
+              ) : null}
             </ModalPadding>
           </div>
           <div className="section">

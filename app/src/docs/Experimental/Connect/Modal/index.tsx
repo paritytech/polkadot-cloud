@@ -3,31 +3,45 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { Doc } from "./main";
 
-import { useActiveAccounts } from "@packages/cloud-react/lib/recipes/Connect/Providers/ActiveAccountsProvider";
 import {
+  useActiveAccounts,
   ConnectProvider,
   connectInfo,
-} from "@packages/cloud-react/lib/recipes/Connect/Providers/ConnectProvider";
+  ConnectConfigProvider,
+} from "@packages/cloud-react/lib/recipes/Connect";
+import type {
+  ConnectType,
+  DappInfo,
+} from "@packages/cloud-react/lib/recipes/Connect";
 
 export const ModalConnect = () => {
   const { activeAccount, setActiveAccount } = useActiveAccounts();
 
   console.log("activeAccount", activeAccount);
 
-  const providers = connectInfo(
-    "dApp Name",
-    "polkadot",
-    0,
+  const dappInfo: DappInfo = {
+    dappName: "dApp Name",
+    network: "polkadot",
+    ss58: 0,
     activeAccount,
     setActiveAccount,
-    true
-  );
+  };
+
+  const walletSettings: ConnectType = {
+    hardwareActive: true,
+    webActive: true,
+    devActive: true,
+  };
+
+  const providers = connectInfo(dappInfo, walletSettings);
 
   return (
-    <ConnectProvider providers={providers}>
-      <div className="doc">
-        <Doc npm="@polkadot-cloud/react" folder="Recipes/ModalConnect" />
-      </div>
-    </ConnectProvider>
+    <ConnectConfigProvider dappInfo={dappInfo} wallets={walletSettings}>
+      <ConnectProvider providers={providers}>
+        <div className="doc">
+          <Doc npm="@polkadot-cloud/react" folder="Recipes/ModalConnect" />
+        </div>
+      </ConnectProvider>
+    </ConnectConfigProvider>
   );
 };

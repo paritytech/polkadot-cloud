@@ -3,31 +3,86 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { SimpleEditor } from "@docs/SimpleEditor";
 import { Demo } from "@docs/Demo";
-import { useOverlay } from "@packages/cloud-react/lib/overlay/OverlayProvider/useOverlay";
 import { Button } from "@packages/cloud-react/lib/buttons/Button";
-import { Prompt } from "@packages/cloud-react/lib/recipes/Connect/Modal/Prompt";
-import { Overlays } from "./Overlays";
+import { useOverlay } from "@packages/cloud-react/lib/overlay/OverlayProvider/useOverlay";
+import { Overlays } from "@packages/cloud-react/lib/recipes/Connect";
 
 export const ModalConnect = () => {
-  const code = ``;
+  const code = `// In the main entry of your app:
+// e.g. main.tsx
+
+import {
+  useActiveAccounts,
+  ConnectProvider,
+  connectInfo,
+  ConnectConfigProvider,
+} from "@packages/cloud-react/lib/recipes/Connect";
+import type {
+  ConnectType,
+  DappInfo,
+} from "@packages/cloud-react/lib/recipes/Connect";
+
+const dappInfo: DappInfo = {
+  dappName: "dApp Name",
+  network: "polkadot",
+  ss58: 0,
+  activeAccount,
+  setActiveAccount,
+};
+
+const walletSettings: ConnectType = {
+  hardwareActive: true,
+  webActive: true,
+  devActive: true,
+};
+
+const providers = connectInfo(dappInfo, walletSettings);
+
+......
+
+return (
+  <ConnectConfigProvider dappInfo={dappInfo} wallets={walletSettings}>
+    <ConnectProvider providers={providers}>
+      <App />      
+    </ConnectProvider>
+  </ConnectConfigProvider>
+  );
+};
+
+// Where <App /> should be as follows
+// App.tsx
+
+import { Button, useOverlay } from "@polkadot-cloud/react";
+import { Overlays } from "@polkadot-cloud/react/recipes/Connect";
+
+const { openModal } = useOverlay().modal;
+
+return (
+  <>
+    <Overlays />
+    <Button
+      type="primary"
+      text={"Connect"}
+      onClick={() => {
+        openModal({ key: "Connect" });
+      }}
+    />
+  </>
+`;
 
   const { openModal } = useOverlay().modal;
 
   return (
     <>
-      <Prompt />
-      <Overlays />
       <Demo showThemes={false} centered>
-        <div className="svg-box">
-          <Button
-            type="primary"
-            text={"Connect"}
-            iconTransform="grow-1"
-            onClick={() => {
-              openModal({ key: "Connect" });
-            }}
-          />
-        </div>
+        <Overlays />
+        <Button
+          type="primary"
+          text={"Connect"}
+          onClick={() => {
+            openModal({ key: "Connect" });
+          }}
+        />
       </Demo>
       <SimpleEditor code={code} />
     </>
