@@ -27,7 +27,6 @@ export const AccountButton = ({
   proxyType,
   noBorder = false,
 }: AccountItemProps) => {
-  // TODO: Fix translation
   const { getAccount } = useImportedAccounts();
   const {
     activeProxy,

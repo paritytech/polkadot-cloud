@@ -11,8 +11,6 @@ import type { AnyFunction } from "../../../../utils/types";
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
 
 export const Splash = ({ handleLedgerLoop }: AnyFunction) => {
-  // TODO: Fix Translation
-  const t = (s: string) => s;
   const {
     getStatusCodes,
     isPaired,
@@ -34,7 +32,7 @@ export const Splash = ({ handleLedgerLoop }: AnyFunction) => {
     }
   };
 
-  const fallbackMessage = t("checking");
+  const fallbackMessage = "Checking";
   const feedback = getFeedback();
   const helpKey = feedback?.helpKey;
 
@@ -59,7 +57,7 @@ export const Splash = ({ handleLedgerLoop }: AnyFunction) => {
         <h1>
           <Button
             type="secondary"
-            text={t("back")}
+            text="Back"
             iconLeft={faChevronLeft}
             iconTransform="shrink-3"
             onClick={async () =>
@@ -93,14 +91,14 @@ export const Splash = ({ handleLedgerLoop }: AnyFunction) => {
 
           {!getIsExecuting() ? (
             <>
-              <h5>{t("ensureLedgerIsConnected")}</h5>
+              <h5>Ensure Ledger Is Connected</h5>
               <div className="button">
                 <Button
                   type="secondary"
                   text={
                     statusCodes[0]?.statusCode === "DeviceNotConnected"
-                      ? t("continue")
-                      : t("tryAgain")
+                      ? "Continue"
+                      : "TryAgain"
                   }
                   onClick={async () => initFetchAddress()}
                 />
