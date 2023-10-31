@@ -5,10 +5,10 @@ import { Any } from "../../../../utils/types";
 import { Button } from "../../../../buttons/Button";
 import { isValidAddress } from "@polkadot-cloud/utils";
 import { useEffect, useState } from "react";
-import { useVaultHardware } from "../../Hardware/Vault";
-import { usePrompt } from "../../PromptProvider";
+import { useVaultHardware } from "../../Providers/HardwareProviders/Vault";
+import { usePrompt } from "../../Providers/PromptProvider";
 import { formatAccountSs58 } from "../../Utils";
-import { useOtherAccounts } from "../../OtherAccountsProvider";
+import { useOtherAccounts } from "../../Providers/OtherAccountsProvider";
 
 import { QrScanSignature } from "../QRCode/ScanSignature";
 

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 import { ReactNode } from "react";
-import type { MaybeString } from "../../../utils/types";
+import type { MaybeString } from "../../../../utils/types";
 
 export interface PromptContextInterface {
   openPromptWith: (o: ReactNode | null, s?: string) => void;

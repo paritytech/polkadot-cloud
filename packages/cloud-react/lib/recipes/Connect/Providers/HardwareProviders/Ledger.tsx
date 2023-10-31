@@ -13,8 +13,12 @@ import TransportWebHID from "@ledgerhq/hw-transport-webhid";
 import { newSubstrateApp } from "@zondax/ledger-substrate";
 import { u8aToBuffer } from "@polkadot/util";
 import { localStorageOrDefault, setStateWithRef } from "@polkadot-cloud/utils";
-import type { LedgerAccount } from "../../../connect/types";
-import type { AnyFunction, AnyJson, MaybeString } from "../../../utils/types";
+import type { LedgerAccount } from "../../../../connect/types";
+import type {
+  AnyFunction,
+  AnyJson,
+  MaybeString,
+} from "../../../../utils/types";
 import {
   getLocalLedgerAccounts,
   getLocalLedgerAddresses,

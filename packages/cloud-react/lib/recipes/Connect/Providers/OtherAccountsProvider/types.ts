@@ -1,9 +1,9 @@
 // Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
-import type { ImportedAccount } from "../../../connect/types";
-import type { MaybeAddress } from "../../../utils/types";
-import type { NetworkName } from "../Utils";
+import type { ImportedAccount } from "../../../../connect/types";
+import type { MaybeAddress } from "../../../../utils/types";
+import type { NetworkName } from "../../Utils";
 
 export interface OtherAccountsContextInterface {
   addExternalAccount: (a: string, addedBy: string) => void;

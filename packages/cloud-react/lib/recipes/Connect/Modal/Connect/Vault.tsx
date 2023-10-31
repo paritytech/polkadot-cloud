@@ -11,7 +11,7 @@ import { Button } from "../../../../buttons/Button";
 import { ModalConnectItem } from "../../../../base/modal/ModalConnectItem";
 import { ModalHardwareItem } from "../../../../base/modal/ModalHardwareItem";
 import { PolkadotVault } from "@polkadot-cloud/assets/extensions/jsx/PolkadotVault";
-import { useHelp } from "../../HelpProvider/index";
+import { useHelp } from "../../Providers/HelpProvider/index";
 
 export const Vault = (): ReactElement => {
   // const { t } = useTranslation("modals");

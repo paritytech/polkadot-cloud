@@ -3,9 +3,12 @@
 
 import { ellipsisFn, setStateWithRef } from "@polkadot-cloud/utils";
 import { useEffect, useRef, useState } from "react";
-import { useLedgerHardware } from "../../Hardware/Ledger";
-import { getLocalLedgerAddresses } from "../../Hardware/Utils";
-import type { LedgerAddress, LedgerResponse } from "../../Hardware/types";
+import { useLedgerHardware } from "../../Providers/HardwareProviders/Ledger";
+import { getLocalLedgerAddresses } from "../../Providers/HardwareProviders/Utils";
+import type {
+  LedgerAddress,
+  LedgerResponse,
+} from "../../Providers/HardwareProviders/types";
 import { useLedgerLoop } from "../useLedgerLoop";
 import type { AnyJson } from "../../../../utils/types";
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";

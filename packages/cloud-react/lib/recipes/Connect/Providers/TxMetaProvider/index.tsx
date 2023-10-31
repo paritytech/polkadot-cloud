@@ -4,13 +4,13 @@
 import { setStateWithRef } from "@polkadot-cloud/utils";
 import BigNumber from "bignumber.js";
 import { useState, ReactNode, useContext, createContext, useRef } from "react";
-import { useBonded } from "../Bonded";
+import { useBonded } from "../BondedProvider";
 // import { useStaking } from "../Staking";
 // import { useTransferOptions } from "../TransferOptions";
 import type { AnyJson, MaybeAddress } from "../../../../utils/types";
 import { useEffectIgnoreInitial } from "../../../../base/hooks/useEffectIgnoreInitial";
-import { useActiveAccounts } from "../../ActiveAccountsProvider";
-import { useImportedAccounts } from "../../ImportedAccountsProvider";
+import { useActiveAccounts } from "../ActiveAccountsProvider";
+import { useImportedAccounts } from "../ImportedAccountsProvider";
 import * as defaults from "./defaults";
 import type { TxMetaContextInterface } from "./types";
 

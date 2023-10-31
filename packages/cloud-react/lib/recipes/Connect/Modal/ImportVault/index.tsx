@@ -6,8 +6,8 @@ import { faQrcode } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "../../../../buttons/Button";
 import { HardwareAddress } from "../../../../base/hardware/HardwareAddress";
 import { HardwareStatusBar } from "../../../../base/hardware/HardwareStatusBar";
-import { useVaultHardware } from "../../Hardware/Vault";
-import { usePrompt } from "../../PromptProvider";
+import { useVaultHardware } from "../../Providers/HardwareProviders/Vault";
+import { usePrompt } from "../../Providers/PromptProvider";
 import PolkadotVaultSVG from "@polkadot-cloud/assets/extensions/jsx/PolkadotVault";
 
 import { Confirm } from "../ImportHardwareCommon/Confirm";
@@ -16,7 +16,7 @@ import { NoAccounts } from "../ImportHardwareCommon/NoAccounts";
 import { Remove } from "../ImportHardwareCommon/Remove";
 import type { AnyJson } from "../../../../utils/types";
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
-import { useOtherAccounts } from "../../OtherAccountsProvider";
+import { useOtherAccounts } from "../../Providers/OtherAccountsProvider";
 import { Reader } from "./Reader";
 import { Polkicon } from "../../../../icons/Polkicon";
 

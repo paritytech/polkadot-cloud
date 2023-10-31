@@ -4,10 +4,10 @@
 import type { ReactNode } from "react";
 import { createContext, useContext } from "react";
 // Local imports
-import type { ExternalAccount } from "../../../connect/types";
-import type { MaybeAddress } from "../../../utils/types";
-import { ManualSigners } from "../Utils";
-import { useExtensionAccounts } from "../../../connect/ExtensionAccountsProvider/useExtensionAccounts";
+import type { ExternalAccount } from "../../../../connect/types";
+import type { MaybeAddress } from "../../../../utils/types";
+import { ManualSigners } from "../../Utils";
+import { useExtensionAccounts } from "../../../../connect/ExtensionAccountsProvider/useExtensionAccounts";
 import { defaultImportedAccountsContext } from "./defaults";
 import type { ImportedAccountsContextInterface } from "./types";
 import { useOtherAccounts } from "../OtherAccountsProvider";

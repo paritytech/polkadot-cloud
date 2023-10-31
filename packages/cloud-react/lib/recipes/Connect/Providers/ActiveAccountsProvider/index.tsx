@@ -3,7 +3,7 @@
 
 import type { ReactNode } from "react";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
-import type { MaybeAddress } from "../../../utils/types";
+import type { MaybeAddress } from "../../../../utils/types";
 import { setStateWithRef } from "@polkadot-cloud/utils";
 import type { ActiveAccountsContextInterface, ActiveProxy } from "./types";
 import { defaultActiveAccountsContext } from "./defaults";

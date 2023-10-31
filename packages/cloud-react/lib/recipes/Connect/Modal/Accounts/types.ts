@@ -1,7 +1,7 @@
 // Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
-import type { Proxy } from "../../ProxiesProvider/type";
+import type { Proxy } from "../../Providers/ProxiesProvider/type";
 import type { MaybeAddress } from "../../../../utils/types";
 
 import type BigNumber from "bignumber.js";

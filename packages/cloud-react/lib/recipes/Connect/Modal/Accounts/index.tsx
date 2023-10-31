@@ -22,9 +22,9 @@ import { useEffectIgnoreInitial } from "../../../../base/hooks/useEffectIgnoreIn
 import { useExtensions } from "../../../../connect/ExtensionsProvider/useExtensions";
 
 // import { usePoolMemberships } from "contexts/Pools/PoolMemberships";
-import { useProxies } from "../../ProxiesProvider";
-import { useActiveAccounts } from "../../ActiveAccountsProvider";
-import { useImportedAccounts } from "../../ImportedAccountsProvider";
+import { useProxies } from "../../Providers/ProxiesProvider";
+import { useActiveAccounts } from "../../Providers/ActiveAccountsProvider";
+import { useImportedAccounts } from "../../Providers/ImportedAccountsProvider";
 import { AccountButton } from "./Account";
 import { Delegates } from "./Delegates";
 import type {

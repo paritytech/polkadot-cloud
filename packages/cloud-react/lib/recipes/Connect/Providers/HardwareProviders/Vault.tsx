@@ -10,7 +10,7 @@ import {
   useRef,
   useState,
 } from "react";
-import type { VaultAccount } from "../../../connect/types";
+import type { VaultAccount } from "../../../../connect/types";
 import { getLocalVaultAccounts, isLocalNetworkAddress } from "./Utils";
 import { defaultVaultHardwareContext } from "./defaults";
 import type { VaultHardwareContextInterface } from "./types";

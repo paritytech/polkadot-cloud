@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "../../../../buttons/Button";
 import type { FunctionComponent } from "react";
 
-import { useHelp } from "../../HelpProvider";
-import { usePrompt } from "../../PromptProvider";
+import { useHelp } from "../../Providers/HelpProvider";
+import { usePrompt } from "../../Providers/PromptProvider";
 import { Any } from "../../../../utils/types";
 
 import "./index.scss";

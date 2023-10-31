@@ -7,14 +7,14 @@ import { HardwareAddress } from "../../../../base/hardware/HardwareAddress";
 import { Polkicon } from "../../../../icons/Polkicon";
 import { ellipsisFn, unescape } from "@polkadot-cloud/utils";
 
-import { useLedgerHardware } from "../../Hardware/Ledger";
-import { getLocalLedgerAddresses } from "../..//Hardware/Utils";
+import { useLedgerHardware } from "../../Providers/HardwareProviders/Ledger";
+import { getLocalLedgerAddresses } from "../../Providers/HardwareProviders/Utils";
 
-import { usePrompt } from "../../PromptProvider";
+import { usePrompt } from "../../Providers/PromptProvider";
 import { Confirm } from "../ImportHardwareCommon/Confirm";
 import { Remove } from "../ImportHardwareCommon/Remove";
 import type { AnyJson } from "../../../../utils/types";
-import { useOtherAccounts } from "../../../Connect/OtherAccountsProvider";
+import { useOtherAccounts } from "../../Providers/OtherAccountsProvider";
 
 import "../ImportHardwareCommon/index.scss";
 

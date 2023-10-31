@@ -1,7 +1,7 @@
 // Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
-import type { MaybeAddress } from "../../../utils/types";
+import type { MaybeAddress } from "../../../../utils/types";
 
 export interface ActiveAccountsContextInterface {
   activeAccount: MaybeAddress;

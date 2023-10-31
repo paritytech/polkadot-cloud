@@ -4,8 +4,8 @@
 import { localStorageOrDefault } from "@polkadot-cloud/utils";
 import type { LedgerApp, LedgerAddress } from "./types";
 
-import type { MaybeString } from "../../../utils/types";
-import type { LedgerAccount, VaultAccount } from "../../../connect/types";
+import type { MaybeString } from "../../../../utils/types";
+import type { LedgerAccount, VaultAccount } from "../../../../connect/types";
 
 // TODO: check these SVGs
 // import KusamaSVG from "../../connect/assets/appIcons/kusama.svg?react";

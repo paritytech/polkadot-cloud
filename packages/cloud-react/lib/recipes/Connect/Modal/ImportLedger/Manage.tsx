@@ -2,10 +2,10 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { HardwareStatusBar } from "../../../../base/hardware/HardwareStatusBar";
-import { useLedgerHardware } from "../../Hardware/Ledger";
-import { getLedgerApp } from "../../Hardware/Utils";
-import { useHelp } from "../../HelpProvider";
-import { usePrompt } from "../../PromptProvider";
+import { useLedgerHardware } from "../../Providers/HardwareProviders/Ledger";
+import { getLedgerApp } from "../../Providers/HardwareProviders/Utils";
+import { useHelp } from "../../Providers/HelpProvider";
+import { usePrompt } from "../../Providers/PromptProvider";
 import { Ledger } from "@polkadot-cloud/assets/extensions/jsx/Ledger";
 import { Heading } from "../ImportHardwareCommon/Heading";
 import type { AnyJson } from "../../../../utils/types";

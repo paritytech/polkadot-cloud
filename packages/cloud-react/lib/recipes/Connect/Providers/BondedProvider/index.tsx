@@ -19,14 +19,14 @@ import {
 } from "react";
 // import { useApi } from "contexts/Api";
 
-import { useImportedAccounts } from "../../ImportedAccountsProvider";
-import { useOtherAccounts } from "../../OtherAccountsProvider";
+import { useImportedAccounts } from "../ImportedAccountsProvider";
+import { useOtherAccounts } from "../OtherAccountsProvider";
 import * as defaults from "./defaults";
 import type { BondedAccount, BondedContextInterface } from "./types";
 
 // TODO: FIX MANY THINGS
 
-export const Bonded = ({
+export const BondedProvider = ({
   children,
   network = "polkadot",
 }: {

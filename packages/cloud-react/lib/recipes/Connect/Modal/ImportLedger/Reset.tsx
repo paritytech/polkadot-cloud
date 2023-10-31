@@ -2,14 +2,14 @@
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { Button } from "../../../../buttons/Button";
-import { useLedgerHardware } from "../../Hardware/Ledger";
-import { getLocalLedgerAddresses } from "../../Hardware/Utils";
-import type { LedgerAddress } from "../../Hardware/types";
-import { usePrompt } from "../../PromptProvider";
+import { useLedgerHardware } from "../../Providers/HardwareProviders/Ledger";
+import { getLocalLedgerAddresses } from "../../Providers/HardwareProviders/Utils";
+import type { LedgerAddress } from "../../Providers/HardwareProviders/types";
+import { usePrompt } from "../../Providers/PromptProvider";
 
 import type { AnyJson } from "../../../../utils/types";
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
-import { useOtherAccounts } from "../../OtherAccountsProvider";
+import { useOtherAccounts } from "../../Providers/OtherAccountsProvider";
 import type { LedgerAccount } from "../../../../connect/types";
 
 import "./index.scss";

@@ -7,7 +7,7 @@ import { useState } from "react";
 
 import { useExtensions } from "../../../../connect/ExtensionsProvider/useExtensions";
 import { useExtensionAccounts } from "../../../../connect/ExtensionAccountsProvider/useExtensionAccounts";
-import { useNotifications } from "../../NotificationsProvider/index";
+import { useNotifications } from "../../Providers/NotificationsProvider/index";
 import { ExtensionIcons } from "@polkadot-cloud/assets/extensions";
 import type { ExtensionProps } from "./types";
 import { ModalConnectItem } from "../../../../base/modal/ModalConnectItem";

@@ -3,10 +3,10 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { Button } from "../../../../buttons/Button";
 import { Polkicon } from "../../../..//icons/Polkicon";
-import { useOtherAccounts } from "../../../Connect/OtherAccountsProvider";
+import { useOtherAccounts } from "../../Providers/OtherAccountsProvider";
 import type { ConfirmProps } from "./types";
 
-import { usePrompt } from "../../PromptProvider";
+import { usePrompt } from "../../Providers/PromptProvider";
 
 import "./index.scss";
 

@@ -1,7 +1,7 @@
 // Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
-import type { VoidFn, AnyApi, MaybeAddress } from "../../../utils/types";
+import type { VoidFn, AnyApi, MaybeAddress } from "../../../../utils/types";
 import {
   ellipsisFn,
   localStorageOrDefault,
@@ -11,7 +11,7 @@ import {
 } from "@polkadot-cloud/utils";
 import { useRef, useState, ReactNode, createContext, useContext } from "react";
 import { isSupportedProxy } from "./proxies";
-import { useEffectIgnoreInitial } from "../../../base/hooks/useEffectIgnoreInitial";
+import { useEffectIgnoreInitial } from "../../../../base/hooks/useEffectIgnoreInitial";
 import { useActiveAccounts } from "../ActiveAccountsProvider";
 import { useImportedAccounts } from "../ImportedAccountsProvider";
 import { useOtherAccounts } from "../OtherAccountsProvider";
@@ -24,7 +24,7 @@ import type {
   Proxy,
   ProxyDelegate,
 } from "./type";
-import { NetworkName } from "../Utils";
+import { NetworkName } from "../../Utils";
 
 // TODO: Fix API
 //import { useApi } from "contexts/Api";

@@ -10,10 +10,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "../../../../buttons/Button";
 import { Fragment } from "react";
 import { Polkicon } from "../../../../icons/Polkicon";
-import { useHelp } from "../../HelpProvider";
-import { useProxies } from "../../ProxiesProvider";
+import { useHelp } from "../../Providers/HelpProvider";
+import { useProxies } from "../../Providers/ProxiesProvider";
 import { AccountInput } from "./AccountInput";
-import { useImportedAccounts } from "../../ImportedAccountsProvider";
+import { useImportedAccounts } from "../../Providers/ImportedAccountsProvider";
 import type { ListWithInputProps } from "./types";
 
 export const Proxies = ({ setInputOpen, inputOpen }: ListWithInputProps) => {

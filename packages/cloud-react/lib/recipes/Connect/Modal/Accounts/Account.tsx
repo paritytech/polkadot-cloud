@@ -15,10 +15,10 @@ import { Ledger } from "@polkadot-cloud/assets/extensions/jsx/Ledger";
 
 import { Polkicon } from "../../../../icons/Polkicon";
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
-import { useImportedAccounts } from "../../ImportedAccountsProvider";
+import { useImportedAccounts } from "../../Providers/ImportedAccountsProvider";
 
 import type { AccountItemProps } from "./types";
-import { useActiveAccounts } from "../../ActiveAccountsProvider";
+import { useActiveAccounts } from "../../Providers/ActiveAccountsProvider";
 
 export const AccountButton = ({
   label,

@@ -4,8 +4,8 @@
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "../../../../buttons/Button";
 import { useEffect } from "react";
-import { useLedgerHardware } from ".././../Hardware/Ledger";
-import { useHelp } from "../../HelpProvider";
+import { useLedgerHardware } from "../../Providers/HardwareProviders/Ledger";
+import { useHelp } from "../../Providers/HelpProvider";
 import { Ledger as LogoSVG } from "@polkadot-cloud/assets/extensions/jsx/Ledger";
 import type { AnyFunction } from "../../../../utils/types";
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";

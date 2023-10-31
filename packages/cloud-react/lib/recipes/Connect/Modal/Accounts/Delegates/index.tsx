@@ -1,8 +1,8 @@
 // Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
-import { isSupportedProxy } from "../../../ProxiesProvider/proxies";
-import { useImportedAccounts } from "../../../ImportedAccountsProvider";
+import { isSupportedProxy } from "../../../Providers/ProxiesProvider/proxies";
+import { useImportedAccounts } from "../../../Providers/ImportedAccountsProvider";
 import { AccountButton } from "../Account";
 import type { DelegatesProps } from "../types";
 

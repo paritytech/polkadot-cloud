@@ -1,9 +1,9 @@
 // Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
-import { useLedgerHardware } from "../../Hardware/Ledger";
-import { getLedgerApp } from "../../Hardware/Utils";
-import { useTxMeta } from "../TxMeta";
+import { useLedgerHardware } from "../../Providers/HardwareProviders/Ledger";
+import { getLedgerApp } from "../../Providers/HardwareProviders/Utils";
+import { useTxMeta } from "../../Providers/TxMetaProvider";
 import type { LederLoopProps } from "./types";
 
 export const useLedgerLoop = ({

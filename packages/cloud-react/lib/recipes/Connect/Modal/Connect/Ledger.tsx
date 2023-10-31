@@ -11,7 +11,7 @@ import { ModalConnectItem } from "../../../../base/modal/ModalConnectItem";
 import { ModalHardwareItem } from "../../../../base/modal/ModalHardwareItem";
 import { Button } from "../../../../buttons/Button";
 import { inChrome } from "@polkadot-cloud/utils";
-import { useHelp } from "../../HelpProvider/index";
+import { useHelp } from "../../Providers/HelpProvider/index";
 import { Ledger as LedgerIcon } from "@polkadot-cloud/assets/extensions/jsx/Ledger";
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
 import { ReactElement } from "react";

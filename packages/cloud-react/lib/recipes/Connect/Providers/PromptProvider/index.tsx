@@ -4,7 +4,7 @@
 import { useState, ReactNode, createContext, useContext } from "react";
 import { defaultPromptContext } from "./defaults";
 import type { PromptContextInterface } from "./types";
-import { Any } from "../../../utils/types";
+import { Any } from "../../../../utils/types";
 
 export const PromptProvider = ({ children }: { children: ReactNode }) => {
   const [state, setState] = useState<Any>({

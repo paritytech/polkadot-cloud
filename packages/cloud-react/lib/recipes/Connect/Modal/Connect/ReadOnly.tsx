@@ -9,11 +9,11 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "../../../../buttons/Button";
 import { Polkicon } from "../../../../icons/Polkicon";
-import { useHelp } from "../../HelpProvider";
+import { useHelp } from "../../Providers/HelpProvider";
 import { AccountInput } from "./AccountInput";
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
-import { useImportedAccounts } from "../../ImportedAccountsProvider";
-import { useOtherAccounts } from "../../OtherAccountsProvider";
+import { useImportedAccounts } from "../../Providers/ImportedAccountsProvider";
+import { useOtherAccounts } from "../../Providers/OtherAccountsProvider";
 import type { ExternalAccount } from "../../../../connect/types";
 import type { ListWithInputProps } from "./types";
 

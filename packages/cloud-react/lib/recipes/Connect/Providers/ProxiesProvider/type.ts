@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 import type BigNumber from "bignumber.js";
-import type { AnyJson, MaybeAddress } from "../../../utils/types";
+import type { AnyJson, MaybeAddress } from "../../../../utils/types";
 
 export type ProxyType =
   | "Any"

@@ -3,25 +3,28 @@
 
 import type { ReactNode } from "react";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
-import { useEffectIgnoreInitial } from "../../../base/hooks/useEffectIgnoreInitial";
+import { useEffectIgnoreInitial } from "../../../../base/hooks/useEffectIgnoreInitial";
 
-import { useExtensions } from "../../../connect/ExtensionsProvider/useExtensions";
-import { useExtensionAccounts } from "../../../connect/ExtensionAccountsProvider/useExtensionAccounts";
+import { useExtensions } from "../../../../connect/ExtensionsProvider/useExtensions";
+import { useExtensionAccounts } from "../../../../connect/ExtensionAccountsProvider/useExtensionAccounts";
 
 import {
   getLocalLedgerAccounts,
   getLocalVaultAccounts,
-} from "../Hardware/Utils";
-import type { AnyFunction, MaybeAddress } from "../../../utils/types";
-import type { NetworkName } from "../Utils";
+} from "../HardwareProviders/Utils";
+import type { AnyFunction, MaybeAddress } from "../../../../utils/types";
+import type { NetworkName } from "../../Utils";
 import { ellipsisFn, setStateWithRef } from "@polkadot-cloud/utils";
 import Keyring from "@polkadot/keyring";
-import type { ExternalAccount, ImportedAccount } from "../../../connect/types";
+import type {
+  ExternalAccount,
+  ImportedAccount,
+} from "../../../../connect/types";
 import {
   getActiveAccountLocal,
   getLocalExternalAccounts,
   removeLocalExternalAccounts,
-} from "../Utils";
+} from "../../Utils";
 import type { OtherAccountsContextInterface } from "./types";
 import { defaultOtherAccountsContext } from "./defaults";
 import { useActiveAccounts } from "../ActiveAccountsProvider";

@@ -8,7 +8,7 @@ import { Polkicon } from "../../../../../icons/Polkicon";
 import { isValidAddress } from "@polkadot-cloud/utils";
 import { FormEvent, useEffect, useState } from "react";
 import { useOverlay } from "../../../../../overlay/OverlayProvider/useOverlay";
-import { useImportedAccounts } from "../../../ImportedAccountsProvider";
+import { useImportedAccounts } from "../../../Providers/ImportedAccountsProvider";
 import { formatAccountSs58 } from "../../../Utils";
 import type { AccountInputProps } from "./types";
 

@@ -1,7 +1,7 @@
 // Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
-import { usePrompt } from "../../PromptProvider";
+import { usePrompt } from "../../Providers/PromptProvider";
 import "./index.scss";
 
 export const Prompt = () => {
