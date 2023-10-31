@@ -6,8 +6,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   flex-flow: column wrap;
   padding: 0;
   position: relative;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden auto;
   width: 100%;
 }
 
