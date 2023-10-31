@@ -3,7 +3,8 @@
 
 import { ReactNode } from "react";
 import { ExtensionAccount } from "../ExtensionsProvider/types";
-import { ImportedAccount, MaybeAddress } from "../types";
+import { ImportedAccount } from "../types";
+import { MaybeAddress } from "../../utils/types";
 
 export interface ExtensionAccountsContextInterface {
   connectExtensionAccounts: (id?: string) => Promise<boolean>;
