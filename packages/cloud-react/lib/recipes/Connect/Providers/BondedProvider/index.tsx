@@ -1,7 +1,6 @@
 // Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
-/* eslint-disable no-unused-vars */
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-unused-vars, @typescript-eslint/no-unused-vars */
 
 import type { VoidFn, MaybeAddress } from "../../../../utils/types";
 import {
@@ -25,7 +24,6 @@ import * as defaults from "./defaults";
 import type { BondedAccount, BondedContextInterface } from "./types";
 
 // TODO: FIX MANY THINGS
-
 export const BondedProvider = ({
   children,
   network = "polkadot",
@@ -94,6 +92,8 @@ export const BondedProvider = ({
       }),
     []
   );
+
+  // TODO: CHECK the API needs
 
   // Subscribe to account, get controller and nominations.
   // const subscribeToBondedAccount = async (address: string) => {

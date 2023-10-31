@@ -19,6 +19,7 @@ import type { TxMetaContextInterface } from "./types";
 export const TxMetaProvider = ({ children }: { children: ReactNode }) => {
   const { getBondedAccount } = useBonded();
   const { activeProxy } = useActiveAccounts();
+  // TODO: Check why these are needed
   // const { getControllerNotImported } = useStaking();
   const { accountHasSigner } = useImportedAccounts();
   // const { getTransferOptions } = useTransferOptions();

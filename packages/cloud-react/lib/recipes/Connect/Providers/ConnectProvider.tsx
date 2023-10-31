@@ -1,3 +1,6 @@
+// Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+// SPDX-License-Identifier: GPL-3.0-only
+
 import { VaultHardwareProvider } from "./HardwareProviders/Vault";
 import { LedgerHardwareProvider } from "./HardwareProviders/Ledger";
 import { NotificationsProvider } from "./NotificationsProvider";
@@ -7,7 +10,7 @@ import { OtherAccountsProvider } from "./OtherAccountsProvider";
 import { ImportedAccountsProvider } from "./ImportedAccountsProvider";
 import { HelpProvider } from "./HelpProvider";
 import { PromptProvider } from "./PromptProvider";
-import { ConnectType, DappInfo } from "../Modal/Connect/types";
+import { ConnectType, DappInfo } from "./ConnectConfigProvider/types";
 import { OverlayProvider } from "../../../overlay/OverlayProvider";
 
 const provider = (prov, props = {}) => [prov, props];

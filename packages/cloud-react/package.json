@@ -55,6 +55,7 @@
     "@chainsafe/metamask-polkadot-types": "^0.6.0",
     "@zondax/ledger-substrate": "^0.41.3",
     "qrcode-generator": "^1.4.4",
-    "react-qr-reader": "^2.2.1"
+    "react-qr-reader": "^2.2.1",
+    "@ledgerhq/hw-transport-webhid": "^6.27.19"
   }
 }

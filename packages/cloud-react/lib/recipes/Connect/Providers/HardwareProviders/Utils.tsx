@@ -7,20 +7,20 @@ import type { LedgerApp, LedgerAddress } from "./types";
 import type { MaybeString } from "../../../../utils/types";
 import type { LedgerAccount, VaultAccount } from "../../../../connect/types";
 
-// TODO: check these SVGs
-// import KusamaSVG from "../../connect/assets/appIcons/kusama.svg?react";
-// import PolkadotSVG from "../../connect/assets/appIcons/polkadot.svg?react";
+// TODO: Icons of Kusama and Polkadot
+// import KusamaSVG from "../../assets/appIcons/kusama.svg";
+// import PolkadotSVG from "../../assets/appIcons/polkadot.svg";
 
 export const LedgerApps: LedgerApp[] = [
   {
     network: "polkadot",
     appName: "Polkadot",
-    Icon: null, // PolkadotSVG,
+    Icon: null,
   },
   {
     network: "kusama",
     appName: "Kusama",
-    Icon: null, // KusamaSVG,
+    Icon: null,
   },
 ];
 

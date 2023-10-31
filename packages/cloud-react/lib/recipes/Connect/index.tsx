@@ -5,7 +5,10 @@ import {
   connectInfo,
   ConnectProvider as Connect,
 } from "./Providers/ConnectProvider";
-import type { ConnectType, DappInfo } from "./Modal/Connect/types";
+import type {
+  ConnectType,
+  DappInfo,
+} from "./Providers/ConnectConfigProvider/types";
 
 export {
   ConnectConfigProvider,
