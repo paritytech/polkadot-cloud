@@ -37,16 +37,21 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@ledgerhq/hw-transport-webhid": "^6.27.19",
     "@polkadot-cloud/assets": "0.1.32",
     "@polkadot-cloud/core": "^1.0.30",
     "@polkadot-cloud/utils": "^0.0.23",
     "@polkadot/keyring": "^12.5.1",
     "@polkadot/util": "^12.5.1",
     "@polkadot/util-crypto": "^12.5.1",
+    "@zondax/ledger-substrate": "^0.41.3",
+    "buffer": "^6.0.3",
     "framer-motion": "^10.15.0",
     "react-error-boundary": "^4.0.11"
   },
   "devDependencies": {
-    "@chainsafe/metamask-polkadot-types": "^0.6.0"
+    "@chainsafe/metamask-polkadot-types": "^0.6.0",
+    "@ledgerhq/hw-transport-webhid": "^6.27.19",
+    "@zondax/ledger-substrate": "^0.41.3"
   }
 }
