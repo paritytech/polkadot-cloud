@@ -1,13 +1,16 @@
 import { Overlays } from "./Overlays";
 import { useActiveAccounts } from "./Providers/ActiveAccountsProvider";
 import { ConnectConfigProvider } from "./Providers/ConnectConfigProvider";
-import { connectInfo, ConnectProvider } from "./Providers/ConnectProvider";
+import {
+  connectInfo,
+  ConnectProvider as Connect,
+} from "./Providers/ConnectProvider";
 import type { ConnectType, DappInfo } from "./Modal/Connect/types";
 
 export {
   ConnectConfigProvider,
   connectInfo,
-  ConnectProvider,
+  Connect,
   Overlays,
   useActiveAccounts,
 };

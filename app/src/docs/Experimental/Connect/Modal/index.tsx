@@ -5,7 +5,7 @@ import { Doc } from "./main";
 
 import {
   useActiveAccounts,
-  ConnectProvider,
+  Connect,
   connectInfo,
   ConnectConfigProvider,
 } from "@packages/cloud-react/lib/recipes/Connect";
@@ -37,11 +37,11 @@ export const ModalConnect = () => {
 
   return (
     <ConnectConfigProvider dappInfo={dappInfo} wallets={walletSettings}>
-      <ConnectProvider providers={providers}>
+      <Connect providers={providers}>
         <div className="doc">
           <Doc npm="@polkadot-cloud/react" folder="Recipes/ModalConnect" />
         </div>
-      </ConnectProvider>
+      </Connect>
     </ConnectConfigProvider>
   );
 };

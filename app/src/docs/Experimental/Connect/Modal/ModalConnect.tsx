@@ -13,7 +13,7 @@ export const ModalConnect = () => {
 
 import {
   useActiveAccounts,
-  ConnectProvider,
+  Connect,
   connectInfo,
   ConnectConfigProvider,
 } from "@packages/cloud-react/lib/recipes/Connect";
@@ -42,9 +42,9 @@ const providers = connectInfo(dappInfo, walletSettings);
 
 return (
   <ConnectConfigProvider dappInfo={dappInfo} wallets={walletSettings}>
-    <ConnectProvider providers={providers}>
+    <Connect providers={providers}>
       <App />      
-    </ConnectProvider>
+    </Connect>
   </ConnectConfigProvider>
   );
 };
