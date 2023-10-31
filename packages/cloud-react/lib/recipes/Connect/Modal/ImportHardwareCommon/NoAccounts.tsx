@@ -10,8 +10,6 @@ import { Any } from "../../../../utils/types";
 import "./index.scss";
 
 export const NoAccounts = ({ children, text, Icon }: Any) => {
-  // TODO: Fix translaton
-  const t = (s: string) => s;
   const { replaceModal } = useOverlay().modal;
 
   return (
@@ -20,7 +18,7 @@ export const NoAccounts = ({ children, text, Icon }: Any) => {
         <h1>
           <Button
             type="secondary"
-            text={t("back")}
+            text="Back"
             iconLeft={faChevronLeft}
             iconTransform="shrink-3"
             onClick={async () =>
