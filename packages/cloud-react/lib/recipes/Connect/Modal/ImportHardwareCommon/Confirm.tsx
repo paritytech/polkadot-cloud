@@ -11,25 +11,19 @@ import { usePrompt } from "../../Providers/PromptProvider";
 import "./index.scss";
 
 export const Confirm = ({ address, index, addHandler }: ConfirmProps) => {
-  // TODO: fix translation
-  const t = (s: string) => s;
   const { setStatus } = usePrompt();
   const { addOtherAccounts } = useOtherAccounts();
 
   return (
     <div className="confirm-wrapper">
       <Polkicon address={address} size="3rem" />
-      <h3>{t("importAccount")}</h3>
+      <h3>Import Account</h3>
       <h5>{address}</h5>
       <div className="footer">
-        <Button
-          type="monoInvert"
-          text={t("cancel")}
-          onClick={() => setStatus(0)}
-        />
+        <Button type="monoInvert" text="Cancel" onClick={() => setStatus(0)} />
         <Button
           type="mono"
-          text={t("importAccount")}
+          text="Import Account"
           onClick={() => {
             const account = addHandler(address, index);
             if (account) {

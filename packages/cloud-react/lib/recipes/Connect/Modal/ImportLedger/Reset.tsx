@@ -15,8 +15,6 @@ import type { LedgerAccount } from "../../../../connect/types";
 import "./index.scss";
 
 export const Reset = ({ removeLedgerAddress }: AnyJson) => {
-  // TODO: Fix translation
-  const t = (s: string) => s;
   const { setStatus } = usePrompt();
   const { replaceModal } = useOverlay().modal;
   const { forgetOtherAccounts } = useOtherAccounts();
@@ -40,17 +38,13 @@ export const Reset = ({ removeLedgerAddress }: AnyJson) => {
 
   return (
     <div className="confirm-wrapper">
-      <h3>{t("resetLedgerAccounts")}</h3>
-      <p>{t("ledgerWillBeReset")}</p>
+      <h3>Reset Ledger Accounts</h3>
+      <p>Ledger Will Be Reset</p>
       <div className="footer">
-        <Button
-          type="monoInvert"
-          text={t("cancel")}
-          onClick={() => setStatus(0)}
-        />
+        <Button type="monoInvert" text="Cancel" onClick={() => setStatus(0)} />
         <Button
           type="mono"
-          text={t("confirmReset")}
+          text="Confirm Reset"
           onClick={() => {
             removeAccounts();
             setStatus(0);

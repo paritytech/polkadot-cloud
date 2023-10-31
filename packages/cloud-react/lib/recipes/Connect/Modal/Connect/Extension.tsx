@@ -15,8 +15,6 @@ import { ModalConnectItem } from "../../../../base/modal/ModalConnectItem";
 import "./index.scss";
 
 export const Extension = ({ meta, size, flag }: ExtensionProps) => {
-  // TODO: Translations const { t } = useTranslation("modals");
-  const t = (s: string) => s;
   const { addNotification } = useNotifications();
   const { connectExtensionAccounts } = useExtensionAccounts();
   const { extensionsStatus, extensionInstalled, extensionCanConnect } =
@@ -37,9 +35,9 @@ export const Extension = ({ meta, size, flag }: ExtensionProps) => {
 
       if (connected)
         addNotification({
-          title: t("extensionConnected"),
+          title: "Extension Connected",
           // TODO: See this that was: subtitle: `${t("titleExtensionConnected", { title })}`,
-          subtitle: `${t("titleExtensionConnected")}`,
+          subtitle: "Extension Connected",
         });
     }
   };
@@ -49,16 +47,16 @@ export const Extension = ({ meta, size, flag }: ExtensionProps) => {
   let statusJsx;
   switch (extensionsStatus[id]) {
     case "connected":
-      statusJsx = <p className="success">{t("connected")}</p>;
+      statusJsx = <p className="success">Connected</p>;
       break;
     case "not_authenticated":
-      statusJsx = <p>{t("notAuthenticated")}</p>;
+      statusJsx = <p>Not Authenticated</p>;
       break;
     default:
       statusJsx = (
         <p className="active">
           <FontAwesomeIcon icon={faPlus} className="plus" />
-          {t("connect")}
+          Connect
         </p>
       );
   }
@@ -87,7 +85,7 @@ export const Extension = ({ meta, size, flag }: ExtensionProps) => {
             </div>
             <div className="status">
               {flag && flag}
-              {isInstalled ? statusJsx : <p>{t("notInstalled")}</p>}
+              {isInstalled ? statusJsx : <p>Not Installed</p>}
             </div>
             <div className="row">
               <h3>{title}</h3>

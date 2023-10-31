@@ -11,17 +11,10 @@ import { formatAccountSs58 } from "../../Utils";
 import { useOtherAccounts } from "../../Providers/OtherAccountsProvider";
 
 import { QrScanSignature } from "../QRCode/ScanSignature";
+import { useConnectConfig } from "../../Providers/ConnectConfigProvider";
 
 export const Reader = () => {
-  // TODO: Fix Translation
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-  const t = (s: string) => s;
-
-  // TODO: Fix the networks
-  // const {
-  //   networkData: { ss58 },
-  // } = useNetwork();
-  const ss58 = 0;
+  const { ss58 } = useConnectConfig();
 
   const { addOtherAccounts } = useOtherAccounts();
   const { setStatus: setPromptStatus } = usePrompt();
@@ -61,20 +54,20 @@ export const Reader = () => {
     // Display feedback.
     setFeedback(
       qrData === undefined
-        ? `${t("waitingForQRCode")}`
+        ? `Waiting For QRCode`
         : isValidAddress(qrData)
         ? formatAccountSs58(qrData, ss58)
-          ? `${t("differentNetworkAddress")}`
+          ? `"Different Network Address`
           : vaultAccountExists(qrData)
-          ? `${t("accountAlreadyImported")}`
-          : `${t("addressReceived")}`
-        : `${t("invalidAddress")}`
+          ? `Account Already Imported`
+          : `Address Received`
+        : `Invalid Address`
     );
   }, [qrData]);
 
   return (
     <div className="qr-viewer-wrapper">
-      <h3 className="title">{t("scanFromPolkadotVault")}</h3>
+      <h3 className="title">Scan From PolkadotVault</h3>
       <div className="viewer">
         <QrScanSignature
           size={279}
@@ -89,7 +82,7 @@ export const Reader = () => {
           <Button
             type="secondary"
             lg
-            text={t("cancel")}
+            text="Cancel"
             onClick={() => setPromptStatus(0)}
           />
         </div>

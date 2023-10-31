@@ -29,9 +29,6 @@ export const Title = ({
   hideDone,
   closeText,
 }: TitleProps) => {
-  // FIX translation
-  const t = (s: string) => s;
-
   const { closePrompt } = usePrompt();
   const { openHelp } = useHelp();
 
@@ -56,7 +53,7 @@ export const Title = ({
         <div>
           <Button
             type="secondary"
-            text={closeText || t("done")}
+            text={closeText || "Done"}
             onClick={() => closePrompt()}
           />
         </div>

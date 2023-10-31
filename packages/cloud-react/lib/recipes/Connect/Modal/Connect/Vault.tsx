@@ -14,10 +14,6 @@ import { PolkadotVault } from "@polkadot-cloud/assets/extensions/jsx/PolkadotVau
 import { useHelp } from "../../Providers/HelpProvider/index";
 
 export const Vault = (): ReactElement => {
-  // const { t } = useTranslation("modals");
-  // TODO: Fix translation
-  const t = (s: string) => s;
-
   const { openHelp } = useHelp();
   const { replaceModal } = useOverlay().modal;
   const url = "signer.parity.io";
@@ -54,7 +50,7 @@ export const Vault = (): ReactElement => {
           <div className="row margin">
             <Button
               type="primaryInvert"
-              text={t("import")}
+              text="Import"
               onClick={() => {
                 replaceModal({ key: "ImportVault" });
               }}

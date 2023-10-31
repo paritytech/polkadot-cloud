@@ -19,9 +19,6 @@ export const Manage = ({
   removeLedgerAddress,
   network = "polkadot",
 }: AnyJson) => {
-  // TODO: Fix Translation
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-  const t = (s: string, _p: AnyJson) => s;
   const { setIsExecuting, getIsExecuting, resetStatusCodes, getFeedback } =
     useLedgerHardware();
   const { openPromptWith } = usePrompt();
@@ -31,10 +28,7 @@ export const Manage = ({
   const { appName, Icon } = getLedgerApp(network);
   const isExecuting = getIsExecuting();
 
-  const fallbackMessage = `${t("ledgerAccounts", {
-    ns: "modals",
-    count: addresses.length,
-  })}`;
+  const fallbackMessage = `LedgerAccounts`;
   const feedback = getFeedback();
   const helpKey = feedback?.helpKey;
 
@@ -78,8 +72,8 @@ export const Manage = ({
           replaceModal({ key: "Connect", options: { disableScroll: true } })
         }
         t={{
-          tDone: t("done", { ns: "library" }),
-          tCancel: t("cancel", { ns: "library" }),
+          tDone: "Done",
+          tCancel: "Cancel",
         }}
       />
     </>

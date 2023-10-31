@@ -16,9 +16,6 @@ export const Heading = ({
   disabled,
   handleReset,
 }: HeadingProps) => {
-  // TODO: Fix translation
-  const t = (s: string) => s;
-
   return (
     <div className="heading-wrapper">
       <section>
@@ -39,7 +36,7 @@ export const Heading = ({
         {handleReset && (
           <Button
             type="text"
-            text={t("reset")}
+            text="Reset"
             iconLeft={faCircleMinus}
             onClick={() => {
               if (typeof handleReset === "function") {

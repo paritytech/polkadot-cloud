@@ -27,10 +27,6 @@ export const AccountButton = ({
   proxyType,
   noBorder = false,
 }: AccountItemProps) => {
-  // const { t } = useTranslation("modals");
-  // TODO: Fix translation
-  const t = (s: string) => s;
-
   const { getAccount } = useImportedAccounts();
   const {
     activeProxy,
@@ -100,9 +96,7 @@ export const AccountButton = ({
             <span className="name">
               {delegator && (
                 <>
-                  <span>
-                    {proxyType} {t("proxy")}
-                  </span>
+                  <span>{proxyType} Proxy</span>
                 </>
               )}
               {meta?.name ?? ellipsisFn(address ?? "")}
@@ -112,7 +106,7 @@ export const AccountButton = ({
                 className="label warning"
                 style={{ color: "#a17703", paddingLeft: "0.5rem" }}
               >
-                {t("readOnly")}
+                Read Only
               </div>
             )}
             <div className={label === undefined ? `` : label[0]}>
@@ -135,7 +129,7 @@ export const AccountButton = ({
         </section>
         <section className="foot">
           {/* <span className="balance">
-            {`${t("free")}: ${planckToUnit(freeBalance, units)
+            {`Free: ${planckToUnit(freeBalance, units)
               .decimalPlaces(3)
               .toFormat()} ${unit}`}
           </span> */}

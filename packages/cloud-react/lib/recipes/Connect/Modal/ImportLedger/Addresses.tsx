@@ -23,9 +23,6 @@ export const Addresess = ({
   handleLedgerLoop,
   network,
 }: AnyJson) => {
-  // TODO: fix Translation
-  const t = (s: string) => s;
-
   const {
     getIsExecuting,
     ledgerAccountExists,
@@ -89,8 +86,8 @@ export const Addresess = ({
                 openRemoveHandler={openRemoveHandler}
                 openConfirmHandler={openConfirmHandler}
                 t={{
-                  tRemove: t("remove"),
-                  tImport: t("import"),
+                  tRemove: "Remove",
+                  tImport: "Import",
                 }}
               />
             );
@@ -100,7 +97,7 @@ export const Addresess = ({
           <Button
             type="text"
             iconLeft={faArrowDown}
-            text={isExecuting ? t("gettingAccount") : t("getAnotherAccount")}
+            text={isExecuting ? "Getting Account" : "Get Another Account"}
             disabled={isExecuting}
             onClick={async () => {
               // re-pair the device if it has been disconnected.

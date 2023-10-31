@@ -32,9 +32,6 @@ import "./index.scss";
 import { useConnectConfig } from "../../Providers/ConnectConfigProvider";
 
 export const Connect = () => {
-  // TODO: Fix translations
-  const t = (s: string) => s;
-
   const { wallets } = useConnectConfig();
 
   const hardwareActive = wallets?.hardwareActive;
@@ -172,7 +169,7 @@ export const Connect = () => {
             <ModalPadding horizontalOnly ref={homeRef}>
               {hardwareActive ? (
                 <>
-                  <ActionItem text={t("hardware")} />
+                  <ActionItem text="Hardware" />
                   <div className="extensions-wrapper">
                     <SelectItems layout="two-col">
                       {[Vault, Ledger].map((Item: AnyFunction, i: number) => (
@@ -184,7 +181,7 @@ export const Connect = () => {
               ) : null}
               {webActive ? (
                 <>
-                  <ActionItem text={t("web")} />
+                  <ActionItem text="Web" />
                   <div className="extensions-wrapper">
                     <SelectItems layout="two-col">
                       {installed.concat(other).map((extension, i) => (
@@ -199,7 +196,7 @@ export const Connect = () => {
               ) : null}
               {devActive ? (
                 <>
-                  <ActionItem text={t("developerTools")} />
+                  <ActionItem text="Developer Tools" />
                   <div className="extensions-wrapper">
                     <SelectItems layout="two-col">
                       {pjs.map((extension, i) => (

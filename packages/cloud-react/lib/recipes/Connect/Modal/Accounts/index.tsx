@@ -39,9 +39,9 @@ import { Button } from "../../../../buttons/Button";
 
 import "./index.scss";
 
+// TODO: Fix many API things
+
 export const Accounts = () => {
-  // TODO: Fix translation
-  const t = (s: string) => s;
   // const { balances, ledgers, getLocks } = useBalances();
   // const { bondedAccounts } = useBonded();
   const { getDelegates } = useProxies();
@@ -146,10 +146,10 @@ export const Accounts = () => {
     <ModalPadding>
       <ModalCustomHeader>
         <div className="first">
-          <h1>{t("accounts")}</h1>
+          <h1>Accounts</h1>
           <Button
             type="primaryInvert"
-            text={t("goToConnect")}
+            text="Go To Connect"
             iconLeft={faChevronLeft}
             iconTransform="shrink-3"
             onClick={() =>
@@ -165,7 +165,7 @@ export const Accounts = () => {
               style={{
                 color: "var(--accent-color-primary)",
               }}
-              text={t("disconnect")}
+              text="Disconnect"
               iconRight={faLinkSlash}
               onClick={() => {
                 setActiveAccount(null);
@@ -179,9 +179,7 @@ export const Accounts = () => {
         <div className="account-wrapper" style={{ marginTop: "1.5rem" }}>
           <div>
             <div>
-              <h4 style={{ padding: "0.75rem 1rem" }}>
-                {t("noActiveAccount")}
-              </h4>
+              <h4 style={{ padding: "0.75rem 1rem" }}>No Active Account</h4>
             </div>
             <div />
           </div>
@@ -191,7 +189,7 @@ export const Accounts = () => {
       {nominatingAndPool.length ? (
         <>
           <div className=".account-separator" />
-          <ActionItem text={t("nominatingAndInPool")} />
+          <ActionItem text="Nominating And InPool" />
           {nominatingAndPool.map(({ address, delegates }, i) => (
             <Fragment key={`acc_nominating_and_pool_${i}`}>
               <AccountButton address={address} />
@@ -206,7 +204,7 @@ export const Accounts = () => {
       {nominating.length ? (
         <>
           <div className=".account-separator" />
-          <ActionItem text={t("nominating")} />
+          <ActionItem text="Nominating" />
           {nominating.map(({ address, delegates }, i) => (
             <Fragment key={`acc_nominating_${i}`}>
               <AccountButton address={address} />
@@ -221,7 +219,7 @@ export const Accounts = () => {
       {inPool.length ? (
         <>
           <div className=".account-separator" />
-          <ActionItem text={t("inPool")} />
+          <ActionItem text="In Pool" />
           {inPool.map(({ address, delegates }, i) => (
             <Fragment key={`acc_in_pool_${i}`}>
               <AccountButton address={address} />
@@ -236,7 +234,7 @@ export const Accounts = () => {
       {notStaking.length ? (
         <>
           <div className=".account-separator" />
-          <ActionItem text={t("notStaking")} />
+          <ActionItem text="Not Staking" />
           {notStaking.map(({ address, delegates }, i) => (
             <Fragment key={`acc_not_staking_${i}`}>
               <AccountButton address={address} />

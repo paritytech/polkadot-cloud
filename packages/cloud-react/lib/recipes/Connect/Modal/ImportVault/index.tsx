@@ -23,10 +23,6 @@ import { Polkicon } from "../../../../icons/Polkicon";
 import "../ImportHardwareCommon/index.scss";
 
 export const ImportVault = () => {
-  // const { t } = useTranslation();
-  // TODO: Fix translations
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-  const t = (s: string, _p: AnyJson) => s;
   const { replaceModal } = useOverlay().modal;
   const { renameOtherAccount } = useOtherAccounts();
   const { openPromptWith, status: promptStatus } = usePrompt();
@@ -71,16 +67,13 @@ export const ImportVault = () => {
   return (
     <>
       {vaultAccounts.length === 0 ? (
-        <NoAccounts
-          Icon={PolkadotVaultSVG}
-          text={t("noVaultAccountsImported", { ns: "modals" })}
-        >
+        <NoAccounts Icon={PolkadotVaultSVG} text="No Vault Accounts Imported">
           <div>
             <Button
               type="primary"
               lg
               iconLeft={faQrcode}
-              text={t("importAccount", { ns: "modals" })}
+              text="Import Account"
               disabled={promptStatus !== 0}
               onClick={() => {
                 openPromptWith(<Reader />, "small");
@@ -105,8 +98,8 @@ export const ImportVault = () => {
                   openRemoveHandler={openRemoveHandler}
                   openConfirmHandler={openConfirmHandler}
                   t={{
-                    tRemove: t("remove", { ns: "modals" }),
-                    tImport: t("import", { ns: "modals" }),
+                    tRemove: "Remove",
+                    tImport: "Import",
                   }}
                 />
               ))}
@@ -115,7 +108,7 @@ export const ImportVault = () => {
               <Button
                 type="text"
                 iconLeft={faQrcode}
-                text={t("importAnotherAccount", { ns: "modals" })}
+                text="Import Another Account"
                 disabled={promptStatus !== 0}
                 onClick={() => {
                   openPromptWith(<Reader />, "small");
@@ -126,17 +119,14 @@ export const ImportVault = () => {
           <HardwareStatusBar
             show
             Icon={PolkadotVaultSVG}
-            text={t("vaultAccounts", {
-              ns: "modals",
-              count: vaultAccounts.length,
-            })}
+            text="Vault Accounts"
             inProgress={false}
             handleDone={() =>
               replaceModal({ key: "Connect", options: { disableScroll: true } })
             }
             t={{
-              tDone: t("done", { ns: "library" }),
-              tCancel: t("cancel", { ns: "library" }),
+              tDone: "Done",
+              tCancel: "Cancel",
             }}
           />
         </>

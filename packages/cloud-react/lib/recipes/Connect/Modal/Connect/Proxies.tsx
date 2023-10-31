@@ -17,9 +17,6 @@ import { useImportedAccounts } from "../../Providers/ImportedAccountsProvider";
 import type { ListWithInputProps } from "./types";
 
 export const Proxies = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
-  // TODO: fix translatiosn
-  const t = (s: string) => s;
-
   const { openHelp } = useHelp();
   const { accounts } = useImportedAccounts();
   const { getAccount } = useImportedAccounts();
@@ -36,7 +33,7 @@ export const Proxies = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
       <div className="action-with-button">
         <div>
           <FontAwesomeIcon icon={faChevronRight} transform="shrink-4" />
-          <h3>{t("proxyAccounts")}</h3>
+          <h3>Proxy Accounts</h3>
           <Button
             type="help"
             marginLeft
@@ -47,7 +44,7 @@ export const Proxies = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
           <Button
             type="monoInvert"
             iconLeft={inputOpen ? faMinus : faPlus}
-            text={!inputOpen ? t("declare") : t("hide")}
+            text={!inputOpen ? "Declare" : "Hide"}
             onClick={() => {
               setInputOpen(!inputOpen);
             }}
@@ -60,7 +57,7 @@ export const Proxies = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
             <>
               <AccountInput
                 resetOnSuccess
-                defaultLabel={t("inputDelegatorAddress")}
+                defaultLabel="Input Delegator Address"
                 successCallback={async (delegator) => {
                   const result = await handleDeclareDelegate(delegator);
                   return result;
@@ -84,25 +81,17 @@ export const Proxies = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
                           </span>
                           <div className="text">
                             <h4 className="title">
-                              <span>
-                                {proxyType} {t("proxy")}
-                              </span>
+                              <span>{proxyType} Proxy</span>
                               {getAccount(delegate)?.name || delegate}
                             </h4>
                             <h4 className="subtitle">
                               {delegator}
-                              {/* {t("for", {
-                                who: getAccount(delegator)?.name || delegator,
-                              })} */}
+                              {/* {" "}For*/}
                             </h4>
                           </div>
                         </div>
                         <div />
-                        <Button
-                          type="secondary"
-                          text={t("declared")}
-                          disabled
-                        />
+                        <Button type="secondary" text="Declared" disabled />
                       </div>
                     ))}
                   </Fragment>
@@ -111,7 +100,7 @@ export const Proxies = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
             </div>
           ) : (
             <div style={{ padding: "0.5rem" }}>
-              <h4>{t("noProxyAccountsDeclared")}</h4>
+              <h4>No Proxy Accounts Declared</h4>
             </div>
           )}
         </div>

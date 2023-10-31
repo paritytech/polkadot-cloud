@@ -13,6 +13,7 @@ import { formatAccountSs58 } from "../../../Utils";
 import type { AccountInputProps } from "./types";
 
 import "./index.scss";
+import { useConnectConfig } from "../../../Providers/ConnectConfigProvider";
 
 export const AccountInput = ({
   successCallback,
@@ -26,11 +27,7 @@ export const AccountInput = ({
   initialValue = null,
   border = true,
 }: AccountInputProps) => {
-  //TODO: Fix translation
-  const t = (s: string) => s;
-
-  //TODO: Fix ss58
-  const ss58 = 0;
+  const { ss58 } = useConnectConfig();
   const { accounts } = useImportedAccounts();
   const { setModalResize } = useOverlay().modal;
 
@@ -110,20 +107,20 @@ export const AccountInput = ({
 
   switch (valid) {
     case "confirm_reformat":
-      label = t("confirmReformat");
+      label = "Confirm Reformat";
       labelClass = "neutral";
 
       break;
     case "already_imported":
-      label = t("alreadyImported");
+      label = "Already Imported";
       labelClass = "danger";
       break;
     case "not_valid":
-      label = t("invalid");
+      label = "Invalid";
       labelClass = "danger";
       break;
     case "valid":
-      label = showSuccess ? successLabel : t("valid");
+      label = showSuccess ? successLabel : "Valid";
       labelClass = showSuccess ? "neutral" : "success";
       break;
     default:
@@ -180,7 +177,7 @@ export const AccountInput = ({
           </div>
           <div>
             <input
-              placeholder={t("address")}
+              placeholder="Address"
               type="text"
               onChange={(e: FormEvent<HTMLInputElement>) => handleChange(e)}
               value={value}
@@ -194,7 +191,7 @@ export const AccountInput = ({
               <Button
                 type="secondary"
                 onClick={() => resetInput()}
-                text={t("reset")}
+                text="Reset"
               />
             </>
           ) : (
@@ -203,14 +200,14 @@ export const AccountInput = ({
                 <Button
                   type="secondary"
                   onClick={() => handleImport()}
-                  text={submitting ? t("importing") : t("import")}
+                  text={submitting ? "Importing" : "Import"}
                   disabled={valid !== "valid" || submitting}
                 />
               ) : (
                 <Button
                   type="secondary"
                   onClick={() => handleConfirm()}
-                  text={t("confirm")}
+                  text="Confirm"
                 />
               )}
             </>

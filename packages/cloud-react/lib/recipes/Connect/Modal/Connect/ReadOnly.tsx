@@ -18,8 +18,6 @@ import type { ExternalAccount } from "../../../../connect/types";
 import type { ListWithInputProps } from "./types";
 
 export const ReadOnly = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
-  // TODO Fix this: const { t } = useTranslation("modals");
-  const t = (s: string) => s;
   const { openHelp } = useHelp();
   const { accounts } = useImportedAccounts();
   const { setModalResize } = useOverlay().modal;
@@ -45,7 +43,7 @@ export const ReadOnly = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
       <div className="action-with-button">
         <div>
           <FontAwesomeIcon icon={faChevronRight} transform="shrink-4" />
-          <h3>{t("readOnlyAccounts")}</h3>
+          <h3>Read Only Accounts</h3>
           <Button
             type="help"
             marginLeft
@@ -56,7 +54,7 @@ export const ReadOnly = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
           <Button
             type="monoInvert"
             iconLeft={inputOpen ? faMinus : faPlus}
-            text={!inputOpen ? t("add") : t("hide")}
+            text={!inputOpen ? "Add" : "Hide"}
             onClick={() => {
               setInputOpen(!inputOpen);
             }}
@@ -68,7 +66,7 @@ export const ReadOnly = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
           {inputOpen && (
             <AccountInput
               resetOnSuccess
-              defaultLabel={t("inputAddress")}
+              defaultLabel="Input Address"
               successCallback={async (value: string) => {
                 addExternalAccount(value, "user");
                 return true;
@@ -92,7 +90,7 @@ export const ReadOnly = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
                   </div>
                   <Button
                     type="secondary"
-                    text={t("forget")}
+                    text="Forget"
                     onClick={() => {
                       forgetAccount(a);
                     }}
@@ -102,7 +100,7 @@ export const ReadOnly = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
             </div>
           ) : (
             <div style={{ padding: "0.5rem" }}>
-              <h4>{t("noReadOnlyAdded")}</h4>
+              <h4>No Read Only Added</h4>
             </div>
           )}
         </div>
