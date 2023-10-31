@@ -12,19 +12,26 @@ export interface ComponentBase {
   style?: CSSProperties;
 }
 
+export type VoidFn = () => void;
+
 export type ComponentBaseWithClassName = ComponentBase & {
   // passing a className string.
   className?: string;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type AnyApi = any;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type Any = any;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type AnyJson = any;
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type AnyFunction = any;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type AnyObject = any;
+export type MaybeAddress = string | null;
+export type MaybeString = string | null;
 
 export type HPosition = HPositionLR & "center";
-
 export type HPositionLR = "left" | "right";
-
 export type DisplayFor = "default" | "modal" | "canvas";

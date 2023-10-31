@@ -69,9 +69,10 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 @mixin btn-submit {
   &.sm {
-  padding: var(--button-padding-large);
-  font-size: var(--button-font-size-small);
+    padding: var(--button-padding-large);
+    font-size: var(--button-font-size-small);
   }
+
   &.lg {
     padding: var(--button-padding-large);
     font-size: var(--button-font-size-large);
