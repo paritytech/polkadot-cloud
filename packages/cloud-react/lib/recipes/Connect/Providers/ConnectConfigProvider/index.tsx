@@ -5,9 +5,8 @@ import {
   useEffect,
   useState,
 } from "react";
-import { ConnectConfigContextInterface } from "./types";
+import { ConnectConfigContextInterface, ConnectType, DappInfo } from "./types";
 import * as defaults from "./defaults";
-import { ConnectType, DappInfo } from "../../Modal/Connect/types";
 
 export const ConnectConfigProvider = ({
   children,
