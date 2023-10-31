@@ -111,7 +111,7 @@ export const Connect = () => {
               <h1>{"Connect"}</h1>
               <Button
                 type="primaryInvert"
-                text={"goToAccounts"}
+                text="Go To Accounts"
                 iconRight={faChevronRight}
                 iconTransform="shrink-3"
                 onClick={() => replaceModal({ key: "Accounts" })}
@@ -127,13 +127,13 @@ export const Connect = () => {
               />
               <Button
                 type="tab"
-                title={"readOnly"}
+                title="Read Only"
                 onClick={() => setSection(1)}
                 active={section === 1}
               />
               <Button
                 type="tab"
-                title={"proxies"}
+                title="Proxies"
                 onClick={() => setSection(2)}
                 active={section === 2}
               />
