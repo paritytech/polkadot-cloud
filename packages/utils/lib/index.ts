@@ -58,7 +58,7 @@ export const minDecimalPlaces = (val: string, minDecimals: number): string => {
   const decimals = val.split(".")[1] || "";
   const missingDecimals = new BigNumber(minDecimals).minus(decimals.length);
   return missingDecimals.isGreaterThan(0)
-    ? `${whole.toString()}.${decimals.toString()}${"0".repeat(
+    ? `${whole.toFormat()}.${decimals.toString()}${"0".repeat(
         missingDecimals.toNumber()
       )}`
     : val;
