@@ -6,7 +6,7 @@ import { useImportedAccounts } from "../../../Providers/ImportedAccountsProvider
 import { AccountButton } from "../Account";
 import type { DelegatesProps } from "../types";
 
-import "./index.scss";
+import "@polkadot-cloud/core/css/recipes/Connect/Modal/Accounts/Delegates/index.css";
 
 export const Delegates = ({ delegates, delegator }: DelegatesProps) => {
   const { accounts } = useImportedAccounts();

@@ -11,7 +11,8 @@ import {
 } from "react";
 import type { AnyJson } from "../../../../../utils/types";
 import type { SelectItemsProps } from "./types";
-import "./index.scss";
+
+import "@polkadot-cloud/core/css/recipes/Connect/Modal/Connect/SelectItems/index.css";
 
 export const SelectItems = ({ layout, children }: SelectItemsProps) => {
   // Initialise refs for container and body of items.

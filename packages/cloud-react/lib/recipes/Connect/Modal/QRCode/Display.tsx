@@ -15,8 +15,7 @@ import { qrcode } from "./qrcode.js";
 import type { DisplayProps, FrameState, TimerState } from "./types.js";
 import { createFrames, createImgSize } from "./util.js";
 
-// import { DisplayWrapper } from "./Wrappers.js";
-import "./index.scss";
+import "@polkadot-cloud/core/css/recipes/Connect/Modal/QRCode/index.css";
 
 const DEFAULT_FRAME_DELAY = 2750;
 const TIMER_INC = 500;
