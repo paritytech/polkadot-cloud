@@ -53,12 +53,12 @@ export const unitToPlanck = (val: string, units: number): BigNumber => {
  * @name minDecimalPlaces
  * @summary Forces a number to have at least the provided decimal places.
  */
-export const minDecimalPlaces = (val: string, minDecimals: number) => {
-  const whole = new BigNumber(val.split(".")[0] || 0);
+export const minDecimalPlaces = (val: string, minDecimals: number): string => {
+  const whole = new BigNumber(rmCommas(val).split(".")[0] || 0);
   const decimals = val.split(".")[1] || "";
   const missingDecimals = new BigNumber(minDecimals).minus(decimals.length);
   return missingDecimals.isGreaterThan(0)
-    ? `${whole.toString()}.${decimals.toString()}${"0".repeat(
+    ? `${whole.toFormat(0)}.${decimals.toString()}${"0".repeat(
         missingDecimals.toNumber()
       )}`
     : val;

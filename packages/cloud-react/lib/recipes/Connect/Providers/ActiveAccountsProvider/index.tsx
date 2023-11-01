@@ -7,17 +7,17 @@ import type { MaybeAddress } from "../../../../utils/types";
 import { setStateWithRef } from "@polkadot-cloud/utils";
 import type { ActiveAccountsContextInterface, ActiveProxy } from "./types";
 import { defaultActiveAccountsContext } from "./defaults";
+import { useConnectConfig } from "../ConnectConfigProvider";
 
 export const ActiveAccountsContext =
   createContext<ActiveAccountsContextInterface>(defaultActiveAccountsContext);
 
 export const ActiveAccountsProvider = ({
   children,
-  network = "polkadot",
 }: {
   children: ReactNode;
-  network?: string;
 }) => {
+  const { network } = useConnectConfig();
   // Store the currently active account.
   const [activeAccount, setActiveAccountState] = useState<MaybeAddress>(null);
   const activeAccountRef = useRef<string | null>(activeAccount);
