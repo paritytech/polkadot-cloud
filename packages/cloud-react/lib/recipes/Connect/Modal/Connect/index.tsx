@@ -37,6 +37,20 @@ export const Connect = () => {
   const hardwareActive = wallets?.hardwareActive;
   const webActive = wallets?.webActive;
   const devActive = wallets?.devActive;
+  const readOnlyActive = wallets?.readOnlyActive;
+  const proxiesActive = wallets?.proxiesActive;
+
+  if (
+    !hardwareActive &&
+    !webActive &&
+    !devActive &&
+    !readOnlyActive &&
+    !proxiesActive
+  ) {
+    throw new Error(
+      "All possible wallet options (web, hardware and dev) are inactive!"
+    );
+  }
 
   const { extensionsStatus } = useExtensions();
   const { replaceModal, setModalHeight, modalMaxHeight, setModalStatus } =
@@ -88,6 +102,16 @@ export const Connect = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (hardwareActive || webActive || devActive) {
+      setSection(0);
+    } else if (readOnlyActive) {
+      setSection(1);
+    } else {
+      setSection(2);
+    }
+  }, [hardwareActive, webActive, devActive]);
+
   return (
     <>
       <ModalSection type="carousel">
@@ -119,24 +143,30 @@ export const Connect = () => {
               />
             </div>
             <ModalSection type="tab">
-              <Button
-                type="tab"
-                title={"Extensions"}
-                onClick={() => setSection(0)}
-                active={section === 0}
-              />
-              <Button
-                type="tab"
-                title="Read Only"
-                onClick={() => setSection(1)}
-                active={section === 1}
-              />
-              <Button
-                type="tab"
-                title="Proxies"
-                onClick={() => setSection(2)}
-                active={section === 2}
-              />
+              {hardwareActive || webActive || devActive ? (
+                <Button
+                  type="tab"
+                  title={"Extensions"}
+                  onClick={() => setSection(0)}
+                  active={section === 0}
+                />
+              ) : null}
+              {readOnlyActive ? (
+                <Button
+                  type="tab"
+                  title="Read Only"
+                  onClick={() => setSection(1)}
+                  active={section === 1}
+                />
+              ) : null}
+              {proxiesActive ? (
+                <Button
+                  type="tab"
+                  title="Proxies"
+                  onClick={() => setSection(2)}
+                  active={section === 2}
+                />
+              ) : null}
             </ModalSection>
           </ModalCustomHeader>
         </ModalFixedTitle>

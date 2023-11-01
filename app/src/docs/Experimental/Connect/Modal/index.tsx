@@ -8,10 +8,7 @@ import {
   connectInfo,
   ConnectConfigProvider,
 } from "@packages/cloud-react/lib/recipes/Connect";
-import type {
-  ConnectType,
-  DappInfo,
-} from "@packages/cloud-react/lib/recipes/Connect";
+import type { DappInfo } from "@packages/cloud-react/lib/recipes/Connect";
 
 export const ModalConnect = () => {
   const dappInfo: DappInfo = {
@@ -19,17 +16,10 @@ export const ModalConnect = () => {
     network: "polkadot",
     ss58: 0,
   };
-
-  const walletSettings: ConnectType = {
-    hardwareActive: true,
-    webActive: true,
-    devActive: true,
-  };
-
-  const providers = connectInfo(dappInfo, walletSettings);
+  const providers = connectInfo(dappInfo);
 
   return (
-    <ConnectConfigProvider dappInfo={dappInfo} wallets={walletSettings}>
+    <ConnectConfigProvider dappInfo={dappInfo}>
       <Connect providers={providers}>
         <div className="doc">
           <Doc npm="@polkadot-cloud/react" folder="Recipes/ModalConnect" />

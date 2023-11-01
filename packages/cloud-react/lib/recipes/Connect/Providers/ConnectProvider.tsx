@@ -28,7 +28,7 @@ export const ConnectProvider = ({ providers, children }) => {
   return children;
 };
 
-export const connectInfo = (appInfo: DappInfo, connInfo: ConnectType) => {
+export const connectInfo = (appInfo: DappInfo, connInfo?: ConnectType) => {
   const { activeAccount, setActiveAccount } = useActiveAccounts();
   const { network, ss58 } = useConnectConfig();
 
@@ -36,7 +36,7 @@ export const connectInfo = (appInfo: DappInfo, connInfo: ConnectType) => {
 
   providers.push(provider(ActiveAccountsProvider));
   providers.push(provider(NotificationsProvider));
-  if (connInfo.hardwareActive) {
+  if (connInfo?.hardwareActive) {
     providers.push(provider(LedgerHardwareProvider));
     providers.push(provider(VaultHardwareProvider));
   }

@@ -16,5 +16,7 @@ export const defaultConnectConfigContext: ConnectConfigContextInterface = {
     hardwareActive: true,
     webActive: true,
     devActive: true,
+    readOnlyActive: true,
+    proxiesActive: true,
   },
 };

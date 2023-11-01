@@ -11,7 +11,13 @@ export interface ConnectConfigContextInterface {
   setNetwork: Dispatch<SetStateAction<string>>;
   activeAccount: Any;
   setActiveAccount: Any;
-  wallets: { hardwareActive: boolean; webActive: boolean; devActive: boolean };
+  wallets: {
+    hardwareActive: boolean;
+    webActive: boolean;
+    devActive: boolean;
+    readOnlyActive: boolean;
+    proxiesActive: boolean;
+  };
 }
 
 export interface DappInfo {
@@ -26,4 +32,6 @@ export interface ConnectType {
   hardwareActive?: boolean;
   webActive?: boolean;
   devActive?: boolean;
+  proxiesActive?: boolean;
+  readOnlyActive?: boolean;
 }
