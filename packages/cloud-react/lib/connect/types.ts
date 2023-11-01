@@ -3,8 +3,6 @@
 
 import { ExtensionAccount } from "./ExtensionsProvider/types";
 
-export type MaybeAddress = string | null;
-
 export type ImportedAccount =
   | ExtensionAccount
   | ExternalAccount

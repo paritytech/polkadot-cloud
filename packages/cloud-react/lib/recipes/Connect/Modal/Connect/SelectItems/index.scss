@@ -1,0 +1,141 @@
+/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+SPDX-License-Identifier: GPL-3.0-only */
+
+.select-items {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+
+  &.two-col {
+    /* Remove outer padding for 2-per-row layout */
+    @media (width >= 801px) {
+      > div:nth-child(2n) {
+        padding-right: 0;
+      }
+
+      > div:nth-child(2n + 1) {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &.three-col {
+    /* Remove outer padding for 2-per-row layout */
+    @media (width >= 801px) and (width <= 1301px) {
+      > div:nth-child(2n) {
+        padding-right: 0;
+      }
+
+      > div:nth-child(2n + 1) {
+        padding-left: 0;
+      }
+    }
+
+    /* Remove outer padding for 3-per-row layout */
+    @media (width >= 1301px) {
+      > div:nth-child(3n) {
+        padding-right: 0;
+      }
+
+      > div:nth-child(3n + 1) {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.select-item {
+  padding: 0.6rem;
+  width: 100%;
+  flex-grow: 1;
+
+  &.two-col {
+    width: 50%;
+
+    /* flex basis for 3-per-row layout */
+    @media (width <= 800px) {
+      width: 100%;
+    }
+  }
+
+  &.three-col {
+    width: 33.33%;
+
+    /* flex basis for 2-per-row layout */
+    @media (width >= 800px) and (width <= 1300px) {
+      width: 50%;
+    }
+
+    /* flex basis for 3-per-row layout */
+    @media (width <= 800px) {
+      width: 100%;
+    }
+  }
+
+  > .inner {
+    transition: border var(--transition-duration);
+    background: var(--background-primary);
+    border: 1.75px solid var(--accent-color-primary);
+    border-radius: 1rem;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      border-color: var(--accent-color-primary);
+    }
+
+    > button {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      text-align: left;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+
+      &:disabled {
+        opacity: var(--opacity-disabled);
+      }
+
+      > .icon {
+        background: var(--background-list-item);
+        color: var(--accent-color-primary);
+        width: 6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      > .body {
+        flex: 1;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        padding: 1.25rem 1.35rem;
+        overflow: hidden;
+
+        h3 {
+          font-family: InterSemiBold, sans-serif;
+          padding: 0;
+          margin: 0;
+        }
+
+        p {
+          padding: 0;
+          margin: 0.4rem 0 0;
+        }
+      }
+
+      > .toggle {
+        color: var(--accent-color-primary);
+        opacity: 1;
+        width: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

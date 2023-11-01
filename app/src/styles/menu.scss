@@ -14,8 +14,7 @@ SPDX-License-Identifier: GPL-3.0-only */
   padding-bottom: 2rem;
   padding-left: 2rem;
   font-size: 1.05rem;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden auto;
   z-index: 2;
 
   @media (width < 1200px) {
