@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 import { usePrompt } from "../../Providers/PromptProvider";
-import "./index.scss";
+import "@polkadot-cloud/core/css/recipes/Connect/Modal/Prompt/index.css";
 
 export const Prompt = () => {
   const { closePrompt, size, status, Prompt: PromptInner } = usePrompt();

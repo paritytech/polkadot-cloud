@@ -7,7 +7,7 @@ import { Button } from "../../../../buttons/Button";
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
 import { Any } from "../../../../utils/types";
 
-import "./index.scss";
+import "@polkadot-cloud/core/css/recipes/Connect/Modal/ImportHardwareCommon/index.css";
 
 export const NoAccounts = ({ children, text, Icon }: Any) => {
   const { replaceModal } = useOverlay().modal;

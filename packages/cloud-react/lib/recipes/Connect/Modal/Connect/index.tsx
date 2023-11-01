@@ -28,8 +28,9 @@ import { Vault } from "./Vault";
 import { Buffer } from "buffer";
 window.Buffer = Buffer;
 
-import "./index.scss";
 import { useConnectConfig } from "../../Providers/ConnectConfigProvider";
+
+import "@polkadot-cloud/core/css/recipes/Connect/Modal/Connect/index.css";
 
 export const Connect = () => {
   const { wallets } = useConnectConfig();

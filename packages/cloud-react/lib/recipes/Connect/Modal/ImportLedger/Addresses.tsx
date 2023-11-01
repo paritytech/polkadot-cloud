@@ -16,7 +16,7 @@ import { Remove } from "../ImportHardwareCommon/Remove";
 import type { AnyJson } from "../../../../utils/types";
 import { useOtherAccounts } from "../../Providers/OtherAccountsProvider";
 
-import "../ImportHardwareCommon/index.scss";
+import "@polkadot-cloud/core/css/recipes/Connect/Modal/ImportHardwareCommon/index.css";
 
 export const Addresess = ({
   addresses,

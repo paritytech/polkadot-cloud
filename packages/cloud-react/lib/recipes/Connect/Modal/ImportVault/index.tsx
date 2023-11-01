@@ -20,7 +20,7 @@ import { useOtherAccounts } from "../../Providers/OtherAccountsProvider";
 import { Reader } from "./Reader";
 import { Polkicon } from "../../../../icons/Polkicon";
 
-import "../ImportHardwareCommon/index.scss";
+import "@polkadot-cloud/core/css/recipes/Connect/Modal/ImportHardwareCommon/index.css";
 
 export const ImportVault = () => {
   const { replaceModal } = useOverlay().modal;
