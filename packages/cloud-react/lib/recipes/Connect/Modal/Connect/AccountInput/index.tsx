@@ -11,9 +11,9 @@ import { useOverlay } from "../../../../../overlay/OverlayProvider/useOverlay";
 import { useImportedAccounts } from "../../../Providers/ImportedAccountsProvider";
 import { formatAccountSs58 } from "../../../Utils";
 import type { AccountInputProps } from "./types";
-
-import "./index.scss";
 import { useConnectConfig } from "../../../Providers/ConnectConfigProvider";
+
+import "@polkadot-cloud/core/css/recipes/Connect/Modal/Connect/AccountInput/index.css";
 
 export const AccountInput = ({
   successCallback,

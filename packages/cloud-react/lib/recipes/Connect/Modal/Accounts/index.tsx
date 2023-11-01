@@ -37,7 +37,7 @@ import { ModalPadding } from "../../../../base/modal/ModalPadding";
 import { ModalCustomHeader } from "../../../../base/modal/ModalCustomHeader";
 import { Button } from "../../../../buttons/Button";
 
-import "./index.scss";
+import "@polkadot-cloud/core/css/recipes/Connect/Modal/Accounts/index.css";
 
 // TODO: Fix many API things
 

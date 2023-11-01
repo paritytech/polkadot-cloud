@@ -7,7 +7,7 @@ import { usePrompt } from "../../Providers/PromptProvider";
 import { useOtherAccounts } from "../../Providers/OtherAccountsProvider";
 import type { RemoveProps } from "./types";
 
-import "./index.scss";
+import "@polkadot-cloud/core/css/recipes/Connect/Modal/ImportHardwareCommon/index.css";
 
 export const Remove = ({ address, getHandler, removeHandler }: RemoveProps) => {
   const { setStatus } = usePrompt();

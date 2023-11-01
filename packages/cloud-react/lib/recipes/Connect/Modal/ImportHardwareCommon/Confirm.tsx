@@ -8,7 +8,7 @@ import type { ConfirmProps } from "./types";
 
 import { usePrompt } from "../../Providers/PromptProvider";
 
-import "./index.scss";
+import "@polkadot-cloud/core/css/recipes/Connect/Modal/ImportHardwareCommon/index.css";
 
 export const Confirm = ({ address, index, addHandler }: ConfirmProps) => {
   const { setStatus } = usePrompt();

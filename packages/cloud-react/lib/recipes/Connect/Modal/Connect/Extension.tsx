@@ -12,7 +12,7 @@ import { ExtensionIcons } from "@polkadot-cloud/assets/extensions";
 import type { ExtensionProps } from "./types";
 import { ModalConnectItem } from "../../../../base/modal/ModalConnectItem";
 
-import "./index.scss";
+import "@polkadot-cloud/core/css/recipes/Connect/Modal/Connect/index.css";
 
 export const Extension = ({ meta, size, flag }: ExtensionProps) => {
   const { addNotification } = useNotifications();

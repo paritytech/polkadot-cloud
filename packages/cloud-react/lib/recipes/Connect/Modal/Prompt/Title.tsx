@@ -10,7 +10,7 @@ import { useHelp } from "../../Providers/HelpProvider";
 import { usePrompt } from "../../Providers/PromptProvider";
 import { Any } from "../../../../utils/types";
 
-import "./index.scss";
+import "@polkadot-cloud/core/css/recipes/Connect/Modal/Prompt/index.css";
 
 interface TitleProps {
   title: string;
