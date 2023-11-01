@@ -10,6 +10,7 @@ import {
 } from "react";
 import { ConnectConfigContextInterface, ConnectType, DappInfo } from "./types";
 import * as defaults from "./defaults";
+import { useActiveAccounts } from "../ActiveAccountsProvider";
 
 export const ConnectConfigProvider = ({
   children,
@@ -20,6 +21,8 @@ export const ConnectConfigProvider = ({
   wallets: ConnectType;
   dappInfo: DappInfo;
 }) => {
+  const { activeAccount, setActiveAccount } = useActiveAccounts();
+
   const [dappName] = useState<string>(dappInfo.dappName);
   const [network, setNetwork] = useState<string>(
     dappInfo.network || "polkadot"
@@ -41,6 +44,8 @@ export const ConnectConfigProvider = ({
         network,
         ss58,
         setNetwork,
+        activeAccount,
+        setActiveAccount,
         wallets: { hardwareActive, webActive, devActive },
       }}
     >

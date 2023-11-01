@@ -11,8 +11,8 @@ export const Doc = ({ folder, npm }: DocProps) => {
     <>
       <Edit folder={folder} />
       <Header
-        title="ModalConnectPage"
-        subtitle="A light-weight and customisable ModalConnect."
+        title="Wallets Connect Page"
+        subtitle="A light-weight and Connect recipe for connecting to web/hardware wallets."
         npm={npm}
         status="stable"
       />

@@ -9,6 +9,8 @@ export interface ConnectConfigContextInterface {
   network: string;
   ss58: number;
   setNetwork: Dispatch<SetStateAction<string>>;
+  activeAccount: Any;
+  setActiveAccount: Any;
   wallets: { hardwareActive: boolean; webActive: boolean; devActive: boolean };
 }
 
