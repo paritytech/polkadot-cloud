@@ -22,16 +22,13 @@ import { useImportedAccounts } from "../ImportedAccountsProvider";
 import { useOtherAccounts } from "../OtherAccountsProvider";
 import * as defaults from "./defaults";
 import type { BondedAccount, BondedContextInterface } from "./types";
+import { useConnectConfig } from "../ConnectConfigProvider";
 
 // TODO: FIX MANY THINGS
-export const BondedProvider = ({
-  children,
-  network = "polkadot",
-}: {
-  children: ReactNode;
-  network: string;
-}) => {
+export const BondedProvider = ({ children }: { children: ReactNode }) => {
   // const { api, isReady } = useApi();
+  const { network } = useConnectConfig();
+
   const { accounts } = useImportedAccounts();
   const { addExternalAccount } = useOtherAccounts();
 

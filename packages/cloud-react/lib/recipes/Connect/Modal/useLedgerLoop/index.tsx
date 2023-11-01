@@ -1,17 +1,14 @@
 // Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
+import { useConnectConfig } from "../../Providers/ConnectConfigProvider";
 import { useLedgerHardware } from "../../Providers/HardwareProviders/Ledger";
 import { getLedgerApp } from "../../Providers/HardwareProviders/Utils";
 import { useTxMeta } from "../../Providers/TxMetaProvider";
 import type { LederLoopProps } from "./types";
 
-export const useLedgerLoop = ({
-  tasks,
-  options,
-  mounted,
-  network = "polkadot",
-}: LederLoopProps) => {
+export const useLedgerLoop = ({ tasks, options, mounted }: LederLoopProps) => {
+  const { network } = useConnectConfig();
   const { setIsPaired, getIsExecuting, getStatusCodes, executeLedgerLoop } =
     useLedgerHardware();
   const { getTxPayload, getPayloadUid } = useTxMeta();

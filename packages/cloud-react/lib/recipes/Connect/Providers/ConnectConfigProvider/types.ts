@@ -9,19 +9,29 @@ export interface ConnectConfigContextInterface {
   network: string;
   ss58: number;
   setNetwork: Dispatch<SetStateAction<string>>;
-  wallets: { hardwareActive: boolean; webActive: boolean; devActive: boolean };
+  activeAccount: Any;
+  setActiveAccount: Any;
+  wallets: {
+    hardwareActive: boolean;
+    webActive: boolean;
+    devActive: boolean;
+    readOnlyActive: boolean;
+    proxiesActive: boolean;
+  };
 }
 
 export interface DappInfo {
   dappName: string;
   network: string;
   ss58: number;
-  activeAccount: Any;
-  setActiveAccount: Any;
+  activeAccount?: Any;
+  setActiveAccount?: Any;
 }
 
 export interface ConnectType {
   hardwareActive?: boolean;
   webActive?: boolean;
   devActive?: boolean;
+  proxiesActive?: boolean;
+  readOnlyActive?: boolean;
 }

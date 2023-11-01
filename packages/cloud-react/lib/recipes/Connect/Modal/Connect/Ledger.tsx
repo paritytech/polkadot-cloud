@@ -15,12 +15,10 @@ import { useHelp } from "../../Providers/HelpProvider/index";
 import { Ledger as LedgerIcon } from "@polkadot-cloud/assets/extensions/jsx/Ledger";
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
 import { ReactElement } from "react";
+import { useConnectConfig } from "../../Providers/ConnectConfigProvider";
 
-interface LedgerProps {
-  network?: string;
-}
-
-export const Ledger = ({ network = "polkadot" }: LedgerProps): ReactElement => {
+export const Ledger = (): ReactElement => {
+  const { network } = useConnectConfig();
   const { openHelp } = useHelp();
   const { replaceModal } = useOverlay().modal;
   const url = "ledger.com";

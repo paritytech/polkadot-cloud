@@ -14,14 +14,15 @@ import type { VaultAccount } from "../../../../connect/types";
 import { getLocalVaultAccounts, isLocalNetworkAddress } from "./Utils";
 import { defaultVaultHardwareContext } from "./defaults";
 import type { VaultHardwareContextInterface } from "./types";
+import { useConnectConfig } from "../ConnectConfigProvider";
 
 export const VaultHardwareProvider = ({
   children,
-  network = "polkadot",
 }: {
   children: ReactNode;
-  network?: string;
 }) => {
+  const { network } = useConnectConfig();
+
   const [vaultAccounts, seVaultAccountsState] = useState<VaultAccount[]>(
     getLocalVaultAccounts(network)
   );
