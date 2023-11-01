@@ -4,7 +4,6 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { Doc } from "./main";
 
 import {
-  useActiveAccounts,
   Connect,
   connectInfo,
   ConnectConfigProvider,
@@ -15,16 +14,10 @@ import type {
 } from "@packages/cloud-react/lib/recipes/Connect";
 
 export const ModalConnect = () => {
-  const { activeAccount, setActiveAccount } = useActiveAccounts();
-
-  console.log("activeAccount", activeAccount);
-
   const dappInfo: DappInfo = {
     dappName: "dApp Name",
     network: "polkadot",
     ss58: 0,
-    activeAccount,
-    setActiveAccount,
   };
 
   const walletSettings: ConnectType = {

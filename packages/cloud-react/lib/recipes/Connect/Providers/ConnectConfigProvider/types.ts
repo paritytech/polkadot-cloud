@@ -18,8 +18,8 @@ export interface DappInfo {
   dappName: string;
   network: string;
   ss58: number;
-  activeAccount: Any;
-  setActiveAccount: Any;
+  activeAccount?: Any;
+  setActiveAccount?: Any;
 }
 
 export interface ConnectType {

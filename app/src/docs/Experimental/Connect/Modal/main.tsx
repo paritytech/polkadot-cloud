@@ -11,7 +11,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
     <>
       <Edit folder={folder} />
       <Header
-        title="Wallets Connect Page"
+        title="Web/Hardware Wallets Connect component"
         subtitle="A light-weight and Connect recipe for connecting to web/hardware wallets."
         npm={npm}
         status="stable"

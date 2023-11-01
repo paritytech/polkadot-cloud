@@ -5,7 +5,11 @@ import { SimpleEditor } from "@docs/SimpleEditor";
 import { Demo } from "@docs/Demo";
 import { Button } from "@packages/cloud-react/lib/buttons/Button";
 import { useOverlay } from "@packages/cloud-react/lib/overlay/OverlayProvider/useOverlay";
-import { Overlays } from "@packages/cloud-react/lib/recipes/Connect";
+import {
+  Overlays,
+  useActiveAccounts,
+} from "@packages/cloud-react/lib/recipes/Connect";
+import { AccountCard } from "@packages/cloud-react/lib/recipes/AccountCard";
 
 export const ModalConnect = () => {
   const code = `// In the main entry of your app:
@@ -71,18 +75,24 @@ return (
 `;
 
   const { openModal } = useOverlay().modal;
+  const { activeAccount } = useActiveAccounts();
 
   return (
     <>
       <Demo showThemes={false} centered>
         <Overlays />
-        <Button
-          type="primary"
-          text={"Connect"}
-          onClick={() => {
-            openModal({ key: "Connect" });
-          }}
-        />
+        <div style={{ display: "flex" }}>
+          {activeAccount ? (
+            <AccountCard icon={{}} title={{ address: activeAccount }} />
+          ) : null}
+          <Button
+            type="primary"
+            text={"Connect"}
+            onClick={() => {
+              openModal({ key: "Connect" });
+            }}
+          />
+        </div>
       </Demo>
       <SimpleEditor code={code} />
     </>

@@ -12,6 +12,11 @@ import { HelpProvider } from "./HelpProvider";
 import { PromptProvider } from "./PromptProvider";
 import { ConnectType, DappInfo } from "./ConnectConfigProvider/types";
 import { OverlayProvider } from "../../../overlay/OverlayProvider";
+import {
+  ActiveAccountsProvider,
+  useActiveAccounts,
+} from "./ActiveAccountsProvider";
+import { useConnectConfig } from "./ConnectConfigProvider";
 
 const provider = (prov, props = {}) => [prov, props];
 
@@ -24,14 +29,27 @@ export const ConnectProvider = ({ providers, children }) => {
 };
 
 export const connectInfo = (appInfo: DappInfo, connInfo: ConnectType) => {
+  const { activeAccount, setActiveAccount } = useActiveAccounts();
+  const { network, ss58 } = useConnectConfig();
+
   const providers = [];
+
+  providers.push(provider(ActiveAccountsProvider));
   providers.push(provider(NotificationsProvider));
   if (connInfo.hardwareActive) {
     providers.push(provider(LedgerHardwareProvider));
     providers.push(provider(VaultHardwareProvider));
   }
   providers.push(provider(ExtensionsProvider));
-  providers.push(provider(ExtensionAccountsProvider, appInfo));
+  providers.push(
+    provider(ExtensionAccountsProvider, {
+      network,
+      ss58,
+      dappName: appInfo.dappName,
+      activeAccount,
+      setActiveAccount,
+    })
+  );
   providers.push(provider(OtherAccountsProvider));
   providers.push(provider(ImportedAccountsProvider));
   providers.push(provider(HelpProvider));
