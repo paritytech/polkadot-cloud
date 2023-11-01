@@ -15,8 +15,10 @@ import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
 
 import { Manage } from "./Manage";
 import { Splash } from "./Splash";
+import { useConnectConfig } from "../../Providers/ConnectConfigProvider";
 
-export const ImportLedger = ({ network = "polkadot" }: AnyJson) => {
+export const ImportLedger = () => {
+  const { network } = useConnectConfig();
   const { setModalResize } = useOverlay().modal;
   const {
     transportResponse,

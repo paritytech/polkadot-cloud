@@ -28,22 +28,21 @@ import {
 import type { OtherAccountsContextInterface } from "./types";
 import { defaultOtherAccountsContext } from "./defaults";
 import { useActiveAccounts } from "../ActiveAccountsProvider";
+import { useConnectConfig } from "../ConnectConfigProvider";
 
 export const OtherAccountsContext =
   createContext<OtherAccountsContextInterface>(defaultOtherAccountsContext);
 
 export const OtherAccountsProvider = ({
   children,
-  network = "polkadot",
-  ss58 = 0,
 }: {
   children: ReactNode;
-  network?: string;
-  ss58?: number;
 }) => {
   const { checkingInjectedWeb3 } = useExtensions();
   const { extensionAccountsSynced } = useExtensionAccounts();
   const { activeAccount, setActiveAccount } = useActiveAccounts();
+
+  const { network, ss58 } = useConnectConfig();
 
   // Store whether other (non-extension) accounts have been initialised.
   const [otherAccountsSynced, setOtherAccountsSynced] =

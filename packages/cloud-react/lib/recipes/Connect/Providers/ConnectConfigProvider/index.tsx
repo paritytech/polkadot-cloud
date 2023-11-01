@@ -10,6 +10,7 @@ import {
 } from "react";
 import { ConnectConfigContextInterface, ConnectType, DappInfo } from "./types";
 import * as defaults from "./defaults";
+import { useActiveAccounts } from "../ActiveAccountsProvider";
 
 export const ConnectConfigProvider = ({
   children,
@@ -17,17 +18,21 @@ export const ConnectConfigProvider = ({
   dappInfo,
 }: {
   children: ReactNode;
-  wallets: ConnectType;
+  wallets?: ConnectType;
   dappInfo: DappInfo;
 }) => {
+  const { activeAccount, setActiveAccount } = useActiveAccounts();
+
   const [dappName] = useState<string>(dappInfo.dappName);
   const [network, setNetwork] = useState<string>(
     dappInfo.network || "polkadot"
   );
   const [ss58, setSs58] = useState<number>(dappInfo.ss58 || 0);
-  const [hardwareActive] = useState<boolean>(wallets.hardwareActive);
-  const [webActive] = useState<boolean>(wallets.webActive);
-  const [devActive] = useState<boolean>(wallets.devActive);
+  const [hardwareActive] = useState<boolean>(wallets?.hardwareActive || true);
+  const [webActive] = useState<boolean>(wallets?.webActive || true);
+  const [devActive] = useState<boolean>(wallets?.devActive || true);
+  const [readOnlyActive] = useState<boolean>(wallets?.readOnlyActive || true);
+  const [proxiesActive] = useState<boolean>(wallets?.proxiesActive || true);
 
   useEffect(() => {
     setNetwork(dappInfo.network);
@@ -41,7 +46,15 @@ export const ConnectConfigProvider = ({
         network,
         ss58,
         setNetwork,
-        wallets: { hardwareActive, webActive, devActive },
+        activeAccount,
+        setActiveAccount,
+        wallets: {
+          hardwareActive,
+          webActive,
+          devActive,
+          readOnlyActive,
+          proxiesActive,
+        },
       }}
     >
       {children}

@@ -12,13 +12,14 @@ import type { AnyJson } from "../../../../utils/types";
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
 import { Addresess } from "./Addresses";
 import { Reset } from "./Reset";
+import { useConnectConfig } from "../../Providers/ConnectConfigProvider";
 
 export const Manage = ({
   addresses,
   handleLedgerLoop,
   removeLedgerAddress,
-  network = "polkadot",
 }: AnyJson) => {
+  const { network } = useConnectConfig();
   const { setIsExecuting, getIsExecuting, resetStatusCodes, getFeedback } =
     useLedgerHardware();
   const { openPromptWith } = usePrompt();

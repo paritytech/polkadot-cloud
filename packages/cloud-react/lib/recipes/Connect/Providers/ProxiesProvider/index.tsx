@@ -24,18 +24,13 @@ import type {
   Proxy,
   ProxyDelegate,
 } from "./type";
-import { NetworkName } from "../../Utils";
+import { useConnectConfig } from "../ConnectConfigProvider";
 
 // TODO: Fix API
 //import { useApi } from "contexts/Api";
 
-export const ProxiesProvider = ({
-  children,
-  network = "polkadot" as NetworkName,
-}: {
-  children: ReactNode;
-  network?: NetworkName;
-}) => {
+export const ProxiesProvider = ({ children }: { children: ReactNode }) => {
+  const { network } = useConnectConfig();
   // TODO: Fix API
   // const { api, isReady } = useApi();
   const api = {};

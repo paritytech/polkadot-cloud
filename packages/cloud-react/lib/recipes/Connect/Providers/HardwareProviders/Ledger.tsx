@@ -41,6 +41,7 @@ import type {
   LedgerTask,
   PairingStatus,
 } from "./types";
+import { useConnectConfig } from "../ConnectConfigProvider";
 
 export type FeedbackMessages = {
   ledgerRequestTimeout?: FeedbackMessage;
@@ -76,14 +77,14 @@ const dfm = {
 
 export const LedgerHardwareProvider = ({
   children,
-  network = "polkadot",
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
   fbm,
 }: {
   children: ReactNode;
-  network?: string;
   fbm?: FeedbackMessages;
 }) => {
+  const { network } = useConnectConfig();
+
   const [ledgerAccounts, setLedgerAccountsState] = useState<LedgerAccount[]>(
     getLocalLedgerAccounts(network)
   );

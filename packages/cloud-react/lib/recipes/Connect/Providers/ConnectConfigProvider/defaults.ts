@@ -10,9 +10,13 @@ export const defaultConnectConfigContext: ConnectConfigContextInterface = {
   network: "polkadot",
   ss58: 0,
   setNetwork: (network: string): void => {},
+  activeAccount: {},
+  setActiveAccount: () => {},
   wallets: {
     hardwareActive: true,
     webActive: true,
     devActive: true,
+    readOnlyActive: true,
+    proxiesActive: true,
   },
 };
