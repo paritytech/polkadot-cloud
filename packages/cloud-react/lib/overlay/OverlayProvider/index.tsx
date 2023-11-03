@@ -110,9 +110,14 @@ export const OverlayProvider = ({ children }: { children: ReactNode }) => {
     if (transition) transitionOn();
     else transitionOff();
 
-    // Limit maximum height to 80% of window height, and set.
-    const maxHeight = window.innerHeight * 0.8;
+    // Limit maximum height to 80% of window height, or 90% if window width <= 600.
+    const maxHeight =
+      window.innerWidth > 600
+        ? window.innerHeight * 0.9
+        : window.innerHeight * 0.8;
     if (height > maxHeight) height = maxHeight;
+
+    // Update height state.
     setModalHeightState(height);
 
     // If transitioning, remove after enough time to finish transition.
