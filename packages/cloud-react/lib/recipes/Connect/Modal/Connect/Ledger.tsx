@@ -11,7 +11,6 @@ import { ModalConnectItem } from "../../../../base/modal/ModalConnectItem";
 import { ModalHardwareItem } from "../../../../base/modal/ModalHardwareItem";
 import { Button } from "../../../../buttons/Button";
 import { inChrome } from "@polkadot-cloud/utils";
-import { useHelp } from "../../Providers/HelpProvider/index";
 import { Ledger as LedgerIcon } from "@polkadot-cloud/assets/extensions/jsx/Ledger";
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
 import { ReactElement } from "react";
@@ -19,7 +18,6 @@ import { useConnectConfig } from "../../Providers/ConnectConfigProvider";
 
 export const Ledger = (): ReactElement => {
   const { network } = useConnectConfig();
-  const { openHelp } = useHelp();
   const { replaceModal } = useOverlay().modal;
   const url = "ledger.com";
 
@@ -32,12 +30,7 @@ export const Ledger = (): ReactElement => {
     <ModalConnectItem>
       <ModalHardwareItem>
         <div className="body">
-          <div className="status">
-            <Button
-              type="help"
-              onClick={() => openHelp("Ledger Hardware Wallets")}
-            />
-          </div>
+          <div className="status"></div>
           <div className="row">
             <div className="logo mono">
               <LedgerIcon />

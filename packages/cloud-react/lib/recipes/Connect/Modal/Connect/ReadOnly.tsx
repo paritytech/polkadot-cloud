@@ -9,7 +9,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "../../../../buttons/Button";
 import { Polkicon } from "../../../../icons/Polkicon";
-import { useHelp } from "../../Providers/HelpProvider";
 import { AccountInput } from "./AccountInput";
 import { useOverlay } from "../../../../overlay/OverlayProvider/useOverlay";
 import { useImportedAccounts } from "../../Providers/ImportedAccountsProvider";
@@ -18,10 +17,10 @@ import type { ExternalAccount } from "../../../../connect/types";
 import type { ListWithInputProps } from "./types";
 
 export const ReadOnly = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
-  const { openHelp } = useHelp();
   const { accounts } = useImportedAccounts();
   const { setModalResize } = useOverlay().modal;
-  const { forgetExternalAccounts, addExternalAccount } = useOtherAccounts();
+  const { forgetExternalAccounts, addExternalAccount, forgetOtherAccounts } =
+    useOtherAccounts();
 
   // get all external accounts
   const externalAccountsOnly = accounts.filter(
@@ -36,6 +35,7 @@ export const ReadOnly = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
   // forget account
   const forgetAccount = (account: ExternalAccount) => {
     forgetExternalAccounts([account]);
+    forgetOtherAccounts([account]);
     setModalResize();
   };
   return (
@@ -44,11 +44,6 @@ export const ReadOnly = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
         <div>
           <FontAwesomeIcon icon={faChevronRight} transform="shrink-4" />
           <h3>Read Only Accounts</h3>
-          <Button
-            type="help"
-            marginLeft
-            onClick={() => openHelp("Read Only Accounts")}
-          />
         </div>
         <div>
           <Button
