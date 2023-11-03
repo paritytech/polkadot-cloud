@@ -28,14 +28,9 @@ SPDX-License-Identifier: GPL-3.0-only */
       }
 
       .logo {
+        color: var(--text-color-secondary);
         height: 3rem;
         margin: 0.75rem 0.5rem 0.5rem;
-
-        &.mono {
-          path {
-            fill: var(--text-color-secondary);
-          }
-        }
       }
     }
 

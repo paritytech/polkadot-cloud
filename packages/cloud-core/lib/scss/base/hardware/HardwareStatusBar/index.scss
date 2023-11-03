@@ -24,6 +24,7 @@ SPDX-License-Identifier: GPL-3.0-only */
         flex-grow: 1;
 
         > .icon {
+          color: var(--text-color-secondary);
           margin: 0 1rem 0 0.25rem;
         }
 
