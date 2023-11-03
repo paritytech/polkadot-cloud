@@ -610,15 +610,15 @@
     picocolors "^1.0.0"
     tslib "^2.6.0"
 
-"@polkadot-cloud/assets@0.1.32":
-  version "0.1.32"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/assets/-/assets-0.1.32.tgz#b619e24db310ac9a23e4bb20a64245f096b73072"
-  integrity sha512-TC8m6RFbHtJ5omW4VuIugKp1u7YzGBIgG9vGVEXkeSMWKwgzvkrxn7qpcjcelu1XO8ujb/+64dnhIpuhdj4e9g==
+"@polkadot-cloud/assets@0.1.34":
+  version "0.1.34"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/assets/-/assets-0.1.34.tgz#a88c7066228d2e9229a026e9f86436ceae357737"
+  integrity sha512-qsXlinOgVlChbMTdBXCDaQM59jDZWrKKMizR7LR8qL2yhzLh0Ohouf0POURhuCsJ1zUjHwbsZg+4ezsKZBM+nA==
 
-"@polkadot-cloud/core@^1.0.32":
-  version "1.0.32"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.0.32.tgz#8c44241ededeeead89d6e9c42c6834d438b8de96"
-  integrity sha512-kHzvA8y1y6LTERZvxWhGbmjKQirSBfDG9efi1/hiRcqFicRPFPoyglAx/kseDLPXr5edXlQGDglvMeNwex0I9w==
+"@polkadot-cloud/core@^1.0.34":
+  version "1.0.34"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.0.34.tgz#aa12734f0ef0b8aad584a707debad2730c2fd30e"
+  integrity sha512-m9+5p4ZreNJiYfEClx3dMaYmS5hxlDBeSRZmhZTB3I0PFk38+I72+mA6+sEnwClGMc/+dOa6UXOpxbV0hnE+5g==
 
 "@polkadot-cloud/utils@^0.0.25":
   version "0.0.25"
@@ -6558,7 +6558,7 @@ postcss-safe-parser@^6.0.0:
   resolved "https://registry.yarnpkg.com/postcss-safe-parser/-/postcss-safe-parser-6.0.0.tgz#bb4c29894171a94bc5c996b9a30317ef402adaa1"
   integrity sha512-FARHN8pwH+WiS2OPCxJI8FuRJpTVnn6ZNFiqAM2aeW2LwTHWWmWgIyKC6cUo0L8aeKiF/14MNvnpls6R2PBeMQ==
 
-postcss-scss@^4.0.7:
+postcss-scss@^4.0.9:
   version "4.0.9"
   resolved "https://registry.yarnpkg.com/postcss-scss/-/postcss-scss-4.0.9.tgz#a03c773cd4c9623cb04ce142a52afcec74806685"
   integrity sha512-AjKOeiwAitL/MXxQW2DliT28EKukvvbEWx3LBmJIRN8KfBGZbRTxNYW0kSqi1COiTZ57nZ9NW06S6ux//N1c9A==
@@ -7780,26 +7780,26 @@ stylehacks@^5.1.1:
     browserslist "^4.21.4"
     postcss-selector-parser "^6.0.4"
 
-stylelint-config-recommended-scss@^13.0.0:
-  version "13.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-config-recommended-scss/-/stylelint-config-recommended-scss-13.0.0.tgz#dd8c319e15a6412262cd8554e4aad9bfba1bbb11"
-  integrity sha512-7AmMIsHTsuwUQm7I+DD5BGeIgCvqYZ4BpeYJJpb1cUXQwrJAKjA+GBotFZgUEGP8lAM+wmd91ovzOi8xfAyWEw==
+stylelint-config-recommended-scss@^13.1.0:
+  version "13.1.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-recommended-scss/-/stylelint-config-recommended-scss-13.1.0.tgz#04e529ae0e9c1abb1e04de79258461c07811876f"
+  integrity sha512-8L5nDfd+YH6AOoBGKmhH8pLWF1dpfY816JtGMePcBqqSsLU+Ysawx44fQSlMOJ2xTfI9yTGpup5JU77c17w1Ww==
   dependencies:
-    postcss-scss "^4.0.7"
+    postcss-scss "^4.0.9"
     stylelint-config-recommended "^13.0.0"
-    stylelint-scss "^5.1.0"
+    stylelint-scss "^5.3.0"
 
 stylelint-config-recommended@^13.0.0:
   version "13.0.0"
   resolved "https://registry.yarnpkg.com/stylelint-config-recommended/-/stylelint-config-recommended-13.0.0.tgz#c48a358cc46b629ea01f22db60b351f703e00597"
   integrity sha512-EH+yRj6h3GAe/fRiyaoO2F9l9Tgg50AOFhaszyfov9v6ayXJ1IkSHwTxd7lB48FmOeSGDPLjatjO11fJpmarkQ==
 
-stylelint-config-standard-scss@^11.0.0:
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-config-standard-scss/-/stylelint-config-standard-scss-11.0.0.tgz#98332b68a9c98b6fce54c7698741e103719942b5"
-  integrity sha512-fGE79NBOLg09a9afqGH/guJulRULCaQWWv4cv1v2bMX92B+fGb0y56WqIguwvFcliPmmUXiAhKrrnXilIeXoHA==
+stylelint-config-standard-scss@^11.1.0:
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-standard-scss/-/stylelint-config-standard-scss-11.1.0.tgz#53c2fb9423ed89c0921aa83479892a912cc1ca15"
+  integrity sha512-5gnBgeNTgRVdchMwiFQPuBOtj9QefYtfXiddrOMJA2pI22zxt6ddI2s+e5Oh7/6QYl7QLJujGnaUR5YyGq72ow==
   dependencies:
-    stylelint-config-recommended-scss "^13.0.0"
+    stylelint-config-recommended-scss "^13.1.0"
     stylelint-config-standard "^34.0.0"
 
 stylelint-config-standard@^34.0.0:
@@ -7809,10 +7809,10 @@ stylelint-config-standard@^34.0.0:
   dependencies:
     stylelint-config-recommended "^13.0.0"
 
-stylelint-scss@^5.1.0:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-5.2.1.tgz#810299e4141fa38852bd14536a90e4942c8f387f"
-  integrity sha512-ZoTJUM85/qqpQHfEppjW/St//8s6p9Qsg8deWlYlr56F9iUgC9vXeIDQvH4odkRRJLTLFQzYMALSOFCQ3MDkgw==
+stylelint-scss@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-5.3.0.tgz#32fd2681f8934e87dfa90f5188646d07f08c59c9"
+  integrity sha512-Sc7S1uWqStMc99NREsHNxpxHHFRvjo2pWILNl/UCwWO8PxhODK8qbJH0GHWIALxl6BD5rwJL4cSm4jk36hi6fg==
   dependencies:
     known-css-properties "^0.28.0"
     postcss-media-query-parser "^0.2.3"
