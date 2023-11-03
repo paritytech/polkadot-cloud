@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "../../../../buttons/Button";
 import type { FunctionComponent } from "react";
 
-import { useHelp } from "../../Providers/HelpProvider";
 import { usePrompt } from "../../Providers/PromptProvider";
 import { Any } from "../../../../utils/types";
 
@@ -22,7 +21,6 @@ interface TitleProps {
 }
 
 export const Title = ({
-  helpKey,
   title,
   icon,
   Svg,
@@ -30,7 +28,6 @@ export const Title = ({
   closeText,
 }: TitleProps) => {
   const { closePrompt } = usePrompt();
-  const { openHelp } = useHelp();
 
   const graphic = Svg ? (
     <Svg style={{ width: "1.5rem", height: "1.5rem" }} />
@@ -42,12 +39,7 @@ export const Title = ({
     <div className="title-wrapper">
       <div>
         {graphic}
-        <h2>
-          {title}
-          {helpKey ? (
-            <Button type="help" onClick={() => openHelp(helpKey)} />
-          ) : null}
-        </h2>
+        <h2>{title}</h2>
       </div>
       {hideDone !== true ? (
         <div>
