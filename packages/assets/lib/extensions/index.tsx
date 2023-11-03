@@ -1,7 +1,12 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-import { ExtensionConfig, HardwareConfig, IconRecords } from "../types";
+import {
+  ExtensionConfig,
+  HardwareConfig,
+  ExtensionIconRecords,
+  ExtensionIcon,
+} from "../types";
 import Enkrypt from "./jsx/Enkrypt";
 import FearlessWallet from "./jsx/FearlessWallet";
 import MetaMask from "./jsx/MetaMask";
@@ -74,7 +79,7 @@ export const ExtensionsArray = Object.entries(Extensions).map(
 );
 
 // List of extension icons keyed by the extension id.
-export const ExtensionIcons: IconRecords = {
+export const ExtensionIcons: ExtensionIconRecords = {
   enkrypt: Enkrypt,
   "fearless-wallet": FearlessWallet,
   "metamask-polkadot-snap": MetaMask,
@@ -106,8 +111,17 @@ export const HardwareArray = Object.entries(Hardware).map(([key, value]) => ({
   ...value,
 }));
 
-export const HardwareIcons: IconRecords = {
+export const HardwareIcons: ExtensionIconRecords = {
   ledger: Ledger,
   polkadotvault: PolkadotVault,
   walletconnect: WalletConnect,
+};
+
+// Helper to get the correct icon from `ExtensionIcons`.
+export const getExtensionIcon = (id: string): ExtensionIcon | null => {
+  // Workaround to return Nova Wallet icon when `isNovaWallet` is true.
+  if (id === "polkadot-js" && window?.walletExtension?.isNovaWallet)
+    id = "novawallet";
+
+  return ExtensionIcons[id] || null;
 };

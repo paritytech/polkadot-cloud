@@ -37,13 +37,12 @@ export interface ValidatorConfig {
 }
 
 // Icon record structure.
-export type IconRecords = Record<
-  string,
-  FC<{
-    style?: CSSProperties;
-    className?: string;
-  }>
->;
+export type ExtensionIconRecords = Record<string, ExtensionIcon>;
+
+export type ExtensionIcon = FC<{
+  style?: CSSProperties;
+  className?: string;
+}>;
 
 // Miscellaneous types.
 declare global {
