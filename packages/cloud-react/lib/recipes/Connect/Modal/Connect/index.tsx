@@ -197,7 +197,7 @@ export const Connect = () => {
         >
           <div className="section">
             <ModalPadding horizontalOnly ref={homeRef}>
-              {hardwareActive ? (
+              {hardwareActive || hardwareActive === undefined ? (
                 <>
                   <ActionItem text="Hardware" />
                   <div className="extensions-wrapper">
