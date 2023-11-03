@@ -610,15 +610,15 @@
     picocolors "^1.0.0"
     tslib "^2.6.0"
 
-"@polkadot-cloud/assets@0.1.32":
-  version "0.1.32"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/assets/-/assets-0.1.32.tgz#b619e24db310ac9a23e4bb20a64245f096b73072"
-  integrity sha512-TC8m6RFbHtJ5omW4VuIugKp1u7YzGBIgG9vGVEXkeSMWKwgzvkrxn7qpcjcelu1XO8ujb/+64dnhIpuhdj4e9g==
+"@polkadot-cloud/assets@0.1.34":
+  version "0.1.34"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/assets/-/assets-0.1.34.tgz#a88c7066228d2e9229a026e9f86436ceae357737"
+  integrity sha512-qsXlinOgVlChbMTdBXCDaQM59jDZWrKKMizR7LR8qL2yhzLh0Ohouf0POURhuCsJ1zUjHwbsZg+4ezsKZBM+nA==
 
-"@polkadot-cloud/core@^1.0.32":
-  version "1.0.32"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.0.32.tgz#8c44241ededeeead89d6e9c42c6834d438b8de96"
-  integrity sha512-kHzvA8y1y6LTERZvxWhGbmjKQirSBfDG9efi1/hiRcqFicRPFPoyglAx/kseDLPXr5edXlQGDglvMeNwex0I9w==
+"@polkadot-cloud/core@^1.0.34":
+  version "1.0.34"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.0.34.tgz#aa12734f0ef0b8aad584a707debad2730c2fd30e"
+  integrity sha512-m9+5p4ZreNJiYfEClx3dMaYmS5hxlDBeSRZmhZTB3I0PFk38+I72+mA6+sEnwClGMc/+dOa6UXOpxbV0hnE+5g==
 
 "@polkadot-cloud/utils@^0.0.25":
   version "0.0.25"
