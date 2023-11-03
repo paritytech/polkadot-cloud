@@ -32,16 +32,20 @@ export const Polkicon = ({
     // TODO: look closer into this approach
     let ch = "generic";
     // Polkadot
-    if (address.startsWith("1")) {
+    if (address) {
+      if (address.startsWith("1")) {
+        ch = "polkadot";
+      } else if (
+        address.startsWith("E") ||
+        address.startsWith("D") ||
+        address.startsWith("G")
+      ) {
+        ch = "kusama";
+      } else if (address.startsWith("5")) {
+        ch = "westend";
+      }
+    } else {
       ch = "polkadot";
-    } else if (
-      address.startsWith("E") ||
-      address.startsWith("D") ||
-      address.startsWith("G")
-    ) {
-      ch = "kusama";
-    } else if (address.startsWith("5")) {
-      ch = "westend";
     }
     const circleXy = getCircleXY(ch as ChainName);
     if (initialColors && initialColors?.length < circleXy.length) {
