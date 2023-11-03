@@ -6,7 +6,7 @@ import { Note } from "@docs/Note";
 import { Header } from "@docs/Header";
 import { ExtensionsSvg } from "./ExtensionsSvg";
 import { ExtensionsJsx } from "./ExtensionsJsx";
-import { H3, H4 } from "@docs/Headers";
+import { H2, H3, H4 } from "@docs/Headers";
 import { DocProps } from "@docs/types";
 import { ImportSimple } from "./ImportSimple";
 import { External } from "@docs/External";
@@ -213,6 +213,23 @@ export const Doc = ({ folder, npm }: DocProps) => {
           load them.
         </p>
       </Note>
+
+      <hr className="lg" />
+
+      <H2 id="values">Helpers</H2>
+      <H3 id="checkingInjectedWeb3">getExtensionIcon</H3>
+      <div className="params inline">
+        <p>ExtensionIcon</p>
+      </div>
+      <p>
+        Returns the SVG icon associated with an extension id, or{" "}
+        <code>null</code> if one does not exist.
+      </p>
+      <p>
+        If called within the Nova Wallet app and the <code>polkadot-js</code> id
+        is provided, the Nova icon will be returned instead of the Polkadot JS
+        icon.
+      </p>
     </>
   );
 };
