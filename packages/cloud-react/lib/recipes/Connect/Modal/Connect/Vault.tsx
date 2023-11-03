@@ -11,10 +11,8 @@ import { Button } from "../../../../buttons/Button";
 import { ModalConnectItem } from "../../../../base/modal/ModalConnectItem";
 import { ModalHardwareItem } from "../../../../base/modal/ModalHardwareItem";
 import { PolkadotVault } from "@polkadot-cloud/assets/extensions/jsx/PolkadotVault";
-import { useHelp } from "../../Providers/HelpProvider/index";
 
 export const Vault = (): ReactElement => {
-  const { openHelp } = useHelp();
   const { replaceModal } = useOverlay().modal;
   const url = "signer.parity.io";
 
@@ -22,13 +20,7 @@ export const Vault = (): ReactElement => {
     <ModalConnectItem>
       <ModalHardwareItem>
         <div className="body">
-          <div className="status">
-            <Button
-              type="help"
-              marginLeft
-              onClick={() => openHelp("Polkadot Vault")}
-            />
-          </div>
+          <div className="status"></div>
           <div className="row">
             <div className="logo vault">
               <PolkadotVault />
