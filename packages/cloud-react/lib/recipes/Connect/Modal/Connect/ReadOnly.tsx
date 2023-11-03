@@ -19,7 +19,8 @@ import type { ListWithInputProps } from "./types";
 export const ReadOnly = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
   const { accounts } = useImportedAccounts();
   const { setModalResize } = useOverlay().modal;
-  const { forgetExternalAccounts, addExternalAccount } = useOtherAccounts();
+  const { forgetExternalAccounts, addExternalAccount, forgetOtherAccounts } =
+    useOtherAccounts();
 
   // get all external accounts
   const externalAccountsOnly = accounts.filter(
@@ -34,6 +35,7 @@ export const ReadOnly = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
   // forget account
   const forgetAccount = (account: ExternalAccount) => {
     forgetExternalAccounts([account]);
+    forgetOtherAccounts([account]);
     setModalResize();
   };
   return (
