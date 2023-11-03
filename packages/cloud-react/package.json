@@ -1,7 +1,7 @@
 {
   "name": "polkadot-cloud-react",
   "license": "GPL-3.0-only",
-  "version": "0.1.104",
+  "version": "0.1.105",
   "type": "module",
   "contributors": [
     "Ross Bulat<ross@parity.io>",
@@ -39,7 +39,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@ledgerhq/hw-transport-webhid": "^6.27.19",
     "@polkadot-cloud/assets": "0.1.32",
-    "@polkadot-cloud/core": "^1.0.31",
+    "@polkadot-cloud/core": "^1.0.32",
     "@polkadot-cloud/utils": "^0.0.25",
     "@polkadot/keyring": "^12.5.1",
     "@polkadot/util": "^12.5.1",
@@ -53,9 +53,9 @@
   },
   "devDependencies": {
     "@chainsafe/metamask-polkadot-types": "^0.6.0",
+    "@ledgerhq/hw-transport-webhid": "^6.27.19",
     "@zondax/ledger-substrate": "^0.41.3",
     "qrcode-generator": "^1.4.4",
-    "react-qr-reader": "^2.2.1",
-    "@ledgerhq/hw-transport-webhid": "^6.27.19"
+    "react-qr-reader": "^2.2.1"
   }
 }
