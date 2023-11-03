@@ -112,7 +112,7 @@ export const OverlayProvider = ({ children }: { children: ReactNode }) => {
 
     // Limit maximum height to 80% of window height, or 90% if window width <= 600.
     const maxHeight =
-      window.innerWidth > 600
+      window.innerWidth <= 600
         ? window.innerHeight * 0.9
         : window.innerHeight * 0.8;
     if (height > maxHeight) height = maxHeight;
