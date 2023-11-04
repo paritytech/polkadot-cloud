@@ -25,6 +25,11 @@ SPDX-License-Identifier: GPL-3.0-only */
 
     > section {
       width: 100%;
+
+      > .fees {
+        display: flex;
+        align-items: center;
+      }
       
       > .inner {
         display: flex;
@@ -49,6 +54,12 @@ SPDX-License-Identifier: GPL-3.0-only */
               &.prompt {
                 color: var(--accent-color-primary);
                 font-size: 1.05rem;
+                align-items: flex-start;
+
+                svg {
+                  margin-top: 0.16rem;
+                  margin-right: 0.5rem;
+                };
               }
             }
           }
@@ -61,9 +72,8 @@ SPDX-License-Identifier: GPL-3.0-only */
         }
 
         &.strong {
-          border: 1px solid var(--border-primary-color);
-          border-radius: 0.75rem;
-          padding: 0.5rem;
+          border-top: 1px solid var(--border-primary-color);
+          padding: 0.5rem 0;
           margin-top: 0.25rem;
         } 
       }
