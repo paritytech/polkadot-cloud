@@ -12,6 +12,8 @@ import { ModalConnectItem } from "../../../../base/modal/ModalConnectItem";
 import { ModalHardwareItem } from "../../../../base/modal/ModalHardwareItem";
 import { PolkadotVault } from "@polkadot-cloud/assets/extensions/jsx/PolkadotVault";
 
+import "@polkadot-cloud/core/css/recipes/Connect/Modal/Connect/index.css";
+
 export const Vault = (): ReactElement => {
   const { replaceModal } = useOverlay().modal;
   const url = "signer.parity.io";
