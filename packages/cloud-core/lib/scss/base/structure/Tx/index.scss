@@ -25,32 +25,57 @@ SPDX-License-Identifier: GPL-3.0-only */
 
     > section {
       width: 100%;
-      display: flex;
-      align-items: center;
 
-      p {
-        color: var(--text-color-secondary);
+      > .fees {
         display: flex;
         align-items: center;
-        font-size: 1rem;
-        margin: 0.1rem 0;
-        padding-left: 0.5rem;
       }
-
-      > div {
+      
+      > .inner {
         display: flex;
+        align-items: center;
 
-        &:first-child {
-          flex-direction: column;
-          justify-content: center;
-          flex-grow: 1;
-        }
+        > div {
+          display: flex;
 
-        &:last-child {
-          button {
-            margin-left: 0.75rem;
+          &:first-child {
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
+
+            p {
+              color: var(--text-color-secondary);
+              display: flex;
+              align-items: center;
+              font-size: 1rem;
+              margin: 0.1rem 0;
+              padding-left: 0.5rem;
+
+              &.prompt {
+                color: var(--accent-color-primary);
+                font-size: 1.05rem;
+                align-items: flex-start;
+
+                svg {
+                  margin-top: 0.16rem;
+                  margin-right: 0.5rem;
+                };
+              }
+            }
+          }
+
+          &:last-child {
+            button {
+              margin-left: 0.75rem;
+            }
           }
         }
+
+        &.strong {
+          border-top: 1px solid var(--border-primary-color);
+          padding: 0.5rem 0;
+          margin-top: 0.25rem;
+        } 
       }
     }
   }
