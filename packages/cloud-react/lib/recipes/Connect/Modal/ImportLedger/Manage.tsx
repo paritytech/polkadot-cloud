@@ -4,7 +4,6 @@ SPDX-License-Identifier: GPL-3.0-only */
 import { HardwareStatusBar } from "../../../../base/hardware/HardwareStatusBar";
 import { useLedgerHardware } from "../../Providers/HardwareProviders/Ledger";
 import { getLedgerApp } from "../../Providers/HardwareProviders/Utils";
-import { useHelp } from "../../Providers/HelpProvider";
 import { usePrompt } from "../../Providers/PromptProvider";
 import { Ledger } from "@polkadot-cloud/assets/extensions/jsx/Ledger";
 import { Heading } from "../ImportHardwareCommon/Heading";
@@ -24,14 +23,12 @@ export const Manage = ({
     useLedgerHardware();
   const { openPromptWith } = usePrompt();
   const { replaceModal } = useOverlay().modal;
-  const { openHelp } = useHelp();
 
   const { appName, Icon } = getLedgerApp(network);
   const isExecuting = getIsExecuting();
 
   const fallbackMessage = `LedgerAccounts`;
   const feedback = getFeedback();
-  const helpKey = feedback?.helpKey;
 
   return (
     <>
@@ -56,14 +53,6 @@ export const Manage = ({
         show
         Icon={Ledger}
         text={feedback?.message || fallbackMessage}
-        help={
-          helpKey
-            ? {
-                helpKey,
-                handleHelp: openHelp,
-              }
-            : undefined
-        }
         inProgress={isExecuting}
         handleCancel={() => {
           setIsExecuting(false);

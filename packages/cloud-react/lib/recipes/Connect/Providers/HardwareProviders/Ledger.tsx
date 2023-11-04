@@ -73,6 +73,8 @@ const dfm = {
   signedTransactionSuccessfully: ["Signed transaction successfully"],
   approveTransactionLedger: ["Approve transaction ledger"],
   unlockLedgerToContinue: ["Unlock Ledger to continue"],
+  UnknownStatusCode2816: ["Unknown Status Code 2816"],
+  genericError: ["Generic Error"],
 };
 
 export const LedgerHardwareProvider = ({
@@ -176,11 +178,11 @@ export const LedgerHardwareProvider = ({
       handleNewStatusCode("failure", "TransactionRejected");
     } else if (err.startsWith("Error: Unknown Status Code: 28161")) {
       // occurs when the required app is not open.
-      feedBackMsg("openAppOnLedger");
+      feedBackMsg("UnknownStatusCode2816");
       handleNewStatusCode("failure", "AppNotOpenContinue");
     } else {
       // miscellanous errors - assume app is not open or ready.
-      feedBackMsg("openAppOnLedger");
+      feedBackMsg("genericError");
       handleNewStatusCode("failure", "AppNotOpen");
     }
   };
@@ -219,6 +221,7 @@ export const LedgerHardwareProvider = ({
       }
       // establish a new connection with device.
       ledgerTransport.current = await TransportWebHID.create();
+
       setIsPaired("paired");
       pairInProgress.current = false;
       return true;

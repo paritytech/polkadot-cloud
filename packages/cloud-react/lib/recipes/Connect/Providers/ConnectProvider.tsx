@@ -34,9 +34,15 @@ export const connectInfo = (appInfo: DappInfo, connInfo?: ConnectType) => {
 
   const providers = [];
 
+  let hardwareActive = connInfo?.hardwareActive;
+
+  if (hardwareActive === undefined) {
+    hardwareActive = true;
+  }
+
   providers.push(provider(ActiveAccountsProvider));
   providers.push(provider(NotificationsProvider));
-  if (connInfo?.hardwareActive) {
+  if (hardwareActive) {
     providers.push(provider(LedgerHardwareProvider));
     providers.push(provider(VaultHardwareProvider));
   }

@@ -10,14 +10,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "../../../../buttons/Button";
 import { Fragment } from "react";
 import { Polkicon } from "../../../../icons/Polkicon";
-import { useHelp } from "../../Providers/HelpProvider";
 import { useProxies } from "../../Providers/ProxiesProvider";
 import { AccountInput } from "./AccountInput";
 import { useImportedAccounts } from "../../Providers/ImportedAccountsProvider";
 import type { ListWithInputProps } from "./types";
 
 export const Proxies = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
-  const { openHelp } = useHelp();
   const { accounts } = useImportedAccounts();
   const { getAccount } = useImportedAccounts();
   const { delegates, handleDeclareDelegate } = useProxies();
@@ -34,11 +32,6 @@ export const Proxies = ({ setInputOpen, inputOpen }: ListWithInputProps) => {
         <div>
           <FontAwesomeIcon icon={faChevronRight} transform="shrink-4" />
           <h3>Proxy Accounts</h3>
-          <Button
-            type="help"
-            marginLeft
-            onClick={() => openHelp("Proxy Accounts")}
-          />
         </div>
         <div>
           <Button

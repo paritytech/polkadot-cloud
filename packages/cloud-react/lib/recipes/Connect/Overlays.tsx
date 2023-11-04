@@ -17,12 +17,13 @@ export const Overlays = () => {
     Connect,
     Accounts,
   };
-  const inputModals = hardwareActive
-    ? Object.assign({}, defaultModals, {
-        ImportLedger,
-        ImportVault,
-      })
-    : defaultModals;
+  const inputModals =
+    hardwareActive || hardwareActive === undefined
+      ? Object.assign({}, defaultModals, {
+          ImportLedger,
+          ImportVault,
+        })
+      : defaultModals;
   return (
     <>
       <Prompt />
