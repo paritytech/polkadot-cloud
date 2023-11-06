@@ -615,10 +615,10 @@
   resolved "https://registry.yarnpkg.com/@polkadot-cloud/assets/-/assets-0.1.34.tgz#a88c7066228d2e9229a026e9f86436ceae357737"
   integrity sha512-qsXlinOgVlChbMTdBXCDaQM59jDZWrKKMizR7LR8qL2yhzLh0Ohouf0POURhuCsJ1zUjHwbsZg+4ezsKZBM+nA==
 
-"@polkadot-cloud/core@1.0.41", "@polkadot-cloud/core@^1.0.41":
-  version "1.0.41"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.0.41.tgz#7beba1f10199372bfa3d62653a365d77ab1e7dbf"
-  integrity sha512-Cgropqa21925w2yT4rQ66zQOrqFlgh1u7Ds6aiki5DUrUvLB0CU6a5GkI2PIdOk4WDN9B7KnNiQdThCkcMvSzg==
+"@polkadot-cloud/core@^1.0.42":
+  version "1.0.42"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.0.42.tgz#dacce564e0ef680bc4d39dd304bb7e1fd3d0940c"
+  integrity sha512-sBuzsE3CnWqsMbL6toyMpYjQeyNkFiCpTKOuaZUk6N9zlAc2C17e9jsHRl76zv1x64qMcpBhW0uJ5VvZocoWZg==
 
 "@polkadot-cloud/utils@^0.0.25":
   version "0.0.25"
@@ -1388,10 +1388,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^18.2.34":
-  version "18.2.34"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.34.tgz#aed20f19473721ba328feb99d1ec3307ebc1a8dd"
-  integrity sha512-U6eW/alrRk37FU/MS2RYMjx0Va2JGIVXELTODaTIYgvWGCV4Y4TfTUzG8DdmpDNIT0Xpj/R7GfyHOJJrDttcvg==
+"@types/react@*", "@types/react@^18.2.35":
+  version "18.2.35"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.35.tgz#bacdc6d139a4d6d47e5186e1a96952c65e1f3792"
+  integrity sha512-LG3xpFZ++rTndV+/XFyX5vUP7NI9yxyk+MQvBDq+CVs8I9DLSc3Ymwb1Vmw5YDoeNeHN4PDZa3HylMKJYT9PNQ==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -6762,10 +6762,10 @@ react-is@^18.0.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
-react-powerglitch@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/react-powerglitch/-/react-powerglitch-1.0.2.tgz#ef0cd1c00afecbf08692bbce543e499e06d06c5f"
-  integrity sha512-EOK6pauC2K5x4YaVYAFs+xctL1d/Ryv2v3xMdlSJYe2wPNcSox8m9JY9uMw83sWR92XT/nQCcamFI/u8UrsvTw==
+react-powerglitch@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-powerglitch/-/react-powerglitch-1.0.3.tgz#19acd8572b28a6d515be76118c34cb68156fda8a"
+  integrity sha512-jYIcvZJQoRWKckOWfgc59Bju6tLiBl2sRkWIr8X8/8RYXd/e07H7k+jJXinlemM/IGGrcG0Iq0HmJbAP13FrVg==
   dependencies:
     powerglitch "^2.3.2"
 
