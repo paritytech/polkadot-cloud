@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@polkadot-cloud/core": "^1.0.40",
+    "@polkadot-cloud/core": "^1.0.42",
     "@polkadot/keyring": "^12.5.1",
     "@polkadot/util": "^12.5.1",
     "bignumber.js": "^9.1.2",
@@ -38,7 +38,7 @@
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-powerglitch": "^1.0.2",
+    "react-powerglitch": "^1.0.3",
     "react-router-dom": "^6.18.0",
     "react-simple-code-editor": "^0.13.1"
   }
