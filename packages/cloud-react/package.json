@@ -29,13 +29,7 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@chainsafe/metamask-polkadot-adapter": "^0.5.1",
-    "framer-motion": "^10.15.0",
-    "@chainsafe/metamask-polkadot-types": "^0.6.0",
-    "@ledgerhq/hw-transport-webhid": "^6.27.19",
-    "@zondax/ledger-substrate": "^0.41.3",
-    "qrcode-generator": "^1.4.4",
-    "react-qr-reader": "^2.2.1"
+    "framer-motion": "^10.15.0"
   },
   "dependencies": {
     "@chainsafe/metamask-polkadot-adapter": "^0.5.1",
