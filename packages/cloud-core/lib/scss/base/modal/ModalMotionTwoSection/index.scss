@@ -7,4 +7,15 @@ SPDX-License-Identifier: GPL-3.0-only */
   @include styles.modal-motion-sections;
 
   width: 200%;
+
+  > .section {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    min-width: 50%;
+    height: auto;
+    overflow: hidden auto;
+    flex-grow: 1;
+  }
 }

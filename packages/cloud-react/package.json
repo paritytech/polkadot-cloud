@@ -1,7 +1,7 @@
 {
   "name": "polkadot-cloud-react",
   "license": "GPL-3.0-only",
-  "version": "0.1.122",
+  "version": "0.1.123",
   "type": "module",
   "contributors": [
     "Ross Bulat<ross@parity.io>",
@@ -27,9 +27,9 @@
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   },
   "peerDependencies": {
+    "framer-motion": "^10.15.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "framer-motion": "^10.15.0"
+    "react-dom": "^18.2.0"
   },
   "dependencies": {
     "@chainsafe/metamask-polkadot-adapter": "^0.5.1",
@@ -41,7 +41,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@ledgerhq/hw-transport-webhid": "^6.27.19",
     "@polkadot-cloud/assets": "0.1.34",
-    "@polkadot-cloud/core": "^1.0.42",
+    "@polkadot-cloud/core": "^1.0.44",
     "@polkadot-cloud/utils": "^0.0.25",
     "@polkadot/keyring": "^12.5.1",
     "@polkadot/util": "^12.5.1",
