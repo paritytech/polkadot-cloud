@@ -133,10 +133,11 @@ export const Modal = ({
               size={size}
               style={{
                 height: modalHeight,
-                overflow:
-                  modalHeight >= modalMaxHeight && !options?.disableScroll
-                    ? "scroll"
-                    : "hidden",
+                overflow: options?.disableScroll
+                  ? "hidden"
+                  : modalHeight >= modalMaxHeight
+                  ? "scroll"
+                  : "hidden",
               }}
             >
               <ModalCard
