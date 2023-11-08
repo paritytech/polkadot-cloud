@@ -25,7 +25,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
     > section {
       width: 100%;
-      
+
       > .inner {
         display: flex;
         align-items: center;
@@ -54,7 +54,7 @@ SPDX-License-Identifier: GPL-3.0-only */
                 .icon {
                   margin-top: 0.16rem;
                   margin-right: 0.5rem;
-                };
+                }
               }
             }
           }
@@ -71,11 +71,12 @@ SPDX-License-Identifier: GPL-3.0-only */
           margin-bottom: 0.25rem;
           padding: 0.5rem 0;
         }
+
         &.msg {
           border-top: 1px solid var(--border-primary-color);
           padding: 0.5rem 0;
           margin-top: 0.25rem;
-        } 
+        }
       }
     }
   }
