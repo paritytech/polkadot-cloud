@@ -15,3 +15,13 @@ SPDX-License-Identifier: GPL-3.0-only */
   position: relative;
   overflow: hidden auto;
 }
+
+@mixin modal-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: inherit transparent;
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border: 0;
+  }
+}

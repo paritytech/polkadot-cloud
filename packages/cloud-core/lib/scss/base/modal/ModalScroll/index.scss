@@ -1,7 +1,11 @@
 /* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
+@use "../styles";
+
 .modal-scroll {
+  @include styles.modal-scrollbar;
+
   border-radius: 1.5rem;
   position: relative;
   z-index: 9;
