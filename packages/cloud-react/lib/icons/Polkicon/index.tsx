@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Circle,
   getCircleXY,
@@ -16,7 +17,26 @@ interface PolkiconProps {
   copy?: boolean;
   colors?: string[];
   outerColor?: string;
+  copyTimeout?: number;
 }
+
+export const copyPopup = {
+  initial: {
+    opacity: 0,
+    scale: 0.5,
+  },
+  animate: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.1,
+    },
+  },
+  exit: {
+    opacity: 0,
+  },
+};
 
 export const Polkicon = ({
   size = "2rem",
@@ -24,9 +44,12 @@ export const Polkicon = ({
   copy = false,
   colors: initialColors,
   outerColor,
+  copyTimeout = 500,
 }: PolkiconProps) => {
   const [colors, setColors] = useState<string[]>([]);
   const [xy, setXy] = useState<[number, number][] | undefined>();
+  const [copySuccess, setCopySuccess] = useState(false);
+  const [message, setMessage] = useState<string>("Copied!");
 
   useEffect(() => {
     // TODO: look closer into this approach
@@ -71,14 +94,46 @@ export const Polkicon = ({
   }, [address]);
 
   const handleClick = useCallback(() => {
-    navigator && navigator.clipboard.writeText(address);
-  }, [address]);
+    const copyText = async (text: string) => {
+      try {
+        await navigator.clipboard.writeText(text);
+        setCopySuccess(true);
+        setMessage("Copied!");
+      } catch (err) {
+        setCopySuccess(true);
+        setMessage("Failed!");
+      }
+    };
+    copy && copyText(address);
+  }, [copy, address]);
+
+  useEffect(() => {
+    if (copy && copySuccess) {
+      setTimeout(() => {
+        setCopySuccess(false);
+      }, copyTimeout);
+    }
+  }, [copy, copySuccess]);
 
   return (
     xy && (
       <div
         onClick={copy ? handleClick : undefined}
-        style={copy ? { cursor: "pointer" } : {}}
+        style={
+          copy
+            ? {
+                cursor: "pointer",
+                position: "relative",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }
+            : {
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }
+        }
       >
         <svg
           viewBox="0 0 64 64"
@@ -104,6 +159,27 @@ export const Polkicon = ({
             )
             .map(renderCircle)}
         </svg>
+        {copy && (
+          <AnimatePresence>
+            {copySuccess && (
+              <motion.div
+                variants={copyPopup}
+                initial={"initial"}
+                animate={"animate"}
+                exit={"exit"}
+                style={{
+                  position: "absolute",
+                  padding: "1rem",
+                  borderRadius: "100%",
+                  backgroundColor: "var(--background-default)",
+                  fontWeight: "bold",
+                }}
+              >
+                <p>{message}</p>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        )}
       </div>
     )
   );
