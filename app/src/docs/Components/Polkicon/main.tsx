@@ -7,6 +7,7 @@ import { Note } from "@docs/Note";
 import { PolkiconSize } from "./PolkiconSize";
 import { PolkiconTheme } from "./PolkiconTheme";
 import { PolkiconColors } from "./PolkiconColors";
+import { PolkiconCopy } from "./PolkiconCopy";
 import { H2, H3 } from "@docs/Headers";
 import { DocProps } from "@docs/types";
 
@@ -82,6 +83,18 @@ export const Doc = ({ folder, npm }: DocProps) => {
       </p>
       <PolkiconColors />
 
+      <H3 id="size">Copy functionality</H3>
+      <p>
+        Polkicon comes with a copy functionality which allows the user to copy
+        the Icon's address. In order to use it the prop/flag <code>copy</code>{" "}
+        should be active at the <code>Polkicon</code> tag (see examples below).
+        When <code>copy</code> is active an optional parameter of{" "}
+        <code>copyTimeout (in ms)</code> can be set in order to give specific
+        transition time to the animation. The default timeout is{" "}
+        <code>1000 ms - 1 sec</code>.
+      </p>
+
+      <PolkiconCopy />
       <hr className="md" />
 
       <H2 id="css-variables-used">CSS Variables Used</H2>
