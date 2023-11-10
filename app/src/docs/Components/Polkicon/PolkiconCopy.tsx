@@ -17,7 +17,7 @@ export const PolkiconCopy = () => {
         <div className="svg-box">
           <Polkicon
             copy
-            size="2rem"
+            size="1.1rem"
             address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
             copyTimeout={300}
           />
@@ -25,14 +25,14 @@ export const PolkiconCopy = () => {
         <div className="svg-box">
           <Polkicon
             copy
-            size="5rem"
+            size="11px"
             address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
           />
         </div>
         <div className="svg-box">
           <Polkicon
             copy
-            size="7rem"
+            size={11}
             address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
             copyTimeout={2000}
           />
