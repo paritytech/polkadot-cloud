@@ -56,9 +56,9 @@ export const Polkicon = ({
   const [p, setP] = useState<string>();
 
   useEffect(() => {
-    const InfoText = (type: string, value: string) =>
-      console.log(
-        `Polkicon: 'Size' expressed in ${type} cannot be less than ${value}`
+    const InfoText = (type: string, value: string | number) =>
+      console.warn(
+        `Polkicon: 'Size' expressed in '${type}' cannot be less than ${value}. Will be resized to minimum size.`
       );
 
     if (
@@ -92,10 +92,12 @@ export const Polkicon = ({
         ? `${fontType === "px" ? sizeNumb + "px" : sizeNumb / 10 + "rem"}`
         : sizeNumb
     );
-    InfoText(
-      fontType,
-      fontType === "px" ? sizeNumb.toString() : (sizeNumb / 10).toString()
-    );
+    if (sizeNumb < 12) {
+      InfoText(
+        fontType || "number",
+        fontType === "px" ? "12px" : fontType === "rem" ? "1.2rem" : 12
+      );
+    }
 
     if (sizeNumb < 32) {
       setP("0rem 0.5rem");
