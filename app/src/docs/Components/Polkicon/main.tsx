@@ -52,8 +52,9 @@ export const Doc = ({ folder, npm }: DocProps) => {
       </Note>
       <H3 id="size">Size</H3>
       <p>
-        Sizes can be provided as a <code>string</code> (in rem) or a{" "}
-        <code>number</code> (in pixels). The default size is <code>2rem</code>.
+        Sizes can be provided as a <code>string</code> (in px or rem) (e.g.
+        "32px", "2.4rem") or a <code>number</code> (e.g. 64). The default size
+        is <code>2rem</code>.
       </p>
       <PolkiconSize />
       <H3 id="outer-color">Outer Color</H3>
@@ -91,7 +92,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
         When <code>copy</code> is active an optional parameter of{" "}
         <code>copyTimeout (in ms)</code> can be set in order to give specific
         transition time to the animation. The default timeout is{" "}
-        <code>1000 ms - 1 sec</code>.
+        <code>1000 ms - 1 sec</code>. Based on size provided
       </p>
 
       <PolkiconCopy />
