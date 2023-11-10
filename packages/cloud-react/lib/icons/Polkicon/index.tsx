@@ -20,7 +20,7 @@ interface PolkiconProps {
   copyTimeout?: number;
 }
 
-export const copyPopup = {
+const copyPopup = {
   initial: {
     opacity: 0,
     scale: 0.5,
@@ -50,6 +50,67 @@ export const Polkicon = ({
   const [xy, setXy] = useState<[number, number][] | undefined>();
   const [copySuccess, setCopySuccess] = useState(false);
   const [message, setMessage] = useState<string>("Copied!");
+
+  const [s, setS] = useState<string | number>();
+  const [f, setF] = useState<string>();
+  const [p, setP] = useState<string>();
+
+  useEffect(() => {
+    const InfoText = (type: string, value: string) =>
+      console.log(
+        `Polkicon: 'Size' expressed in ${type} cannot be less than ${value}`
+      );
+
+    if (
+      typeof size === "string" &&
+      !size.includes("px") &&
+      !size.includes("rem")
+    ) {
+      throw new Error(
+        "Providing a string for 'size' in Polkicon should be expressed either in 'px', 'rem' or 'em'"
+      );
+    }
+
+    let sizeNumb: number;
+    let fontType: string;
+    if (typeof size === "string") {
+      fontType = size.replace(/[0-9.]/g, "");
+      switch (fontType) {
+        case "px":
+          sizeNumb = parseFloat(size);
+          break;
+        case "rem":
+          sizeNumb = parseFloat(size) * 10;
+          break;
+      }
+    } else if (typeof size === "number") {
+      sizeNumb = size;
+    }
+
+    setS(
+      fontType
+        ? `${fontType === "px" ? sizeNumb + "px" : sizeNumb / 10 + "rem"}`
+        : sizeNumb
+    );
+    InfoText(
+      fontType,
+      fontType === "px" ? sizeNumb.toString() : (sizeNumb / 10).toString()
+    );
+
+    if (sizeNumb < 32) {
+      setP("0rem 0.5rem");
+      setF("0.5rem");
+    } else if (sizeNumb >= 32 && sizeNumb < 64) {
+      setP("1rem 0.5rem");
+      setF("1rem");
+    } else if (sizeNumb >= 64 && sizeNumb < 100) {
+      setP("2rem 1rem");
+      setF("1.5rem");
+    } else if (sizeNumb >= 100) {
+      setP("3rem 1rem");
+      setF("2rem");
+    }
+  }, [size]);
 
   useEffect(() => {
     // TODO: look closer into this approach
@@ -122,7 +183,7 @@ export const Polkicon = ({
         style={
           copy
             ? {
-                cursor: "pointer",
+                cursor: copySuccess ? "none" : "copy",
                 position: "relative",
                 display: "flex",
                 justifyContent: "center",
@@ -139,8 +200,8 @@ export const Polkicon = ({
           viewBox="0 0 64 64"
           id={address}
           name={address}
-          width={size}
-          height={size}
+          width={s}
+          height={s}
         >
           {[
             outerColor
@@ -169,13 +230,13 @@ export const Polkicon = ({
                 exit={"exit"}
                 style={{
                   position: "absolute",
-                  padding: "1rem",
+                  padding: p,
                   borderRadius: "100%",
                   backgroundColor: "var(--background-default)",
                   fontWeight: "bold",
                 }}
               >
-                <p>{message}</p>
+                <p style={{ fontSize: f, fontWeight: "bold" }}>{message}</p>
               </motion.div>
             )}
           </AnimatePresence>
