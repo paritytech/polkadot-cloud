@@ -3,6 +3,8 @@
 
 import { ExtensionAccount } from "./ExtensionsProvider/types";
 
+export type AccountSource = "extension" | "external" | "ledger" | "vault";
+
 export type ImportedAccount =
   | ExtensionAccount
   | ExternalAccount
@@ -14,7 +16,7 @@ export interface ExternalAccount {
   network: string;
   name: string;
   source: string;
-  addedBy: string;
+  addedBy: ExternalAccountAddedBy;
 }
 
 export interface LedgerAccount {
@@ -32,3 +34,5 @@ export interface VaultAccount {
   source: string;
   index: number;
 }
+
+export type ExternalAccountAddedBy = "system" | "user";

@@ -18,6 +18,7 @@ import { ellipsisFn, setStateWithRef } from "@polkadot-cloud/utils";
 import Keyring from "@polkadot/keyring";
 import type {
   ExternalAccount,
+  ExternalAccountAddedBy,
   ImportedAccount,
 } from "../../../../connect/types";
 import {
@@ -138,7 +139,10 @@ export const OtherAccountsProvider = ({
   };
 
   // Adds an external account (non-wallet) to accounts.
-  const addExternalAccount = (address: string, addedBy: string) => {
+  const addExternalAccount = (
+    address: string,
+    addedBy: ExternalAccountAddedBy
+  ) => {
     // ensure account is formatted correctly
     const keyring = new Keyring();
     keyring.setSS58Format(ss58);

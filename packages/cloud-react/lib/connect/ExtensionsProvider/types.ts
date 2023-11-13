@@ -4,6 +4,7 @@
 import { ExtensionFeature } from "@polkadot-cloud/assets/types";
 import { AnyJson } from "../../utils/types";
 import type { FunctionComponent, SVGProps } from "react";
+import { ExternalAccountAddedBy } from "../types";
 
 // Extensions context interface.
 export interface ExtensionsContextInterface {
@@ -55,7 +56,7 @@ export interface ExtensionConfig {
 
 // Miscellaneous metadata added to an extension.
 export interface ExtensionMetadata {
-  addedBy?: string;
+  addedBy?: ExternalAccountAddedBy;
   source: string;
 }
 
