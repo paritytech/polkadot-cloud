@@ -57,7 +57,7 @@
     "postcss": "^8.4.31",
     "prettier": "^3.1.0",
     "prettier-plugin-organize-imports": "^3.2.4",
-    "rollup": "^4.4.0",
+    "rollup": "^4.4.1",
     "rollup-plugin-cleanup": "^3.2.1",
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-delete": "^2.0.0",
