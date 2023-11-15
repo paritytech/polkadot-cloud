@@ -10,9 +10,9 @@ import {
   useActiveAccounts,
 } from "@packages/cloud-react/lib/recipes/Connect";
 
-export const ModalConnect = () => {
-  const codeEntry = `
-// entry file of the dApp
+export const ModalConnectWalletSettings = () => {
+  const code = `
+// entry file of the App
 import {
   Connect,
   connectInfo,
@@ -20,17 +20,26 @@ import {
 } from "@polkadot-cloud/recipes/Connect";
 import type { ConnectType, DappInfo } from "@polkadot-cloud/react/recipes/Connect";
 
-export const ModalConnect = () => {
+export const ModalConnectWalletSettings = () => {
   const dappInfo: DappInfo = {
     dappName: "dApp Name",
     network: 'polkadot',
     ss58: 0,
   };
 
-  const providers = connectInfo(dappInfo);
+  const walletSettings: ConnectType = {
+    hardwareActive: false, // shows hardware wallets | defaults to true
+    // webActive: true, // shows web wallets | defaults to true
+    // devActive: true, // shows developer tools | defaults to true
+    readOnlyActive: false, // shows readonly tab | defaults to true
+    // proxiesActive: true, // // shows proxies tab | defaults to true
+
+  };
+
+  const providers = connectInfo(dappInfo, walletSettings);
 
   return (
-    <ConnectConfigProvider dappInfo={dappInfo}>
+    <ConnectConfigProvider dappInfo={dappInfo} wallets={walletSettings}>
       <Connect providers={providers}>
         <App />
       </Connect>
@@ -39,42 +48,11 @@ export const ModalConnect = () => {
 };
 `;
 
-  const code = `// App.tsx (the component that is wrapped of the Providers)
-import {
-  Overlays,
-  useActiveAccounts,
-  useOverlay } from "@polkadot-cloud/react/recipes/Connect";
-
-const { openModal } = useOverlay().modal;
-const { activeAccount } = useActiveAccounts();
-
-<>
-  <Overlays /> {/* This needs to be part of the code */}
-  <div style={{ display: "flex" }}>
-    {activeAccount && (
-      <p>{activeAccount}</p>
-    )}
-    <Button type="primary" text="Connect"
-      onClick={() => {
-        openModal({ key: "Connect" });
-      }}
-    />
-  </div>
-</>
-`;
-
   const { openModal } = useOverlay().modal;
   const { activeAccount } = useActiveAccounts();
 
   return (
     <>
-      <SimpleEditor code={codeEntry} />
-      <p>
-        And the Button that will trigger the modal should have the
-        <code>Overlays</code> tag contained and the <code>openModal</code>{" "}
-        function with the <code>key: "Connect"</code> for triggering the Connect
-        modal.
-      </p>
       <Demo showThemes={false} centered>
         <Overlays />
         <div style={{ display: "flex" }}>
