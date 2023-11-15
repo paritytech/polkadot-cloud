@@ -28,16 +28,42 @@ export const ConnectConfigProvider = ({
     dappInfo.network || "polkadot"
   );
   const [ss58, setSs58] = useState<number>(dappInfo.ss58 || 0);
-  const [hardwareActive] = useState<boolean>(wallets?.hardwareActive || true);
-  const [webActive] = useState<boolean>(wallets?.webActive || true);
-  const [devActive] = useState<boolean>(wallets?.devActive || true);
-  const [readOnlyActive] = useState<boolean>(wallets?.readOnlyActive || true);
-  const [proxiesActive] = useState<boolean>(wallets?.proxiesActive || true);
+  const [hardwareActive] = useState<boolean>(
+    wallets?.hardwareActive === undefined ? true : wallets?.hardwareActive
+  );
+  const [webActive] = useState<boolean>(
+    wallets?.webActive === undefined ? true : wallets?.webActive
+  );
+  const [devActive] = useState<boolean>(
+    wallets?.devActive === undefined ? true : wallets?.devActive
+  );
+  const [readOnlyActive] = useState<boolean>(
+    wallets?.readOnlyActive === undefined ? true : wallets?.readOnlyActive
+  );
+  const [proxiesActive] = useState<boolean>(
+    wallets?.proxiesActive === undefined ? true : wallets?.proxiesActive
+  );
 
   useEffect(() => {
     setNetwork(dappInfo.network);
     setSs58(dappInfo.ss58);
   }, [dappInfo]);
+
+  console.log(
+    "---- ",
+    JSON.stringify(
+      "hardwareActive: " +
+        hardwareActive +
+        " _ " +
+        webActive +
+        " _ " +
+        devActive +
+        " _ " +
+        readOnlyActive +
+        " _ " +
+        proxiesActive
+    )
+  );
 
   return (
     <ConnectConfigContext.Provider
