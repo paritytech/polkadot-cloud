@@ -20,16 +20,16 @@ SPDX-License-Identifier: GPL-3.0-only */
   scrollbar-width: thin;
   scrollbar-color: inherit transparent;
 
-  &::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 0.1rem;
   }
 
-  &::-webkit-scrollbar-track {
+  ::-webkit-scrollbar-track {
     background-color: transparent;
     border: 0;
   }
 
-  &::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {
     background-color: transparent; /* color of the scroll thumb */
     border-radius: 2rem; /* roundness of the scroll thumb */
     border: 0.1rem solid transparent; /* creates padding around scroll thumb */
