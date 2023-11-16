@@ -1,6 +1,6 @@
 {
   "name": "@polkadot-cloud/app",
-  "version": "0.2.16",
+  "version": "0.3.0",
   "license": "GPL-3.0-only",
   "contributors": [
     "Ross Bulat<ross@parity.io>",
