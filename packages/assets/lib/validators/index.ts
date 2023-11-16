@@ -607,4 +607,19 @@ export const ValidatorCommunity: ValidatorConfig[] = [
       ],
     },
   },
+  {
+    name: "Rotko Networks",
+    thumbnail: "RotkoNetworks",
+    bio: "Rotko Networks stands at the forefront of web3 infrastructure provision, dedicated to facilitating seamless and secure deployment of validator nodes and RPC endpoints. Our commitment to excellence is further exemplified through our active participation in the Polkadot Infrastructure Builders Program, where we proudly serve as a distinguished RPC provider in the South East Asian region. Elevating our service offerings, we utilize a MaxIOPS setup, delivering unparalleled speeds of up to 300k IOPS per terabyte, setting a new standard in digital infrastructure performance.",
+    email: "hq@rotko.net",
+    twitter: "@rotkonetworks",
+    website: "https://rotko.net",
+    validators: {
+      polkadot: ["1ArdZJtNUrZsfidfn1t69xHaSWwzf6PQNdLEUpcnVmbkZc5"],
+      kusama: [
+        "ESSZefozpZYVLbLF1vaGtabthQYg8PVXiTytVm6YiiwAnee",
+        "DKKax6uZkiNPfd2ATd8cJhyi3c1KZD24VDdoWG9CfTmwgSp"
+      ],
+    },
+  },
 ];
