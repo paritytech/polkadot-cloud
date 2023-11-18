@@ -1,6 +1,6 @@
 # DEPRECATED
 
-### This repository is **deprecated** in favor of [**@polkadot-cloud**](https://github.com/polkadot-cloud/polkadot-cloud) repository
+### This repository is **deprecated** in favour of [**@polkadot-cloud**](https://github.com/polkadot-cloud/polkadot-cloud)
 
 ----
 [![License](https://img.shields.io/badge/License-GPL_3.0_only-blue.svg)](https://opensource.org/license/gpl-3-0/)
