@@ -1,6 +1,6 @@
 # DEPRECATED
 
-### This repository is **deprecated** in favor of: [@polkadot-cloud/react](https://github.com/polkadot-cloud/polkadot-cloud/tree/main/packages/cloud-react) repository
+### This repository is **deprecated** in favour of [@polkadot-cloud/react](https://github.com/polkadot-cloud/polkadot-cloud/tree/main/packages/cloud-react)
 
 ----
 

@@ -1,6 +1,6 @@
 # DEPRECATED
 
-### This repository is **deprecated** in favor of: [@polkadot-cloud/utils](https://github.com/polkadot-cloud/polkadot-cloud/tree/main/packages/utils) repository
+### This repository is **deprecated** in favour of [@polkadot-cloud/utils](https://github.com/polkadot-cloud/polkadot-cloud/tree/main/packages/utils)
 
 ----
 
